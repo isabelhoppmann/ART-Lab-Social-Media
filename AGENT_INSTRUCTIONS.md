@@ -33,7 +33,7 @@ For each quote image:
 
 ## Step 3: Save Everything
 - Save meme_1.png, meme_2.png, quote_1.png, quote_2.png as actual image files in a folder called posts/[DATE]/
-- Append a summary to zenie_drafts.md with: image filenames, captions, hashtags, video URLs, and best time to post for each
+- Append a summary to zenie_drafts.md with: full raw GitHub image URLs (format: https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/[filename]), captions, hashtags, video URLs, and best time to post for each
 - Commit all files and push to main
 
 ## Git Setup
