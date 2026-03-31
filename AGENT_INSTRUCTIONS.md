@@ -31,10 +31,33 @@ For each quote image:
 4. List 5-8 HASHTAGS
 5. Use Python PIL to create the actual image with quote text overlaid, save as quote_1.png and quote_2.png
 
-## Step 3: Save Everything
+## Step 3: Save to GitHub
 - Save meme_1.png, meme_2.png, quote_1.png, quote_2.png as actual image files in a folder called posts/[DATE]/
 - Append a summary to zenie_drafts.md with: full raw GitHub image URLs (format: https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/[filename]), captions, hashtags, video URLs, and best time to post for each
-- Commit all files and push to main
+- Commit all files and push to main using the GitHub API with token ghp_bKk44GYR7fHQinjjjyDmSz5oYeao9hx2iUcUf
+
+## Step 4: Create Notion Preview Page
+After pushing to GitHub, create a Notion page at the workspace level titled "Zenie Drafts — [DATE]".
+
+The page should be a visual draft board. Use Notion markdown to embed each post as a section:
+
+For each MEME POST:
+- Show the image using the raw GitHub URL: ![meme description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/meme_1.png)
+- Show the caption text
+- Show hashtags
+- Show suggested posting time
+
+For each QUOTE IMAGE POST:
+- Show the image using the raw GitHub URL: ![quote description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/quote_1.png)
+- Show the caption text
+- Show hashtags
+- Show suggested posting time
+
+For each REPOST VIDEO:
+- Show the clickable video URL as a hyperlink
+- Show the creator handle
+- Show the repost caption
+- Show suggested posting time
 
 ## Git Setup
 git config user.email agent@zenie.ai
