@@ -35,8 +35,11 @@ For each quote image:
 
 ## Step 3: Save to GitHub
 - Save meme_1.png, meme_2.png, quote_1.png, quote_2.png as actual image files in a folder called posts/[DATE]/
-- Append a summary to zenie_drafts.md with: full raw GitHub image URLs (format: https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/[filename]), captions, hashtags, video URLs, and best time to post for each
+- Append a summary to zenie_drafts.md with: full image URLs (use jsDelivr CDN format below), captions, hashtags, video URLs, and best time to post for each
 - Commit all files and push to main using the GitHub API with the token provided to you
+
+Image URL format to use everywhere (jsDelivr CDN — works in Notion):
+https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/[filename]
 
 ## Step 4: Create Notion Preview Page
 After pushing to GitHub, use the Notion MCP tool notion-create-pages to create a new page.
@@ -46,16 +49,19 @@ Parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
 
 Page title: "Zenie Drafts — [DATE]"
 
+Use jsDelivr URLs for all images (NOT raw.githubusercontent.com):
+https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/[filename]
+
 The page content should be a visual draft board in Notion Markdown. Include:
 
 For each MEME POST:
-- Embed the image using its raw GitHub URL: ![meme description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/meme_1.png)
+- Embed the image: ![meme description](https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png)
 - Caption text
 - Hashtags
 - Suggested posting time
 
 For each QUOTE IMAGE POST:
-- Embed the image using its raw GitHub URL: ![quote description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/quote_1.png)
+- Embed the image: ![quote description](https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.png)
 - Caption text
 - Hashtags
 - Suggested posting time
