@@ -2,72 +2,66 @@
 
 ## Trending Topics Research
 
-**Top 3 Trends Today:**
-
-1. **Cozymaxxing** — Creating intentionally cozy environments (blankets, candles, comfort food) as a serious self-care practice. Viral antidote to hustle culture stress. Hashtag gaining massive traction.
-
-2. **"Stop Chasing, Start Choosing" Dating Era** — A movement away from pursuing emotionally unavailable people; prioritizing your own peace, standards, and self-worth in dating. Huge on both TikTok and X.
-
-3. **Everything Shower Routines** — Multi-step elaborate self-care shower rituals going viral; creators sharing 15-30 step routines as meditative, restorative practices. Enormous engagement.
+1. **Post-Situationship Clarity Era** — In 2026 situationships are officially out. Audiences are rallying around radical honesty, clarity, and "knowing what you want" energy. Hashtags: #situationship #datingin2026 #clarityera
+2. **Healing Era / Soft Life** — The shift from hustle to intentional self-care continues. Micro-intimacy, journaling, and low-key routines dominate wellness content. Hashtags: #healingera #softlife #selfcare
+3. **Journaling & Self-Discovery** — Bullet journals, guided prompts, and "journal with me" content are surging. Creators are blending mental health advice with aesthetic stationery content. Hashtags: #journaling #selfcareroutine #journalwithme
 
 ---
 
 ## Post 1 — Meme
 
 **File:** meme_1.png
-**Image Text:**
-- Top: "when you cancel plans to"
-- Bottom: "cozymaxx in peace"
-**Caption:** self-care is saying no to everything and yes to yourself
-**Hashtags:** #cozymaxxing #selfcare #mentalhealth #introverts #selfcaretiktok #heyzenie #zenie
-**Best Posting Time:** 7:00 PM EST
+**Top text:** when they finally text back after 3 days
+**Bottom text:** bestie we are NOT in a situationship anymore
+**Caption:** the clarity era is real and it's here 👏
+**Hashtags:** #situationship #datingin2026 #clarityera #redflags #relationships #healingera #fyp
+**Best time to post:** Wednesday 7–9 PM EST
 
 ---
 
 ## Post 2 — Meme
 
 **File:** meme_2.png
-**Image Text:**
-- Top: "when they finally text back"
-- Bottom: "after you stopped caring"
-**Caption:** unbothered era. not accepting applications.
-**Hashtags:** #dating #boundaries #selflove #unbothered #heyzenie #datingadvice #greenflags
-**Best Posting Time:** 12:00 PM EST
+**Top text:** when your self-care routine hits different on a Sunday
+**Bottom text:** can't reply, i'm healing ✨
+**Caption:** healing is not a phase, it's the whole vibe
+**Hashtags:** #selfcare #healingera #softlife #mentalhealth #selfcaresunday #wellnessjourney #fyp
+**Best time to post:** Sunday 10 AM–12 PM EST
 
 ---
 
 ## Post 3 — Repost Video
 
-**Creator:** @elysian.living
-**Video URL:** https://www.tiktok.com/@elysian.living/video/7479940343065005343
-**Caption:** this 25-step shower routine is basically therapy 🚿✨ via @elysian.living
-**Best Posting Time:** 6:00 PM EST
+**Creator:** @therapytothepoint
+**Video URL:** https://www.tiktok.com/@therapytothepoint/video/7433098549337885994
+**Repost Caption:** 5 ways to improve your mental health — saving this forever 🧠 via @therapytothepoint
+**Best time to post:** Tuesday 6–8 PM EST
 
 ---
 
 ## Post 4 — Repost Video
 
-**Creator:** @jimmyonrelationships
-**Video URL:** https://www.tiktok.com/@jimmyonrelationships/video/7208172204113005866
-**Caption:** real talk on relationships — this one hits different 💬 via @jimmyonrelationships
-**Best Posting Time:** 8:00 PM EST
+**Creator:** @elirallo
+**Video URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
+**Repost Caption:** guided journal prompts for self-discovery — your evening ritual starts here 📓 via @elirallo
+**Best time to post:** Thursday 7–9 PM EST
 
 ---
 
 ## Post 5 — Quote Image
 
 **File:** quote_1.png
-**Quote:** "you deserve effort, not excuses"
-**Caption:** when was the last time someone made you feel truly chosen? 💭
-**Hashtags:** #selflove #relationshipadvice #youdeservebetter #quotes #heyzenie #datingadvice
-**Best Posting Time:** 9:00 AM EST
+**Quote:** "you don't need closure. you need peace."
+**Caption:** sometimes the answer isn't a conversation. what's one thing you're finally letting go of?
+**Hashtags:** #mentalhealth #healing #selfgrowth #peacefullife #movingon #innerpeace #fyp
+**Best time to post:** Monday 8–10 PM EST
 
 ---
 
 ## Post 6 — Quote Image
 
 **File:** quote_2.png
-**Quote:** "healing is not linear, and that's okay"
-**Caption:** what part of your healing journey are you in right now? 🌿
-**Hashtags:** #healing #mentalhealth #selfcare #growthmindset #heyzenie #healingjourney
-**Best Posting Time:** 5:00 PM EST
+**Quote:** "the right person won't make you question everything."
+**Caption:** clarity feels better than chemistry every time. what green flag changed everything for you?
+**Hashtags:** #relationships #datingadvice #greenflags #healingera #selflove #worthit #fyp
+**Best time to post:** Friday 7–9 PM EST
