@@ -1,52 +1,64 @@
-# Zenie Drafts — 2026-04-02
+# Zenie Drafts — April 2, 2026
 
-## Trending Topics Researched
-1. **Cozymaxxing** — self-care movement around creating stress-free, cozy environments; viral on TikTok
-2. **Matching Energy in Relationships** — both partners putting in equal effort; "survival mode vs love" format going viral
-3. **Metabolic Beauty & AI Wellness** — personalized routines, mood-based habits, wellness as foundational health
+## Trending Topics
+1. **Deep Dating** — Gen Z ditching swipe culture for intentional, slow connections
+2. **Cozymaxxing** — Maximizing coziness as a nervous-system self-care ritual
+3. **Friction-Maxxing** — Choosing the harder, slower path for mental wellbeing
 
 ---
 
-## Meme 1
+## Post 1 — Meme
 **File:** meme_1.png
-**Caption:** when effort is mutual, it hits different
-**Hashtags:** #matchingenergy #relationshipgoals #datingadvice #coupletok #lovequotes #heyzenie #zenie
-**Best Time to Post:** 7–9 PM EST (weekdays)
+**Top Text:** when you delete the apps
+**Bottom Text:** and actually start connecting irl
+**Caption:** dating is different when it's actually intentional
+**Hashtags:** #deepdating #intentionaldating #datingadvice #relationshipgoals #datingtips #moderndating #authenticity
+**Post Time:** 7:00 PM EST
 
 ---
 
-## Meme 2
+## Post 2 — Meme
 **File:** meme_2.png
-**Caption:** protecting your peace is the move
-**Hashtags:** #cozymaxxing #selfcare #introvert #mentalhealth #peacefullife #heyzenie #zenie
-**Best Time to Post:** 6–8 PM EST (weekends)
+**Top Text:** when your whole evening is just
+**Bottom Text:** candles, tea, and zero obligations
+**Caption:** cozymaxxing is a lifestyle, not a phase
+**Hashtags:** #cozymaxxing #selfcare #cozygirl #winddownroutine #mentalhealth #cozyaesthetic #selfcaretips
+**Post Time:** 9:00 PM EST
 
 ---
 
-## Repost 1
-**Creator:** @elysian.living
-**Video URL:** https://www.tiktok.com/@elysian.living/video/7479940343065005343
-**Caption:** your everything shower era starts NOW ✨ via @elysian.living
+## Post 3 — Repost Video
+**Video URL:** https://www.tiktok.com/@spencer.barbosa/video/7491040052974193926
+**Creator:** @spencer.barbosa (Spencer Barbosa)
+**About:** GRWM self-love video — "hope this video helps someone feel extra cute" — Gen Z body positivity and confidence
+**Caption:** this is your reminder you deserve to feel cute today 🤍 via @spencer.barbosa
+**Hashtags:** #selflove #grwm #confidence #bodypositivity #selfcare
+**Post Time:** 12:00 PM EST
 
 ---
 
-## Repost 2
-**Creator:** @sabrina.zohar
-**Video URL:** https://www.tiktok.com/@sabrina.zohar/video/7338061862199708971
-**Caption:** this is the energy advice you needed to hear 💬 via @sabrina.zohar
+## Post 4 — Repost Video
+**Video URL:** https://www.instagram.com/reel/DTFH7OFk2Iw/
+**Creator:** @tattva_spa (Tattva Wellness)
+**About:** 2026 self-care intention reel — "don't just plan goals — plan pauses. Add wellness, deeper breaths, healing, and a little more self-love"
+**Caption:** plan pauses, not just goals. your nervous system will thank you. via @tattva_spa
+**Hashtags:** #selfcare #wellness #intentionalliving #slowliving #mentalhealth
+**Post Time:** 3:00 PM EST
 
 ---
 
-## Quote 1
+## Post 5 — Quote Image
 **File:** quote_1.png
-**Caption:** You're not broken — you're depleted. What's one thing you'd do today just for yourself?
-**Hashtags:** #selfcare #mentalhealth #selfcompassion #wellness #mindset #heyzenie #selflove
-**Best Time to Post:** 12–2 PM EST
+**Quote:** "the right person feels like coming home"
+**Caption:** you don't have to chase what's meant for you. what's yours will stay. what do you hold space for in love?
+**Hashtags:** #relationshipquotes #deepdating #lovequotes #intentionalliving #soulquotes #selfgrowth #authenticlove
+**Post Time:** 11:00 AM EST
 
 ---
 
-## Quote 2
+## Post 6 — Quote Image
 **File:** quote_2.png
-**Caption:** Real love fills you up, it doesn't drain you. Does your relationship energize or drain you?
-**Hashtags:** #relationships #lovequotes #healthylove #datingadvice #boundaries #heyzenie #selfworth
-**Best Time to Post:** 7–9 PM EST
+**Quote:** "growth lives in the hard things you keep choosing"
+**Caption:** friction isn't failure — it's the path. what's one hard thing you chose today?
+**Hashtags:** #frictionmaxxing #growthmindset #mentalhealth #selfimprovement #mindsetshift #personalgrowth #intentionalliving
+**Post Time:** 5:00 PM EST
