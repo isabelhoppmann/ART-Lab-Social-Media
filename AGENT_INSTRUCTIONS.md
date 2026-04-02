@@ -2,8 +2,8 @@
 
 You prepare ACTUAL ready-to-post content for Zenie (@heyzenie). Do not describe what to make. Actually make it.
 
-Note: Your GitHub token and other credentials are provided in the message that invoked you.
-Pexels API key: hBedKm4ZnEwYG7WWG3inndXPNM9yWuloU93hmIzUUiclRbsTs7lNgvr5
+Your GitHub token, Notion token, and Pexels API key are all provided in the message that invoked you.
+Notion parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
 
 ## Step 1: Research
 Use WebSearch to find trending topics TODAY in relationships, dating, mental health, and self-care on TikTok and X. Identify the top 3 trends with specific examples.
@@ -13,8 +13,8 @@ Use WebSearch to find trending topics TODAY in relationships, dating, mental hea
 ### 2 MEME POSTS
 For each meme:
 1. Pick a search keyword relevant to the meme topic (e.g. "couple", "coffee", "friends laughing", "sunset", "woman thinking")
-2. Search Pexels for a real photo:
-   curl -s -H "Authorization: hBedKm4ZnEwYG7WWG3inndXPNM9yWuloU93hmIzUUiclRbsTs7lNgvr5" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
+2. Search Pexels for a real photo using your Pexels API key:
+   curl -s -H "Authorization: PEXELS_KEY" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
 3. Download the photo: curl -L "URL" -o bg1.jpg
 4. Write the IMAGE TEXT (punchy, under 15 words, lowercase, often starts with "when")
    - Top text: white bold on black bar at top
@@ -39,8 +39,8 @@ For each video:
 ### 2 QUOTE IMAGE POSTS
 For each quote image:
 1. Pick a keyword for a calm/beautiful background (e.g. "flowers", "nature", "soft light", "pastel sky")
-2. Search Pexels:
-   curl -s -H "Authorization: hBedKm4ZnEwYG7WWG3inndXPNM9yWuloU93hmIzUUiclRbsTs7lNgvr5" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
+2. Search Pexels using your Pexels API key:
+   curl -s -H "Authorization: PEXELS_KEY" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
 3. Download the photo: curl -L "URL" -o bg_q1.jpg
 4. Write a SHORT QUOTE (under 12 words) to overlay
 5. Write a CAPTION ending with a reflective question
@@ -54,94 +54,45 @@ For each quote image:
 ## Step 3: Save to GitHub
 - Save meme_1.png, meme_2.png, quote_1.png, quote_2.png in posts/[DATE]/
 - Save zenie_drafts.md summary with captions, hashtags, video URLs, posting times
-- Generate posts/[DATE]/index.html (see Step 4)
-- Commit all files and push to main using the GitHub API with the token provided to you
+- Commit all files and push to main using the GitHub API with your GitHub token
 
-## Step 4: Generate HTML Preview Page
-Create posts/[DATE]/index.html with this structure (fill in real content):
+## Step 4: Create Notion Preview Page
+After pushing to GitHub, create a Notion page using the REST API with your Notion token.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenie Drafts — [DATE]</title>
-<style>
-  body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background: #fafafa; color: #222; }
-  h1 { font-size: 1.4em; margin-bottom: 4px; }
-  .date { color: #888; font-size: 0.9em; margin-bottom: 32px; }
-  .post { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-  .post h2 { font-size: 1em; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin: 0 0 12px; }
-  .post img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
-  .caption { font-size: 1em; margin-bottom: 8px; }
-  .hashtags { font-size: 0.85em; color: #5b5bd6; margin-bottom: 8px; }
-  .time { font-size: 0.8em; color: #888; }
-  .video-link { display: inline-block; margin: 8px 0; padding: 8px 16px; background: #000; color: white; border-radius: 20px; text-decoration: none; font-size: 0.9em; }
-  .creator { font-size: 0.85em; color: #888; margin-bottom: 6px; }
-  a { color: inherit; }
-</style>
-</head>
-<body>
-<h1>Zenie Drafts</h1>
-<div class="date">[DATE]</div>
+Parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
 
-<div class="post">
-  <h2>Meme 1</h2>
-  <img src="meme_1.png" alt="Meme 1">
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
-</div>
+Image URLs (replace [DATE] with actual date):
+https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png
 
-<div class="post">
-  <h2>Meme 2</h2>
-  <img src="meme_2.png" alt="Meme 2">
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
-</div>
+Create the page:
+curl -s -X POST "https://api.notion.com/v1/pages" \
+  -H "Authorization: Bearer NOTION_TOKEN" \
+  -H "Notion-Version: 2022-06-28" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "parent": {"page_id": "336c2cdd-459d-817f-8afa-e0ca8687306f"},
+    "properties": {"title": [{"text": {"content": "Zenie Drafts — [DATE]"}}]},
+    "children": [BLOCKS]
+  }'
 
-<div class="post">
-  <h2>Repost 1</h2>
-  <div class="creator">[CREATOR HANDLE]</div>
-  <div class="caption">[REPOST CAPTION]</div>
-  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
-  <div class="time">Best time: [TIME]</div>
-</div>
+Build BLOCKS as a JSON array with these block types:
+- Image block: {"type":"image","image":{"type":"external","external":{"url":"IMAGE_URL"}}}
+- Paragraph: {"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"TEXT"}}]}}
+- Heading: {"type":"heading_2","heading_2":{"rich_text":[{"type":"text","text":{"content":"TEXT"}}]}}
+- Divider: {"type":"divider","divider":{}}
 
-<div class="post">
-  <h2>Repost 2</h2>
-  <div class="creator">[CREATOR HANDLE]</div>
-  <div class="caption">[REPOST CAPTION]</div>
-  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
-  <div class="time">Best time: [TIME]</div>
-</div>
-
-<div class="post">
-  <h2>Quote Image 1</h2>
-  <img src="quote_1.png" alt="Quote 1">
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
-</div>
-
-<div class="post">
-  <h2>Quote Image 2</h2>
-  <img src="quote_2.png" alt="Quote 2">
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
-</div>
-
-</body>
-</html>
-```
-
-Replace all [PLACEHOLDERS] with actual content. Use relative paths for images (just meme_1.png).
-
-After pushing, the page will be live at:
-https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/
+Structure the page as:
+- heading_2 "Meme 1" + image (meme_1.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
+- divider
+- heading_2 "Meme 2" + image (meme_2.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
+- divider
+- heading_2 "Repost 1" + paragraph (creator handle) + paragraph (repost caption) + paragraph (video URL)
+- divider
+- heading_2 "Repost 2" + paragraph (creator handle) + paragraph (repost caption) + paragraph (video URL)
+- divider
+- heading_2 "Quote 1" + image (quote_1.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
+- divider
+- heading_2 "Quote 2" + image (quote_2.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
 
 ## Git Setup
 git config user.email agent@zenie.ai
