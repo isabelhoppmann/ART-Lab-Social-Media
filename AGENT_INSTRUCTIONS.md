@@ -11,19 +11,22 @@ Use WebSearch to find trending topics TODAY in relationships, dating, mental hea
 
 ### 2 MEME POSTS
 For each meme:
-1. Download a background photo from Picsum using a seeded URL so it's deterministic:
-   - meme_1: https://picsum.photos/seed/meme1/1080/1080
-   - meme_2: https://picsum.photos/seed/meme2/1080/1080
-   Download via: curl -L "https://picsum.photos/seed/meme1/1080/1080" -o bg.jpg
+1. Download a background photo from Picsum using the DATE in the seed so photos change each week:
+   - meme_1: https://picsum.photos/seed/[DATE]-meme1/1080/1080
+   - meme_2: https://picsum.photos/seed/[DATE]-meme2/1080/1080
+   Replace [DATE] with today's date (e.g. 2026-04-05).
+   Download via: curl -L "https://picsum.photos/seed/2026-04-05-meme1/1080/1080" -o bg1.jpg
+   IMPORTANT: After downloading, check the image isn't abstract/dark. If it is, try a different seed like [DATE]-meme1b or use a specific photo ID from this list of good meme backgrounds: 1015, 1020, 1047, 64, 106, 338, 396, 452, 490, 539.
+   Example with specific ID: curl -L "https://picsum.photos/id/1015/1080/1080" -o bg1.jpg
 2. Write the IMAGE TEXT (punchy, under 15 words, lowercase, often starts with "when")
    - Top text goes on a black bar at the top in white bold font
    - Bottom text goes on a black bar at the bottom in yellow bold font
 3. Write the CAPTION (1 sentence, under 12 words)
 4. List 5-8 HASHTAGS
 5. Use Python PIL/Pillow to composite the meme:
-   - Open the Picsum photo as background (resize to 1080x1080)
+   - Open the downloaded photo as background (resize to 1080x1080)
    - Add a black bar (height ~160px) at top and bottom
-   - Overlay top text in white, bottom text in yellow
+   - Overlay top text in white bold, bottom text in yellow bold
    - Save as meme_1.png and meme_2.png
 
 ### 2 REPOST VIDEOS
@@ -36,15 +39,16 @@ For each video:
 
 ### 2 QUOTE IMAGE POSTS
 For each quote image:
-1. Download a background photo from Picsum:
-   - quote_1: https://picsum.photos/seed/quote1/1080/1080
-   - quote_2: https://picsum.photos/seed/quote2/1080/1080
+1. Download a background photo from Picsum using the DATE in the seed:
+   - quote_1: https://picsum.photos/seed/[DATE]-quote1/1080/1080
+   - quote_2: https://picsum.photos/seed/[DATE]-quote2/1080/1080
+   Good specific IDs for quote backgrounds (nature/soft): 1043, 1054, 1060, 1074, 1080, 15, 25, 63, 177, 240.
 2. Write a SHORT QUOTE (under 12 words) to overlay
 3. Write a CAPTION ending with a reflective question
 4. List 5-8 HASHTAGS
 5. Use Python PIL to create the image:
-   - Open the Picsum photo as background (resize to 1080x1080)
-   - Add a semi-transparent dark overlay (rgba 0,0,0,120) over the whole image
+   - Open the downloaded photo as background (resize to 1080x1080)
+   - Add a semi-transparent dark overlay (rgba 0,0,0,140) over the whole image
    - Overlay the quote text centered in white italic font, large size
    - Save as quote_1.png and quote_2.png
 
@@ -135,7 +139,7 @@ Create posts/[DATE]/index.html with this structure (fill in real content):
 </html>
 ```
 
-Replace all [PLACEHOLDERS] with actual content. Use relative paths for images (just meme_1.png, not full URLs) since they're in the same folder.
+Replace all [PLACEHOLDERS] with actual content. Use relative paths for images (just meme_1.png, not full URLs).
 
 After pushing, the page will be live at:
 https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/
