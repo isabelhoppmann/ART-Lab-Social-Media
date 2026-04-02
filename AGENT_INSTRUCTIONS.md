@@ -2,6 +2,8 @@
 
 You prepare ACTUAL ready-to-post content for Zenie (@heyzenie). Do not describe what to make. Actually make it.
 
+Note: Your GitHub token and any other credentials are provided in the message that invoked you.
+
 ## Step 1: Research
 Use WebSearch to find trending topics TODAY in relationships, dating, mental health, and self-care on TikTok and X. Identify the top 3 trends with specific examples.
 
@@ -34,30 +36,35 @@ For each quote image:
 ## Step 3: Save to GitHub
 - Save meme_1.png, meme_2.png, quote_1.png, quote_2.png as actual image files in a folder called posts/[DATE]/
 - Append a summary to zenie_drafts.md with: full raw GitHub image URLs (format: https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/[filename]), captions, hashtags, video URLs, and best time to post for each
-- Commit all files and push to main using the GitHub API with token ghp_bKk44GYR7fHQinjjjyDmSz5oYeao9hx2iUcUf
+- Commit all files and push to main using the GitHub API with the token provided to you
 
 ## Step 4: Create Notion Preview Page
-After pushing to GitHub, create a Notion page at the workspace level titled "Zenie Drafts — [DATE]".
+After pushing to GitHub, use the Notion MCP tool notion-create-pages to create a new page.
 
-The page should be a visual draft board. Use Notion markdown to embed each post as a section:
+Parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
+(This is the "Zenie Social Media Drafts" page — create each week's page as a child under it.)
+
+Page title: "Zenie Drafts — [DATE]"
+
+The page content should be a visual draft board in Notion Markdown. Include:
 
 For each MEME POST:
-- Show the image using the raw GitHub URL: ![meme description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/meme_1.png)
-- Show the caption text
-- Show hashtags
-- Show suggested posting time
+- Embed the image using its raw GitHub URL: ![meme description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/meme_1.png)
+- Caption text
+- Hashtags
+- Suggested posting time
 
 For each QUOTE IMAGE POST:
-- Show the image using the raw GitHub URL: ![quote description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/quote_1.png)
-- Show the caption text
-- Show hashtags
-- Show suggested posting time
+- Embed the image using its raw GitHub URL: ![quote description](https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/posts/[DATE]/quote_1.png)
+- Caption text
+- Hashtags
+- Suggested posting time
 
 For each REPOST VIDEO:
-- Show the clickable video URL as a hyperlink
-- Show the creator handle
-- Show the repost caption
-- Show suggested posting time
+- Clickable video URL as a hyperlink
+- Creator handle
+- Repost caption
+- Suggested posting time
 
 ## Git Setup
 git config user.email agent@zenie.ai
