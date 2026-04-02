@@ -2,7 +2,8 @@
 
 You prepare ACTUAL ready-to-post content for Zenie (@heyzenie). Do not describe what to make. Actually make it.
 
-Note: Your GitHub token and any other credentials are provided in the message that invoked you.
+Note: Your GitHub token and other credentials are provided in the message that invoked you.
+Pexels API key: hBedKm4ZnEwYG7WWG3inndXPNM9yWuloU93hmIzUUiclRbsTs7lNgvr5
 
 ## Step 1: Research
 Use WebSearch to find trending topics TODAY in relationships, dating, mental health, and self-care on TikTok and X. Identify the top 3 trends with specific examples.
@@ -11,22 +12,20 @@ Use WebSearch to find trending topics TODAY in relationships, dating, mental hea
 
 ### 2 MEME POSTS
 For each meme:
-1. Download a background photo from Picsum using the DATE in the seed so photos change each week:
-   - meme_1: https://picsum.photos/seed/[DATE]-meme1/1080/1080
-   - meme_2: https://picsum.photos/seed/[DATE]-meme2/1080/1080
-   Replace [DATE] with today's date (e.g. 2026-04-05).
-   Download via: curl -L "https://picsum.photos/seed/2026-04-05-meme1/1080/1080" -o bg1.jpg
-   IMPORTANT: After downloading, check the image isn't abstract/dark. If it is, try a different seed like [DATE]-meme1b or use a specific photo ID from this list of good meme backgrounds: 1015, 1020, 1047, 64, 106, 338, 396, 452, 490, 539.
-   Example with specific ID: curl -L "https://picsum.photos/id/1015/1080/1080" -o bg1.jpg
-2. Write the IMAGE TEXT (punchy, under 15 words, lowercase, often starts with "when")
-   - Top text goes on a black bar at the top in white bold font
-   - Bottom text goes on a black bar at the bottom in yellow bold font
-3. Write the CAPTION (1 sentence, under 12 words)
-4. List 5-8 HASHTAGS
-5. Use Python PIL/Pillow to composite the meme:
-   - Open the downloaded photo as background (resize to 1080x1080)
-   - Add a black bar (height ~160px) at top and bottom
-   - Overlay top text in white bold, bottom text in yellow bold
+1. Pick a search keyword relevant to the meme topic (e.g. "couple", "coffee", "friends laughing", "sunset", "woman thinking")
+2. Search Pexels for a real photo:
+   curl -s -H "Authorization: hBedKm4ZnEwYG7WWG3inndXPNM9yWuloU93hmIzUUiclRbsTs7lNgvr5" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
+3. Download the photo: curl -L "URL" -o bg1.jpg
+4. Write the IMAGE TEXT (punchy, under 15 words, lowercase, often starts with "when")
+   - Top text: white bold on black bar at top
+   - Bottom text: yellow bold on black bar at bottom
+5. Write the CAPTION (1 sentence, under 12 words)
+6. List 5-8 HASHTAGS
+7. Use Python PIL/Pillow to composite the meme:
+   - Open the downloaded photo, resize to 1080x1080 (crop to square from center)
+   - Add a black bar (height 160px) at top and bottom
+   - Wrap and center the top text in white bold, bottom text in yellow bold
+   - Use font size ~60px, wrap text so it fits within the bar width
    - Save as meme_1.png and meme_2.png
 
 ### 2 REPOST VIDEOS
@@ -39,17 +38,17 @@ For each video:
 
 ### 2 QUOTE IMAGE POSTS
 For each quote image:
-1. Download a background photo from Picsum using the DATE in the seed:
-   - quote_1: https://picsum.photos/seed/[DATE]-quote1/1080/1080
-   - quote_2: https://picsum.photos/seed/[DATE]-quote2/1080/1080
-   Good specific IDs for quote backgrounds (nature/soft): 1043, 1054, 1060, 1074, 1080, 15, 25, 63, 177, 240.
-2. Write a SHORT QUOTE (under 12 words) to overlay
-3. Write a CAPTION ending with a reflective question
-4. List 5-8 HASHTAGS
-5. Use Python PIL to create the image:
-   - Open the downloaded photo as background (resize to 1080x1080)
-   - Add a semi-transparent dark overlay (rgba 0,0,0,140) over the whole image
-   - Overlay the quote text centered in white italic font, large size
+1. Pick a keyword for a calm/beautiful background (e.g. "flowers", "nature", "soft light", "pastel sky")
+2. Search Pexels:
+   curl -s -H "Authorization: hBedKm4ZnEwYG7WWG3inndXPNM9yWuloU93hmIzUUiclRbsTs7lNgvr5" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
+3. Download the photo: curl -L "URL" -o bg_q1.jpg
+4. Write a SHORT QUOTE (under 12 words) to overlay
+5. Write a CAPTION ending with a reflective question
+6. List 5-8 HASHTAGS
+7. Use Python PIL:
+   - Open the downloaded photo, resize/crop to 1080x1080
+   - Add a semi-transparent dark overlay (RGBA 0,0,0,140)
+   - Center the quote text in white italic font, large size (~70px), with word wrapping
    - Save as quote_1.png and quote_2.png
 
 ## Step 3: Save to GitHub
@@ -139,7 +138,7 @@ Create posts/[DATE]/index.html with this structure (fill in real content):
 </html>
 ```
 
-Replace all [PLACEHOLDERS] with actual content. Use relative paths for images (just meme_1.png, not full URLs).
+Replace all [PLACEHOLDERS] with actual content. Use relative paths for images (just meme_1.png).
 
 After pushing, the page will be live at:
 https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/
