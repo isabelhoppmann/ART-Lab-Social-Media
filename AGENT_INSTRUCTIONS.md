@@ -54,45 +54,53 @@ For each quote image:
 ## Step 3: Save to GitHub
 - Save meme_1.png, meme_2.png, quote_1.png, quote_2.png in posts/[DATE]/
 - Save zenie_drafts.md summary with captions, hashtags, video URLs, posting times
+- Generate posts/[DATE]/index.html (see Step 4)
+- Update the root index.html (see Step 5)
 - Commit all files and push to main using the GitHub API with your GitHub token
 
-## Step 4: Create Notion Preview Page
-After pushing to GitHub, create a Notion page using the REST API with your Notion token.
+## Step 4: Generate HTML Preview Page
+Create posts/[DATE]/index.html with this structure (fill in real content):
 
-Parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenie Drafts — [DATE]</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background: #fafafa; color: #222; }
+  h1 { font-size: 1.4em; margin-bottom: 4px; }
+  .date { color: #888; font-size: 0.9em; margin-bottom: 32px; }
+  .back { display: inline-block; margin-bottom: 24px; color: #5b5bd6; text-decoration: none; font-size: 0.9em; }
+  .post { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .post h2 { font-size: 1em; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin: 0 0 12px; }
+  .post img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
+  .caption { font-size: 1em; margin-bottom: 8px; }
+  .hashtags { font-size: 0.85em; color: #5b5bd6; margin-bottom: 8px; }
+  .time { font-size: 0.8em; color: #888; }
+  .video-link { display: inline-block; margin: 8px 0; padding: 8px 16px; background: #000; color: white; border-radius: 20px; text-decoration: none; font-size: 0.9em; }
+  .creator { font-size: 0.85em; color: #888; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<a class="back" href="../../">← All weeks</a>
+<h1>Zenie Drafts</h1>
+<div class="date">[DATE]</div>
+[POST SECTIONS]
+</body>
+</html>
+```
 
-Image URLs (replace [DATE] with actual date):
-https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png
+Use relative image paths (just meme_1.png). Include all 6 posts with their captions, hashtags, and posting times.
 
-Create the page:
-curl -s -X POST "https://api.notion.com/v1/pages" \
-  -H "Authorization: Bearer NOTION_TOKEN" \
-  -H "Notion-Version: 2022-06-28" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "parent": {"page_id": "336c2cdd-459d-817f-8afa-e0ca8687306f"},
-    "properties": {"title": [{"text": {"content": "Zenie Drafts — [DATE]"}}]},
-    "children": [BLOCKS]
-  }'
+## Step 5: Update Root Index
+Fetch the current root index.html from GitHub, then prepend a new entry for this week at the top (and remove the "latest" class from the previous top entry). Push the updated file.
 
-Build BLOCKS as a JSON array with these block types:
-- Image block: {"type":"image","image":{"type":"external","external":{"url":"IMAGE_URL"}}}
-- Paragraph: {"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"TEXT"}}]}}
-- Heading: {"type":"heading_2","heading_2":{"rich_text":[{"type":"text","text":{"content":"TEXT"}}]}}
-- Divider: {"type":"divider","divider":{}}
+The new entry to add at the top (inside the <body>, after the subtitle div):
+<a class="week latest" href="posts/[DATE]/"><span class="week-date">[FORMATTED DATE e.g. April 5, 2026]</span><span class="week-arrow">→</span></a>
 
-Structure the page as:
-- heading_2 "Meme 1" + image (meme_1.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
-- divider
-- heading_2 "Meme 2" + image (meme_2.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
-- divider
-- heading_2 "Repost 1" + paragraph (creator handle) + paragraph (repost caption) + paragraph (video URL)
-- divider
-- heading_2 "Repost 2" + paragraph (creator handle) + paragraph (repost caption) + paragraph (video URL)
-- divider
-- heading_2 "Quote 1" + image (quote_1.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
-- divider
-- heading_2 "Quote 2" + image (quote_2.png CDN URL) + paragraph (caption) + paragraph (hashtags) + paragraph (best time to post)
+Remove class "latest" from the previously newest entry.
 
 ## Git Setup
 git config user.email agent@zenie.ai
