@@ -49,43 +49,96 @@ For each quote image:
    - Save as quote_1.png and quote_2.png
 
 ## Step 3: Save to GitHub
-- Save meme_1.png, meme_2.png, quote_1.png, quote_2.png as actual image files in a folder called posts/[DATE]/
-- Append a summary to zenie_drafts.md with: full image URLs (jsDelivr CDN format below), captions, hashtags, video URLs, and best time to post for each
+- Save meme_1.png, meme_2.png, quote_1.png, quote_2.png in posts/[DATE]/
+- Save zenie_drafts.md summary with captions, hashtags, video URLs, posting times
+- Generate posts/[DATE]/index.html (see Step 4)
 - Commit all files and push to main using the GitHub API with the token provided to you
 
-Image URL format to use everywhere (jsDelivr CDN — works in Notion):
-https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/[filename]
+## Step 4: Generate HTML Preview Page
+Create posts/[DATE]/index.html with this structure (fill in real content):
 
-## Step 4: Create Notion Preview Page
-After pushing to GitHub, use the Notion MCP tool notion-create-pages to create a new page.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zenie Drafts — [DATE]</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background: #fafafa; color: #222; }
+  h1 { font-size: 1.4em; margin-bottom: 4px; }
+  .date { color: #888; font-size: 0.9em; margin-bottom: 32px; }
+  .post { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .post h2 { font-size: 1em; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin: 0 0 12px; }
+  .post img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
+  .caption { font-size: 1em; margin-bottom: 8px; }
+  .hashtags { font-size: 0.85em; color: #5b5bd6; margin-bottom: 8px; }
+  .time { font-size: 0.8em; color: #888; }
+  .video-link { display: inline-block; margin: 8px 0; padding: 8px 16px; background: #000; color: white; border-radius: 20px; text-decoration: none; font-size: 0.9em; }
+  .creator { font-size: 0.85em; color: #888; margin-bottom: 6px; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<h1>Zenie Drafts</h1>
+<div class="date">[DATE]</div>
 
-Parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
-(This is the "Zenie Social Media Drafts" page — create each week's page as a child under it.)
+<div class="post">
+  <h2>Meme 1</h2>
+  <img src="meme_1.png" alt="Meme 1">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
 
-Page title: "Zenie Drafts — [DATE]"
+<div class="post">
+  <h2>Meme 2</h2>
+  <img src="meme_2.png" alt="Meme 2">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
 
-Use jsDelivr URLs for all images (NOT raw.githubusercontent.com):
-https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/[filename]
+<div class="post">
+  <h2>Repost 1</h2>
+  <div class="creator">[CREATOR HANDLE]</div>
+  <div class="caption">[REPOST CAPTION]</div>
+  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
+  <div class="time">Best time: [TIME]</div>
+</div>
 
-The page content should be a visual draft board in Notion Markdown. Include:
+<div class="post">
+  <h2>Repost 2</h2>
+  <div class="creator">[CREATOR HANDLE]</div>
+  <div class="caption">[REPOST CAPTION]</div>
+  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
+  <div class="time">Best time: [TIME]</div>
+</div>
 
-For each MEME POST:
-- Embed the image: ![meme description](https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png)
-- Caption text
-- Hashtags
-- Suggested posting time
+<div class="post">
+  <h2>Quote Image 1</h2>
+  <img src="quote_1.png" alt="Quote 1">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
 
-For each QUOTE IMAGE POST:
-- Embed the image: ![quote description](https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.png)
-- Caption text
-- Hashtags
-- Suggested posting time
+<div class="post">
+  <h2>Quote Image 2</h2>
+  <img src="quote_2.png" alt="Quote 2">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
 
-For each REPOST VIDEO:
-- Clickable video URL as a hyperlink
-- Creator handle
-- Repost caption
-- Suggested posting time
+</body>
+</html>
+```
+
+Replace all [PLACEHOLDERS] with actual content. Use relative paths for images (just meme_1.png, not full URLs) since they're in the same folder.
+
+After pushing, the page will be live at:
+https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/
 
 ## Git Setup
 git config user.email agent@zenie.ai
