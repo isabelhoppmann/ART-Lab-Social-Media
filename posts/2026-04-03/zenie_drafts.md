@@ -1,58 +1,58 @@
-# Zenie Drafts — April 3, 2026
+# Zenie Drafts — 2026-04-03
 
-## Trending Topics
-1. **Clear-Coding** — Radical honesty in dating intentions (#ClearCoding, #IntentionalDating)
-2. **AI Situationships** — Emotional practice with AI chatbots (#AISituationship, #EmotionalAI)
-3. **Cozymaxxing** — Comfort-maximizing as mental health self-care (#Cozymaxxing, #SoftLife)
-
----
-
-## Meme 1 — Situationship / Clear-Coding
-**Image URL:** https://media.giphy.com/media/uKarS7CtaDHUboan95/giphy.gif  
-*(BuzzFeed Situationship GIF)*  
-**Caption:** When they still can't tell you what you are.  
-**Hashtags:** #Situationship #ClearCoding #NoMoreSituationships #IntentionalDating #DatingAdvice #RelationshipGoals #TalkingStage  
-**Best Time to Post:** 6–8 PM EST
+## Trending Topics Today
+1. **Cozymaxxing** — intentionally maximizing coziness as anti-hustle self-care (#cozymaxxing)
+2. **No More Situationship** — Gen Z rejecting undefined relationships (#NoMoreSituationship2026)
+3. **Date Night M.A.S.H.** — couples remixing childhood game for date planning (nostalgia/relationship content)
 
 ---
 
-## Meme 2 — Cozymaxxing / Self-Care
-**Image URL:** https://media.giphy.com/media/dZiGGajPR7H7n4EZvi/giphy.gif  
-*(Bob's Burgers "Treat Yourself" GIF)*  
-**Caption:** Today's plans: treat yourself, repeat.  
-**Hashtags:** #Cozymaxxing #TreatYourself #SelfCareSunday #SoftLife #RestAndRecharge #MentalHealthMatters #CozyVibes  
-**Best Time to Post:** 10–11 AM EST
+## Post 1 — Meme
+**Giphy ID:** 4AwgEwCnESvDzQ9sri
+**Caption:** when you're still waiting for the "what are we" talk 👀
+**Hashtags:** #situationship #datinghumor #relatable #NoMoreSituationship2026 #datelife #lovelife #heyzenie
+**Best posting time:** 7:00 PM EST
+**Source:** via GIPHY
 
 ---
 
-## Repost 1 — Journaling for Self-Discovery
-**Creator:** @elirallo (Eli Rallo)  
-**Video URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271  
-**Caption:** This journaling guide will change your relationship with yourself. via @elirallo  
-**Best Time to Post:** 7–9 AM EST
+## Post 2 — Meme
+**Giphy ID:** uKarS7CtaDHUboan95
+**Caption:** us trying to explain our "situationship" to literally anyone
+**Hashtags:** #situationship #datingmeme #relationships #Gen Z #TikTokLove #relatable #heyzenie
+**Best posting time:** 12:00 PM EST
+**Source:** via GIPHY
 
 ---
 
-## Repost 2 — Moving On from a Situationship
-**Creator:** @sabrina.zohar (Sabrina Zohar)  
-**Video URL:** https://www.tiktok.com/@sabrina.zohar/video/7510635093677985054  
-**Caption:** Finally, the guide on how to actually detach and heal. via @sabrina.zohar  
-**Best Time to Post:** 12–2 PM EST
+## Post 3 — Repost Video
+**Creator:** @elirallo (Eli Rallo — NYT bestselling author, 1.2M followers)
+**Video URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
+**Caption:** your sign to start journaling 📖 via @elirallo — saving this for tonight 🤍
+**Hashtags:** #journaling #selfcare #selfdiscovery #mentalhealth #healingjourney #cozymaxxing #heyzenie
+**Best posting time:** 8:00 AM EST
 
 ---
 
-## Quote Image 1 — Intentional Dating
-**Quote:** "You deserve someone who knows exactly why they want you."  
-**File:** quote_1.png  
-**Caption:** Stop guessing, start asking. What's one thing you wish someone had been upfront about with you?  
-**Hashtags:** #IntentionalDating #ClearCoding #YouDeserveMore #DatingAdvice #RelationshipGoals #SelfWorth #NoMoreSituationships  
-**Best Time to Post:** 5–7 PM EST
+## Post 4 — Repost Video
+**Creator:** @.idchlit
+**Video URL:** https://www.tiktok.com/@.idchlit/video/7583280641983221000
+**Caption:** starting your journaling journey in 2026 hits different 🌸 via @.idchlit — do this tonight
+**Hashtags:** #journaling2026 #selfgrowth #mentalwellness #healingisnot linear #selfcare #wellness #heyzenie
+**Best posting time:** 6:00 PM EST
 
 ---
 
-## Quote Image 2 — Rest & Healing
-**Quote:** "Rest is not laziness. It's how you heal."  
-**File:** quote_2.png  
-**Caption:** Your nervous system called — it needs a slow morning. What does your ideal cozy day look like?  
-**Hashtags:** #Cozymaxxing #SelfCare #RestIsProductivity #SoftLife #MentalHealthMatters #HealingEra #SlowLiving  
-**Best Time to Post:** 9–11 AM EST
+## Post 5 — Quote Image (quote_1.png)
+**Quote:** healing is not linear — keep going anyway
+**Caption:** some days you'll take two steps forward and one step back. that's still progress. what does your healing look like right now?
+**Hashtags:** #healingjourney #mentalhealth #selfcare #growthmindset #cozymaxxing #selflove #heyzenie
+**Best posting time:** 9:00 AM EST
+
+---
+
+## Post 6 — Quote Image (quote_2.png)
+**Quote:** you are allowed to outgrow who you were
+**Caption:** the old you did the best they could. this version of you gets to be different. what have you outgrown that once felt permanent?
+**Hashtags:** #personalgrowth #selflove #mindset #healingera #NoMoreSituationship2026 #authenticity #heyzenie
+**Best posting time:** 7:00 PM EST
