@@ -1,171 +1,164 @@
 # Zenie Agent Instructions
 
-You prepare ACTUAL ready-to-post content for Zenie (@heyzenie). Do not describe what to make. Actually make it.
+Credentials are in the message that invoked you (GitHub token, Notion token, Pexels key).
 
-Your GitHub token, Notion token, and Pexels API key are all provided in the message that invoked you.
-Notion parent page ID: 336c2cdd-459d-817f-8afa-e0ca8687306f
+## CRITICAL RULES — DO NOT VIOLATE
+- MEMES: You MUST embed Giphy GIFs. You MUST NOT generate PNG files for memes.
+- QUOTE IMAGES: You MUST generate PNG files with PIL.
+- DO NOT skip any step.
 
-## Step 1: Research
-Use WebSearch to find trending topics TODAY in relationships, dating, mental health, and self-care on TikTok and X. Identify the top 3 trends with specific examples.
+---
 
-## Step 2: Create 6 Posts
+## Step 1: Research (WebSearch)
+Find 3 trending topics TODAY in relationships, dating, mental health, self-care on TikTok/X.
 
-### 2 MEME POSTS — USE GIPHY EMBEDS, DO NOT GENERATE PNG FILES
+---
 
-For each meme:
-1. Use WebSearch to find a relevant GIF on Giphy. Search query examples:
-   - "site:giphy.com situationship"
-   - "site:giphy.com self care funny"
-   - "site:giphy.com relationships 2025"
-   - "site:giphy.com dating meme"
-2. Use WebFetch on the Giphy page URL to get the GIF's embed ID. The Giphy embed ID is the string in the URL: giphy.com/gifs/[TITLE]-[ID] — the ID is the last segment after the final dash.
-3. The embed iframe for the HTML is:
-   <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID]" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-4. Write a CAPTION (1 sentence, under 12 words)
-5. List 5-8 HASHTAGS
-6. Note the source credit: "via GIPHY"
+## Step 2A: Find 2 Giphy GIFs for memes
 
-DO NOT create meme_1.png or meme_2.png. Save the Giphy IDs to meme_ids.txt in posts/[DATE]/.
+For each meme topic from Step 1:
+1. Run: WebSearch("site:giphy.com [TOPIC] reaction funny 2025")
+2. Pick a result URL from giphy.com/gifs/...
+3. Extract the Giphy ID — it's the alphanumeric code at the end of the slug after the last dash.
+   Example: giphy.com/gifs/reaction-funny-lol-AbCdEfGhIjKlMnOp → ID is AbCdEfGhIjKlMnOp
+4. Write a caption for this GIF (1 sentence, under 12 words)
+5. Write 5-8 hashtags
 
-### 2 REPOST VIDEOS
-For each video:
-1. Use WebSearch to find a REAL existing TikTok or Instagram video URL from a creator in self-care, relationships, or wellness
-2. Search: site:tiktok.com self-care OR journaling OR relationships 2026
-3. Provide the actual video URL, creator handle, and a short repost caption with credit ("via @creator")
+Save results to posts/[DATE]/meme_ids.txt:
+```
+MEME1_ID=AbCdEfGhIjKlMnOp
+MEME1_CAPTION=when you finally set a boundary and mean it
+MEME1_HASHTAGS=#boundaries #selfcare #heyzenie
+MEME1_TIME=Wednesday 7-9pm EST
+MEME2_ID=XyZaBcDeFgHiJkLm
+MEME2_CAPTION=situationship era is officially over
+MEME2_HASHTAGS=#situationship #heyzenie
+MEME2_TIME=Friday 6-8pm EST
+```
 
-### 2 QUOTE IMAGE POSTS — GENERATE WITH PIL
+---
 
-For each quote image, create an actual PNG file:
-1. Create a 1080x1080 image using Python PIL with a beautiful gradient background in Zenie brand colors:
-   - Quote 1: soft lavender to rose gradient (#C9B1E8 to #F0A0C0)
-   - Quote 2: warm peach to blush gradient (#F5C9A0 to #F0A0B8)
-2. Write a SHORT inspirational QUOTE (under 12 words)
-3. Overlay the quote text: white, centered, large font (~80px), word-wrapped, with a subtle shadow
-4. Write a CAPTION ending with a reflective question
-5. List 5-8 HASHTAGS
-6. Save as quote_1.png and quote_2.png
+## Step 2B: Find 2 Repost Videos (WebSearch)
+Find 2 real TikTok/Instagram video URLs from wellness/relationships creators.
+Search: site:tiktok.com self-care OR journaling OR relationships 2026
+Save: video URL, creator handle, repost caption ("via @creator").
 
-PIL gradient + text example:
-python3 << 'EOF'
-from PIL import Image, ImageDraw, ImageFont
-import math
+---
 
+## Step 2C: Create 2 Quote Images with PIL
+
+For each quote image:
+1. Create a 1080x1080 gradient image:
+   - Quote 1: lavender to rose (#C9B1E8 → #F0A0C0)
+   - Quote 2: peach to blush (#F5C9A0 → #F0A0B8)
+2. Overlay a short inspirational quote (under 12 words), centered, white text, ~80px font, word-wrapped
+3. Save as quote_1.png and quote_2.png in posts/[DATE]/
+4. Write a caption ending with a reflective question + 5-8 hashtags
+
+Python PIL template:
+```python
+from PIL import Image, ImageDraw
 img = Image.new("RGB", (1080, 1080))
 draw = ImageDraw.Draw(img)
-# Draw gradient
+c1, c2 = (201,177,232), (240,160,192)  # lavender to rose
 for y in range(1080):
-    t = y / 1080
-    r = int(201 + (240-201)*t)
-    g = int(177 + (160-177)*t)
-    b = int(232 + (192-232)*t)
+    t = y/1080
+    r,g,b = [int(c1[i]+(c2[i]-c1[i])*t) for i in range(3)]
     draw.line([(0,y),(1080,y)], fill=(r,g,b))
-# Add text (wrap manually)
-text = "your rest is not laziness. it is survival."
-# draw centered text with wrapping...
+# add centered wrapped text here
 img.save("quote_1.png")
-EOF
+```
 
-## Step 3: Save to GitHub
-- Save quote_1.png, quote_2.png, meme_ids.txt in posts/[DATE]/
-- Save zenie_drafts.md summary with all captions, hashtags, Giphy IDs, video URLs, posting times
-- Generate posts/[DATE]/index.html (Step 4)
-- Update root index.html (Step 5)
-- Commit all and push using GitHub API with your GitHub token
+---
 
-## Step 4: Generate HTML Preview Page
-Create posts/[DATE]/index.html:
+## Step 3: Build index.html
+
+Create posts/[DATE]/index.html. For memes use Giphy iframes (NOT img tags):
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Zenie Drafts — [DATE]</title>
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background: #fafafa; color: #222; }
-  h1 { font-size: 1.4em; margin-bottom: 4px; }
-  .date { color: #888; font-size: 0.9em; margin-bottom: 32px; }
-  .back { display: inline-block; margin-bottom: 24px; color: #5b5bd6; text-decoration: none; font-size: 0.9em; }
-  .post { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
-  .post h2 { font-size: 1em; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin: 0 0 12px; }
-  .post img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
-  .giphy-wrap { width:100%; padding-bottom:100%; height:0; position:relative; border-radius:8px; overflow:hidden; margin-bottom:12px; }
-  .giphy-wrap iframe { position:absolute; width:100%; height:100%; }
-  .caption { font-size: 1em; margin-bottom: 8px; }
-  .hashtags { font-size: 0.85em; color: #5b5bd6; margin-bottom: 8px; }
-  .time { font-size: 0.8em; color: #888; }
-  .video-link { display: inline-block; margin: 8px 0; padding: 8px 16px; background: #000; color: white; border-radius: 20px; text-decoration: none; font-size: 0.9em; }
-  .creator { font-size: 0.85em; color: #888; margin-bottom: 6px; }
-  .source { font-size: 0.75em; color: #bbb; margin-top: 4px; }
+body{font-family:-apple-system,sans-serif;max-width:700px;margin:0 auto;padding:20px;background:#fafafa}
+.back{color:#5b5bd6;text-decoration:none;font-size:.9em;display:block;margin-bottom:20px}
+.post{background:white;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.post h2{font-size:.85em;text-transform:uppercase;letter-spacing:.05em;color:#888;margin:0 0 12px}
+.giphy-wrap{width:100%;padding-bottom:100%;height:0;position:relative;border-radius:8px;overflow:hidden;margin-bottom:12px}
+.giphy-wrap iframe{position:absolute;width:100%;height:100%;border:0}
+img{width:100%;border-radius:8px;margin-bottom:12px}
+.caption{margin-bottom:6px}
+.tags{font-size:.85em;color:#5b5bd6;margin-bottom:6px}
+.time{font-size:.8em;color:#888}
+.btn{display:inline-block;padding:8px 16px;background:#000;color:white;border-radius:20px;text-decoration:none;font-size:.9em;margin:8px 0}
 </style>
 </head>
 <body>
 <a class="back" href="../../">← All weeks</a>
-<h1>Zenie Drafts</h1>
-<div class="date">[DATE]</div>
+<h1>Zenie Drafts — [DATE]</h1>
 
 <div class="post">
-  <h2>Meme 1</h2>
-  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID_1]" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
-  <div class="source">via GIPHY</div>
+<h2>Meme 1</h2>
+<div class="giphy-wrap"><iframe src="https://giphy.com/embed/[MEME1_ID]" allowFullScreen></iframe></div>
+<p class="caption">[MEME1_CAPTION]</p>
+<p class="tags">[MEME1_HASHTAGS]</p>
+<p class="time">Best time: [MEME1_TIME]</p>
 </div>
 
 <div class="post">
-  <h2>Meme 2</h2>
-  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID_2]" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
-  <div class="source">via GIPHY</div>
+<h2>Meme 2</h2>
+<div class="giphy-wrap"><iframe src="https://giphy.com/embed/[MEME2_ID]" allowFullScreen></iframe></div>
+<p class="caption">[MEME2_CAPTION]</p>
+<p class="tags">[MEME2_HASHTAGS]</p>
+<p class="time">Best time: [MEME2_TIME]</p>
 </div>
 
 <div class="post">
-  <h2>Repost 1</h2>
-  <div class="creator">[CREATOR HANDLE]</div>
-  <div class="caption">[REPOST CAPTION]</div>
-  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
-  <div class="time">Best time: [TIME]</div>
+<h2>Repost 1</h2>
+<p>[CREATOR1]</p>
+<p class="caption">[REPOST1_CAPTION]</p>
+<a class="btn" href="[VIDEO1_URL]" target="_blank">Watch Video</a>
+<p class="time">Best time: [REPOST1_TIME]</p>
 </div>
 
 <div class="post">
-  <h2>Repost 2</h2>
-  <div class="creator">[CREATOR HANDLE]</div>
-  <div class="caption">[REPOST CAPTION]</div>
-  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
-  <div class="time">Best time: [TIME]</div>
+<h2>Repost 2</h2>
+<p>[CREATOR2]</p>
+<p class="caption">[REPOST2_CAPTION]</p>
+<a class="btn" href="[VIDEO2_URL]" target="_blank">Watch Video</a>
+<p class="time">Best time: [REPOST2_TIME]</p>
 </div>
 
 <div class="post">
-  <h2>Quote Image 1</h2>
-  <img src="quote_1.png" alt="Quote 1">
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
+<h2>Quote Image 1</h2>
+<img src="quote_1.png" alt="Quote 1">
+<p class="caption">[QUOTE1_CAPTION]</p>
+<p class="tags">[QUOTE1_HASHTAGS]</p>
+<p class="time">Best time: [QUOTE1_TIME]</p>
 </div>
 
 <div class="post">
-  <h2>Quote Image 2</h2>
-  <img src="quote_2.png" alt="Quote 2">
-  <div class="caption">[CAPTION]</div>
-  <div class="hashtags">[HASHTAGS]</div>
-  <div class="time">Best time: [TIME]</div>
+<h2>Quote Image 2</h2>
+<img src="quote_2.png" alt="Quote 2">
+<p class="caption">[QUOTE2_CAPTION]</p>
+<p class="tags">[QUOTE2_HASHTAGS]</p>
+<p class="time">Best time: [QUOTE2_TIME]</p>
 </div>
 
-</body>
-</html>
+</body></html>
 ```
 
-## Step 5: Update Root Index
-Fetch root index.html from GitHub API, prepend new week entry, remove "latest" from previous top entry, push.
+---
 
-New entry:
-<a class="week latest" href="posts/[DATE]/"><span class="week-date">[FORMATTED DATE]</span><span class="week-arrow">→</span></a>
+## Step 4: Push all files to GitHub
+Push to posts/[DATE]/: meme_ids.txt, quote_1.png, quote_2.png, index.html, zenie_drafts.md
+Use GitHub API with your GitHub token.
 
-## Git Setup
-git config user.email agent@zenie.ai
-git config user.name ZenieAgent
-Commit message: Add Zenie posts [DATE]
+---
+
+## Step 5: Update root index.html
+Fetch https://api.github.com/repos/isabelhoppmann/ART-Lab-Social-Media/contents/index.html
+Decode, prepend new entry, remove "latest" from previous top, re-encode, push.
+New entry: <a class="week latest" href="posts/[DATE]/"><span class="week-date">[MONTH DAY, YEAR]</span><span class="week-arrow">→</span></a>
