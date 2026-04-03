@@ -1,8 +1,15 @@
-MEME1_ID=4AwgEwCnESvDzQ9sri
-MEME1_CAPTION=situationship era is officially over, bye forever
-MEME1_HASHTAGS=#situationship #emotionallyunavailable #heyzenie #dating #redflags
-MEME1_TIME=Wednesday 7-9pm EST
-MEME2_ID=aVqASWH1Br4zECYZb5
-MEME2_CAPTION=when you finally choose yourself and it feels this good
-MEME2_HASHTAGS=#selfcare #mentalhealth #cozymaxxing #heyzenie #selflove
-MEME2_TIME=Friday 6-8pm EST
+# Meme GIF IDs for 2026-04-03
+
+Meme 1 - Dating/Relationships (Slow Dating trend)
+Giphy ID: UchhVOzjPcwRXaprtz
+URL: https://giphy.com/gifs/schmoozeorsnooze-meme-schmooze-doge-UchhVOzjPcwRXaprtz
+Caption: me telling my situationship we're "slow dating" now
+Hashtags: #SlowDating #DatingAdvice #ModernDating #RelationshipGoals #DateSmart #DatingTips #CouplesLife
+Best time: Tuesday 7 PM
+
+Meme 2 - Mental Health/Self-Care (Cozymaxxing trend)
+Giphy ID: uuOtMdl7erydhi9TFx
+URL: https://giphy.com/gifs/BoDoggos-wellness-self-care-selfcare-uuOtMdl7erydhi9TFx
+Caption: cozymaxxing is my entire personality now and I have no regrets
+Hashtags: #Cozymaxxing #SelfCare #MentalHealth #CozySeason #RestIsProductive #WellnessVibes #SelfCareFirst
+Best time: Sunday 7 PM
