@@ -1,52 +1,48 @@
 # Zenie Drafts — April 3, 2026
 
-## Trending Topics This Week
-1. **Cozymaxxing** — TikTok self-care trend about intentional coziness to reduce cortisol
-2. **Situationships / Emotionally Unavailable Era** — dating content about escaping situationships
-3. **Breaking Generational Cycles** — mental health trend around healing family patterns
+## Trending Topics
+1. **Cozymaxxing** — intentional comfort as a mental health practice; going viral on TikTok/X
+2. **Slow Dating** — one person at a time, no rush, emotional depth over volume
+3. **6-7 Dating Theory** — pursue emotionally available partners over "10s" for healthier relationships
 
 ---
 
-## Meme 1 — Situationship
-- **Giphy ID:** 4AwgEwCnESvDzQ9sri
-- **Embed:** https://giphy.com/embed/4AwgEwCnESvDzQ9sri
-- **Caption:** situationship era is officially over, bye forever
-- **Hashtags:** #situationship #emotionallyunavailable #heyzenie #dating #redflags
-- **Best Time:** Wednesday 7-9pm EST
+## Meme 1 — Slow Dating
+- **Giphy ID:** UchhVOzjPcwRXaprtz
+- **Caption:** me telling my situationship we're "slow dating" now
+- **Hashtags:** #SlowDating #DatingAdvice #ModernDating #RelationshipGoals #DateSmart #DatingTips #CouplesLife
+- **Best time to post:** Tuesday 7 PM
 
-## Meme 2 — Self-Care
-- **Giphy ID:** aVqASWH1Br4zECYZb5
-- **Embed:** https://giphy.com/embed/aVqASWH1Br4zECYZb5
-- **Caption:** when you finally choose yourself and it feels this good
-- **Hashtags:** #selfcare #mentalhealth #cozymaxxing #heyzenie #selflove
-- **Best Time:** Friday 6-8pm EST
+## Meme 2 — Cozymaxxing
+- **Giphy ID:** uuOtMdl7erydhi9TFx
+- **Caption:** cozymaxxing is my entire personality now and I have no regrets
+- **Hashtags:** #Cozymaxxing #SelfCare #MentalHealth #CozySeason #RestIsProductive #WellnessVibes #SelfCareFirst
+- **Best time to post:** Sunday 7 PM
 
 ---
 
-## Repost 1 — @elirallo
-- **URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
-- **Caption:** This journaling guide for self-discovery hits different 📓 Save this for your next quiet morning. via @elirallo
-- **Best Time:** Tuesday 6-8pm EST
-
-## Repost 2 — @the_journal_club
+## Repost 1 — @the_journal_club
 - **URL:** https://www.tiktok.com/@the_journal_club/video/7277262014135733536
-- **Caption:** Self-care bingo? Yes please. This bullet journal idea is so cute and actually works. via @the_journal_club
-- **Best Time:** Thursday 7-9pm EST
+- **Caption:** self-care bingo journaling inspo — because your healing deserves a whole page ✨ (via @the_journal_club)
+- **Best time to post:** Saturday 9 AM
+
+## Repost 2 — @elirallo
+- **URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
+- **Caption:** guided journaling for self-discovery — the prompts that actually make you think 📓 (via @elirallo)
+- **Best time to post:** Thursday 8 AM
 
 ---
 
-## Quote Image 1 — Breaking Generational Cycles
-- **File:** quote_1.png
-- **Quote:** "Healing yourself is the greatest gift to your family."
-- **Gradient:** Lavender (#C9B1E8) → Rose (#F0A0C0)
-- **Caption:** The cycle ends with you. What pattern are you working to break this season? 💜
-- **Hashtags:** #generationalhealing #mentalhealthmatters #heyzenie #innerchild #selfgrowth #healing
-- **Best Time:** Sunday 8-10am EST
+## Quote Image 1 — Rest Is Survival
+- **Quote:** "your rest is not laziness. it is survival."
+- **File:** quote_1.png (lavender to rose gradient)
+- **Caption:** rest is radical. you are allowed to stop.
+- **Hashtags:** #MentalHealth #SelfCare #Cozymaxxing #RestIsProductive #SlowLife #WellnessJourney #YouAreEnough
+- **Best time to post:** Sunday 8 PM
 
-## Quote Image 2 — Cozymaxxing / Rest
-- **File:** quote_2.png
-- **Quote:** "You are allowed to rest. You are not a machine."
-- **Gradient:** Peach (#F5C9A0) → Blush (#F0A0B8)
-- **Caption:** Rest is not a reward — it's a right. What's your favorite way to cozymaxx this spring? 🌸
-- **Hashtags:** #cozymaxxing #restculture #selfcare #heyzenie #slowliving #burnoutrecovery
-- **Best Time:** Saturday 9-11am EST
+## Quote Image 2 — Love Like Exhaling
+- **Quote:** "you deserve love that feels like exhaling."
+- **File:** quote_2.png (peach to blush gradient)
+- **Caption:** choose the love that makes you feel safe.
+- **Hashtags:** #SlowDating #RelationshipGoals #LoveAdvice #SoftLife #DatingWisdom #HealthyRelationships #SelfLove
+- **Best time to post:** Wednesday 7 PM
