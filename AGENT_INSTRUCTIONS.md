@@ -10,83 +10,70 @@ Use WebSearch to find trending topics TODAY in relationships, dating, mental hea
 
 ## Step 2: Create 6 Posts
 
-### 2 MEME POSTS
-Do NOT try to generate meme images with PIL. Instead, find REAL existing memes or GIFs from the internet.
+### 2 MEME POSTS — USE GIPHY EMBEDS, DO NOT GENERATE PNG FILES
 
 For each meme:
-1. Use WebSearch to find a real, shareable meme image or GIF that fits the trend. Good search queries:
-   - "situationship meme gif site:giphy.com"
-   - "self care meme funny site:tenor.com"
-   - "relationships funny meme 2026 site:reddit.com"
-   - Search for the trend topic + "meme" or "gif"
-2. Use WebFetch on the result page to extract the direct image/GIF URL (a URL ending in .gif, .jpg, .png, or a Giphy/Tenor embed URL)
-3. Write a CAPTION (1 sentence, under 12 words) to go with it
-4. List 5-8 HASHTAGS
-5. Note the best time to post
+1. Use WebSearch to find a relevant GIF on Giphy. Search query examples:
+   - "site:giphy.com situationship"
+   - "site:giphy.com self care funny"
+   - "site:giphy.com relationships 2025"
+   - "site:giphy.com dating meme"
+2. Use WebFetch on the Giphy page URL to get the GIF's embed ID. The Giphy embed ID is the string in the URL: giphy.com/gifs/[TITLE]-[ID] — the ID is the last segment after the final dash.
+3. The embed iframe for the HTML is:
+   <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID]" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+4. Write a CAPTION (1 sentence, under 12 words)
+5. List 5-8 HASHTAGS
+6. Note the source credit: "via GIPHY"
 
-For Giphy: the embed URL format is https://media.giphy.com/media/[ID]/giphy.gif
-For Tenor: use the direct .gif URL from the page source
-
-Save meme_1_url.txt and meme_2_url.txt with the image URLs (used in Step 4 HTML).
-Do NOT create meme_1.png or meme_2.png.
+DO NOT create meme_1.png or meme_2.png. Save the Giphy IDs to meme_ids.txt in posts/[DATE]/.
 
 ### 2 REPOST VIDEOS
 For each video:
-1. Use WebSearch to find a REAL existing TikTok or Instagram video (not a description, an actual URL) from a creator in self-care, relationships, or wellness that fits Zenie audience
-2. Search queries like: site:tiktok.com self-care OR relationships OR journaling 2026
-3. Provide the ACTUAL VIDEO URL that can be clicked and watched
-4. Provide the CREATOR HANDLE
-5. Write a short REPOST CAPTION with credit ("via @creator")
+1. Use WebSearch to find a REAL existing TikTok or Instagram video URL from a creator in self-care, relationships, or wellness
+2. Search: site:tiktok.com self-care OR journaling OR relationships 2026
+3. Provide the actual video URL, creator handle, and a short repost caption with credit ("via @creator")
 
-### 2 QUOTE IMAGE POSTS
-For each quote image, create an actual image file with Python:
-1. Download a photo from Pexels using Python urllib (NOT curl):
+### 2 QUOTE IMAGE POSTS — GENERATE WITH PIL
 
+For each quote image, create an actual PNG file:
+1. Create a 1080x1080 image using Python PIL with a beautiful gradient background in Zenie brand colors:
+   - Quote 1: soft lavender to rose gradient (#C9B1E8 to #F0A0C0)
+   - Quote 2: warm peach to blush gradient (#F5C9A0 to #F0A0B8)
+2. Write a SHORT inspirational QUOTE (under 12 words)
+3. Overlay the quote text: white, centered, large font (~80px), word-wrapped, with a subtle shadow
+4. Write a CAPTION ending with a reflective question
+5. List 5-8 HASHTAGS
+6. Save as quote_1.png and quote_2.png
+
+PIL gradient + text example:
 python3 << 'EOF'
-import urllib.request, json, sys
+from PIL import Image, ImageDraw, ImageFont
+import math
 
-PEXELS_KEY = "YOUR_PEXELS_KEY"  # replace with key from your credentials
-keyword = "flowers"  # change per quote topic
-
-req = urllib.request.Request(
-    f"https://api.pexels.com/v1/search?query={keyword}&per_page=3&orientation=square",
-    headers={"Authorization": PEXELS_KEY}
-)
-with urllib.request.urlopen(req, timeout=15) as r:
-    data = json.load(r)
-    url = data["photos"][0]["src"]["large2x"]
-    print(url)
-
-photo_req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-with urllib.request.urlopen(photo_req, timeout=30) as r:
-    with open("bg_q1.jpg", "wb") as f:
-        f.write(r.read())
-print("Downloaded")
+img = Image.new("RGB", (1080, 1080))
+draw = ImageDraw.Draw(img)
+# Draw gradient
+for y in range(1080):
+    t = y / 1080
+    r = int(201 + (240-201)*t)
+    g = int(177 + (160-177)*t)
+    b = int(232 + (192-232)*t)
+    draw.line([(0,y),(1080,y)], fill=(r,g,b))
+# Add text (wrap manually)
+text = "your rest is not laziness. it is survival."
+# draw centered text with wrapping...
+img.save("quote_1.png")
 EOF
 
-2. Write a SHORT QUOTE (under 12 words) to overlay
-3. Write a CAPTION ending with a reflective question
-4. List 5-8 HASHTAGS
-5. Use Python PIL:
-   - Open the downloaded photo, resize/crop to 1080x1080
-   - Add a semi-transparent dark overlay (RGBA 0,0,0,150)
-   - Center the quote text in white font, size ~70px, with word wrapping
-   - Save as quote_1.png and quote_2.png
-
-If Pexels download fails, fall back to a clean gradient:
-- Create a 1080x1080 image with a soft gradient (e.g. lavender #E8D5F5 to pink #F5D5E8)
-- Overlay the quote text centered in white
-
 ## Step 3: Save to GitHub
-- Save quote_1.png and quote_2.png in posts/[DATE]/
-- Save meme_1_url.txt and meme_2_url.txt in posts/[DATE]/
-- Save zenie_drafts.md summary
-- Generate posts/[DATE]/index.html (see Step 4)
-- Update root index.html (see Step 5)
-- Commit all files and push using GitHub API with your GitHub token
+- Save quote_1.png, quote_2.png, meme_ids.txt in posts/[DATE]/
+- Save zenie_drafts.md summary with all captions, hashtags, Giphy IDs, video URLs, posting times
+- Generate posts/[DATE]/index.html (Step 4)
+- Update root index.html (Step 5)
+- Commit all and push using GitHub API with your GitHub token
 
 ## Step 4: Generate HTML Preview Page
-Create posts/[DATE]/index.html. For memes, use the external URLs. For quote images, use relative paths.
+Create posts/[DATE]/index.html:
 
 ```html
 <!DOCTYPE html>
@@ -103,12 +90,14 @@ Create posts/[DATE]/index.html. For memes, use the external URLs. For quote imag
   .post { background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
   .post h2 { font-size: 1em; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin: 0 0 12px; }
   .post img { width: 100%; border-radius: 8px; margin-bottom: 12px; }
+  .giphy-wrap { width:100%; padding-bottom:100%; height:0; position:relative; border-radius:8px; overflow:hidden; margin-bottom:12px; }
+  .giphy-wrap iframe { position:absolute; width:100%; height:100%; }
   .caption { font-size: 1em; margin-bottom: 8px; }
   .hashtags { font-size: 0.85em; color: #5b5bd6; margin-bottom: 8px; }
   .time { font-size: 0.8em; color: #888; }
   .video-link { display: inline-block; margin: 8px 0; padding: 8px 16px; background: #000; color: white; border-radius: 20px; text-decoration: none; font-size: 0.9em; }
   .creator { font-size: 0.85em; color: #888; margin-bottom: 6px; }
-  .meme-source { font-size: 0.75em; color: #bbb; margin-top: 4px; }
+  .source { font-size: 0.75em; color: #bbb; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -118,18 +107,20 @@ Create posts/[DATE]/index.html. For memes, use the external URLs. For quote imag
 
 <div class="post">
   <h2>Meme 1</h2>
-  <img src="[MEME_1_EXTERNAL_URL]" alt="Meme 1">
+  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID_1]" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
   <div class="caption">[CAPTION]</div>
   <div class="hashtags">[HASHTAGS]</div>
   <div class="time">Best time: [TIME]</div>
+  <div class="source">via GIPHY</div>
 </div>
 
 <div class="post">
   <h2>Meme 2</h2>
-  <img src="[MEME_2_EXTERNAL_URL]" alt="Meme 2">
+  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID_2]" width="100%" height="100%" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
   <div class="caption">[CAPTION]</div>
   <div class="hashtags">[HASHTAGS]</div>
   <div class="time">Best time: [TIME]</div>
+  <div class="source">via GIPHY</div>
 </div>
 
 <div class="post">
@@ -169,9 +160,9 @@ Create posts/[DATE]/index.html. For memes, use the external URLs. For quote imag
 ```
 
 ## Step 5: Update Root Index
-Fetch root index.html from GitHub API, add new week entry at top, remove "latest" class from previous top entry, push updated file.
+Fetch root index.html from GitHub API, prepend new week entry, remove "latest" from previous top entry, push.
 
-New entry format:
+New entry:
 <a class="week latest" href="posts/[DATE]/"><span class="week-date">[FORMATTED DATE]</span><span class="week-arrow">→</span></a>
 
 ## Git Setup
