@@ -3,25 +3,45 @@
 Credentials are in the message that invoked you (GitHub token, Notion token, Pexels key).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: You MUST embed Giphy GIFs. You MUST NOT generate PNG files for memes.
+- MEMES: You MUST embed Giphy or Tenor GIFs. You MUST NOT generate PNG files for memes.
 - QUOTE IMAGES: You MUST generate PNG files with PIL.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
 
 ---
 
-## Step 1: Research (WebSearch)
-Find 3 trending topics TODAY in relationships, dating, mental health, self-care on TikTok/X.
+## Step 1: Research trending memes (WebSearch)
+
+First find what's trending culturally RIGHT NOW:
+1. WebSearch("trending memes relationships dating 2026 tiktok")
+2. WebSearch("viral memes self care mental health april 2026")
+3. WebSearch("funniest memes this week relationships")
+
+Identify 2-3 specific meme formats or viral moments that are trending (e.g. "delulu", "soft life era", "girl math", a specific reaction meme). These should feel current and culturally relevant to Zenie's audience (women, relationships, self-growth, dating).
 
 ---
 
-## Step 2A: Find 2 Giphy GIFs for memes
+## Step 2A: Find 2 GIFs matching trending memes
 
-For each meme topic from Step 1:
-1. Run WebSearch: "site:giphy.com [TOPIC] reaction funny"
-2. Pick a result URL from giphy.com/gifs/...
-3. Extract the Giphy ID — the alphanumeric code at the very end of the URL after the last dash.
-   Example: giphy.com/gifs/happy-reaction-lol-AbCdEfGhIjKlMnOp → ID is AbCdEfGhIjKlMnOp
-4. Write a caption (1 sentence, under 12 words) and 5-8 hashtags
+For each meme, use the specific trending meme name/format to search — NOT generic topics.
+
+Strategy:
+1. WebSearch("site:giphy.com [SPECIFIC MEME NAME OR FORMAT]")
+   AND
+   WebSearch("site:tenor.com [SPECIFIC MEME NAME OR FORMAT]")
+2. Pick whichever result looks more on-trend and funny
+3. For Giphy: extract the ID from the end of the URL (after the last dash)
+   Example: giphy.com/gifs/reaction-omg-AbCdEfGhIjKlMnOp → ID is AbCdEfGhIjKlMnOp
+   Embed: https://giphy.com/embed/[ID]
+4. For Tenor: use WebFetch on the Tenor page to find the direct .gif URL or embed URL
+   Tenor direct GIF URLs look like: https://media.tenor.com/[hash]/[name].gif
+   Embed: use an <img> tag with the direct .gif URL
+5. Write a caption that ties the GIF to Zenie's theme (relationships, self-care, growth)
+6. Write 5-8 hashtags
+
+Prioritize GIFs that are:
+- From a recognizable meme format (reaction memes, character memes, show clips)
+- Funny and relatable to women aged 20-35
+- Currently viral or trending — not generic clip art reactions
 
 ---
 
@@ -59,28 +79,25 @@ def make_quote_image(quote, filename, c1, c2):
         y += 100
     img.save(filename)
 
-make_quote_image("your rest is not laziness. it is survival.", "quote_1.png", (201,177,232), (240,160,192))
-make_quote_image("you don't need to earn your own softness.", "quote_2.png", (245,201,160), (240,160,184))
+make_quote_image("YOUR QUOTE HERE", "quote_1.png", (201,177,232), (240,160,192))
+make_quote_image("YOUR QUOTE HERE", "quote_2.png", (245,201,160), (240,160,184))
 ```
 
-Write your own quotes — these are just examples. Write captions + hashtags for each.
+Write original inspirational quotes for Zenie's audience. Add captions + hashtags.
 
 ---
 
 ## Step 3: Push all files to GitHub using the API
 
-For each file, use this Python pattern:
-
 ```python
 import urllib.request, json, base64
 
-TOKEN = "YOUR_GITHUB_TOKEN"  # from credentials
+TOKEN = "YOUR_GITHUB_TOKEN"
 REPO = "isabelhoppmann/ART-Lab-Social-Media"
-DATE = "2026-04-02"  # use today's actual date
+DATE = "TODAYS_DATE"  # e.g. 2026-04-05
 
 def push_file(path, content_bytes, message):
     url = f"https://api.github.com/repos/{REPO}/contents/{path}"
-    # Check if file exists (get SHA)
     try:
         req = urllib.request.Request(url, headers={"Authorization": f"token {TOKEN}", "User-Agent": "agent"})
         with urllib.request.urlopen(req) as r:
@@ -95,19 +112,15 @@ def push_file(path, content_bytes, message):
         method="PUT")
     with urllib.request.urlopen(req) as r:
         print(f"Pushed {path}: {r.status}")
-
-# Example usage:
-push_file(f"posts/{DATE}/quote_1.png", open("quote_1.png","rb").read(), "Add quote_1.png")
-push_file(f"posts/{DATE}/index.html", index_html_content.encode(), "Add index.html")
 ```
 
-Push these files: quote_1.png, quote_2.png, meme_ids.txt, index.html, zenie_drafts.md
+Push: quote_1.png, quote_2.png, meme_ids.txt, index.html, zenie_drafts.md
 
 ---
 
 ## Step 4: Build and push index.html
 
-For memes, use Giphy iframes (NOT img tags). Template:
+For Giphy memes use iframes. For Tenor memes use img tags with the direct .gif URL.
 
 ```html
 <!DOCTYPE html>
@@ -135,48 +148,51 @@ img{width:100%;border-radius:8px;margin-bottom:12px}
 
 <div class="post">
 <h2>Meme 1</h2>
-<div class="giphy-wrap"><iframe src="https://giphy.com/embed/[MEME1_GIPHY_ID]" allowFullScreen></iframe></div>
-<p class="caption">[MEME1_CAPTION]</p>
-<p class="tags">[MEME1_HASHTAGS]</p>
-<p class="time">Best time: [MEME1_TIME]</p>
+<!-- If Giphy: -->
+<div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID]" allowFullScreen></iframe></div>
+<!-- If Tenor: -->
+<!-- <img src="[TENOR_DIRECT_GIF_URL]" alt="Meme 1"> -->
+<p class="caption">[CAPTION]</p>
+<p class="tags">[HASHTAGS]</p>
+<p class="time">Best time: [TIME]</p>
 </div>
 
 <div class="post">
 <h2>Meme 2</h2>
-<div class="giphy-wrap"><iframe src="https://giphy.com/embed/[MEME2_GIPHY_ID]" allowFullScreen></iframe></div>
-<p class="caption">[MEME2_CAPTION]</p>
-<p class="tags">[MEME2_HASHTAGS]</p>
-<p class="time">Best time: [MEME2_TIME]</p>
+<div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID]" allowFullScreen></iframe></div>
+<p class="caption">[CAPTION]</p>
+<p class="tags">[HASHTAGS]</p>
+<p class="time">Best time: [TIME]</p>
 </div>
 
 <div class="post">
 <h2>Repost 1</h2>
-<p>[CREATOR1]</p><p class="caption">[REPOST1_CAPTION]</p>
-<a class="btn" href="[VIDEO1_URL]" target="_blank">Watch Video</a>
-<p class="time">Best time: [REPOST1_TIME]</p>
+<p>[CREATOR]</p><p class="caption">[CAPTION]</p>
+<a class="btn" href="[URL]" target="_blank">Watch Video</a>
+<p class="time">Best time: [TIME]</p>
 </div>
 
 <div class="post">
 <h2>Repost 2</h2>
-<p>[CREATOR2]</p><p class="caption">[REPOST2_CAPTION]</p>
-<a class="btn" href="[VIDEO2_URL]" target="_blank">Watch Video</a>
-<p class="time">Best time: [REPOST2_TIME]</p>
+<p>[CREATOR]</p><p class="caption">[CAPTION]</p>
+<a class="btn" href="[URL]" target="_blank">Watch Video</a>
+<p class="time">Best time: [TIME]</p>
 </div>
 
 <div class="post">
 <h2>Quote Image 1</h2>
 <img src="quote_1.png" alt="Quote 1">
-<p class="caption">[QUOTE1_CAPTION]</p>
-<p class="tags">[QUOTE1_HASHTAGS]</p>
-<p class="time">Best time: [QUOTE1_TIME]</p>
+<p class="caption">[CAPTION]</p>
+<p class="tags">[HASHTAGS]</p>
+<p class="time">Best time: [TIME]</p>
 </div>
 
 <div class="post">
 <h2>Quote Image 2</h2>
 <img src="quote_2.png" alt="Quote 2">
-<p class="caption">[QUOTE2_CAPTION]</p>
-<p class="tags">[QUOTE2_HASHTAGS]</p>
-<p class="time">Best time: [QUOTE2_TIME]</p>
+<p class="caption">[CAPTION]</p>
+<p class="tags">[HASHTAGS]</p>
+<p class="time">Best time: [TIME]</p>
 </div>
 
 </body></html>
