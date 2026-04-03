@@ -1,58 +1,52 @@
-# Zenie Drafts — 2026-04-03
+# Zenie Drafts — April 3, 2026
 
-## Trending Topics Today
-1. **Cozymaxxing** — intentionally maximizing coziness as anti-hustle self-care (#cozymaxxing)
-2. **No More Situationship** — Gen Z rejecting undefined relationships (#NoMoreSituationship2026)
-3. **Date Night M.A.S.H.** — couples remixing childhood game for date planning (nostalgia/relationship content)
-
----
-
-## Post 1 — Meme
-**Giphy ID:** 4AwgEwCnESvDzQ9sri
-**Caption:** when you're still waiting for the "what are we" talk 👀
-**Hashtags:** #situationship #datinghumor #relatable #NoMoreSituationship2026 #datelife #lovelife #heyzenie
-**Best posting time:** 7:00 PM EST
-**Source:** via GIPHY
+## Trending Topics This Week
+1. **Cozymaxxing** — TikTok self-care trend about intentional coziness to reduce cortisol
+2. **Situationships / Emotionally Unavailable Era** — dating content about escaping situationships
+3. **Breaking Generational Cycles** — mental health trend around healing family patterns
 
 ---
 
-## Post 2 — Meme
-**Giphy ID:** uKarS7CtaDHUboan95
-**Caption:** us trying to explain our "situationship" to literally anyone
-**Hashtags:** #situationship #datingmeme #relationships #Gen Z #TikTokLove #relatable #heyzenie
-**Best posting time:** 12:00 PM EST
-**Source:** via GIPHY
+## Meme 1 — Situationship
+- **Giphy ID:** 4AwgEwCnESvDzQ9sri
+- **Embed:** https://giphy.com/embed/4AwgEwCnESvDzQ9sri
+- **Caption:** situationship era is officially over, bye forever
+- **Hashtags:** #situationship #emotionallyunavailable #heyzenie #dating #redflags
+- **Best Time:** Wednesday 7-9pm EST
+
+## Meme 2 — Self-Care
+- **Giphy ID:** aVqASWH1Br4zECYZb5
+- **Embed:** https://giphy.com/embed/aVqASWH1Br4zECYZb5
+- **Caption:** when you finally choose yourself and it feels this good
+- **Hashtags:** #selfcare #mentalhealth #cozymaxxing #heyzenie #selflove
+- **Best Time:** Friday 6-8pm EST
 
 ---
 
-## Post 3 — Repost Video
-**Creator:** @elirallo (Eli Rallo — NYT bestselling author, 1.2M followers)
-**Video URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
-**Caption:** your sign to start journaling 📖 via @elirallo — saving this for tonight 🤍
-**Hashtags:** #journaling #selfcare #selfdiscovery #mentalhealth #healingjourney #cozymaxxing #heyzenie
-**Best posting time:** 8:00 AM EST
+## Repost 1 — @elirallo
+- **URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
+- **Caption:** This journaling guide for self-discovery hits different 📓 Save this for your next quiet morning. via @elirallo
+- **Best Time:** Tuesday 6-8pm EST
+
+## Repost 2 — @the_journal_club
+- **URL:** https://www.tiktok.com/@the_journal_club/video/7277262014135733536
+- **Caption:** Self-care bingo? Yes please. This bullet journal idea is so cute and actually works. via @the_journal_club
+- **Best Time:** Thursday 7-9pm EST
 
 ---
 
-## Post 4 — Repost Video
-**Creator:** @.idchlit
-**Video URL:** https://www.tiktok.com/@.idchlit/video/7583280641983221000
-**Caption:** starting your journaling journey in 2026 hits different 🌸 via @.idchlit — do this tonight
-**Hashtags:** #journaling2026 #selfgrowth #mentalwellness #healingisnot linear #selfcare #wellness #heyzenie
-**Best posting time:** 6:00 PM EST
+## Quote Image 1 — Breaking Generational Cycles
+- **File:** quote_1.png
+- **Quote:** "Healing yourself is the greatest gift to your family."
+- **Gradient:** Lavender (#C9B1E8) → Rose (#F0A0C0)
+- **Caption:** The cycle ends with you. What pattern are you working to break this season? 💜
+- **Hashtags:** #generationalhealing #mentalhealthmatters #heyzenie #innerchild #selfgrowth #healing
+- **Best Time:** Sunday 8-10am EST
 
----
-
-## Post 5 — Quote Image (quote_1.png)
-**Quote:** healing is not linear — keep going anyway
-**Caption:** some days you'll take two steps forward and one step back. that's still progress. what does your healing look like right now?
-**Hashtags:** #healingjourney #mentalhealth #selfcare #growthmindset #cozymaxxing #selflove #heyzenie
-**Best posting time:** 9:00 AM EST
-
----
-
-## Post 6 — Quote Image (quote_2.png)
-**Quote:** you are allowed to outgrow who you were
-**Caption:** the old you did the best they could. this version of you gets to be different. what have you outgrown that once felt permanent?
-**Hashtags:** #personalgrowth #selflove #mindset #healingera #NoMoreSituationship2026 #authenticity #heyzenie
-**Best posting time:** 7:00 PM EST
+## Quote Image 2 — Cozymaxxing / Rest
+- **File:** quote_2.png
+- **Quote:** "You are allowed to rest. You are not a machine."
+- **Gradient:** Peach (#F5C9A0) → Blush (#F0A0B8)
+- **Caption:** Rest is not a reward — it's a right. What's your favorite way to cozymaxx this spring? 🌸
+- **Hashtags:** #cozymaxxing #restculture #selfcare #heyzenie #slowliving #burnoutrecovery
+- **Best Time:** Saturday 9-11am EST
