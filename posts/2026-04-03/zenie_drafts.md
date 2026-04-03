@@ -1,48 +1,52 @@
 # Zenie Drafts — April 3, 2026
 
 ## Trending Topics
-1. **Cozymaxxing** — intentional comfort as a mental health practice; going viral on TikTok/X
-2. **Slow Dating** — one person at a time, no rush, emotional depth over volume
-3. **6-7 Dating Theory** — pursue emotionally available partners over "10s" for healthier relationships
+1. **Treat Yo Self / Self-Care Celebration** — Parks & Rec "Treat Yo Self" format riding the "cozy hobbies are the new self-care" wave on TikTok
+2. **Situationship** — One of the top trending Gen Z/Millennial dating memes; undefined almost-relationships dominate dating conversations
+3. **Sabrina Zohar's Self-Worth Dating Framework** — Her content about dating as a reflection of self-worth continues to go viral
 
 ---
 
-## Meme 1 — Slow Dating
-- **Giphy ID:** UchhVOzjPcwRXaprtz
-- **Caption:** me telling my situationship we're "slow dating" now
-- **Hashtags:** #SlowDating #DatingAdvice #ModernDating #RelationshipGoals #DateSmart #DatingTips #CouplesLife
-- **Best time to post:** Tuesday 7 PM
+## Meme 1 — Treat Yo Self
+- **Platform:** Giphy
+- **GIF ID:** 19Ik3PuuqoFnhTTfEi
+- **Embed:** https://giphy.com/embed/19Ik3PuuqoFnhTTfEi
+- **Caption:** Self-care isn't selfish — it's survival. Treat yo self today, queen. You've earned every single bit of it.
+- **Hashtags:** #TreatYoSelf #SelfCare #SelfLove #HealingEra #MindBodySoul #WomenEmpowerment #YouDeserveIt
+- **Best time to post:** Saturday 10 AM – 12 PM
 
-## Meme 2 — Cozymaxxing
-- **Giphy ID:** uuOtMdl7erydhi9TFx
-- **Caption:** cozymaxxing is my entire personality now and I have no regrets
-- **Hashtags:** #Cozymaxxing #SelfCare #MentalHealth #CozySeason #RestIsProductive #WellnessVibes #SelfCareFirst
-- **Best time to post:** Sunday 7 PM
-
----
-
-## Repost 1 — @the_journal_club
-- **URL:** https://www.tiktok.com/@the_journal_club/video/7277262014135733536
-- **Caption:** self-care bingo journaling inspo — because your healing deserves a whole page ✨ (via @the_journal_club)
-- **Best time to post:** Saturday 9 AM
-
-## Repost 2 — @elirallo
-- **URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271
-- **Caption:** guided journaling for self-discovery — the prompts that actually make you think 📓 (via @elirallo)
-- **Best time to post:** Thursday 8 AM
+## Meme 2 — Situationship
+- **Platform:** Giphy
+- **GIF ID:** uKarS7CtaDHUboan95
+- **Embed:** https://giphy.com/embed/uKarS7CtaDHUboan95
+- **Caption:** Been "talking" for 6 months but still can't call him your boyfriend? Sis, that's a situationship. You deserve a title AND the energy. Know your worth.
+- **Hashtags:** #Situationship #DatingInYourThirties #KnowYourWorth #ModernDating #DateSmarter #SelfLove #WomenWhoKnowBetter
+- **Best time to post:** Tuesday 7–9 PM
 
 ---
 
-## Quote Image 1 — Rest Is Survival
-- **Quote:** "your rest is not laziness. it is survival."
+## Repost 1 — @sabrina.zohar
+- **URL:** https://www.tiktok.com/@sabrina.zohar/video/7583743732927827231
+- **Caption:** Who you date is a reflection of your self-worth, baby. This one hit different — watch it twice. (via @sabrina.zohar)
+- **Best time to post:** Tuesday or Wednesday 7–9 PM
+
+## Repost 2 — @sabrina.zohar
+- **URL:** https://www.tiktok.com/@sabrina.zohar/video/7589718555722124575
+- **Caption:** 3 things Sabrina says to leave behind in 2026 dating. Are you still holding onto any of these? (via @sabrina.zohar)
+- **Best time to post:** Sunday 8–10 PM
+
+---
+
+## Quote Image 1 — You Are Enough
+- **Quote:** "You are not too much. You are just enough for the right person."
 - **File:** quote_1.png (lavender to rose gradient)
-- **Caption:** rest is radical. you are allowed to stop.
-- **Hashtags:** #MentalHealth #SelfCare #Cozymaxxing #RestIsProductive #SlowLife #WellnessJourney #YouAreEnough
-- **Best time to post:** Sunday 8 PM
+- **Caption:** Save this and read it every morning. You are worthy of real, whole love.
+- **Hashtags:** #SelfWorth #YouAreEnough #LoveYourself #WomenEmpowerment #HealingJourney #DatingAdvice #KnowYourWorth
+- **Best time to post:** Monday 7–9 AM
 
-## Quote Image 2 — Love Like Exhaling
-- **Quote:** "you deserve love that feels like exhaling."
+## Quote Image 2 — Your Standards
+- **Quote:** "Your standards are not the problem. Your patience is the medicine."
 - **File:** quote_2.png (peach to blush gradient)
-- **Caption:** choose the love that makes you feel safe.
-- **Hashtags:** #SlowDating #RelationshipGoals #LoveAdvice #SoftLife #DatingWisdom #HealthyRelationships #SelfLove
-- **Best time to post:** Wednesday 7 PM
+- **Caption:** Stop lowering your standards. The right person won't make you question your worth — they'll celebrate it.
+- **Hashtags:** #HighStandards #KnowYourWorth #DatingTips #SelfRespect #HealingEra #RelationshipAdvice #WomenFirst
+- **Best time to post:** Wednesday 7–9 PM
