@@ -11,22 +11,24 @@ Use WebSearch to find trending topics TODAY in relationships, dating, mental hea
 ## Step 2: Create 6 Posts
 
 ### 2 MEME POSTS
+Do NOT try to generate meme images with PIL. Instead, find REAL existing memes or GIFs from the internet.
+
 For each meme:
-1. Pick a search keyword relevant to the meme topic (e.g. "couple", "coffee", "friends laughing", "sunset", "woman thinking")
-2. Search Pexels for a real photo using your Pexels API key:
-   curl -s -H "Authorization: PEXELS_KEY" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
-3. Download the photo: curl -L "URL" -o bg1.jpg
-4. Write the IMAGE TEXT (punchy, under 15 words, lowercase, often starts with "when")
-   - Top text: white bold on black bar at top
-   - Bottom text: yellow bold on black bar at bottom
-5. Write the CAPTION (1 sentence, under 12 words)
-6. List 5-8 HASHTAGS
-7. Use Python PIL/Pillow to composite the meme:
-   - Open the downloaded photo, resize to 1080x1080 (crop to square from center)
-   - Add a black bar (height 160px) at top and bottom
-   - Wrap and center the top text in white bold, bottom text in yellow bold
-   - Use font size ~60px, wrap text so it fits within the bar width
-   - Save as meme_1.png and meme_2.png
+1. Use WebSearch to find a real, shareable meme image or GIF that fits the trend. Good search queries:
+   - "situationship meme gif site:giphy.com"
+   - "self care meme funny site:tenor.com"
+   - "relationships funny meme 2026 site:reddit.com"
+   - Search for the trend topic + "meme" or "gif"
+2. Use WebFetch on the result page to extract the direct image/GIF URL (a URL ending in .gif, .jpg, .png, or a Giphy/Tenor embed URL)
+3. Write a CAPTION (1 sentence, under 12 words) to go with it
+4. List 5-8 HASHTAGS
+5. Note the best time to post
+
+For Giphy: the embed URL format is https://media.giphy.com/media/[ID]/giphy.gif
+For Tenor: use the direct .gif URL from the page source
+
+Save meme_1_url.txt and meme_2_url.txt with the image URLs (used in Step 4 HTML).
+Do NOT create meme_1.png or meme_2.png.
 
 ### 2 REPOST VIDEOS
 For each video:
@@ -37,29 +39,54 @@ For each video:
 5. Write a short REPOST CAPTION with credit ("via @creator")
 
 ### 2 QUOTE IMAGE POSTS
-For each quote image:
-1. Pick a keyword for a calm/beautiful background (e.g. "flowers", "nature", "soft light", "pastel sky")
-2. Search Pexels using your Pexels API key:
-   curl -s -H "Authorization: PEXELS_KEY" "https://api.pexels.com/v1/search?query=KEYWORD&per_page=5&orientation=square" | python3 -c "import sys,json; photos=json.load(sys.stdin)['photos']; print(photos[0]['src']['large2x'])"
-3. Download the photo: curl -L "URL" -o bg_q1.jpg
-4. Write a SHORT QUOTE (under 12 words) to overlay
-5. Write a CAPTION ending with a reflective question
-6. List 5-8 HASHTAGS
-7. Use Python PIL:
+For each quote image, create an actual image file with Python:
+1. Download a photo from Pexels using Python urllib (NOT curl):
+
+python3 << 'EOF'
+import urllib.request, json, sys
+
+PEXELS_KEY = "YOUR_PEXELS_KEY"  # replace with key from your credentials
+keyword = "flowers"  # change per quote topic
+
+req = urllib.request.Request(
+    f"https://api.pexels.com/v1/search?query={keyword}&per_page=3&orientation=square",
+    headers={"Authorization": PEXELS_KEY}
+)
+with urllib.request.urlopen(req, timeout=15) as r:
+    data = json.load(r)
+    url = data["photos"][0]["src"]["large2x"]
+    print(url)
+
+photo_req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+with urllib.request.urlopen(photo_req, timeout=30) as r:
+    with open("bg_q1.jpg", "wb") as f:
+        f.write(r.read())
+print("Downloaded")
+EOF
+
+2. Write a SHORT QUOTE (under 12 words) to overlay
+3. Write a CAPTION ending with a reflective question
+4. List 5-8 HASHTAGS
+5. Use Python PIL:
    - Open the downloaded photo, resize/crop to 1080x1080
-   - Add a semi-transparent dark overlay (RGBA 0,0,0,140)
-   - Center the quote text in white italic font, large size (~70px), with word wrapping
+   - Add a semi-transparent dark overlay (RGBA 0,0,0,150)
+   - Center the quote text in white font, size ~70px, with word wrapping
    - Save as quote_1.png and quote_2.png
 
+If Pexels download fails, fall back to a clean gradient:
+- Create a 1080x1080 image with a soft gradient (e.g. lavender #E8D5F5 to pink #F5D5E8)
+- Overlay the quote text centered in white
+
 ## Step 3: Save to GitHub
-- Save meme_1.png, meme_2.png, quote_1.png, quote_2.png in posts/[DATE]/
-- Save zenie_drafts.md summary with captions, hashtags, video URLs, posting times
+- Save quote_1.png and quote_2.png in posts/[DATE]/
+- Save meme_1_url.txt and meme_2_url.txt in posts/[DATE]/
+- Save zenie_drafts.md summary
 - Generate posts/[DATE]/index.html (see Step 4)
-- Update the root index.html (see Step 5)
-- Commit all files and push to main using the GitHub API with your GitHub token
+- Update root index.html (see Step 5)
+- Commit all files and push using GitHub API with your GitHub token
 
 ## Step 4: Generate HTML Preview Page
-Create posts/[DATE]/index.html with this structure (fill in real content):
+Create posts/[DATE]/index.html. For memes, use the external URLs. For quote images, use relative paths.
 
 ```html
 <!DOCTYPE html>
@@ -81,26 +108,71 @@ Create posts/[DATE]/index.html with this structure (fill in real content):
   .time { font-size: 0.8em; color: #888; }
   .video-link { display: inline-block; margin: 8px 0; padding: 8px 16px; background: #000; color: white; border-radius: 20px; text-decoration: none; font-size: 0.9em; }
   .creator { font-size: 0.85em; color: #888; margin-bottom: 6px; }
+  .meme-source { font-size: 0.75em; color: #bbb; margin-top: 4px; }
 </style>
 </head>
 <body>
 <a class="back" href="../../">← All weeks</a>
 <h1>Zenie Drafts</h1>
 <div class="date">[DATE]</div>
-[POST SECTIONS]
+
+<div class="post">
+  <h2>Meme 1</h2>
+  <img src="[MEME_1_EXTERNAL_URL]" alt="Meme 1">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
+
+<div class="post">
+  <h2>Meme 2</h2>
+  <img src="[MEME_2_EXTERNAL_URL]" alt="Meme 2">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
+
+<div class="post">
+  <h2>Repost 1</h2>
+  <div class="creator">[CREATOR HANDLE]</div>
+  <div class="caption">[REPOST CAPTION]</div>
+  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
+  <div class="time">Best time: [TIME]</div>
+</div>
+
+<div class="post">
+  <h2>Repost 2</h2>
+  <div class="creator">[CREATOR HANDLE]</div>
+  <div class="caption">[REPOST CAPTION]</div>
+  <a class="video-link" href="[VIDEO URL]" target="_blank">Watch Video</a>
+  <div class="time">Best time: [TIME]</div>
+</div>
+
+<div class="post">
+  <h2>Quote Image 1</h2>
+  <img src="quote_1.png" alt="Quote 1">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
+
+<div class="post">
+  <h2>Quote Image 2</h2>
+  <img src="quote_2.png" alt="Quote 2">
+  <div class="caption">[CAPTION]</div>
+  <div class="hashtags">[HASHTAGS]</div>
+  <div class="time">Best time: [TIME]</div>
+</div>
+
 </body>
 </html>
 ```
 
-Use relative image paths (just meme_1.png). Include all 6 posts with their captions, hashtags, and posting times.
-
 ## Step 5: Update Root Index
-Fetch the current root index.html from GitHub, then prepend a new entry for this week at the top (and remove the "latest" class from the previous top entry). Push the updated file.
+Fetch root index.html from GitHub API, add new week entry at top, remove "latest" class from previous top entry, push updated file.
 
-The new entry to add at the top (inside the <body>, after the subtitle div):
-<a class="week latest" href="posts/[DATE]/"><span class="week-date">[FORMATTED DATE e.g. April 5, 2026]</span><span class="week-arrow">→</span></a>
-
-Remove class "latest" from the previously newest entry.
+New entry format:
+<a class="week latest" href="posts/[DATE]/"><span class="week-date">[FORMATTED DATE]</span><span class="week-arrow">→</span></a>
 
 ## Git Setup
 git config user.email agent@zenie.ai
