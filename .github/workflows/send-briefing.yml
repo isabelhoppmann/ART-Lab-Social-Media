@@ -1,0 +1,35 @@
+name: Send Daily Briefing Email
+  on:
+    push:
+      paths:
+        - 'briefings/*.txt'
+      branches:
+        - main
+
+  jobs:
+    send:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+
+        - name: Find briefing file
+          id: find
+          run: |
+            FILE=$(git diff-tree --no-commit-id -r --name-only ${{ github.sha }} | grep "^briefings/" | head -1)
+            echo "file=$FILE" >> $GITHUB_OUTPUT
+
+        - name: Send via Resend
+          run: |
+            FILE="${{ steps.find.outputs.file }}"
+            SUBJECT=$(head -1 "$FILE")
+            tail -n +2 "$FILE" > /tmp/body.txt
+            jq -n \
+              --arg from "ART Lab Briefing <briefing@art-lab.ai>" \
+              --argjson to '["isabel@art-lab.ai","catie@art-lab.ai"]' \
+              --arg subject "$SUBJECT" \
+              --rawfile text /tmp/body.txt \
+              '{from: $from, to: $to, subject: $subject, text: $text}' > /tmp/payload.json
+            curl -s -X POST https://api.resend.com/emails \
+              -H "Authorization: Bearer ${{ secrets.RESEND_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d @/tmp/payload.json
