@@ -12,15 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Find briefing file
-        id: find
-        run: |
-          FILE=$(git diff-tree --no-commit-id -r --name-only ${{ github.sha }} | grep "^briefings/" | head -1)
-          echo "file=$FILE" >> $GITHUB_OUTPUT
-
       - name: Send via Resend
         run: |
-          FILE="${{ steps.find.outputs.file }}"
+          FILE=$(ls -t briefings/*.txt | head -1)
           SUBJECT=$(head -1 "$FILE")
           tail -n +2 "$FILE" > /tmp/body.txt
           jq -n \
