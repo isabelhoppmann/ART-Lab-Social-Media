@@ -1,15 +1,21 @@
 ART Lab Briefing — Tuesday, April 7
 === ROBOTICS & AI ===
-• Neuro-Symbolic AI Cuts Energy 100x — Researchers unveiled a hybrid approach combining neural networks with symbolic reasoning that slashes AI energy use while boosting accuracy, with direct implications for on-device robot intelligence. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
-• NVIDIA GR00T N1.7 Now in Commercial Early Access — During National Robotics Week, NVIDIA opened commercial licensing for its humanoid robot foundation model and previewed GR00T N2, which helps robots succeed at novel tasks more than twice as often as leading VLMs. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• NVIDIA National Robotics Week — NVIDIA is spotlighting physical AI milestones this week, including GR00T N1.7 now in commercial licensing and a preview of next-gen GR00T N2, which succeeds on new tasks 2x as often as leading VLA models. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• OpenAI weighs in on robot economy — OpenAI published a policy paper calling for public wealth funds, "robot taxes," and a four-day workweek to manage AI-driven labor displacement. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
 
 === RESEARCH ===
-• 700°C Memory Chip Could Reshape AI Inference — A new device performs matrix multiplication and data storage at extreme temperatures, promising orders-of-magnitude speed and efficiency gains for edge AI hardware. https://www.sciencedaily.com/releases/2026/04/260406192904.htm
+• Neural-symbolic AI slashes energy 100x — A new hybrid approach combining neural networks with symbolic reasoning cuts AI compute costs by 100x while improving accuracy, with direct implications for on-device robot inference. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
 
 === FUNDING & INVESTMENT ===
-• Physical Intelligence — In talks to raise ~$1B at an $11B+ valuation (up from $5.6B four months ago); Founders Fund and Lightspeed reportedly joining returning backers Thrive Capital and Lux Capital. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+• Galaxea AI — $290.4M Series B+ (April 3); Chinese embodied AI startup developing VLA models for industrial robotics, signaling continued Asia-Pacific funding acceleration. https://www.cxodigitalpulse.com/chinas-galaxea-ai-raises-290-4-million-in-series-b-round-to-accelerate-robotics-push/
+• Physical Intelligence — Closing ~$1B round at $11B valuation (Founders Fund, Lightspeed), doubling its valuation in just four months. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
 
 === COMPETITOR WATCH ===
-• [OpenAI] — Published a 13-page economic policy blueprint calling for robot taxes, a public wealth fund, and 4-day workweek pilots, positioning itself as a governance voice even as its robotics hardware lead resigned last month over a Pentagon deal. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
-• [ElliQ] — A Wisconsin pilot with 280 seniors is leading the nation in companion robot outcomes; the ADRC is expanding by 140 units with new veteran and grief-support features. https://www.weau.com/2026/04/06/small-robot-helps-chippewa-valley-senoirs-beat-loneliness-state-leads-nation-results/
-• [Samsung] — Integrated Perplexity AI into Bixby across its 2026 home appliance lineup (fridges, ACs, robot vacuums), enabling natural language commands and open Q&A throughout the home. https://www.koreatimes.co.kr/business/companies/20260331/samsung-enlists-perplexity-ai-to-refine-bixby-for-home-appliances
+• [Physical Intelligence] — Closing $1B round at $11B valuation; also shipped π0 v0.6 VLA model with 2x throughput improvement on dexterous manipulation tasks. https://theaiinsider.tech/2026/03/30/report-physical-intelligence-to-raise-1b-with-valuation-north-of-11b/
+• [NVIDIA] — National Robotics Week: released new open Isaac models and simulation libraries; highlighted real-world deployments in solar, agriculture, and manufacturing. https://nvidianews.nvidia.com/news/nvidia-accelerates-robotics-research-and-development-with-new-open-models-and-simulation-libraries
+• [Google DeepMind / Gemini Robotics] — Launched Gemini Robotics On-Device, an on-robot VLA model for low-latency, offline use, and announced a research partnership with Agile Robots (20K+ deployed systems) for industrial scale-up. https://deepmind.google/blog/gemini-robotics-on-device-brings-ai-to-local-robotic-devices/
+• [1X Technologies] — Appointed Mohi Khansari as Head of Robot Learning and relocated to new Palo Alto global HQ as NEO home robot rollout ramps up. https://www.1x.tech/discover
+• [OpenAI] — No robotics product announcement; published policy paper on robot taxes and AI wealth redistribution (April 6). https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
+
+=== BAY AREA ===
+• AAAI Spring Symposium Series — April 7–9, Hyatt Regency SFO, Burlingame; includes Embodied AI, Robotics & Bio-AI track — happening today. https://aaai.org/conference/spring-symposia/sss26/
