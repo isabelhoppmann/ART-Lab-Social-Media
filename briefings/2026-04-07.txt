@@ -1,0 +1,15 @@
+ART Lab Briefing — Tuesday, April 7
+=== ROBOTICS & AI ===
+• Neuro-Symbolic AI Cuts Energy 100x — Researchers unveiled a hybrid approach combining neural networks with symbolic reasoning that slashes AI energy use while boosting accuracy, with direct implications for on-device robot intelligence. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+• NVIDIA GR00T N1.7 Now in Commercial Early Access — During National Robotics Week, NVIDIA opened commercial licensing for its humanoid robot foundation model and previewed GR00T N2, which helps robots succeed at novel tasks more than twice as often as leading VLMs. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+
+=== RESEARCH ===
+• 700°C Memory Chip Could Reshape AI Inference — A new device performs matrix multiplication and data storage at extreme temperatures, promising orders-of-magnitude speed and efficiency gains for edge AI hardware. https://www.sciencedaily.com/releases/2026/04/260406192904.htm
+
+=== FUNDING & INVESTMENT ===
+• Physical Intelligence — In talks to raise ~$1B at an $11B+ valuation (up from $5.6B four months ago); Founders Fund and Lightspeed reportedly joining returning backers Thrive Capital and Lux Capital. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [OpenAI] — Published a 13-page economic policy blueprint calling for robot taxes, a public wealth fund, and 4-day workweek pilots, positioning itself as a governance voice even as its robotics hardware lead resigned last month over a Pentagon deal. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
+• [ElliQ] — A Wisconsin pilot with 280 seniors is leading the nation in companion robot outcomes; the ADRC is expanding by 140 units with new veteran and grief-support features. https://www.weau.com/2026/04/06/small-robot-helps-chippewa-valley-senoirs-beat-loneliness-state-leads-nation-results/
+• [Samsung] — Integrated Perplexity AI into Bixby across its 2026 home appliance lineup (fridges, ACs, robot vacuums), enabling natural language commands and open Q&A throughout the home. https://www.koreatimes.co.kr/business/companies/20260331/samsung-enlists-perplexity-ai-to-refine-bixby-for-home-appliances
