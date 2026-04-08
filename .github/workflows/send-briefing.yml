@@ -26,8 +26,8 @@ jobs:
             | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
 
           {
-            echo "From: Isabel Hoppmann <isabel@artlab.ai>"
-            echo "To: isabel@artlab.ai, catie@artlab.ai"
+            echo "From: Isabel Hoppmann <isabel@art-lab.ai>"
+            echo "To: isabel@art-lab.ai, catie@art-lab.ai"
             echo "Subject: ${SUBJECT}"
             echo "MIME-Version: 1.0"
             echo "Content-Type: text/plain; charset=UTF-8"
