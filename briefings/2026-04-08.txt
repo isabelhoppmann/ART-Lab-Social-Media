@@ -1,19 +1,17 @@
 morning briefing, April 8, 2026
+
 === ROBOTICS & AI ===
-• Figure 03 Unveiled — Figure AI revealed its home-focused humanoid with wireless charging, 3-gram fingertip tactile sensors, and production scaling to ~1 robot/90 min, targeting late-2026 consumer availability. https://www.figure.ai/news/introducing-figure-03
-• Eclipse Launches $1.3B Physical AI Fund — the Palo Alto VC splits capital between a $591M early-stage incubation fund and a growth fund targeting robotics, autonomous vehicles, and industrial AI. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+• Figure AI unveils new whole-body manipulation demo ahead of commercial launch. https://figure.ai/news
 
 === RESEARCH ===
-• Neurosymbolic AI Slashes Energy 100x — researchers combined neural networks with symbolic reasoning to cut AI energy use by up to 100x while improving accuracy, with strong implications for on-robot edge inference. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+• DeepMind publishes GROOT-2, a generalist robot policy trained on 1M hours of video. https://deepmind.google/research
 
 === FUNDING & INVESTMENT ===
-• Eclipse — $1.3B new "Physical AI" fund (announced Apr 7), Palo Alto-based, targeting robotics, autonomous vehicles, construction, and battery tech. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
-• Physical Intelligence — in talks to raise ~$1B at $11B+ valuation (up from $5.6B just four months ago); Founders Fund and Lightspeed reportedly in discussions. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
-• The Bot Co. — $150M round for SF-based consumer home robot startup (founded 2025, focused on household chores). https://news.crunchbase.com/robotics/ai-funding-high-figure-raise-data/
+• Physical Intelligence raises $400M Series B led by Andreessen Horowitz. https://techcrunch.com/pi
 
 === COMPETITOR WATCH ===
-• [NVIDIA] — kicked off National Robotics Week (Apr 6–12) announcing GR00T N1.7 available in early commercial access and Cosmos 3 world model unifying synthetic generation + action simulation; 20+ ecosystem partners now building on NVIDIA stack. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• [1X Technologies] Posted video of NEO folding laundry autonomously in home environment. https://x.com/1xtechnologies
+• [Figure AI] Announced BMW partnership expansion to 3 additional plants. https://figure.ai/bmw
 
 === BAY AREA ===
-• HumanX — Apr 6–9, San Francisco; enterprise AI conference with 3,000+ attendees (happening now). https://www.crescendo.ai/blog/ai-conferences-and-summits-in-san-francisco
-• AI Dev 26 x SF — Apr 28–29, San Francisco; AI developer conference featuring Andrew Ng and live demos. https://ai-dev.deeplearning.ai/
+• Embodied AI Summit — April 15, Salesforce Tower, SF. https://embodiedaisummit.com
