@@ -1,23 +1,23 @@
-ART Lab Briefing — Tuesday, April 8
+ART Lab Briefing — Wednesday, April 8
 === ROBOTICS & AI ===
-• Eclipse Launches $1.3B Physical AI Fund — Cerebras backer Eclipse raised $720M early-stage + $591M growth-stage specifically for physical AI, robotics, manufacturing, and defense startups. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
-• NVIDIA Releases GR00T N1.7 for National Robotics Week — NVIDIA made GR00T N1.7 available in early access with commercial licensing, and debuted Cosmos 3, a world foundation model unifying synthetic generation, vision reasoning, and action simulation. https://blogs.nvidia.com/blog/national-robotics-week-2026/
-• OpenAI Proposes Robot Taxes and Public Wealth Funds — OpenAI published an economic policy vision calling for robot taxes, public wealth funds, and a four-day workweek to address AI-driven displacement. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
+• NVIDIA previews GR00T N2 at GTC 2026 — next-gen robot foundation model completes new tasks in unfamiliar environments 2x more often than leading VLA models; GR00T N1.7 now in early commercial access. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+• Serve Robotics debuts "Maggie" — first AI-powered conversational robot, live-demoed at GTC on April 7; powered by edge AI for real-time customer interaction. https://www.stocktitan.net/news/SERV/serve-robotics-debut-conversational-robot-powered-by-edge-ai-at-q87vkfqmjyoh.html
 
 === RESEARCH ===
-• Hybrid Neural-Symbolic AI Cuts Energy Use 100x — Researchers combined neural networks with symbolic reasoning to slash AI energy consumption by up to 100x while improving robot accuracy on physical tasks. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+• Neuro-symbolic AI cuts energy 100x — researchers combined neural networks with symbolic step-by-step reasoning to slash AI energy use while improving accuracy. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+• High-temp memory chip — new device operates at 700°C, promising dramatically faster AI compute at lower power; could enable AI in industrial and aerospace environments. https://www.sciencedaily.com/releases/2026/04/260406192904.htm
 
 === FUNDING & INVESTMENT ===
-• Eclipse — $1.3B new physical AI fund; $720M early-stage + $591M growth; portfolio includes Bedrock Robotics, Wayve, Mind Robotics. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
-• Physical Intelligence — In talks for $1B raise at $11B+ valuation (2x in 4 months); Founders Fund + Lightspeed joining Thrive Capital and Lux Capital. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+• Galaxea AI — $290M Series B+ (Sequoia China, Hillhouse, Tencent); general-purpose humanoid maker valued at ~$2.9B. https://news.crunchbase.com/venture/biggest-funding-rounds-anthropic-leads-ai-robotics/
+• Mind Robotics — $500M Series A (Accel, a16z); Rivian spinout building factory AI on real automotive robot data. https://news.crunchbase.com/venture/biggest-funding-rounds-anthropic-leads-ai-robotics/
+• Sunday — $165M Series B (Coatue, Tiger Global, Benchmark); household robots (Memo) for laundry and daily chores. https://princetonainewsletter.substack.com/p/daily-vc-investment-events-the-vc-239
+• Physical Intelligence — in talks for ~$1B at $11B valuation, up from $5.6B in November; Founders Fund and Lightspeed participating. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
 
 === COMPETITOR WATCH ===
-• [Figure AI] — Launched Figure 03, third-gen humanoid built around Helix VLA model, with home features (wireless charging, soft goods, improved audio) and high-volume manufacturing via BotQ. https://www.figure.ai/news/introducing-figure-03
-• [NVIDIA] — GR00T N1.7 now in early access with commercial licensing; Cosmos 3 world foundation model released this week during National Robotics Week. https://blogs.nvidia.com/blog/national-robotics-week-2026/
-• [OpenAI] — Published economic policy paper (Apr 6) on robot taxes and AI wealth redistribution; hardware lead Kalinowski departed in March over Pentagon deal—robotics program in flux. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
-• [Meta] — Preparing to open source next-gen AI models developed under Alexandr Wang, expected H1 2026. https://www.axios.com/2026/04/06/meta-open-source-ai-models
-• [ElliQ] — Wisconsin pilot shows strong outcomes with 280 seniors; ADRC expanding by 140 more units, now targeting veterans. https://www.weau.com/2026/04/06/small-robot-helps-chippewa-valley-senoirs-beat-loneliness-state-leads-nation-results/
+• [NVIDIA] — Unveiled GR00T N2 and open-sourced Newton Physics Engine (co-developed with Google DeepMind & Disney Research); launched Physical AI Data Factory Blueprint at GTC. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+• [OpenAI] — Published economic AI policy vision proposing robot taxes and public wealth funds to redistribute automation gains; also disclosed ongoing hardware robot development with custom sensors. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
+• [1X Technologies] — Consolidated to new Palo Alto Global HQ ahead of large-scale NEO consumer deployment; appointed Mohi Khansari as Head of Robot Learning. https://www.1x.tech/discover
 
 === BAY AREA ===
-• GUI Agents Workshop (SF Bay Area AI Meetup) — Apr 9, online; visual agents that understand and interact with GUIs. https://www.meetup.com/sf-bay-area-ai-meetup-group/
-• AgentCon San Francisco — May 4, Silicon Valley; developer-focused AI agents conference with talks, workshops, and live demos. https://sf.aitinkerers.org/
+• HumanX AI Conference — Apr 6–9, Moscone Center South, San Francisco; 6,500 attendees, includes "Data for Humanoids" roundtable; speakers include Fei-Fei Li, Amazon AWS CEO, and OpenAI/Google/Meta leaders. https://www.humanx.co/
+• NVIDIA GTC 2026 — Apr 6–9, San Jose Convention Center; 30,000+ attendees across 10 venues; live robot demos and physical AI keynotes running through tomorrow. https://www.nvidia.com/gtc/
