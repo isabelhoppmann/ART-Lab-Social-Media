@@ -18,26 +18,25 @@ jobs:
           SUBJECT=$(head -1 "$FILE")
           BODY=$(tail -n +2 "$FILE")
 
-          # Get access token
           ACCESS_TOKEN=$(curl -s -X POST https://oauth2.googleapis.com/token \
             -d "client_id=${{ secrets.GMAIL_CLIENT_ID }}" \
             -d "client_secret=${{ secrets.GMAIL_CLIENT_SECRET }}" \
             -d "refresh_token=${{ secrets.GMAIL_REFRESH_TOKEN }}" \
-            -d "grant_type=refresh_token" | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
+            -d "grant_type=refresh_token" \
+            | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
 
-          # Build RFC 2822 message
-          RAW_MSG="From: Isabel Hoppmann <isabel@artlab.ai>
-To: isabel@artlab.ai, catie@artlab.ai
-Subject: ${SUBJECT}
-MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
+          {
+            echo "From: Isabel Hoppmann <isabel@artlab.ai>"
+            echo "To: isabel@artlab.ai, catie@artlab.ai"
+            echo "Subject: ${SUBJECT}"
+            echo "MIME-Version: 1.0"
+            echo "Content-Type: text/plain; charset=UTF-8"
+            echo ""
+            printf '%s' "${BODY}"
+          } > /tmp/email.txt
 
-${BODY}"
+          ENCODED=$(base64 -w 0 /tmp/email.txt | tr '+/' '-_' | tr -d '=')
 
-          # Base64url encode
-          ENCODED=$(printf '%s' "$RAW_MSG" | base64 -w 0 | tr '+/' '-_' | tr -d '=')
-
-          # Send via Gmail API
           RESULT=$(curl -s -X POST "https://gmail.googleapis.com/gmail/v1/users/me/messages/send" \
             -H "Authorization: Bearer $ACCESS_TOKEN" \
             -H "Content-Type: application/json" \
