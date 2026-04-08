@@ -1,10 +1,20 @@
-import sys, re
+import sys, re, os
+from datetime import datetime
 
-with open(sys.argv[1]) as f:
+filepath = sys.argv[1]
+
+# Derive subject from filename (YYYY-MM-DD.txt)
+basename = os.path.basename(filepath).replace('.txt', '')
+try:
+    date = datetime.strptime(basename, '%Y-%m-%d')
+    subject = 'Morning Briefing ' + date.strftime('%B %-d, %Y')
+except ValueError:
+    subject = 'Morning Briefing'
+
+with open(filepath) as f:
     lines = f.read().splitlines()
 
-subject = lines[0]
-
+# Skip line 0 (agent-written subject — we use the filename-derived one above)
 colors = {
     'ROBOTICS & AI': '#6B3FA0',
     'RESEARCH': '#3A7BD5',
@@ -61,4 +71,6 @@ html = (
     '</div></div></body></html>'
 )
 
+# Print subject on line 1, HTML on line 2+ (workflow reads line 1 as email subject)
+print(subject)
 print(html)
