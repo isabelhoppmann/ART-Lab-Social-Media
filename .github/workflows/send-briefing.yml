@@ -16,8 +16,9 @@ jobs:
       - name: Send via Gmail API
         run: |
           FILE=$(ls -t briefings/*.txt | head -1)
-          SUBJECT=$(head -1 "$FILE")
-          HTML=$(python3 .github/scripts/convert_briefing.py "$FILE")
+          OUTPUT=$(python3 .github/scripts/convert_briefing.py "$FILE")
+          SUBJECT=$(echo "$OUTPUT" | head -1)
+          HTML=$(echo "$OUTPUT" | tail -n +2)
 
           ACCESS_TOKEN=$(curl -s -X POST https://oauth2.googleapis.com/token \
             -d "client_id=${{ secrets.GMAIL_CLIENT_ID }}" \
