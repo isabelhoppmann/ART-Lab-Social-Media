@@ -1,23 +1,4 @@
-ART Lab Briefing — Wednesday, April 8
-=== ROBOTICS & AI ===
-• NVIDIA previews GR00T N2 at GTC 2026 — next-gen robot foundation model completes new tasks in unfamiliar environments 2x more often than leading VLA models; GR00T N1.7 now in early commercial access. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
-• Serve Robotics debuts "Maggie" — first AI-powered conversational robot, live-demoed at GTC on April 7; powered by edge AI for real-time customer interaction. https://www.stocktitan.net/news/SERV/serve-robotics-debut-conversational-robot-powered-by-edge-ai-at-q87vkfqmjyoh.html
+ART Lab Briefing — Test, April 8
 
-=== RESEARCH ===
-• Neuro-symbolic AI cuts energy 100x — researchers combined neural networks with symbolic step-by-step reasoning to slash AI energy use while improving accuracy. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
-• High-temp memory chip — new device operates at 700°C, promising dramatically faster AI compute at lower power; could enable AI in industrial and aerospace environments. https://www.sciencedaily.com/releases/2026/04/260406192904.htm
-
-=== FUNDING & INVESTMENT ===
-• Galaxea AI — $290M Series B+ (Sequoia China, Hillhouse, Tencent); general-purpose humanoid maker valued at ~$2.9B. https://news.crunchbase.com/venture/biggest-funding-rounds-anthropic-leads-ai-robotics/
-• Mind Robotics — $500M Series A (Accel, a16z); Rivian spinout building factory AI on real automotive robot data. https://news.crunchbase.com/venture/biggest-funding-rounds-anthropic-leads-ai-robotics/
-• Sunday — $165M Series B (Coatue, Tiger Global, Benchmark); household robots (Memo) for laundry and daily chores. https://princetonainewsletter.substack.com/p/daily-vc-investment-events-the-vc-239
-• Physical Intelligence — in talks for ~$1B at $11B valuation, up from $5.6B in November; Founders Fund and Lightspeed participating. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
-
-=== COMPETITOR WATCH ===
-• [NVIDIA] — Unveiled GR00T N2 and open-sourced Newton Physics Engine (co-developed with Google DeepMind & Disney Research); launched Physical AI Data Factory Blueprint at GTC. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
-• [OpenAI] — Published economic AI policy vision proposing robot taxes and public wealth funds to redistribute automation gains; also disclosed ongoing hardware robot development with custom sensors. https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/
-• [1X Technologies] — Consolidated to new Palo Alto Global HQ ahead of large-scale NEO consumer deployment; appointed Mohi Khansari as Head of Robot Learning. https://www.1x.tech/discover
-
-=== BAY AREA ===
-• HumanX AI Conference — Apr 6–9, Moscone Center South, San Francisco; 6,500 attendees, includes "Data for Humanoids" roundtable; speakers include Fei-Fei Li, Amazon AWS CEO, and OpenAI/Google/Meta leaders. https://www.humanx.co/
-• NVIDIA GTC 2026 — Apr 6–9, San Jose Convention Center; 30,000+ attendees across 10 venues; live robot demos and physical AI keynotes running through tomorrow. https://www.nvidia.com/gtc/
+=== TEST ===
+• Workflow test — confirming Gmail delivery pipeline works.
