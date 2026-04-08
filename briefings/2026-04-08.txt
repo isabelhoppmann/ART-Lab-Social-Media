@@ -1,4 +1,28 @@
-ART Lab Briefing — Test, April 8
+morning briefing, April 8, 2026
+=== ROBOTICS & AI ===
+• NVIDIA National Robotics Week — NVIDIA spotlights physical AI in action: solar robot fleets (Maximo, 100MW installed) and ag robots (Aigen) deployed with Isaac Sim and GR00T. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• Figure Helix 02 Goes Viral — Figure AI's humanoid autonomously surveyed and cleaned a full living room end-to-end, generating major social buzz this week. https://x.com/MilkRoadAI/status/2031054859152035970
+• Faraday Future Clears FCC — FX Aegis quadruped completes US compliance certification; company shipped 20+ EAI robots in March and targets 200 for Q2. https://investors.ff.com/news-releases/news-release-details/faraday-future-announces-its-latest-robot-fx-aegis-quadruped-has
 
-=== TEST ===
-• Workflow test — confirming Gmail delivery to art-lab.ai addresses.
+=== RESEARCH ===
+• Neural-Symbolic AI Cuts Energy 100x (Tufts, Apr 5) — Combining neural nets with symbolic reasoning slashes AI energy use dramatically while improving accuracy, a potential breakthrough for on-device robotics. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+• Gemini Robotics 1.5 Released — DeepMind's updated VLA model reasons before acting and is now open to developers via the Gemini API; paired with new Agile Robots deployment partnership. https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/
+• Physical Intelligence π0 v0.6 — Latest update doubles manipulation throughput (laundry folding, espresso assembly); π0 weights remain open-source. https://www.physicalintelligence.company/
+
+=== FUNDING & INVESTMENT ===
+• Mind Robotics — $500M Series A (Accel + a16z); Rivian spin-out building AI-enabled industrial robotics in Palo Alto. https://news.crunchbase.com/venture/biggest-funding-rounds-anthropic-leads-ai-robotics/
+• Rhoda AI — $450M Series A (Premji Invest), out of stealth; video-predictive control platform for robots. https://news.crunchbase.com/robotics/ai-funding-high-figure-raise-data/
+• Anvil Robotics — $5.5M seed (Matter Venture Partners + Humba); SF-based "Legos for robots" hardware/software platform. https://news.crunchbase.com/robotics/physical-ai-custom-robot-builder-seed-funding-anvil/
+• Physical Intelligence — In talks to raise $1B at $11B+ valuation; Founders Fund and Lightspeed reportedly in. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [Figure AI] — Helix 02 living-room demo goes viral on X; Figure's humanoid previously featured at White House by Melania Trump (Mar 26). https://x.com/MilkRoadAI/status/2031054859152035970
+• [Google DeepMind] — Gemini Robotics 1.5 launched + Agile Robots partnership signed for automotive/logistics industrial deployment. https://techcrunch.com/2026/03/24/agile-robots-becomes-the-latest-robotics-company-to-partner-with-google-deepmind/
+• [NVIDIA] — GR00T N1.7 now commercially licensed; National Robotics Week showcases real-world Isaac deployments. https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world
+• [Samsung] — Integrated Perplexity AI into Bixby for home appliances, adding generative Q&A (Mar 31). https://www.koreatimes.co.kr/business/companies/20260331/samsung-enlists-perplexity-ai-to-refine-bixby-for-home-appliances
+• [Physical Intelligence] — Fundraise talks at $11B+ and open-sourced π0; no consumer product yet but foundation model momentum building. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+• [Apple] — Smart home hub (6-7" display, codenamed J490) confirmed for mid-2026; tabletop "Pixar Lamp" robot arm on track for 2027. https://www.tomsguide.com/ai/apples-big-ai-home-push-upgraded-siri-pixar-like-robot-smart-display-and-more-heres-what-we-know
+
+=== BAY AREA ===
+• HumanX 2026 — Apr 6–9, San Francisco; "Davos of AI" summit wrapping today, heavy robotics/embodied AI programming. https://wavecnct.com/blogs/ai-conferences-trade-shows-usa-2026
+• SF Bay Area AI Meetup: Visual Agents for GUI Automation — Apr 9, 9AM PT (online); covers computer vision relevant to robotics UX. https://www.meetup.com/sf-bay-area-ai-meetup-group/
