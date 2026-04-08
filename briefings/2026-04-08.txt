@@ -1,4 +1,4 @@
 ART Lab Briefing — Test, April 8
 
 === TEST ===
-• Workflow test — confirming Gmail delivery pipeline works.
+• Workflow test — confirming Gmail delivery to art-lab.ai addresses.
