@@ -82,12 +82,12 @@ Keep doing what's working here — these have been landing well.
 - Pick the highest-quality, most visually striking result
 - Download the image and resize to 1080x1080
 
-**Search query rules — match the photo to the quote's emotional world:**
-- Romanticizing life / soft life → "golden hour aesthetic dreamy soft light", "cozy morning linen editorial"
-- Love / longing / relationships → "soft bokeh warm romantic light", "film grain golden sunset couple"
-- Growth / new chapter / hope → "sunrise mountain misty path", "cherry blossoms spring bloom aerial"
-- Confidence / glow-up → "neon city night editorial fashion", "luxury minimalist fashion editorial"
-- Journaling / reflection / stillness → "cozy reading window warm candle", "notebook coffee morning light"
+**Search query rules — use terms that return SHARP, clear photos with recognizable subjects. Avoid words like "dreamy", "soft", "bokeh", "aesthetic" — they return blurry photos.**
+- Romanticizing life / soft life → "sunset ocean waves", "lavender field purple flowers", "cherry blossom park"
+- Love / relationships → "couple sunset beach", "roses garden close up", "heart shaped bokeh city"
+- Growth / new chapter → "mountain sunrise trail", "green forest path sunlight", "waterfall nature"
+- Confidence / glow-up → "city skyline night lights", "neon signs street night", "woman fashion portrait"
+- Journaling / reflection → "coffee notebook desk wood", "open book window light", "candle flowers table"
 
 **PIL code — the photo must be clearly visible, like a premium Instagram quote post:**
 ```python
@@ -162,9 +162,9 @@ def make_quote_image(quote, filename, pexels_key, search_query):
 
     bg.save(filename)
 
-# Choose search_query to match the quote's emotional world (see rules above)
-make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "golden hour dreamy soft light aesthetic")
-make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, "neon city night editorial fashion")
+# Choose search_query to match the quote's emotional world — use clear, specific subjects (see rules above)
+make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "lavender field purple flowers")
+make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, "city skyline night lights")
 ```
 
 ---
