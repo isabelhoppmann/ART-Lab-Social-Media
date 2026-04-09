@@ -83,7 +83,7 @@ Keep doing what's working here — these have been landing well.
 - Download the image and resize to 1080x1080
 
 **Search query rules — use terms that return SHARP, clear photos with recognizable subjects. Avoid words like "dreamy", "soft", "bokeh", "aesthetic" — they return blurry photos.**
-- Romanticizing life / soft life → "sunset ocean waves", "lavender field purple flowers", "cherry blossom park"
+- Romanticizing life / soft life → "sunset ocean waves horizon", "cherry blossom park path", "sunrise mountain lake"
 - Love / relationships → "couple sunset beach", "roses garden close up", "heart shaped bokeh city"
 - Growth / new chapter → "mountain sunrise trail", "green forest path sunlight", "waterfall nature"
 - Confidence / glow-up → "city skyline night lights", "neon signs street night", "woman fashion portrait"
@@ -109,9 +109,9 @@ def make_quote_image(quote, filename, pexels_key, search_query):
     bg = ImageEnhance.Color(bg).enhance(1.15)
     bg = bg.convert("RGBA")
 
-    # --- 3. Uniform dark overlay — just enough to make white text readable ---
-    # Alpha 110 = ~43% dark. The photo stays fully visible underneath.
-    overlay = Image.new("RGBA", (1080, 1080), (20, 10, 40, 110))
+    # --- 3. Neutral dark overlay — just enough to make white text readable, no color tint ---
+    # Alpha 90 = ~35% dark. The photo stays fully visible with its original colors.
+    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 90))
     bg = Image.alpha_composite(bg, overlay)
 
     # --- 4. Darker oval vignette around edges only, center stays bright ---
@@ -163,7 +163,7 @@ def make_quote_image(quote, filename, pexels_key, search_query):
     bg.save(filename)
 
 # Choose search_query to match the quote's emotional world — use clear, specific subjects (see rules above)
-make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "lavender field purple flowers")
+make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "sunset ocean waves horizon")
 make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, "city skyline night lights")
 ```
 
