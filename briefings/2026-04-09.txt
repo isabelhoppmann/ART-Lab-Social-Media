@@ -1,0 +1,21 @@
+morning briefing, April 9, 2026
+=== ROBOTICS & AI ===
+• NVIDIA previews GR00T N2 for National Robotics Week — next-gen robot foundation model succeeds at new tasks more than twice as often as leading VLA models, with GR00T N1.7 now in early access. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• Meta launches Muse Spark — first proprietary model from Meta Superintelligence Labs (led by Alexandr Wang), claiming to outperform GPT-5 and Gemini 2.0 on reasoning and coding benchmarks. https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html
+
+=== RESEARCH ===
+• AI efficiency breakthrough cuts energy use 100× — new hybrid neural-symbolic approach dramatically reduces compute while improving accuracy, published this week. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+=== FUNDING & INVESTMENT ===
+• Eclipse VC — $1.3B new fund (Apr 7) targeting physical AI startups, split between $591M early-stage incubation and a growth vehicle. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+• Galaxea AI — $290M Series B+ this week, led by Sequoia China & Hillhouse; builds general-purpose humanoid robots for factory and home. https://princetonainewsletter.substack.com/p/daily-vc-investment-events-the-vc-239
+• Sunday — $165M Series B led by Coatue (Tiger Global, Benchmark, Bain CVP); household robot for laundry, cleaning, and daily chores. https://princetonainewsletter.substack.com/p/daily-vc-investment-events-the-vc-239
+
+=== COMPETITOR WATCH ===
+• [NVIDIA] — Previewed GR00T N2 and spotlighted physical AI ecosystem milestones during National Robotics Week (Apr 8–9). https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• [Meta] — Launched Muse Spark (Apr 8), departing from open-source Llama with its first closed proprietary model; claims state-of-the-art on reasoning and agentic tasks. https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html
+• [Google DeepMind] — Announced partnership with Agile Robots (Apr 6) to embed Gemini Robotics foundation models into scalable industrial robotic platforms. https://www.cnbc.com/2026/03/24/google-agile-robots-ai-robotics.html
+
+=== BAY AREA ===
+• HumanX Conference — Apr 6–9, San Francisco; premier AI conference for decision-makers, wrapping up today. https://pairs.bythebay.io
+• AAAI 2026 Spring Symposium — Apr 7–9, Hyatt Regency Burlingame; robotics, LLM agents, and automation focus, concluding today. https://aaai.org/conference/spring-symposia/sss26/
