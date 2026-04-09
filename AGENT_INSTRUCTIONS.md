@@ -89,13 +89,13 @@ Keep doing what's working here — these have been landing well.
 - Confidence / glow-up → "neon city night editorial fashion", "luxury minimalist fashion editorial"
 - Journaling / reflection / stillness → "cozy reading window warm candle", "notebook coffee morning light"
 
-**PIL code:**
+**PIL code — the photo must be clearly visible, like a premium Instagram quote post:**
 ```python
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 import urllib.request, textwrap, io, json, random
 
 def make_quote_image(quote, filename, pexels_key, search_query):
-    # --- 1. Fetch Pexels photo matching the quote's world ---
+    # --- 1. Fetch Pexels photo ---
     url = f"https://api.pexels.com/v1/search?query={search_query}&per_page=5&orientation=square"
     req = urllib.request.Request(url, headers={"Authorization": pexels_key})
     with urllib.request.urlopen(req) as r:
@@ -104,64 +104,32 @@ def make_quote_image(quote, filename, pexels_key, search_query):
     with urllib.request.urlopen(photo_url) as r:
         bg = Image.open(io.BytesIO(r.read())).convert("RGB").resize((1080, 1080))
 
+    # --- 2. Slightly boost contrast and saturation so the photo pops ---
+    bg = ImageEnhance.Contrast(bg).enhance(1.1)
+    bg = ImageEnhance.Color(bg).enhance(1.15)
     bg = bg.convert("RGBA")
 
-    # --- 2. Light dusky overlay — let the photo breathe, just darken bottom for text ---
-    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
-    draw_ov = ImageDraw.Draw(overlay)
-    for y in range(1080):
-        t = y / 1080
-        # Barely-there at top (alpha ~25), soft purple-dark at bottom (alpha ~130)
-        alpha = int(25 + 105 * t)
-        r_val = int(107 * (1 - t * 0.2))
-        g_val = int(63 * (1 - t * 0.2))
-        b_val = int(160 * (1 - t * 0.05))
-        draw_ov.line([(0, y), (1080, y)], fill=(r_val, g_val, b_val, alpha))
+    # --- 3. Uniform dark overlay — just enough to make white text readable ---
+    # Alpha 110 = ~43% dark. The photo stays fully visible underneath.
+    overlay = Image.new("RGBA", (1080, 1080), (20, 10, 40, 110))
     bg = Image.alpha_composite(bg, overlay)
 
-    # --- 3. Bokeh glow layer — soft lavender/blush orbs like lens flare ---
-    bokeh = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
-    bd = ImageDraw.Draw(bokeh)
-    bokeh_colors = [(201, 177, 232), (240, 160, 192), (255, 240, 230), (180, 160, 220)]
-    for _ in range(14):
-        cx = random.randint(-60, 1140)
-        cy = random.randint(-60, 1140)
-        radius = random.randint(40, 180)
-        color = random.choice(bokeh_colors)
-        alpha = random.randint(18, 52)
-        bd.ellipse([cx - radius, cy - radius, cx + radius, cy + radius], fill=(*color, alpha))
-    bokeh = bokeh.filter(ImageFilter.GaussianBlur(radius=42))
-    bg = Image.alpha_composite(bg, bokeh)
-
-    # --- 4. Light leak — soft warm wash from upper-left corner ---
-    leak = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
-    ld = ImageDraw.Draw(leak)
-    for i in range(5):
-        off = i * 35
-        ld.polygon([(off, 0), (420 + off, 0), (0, 420 + off)], fill=(255, 245, 220, 20))
-    leak = leak.filter(ImageFilter.GaussianBlur(radius=55))
-    bg = Image.alpha_composite(bg, leak)
-
-    # --- 5. Grain — stops it looking flat, adds editorial texture ---
-    grain = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
-    gp = grain.load()
-    for x in range(0, 1080, 2):
-        for y in range(0, 1080, 2):
-            v = 128 + random.randint(-18, 18)
-            gp[x, y] = (v, v, v, 15)
-    bg = Image.alpha_composite(bg, grain)
-
-    # --- 6. Soft vignette behind text area for readability ---
+    # --- 4. Darker oval vignette around edges only, center stays bright ---
     vignette = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
     vd = ImageDraw.Draw(vignette)
-    vd.rectangle([80, 310, 1000, 770], fill=(0, 0, 0, 55))
-    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=40))
+    vd.ellipse([(-200, -200), (1280, 1280)], fill=(0, 0, 0, 0))
+    vd.rectangle([(0, 0), (1080, 1080)], fill=(0, 0, 0, 0))
+    # Draw darkened edges by painting a soft border
+    for i in range(80):
+        alpha = int(80 * (i / 80) ** 2)
+        vd.rectangle([(i, i), (1080 - i, 1080 - i)], outline=(0, 0, 0, alpha))
+    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=30))
     bg = Image.alpha_composite(bg, vignette)
 
     bg = bg.convert("RGB")
     draw = ImageDraw.Draw(bg)
 
-    # --- 7. Font ---
+    # --- 5. Font ---
     try:
         font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 82)
         small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf", 40)
@@ -173,7 +141,7 @@ def make_quote_image(quote, filename, pexels_key, search_query):
             font = ImageFont.load_default()
             small_font = font
 
-    # --- 8. Quote text centered ---
+    # --- 6. Quote text — centered, white with soft shadow ---
     lines = textwrap.wrap(quote, width=18)
     total_h = len(lines) * 98
     y_start = (1080 - total_h) // 2
@@ -181,19 +149,20 @@ def make_quote_image(quote, filename, pexels_key, search_query):
         bbox = draw.textbbox((0, 0), line, font=font)
         w = bbox[2] - bbox[0]
         x = (1080 - w) // 2
-        draw.text((x + 3, y_start + 3), line, font=font, fill=(0, 0, 0, 90))
-        draw.text((x + 1, y_start + 1), line, font=font, fill=(80, 50, 120, 60))
+        # Shadow
+        draw.text((x + 3, y_start + 3), line, font=font, fill=(0, 0, 0, 160))
+        # White text
         draw.text((x, y_start), line, font=font, fill=(255, 255, 255))
         y_start += 98
 
-    # --- 9. Zenie watermark ---
+    # --- 7. Zenie watermark ---
     watermark = "✦ Zenie"
     wb = draw.textbbox((0, 0), watermark, font=small_font)
-    draw.text((1080 - (wb[2] - wb[0]) - 30, 1030), watermark, font=small_font, fill=(201, 177, 232))
+    draw.text((1080 - (wb[2] - wb[0]) - 30, 1035), watermark, font=small_font, fill=(201, 177, 232))
 
     bg.save(filename)
 
-# Choose search_query based on each quote's emotional tone (see rules above)
+# Choose search_query to match the quote's emotional world (see rules above)
 make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "golden hour dreamy soft light aesthetic")
 make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, "neon city night editorial fashion")
 ```
