@@ -1,49 +1,89 @@
 # Zenie Social Media Drafts — April 9, 2026
 
-## Meme 1: Delulu Is The Solulu
-**Format:** "Delulu is the solulu" — one of the most viral self-belief memes for women, about manifesting through delusional optimism  
-**GIF:** https://giphy.com/embed/4CXnnAoGtZ0Yxi0Xrp (BuzzFeed/ITZY, Giphy)  
-**Caption:** Your journal knew before you did. 💜  
-**Hashtags:** #Zenie #delulu #journaling #selfcare #maincharacter #deluloisthesolulu #womenempowerment  
-**Best time:** Tuesday 7–9 PM  
+---
+
+## Meme 1 — "Treat Yourself" (Parks & Recreation)
+
+**GIF:** https://giphy.com/embed/jRvpDcLfozLIonuiaY
+**Trending hook:** "Princess treatment or nothing" energy — Tom & Donna's iconic *Treat Yo'Self* moment from Parks & Rec is having a massive resurgence as women claim their worth.
+
+**Caption:**
+No seriously. TREAT. YOURSELF. 💜 Your journal agrees.
+
+**Hashtags:**
+#Zenie #TreatYourself #PrincessTreatment #YouDeserveIt #Journaling #SelfLove #MainCharacter
+
+**Best time to post:** Wednesday 7 PM
 
 ---
 
-## Meme 2: Main Character Glow-Up (Legally Blonde)
-**Format:** Legally Blonde "What, like it's hard?" — iconic main character energy/confidence moment  
-**GIF:** https://giphy.com/embed/xUA7b17osqXImEFJKM (20th Century Fox, Giphy)  
-**Caption:** Starting your glow-up era like 💅  
-**Hashtags:** #Zenie #glowup #maincharacter #selflove #journaling #LegallyBlonde #womenempowerment  
-**Best time:** Thursday 7–9 PM  
+## Meme 2 — "Delulu Is the Solulu"
+
+**GIF:** https://giphy.com/embed/4CXnnAoGtZ0Yxi0Xrp
+**Trending hook:** "Delulu is the solulu" is still one of the biggest ongoing meme formats for women 20-35 — the idea that believing in yourself (even "irrationally") is the path forward.
+
+**Caption:**
+Delulu is the solulu. Manifest it in your journal first. 💜
+
+**Hashtags:**
+#Zenie #Delulu #ManifestYourLife #JournalingGoals #MainCharacterEra #SelfBelief #GlowUp
+
+**Best time to post:** Tuesday 6 PM
 
 ---
 
-## Repost 1: @sincerelyfa_
-**URL:** https://www.tiktok.com/@sincerelyfa_/video/7592040791892135223  
-**Caption:** via @sincerelyfa_ | Your 2026 self-growth journal checklist — save this 📓💜  
-**Best time:** Wednesday 12–2 PM  
+## Repost 1 — @ashley.paiige
+
+**URL:** https://www.tiktok.com/@ashley.paiige/video/7589699957519650061
+**Creator:** @ashley.paiige
+**Theme:** Easy, affordable glow-up tips for 2026 — looking and feeling confident. Perfectly aligned with Zenie's self-growth focus.
+
+**Repost caption:**
+Your glow-up season starts NOW. via @ashley.paiige 💜
+
+**Best time to post:** Monday 12 PM
 
 ---
 
-## Repost 2: @elirallo
-**URL:** https://www.tiktok.com/@elirallo/video/7527682141858090271  
-**Caption:** via @elirallo | Guided journaling for when you don't know where to start 💜  
-**Best time:** Sunday 8–10 AM  
+## Repost 2 — @wildehousepaper
+
+**URL:** https://www.tiktok.com/@wildehousepaper/video/7584652050026220830
+**Creator:** @wildehousepaper
+**Theme:** 2026 Intentional Planner — your roadmap to intentional living. Aligns perfectly with Zenie's journaling + intentional life focus.
+
+**Repost caption:**
+Intentional living > everything. via @wildehousepaper 💜
+
+**Best time to post:** Thursday 8 PM
 
 ---
 
-## Quote Image 1: Soft Life
-**Quote:** "Soft life isn't a reward. It's the whole plan."  
-**Background:** Golden hour bokeh — warm amber, rose, lavender tones with soft bokeh circles  
-**Caption:** Write it in your journal. Make it your reality. 💜  
-**Hashtags:** #Zenie #softlife #intentionalliving #journaling #selflove #maincharacter #zeniapp  
-**Best time:** Monday 7–9 AM  
+## Quote Image 1 — "Soft life isn't a reward. It's the whole plan."
+
+**File:** quote_1.png
+**Background:** Lavender field bokeh — deep violet and lavender tones
+**Quote:** Soft life isn't a reward. It's the whole plan.
+
+**Caption:**
+Write it in your journal: soft life is the standard. 💜
+
+**Hashtags:**
+#Zenie #SoftLife #IntentionalLiving #JournalingQuotes #SelfReflection #GlowUpMindset #LiveDeliberately
+
+**Best time to post:** Sunday 9 AM
 
 ---
 
-## Quote Image 2: Know Yourself
-**Quote:** "Know yourself before you know someone else."  
-**Background:** Neon city night — deep indigo/purple with neon glow streaks and bokeh  
-**Caption:** Self-knowledge is the ultimate glow-up 💜  
-**Hashtags:** #Zenie #selfdiscovery #journaling #relationships #knowyourself #growthmindset #zeniapp  
-**Best time:** Friday 12–2 PM  
+## Quote Image 2 — "You're not behind. You're right on time."
+
+**File:** quote_2.png
+**Background:** City night lights — glowing skyline, warm and cool bokeh
+**Quote:** You're not behind. You're right on time.
+
+**Caption:**
+Your pace is perfect. Your journal knows. 💜
+
+**Hashtags:**
+#Zenie #YouGotThis #SelfGrowth #JournalingLife #MindsetShift #MainCharacter #TrustYourself
+
+**Best time to post:** Friday 6 PM
