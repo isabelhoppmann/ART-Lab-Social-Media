@@ -1,0 +1,21 @@
+morning briefing, April 10, 2026
+=== ROBOTICS & AI ===
+• LG releases EXAONE 4.5 — LG AI Research dropped a 33B-parameter multimodal vision-language model on April 9 that outscores GPT-5-mini and Claude 4.5 Sonnet on STEM benchmarks; available on Hugging Face for research use. https://www.prnewswire.com/news-releases/lg-reveals-next-gen-multimodal-ai-exaone-4-5-302736993.html
+• Meta debuts Muse Spark — First model from Meta's new Superintelligence Labs launched April 8 as a closed model powering Meta AI, a notable pivot away from the company's open-source stance. https://www.bloomberg.com/news/articles/2026-04-08/meta-debuts-first-ai-model-from-prized-superintelligence-group
+
+=== RESEARCH ===
+• NVIDIA previews GR00T N1.6 & N2 — During National Robotics Week, NVIDIA revealed GR00T N1.6 (integrating Cosmos Reason for scene understanding) and previewed N2, which reportedly more than doubles robot success rates on new tasks versus current VLAs. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• Neural-symbolic hybrid cuts AI energy 100× — Researchers published a system combining neural networks with symbolic reasoning that slashes energy use by up to 100× while improving accuracy, with direct applications for robot planning. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+=== FUNDING & INVESTMENT ===
+• Eclipse Ventures — Closed $1.3B across two funds (April 7) to back and co-build physical AI startups; unique venture-studio model where Eclipse incubates companies rather than just writing checks. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+• Physical Intelligence — Reportedly in talks to raise ~$1B at an $11B+ valuation, which would effectively triple its value in four months and mark its second $1B round. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [LG] — Released EXAONE 4.5 (April 9), a multimodal VLM with industrial/physical AI focus; company says it plans to expand to audio, video, and physical-environment understanding for robotics. https://www.prnewswire.com/news-releases/lg-reveals-next-gen-multimodal-ai-exaone-4-5-302736993.html
+• [Meta] — Muse Spark (April 8) marks Meta's first closed-source model and a new Superintelligence Labs division—signals a strategic shift that could accelerate Meta's AI investments in physical hardware. https://www.bloomberg.com/news/articles/2026-04-08/meta-debuts-first-ai-model-from-prized-superintelligence-group
+• [Figure AI] — Figure 03 video demo released April 2 showed full 24/7 autonomous outdoor mobility at ~2 m/s; production rate is now one robot per 90 minutes. https://www.figure.ai/news/introducing-figure-03
+
+=== BAY AREA ===
+• National Robotics Week closes April 12 — Final days of nationwide robotics celebrations; check nationalroboticsweek.org/events for any local Bay Area open houses or demos still on the calendar. https://www.nationalroboticsweek.org/events
+• SF Bay Area AI Meetup — April 23, 9 AM PT (online/Bay Area); topic: "Recent Advancements in Image Generation and Understanding." https://www.meetup.com/sf-bay-area-ai-meetup-group/
