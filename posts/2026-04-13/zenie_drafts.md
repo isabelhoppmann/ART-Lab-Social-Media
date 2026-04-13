@@ -2,51 +2,51 @@
 
 ---
 
-## Post 1: Meme — Glow Up (Freeform)
+## Post 1: Meme — "She Reinvented Herself" (Freeform)
 **Type:** GIF Meme  
 **Embed:** https://giphy.com/embed/seOAeYXMhJPSWOeO6M  
-**Trending hook:** "Rebrand journal" / glow-up era — huge viral trend right now  
-**Caption:** She didn't change. She leveled up. 💜  
-**Hashtags:** #Zenie #GlowUp #MainCharacter #JournalingLife #SheReinventedHerself #GrowthMindset #ZenieApp  
+**Trending hook:** "Rebrand journal" viral trend — women 20-35 completely redefining themselves in 2026  
+**Caption:** No announcement. Just became her. 💜  
+**Hashtags:** #Zenie #GlowUp #SheReinventedHerself #MainCharacterEnergy #ReInvented #JournalingLife #ZenieApp  
 **Best time:** Sunday 10AM–12PM  
 
 ---
 
-## Post 2: Meme — Bridgerton (Netflix)
+## Post 2: Meme — Stranger Things Season 5 (Netflix)
 **Type:** GIF Meme  
-**Embed:** https://giphy.com/embed/7141xZZqqD1OHaSpUc  
-**Trending hook:** Bridgerton still deeply loved by women 20-35; romanticized soft life vibes  
-**Caption:** POV: you finally put yourself first 🌸  
-**Hashtags:** #Zenie #SoftLife #MainCharacterEnergy #PutYourselfFirst #Journaling #JournalWithMe #ItGirlEra  
+**Embed:** https://giphy.com/embed/ka55CqnDNjQ7iIKtRa  
+**Trending hook:** Stranger Things S5 just dropped April 2026 — entire internet is reacting  
+**Caption:** POV: you finally told your journal everything 💜  
+**Hashtags:** #Zenie #StrangerThings #Relatable #HonestJournal #WriteItAll #JournalWithMe #ItGirlEra  
 **Best time:** Tuesday 7PM–9PM  
 
 ---
 
-## Post 3: Repost — @rebecca.sowden (Journaling Self Care)
+## Post 3: Repost — @geliliu_uu (Romanticizing Morning Life)
 **Type:** Video Repost  
-**Creator:** @rebecca.sowden  
-**URL:** https://www.tiktok.com/@rebecca.sowden/video/7427609075782847790  
-**Caption:** via @rebecca.sowden — this is exactly the energy we're building with Zenie 💜  
-**Hashtags:** #Journaling #SelfCare #JournalWithMe #Zenie  
-**Best time:** Wednesday 6PM–9PM  
+**Creator:** @geliliu_uu  
+**URL:** https://www.tiktok.com/@geliliu_uu/video/7512530541174918402  
+**Caption:** via @geliliu_uu — romanticize your morning and you set the whole day different 💜  
+**Hashtags:** #RomanticizeYourLife #MorningRoutine #Zenie #JournalWithMe  
+**Best time:** Wednesday 7AM–9AM  
 
 ---
 
-## Post 4: Repost — @jenniferkpenge (Wellness Journey)
+## Post 4: Repost — @.idchlit (Start Your Journaling Journey 2026)
 **Type:** Video Repost  
-**Creator:** @jenniferkpenge  
-**URL:** https://www.tiktok.com/@jenniferkpenge/video/7499197604501261574  
-**Caption:** via @jenniferkpenge — wellness isn't about perfection. it's about choosing yourself, daily 🌿  
-**Hashtags:** #SelfLove #WellnessJourney #Zenie #IntentionalLiving #GrowthMindset  
+**Creator:** @.idchlit  
+**URL:** https://www.tiktok.com/@.idchlit/video/7583280641983221000  
+**Caption:** via @.idchlit — your permission slip to finally start journaling 💜  
+**Hashtags:** #Journaling #SelfCare #ZenieApp #StartNow  
 **Best time:** Thursday 7PM–9PM  
 
 ---
 
-## Post 5: Quote Image 1 — Cherry Blossom Bokeh
+## Post 5: Quote Image 1 — Cherry Blossom Spring Path
 **Type:** Quote Image (quote_1.png)  
 **Quote:** "Romanticize your life before someone else does."  
-**Background:** Warm blush and cherry blossom bokeh, photographic feel  
-**Caption:** Your life is the main event. Start treating it that way. 💜 Journal this.  
+**Background:** Cherry blossom path — warm, aspirational, spring energy  
+**Caption:** Your life is already the main event. Start writing it that way. 💜  
 **Hashtags:** #Zenie #RomanticizeYourLife #MainCharacterEnergy #SoftLife #JournalingApp #IntentionalLiving #GlowUp  
 **Best time:** Friday 9AM–11AM  
 
@@ -55,7 +55,7 @@
 ## Post 6: Quote Image 2 — City Skyline Night
 **Type:** Quote Image (quote_2.png)  
 **Quote:** "Your next chapter starts the moment you decide."  
-**Background:** Deep navy and gold city night bokeh, cinematic feel  
-**Caption:** That decision you keep putting off? This is your sign. 💜  
-**Hashtags:** #Zenie #NewChapter #GrowthMindset #JournalingForGrowth #ZenieApp #IntentionalLiving #SelfReflection  
+**Background:** City skyline at night — cinematic, bold, aspirational  
+**Caption:** The decision is already in you. Journal it into reality. 💜  
+**Hashtags:** #Zenie #NewChapter #GrowthMindset #JournalingForGrowth #ZenieApp #SelfReflection #Decide  
 **Best time:** Saturday 7PM–9PM  
