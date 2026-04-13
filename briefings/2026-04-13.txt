@@ -1,0 +1,19 @@
+morning briefing, April 13, 2026
+=== ROBOTICS & AI ===
+• China deploys first embodied AI humanoid for high-risk industrial operations, signaling a real-world production milestone. https://news.cgtn.com/news/2026-04-12/China-deploys-first-embodied-AI-robot-for-high-risk-tasks-1MhV6XnnqWQ/p.html
+• UniX AI's Panther claims to be the world's first mass-producible humanoid validated in real, unmodified homes — running full daily routines from wake-up to whole-home cleaning. https://finance.yahoo.com/sectors/technology/articles/unix-ai-claims-first-real-012300096.html
+
+=== RESEARCH ===
+• LG AI Research releases EXAONE 4.5, a new multimodal model that benchmarks above GPT-5-mini and Claude 4.5 Sonnet on average text-image scores. https://www.manilatimes.net/2026/04/09/tmt-newswire/pr-newswire/lg-reveals-next-gen-multimodal-ai-exaone-45/2317491
+• Neural-symbolic AI slashes energy use 100x while improving accuracy, combining neural networks with symbolic reasoning for more logical robot generalization. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+=== FUNDING & INVESTMENT ===
+• Eclipse — $1.3B raised (Apr 7) for a new fund targeting physical AI infrastructure, robotics, manufacturing, and defense; led by Cerebras backer. https://www.bloomberg.com/news/articles/2026-04-07/cerebras-backer-eclipse-raises-1-3-billion-for-robotics-ai-infrastructure
+• Physical Intelligence — reportedly in talks to raise ~$1B at an $11B+ valuation, nearly doubling in 4 months (reported Mar 27). https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [Meta] — Launched Muse Spark (Apr 8), first model from new Superintelligence Lab led by Alexandr Wang; multimodal, proprietary, now powering Meta AI app and Ray-Ban glasses with paid API coming. https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/
+• [Google DeepMind] — Released Gemini Robotics 1.5, most capable VLA model yet; adds chain-of-thought reasoning before translating vision + language into robot motor commands. https://deepmind.google/blog/gemini-robotics-15-brings-ai-agents-into-the-physical-world/
+• [NVIDIA] — GR00T N1.7 now in commercial early access with dexterous skills; company spotlighting physical AI partners during National Robotics Week (Apr 4-12). https://blogs.nvidia.com/blog/national-robotics-week-2026/
+
+No significant activity in the last 48 hours from 1X, Figure AI, Apple, Samsung, LG, ElliQ, Loona, TCL, Lenovo, or OpenAI.
