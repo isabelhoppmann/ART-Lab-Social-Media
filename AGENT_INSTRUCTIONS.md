@@ -7,7 +7,7 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 
 ## CRITICAL RULES — DO NOT VIOLATE
 - MEMES: You MUST embed Giphy or Tenor GIFs. You MUST NOT generate PNG files for memes.
-- QUOTE IMAGES: You MUST generate PNG files with PIL. Backgrounds MUST be real photographs from Pexels curated — never flat colors, gradients, or blurs.
+- QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
 
@@ -43,33 +43,38 @@ Get: video URL, creator handle, repost caption, best time to post.
 
 ---
 
-## Step 2C: Create 2 Quote Images
+## Step 2C: Create 2 Quote Images — EXACT DESIGN SPEC
+
+The design is: **a beautiful full-bleed photo background with a floating cream card on top**, with decorative watercolor/botanical elements at the card corners. This matches Zenie's existing Instagram aesthetic exactly.
 
 ### Quotes
-- SHORT: under 12 words, max 15. Must fit on 2 lines.
-- TONE: aspirational, warm, fun — not heavy or clinical
-- THEMES: romanticizing life, growth, self-love, confidence, intentional living
-- Good: "Soft life isn't a reward. It's the whole plan."
-- Good: "You're not behind. You're right on time."
+- Source REAL attributed quotes from famous thinkers, writers, philosophers (Buddha, Rumi, Maya Angelou, Brené Brown, Stoics, poets, etc.)
+- Tone: self-reflection, growth, relationships, intentional living, inner peace
+- Length: 10–25 words is fine — the card has room
+- Format: include the attribution (name of person, or "Unknown")
+- Example: quote="When life gets blurry, adjust your focus, not your vision.", attribution="Unknown"
+- Example: quote="A crack is where the light comes in.", attribution="Rumi"
 
-### Step A — Download Playfair Display font
+### Step A — Download Playfair Display fonts
 
 ```python
 import urllib.request, os
 
-font_url = "https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Bold.ttf"
-font_path = "/tmp/PlayfairDisplay-Bold.ttf"
-if not os.path.exists(font_path):
-    urllib.request.urlretrieve(font_url, font_path)
+fonts = {
+    "bold": ("https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Bold.ttf", "/tmp/PlayfairDisplay-Bold.ttf"),
+    "regular": ("https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Regular.ttf", "/tmp/PlayfairDisplay-Regular.ttf"),
+    "italic": ("https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Italic.ttf", "/tmp/PlayfairDisplay-Italic.ttf"),
+}
+for key, (url, path) in fonts.items():
+    if not os.path.exists(path):
+        urllib.request.urlretrieve(url, path)
 ```
 
 ### Step B — Fetch background photo from Pexels Curated
 
-Use the **curated** endpoint (NOT search). Curated photos are hand-picked editorial quality — always sharp, always beautiful.
-
 ```python
 import urllib.request, json, random, io
-from PIL import Image
+from PIL import Image, ImageEnhance
 
 def get_curated_photo(pexels_key):
     page = random.randint(1, 8)
@@ -78,15 +83,13 @@ def get_curated_photo(pexels_key):
     with urllib.request.urlopen(req) as r:
         data = json.load(r)
 
-    # Keep only high-res landscape or square photos (sharp source = large width)
+    # High-res landscape or square only
     candidates = [p for p in data["photos"] if p["width"] >= 3000 and p["width"] >= p["height"]]
     if not candidates:
         candidates = sorted(data["photos"], key=lambda p: p["width"], reverse=True)[:10]
 
     photo = random.choice(candidates)
-    photo_url = photo["src"]["large2x"]
-
-    with urllib.request.urlopen(photo_url) as r:
+    with urllib.request.urlopen(photo["src"]["large2x"]) as r:
         img = Image.open(io.BytesIO(r.read())).convert("RGB")
 
     # Center-crop to square
@@ -94,77 +97,117 @@ def get_curated_photo(pexels_key):
     side = min(w, h)
     left, top = (w - side) // 2, (h - side) // 2
     img = img.crop((left, top, left + side, top + side)).resize((1080, 1080), Image.LANCZOS)
+
+    # Boost vibrancy so the photo pops behind the card
+    img = ImageEnhance.Color(img).enhance(1.2)
+    img = ImageEnhance.Contrast(img).enhance(1.05)
     return img
 ```
 
 ### Step C — Compose the quote image
 
 ```python
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
-import textwrap
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import textwrap, random
 
-def make_quote_image(quote, filename, pexels_key, font_path):
-    # 1. Background photo — from curated, always a real sharp photograph
-    bg = get_curated_photo(pexels_key)
+def make_quote_image(quote, attribution, filename, pexels_key):
+    SIZE = 1080
+    CARD_W, CARD_H = 730, 730
+    CARD_X = (SIZE - CARD_W) // 2   # 175
+    CARD_Y = (SIZE - CARD_H) // 2   # 175
 
-    # 2. Enhance photo
-    bg = ImageEnhance.Contrast(bg).enhance(1.1)
-    bg = ImageEnhance.Color(bg).enhance(1.15)
-    bg = ImageEnhance.Sharpness(bg).enhance(1.4)
-    bg = bg.convert("RGBA")
+    TEXT_COLOR = (52, 30, 90)        # dark purple #341E5A
+    ATTR_COLOR = (100, 75, 150)      # medium purple
+    CREAM = (250, 247, 241, 248)     # warm cream card, very slightly transparent
 
-    # 3. Light overlay — photo stays dominant (~30% dark)
-    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 75))
-    bg = Image.alpha_composite(bg, overlay)
+    # --- 1. Background photo (no dark overlay — photo is fully visible) ---
+    bg = get_curated_photo(pexels_key).convert("RGBA")
 
-    # 4. Soft edge vignette only — center stays bright
-    vignette = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
-    vd = ImageDraw.Draw(vignette)
-    for i in range(100):
-        alpha = int(65 * (i / 100) ** 2)
-        vd.rectangle([(i, i), (1080 - i, 1080 - i)], outline=(0, 0, 0, alpha))
-    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=30))
-    bg = Image.alpha_composite(bg, vignette)
-    bg = bg.convert("RGB")
-    draw = ImageDraw.Draw(bg)
+    # --- 2. Card shadow ---
+    shadow = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shadow)
+    sd.rounded_rectangle(
+        [(CARD_X + 10, CARD_Y + 10), (CARD_X + CARD_W + 10, CARD_Y + CARD_H + 10)],
+        radius=10, fill=(0, 0, 0, 55)
+    )
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=18))
+    bg = Image.alpha_composite(bg, shadow)
 
-    # 5. Fonts — Playfair Display (elegant, premium)
-    try:
-        font = ImageFont.truetype(font_path, 78)
-        small_font = ImageFont.truetype(font_path, 34)
-    except:
-        font = ImageFont.load_default()
-        small_font = font
+    # --- 3. Cream card ---
+    card_layer = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    cd = ImageDraw.Draw(card_layer)
+    cd.rounded_rectangle(
+        [(CARD_X, CARD_Y), (CARD_X + CARD_W, CARD_Y + CARD_H)],
+        radius=8, fill=CREAM
+    )
+    bg = Image.alpha_composite(bg, card_layer)
 
-    # 6. Quote text — centered white with drop shadow
-    lines = textwrap.wrap(quote, width=20)
-    line_height = 95
-    total_h = len(lines) * line_height
-    y = (1080 - total_h) // 2 - 20
+    # --- 4. Watercolor corner decorations ---
+    # Soft blobs in lavender, dusty pink, and sage that bleed off card corners
+    deco = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    dd = ImageDraw.Draw(deco)
 
-    for line in lines:
-        bbox = draw.textbbox((0, 0), line, font=font)
-        w = bbox[2] - bbox[0]
-        x = (1080 - w) // 2
-        draw.text((x + 2, y + 2), line, font=font, fill=(0, 0, 0, 140))
-        draw.text((x, y), line, font=font, fill=(255, 255, 255))
-        y += line_height
+    palette = [
+        (180, 155, 220, 70),   # lavender
+        (210, 175, 210, 60),   # mauve
+        (160, 195, 180, 55),   # sage
+        (220, 175, 195, 65),   # dusty pink
+        (195, 170, 225, 75),   # soft purple
+    ]
 
-    # 7. Thin decorative lines above and below quote
-    cx = 540
-    top_y = (1080 - total_h) // 2 - 42
-    draw.line([(cx - 55, top_y), (cx + 55, top_y)], fill=(255, 255, 255), width=1)
-    draw.line([(cx - 55, y + 12), (cx + 55, y + 12)], fill=(255, 255, 255), width=1)
+    def draw_corner_blobs(cx, cy):
+        for _ in range(10):
+            ox = cx + random.randint(-45, 45)
+            oy = cy + random.randint(-45, 45)
+            r = random.randint(22, 52)
+            color = random.choice(palette)
+            dd.ellipse([(ox - r, oy - r), (ox + r, oy + r)], fill=color)
 
-    # 8. Zenie watermark
-    watermark = "✦ Zenie"
-    wb = draw.textbbox((0, 0), watermark, font=small_font)
-    draw.text((1080 - (wb[2] - wb[0]) - 28, 1038), watermark, font=small_font, fill=(201, 177, 232))
+    # Top-left corner
+    draw_corner_blobs(CARD_X + 20, CARD_Y + 20)
+    # Bottom-right corner
+    draw_corner_blobs(CARD_X + CARD_W - 20, CARD_Y + CARD_H - 20)
 
-    bg.save(filename)
+    deco = deco.filter(ImageFilter.GaussianBlur(radius=10))
+    bg = Image.alpha_composite(bg, deco)
 
-make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, font_path)
-make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, font_path)
+    # --- 5. Text ---
+    bg_rgb = bg.convert("RGB")
+    draw = ImageDraw.Draw(bg_rgb)
+
+    font_bold = ImageFont.truetype("/tmp/PlayfairDisplay-Bold.ttf", 56)
+    font_attr = ImageFont.truetype("/tmp/PlayfairDisplay-Italic.ttf", 30)
+    font_brand = ImageFont.truetype("/tmp/PlayfairDisplay-Regular.ttf", 34)
+
+    # Quote text — centered on card, with curly quotes
+    wrapped = textwrap.wrap(f'\u201c{quote}\u201d', width=24)
+    line_h = 70
+    text_block_h = len(wrapped) * line_h
+    text_start_y = CARD_Y + (CARD_H - text_block_h) // 2 - 30
+
+    for line in wrapped:
+        bbox = draw.textbbox((0, 0), line, font=font_bold)
+        lw = bbox[2] - bbox[0]
+        lx = CARD_X + (CARD_W - lw) // 2
+        draw.text((lx, text_start_y), line, font=font_bold, fill=TEXT_COLOR)
+        text_start_y += line_h
+
+    # Attribution — centered, below quote
+    attr_text = f"\u2013{attribution}"
+    ab = draw.textbbox((0, 0), attr_text, font=font_attr)
+    ax = CARD_X + (CARD_W - (ab[2] - ab[0])) // 2
+    draw.text((ax, text_start_y + 18), attr_text, font=font_attr, fill=ATTR_COLOR)
+
+    # "zenie" wordmark — bottom center of card
+    zb = draw.textbbox((0, 0), "zenie", font=font_brand)
+    zx = CARD_X + (CARD_W - (zb[2] - zb[0])) // 2
+    draw.text((zx, CARD_Y + CARD_H - 58), "zenie", font=font_brand, fill=TEXT_COLOR)
+
+    bg_rgb.save(filename)
+
+# Call for each quote
+make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.png", PEXELS_KEY)
+make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.png", PEXELS_KEY)
 ```
 
 ---
@@ -220,7 +263,7 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
   .post h2 { font-size: .8em; text-transform: uppercase; letter-spacing: .08em; color: var(--purple); margin: 0 0 12px; }
   .giphy-wrap { width: 100%; padding-bottom: 100%; height: 0; position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
   .giphy-wrap iframe { position: absolute; width: 100%; height: 100%; border: 0; }
-  .quote-wrap { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 12px; position: relative; }
+  .quote-wrap { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
   .quote-wrap img { width: 100%; display: block; animation: kenburns 12s ease-in-out infinite alternate; transform-origin: center; }
   @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.06); } }
   img.meme { width: 100%; border-radius: 12px; margin-bottom: 12px; }
