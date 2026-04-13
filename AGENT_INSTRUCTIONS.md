@@ -7,8 +7,8 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 
 ## CRITICAL RULES — DO NOT VIOLATE
 - MEMES: You MUST embed Giphy or Tenor GIFs. You MUST NOT generate PNG files for memes.
-- QUOTE IMAGES: You MUST generate PNG files with PIL using Pexels photo backgrounds (not flat gradients, not solid colors, not abstract blurs — real photos with recognizable subjects only).
-- EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content of any kind. If a GIF or image contains any of these, reject it immediately and find a different one. This rule has zero exceptions.
+- QUOTE IMAGES: You MUST generate PNG files with PIL. Backgrounds MUST be real photographs from Pexels curated — never flat colors, gradients, or blurs.
+- EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
 
 ---
@@ -20,171 +20,151 @@ Find what's trending culturally RIGHT NOW relevant to Zenie's audience (women 20
 2. WebSearch("viral memes self care journaling april 2026")
 3. WebSearch("funniest memes this week women relatable")
 
-Identify 2-3 specific meme formats or viral moments that are trending (e.g. "delulu", "main character", "girl math", a specific reaction meme). Must feel current.
+Identify 2-3 specific meme formats or viral moments that are trending. Must feel current.
 
 ---
 
 ## Step 2A: Find 2 GIFs matching trending memes
 
-For each meme, search for the specific trending format — NOT generic topics.
+For each meme, search for the specific trending format:
+1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
+2. **Quality check (REQUIRED):** WebFetch each candidate. Reject if: blurry/low-res, obscure source, clip art, or ANY explicit/adult content.
+3. Giphy embed: https://giphy.com/embed/[ID] (ID = last segment of URL after final dash)
+4. Tenor: WebFetch to find direct .gif URL, embed with img tag.
 
-Strategy:
-1. WebSearch("site:giphy.com [SPECIFIC MEME NAME OR FORMAT]")
-   AND WebSearch("site:tenor.com [SPECIFIC MEME NAME OR FORMAT]")
-2. **Quality check (REQUIRED):** Use WebFetch on each candidate GIF/embed page. Reject any GIF that:
-   - Is blurry, pixelated, or low-resolution (under ~400px wide)
-   - Is from an obscure or unrecognized source
-   - Looks like clip art or has very few colors
-   - Contains nudity, sexual content, expletives, or any adult/explicit material
-   Only use crisp, HD-quality GIFs from recognizable meme formats or shows/films.
-3. For Giphy: extract the ID from the URL end (after the last dash). Embed: https://giphy.com/embed/[ID]
-4. For Tenor: use WebFetch to find the direct .gif URL. Embed with <img> tag.
-
-Caption rules — the caption must land IMMEDIATELY (within 2 seconds of reading):
-- One short, punchy sentence that states the relatable truth directly
-- No setup required — the caption IS the joke or the vibe
-- Tie it to journaling, self-reflection, growth, or relationships in Zenie's world
-- Bad example: "When you realize your journal knows more about you than anyone" (too wordy, needs thinking)
-- Good example: "Your journal: the only one you can fully be honest with 💜" (instant, clear)
-- Good example: "POV: you finally said what you actually feel" (immediate, relatable)
-Write 5-8 hashtags using Zenie's purple brand voice (include #Zenie, #journaling or similar).
-
-Prioritize GIFs that are:
-- HD quality, crisp and clear
-- From a recognizable meme/show/film format
-- Funny and relatable to women 20-35
-- Currently viral or trending
-- 100% clean and family-friendly
+Caption: one short punchy sentence, instant impact, no setup needed. 5-8 hashtags including #Zenie.
 
 ---
 
 ## Step 2B: Find 2 Repost Videos (WebSearch)
 Find 2 real TikTok/Instagram video URLs from wellness/relationships/self-growth creators.
 Search: site:tiktok.com self-care OR journaling OR relationships 2026
-Get: video URL, creator handle, repost caption ("via @creator"), best time to post.
-Keep doing what's working here — these have been landing well.
+Get: video URL, creator handle, repost caption, best time to post.
 
 ---
 
-## Step 2C: Create 2 Quote Images with Pexels backgrounds + PIL
+## Step 2C: Create 2 Quote Images
 
-**Quote writing rules:**
-- SHORT: ideally under 12 words, max 15. If it doesn't fit on 2 lines it's too long.
-- LIGHTHEARTED: inspiring, aspirational, fun — not heavy mental health language
-- Think: romanticizing life, growth, self-love, confidence — not anxiety, trauma, healing
-- Bad: "It's okay to not be okay. Your pain is valid and healing takes time." (heavy, long)
-- Good: "Soft life isn't a reward. It's the whole plan." (short, punchy, aspirational)
-- Good: "You're not behind. You're right on time." (light, encouraging, immediate)
-- Must connect to Zenie's world: journaling, self-reflection, intentional living, relationships
+### Quotes
+- SHORT: under 12 words, max 15. Must fit on 2 lines.
+- TONE: aspirational, warm, fun — not heavy or clinical
+- THEMES: romanticizing life, growth, self-love, confidence, intentional living
+- Good: "Soft life isn't a reward. It's the whole plan."
+- Good: "You're not behind. You're right on time."
 
-**Background image rules — CRITICAL:**
-The goal is a stunning photo that looks like something someone would post on their own Instagram — a beautiful place, a mood, a moment. The text sits on top of it lightly.
+### Step A — Download Playfair Display font
 
-- MUST be a sharp, in-focus photograph with a clearly recognizable subject (a beach, a city, flowers, a café, etc.)
-- MUST NOT be bokeh, soft-focus, abstract, blurry, or gradient-like. If you can't tell what's in the photo, reject it.
-- MUST NOT be a solid color or flat background of any kind.
-- The overlay must be LIGHT so the photo remains the dominant visual. The viewer should see the photo first, text second.
-
-**How to pick a good Pexels photo:**
-1. Call the Pexels API with `per_page=15`
-2. Loop through the results and pick the photo with the LARGEST `width` value — high-res source photos are almost always sharp
-3. Use `data["photos"][i]["src"]["large2x"]` for the download URL
-4. If the downloaded image looks like a blur or abstract (you can check by seeing if PIL's `getextrema()` returns a narrow range), try the next photo in the list
-
-**Search queries — use SPECIFIC, concrete terms. Vary between the two quotes each week:**
-- "Santorini white buildings blue sea"
-- "Paris street cobblestone cafe"
-- "cherry blossom Tokyo path"
-- "Amalfi coast Italy cliffs"
-- "lavender field Provence purple"
-- "New York skyline sunset"
-- "Tuscany rolling hills cypress"
-- "Maldives overwater bungalow turquoise"
-- "Tokyo neon signs Shibuya"
-- "wildflower meadow mountain"
-- "tropical beach palm tree clear water"
-- "coffee cup latte art wooden table"
-- "woman laughing outdoors golden hour"
-- "rose garden close up pink"
-- "canyon red rock desert"
-
-Pick 2 different themes that match the emotional world of each quote.
-
-**PIL code:**
 ```python
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
-import urllib.request, textwrap, io, json
+import urllib.request, os
 
-def make_quote_image(quote, filename, pexels_key, search_query):
-    # --- 1. Fetch Pexels photo — pick sharpest (largest width) ---
-    url = f"https://api.pexels.com/v1/search?query={urllib.parse.quote(search_query)}&per_page=15&orientation=square"
+font_url = "https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Bold.ttf"
+font_path = "/tmp/PlayfairDisplay-Bold.ttf"
+if not os.path.exists(font_path):
+    urllib.request.urlretrieve(font_url, font_path)
+```
+
+### Step B — Fetch background photo from Pexels Curated
+
+Use the **curated** endpoint (NOT search). Curated photos are hand-picked editorial quality — always sharp, always beautiful.
+
+```python
+import urllib.request, json, random, io
+from PIL import Image
+
+def get_curated_photo(pexels_key):
+    page = random.randint(1, 8)
+    url = f"https://api.pexels.com/v1/curated?per_page=80&page={page}"
     req = urllib.request.Request(url, headers={"Authorization": pexels_key})
     with urllib.request.urlopen(req) as r:
         data = json.load(r)
 
-    # Pick the photo with the largest width (sharpest source)
-    best = max(data["photos"], key=lambda p: p["width"])
-    photo_url = best["src"]["large2x"]
+    # Keep only high-res landscape or square photos (sharp source = large width)
+    candidates = [p for p in data["photos"] if p["width"] >= 3000 and p["width"] >= p["height"]]
+    if not candidates:
+        candidates = sorted(data["photos"], key=lambda p: p["width"], reverse=True)[:10]
+
+    photo = random.choice(candidates)
+    photo_url = photo["src"]["large2x"]
 
     with urllib.request.urlopen(photo_url) as r:
-        bg = Image.open(io.BytesIO(r.read())).convert("RGB").resize((1080, 1080), Image.LANCZOS)
+        img = Image.open(io.BytesIO(r.read())).convert("RGB")
 
-    # --- 2. Boost contrast and saturation so the photo pops ---
+    # Center-crop to square
+    w, h = img.size
+    side = min(w, h)
+    left, top = (w - side) // 2, (h - side) // 2
+    img = img.crop((left, top, left + side, top + side)).resize((1080, 1080), Image.LANCZOS)
+    return img
+```
+
+### Step C — Compose the quote image
+
+```python
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+import textwrap
+
+def make_quote_image(quote, filename, pexels_key, font_path):
+    # 1. Background photo — from curated, always a real sharp photograph
+    bg = get_curated_photo(pexels_key)
+
+    # 2. Enhance photo
     bg = ImageEnhance.Contrast(bg).enhance(1.1)
-    bg = ImageEnhance.Color(bg).enhance(1.2)
-    bg = ImageEnhance.Sharpness(bg).enhance(1.3)
+    bg = ImageEnhance.Color(bg).enhance(1.15)
+    bg = ImageEnhance.Sharpness(bg).enhance(1.4)
     bg = bg.convert("RGBA")
 
-    # --- 3. LIGHT dark overlay — photo must stay clearly visible ---
-    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 80))
+    # 3. Light overlay — photo stays dominant (~30% dark)
+    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 75))
     bg = Image.alpha_composite(bg, overlay)
 
-    # --- 4. Soft vignette at edges only (center stays bright) ---
+    # 4. Soft edge vignette only — center stays bright
     vignette = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
     vd = ImageDraw.Draw(vignette)
-    for i in range(80):
-        alpha = int(70 * (i / 80) ** 2)
+    for i in range(100):
+        alpha = int(65 * (i / 100) ** 2)
         vd.rectangle([(i, i), (1080 - i, 1080 - i)], outline=(0, 0, 0, alpha))
-    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=25))
+    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=30))
     bg = Image.alpha_composite(bg, vignette)
-
     bg = bg.convert("RGB")
     draw = ImageDraw.Draw(bg)
 
-    # --- 5. Font ---
+    # 5. Fonts — Playfair Display (elegant, premium)
     try:
-        font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf", 82)
-        small_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf", 40)
+        font = ImageFont.truetype(font_path, 78)
+        small_font = ImageFont.truetype(font_path, 34)
     except:
-        try:
-            font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 82)
-            small_font = ImageFont.truetype("/System/Library/Fonts/Helvetica.ttc", 40)
-        except:
-            font = ImageFont.load_default()
-            small_font = font
+        font = ImageFont.load_default()
+        small_font = font
 
-    # --- 6. Quote text — centered, white with soft shadow ---
-    lines = textwrap.wrap(quote, width=18)
-    total_h = len(lines) * 98
-    y_start = (1080 - total_h) // 2
+    # 6. Quote text — centered white with drop shadow
+    lines = textwrap.wrap(quote, width=20)
+    line_height = 95
+    total_h = len(lines) * line_height
+    y = (1080 - total_h) // 2 - 20
+
     for line in lines:
         bbox = draw.textbbox((0, 0), line, font=font)
         w = bbox[2] - bbox[0]
         x = (1080 - w) // 2
-        draw.text((x + 3, y_start + 3), line, font=font, fill=(0, 0, 0, 160))
-        draw.text((x, y_start), line, font=font, fill=(255, 255, 255))
-        y_start += 98
+        draw.text((x + 2, y + 2), line, font=font, fill=(0, 0, 0, 140))
+        draw.text((x, y), line, font=font, fill=(255, 255, 255))
+        y += line_height
 
-    # --- 7. Zenie watermark ---
+    # 7. Thin decorative lines above and below quote
+    cx = 540
+    top_y = (1080 - total_h) // 2 - 42
+    draw.line([(cx - 55, top_y), (cx + 55, top_y)], fill=(255, 255, 255), width=1)
+    draw.line([(cx - 55, y + 12), (cx + 55, y + 12)], fill=(255, 255, 255), width=1)
+
+    # 8. Zenie watermark
     watermark = "✦ Zenie"
     wb = draw.textbbox((0, 0), watermark, font=small_font)
-    draw.text((1080 - (wb[2] - wb[0]) - 30, 1035), watermark, font=small_font, fill=(201, 177, 232))
+    draw.text((1080 - (wb[2] - wb[0]) - 28, 1038), watermark, font=small_font, fill=(201, 177, 232))
 
     bg.save(filename)
 
-import urllib.parse
-make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "Santorini white buildings blue sea")
-make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, "cherry blossom Tokyo path")
+make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, font_path)
+make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, font_path)
 ```
 
 ---
@@ -196,7 +176,7 @@ import urllib.request, json, base64
 
 TOKEN = "YOUR_GITHUB_TOKEN"
 REPO = "isabelhoppmann/ART-Lab-Social-Media"
-DATE = "TODAYS_DATE"  # e.g. 2026-04-05
+DATE = "TODAYS_DATE"
 
 def push_file(path, content_bytes, message):
     url = f"https://api.github.com/repos/{REPO}/contents/{path}"
@@ -223,7 +203,7 @@ Push: quote_1.png, quote_2.png, meme_ids.txt, index.html, zenie_drafts.md
 ## Step 4: Build and push index.html
 
 For Giphy memes use iframes. For Tenor memes use img tags with the direct .gif URL.
-For quote images: add a subtle CSS Ken Burns animation (slow zoom) on the image in the preview to give a "moving parts" feel.
+For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 
 ```html
 <!DOCTYPE html>
