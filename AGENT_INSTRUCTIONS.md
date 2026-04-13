@@ -7,7 +7,8 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 
 ## CRITICAL RULES — DO NOT VIOLATE
 - MEMES: You MUST embed Giphy or Tenor GIFs. You MUST NOT generate PNG files for memes.
-- QUOTE IMAGES: You MUST generate PNG files with PIL using Pexels photo backgrounds (not flat gradients).
+- QUOTE IMAGES: You MUST generate PNG files with PIL using Pexels photo backgrounds (not flat gradients, not solid colors, not abstract blurs — real photos only).
+- EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content of any kind. If a GIF or image contains any of these, reject it immediately and find a different one. This rule has zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
 
 ---
@@ -34,6 +35,7 @@ Strategy:
    - Is blurry, pixelated, or low-resolution (under ~400px wide)
    - Is from an obscure or unrecognized source
    - Looks like clip art or has very few colors
+   - Contains nudity, sexual content, expletives, or any adult/explicit material
    Only use crisp, HD-quality GIFs from recognizable meme formats or shows/films.
 3. For Giphy: extract the ID from the URL end (after the last dash). Embed: https://giphy.com/embed/[ID]
 4. For Tenor: use WebFetch to find the direct .gif URL. Embed with <img> tag.
@@ -52,6 +54,7 @@ Prioritize GIFs that are:
 - From a recognizable meme/show/film format
 - Funny and relatable to women 20-35
 - Currently viral or trending
+- 100% clean and family-friendly
 
 ---
 
@@ -74,20 +77,24 @@ Keep doing what's working here — these have been landing well.
 - Good: "You're not behind. You're right on time." (light, encouraging, immediate)
 - Must connect to Zenie's world: journaling, self-reflection, intentional living, relationships
 
-**Background image rules:**
-- Use the Pexels API to fetch a beautiful, aspirational background image
-- Search for: dreamy landscapes, golden hour, neon cityscapes, tropical settings, flowers in bloom, editorial/fashion photography, iconic travel locations, starry skies, cozy interiors — anything visually stunning and idealistic
-- Pexels API: GET https://api.pexels.com/v1/search?query=[SEARCH TERM]&per_page=5&orientation=square
-  Header: Authorization: {pexels_key}
-- Pick the highest-quality, most visually striking result
-- Download the image and resize to 1080x1080
+**Background image rules — THIS IS CRITICAL:**
+- The background MUST be a real, beautiful photograph — NOT a solid color, NOT a gradient, NOT an abstract blur.
+- It should look like a premium Instagram post: a stunning photo that someone would want to share even without the quote.
+- Use the Pexels API to fetch the image, download it, and use it as the full background.
+- The overlay should be LIGHT — just enough to read white text, but the photo must remain the dominant visual element. The viewer's eye should be drawn to the photo first, text second.
+- Use orientation=landscape or square — avoid portrait-only images that crop badly.
 
-**Search query rules — use terms that return SHARP, clear photos with recognizable subjects. Avoid words like "dreamy", "soft", "bokeh", "aesthetic" — they return blurry photos.**
-- Romanticizing life / soft life → "sunset ocean waves horizon", "cherry blossom park path", "sunrise mountain lake"
-- Love / relationships → "couple sunset beach", "roses garden close up", "heart shaped bokeh city"
-- Growth / new chapter → "mountain sunrise trail", "green forest path sunlight", "waterfall nature"
-- Confidence / glow-up → "city skyline night lights", "neon signs street night", "woman fashion portrait"
-- Journaling / reflection → "coffee notebook desk wood", "open book window light", "candle flowers table"
+**Search query rules — use terms that return SHARP, clear photos with recognizable subjects. Avoid vague words like "aesthetic", "dreamy", "soft", "bokeh" — they return blurry unusable photos.**
+
+Vary the search query each week — pick 2 different themes from this list:
+- Golden hour / warmth → "golden hour sunset field", "sunset beach waves", "sunrise mountain fog"
+- Nature / escape → "cherry blossom path spring", "lavender field purple", "waterfall tropical green"
+- City / night energy → "city skyline night lights", "neon signs rain street", "rooftop city view"
+- Cozy / interior → "coffee cup window light morning", "candle flowers wooden table", "cozy bedroom fairy lights"
+- Fashion / portrait → "woman laughing flowers outdoor", "woman walking city street", "editorial fashion portrait outdoor"
+- Travel / iconic → "Paris street café", "Santorini white buildings blue", "New York skyline golden hour"
+
+After downloading the Pexels image, verify it is a recognizable real photograph before proceeding. If the image looks like a gradient, abstract art, or solid color, try a different search query.
 
 **PIL code — the photo must be clearly visible, like a premium Instagram quote post:**
 ```python
@@ -104,26 +111,23 @@ def make_quote_image(quote, filename, pexels_key, search_query):
     with urllib.request.urlopen(photo_url) as r:
         bg = Image.open(io.BytesIO(r.read())).convert("RGB").resize((1080, 1080))
 
-    # --- 2. Slightly boost contrast and saturation so the photo pops ---
-    bg = ImageEnhance.Contrast(bg).enhance(1.1)
-    bg = ImageEnhance.Color(bg).enhance(1.15)
+    # --- 2. Boost contrast and saturation so the photo pops ---
+    bg = ImageEnhance.Contrast(bg).enhance(1.15)
+    bg = ImageEnhance.Color(bg).enhance(1.2)
     bg = bg.convert("RGBA")
 
-    # --- 3. Neutral dark overlay — just enough to make white text readable, no color tint ---
-    # Alpha 90 = ~35% dark. The photo stays fully visible with its original colors.
-    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 90))
+    # --- 3. LIGHT overlay — just enough to make white text readable, photo stays dominant ---
+    # Alpha 70 = ~27% dark. The photo is the star, not the overlay.
+    overlay = Image.new("RGBA", (1080, 1080), (0, 0, 0, 70))
     bg = Image.alpha_composite(bg, overlay)
 
-    # --- 4. Darker oval vignette around edges only, center stays bright ---
+    # --- 4. Soft vignette at edges only ---
     vignette = Image.new("RGBA", (1080, 1080), (0, 0, 0, 0))
     vd = ImageDraw.Draw(vignette)
-    vd.ellipse([(-200, -200), (1280, 1280)], fill=(0, 0, 0, 0))
-    vd.rectangle([(0, 0), (1080, 1080)], fill=(0, 0, 0, 0))
-    # Draw darkened edges by painting a soft border
-    for i in range(80):
-        alpha = int(80 * (i / 80) ** 2)
+    for i in range(60):
+        alpha = int(60 * (i / 60) ** 2)
         vd.rectangle([(i, i), (1080 - i, 1080 - i)], outline=(0, 0, 0, alpha))
-    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=30))
+    vignette = vignette.filter(ImageFilter.GaussianBlur(radius=20))
     bg = Image.alpha_composite(bg, vignette)
 
     bg = bg.convert("RGB")
@@ -163,7 +167,7 @@ def make_quote_image(quote, filename, pexels_key, search_query):
     bg.save(filename)
 
 # Choose search_query to match the quote's emotional world — use clear, specific subjects (see rules above)
-make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "sunset ocean waves horizon")
+make_quote_image("YOUR QUOTE 1 HERE", "quote_1.png", PEXELS_KEY, "sunset beach waves")
 make_quote_image("YOUR QUOTE 2 HERE", "quote_2.png", PEXELS_KEY, "city skyline night lights")
 ```
 
