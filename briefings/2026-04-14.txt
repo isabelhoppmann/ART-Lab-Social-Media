@@ -1,0 +1,21 @@
+morning briefing, April 14, 2026
+=== ROBOTICS & AI ===
+• Chery goes direct-to-consumer — Chinese automaker Chery launched humanoid robot sales on JD.com at $42,000, one of the first legacy automakers to sell a humanoid directly to consumers. https://roboticsandautomationnews.com/2026/04/13/chinese-automaker-chery-begins-selling-humanoid-robot-to-consumers-for-42000-each/100544/
+
+• China's first industrial embodied AI robot went live for high-risk tasks, signaling real-world deployment is accelerating beyond lab environments. https://news.cgtn.com/news/2026-04-12/China-deploys-first-embodied-AI-robot-for-high-risk-tasks-1MhV6XnnqWQ/p.html
+
+=== RESEARCH ===
+• Stanford HAI 2026 AI Index (April 13): China has erased the US AI performance gap; generative AI hit 53% population adoption in 3 years — faster than the PC or internet. https://hai.stanford.edu/ai-index/2026-ai-index-report
+
+• Generalist AI's GEN-1 embodied model hits 99% success on manipulation tasks (vs. 64% prior) and completes tasks 3x faster — claiming the first truly general-purpose real-world robot foundation model. https://roboticsandautomationnews.com/2026/04/11/generalist-ai-unveils-gen-1-model-claiming-breakthrough-in-real-world-robotic-task-performance/100516/
+
+=== FUNDING & INVESTMENT ===
+• Eclipse Ventures — $1.3B across two new physical AI/robotics funds ($720M early-stage, $591M growth-stage), targeting autonomous systems and manufacturing startups. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+
+=== COMPETITOR WATCH ===
+• [1X Technologies] — Confirmed deployment of up to 10,000 Neo robots across EQT's global portfolio (logistics, warehousing, healthcare), with US pilots kicking off in 2026. https://nationaltoday.com/us/ca/palo-alto/news/2026/04/12/1x-inks-deal-to-deploy-10-000-neo-humanoid-robots-across-industries/
+
+• [NVIDIA] — Closed National Robotics Week (Apr 4–12) with GR00T N1.7 now in early commercial access and preview of GR00T N2, which outperforms leading VLA models 2x on new-environment generalization. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+
+=== BAY AREA ===
+• AI Dev 26 x SF — April 28–29, Pier 48 Shed B, San Francisco; DeepLearning.AI developer conference (~3,000 attendees) covering agentic AI, multimodal systems, and production LLMs. https://ai-dev.deeplearning.ai/
