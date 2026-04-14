@@ -15,7 +15,7 @@ jobs:
 
       - name: Send via Gmail API
         run: |
-          FILE=$(ls -t briefings/*.txt | head -1)
+                    FILE=$(ls briefings/*.txt | sort | tail -1)
           OUTPUT=$(python3 .github/scripts/convert_briefing.py "$FILE")
           SUBJECT=$(echo "$OUTPUT" | head -1)
           HTML=$(echo "$OUTPUT" | tail -n +2)
