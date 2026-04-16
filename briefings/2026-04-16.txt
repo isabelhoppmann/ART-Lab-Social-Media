@@ -1,0 +1,23 @@
+Morning Briefing April 16, 2026
+=== ROBOTICS & AI ===
+• Gemini Robotics-ER 1.6 Drops — Google DeepMind released its latest spatial-reasoning robotics model (April 14), now live on the Gemini API and integrated into Boston Dynamics' Orbit inspection platform. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• Chery Sells Humanoid to Consumers at $42K — Chinese automaker begins direct-to-consumer sales of its self-developed humanoid robot, marking one of the first mass-market embodied AI purchases. https://roboticsandautomationnews.com/2026/04/13/chinese-automaker-chery-begins-selling-humanoid-robot-to-consumers-for-42000-each/100544/
+• Alibaba Amap Unveils First Embodied Robot — Amap's quadruped debuted at the Beijing Half Marathon today; its ABot-World model tops global embodied AI benchmarks, outperforming Google and NVIDIA teams. https://technode.com/2026/04/15/alibabas-amap-to-launch-first-embodied-robot-starting-with-robotic-dog/
+
+=== RESEARCH ===
+• NVIDIA Open-Sources Physical AI Data Factory Blueprint — Full reference architecture for Cosmos-powered synthetic robot training data is now on GitHub; GR00T N1.7 with commercial licensing also in early access. https://nvidianews.nvidia.com/news/nvidia-announces-open-physical-ai-data-factory-blueprint-to-accelerate-robotics-vision-ai-agents-and-autonomous-vehicle-development
+• Symbolic + Neural Hybrid Cuts AI Energy 100x — Researchers published a method combining symbolic reasoning with neural nets that slashes inference compute while boosting accuracy — critical for edge robotics deployments. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+=== FUNDING & INVESTMENT ===
+• Spirit AI — ~$330M (1B yuan) raised April 7, third close in one month; developing general-purpose embodied intelligence models with humanoid "Xiaomo" already on CATL factory floor. https://news.crunchbase.com/venture/biggest-funding-rounds-ai-robotics-ecommerce-quince/
+• Sunday (Memo) — $165M Series B led by Coatue at $1.15B valuation (March 12); launching wheeled household humanoid to 50 beta homes in late 2026. https://techcrunch.com/2026/03/12/humanoid-robotics-maker-sunday-reaches-1-15b-valuation-to-build-household-robots/
+• Physical Intelligence — In talks to raise $1B at $11B+ valuation, up from $5.6B just four months ago. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [Google DeepMind] — Gemini Robotics-ER 1.6 (April 14): enhanced spatial reasoning, new instrument-reading skill, live on Gemini API; Boston Dynamics deploying it commercially today. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• [NVIDIA] — GR00T N1.7 in early access with commercial licensing; N2 previewed with 2x task generalization; Physical AI Data Factory Blueprint open-sourced this week. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• [Samsung] — Ballie robot indefinitely shelved; company now describes it as an "internal innovation platform" rather than a consumer product. https://www.gizmochina.com/2026/01/07/samsung-ballie-robot-shelved-after-delays/
+
+=== BAY AREA ===
+• AI INFRA SUMMIT — May 1, Plug and Play Tech Center, Sunnyvale; founders, VCs, and operators with live startup demos (5th annual). https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/
+• AgentCon SF — May 4, Silicon Valley; developer-focused AI agents conference with hands-on workshops and live demos. https://wavecnct.com/blogs/ai-conferences-trade-shows-usa-2026
