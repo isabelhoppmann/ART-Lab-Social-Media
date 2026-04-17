@@ -1,0 +1,31 @@
+Morning Briefing April 17, 2026
+=== ROBOTICS & AI ===
+• Physical Intelligence Releases π0.7 — New steerable robot foundation model demonstrates compositional generalization, enabling robots to complete unfamiliar tasks guided only by plain-language coaching. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+
+• Google DeepMind Launches Gemini Robotics-ER 1.6 — Enhanced embodied reasoning model hits 93% success on industrial instrument-reading tasks and is now available via Gemini API; Boston Dynamics deployed it in Spot's inspection platform the same day. https://deepmind.google/blog/gemini-robotics-er-1-6/
+
+• NVIDIA Celebrates National Robotics Week With GR00T N1.7 Early Access — Commercially licensed model for generalized robot dexterity ships alongside a preview of GR00T N2, which doubles task-success rates on novel environments. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+
+=== RESEARCH ===
+• Tufts University: Neural-Symbolic AI Cuts Energy Use 100x — Hybrid approach combining neural nets with symbolic reasoning slashes AI energy draw while improving accuracy, with direct implications for on-robot inference. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+• Alibaba ABot-World Tops Global Embodied AI Benchmarks — Amap's self-developed world model outperforms Google, NVIDIA, and top Chinese research labs on AGIbot World Challenge and World Arena. https://technode.com/2026/04/15/alibabas-amap-to-launch-first-embodied-robot-starting-with-robotic-dog/
+
+=== FUNDING & INVESTMENT ===
+• Sunday (Memo household robot) — $165M Series B led by Coatue at $1.15B valuation; Mountain View, CA-based startup plans beta launch of home helper robot later this year. https://news.crunchbase.com/venture/biggest-funding-rounds-ai-robotics-ecommerce-quince/
+
+• Rhoda AI — $450M Series A led by Premji Invest, $1.7B valuation; Palo Alto startup trains robots using hundreds of millions of internet videos and emerged from 18 months of stealth. https://news.crunchbase.com/venture/biggest-funding-rounds-anthropic-leads-ai-robotics/
+
+• Mind Robotics (Rivian spinout) — $500M Series A co-led by Accel and a16z; building AI-powered industrial robots leveraging Rivian manufacturing data. https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/
+
+=== COMPETITOR WATCH ===
+• [Physical Intelligence] — Released π0.7 on April 16; model achieves compositional generalization by combining skills from two prior tasks to tackle an entirely new one with near-zero relevant training data. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+
+• [Google DeepMind] — Gemini Robotics-ER 1.6 launched April 15 with enhanced spatial/physical reasoning and new instrument-reading capability (93% accuracy vs. 23% baseline); live in Boston Dynamics Spot deployments now. https://siliconangle.com/2026/04/15/deepmind-launches-gemini-robotics-er-1-6-meet-precise-physical-ai-demands/
+
+• [NVIDIA] — GR00T N1.7 released in early commercial access during National Robotics Week; GR00T N2 preview (DreamZero-based) shows 2x+ improvement on unseen-task success. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+
+=== BAY AREA ===
+• AI INFRA SUMMIT (5th ed.) — May 1, Plug and Play Tech Center, Sunnyvale; founders, VCs, GPU scaling deep dives, and live startup demos. https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/
+
+• AI Collective Pitch Night — April 22, Dublin CA; student/recent-grad AI founders pitch for cash prizes with live judge feedback. https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/
