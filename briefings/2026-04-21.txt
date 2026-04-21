@@ -1,0 +1,21 @@
+Morning Briefing April 21, 2026
+=== ROBOTICS & AI ===
+• Humanoid Robot Beats Human Half-Marathon World Record — An Honor robot ran 21km in Beijing in 50:26, dramatically faster than last year’s winning robot time of 2:40:42. https://news.wfsu.org/npr-news/2026-04-20/a-humanoid-robot-sprints-past-the-human-half-marathon-world-record-in-beijing-race
+• Samsung Teases “Project Luna” Tabletop Home Robot — Circular-display AI hub spotted at Milan Design Week, billed as an all-in-one smart home controller. https://www.techtimes.com/articles/316013/20260420/samsung-project-luna-new-tabletop-robot-that-acts-smart-home-hub-powered-ai.htm
+• X-Humanoid’s Tien Kung 3.0 Wins Robot Warrior Challenge Fully Autonomously — First robot to complete the Beijing obstacle course with zero human intervention. https://www.roboticstomorrow.com/news/2026/04/20/x-humanoids-embodied-tien-kung-30-wins-beijing-robot-warrior-challenge-with-fully-autonomous-run/26442/
+
+=== RESEARCH ===
+• Physical Intelligence π0.7 Generalizes to Unseen Tasks — New robot brain demonstrates compositional generalization, combining learned skills to handle tasks it was never explicitly trained on. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• Google DeepMind Releases Gemini Robotics-ER 1.6 — Enhanced embodied reasoning model with improved spatial reasoning and 93% industrial instrument-reading accuracy, available now via Gemini API. https://deepmind.google/blog/gemini-robotics-er-1-6/
+
+=== FUNDING & INVESTMENT ===
+• X Square Robot — ~$276M Series B (April 20), co-led by Xiaomi and Sequoia China, building general-purpose embodied AI systems. https://news.crunchbase.com/venture/biggest-funding-rounds-ai-robotics-ecommerce-quince/
+• Eclipse Ventures — $1.3B across two new funds targeting physical AI, robotics, and manufacturing ($720M early-stage, $591M growth). https://mlq.ai/news/eclipse-ventures-launches-13-billion-fund-targeting-physical-ai-and-robotics/
+
+=== COMPETITOR WATCH ===
+• [Physical Intelligence] — Released π0.7 robot brain with compositional generalization on unseen tasks (April 16). https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• [Gemini Robotics / Google DeepMind] — Launched Gemini Robotics-ER 1.6 with enhanced spatial reasoning and industrial instrument-reading; now on Gemini API (April 15). https://deepmind.google/blog/gemini-robotics-er-1-6/
+• [Samsung] — Unveiled “Project Luna” tabletop AI home robot concept at Milan Design Week (April 20). https://www.techtimes.com/articles/316013/20260420/samsung-project-luna-new-tabletop-robot-that-acts-smart-home-hub-powered-ai.htm
+
+=== BAY AREA ===
+• AgentCon SF — May 4, free developer AI agents conference in San Francisco; two tracks (technical talks + hands-on workshops), live demos. https://www.createwith.com/event/san-francisco-agentcon-san-francisco-may-2026
