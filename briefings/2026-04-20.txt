@@ -1,0 +1,25 @@
+Morning Briefing April 20, 2026
+=== ROBOTICS & AI ===
+• Humanoid Beats Human Half-Marathon World Record in Beijing — Honor's robot finished 21km in 50:26, faster than the human world record, marking a dramatic leap from last year's inaugural race. https://news.wfsu.org/npr-news/2026-04-20/a-humanoid-robot-sprints-past-the-human-half-marathon-world-record-in-beijing-race
+• AGIBOT Declares "Deployment Year One" at APC 2026 — company unveiled its next-gen embodied AI robots and models, having shipped its 10,000th unit in March. https://www.manilatimes.net/2026/04/18/tmt-newswire/pr-newswire/agibot-declares-2026-deployment-year-one--at-apc-2026-accelerating-the-era-of-embodied-ai-productivity/2323019
+
+=== RESEARCH ===
+• Physical Intelligence's π0.7 Generalizes to Untrained Tasks — new robot foundation model directs robots through tasks they were never explicitly taught, an early but meaningful step toward general-purpose robot intelligence. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• NVIDIA Releases Isaac GR00T, Newton 1.0, and Isaac Sim 6.0 — open models for natural-language robot control drop during National Robotics Week; demos at Hannover Messe start today (Apr 20–24). https://blogs.nvidia.com/blog/national-robotics-week-2026/
+
+=== FUNDING & INVESTMENT ===
+• Sunday — $165M Series B led by Coatue at $1.15B valuation; Mountain View startup building household robot "Memo." https://news.crunchbase.com/venture/biggest-funding-rounds-ai-robotics-ecommerce-quince/
+• Galaxea AI — ~$290M Series B+, valued at ~$29B; Chinese embodied intelligence startup accelerating humanoid scale-up. https://theaiinsider.tech/2026/04/04/chinese-robotics-startup-galaxea-ai-raises-290m-usd-in-series-b-funding-valued-at-29b-usd/
+• Eclipse Ventures — Launched $1.3B dual fund (physical AI, robotics, manufacturing); $720M early-stage + $591M growth. https://mlq.ai/news/eclipse-ventures-launches-13-billion-fund-targeting-physical-ai-and-robotics/
+
+=== COMPETITOR WATCH ===
+• [Google DeepMind] — Released Gemini Robotics-ER 1.6 (Apr 15); Boston Dynamics integrating it into Spot for autonomous industrial gauge reading; available via Gemini API now. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• [Figure AI] — Announced Figure 03: redesigned hand system, wireless charging, improved voice/audio, and battery safety built for home use and BotQ high-volume manufacturing. https://www.figure.ai/news/introducing-figure-03
+• [Physical Intelligence] — Reportedly in talks to raise $1B at $11B valuation; π0.7 model generalizes beyond training distribution. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+• [NVIDIA] — Isaac Sim 6.0, Isaac Lab 3.0, Newton 1.0 (physics engine) now GA; live AI manufacturing demos at Hannover Messe this week. https://nvidianews.nvidia.com/news/nvidia-accelerates-robotics-research-and-development-with-new-open-models-and-simulation-libraries
+• [OpenAI] — No new robotics announcement in April; robotics lead Caitlin Kalinowski resigned in March over Pentagon deal. https://techcrunch.com/2026/03/07/openai-robotics-lead-caitlin-kalinowski-quits-in-response-to-pentagon-deal/
+
+=== BAY AREA ===
+• Anthropic Claude Developer Evening — Apr 27, San Francisco; hands-on Claude demos + invite-only VC office hours with G2C Ventures. https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/
+• AI Infra Summit (5th ed.) — May 1, Sunnyvale; founders, operators, VCs, and infra leaders. https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/
+• AgentCon San Francisco — May 4, SF; AI agents conference with workshops and live demos on building real-world agent systems. https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/

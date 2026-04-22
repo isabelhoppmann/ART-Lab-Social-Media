@@ -1,0 +1,21 @@
+morning briefing, April 15, 2026
+=== ROBOTICS & AI ===
+• Chery Begins Consumer Sales of Humanoid Robot at $42K — Chinese automaker launched direct sales on JD.com, becoming one of the first to bring a general-purpose humanoid to the mass market. https://roboticsandautomationnews.com/2026/04/13/chinese-automaker-chery-begins-selling-humanoid-robot-to-consumers-for-42000-each/100544/
+• Alibaba's Amap Enters Physical AI — Amap's embodied intelligence division will debut a quadruped robot, marking Alibaba's first foray into consumer robotics hardware. https://technode.com/2026/04/15/alibabas-amap-to-launch-first-embodied-robot-starting-with-robotic-dog/
+
+=== RESEARCH ===
+• NVIDIA GR00T N1.7 in Early Access with Commercial Licensing — Released during National Robotics Week, enabling generalized robot skills and advanced dexterous control at production scale. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+
+=== FUNDING & INVESTMENT ===
+• Eclipse Ventures — $1.3B across two new funds ($720M early-stage, $591M growth) targeting physical AI and robotics startups, closed April 7. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+• Physical Intelligence — In talks to raise ~$1B at $11B+ valuation, roughly doubling valuation in four months. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [Google DeepMind] — Released Gemini Robotics-ER 1.6 today with enhanced spatial reasoning and new instrument-reading capability; Boston Dynamics is integrating it into Spot's inspection platform. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• [1X Technologies] — Signed deal with EQT to deploy up to 10,000 Neo humanoid robots across 300+ industrial portfolio companies by 2030, with US pilots starting this year. https://nationaltoday.com/us/ca/palo-alto/news/2026/04/12/1x-inks-deal-to-deploy-10-000-neo-humanoid-robots-across-industries/
+• [NVIDIA] — GR00T N1.7 commercial early access launched alongside open-source physics engine Newton 1.0 during National Robotics Week. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• [Figure AI] — Figure 03 entering commercial deployment in Q2 2026, purpose-built for home use and high-volume manufacturing with Helix VLA AI. https://www.figure.ai/news/introducing-figure-03
+
+=== BAY AREA ===
+• AI Dev 26 x SF — April 28–29, San Francisco; developer conference for building with AI, hosted by DeepLearning.AI. https://ai-dev.deeplearning.ai/
+• Raisable AI Startup Event — April 30, Silicon Valley Bank HQ, San Francisco; curated AI startup pitches + live VC panel on fundraising trends. https://dataphoenix.info/upcoming-ai-events-in-the-bay-area-april-to-may-2026-dataphoenix-events-digest/

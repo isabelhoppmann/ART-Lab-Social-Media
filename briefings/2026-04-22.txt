@@ -1,0 +1,27 @@
+Morning Briefing April 22, 2026
+=== ROBOTICS & AI ===
+• China Outships U.S. in Humanoid Robots — Chinese startups are already deploying humanoids in factories and malls while U.S. rivals remain in development. https://www.cnbc.com/2026/04/21/china-humanoid-robots-us-investors.html
+• Humanoid Shatters Its Own Half-Marathon Record — Tiangong 1.0 Ultra ran the Beijing half-marathon in 1:15, down from 2:40 last year. https://en.people.cn/n3/2026/0420/c90000-20448083.html
+• Agibot Unveils Next-Gen Robots & Foundation Models — Chinese embodied AI company debuted new products and models at its 2026 Partner Conference, targeting large-scale real-world deployment. https://roboticsandautomationnews.com/2026/04/21/agibot-unveils-new-generation-of-embodied-ai-robots-and-models-for-real-world-deployment/100781/
+
+=== RESEARCH ===
+• Physical Intelligence π0.7 Generalizes to Untrained Tasks — New robot brain directs robots to complete tasks it was never explicitly trained on using compositional generalization. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• Google DeepMind Releases Gemini Robotics-ER 1.6 — Upgraded reasoning model brings enhanced spatial reasoning, instrument reading, and safety guardrails; integrated into Boston Dynamics' Spot. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• Neuro-Symbolic AI Cuts Energy Use 100x — Researchers unveiled an approach combining neural nets with symbolic reasoning that slashes AI energy use while improving accuracy. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+=== FUNDING & INVESTMENT ===
+• X Square Robot — ~$276M Series B (Apr 20), co-led by Xiaomi and Sequoia China; building general-purpose embodied AI systems. https://news.crunchbase.com/venture/biggest-funding-rounds-ai-robotics-ecommerce-quince/
+• Reliable Robotics — $160M (Apr 21), backed by Eclipse Ventures, Lightspeed, and Coatue; total raised now ~$300M. https://news.crunchbase.com/venture/biggest-funding-rounds-ai-robotics-ecommerce-quince/
+• Physical Intelligence — In talks to raise $1B at $11B+ valuation, up from $5.6B just four months ago. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [Physical Intelligence] — Launched pi0.7, a steerable foundation model that generalizes to novel tasks via compositional reasoning (Apr 16). https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• [Google DeepMind / Gemini Robotics] — Released Gemini Robotics-ER 1.6 (Apr 15) with improved spatial/physical reasoning; Boston Dynamics integrated it into Spot's inspection platform. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• [NVIDIA] — At Hannover Messe (Apr 20-24): showcasing Isaac GR00T N1.6 reasoning VLA model, Newton 1.0 physics engine GA, and Isaac Sim 6.0 GA. https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/
+• [Apple] — New CEO John Ternus revealed to have a secret robot team with plans for home robots, per Digitimes analysis (Apr 22). https://www.digitimes.com/news/a20260422PD211/apple-robotics-john-ternus-hardware-development.html
+• [Samsung] — "Project Luna" tabletop AI robot with circular swivel display teased at Milan Design Week (Apr 20). https://www.techtimes.com/articles/316013/20260420/samsung-project-luna-new-tabletop-robot-that-acts-smart-home-hub-powered-ai.htm
+• [1X Technologies] — NEO home humanoid open for preorders at $20K (or $499/mo); U.S. delivery targeted for 2026. https://www.therobotreport.com/1x-announces-pre-order-launch-neo-humanoid-robot/
+
+=== BAY AREA ===
+• Bots, Bevs & Devs — May 5, 6 PM, Circuit Launch, Oakland; networking + live robotics demos. https://www.meetup.com/sfrobots/events/314221561/
+• AI Conference SF — May 13-14, The Midway (900 Marin St), San Francisco. https://www.createwith.com/cities/san-francisco
