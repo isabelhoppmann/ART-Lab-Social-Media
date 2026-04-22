@@ -1,0 +1,32 @@
+{
+  "total": 1133,
+  "chunks": 12,
+  "batch_files": [
+    "batch_01.json",
+    "batch_02.json",
+    "batch_03.json",
+    "batch_04.json",
+    "batch_05.json",
+    "batch_06.json",
+    "batch_07.json",
+    "batch_08.json",
+    "batch_09.json",
+    "batch_10.json",
+    "batch_11.json",
+    "batch_12.json"
+  ],
+  "status": {
+    "batch_01": "pending",
+    "batch_02": "pending",
+    "batch_03": "pending",
+    "batch_04": "pending",
+    "batch_05": "pending",
+    "batch_06": "pending",
+    "batch_07": "pending",
+    "batch_08": "pending",
+    "batch_09": "pending",
+    "batch_10": "pending",
+    "batch_11": "pending",
+    "batch_12": "pending"
+  }
+}
