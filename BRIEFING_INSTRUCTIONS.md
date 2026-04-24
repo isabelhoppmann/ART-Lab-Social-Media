@@ -87,7 +87,7 @@ Steps:
    - Convert bullet lines to ul/li with clickable URLs
    - Wrap in clean HTML with ART Lab dark purple (#4c1d95) header bar
    - Section badge colors: ROBOTICS & AI #7c3aed, RESEARCH #1d4ed8, FUNDING #15803d, COMPETITOR WATCH #b91c1c, BAY AREA #b45309
-3. Build RFC 2822 message: From isabel@art-lab.ai, To isabel@art-lab.ai and catie@art-lab.ai
+3. Build RFC 2822 message: From isabel@art-lab.ai. For the To field: if OVERRIDE_TO is set in credentials, send only to that address. Otherwise send to isabel@art-lab.ai and catie@art-lab.ai
 4. base64url encode and POST to https://gmail.googleapis.com/gmail/v1/users/me/messages/send
 
 ---
