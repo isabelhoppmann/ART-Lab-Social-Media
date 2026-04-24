@@ -1,15 +1,19 @@
-Subject: Morning Briefing April 24, 2026
-
+Morning Briefing April 24, 2026
 === ROBOTICS & AI ===
-- X Square Robot unveils Wall-B, a new embodied AI foundation model for home use, promising robot deployments to everyday households within 35 days. https://www.roboticstomorrow.com/news/2026/04/23/x-square-robot-unveils-new-embodied-ai-model-says-robots-will-arrive-in-homes-in-35-days/26469/
+- Zoomlion debuts Robot Ops at Hannover Messe — wheeled humanoid and logistics robot collaborate live in sorting demo (Apr 20-24). https://humanoidroboticstechnology.com/industry-news/at-hannover-messe-2026-zoomlion-debuts-robot-ops/
+- Agibot unveils new embodied AI robots and models with One Robotic Body Three Intelligences architecture targeting production-line deployment. https://roboticsandautomationnews.com/2026/04/21/agibot-unveils-new-generation-of-embodied-ai-robots-and-models-for-real-world-deployment/100781/
 
 === RESEARCH ===
-- Sony AI's Project Ace becomes the first autonomous robot competitive with elite human table tennis players, with research published on the cover of Nature. https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics
-- Princeton researchers demonstrate VLMs can transfer to robot control without catastrophic forgetting of prior knowledge. https://blog.ai.princeton.edu/2026/04/23/from-vision-language-models-to-robot-control-without-forgetting/
-- DeepSeek launches V4 Flash and V4 Pro models, claiming top-tier open-source performance in coding and reasoning. https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough
+- Physical Intelligence pi0.7 generalizes to untrained tasks — model coaches robots through novel tasks in plain language without explicit training. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
 
 === FUNDING & INVESTMENT ===
-- Pudu Robotics raised ~$150M at a $1.5B valuation to expand embodied AI deployment. https://siliconangle.com/2026/04/24/pudu-robotics-raises-nearly-150m-1-5b-valuation-deploy-embodied-ai-technology/
+- Eclipse Ventures raises $1.3B across two funds for physical AI and robotics ($720M early-stage, $591M growth-stage). https://mlq.ai/news/eclipse-ventures-launches-13-billion-fund-targeting-physical-ai-and-robotics/
+- A&K Robotics raises CAD$8M Series A for autonomous mobility robots in airports (Apr 22). https://theaiinsider.tech/2026/04/22/ak-robotics-raises-cad8m-in-series-a-funding-to-for-autonomous-mobility-robots-in-airports/
+- FieldAI raises $405M total for universal robot brain foundation models. https://aifundingtracker.com/ai-startup-funding-news-today/
 
 === COMPETITOR WATCH ===
-- [Apple] New CEO John Ternus reportedly leading a secret robotics team with ambitious plans for AI-powered home robots. https://www.digitimes.com/news/a20260422PD211/apple-robotics-john-ternus-hardware-development.html
+- [Google DeepMind] Gemini Robotics-ER 1.6 now available via Gemini API and Google AI Studio with enhanced spatial reasoning. https://deepmind.google/blog/gemini-robotics-er-1-6/
+- [Boston Dynamics] Production Atlas humanoid entering deployment at Hyundai RMAC and Google DeepMind offices this year. https://www.automate.org/robotics/industry-insights/boston-dynamics-to-begin-production-on-redesigned-atlas-humanoid-in-2026
+
+=== BAY AREA ===
+- AgentCon SF — May 4, Silicon Valley; AI agents conference with talks, workshops, and live demos. https://www.createwith.com/cities/san-francisco
