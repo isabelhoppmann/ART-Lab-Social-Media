@@ -1,0 +1,20 @@
+Morning Briefing April 23, 2026
+=== ROBOTICS & AI ===
+• Sony AI's "Ace" beats elite table tennis players — the first autonomous robot to reach professional-level performance in a real-world sport, published on the cover of Nature today. https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics
+• Over 100 humanoid robots competed in a Beijing half-marathon (April 19), with ~40% running fully autonomously — a milestone in locomotion at scale. https://en.people.cn/n3/2026/0420/c90000-20448083.html
+• Agibot unveiled a new generation of embodied AI platforms and models at its Partner Conference (April 21), including the A3 humanoid for interactive real-world environments. https://roboticsandautomationnews.com/2026/04/21/agibot-unveils-new-generation-of-embodied-ai-robots-and-models-for-real-world-deployment/100781/
+
+=== RESEARCH ===
+• Physical Intelligence launched π0.7 (April 16) — a steerable robot foundation model demonstrating compositional generalization, solving novel tasks it was never explicitly trained on. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• Google DeepMind released Gemini Robotics-ER 1.6 (April 14), improving spatial reasoning and adding instrument-reading capabilities, now integrated into Boston Dynamics' Spot inspection platform. https://deepmind.google/blog/gemini-robotics-er-1-6/
+
+=== FUNDING & INVESTMENT ===
+• Eclipse Ventures — $1.3B across two new funds (announced April 7) targeting physical AI and robotics, split between early-stage incubation ($720M) and growth ($591M). https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+• X Square Robot — ~$276M Series B led by Xiaomi and Sequoia China (April 20) for general-purpose embodied AI platforms; cumulative funding now exceeds $400M in 18 months. https://inforcapital.com/news/embodied-ai-startup-x-square-robot-raises-nearly-276m-in-series-b-led-by-xiaomi-and-sequoia-china/
+
+=== COMPETITOR WATCH ===
+• [NVIDIA] — Showcasing new physical AI models and Isaac Sim 6.0 at Hannover Messe this week; also released Newton 1.0 open-source physics engine for dexterous robot manipulation. https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/
+• [Samsung] — Unveiled "Project Luna" at Milan Design Week (April 22): a tabletop AI companion with a swiveling circular display for smart home control, currently a design concept. https://www.techtimes.com/articles/316013/20260420/samsung-project-luna-new-tabletop-robot-that-acts-smart-home-hub-powered-ai.htm
+
+=== BAY AREA ===
+• AgentCon SF — May 4, San Francisco; developer-focused AI agents conference with talks, hands-on workshops, and live demos. https://www.createwith.com/cities/san-francisco
