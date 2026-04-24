@@ -1,0 +1,21 @@
+Morning Briefing April 24, 2026
+=== ROBOTICS & AI ===
+• X Square Robot unveils Wall-B home AI model, promises household deployments within 35 days — company also closed a fresh $276M Series B led by Xiaomi and Sequoia China. https://www.roboticstomorrow.com/news/2026/04/23/x-square-robot-unveils-new-embodied-ai-model-says-robots-will-arrive-in-homes-in-35-days/26469/
+• NVIDIA showcases Isaac Sim 6.0, Isaac Lab 3.0, and Newton 1.0 physics engine GA at Hannover Messe (Apr 20-24), with live humanoid demos inside a Siemens factory. https://blogs.nvidia.com/blog/ai-manufacturing-hannover-messe/
+• DeepSeek releases V4 Flash and V4 Pro today — top-tier coding benchmarks and major advances in reasoning and agentic tasks. https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough
+
+=== RESEARCH ===
+• Princeton AI Lab publishes VLM2VLA (Apr 23) — fine-tunes vision-language models into robot controllers without catastrophic forgetting, retaining 85%+ of multimodal understanding while matching manipulation baselines. https://blog.ai.princeton.edu/2026/04/23/from-vision-language-models-to-robot-control-without-forgetting/
+• Sony AI publishes table tennis robot paper in Nature — first autonomous robot competitive with elite human players, describing project Ace. https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics
+
+=== FUNDING & INVESTMENT ===
+• Eclipse Ventures — $1.3B across two funds (early + growth) targeting physical AI, robotics, and manufacturing; hybrid model includes internal incubation. https://techcrunch.com/2026/04/07/vc-eclipse-has-a-new-1-3b-to-back-and-build-physical-ai-startups/
+• X Square Robot — $276M Series B, Xiaomi + Sequoia China; cumulative funding exceeds $400M in under 18 months. https://inforcapital.com/news/embodied-ai-startup-x-square-robot-raises-nearly-276m-in-series-b-led-by-xiaomi-and-sequoia-china/
+• Physical Intelligence — in talks to raise $1B at $11B+ valuation, nearly doubling its $5.6B valuation from four months ago. https://techcrunch.com/2026/03/27/physical-intelligence-is-reportedly-in-talks-to-raise-1-billion-again/
+
+=== COMPETITOR WATCH ===
+• [Google DeepMind] — Gemini Robotics-ER 1.6 released Apr 15: enhanced spatial reasoning, multi-camera fusion, now in Gemini API; Boston Dynamics integrating it into Spot inspection platform. https://deepmind.google/blog/gemini-robotics-er-1-6/
+• [Physical Intelligence] — π0.7 paper (Apr 16): robots coached in plain language to perform tasks they were never explicitly trained on, via compositional generalization. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+• [NVIDIA] — National Robotics Week: GR00T open models, Cosmos world models, Newton 1.0 GA, Isaac Sim 6.0 + Isaac Lab 3.0 all released. https://blogs.nvidia.com/blog/national-robotics-week-2026/
+• [Samsung] — Unveiled "Project Luna" tabletop AI companion at Milan Design Week (Apr 20): circular display on swiveling base, positioned as smart home hub concept. https://www.techtimes.com/articles/316013/20260420/samsung-project-luna-new-tabletop-robot-that-acts-smart-home-hub-powered-ai.htm
+• [Apple] — Analysis (Apr 22): new CEO John Ternus leads a secret robotics team with "big plans for the home"; products potentially arriving 2027+. https://www.digitimes.com/news/a20260422PD211/apple-robotics-john-ternus-hardware-development.html
