@@ -332,3 +332,56 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 ## Step 5: Update root index.html
 Fetch, decode, prepend new entry at top, remove "latest" from previous entry, push.
 New entry: <a class="week latest" href="posts/[DATE]/"><span class="week-date">[Month Day, Year]</span><span class="week-arrow">→</span></a>
+
+
+---
+
+## Step 6: Save posts to Notion database
+
+After pushing files to GitHub, save each post to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
+
+Save 4 posts (memes and quote images only — skip reposts):
+
+For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49dd-8852-c130077221d5` and these properties:
+
+**Meme 1:**
+- Name: `Meme 1 — [DATE]`
+- Post Type: `Meme`
+- Caption: the meme caption
+- Hashtags: the meme hashtags
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png`
+- Status: `Draft`
+- Best Time: the recommended posting time
+- Week: [DATE] (ISO format YYYY-MM-DD)
+
+**Meme 2:**
+- Name: `Meme 2 — [DATE]`
+- Post Type: `Meme`
+- Caption: the meme caption
+- Hashtags: the meme hashtags
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.png`
+- Status: `Draft`
+- Best Time: the recommended posting time
+- Week: [DATE]
+
+**Quote Image 1:**
+- Name: `Quote 1 — [DATE]`
+- Post Type: `Quote Image`
+- Caption: the quote caption
+- Hashtags: the quote hashtags
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.png`
+- Status: `Draft`
+- Best Time: the recommended posting time
+- Week: [DATE]
+
+**Quote Image 2:**
+- Name: `Quote 2 — [DATE]`
+- Post Type: `Quote Image`
+- Caption: the quote caption
+- Hashtags: the quote hashtags
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.png`
+- Status: `Draft`
+- Best Time: the recommended posting time
+- Week: [DATE]
+
+After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database."
