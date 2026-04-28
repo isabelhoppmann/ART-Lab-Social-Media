@@ -203,11 +203,11 @@ def make_quote_image(quote, attribution, filename, pexels_key):
     zx = CARD_X + (CARD_W - (zb[2] - zb[0])) // 2
     draw.text((zx, CARD_Y + CARD_H - 58), "zenie", font=font_brand, fill=TEXT_COLOR)
 
-    bg_rgb.save(filename)
+    bg_rgb.save(filename, format="JPEG", quality=95)
 
 # Call for each quote
-make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.png", PEXELS_KEY)
-make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.png", PEXELS_KEY)
+make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.jpg", PEXELS_KEY)
+make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", PEXELS_KEY)
 ```
 
 ---
@@ -310,7 +310,7 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 
 <div class="post">
   <h2>Quote Image 1</h2>
-  <div class="quote-wrap"><img src="quote_1.png" alt="Quote 1"></div>
+  <div class="quote-wrap"><img src="quote_1.jpg" alt="Quote 1"></div>
   <p class="caption">[CAPTION]</p>
   <p class="tags">[HASHTAGS]</p>
   <p class="time">Best time: [TIME]</p>
@@ -318,7 +318,7 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 
 <div class="post">
   <h2>Quote Image 2</h2>
-  <div class="quote-wrap"><img src="quote_2.png" alt="Quote 2"></div>
+  <div class="quote-wrap"><img src="quote_2.jpg" alt="Quote 2"></div>
   <p class="caption">[CAPTION]</p>
   <p class="tags">[HASHTAGS]</p>
   <p class="time">Best time: [TIME]</p>
@@ -379,7 +379,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Post Type: `Quote Image`
 - Caption: the quote caption
 - Hashtags: the quote hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.png`
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.jpg`
 - Status: `Draft`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -390,7 +390,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Post Type: `Quote Image`
 - Caption: the quote caption
 - Hashtags: the quote hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.png`
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.jpg`
 - Status: `Draft`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
