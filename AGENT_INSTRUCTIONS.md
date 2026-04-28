@@ -340,7 +340,15 @@ New entry: <a class="week latest" href="posts/[DATE]/"><span class="week-date">[
 
 After pushing files to GitHub, save each post to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
 
-Save 4 posts (memes and quote images only — skip reposts):
+Save 4 posts (memes and quote images only — skip reposts).
+
+### Calculating Scheduled Dates
+Each post has a recommended Best Time (e.g. "Wednesday 7–9 PM EST"). Convert this into a real ISO-8601 datetime for the coming week starting from today's date (the date you are running):
+- Find the next occurrence of that weekday at the midpoint of the time range (e.g. "7–9 PM" → 20:00, "6–8 PM" → 19:00, "10 AM–12 PM" → 11:00)
+- Use EST = UTC-5 offset, so add 5 hours (e.g. 8 PM EST = 01:00 next day UTC)
+- Format: `YYYY-MM-DDTHH:MM:00.000+00:00`
+- If the weekday has already passed this week, use next week's occurrence
+- All 4 posts must be on different days
 
 For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49dd-8852-c130077221d5` and these properties:
 
@@ -351,7 +359,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Hashtags: the meme hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png`
 - Status: `Draft`
-- Best Time: the recommended posting time
+- Best Time: the recommended posting time text
+- Scheduled Date: calculated ISO-8601 datetime
 - Week: [DATE] (ISO format YYYY-MM-DD)
 
 **Meme 2:**
@@ -361,7 +370,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Hashtags: the meme hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.png`
 - Status: `Draft`
-- Best Time: the recommended posting time
+- Best Time: the recommended posting time text
+- Scheduled Date: calculated ISO-8601 datetime
 - Week: [DATE]
 
 **Quote Image 1:**
@@ -371,7 +381,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.png`
 - Status: `Draft`
-- Best Time: the recommended posting time
+- Best Time: the recommended posting time text
+- Scheduled Date: calculated ISO-8601 datetime
 - Week: [DATE]
 
 **Quote Image 2:**
@@ -381,7 +392,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.png`
 - Status: `Draft`
-- Best Time: the recommended posting time
+- Best Time: the recommended posting time text
+- Scheduled Date: calculated ISO-8601 datetime
 - Week: [DATE]
 
-After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database."
+After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database with scheduled dates."
