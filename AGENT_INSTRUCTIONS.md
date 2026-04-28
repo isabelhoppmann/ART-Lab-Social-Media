@@ -6,7 +6,7 @@ Credentials are in the message that invoked you (GitHub token, Notion token, Pex
 Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: You MUST embed Giphy or Tenor GIFs. You MUST NOT generate PNG files for memes.
+- MEMES: You MUST embed Giphy or Tenor GIFs in the HTML preview. You MUST NOT generate static PNG files for memes. You MUST also generate an MP4 version (Step 2A.5) for the auto-publisher.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
@@ -29,10 +29,65 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
 2. **Quality check (REQUIRED):** WebFetch each candidate. Reject if: blurry/low-res, obscure source, clip art, or ANY explicit/adult content.
-3. Giphy embed: https://giphy.com/embed/[ID] (ID = last segment of URL after final dash)
-4. Tenor: WebFetch to find direct .gif URL, embed with img tag.
+3. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
+4. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
+5. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
 Caption: one short punchy sentence, instant impact, no setup needed. 5-8 hashtags including #Zenie.
+
+---
+
+## Step 2A.5: Convert each meme GIF to MP4 (for the auto-publisher)
+
+The auto-publisher posts to Instagram, which does not accept GIFs — it requires MP4 video. Convert each GIF into an Instagram-compatible Reel here. The HTML preview still uses the Giphy iframe (better preview UX); the MP4 is purely for publishing.
+
+```python
+import urllib.request, subprocess, shutil, os
+
+# Portable ffmpeg lookup: use system ffmpeg if available, else install via pip
+def _ffmpeg_path():
+    p = shutil.which("ffmpeg")
+    if p:
+        return p
+    subprocess.run(["pip", "install", "--quiet", "imageio-ffmpeg"], check=True)
+    import imageio_ffmpeg
+    return imageio_ffmpeg.get_ffmpeg_exe()
+
+FFMPEG = _ffmpeg_path()
+
+def gif_to_mp4(gif_url, output_path):
+    """Download GIF, convert to looped MP4 (≥6s, square pad, H.264, IG-compatible)."""
+    tmp_gif = "/tmp/meme_input.gif"
+    urllib.request.urlretrieve(gif_url, tmp_gif)
+
+    # Loop the GIF to reach ≥6 seconds (IG Reels minimum is 3s; 6s gives safety margin)
+    # Pad to 1080x1080 square with blurred background fill (works for any aspect ratio)
+    # H.264 + yuv420p + faststart = required for IG/FB
+    cmd = [
+        FFMPEG, "-y",
+        "-stream_loop", "-1", "-t", "6",
+        "-i", tmp_gif,
+        "-vf",
+        ("split[bg][fg];"
+         "[bg]scale=1080:1080:force_original_aspect_ratio=increase,crop=1080:1080,gblur=sigma=20[bg2];"
+         "[fg]scale=1080:1080:force_original_aspect_ratio=decrease[fg2];"
+         "[bg2][fg2]overlay=(W-w)/2:(H-h)/2,setsar=1"),
+        "-r", "30",
+        "-c:v", "libx264",
+        "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart",
+        "-an",  # no audio (memes have none)
+        output_path,
+    ]
+    subprocess.run(cmd, check=True, capture_output=True)
+    os.remove(tmp_gif)
+
+# Run for each meme
+gif_to_mp4(MEME_1_GIF_URL, "/tmp/meme_1.mp4")
+gif_to_mp4(MEME_2_GIF_URL, "/tmp/meme_2.mp4")
+```
+
+Both `.mp4` files will be pushed to GitHub in Step 3. Verify each is under 100MB and at least 6 seconds before pushing.
 
 ---
 
@@ -239,7 +294,7 @@ def push_file(path, content_bytes, message):
         print(f"Pushed {path}: {r.status}")
 ```
 
-Push: quote_1.png, quote_2.png, meme_ids.txt, index.html, zenie_drafts.md
+Push: quote_1.jpg, quote_2.jpg, meme_1.mp4, meme_2.mp4, meme_ids.txt, index.html, zenie_drafts.md
 
 ---
 
@@ -357,7 +412,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Post Type: `Meme`
 - Caption: the meme caption
 - Hashtags: the meme hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.png`
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.mp4`
 - Status: `Draft`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -368,7 +423,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Post Type: `Meme`
 - Caption: the meme caption
 - Hashtags: the meme hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.png`
+- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.mp4`
 - Status: `Draft`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
