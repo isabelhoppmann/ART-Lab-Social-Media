@@ -112,17 +112,35 @@ The design is: **a beautiful full-bleed photo background with a floating cream c
 
 ### Step A — Download Playfair Display fonts
 
+Google Fonts ships Playfair Display only as variable fonts (`PlayfairDisplay[wght].ttf`), not as separate Bold/Regular files, so download those and apply the weight axis at render time:
+
 ```python
 import urllib.request, os
+from PIL import ImageFont
 
-fonts = {
-    "bold": ("https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Bold.ttf", "/tmp/PlayfairDisplay-Bold.ttf"),
-    "regular": ("https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Regular.ttf", "/tmp/PlayfairDisplay-Regular.ttf"),
-    "italic": ("https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Italic.ttf", "/tmp/PlayfairDisplay-Italic.ttf"),
-}
-for key, (url, path) in fonts.items():
-    if not os.path.exists(path):
-        urllib.request.urlretrieve(url, path)
+FONT_VAR = "/tmp/PlayfairDisplay-VAR.ttf"
+FONT_VAR_ITALIC = "/tmp/PlayfairDisplay-Italic-VAR.ttf"
+
+if not os.path.exists(FONT_VAR):
+    urllib.request.urlretrieve(
+        "https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf",
+        FONT_VAR,
+    )
+if not os.path.exists(FONT_VAR_ITALIC):
+    urllib.request.urlretrieve(
+        "https://github.com/google/fonts/raw/main/ofl/playfairdisplay/PlayfairDisplay-Italic%5Bwght%5D.ttf",
+        FONT_VAR_ITALIC,
+    )
+
+def load_font(path, size, weight=None):
+    """Load a font and apply variable-font weight axis if specified."""
+    f = ImageFont.truetype(path, size)
+    if weight is not None and hasattr(f, "set_variation_by_axes"):
+        try:
+            f.set_variation_by_axes([weight])
+        except Exception:
+            pass
+    return f
 ```
 
 ### Step B — Fetch background photo from Pexels Curated
@@ -132,9 +150,13 @@ import urllib.request, json, random, io
 from PIL import Image, ImageEnhance
 
 def get_curated_photo(pexels_key):
+    # Pexels API and CDN both reject requests without a User-Agent — always send one.
     page = random.randint(1, 8)
     url = f"https://api.pexels.com/v1/curated?per_page=80&page={page}"
-    req = urllib.request.Request(url, headers={"Authorization": pexels_key})
+    req = urllib.request.Request(url, headers={
+        "Authorization": pexels_key,
+        "User-Agent": "ZenieAgent/1.0",
+    })
     with urllib.request.urlopen(req) as r:
         data = json.load(r)
 
@@ -144,7 +166,8 @@ def get_curated_photo(pexels_key):
         candidates = sorted(data["photos"], key=lambda p: p["width"], reverse=True)[:10]
 
     photo = random.choice(candidates)
-    with urllib.request.urlopen(photo["src"]["large2x"]) as r:
+    photo_req = urllib.request.Request(photo["src"]["large2x"], headers={"User-Agent": "ZenieAgent/1.0"})
+    with urllib.request.urlopen(photo_req) as r:
         img = Image.open(io.BytesIO(r.read())).convert("RGB")
 
     # Center-crop to square
@@ -230,9 +253,9 @@ def make_quote_image(quote, attribution, filename, pexels_key):
     bg_rgb = bg.convert("RGB")
     draw = ImageDraw.Draw(bg_rgb)
 
-    font_bold = ImageFont.truetype("/tmp/PlayfairDisplay-Bold.ttf", 56)
-    font_attr = ImageFont.truetype("/tmp/PlayfairDisplay-Italic.ttf", 30)
-    font_brand = ImageFont.truetype("/tmp/PlayfairDisplay-Regular.ttf", 34)
+    font_bold = load_font(FONT_VAR, 56, weight=700)
+    font_attr = load_font(FONT_VAR_ITALIC, 30, weight=400)
+    font_brand = load_font(FONT_VAR, 34, weight=400)
 
     # Quote text — centered on card, with curly quotes
     wrapped = textwrap.wrap(f'\u201c{quote}\u201d', width=24)
