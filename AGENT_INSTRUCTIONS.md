@@ -13,6 +13,128 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 
 ---
 
+## Step 0: Pull performance data from Instagram and Facebook
+
+Before drafting anything, pull the last 8 weeks of post performance from both platforms. This shapes every content decision in Steps 1–2.
+
+Read `.env` (or accept token from the invoking message) for `PAGE_ACCESS_TOKEN`, `IG_USER_ID`, `FB_PAGE_ID`.
+
+```python
+import urllib.request, urllib.parse, json, os
+from datetime import datetime, timezone
+
+PAGE_ACCESS_TOKEN = os.environ.get("PAGE_ACCESS_TOKEN", "")
+IG_USER_ID = "17841465217874624"
+FB_PAGE_ID = "227999857070404"
+API_BASE = "https://graph.facebook.com/v21.0"
+
+def api_get(path, params):
+    params["access_token"] = PAGE_ACCESS_TOKEN
+    qs = "&".join(f"{k}={urllib.parse.quote(str(v))}" for k, v in params.items())
+    req = urllib.request.Request(
+        f"{API_BASE}/{path}?{qs}",
+        headers={"User-Agent": "ZenieAgent/1.0"}
+    )
+    with urllib.request.urlopen(req) as r:
+        return json.load(r)
+
+# --- Instagram: recent media + engagement ---
+ig_posts = []
+try:
+    media = api_get(f"{IG_USER_ID}/media", {
+        "fields": "id,media_type,timestamp,like_count,comments_count,caption",
+        "limit": "30"
+    })
+    for post in media.get("data", []):
+        saved = reach = 0
+        try:
+            ins = api_get(f"{post['id']}/insights", {"metric": "reach,saved"})
+            for m in ins.get("data", []):
+                if m["name"] == "reach":
+                    reach = m["values"][0]["value"]
+                elif m["name"] == "saved":
+                    saved = m["values"][0]["value"]
+        except Exception:
+            pass
+        post["reach"] = reach
+        post["saved"] = saved
+        post["eng_rate"] = round(
+            (post.get("like_count", 0) + post.get("comments_count", 0) + saved) / max(reach, 1) * 100, 2
+        )
+        ig_posts.append(post)
+except Exception as e:
+    print(f"IG fetch failed: {e}")
+
+# --- Facebook: recent posts + engagement ---
+fb_posts = []
+try:
+    posts = api_get(f"{FB_PAGE_ID}/posts", {
+        "fields": "id,message,created_time,likes.summary(true),comments.summary(true),shares",
+        "limit": "30"
+    })
+    for post in posts.get("data", []):
+        likes = post.get("likes", {}).get("summary", {}).get("total_count", 0)
+        comments = post.get("comments", {}).get("summary", {}).get("total_count", 0)
+        shares = post.get("shares", {}).get("count", 0)
+        reach = 0
+        try:
+            ins = api_get(f"{post['id']}/insights", {"metric": "post_impressions_unique"})
+            for m in ins.get("data", []):
+                if m["name"] == "post_impressions_unique":
+                    reach = m["values"][0]["value"]
+        except Exception:
+            pass
+        post["likes_count"] = likes
+        post["comments_count"] = comments
+        post["shares_count"] = shares
+        post["reach"] = reach
+        post["eng_rate"] = round(
+            (likes + comments + shares * 2) / max(reach, 1) * 100, 2
+        )
+        fb_posts.append(post)
+except Exception as e:
+    print(f"FB fetch failed: {e}")
+
+# --- Summarize into a Performance Brief ---
+print("\n=== PERFORMANCE BRIEF ===")
+
+if ig_posts:
+    ig_sorted = sorted(ig_posts, key=lambda p: p["eng_rate"], reverse=True)
+    print("\nTop 5 IG posts by engagement rate:")
+    for p in ig_sorted[:5]:
+        caption_preview = (p.get("caption") or "")[:80].replace("\n", " ")
+        print(f"  [{p['media_type']}] {p['timestamp'][:10]} | eng_rate={p['eng_rate']}% | saves={p['saved']} | \"{caption_preview}\"")
+    # Aggregate by type
+    by_type = {}
+    for p in ig_posts:
+        t = p["media_type"]
+        by_type.setdefault(t, []).append(p["eng_rate"])
+    for t, rates in by_type.items():
+        print(f"  Avg eng_rate {t}: {round(sum(rates)/len(rates),2)}%")
+else:
+    print("IG: no data retrieved (check token permissions)")
+
+if fb_posts:
+    fb_sorted = sorted(fb_posts, key=lambda p: p["eng_rate"], reverse=True)
+    print("\nTop 5 FB posts by engagement rate:")
+    for p in fb_sorted[:5]:
+        msg_preview = (p.get("message") or "")[:80].replace("\n", " ")
+        print(f"  {p['created_time'][:10]} | eng_rate={p['eng_rate']}% | shares={p['shares_count']} | \"{msg_preview}\"")
+else:
+    print("FB: no data retrieved (check token permissions)")
+
+print("\nUse this brief to guide content selection in Steps 1–2.")
+print("=========================\n")
+```
+
+**What to do with the brief:**
+- Identify which content types (Reels/memes vs quote images) get higher engagement on each platform
+- Note which themes/topics appeared in high-performing captions (journaling? relationships? dating humor?)
+- Note which post types get more saves on IG (saves = algorithm signal) vs more shares on FB (shares = reach signal)
+- If data is sparse (< 5 posts), skip analysis and rely on best practices: IG rewards saves + Reels plays, FB rewards shares + longer conversational copy
+
+---
+
 ## Step 1: Research trending memes (WebSearch)
 
 Find what's trending culturally RIGHT NOW relevant to Zenie's audience (women 20-35, relationships, self-growth, dating, wellness):
@@ -21,6 +143,8 @@ Find what's trending culturally RIGHT NOW relevant to Zenie's audience (women 20
 3. WebSearch("funniest memes this week women relatable")
 
 Identify 2-3 specific meme formats or viral moments that are trending. Must feel current.
+
+**Use the Performance Brief from Step 0 to weight your choices:** if memes outperformed quote images on IG last month, lean into meme themes; if certain topics (e.g. journaling, dating) drove higher saves, prioritize those themes. If FB data shows certain content drove more shares, note that for FB caption writing in Step 2.
 
 ---
 
@@ -34,17 +158,18 @@ For each meme, search for the specific trending format:
 5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
 6. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
-For each meme produce THREE pieces of text (matching Zenie's existing IG style — see @zenie.app):
+For each meme produce FOUR pieces of text:
 
-- **`overlay_text`** — the joke/setup that gets rendered ONTO the video as a white card at the top. This is the part that makes the meme work. 6–14 words, punchy. Examples from existing posts: *"Me and my bestie talking about our coworkers we don't like"*, *"I told my BF I'm not drinking tonight I don't wanna be hungover"*, *"When you finally start journaling and your whole vibe upgrades"*.
-- **`caption`** — the short reaction/wink shown in the IG post caption field. 2–8 words plus optional emoji. Examples: *"She knows…"*, *"Clearly he wants the smoke"*, *"He couldn't do anything to make me happier!"*. Do NOT repeat the overlay text here — the caption riffs on it.
-- **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp.
+- **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
+- **`ig_caption`** — short reaction/wink for the Instagram caption field. 2–8 words + optional emoji. Do NOT repeat overlay_text — riff on it. Examples: *"She knows…"*, *"He couldn't do anything to make me happier!"*
+- **`fb_caption`** — Facebook caption. More conversational, 1–3 sentences. Drive a reaction or question to spark comments/shares (FB algorithm rewards both). Example: *"Okay but why does this describe my entire Tuesday? 😅 Tag a friend who gets it."*
+- **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp. Same set used on both platforms.
 
 ---
 
 ## Step 2A.5: Convert each meme GIF to MP4 with text overlay (Zenie meme style)
 
-The auto-publisher posts to Instagram as Reels (vertical 9:16), which does not accept GIFs — it requires MP4 video. The visual style mirrors @zenie.app's existing memes: vertical 1080×1920, blurred background of the GIF filling the frame, GIF content centered, and a **white card at the top with black bold sans-serif text** containing the `overlay_text`. The HTML preview still uses the Giphy iframe (better preview UX); the MP4 is what gets posted.
+The auto-publisher posts to Instagram as Reels (vertical 9:16), which does not accept GIFs — it requires MP4 video. Style: GIF scaled+cropped to fill the full 1080×1920 frame, with a **white card near the bottom containing black bold sans-serif text** (`overlay_text`) overlaid directly on the video — no white space outside the GIF. The HTML preview uses the Giphy iframe; the MP4 is what gets posted.
 
 ```python
 import urllib.request, subprocess, shutil, os, textwrap
@@ -180,6 +305,11 @@ The design is: **a beautiful full-bleed photo background with a floating cream c
 - Format: include the attribution (name of person, or "Unknown")
 - Example: quote="When life gets blurry, adjust your focus, not your vision.", attribution="Unknown"
 - Example: quote="A crack is where the light comes in.", attribution="Rumi"
+- **Use the Performance Brief:** if quote images drove higher saves on IG, lean into themes that resonated (e.g. inner peace, relationships). Pick quotes that match those themes.
+
+For each quote image, produce two captions:
+- **`ig_caption`** — 1 sentence + emoji. Warm, aspirational. Example: *"A reminder for the soft-life girlies: what's meant for you is already on its way. 🌸"*
+- **`fb_caption`** — 2–3 sentences, more reflective. Invite a comment or share. Example: *"Sometimes a single line can reframe your whole day. ✨ Save this one for when you need a reminder. Who would you share this with?"*
 
 ### Step A — Download Playfair Display fonts
 
@@ -504,7 +634,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Meme 1:**
 - Name: `Meme 1 — [DATE]`
 - Post Type: `Meme`
-- Caption: the meme caption
+- Caption: `ig_caption` (Instagram caption)
+- FB Caption: `fb_caption` (Facebook caption)
 - Hashtags: the meme hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.mp4`
 - Status: `Draft`
@@ -515,7 +646,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Meme 2:**
 - Name: `Meme 2 — [DATE]`
 - Post Type: `Meme`
-- Caption: the meme caption
+- Caption: `ig_caption`
+- FB Caption: `fb_caption`
 - Hashtags: the meme hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.mp4`
 - Status: `Draft`
@@ -526,7 +658,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Quote Image 1:**
 - Name: `Quote 1 — [DATE]`
 - Post Type: `Quote Image`
-- Caption: the quote caption
+- Caption: `ig_caption`
+- FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.jpg`
 - Status: `Draft`
@@ -537,7 +670,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Quote Image 2:**
 - Name: `Quote 2 — [DATE]`
 - Post Type: `Quote Image`
-- Caption: the quote caption
+- Caption: `ig_caption`
+- FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.jpg`
 - Status: `Draft`
