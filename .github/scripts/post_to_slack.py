@@ -1,0 +1,50 @@
+import os, json, urllib.request, sys, re
+from datetime import datetime
+
+webhook = os.environ["SLACK_WEBHOOK_URL"]
+error_webhook = os.environ["SLACK_ERROR_WEBHOOK_URL"]
+file_path = os.environ["BRIEFING_FILE"]
+
+try:
+    with open(file_path) as f:
+        content = f.read()
+
+    blocks = []
+
+    date_match = re.search(r"(\d{4}-\d{2}-\d{2})", file_path)
+    if date_match:
+        d = datetime.strptime(date_match.group(1), "%Y-%m-%d")
+        title = d.strftime("Morning Briefing %B %-d, %Y")
+    else:
+        title = "Morning Briefing"
+    blocks.append({"type": "header", "text": {"type": "plain_text", "text": title}})
+
+    section_pattern = re.compile(r"=== (.+?) ===\n(.*?)(?=\n=== |\Z)", re.DOTALL)
+    for match in section_pattern.finditer(content):
+        section_name = match.group(1).strip()
+        section_body = match.group(2).strip()
+        if not section_body:
+            continue
+        lines = ["\u2022 " + l[2:] if l.startswith("- ") else l for l in section_body.split("\n")]
+        text = "*" + section_name + "*\n" + "\n".join(lines)
+        blocks.append({"type": "divider"})
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": text}})
+
+    payload = json.dumps({"blocks": blocks}).encode()
+    req = urllib.request.Request(webhook, data=payload, headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req) as resp:
+        result = resp.read()
+        if result != b"ok":
+            raise Exception("Slack returned: " + result.decode())
+    print("Posted to Slack successfully")
+
+except Exception as e:
+    msg = "Briefing failed to post to Slack: " + str(e)
+    print(msg)
+    try:
+        payload = json.dumps({"text": msg}).encode()
+        req = urllib.request.Request(error_webhook, data=payload, headers={"Content-Type": "application/json"})
+        urllib.request.urlopen(req)
+    except Exception:
+        pass
+    sys.exit(1)
