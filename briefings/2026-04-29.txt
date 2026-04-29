@@ -1,0 +1,22 @@
+Morning Briefing April 29, 2026
+
+=== ROBOTICS & AI ===
+- Faraday Future launched its EAI Developer Ecosystem Forum and open developer platform in San Francisco yesterday, showcasing its FF Futurist humanoid robot across nine real-world scenarios. https://www.roboticstomorrow.com/news/2026/04/28/faraday-future-strategically-launches-its-embodied-ai-developer-platform-purpose-built-for-ai-natives-marking-2026-as-the-inaugural-year-of-eai-robotics-education/26483/
+- X Square Robot unveiled Wall-B, a new embodied AI foundation model, with plans to deploy units in real homes within 35 days. https://www.roboticstomorrow.com/news/2026/04/23/x-square-robot-unveils-new-embodied-ai-model-says-robots-will-arrive-in-homes-in-35-days/26469/
+
+=== RESEARCH ===
+- Google DeepMind released Gemini Robotics-ER 1.6, a stronger spatial reasoning model now integrated into Boston Dynamics' Spot inspection platform and available via the Gemini API. https://deepmind.google/blog/gemini-robotics-er-1-6/
+- Physical Intelligence's pi0.7 model enables robots to complete tasks they were never explicitly trained on, moving toward a general-purpose robot brain. https://techcrunch.com/2026/04/16/physical-intelligence-a-hot-robotics-startup-says-its-new-robot-brain-can-figure-out-tasks-it-was-never-taught/
+- Princeton researchers published a method to adapt vision-language models for robot motor control without catastrophic forgetting. https://blog.ai.princeton.edu/2026/04/23/from-vision-language-models-to-robot-control-without-forgetting/
+
+=== FUNDING & INVESTMENT ===
+- Sereact, $110M Series B led by Headline, for AI enabling robots to anticipate consequences before acting — targeting logistics, manufacturing, and humanoid platforms. https://thenextweb.com/news/sereact-raises-110-million-series-b
+- Pudu Robotics, ~$150M at $1.5B valuation, to accelerate embodied AI development and global expansion after 100% revenue growth in 2025. https://siliconangle.com/2026/04/24/pudu-robotics-raises-nearly-150m-1-5b-valuation-deploy-embodied-ai-technology/
+
+=== COMPETITOR WATCH ===
+- [Figure AI] Figure 03 production shipments are doubling monthly as commercial scale-up accelerates. https://www.theresarobotforthat.com/figure-03-shipments-doubling-every-month/
+- [Apple] Reports surfaced this week that Apple has three AI hardware products in development, including a tabletop "Pixar Lamp" robotic arm display; analysts say a robotics line could represent 25% of Apple's share price by 2040. https://appleworld.today/2026/04/analysts-an-apple-robotics-line-could-represent-a-quarter-of-apples-share-price-by-2040/
+- [Samsung] Teased "Project Luna," a tabletop AI home robot with a swiveling circular display designed to serve as a smart home hub and AI "digital butler." https://www.techtimes.com/articles/316013/20260420/samsung-project-luna-new-tabletop-robot-that-acts-smart-home-hub-powered-ai.htm
+
+=== BAY AREA ===
+- Bots, Bevs & Devs: networking, short talks, and robotics/AI demos at Circuit Launch, Oakland — May 5, 6 PM. https://www.meetup.com/sfrobots/events/314221561/
