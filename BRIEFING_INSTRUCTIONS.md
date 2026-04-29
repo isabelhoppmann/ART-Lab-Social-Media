@@ -42,7 +42,7 @@ Run ALL of these web searches. Only keep items from the **last 48 hours**, or up
 
 ---
 
-## STEP 2 — COMPOSE EMAIL
+## STEP 2 — COMPOSE BRIEFING
 
 ### DEDUPLICATION RULE (CRITICAL)
 Each news item must appear in EXACTLY ONE section. Assign to the most specific section:
@@ -53,9 +53,9 @@ Each news item must appear in EXACTLY ONE section. Assign to the most specific s
 
 ### Format
 
-Subject: Morning Briefing {Month} {Date}, {Year}
+Title: Morning Briefing {Month} {Date}, {Year}
 
-Body (plain text, under 500 words total):
+Sections (plain text, under 500 words total):
 
 === ROBOTICS & AI ===
 - Headline, one sentence. URL
@@ -76,19 +76,24 @@ Omit this section entirely if nothing notable within 2 weeks.
 
 ---
 
-## STEP 3 — SEND EMAIL via Gmail API
+## STEP 3 — POST TO SLACK
 
-Use Python with urllib only (no pip). Credentials are passed in as variables: GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN.
+Use Python with urllib only (no pip). SLACK_WEBHOOK_URL is passed in as a variable.
 
-Steps:
-1. POST to https://oauth2.googleapis.com/token with grant_type=refresh_token to get access_token
-2. Build HTML email:
-   - Convert === SECTION === headers to colored badge spans
-   - Convert bullet lines to ul/li with clickable URLs
-   - Wrap in clean HTML with ART Lab dark purple (#4c1d95) header bar
-   - Section badge colors: ROBOTICS & AI #7c3aed, RESEARCH #1d4ed8, FUNDING #15803d, COMPETITOR WATCH #b91c1c, BAY AREA #b45309
-3. Build RFC 2822 message: From isabel@art-lab.ai. For the To field: if OVERRIDE_TO is set in credentials, send only to that address. Otherwise send to isabel@art-lab.ai and catie@art-lab.ai
-4. base64url encode and POST to https://gmail.googleapis.com/gmail/v1/users/me/messages/send
+1. Build a list of Slack blocks:
+   - Start with a header block: {"type": "header", "text": {"type": "plain_text", "text": "Morning Briefing {Month} {Date}, {Year}"}}
+   - For each section that has content, add:
+     - A divider block: {"type": "divider"}
+     - A section block with mrkdwn text containing the bold section name and bullet items:
+       {"type": "section", "text": {"type": "mrkdwn", "text": "*ROBOTICS & AI*\n• item 1\n• item 2"}}
+   - URLs go inline as plain text — Slack auto-links them
+   - Omit BAY AREA block entirely if no events
+
+2. POST to SLACK_WEBHOOK_URL:
+   - Method: POST
+   - Content-Type: application/json
+   - Body: json.dumps({"blocks": [...]}).encode()
+   - A response of b"ok" means success; anything else is an error — print it and raise
 
 ---
 
