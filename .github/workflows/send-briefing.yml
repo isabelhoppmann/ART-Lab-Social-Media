@@ -1,47 +1,80 @@
-name: Send Daily Briefing Email
+name: Post Briefing to Slack
+
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'briefings/*.txt'
+      - "briefings/*.txt"
     branches:
       - main
 
 jobs:
-  send:
+  post-to-slack:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
-      - name: Send via Gmail API
+      - name: Post briefing to Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
         run: |
-                    FILE=$(ls briefings/*.txt | sort | tail -1)
-          OUTPUT=$(python3 .github/scripts/convert_briefing.py "$FILE")
-          SUBJECT=$(echo "$OUTPUT" | head -1)
-          HTML=$(echo "$OUTPUT" | tail -n +2)
+          export BRIEFING_FILE=$(git diff --name-only HEAD~1 HEAD -- "briefings/*.txt" | head -1)
+          if [ -z "$BRIEFING_FILE" ]; then
+            export BRIEFING_FILE=$(ls briefings/*.txt | sort | tail -1)
+          fi
+          echo "Posting $BRIEFING_FILE to Slack"
+          python3 - <<PYEOF
+import os, json, urllib.request, sys, re
+from datetime import datetime
 
-          ACCESS_TOKEN=$(curl -s -X POST https://oauth2.googleapis.com/token \
-            -d "client_id=${{ secrets.GMAIL_CLIENT_ID }}" \
-            -d "client_secret=${{ secrets.GMAIL_CLIENT_SECRET }}" \
-            -d "refresh_token=${{ secrets.GMAIL_REFRESH_TOKEN }}" \
-            -d "grant_type=refresh_token" \
-            | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")
+webhook = os.environ["SLACK_WEBHOOK_URL"]
+error_webhook = os.environ["SLACK_ERROR_WEBHOOK_URL"]
+file_path = os.environ["BRIEFING_FILE"]
 
-          {
-            echo "From: Isabel Hoppmann <isabel@art-lab.ai>"
-            echo "To: isabel@art-lab.ai, catie@art-lab.ai"
-            echo "Subject: ${SUBJECT}"
-            echo "MIME-Version: 1.0"
-            echo "Content-Type: text/html; charset=UTF-8"
-            echo ""
-            printf '%s' "${HTML}"
-          } > /tmp/email.txt
+try:
+    with open(file_path) as f:
+        content = f.read()
 
-          ENCODED=$(base64 -w 0 /tmp/email.txt | tr '+/' '-_' | tr -d '=')
+    blocks = []
 
-          RESULT=$(curl -s -X POST "https://gmail.googleapis.com/gmail/v1/users/me/messages/send" \
-            -H "Authorization: Bearer $ACCESS_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d "{\"raw\": \"$ENCODED\"}")
-          echo "$RESULT"
-          echo "$RESULT" | python3 -c "import sys,json; d=json.load(sys.stdin); exit(0 if 'id' in d else 1)"
+    date_match = re.search(r"(\d{4}-\d{2}-\d{2})", file_path)
+    if date_match:
+        d = datetime.strptime(date_match.group(1), "%Y-%m-%d")
+        title = d.strftime("Morning Briefing %B %-d, %Y")
+    else:
+        title = "Morning Briefing"
+    blocks.append({"type": "header", "text": {"type": "plain_text", "text": title}})
+
+    section_pattern = re.compile(r"=== (.+?) ===\n(.*?)(?=\n=== |\Z)", re.DOTALL)
+    for match in section_pattern.finditer(content):
+        section_name = match.group(1).strip()
+        section_body = match.group(2).strip()
+        if not section_body:
+            continue
+        lines = ["• " + l[2:] if l.startswith("- ") else l for l in section_body.split("\n")]
+        text = "*" + section_name + "*\n" + "\n".join(lines)
+        blocks.append({"type": "divider"})
+        blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": text}})
+
+    payload = json.dumps({"blocks": blocks}).encode()
+    req = urllib.request.Request(webhook, data=payload, headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req) as resp:
+        result = resp.read()
+        if result != b"ok":
+            raise Exception("Slack returned: " + result.decode())
+    print("Posted to Slack successfully")
+
+except Exception as e:
+    msg = "Briefing failed to post to Slack: " + str(e)
+    print(msg)
+    try:
+        payload = json.dumps({"text": msg}).encode()
+        req = urllib.request.Request(error_webhook, data=payload, headers={"Content-Type": "application/json"})
+        urllib.request.urlopen(req)
+    except Exception:
+        pass
+    sys.exit(1)
+PYEOF
