@@ -5,6 +5,15 @@ Credentials are in the message that invoked you.
 ## ABOUT ART LAB
 ART Lab is a seed-stage AI consumer robotics startup building physical AI systems (home robots). You are delivering a daily news briefing to the founding team.
 
+## ERROR HANDLING (CRITICAL)
+Wrap your ENTIRE execution in a try/except. If ANY step fails for ANY reason:
+1. Do NOT post anything to SLACK_WEBHOOK_URL (the group channel)
+2. POST an error alert to SLACK_ERROR_WEBHOOK_URL instead:
+   {"text": "Briefing agent failed: <error message here>. Nothing was sent to the group."}
+3. Exit immediately
+
+This ensures the group never sees partial output, duplicate posts, or error messages.
+
 ---
 
 ## STEP 1 — RESEARCH NEWS
@@ -78,7 +87,9 @@ Omit this section entirely if nothing notable within 2 weeks.
 
 ## STEP 3 — POST TO SLACK
 
-Use Python with urllib only (no pip). SLACK_WEBHOOK_URL is passed in as a variable.
+Use Python with urllib only (no pip). SLACK_WEBHOOK_URL and SLACK_ERROR_WEBHOOK_URL are passed in as variables.
+
+This step must run inside the top-level try/except. If the POST fails or returns anything other than b"ok", raise an exception — do not post a fallback message to the group channel.
 
 1. Build a list of Slack blocks:
    - Start with a header block: {"type": "header", "text": {"type": "plain_text", "text": "Morning Briefing {Month} {Date}, {Year}"}}
@@ -93,11 +104,13 @@ Use Python with urllib only (no pip). SLACK_WEBHOOK_URL is passed in as a variab
    - Method: POST
    - Content-Type: application/json
    - Body: json.dumps({"blocks": [...]}).encode()
-   - A response of b"ok" means success; anything else is an error — print it and raise
+   - If response is not b"ok", raise an exception with the response body included
 
 ---
 
 ## STEP 4 — ARCHIVE TO GITHUB
+
+This step runs inside the top-level try/except. If it fails, raise — do not silently continue.
 
 Push briefing to briefings/YYYY-MM-DD.txt. Token is passed in as GITHUB_TOKEN, repo as GITHUB_REPO.
 
@@ -105,5 +118,3 @@ CRITICAL to avoid 422 errors: Always GET the file first before PUT.
 - If GET returns 200: extract sha and include it in the PUT body
 - If GET returns 404: set sha = None and omit it from PUT body
 - If GET returns anything else: raise the error
-
-If the entire GitHub push fails for any reason, print a warning and continue without raising.
