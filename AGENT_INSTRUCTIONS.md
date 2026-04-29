@@ -33,16 +33,21 @@ For each meme, search for the specific trending format:
 4. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
 5. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
-Caption: one short punchy sentence, instant impact, no setup needed. 5-8 hashtags including #Zenie.
+For each meme produce THREE pieces of text (matching Zenie's existing IG style — see @zenie.app):
+
+- **`overlay_text`** — the joke/setup that gets rendered ONTO the video as a white card at the top. This is the part that makes the meme work. 6–14 words, punchy. Examples from existing posts: *"Me and my bestie talking about our coworkers we don't like"*, *"I told my BF I'm not drinking tonight I don't wanna be hungover"*, *"When you finally start journaling and your whole vibe upgrades"*.
+- **`caption`** — the short reaction/wink shown in the IG post caption field. 2–8 words plus optional emoji. Examples: *"She knows…"*, *"Clearly he wants the smoke"*, *"He couldn't do anything to make me happier!"*. Do NOT repeat the overlay text here — the caption riffs on it.
+- **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp.
 
 ---
 
-## Step 2A.5: Convert each meme GIF to MP4 (for the auto-publisher)
+## Step 2A.5: Convert each meme GIF to MP4 with text overlay (Zenie meme style)
 
-The auto-publisher posts to Instagram, which does not accept GIFs — it requires MP4 video. Convert each GIF into an Instagram-compatible Reel here. The HTML preview still uses the Giphy iframe (better preview UX); the MP4 is purely for publishing.
+The auto-publisher posts to Instagram as Reels (vertical 9:16), which does not accept GIFs — it requires MP4 video. The visual style mirrors @zenie.app's existing memes: vertical 1080×1920, blurred background of the GIF filling the frame, GIF content centered, and a **white card at the top with black bold sans-serif text** containing the `overlay_text`. The HTML preview still uses the Giphy iframe (better preview UX); the MP4 is what gets posted.
 
 ```python
-import urllib.request, subprocess, shutil, os
+import urllib.request, subprocess, shutil, os, textwrap
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 # Portable ffmpeg lookup: use system ffmpeg if available, else install via pip
 def _ffmpeg_path():
@@ -55,36 +60,103 @@ def _ffmpeg_path():
 
 FFMPEG = _ffmpeg_path()
 
-def gif_to_mp4(gif_url, output_path):
-    """Download GIF, convert to looped MP4 (≥6s, square pad, H.264, IG-compatible)."""
-    tmp_gif = "/tmp/meme_input.gif"
-    urllib.request.urlretrieve(gif_url, tmp_gif)
+VIDEO_W = 1080
+VIDEO_H = 1920
 
-    # Loop the GIF to reach ≥6 seconds (IG Reels minimum is 3s; 6s gives safety margin)
-    # Pad to 1080x1080 square with blurred background fill (works for any aspect ratio)
-    # H.264 + yuv420p + faststart = required for IG/FB
+def render_meme_text_card(overlay_text, output_path):
+    """Render Zenie meme-style text card: white solid box with black bold sans-serif text."""
+    # Find a bold sans-serif system font
+    font_candidates = [
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/Library/Fonts/Arial Bold.ttf",
+        "/System/Library/Fonts/HelveticaNeue.ttc",
+    ]
+    font_path = next((p for p in font_candidates if os.path.exists(p)), None)
+    if not font_path:
+        # Last resort: install dejavu via apt or fall back to default
+        raise RuntimeError("No bold sans-serif font found. Install dejavu-fonts or arial.")
+
+    font = ImageFont.truetype(font_path, 60)
+    side_margin = 40
+    card_w = VIDEO_W - 2 * side_margin
+    h_padding = 35
+    v_padding = 28
+    line_h = 78
+
+    # Wrap text using actual font metrics
+    avg_char_w = font.getlength("M") * 0.55
+    chars_per_line = max(15, int((card_w - 2 * h_padding) / avg_char_w))
+    wrapped = textwrap.wrap(overlay_text, width=chars_per_line)
+
+    card_h = 2 * v_padding + len(wrapped) * line_h
+    canvas_h = card_h + 2 * side_margin
+
+    # Soft drop shadow for the card
+    shadow = Image.new("RGBA", (VIDEO_W, canvas_h), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(shadow)
+    sd.rectangle(
+        [(side_margin + 4, side_margin + 4), (side_margin + card_w + 4, side_margin + card_h + 4)],
+        fill=(0, 0, 0, 50),
+    )
+    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=8))
+
+    canvas = Image.new("RGBA", (VIDEO_W, canvas_h), (0, 0, 0, 0))
+    canvas = Image.alpha_composite(canvas, shadow)
+    draw = ImageDraw.Draw(canvas)
+
+    # White card
+    draw.rectangle(
+        [(side_margin, side_margin), (side_margin + card_w, side_margin + card_h)],
+        fill=(255, 255, 255, 250),
+    )
+
+    # Centered text
+    y = side_margin + v_padding
+    for line in wrapped:
+        bbox = draw.textbbox((0, 0), line, font=font)
+        lw = bbox[2] - bbox[0]
+        x = (VIDEO_W - lw) // 2
+        draw.text((x, y), line, font=font, fill=(0, 0, 0, 255))
+        y += line_h
+
+    canvas.save(output_path, "PNG")
+
+def gif_to_mp4(gif_url, output_path, overlay_text):
+    """Download GIF, convert to vertical 9:16 MP4 with white text card overlay (Zenie meme style)."""
+    tmp_gif = "/tmp/meme_input.gif"
+    text_card_path = "/tmp/meme_text_card.png"
+    urllib.request.urlretrieve(gif_url, tmp_gif)
+    render_meme_text_card(overlay_text, text_card_path)
+
+    # Filter chain:
+    # - blurred GIF stretched to 1080x1920 background
+    # - GIF content scaled to 1000px wide max, centered vertically
+    # - text card overlaid at y=120 (top region)
     cmd = [
         FFMPEG, "-y",
         "-stream_loop", "-1", "-t", "6",
         "-i", tmp_gif,
-        "-vf",
-        ("split[bg][fg];"
-         "[bg]scale=1080:1080:force_original_aspect_ratio=increase,crop=1080:1080,gblur=sigma=20[bg2];"
-         "[fg]scale=1080:1080:force_original_aspect_ratio=decrease[fg2];"
-         "[bg2][fg2]overlay=(W-w)/2:(H-h)/2,setsar=1"),
+        "-i", text_card_path,
+        "-filter_complex",
+        ("[0:v]split[bg][fg];"
+         "[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=30[bg2];"
+         "[fg]scale=1000:-2:force_original_aspect_ratio=decrease[fg2];"
+         "[bg2][fg2]overlay=(W-w)/2:(H-h)/2,setsar=1[base];"
+         "[base][1:v]overlay=0:120"),
         "-r", "30",
         "-c:v", "libx264",
         "-pix_fmt", "yuv420p",
         "-movflags", "+faststart",
-        "-an",  # no audio (memes have none)
+        "-an",
         output_path,
     ]
     subprocess.run(cmd, check=True, capture_output=True)
     os.remove(tmp_gif)
 
-# Run for each meme
-gif_to_mp4(MEME_1_GIF_URL, "/tmp/meme_1.mp4")
-gif_to_mp4(MEME_2_GIF_URL, "/tmp/meme_2.mp4")
+# Run for each meme — pass the overlay_text from Step 2A
+gif_to_mp4(MEME_1_GIF_URL, "/tmp/meme_1.mp4", MEME_1_OVERLAY_TEXT)
+gif_to_mp4(MEME_2_GIF_URL, "/tmp/meme_2.mp4", MEME_2_OVERLAY_TEXT)
 ```
 
 Both `.mp4` files will be pushed to GitHub in Step 3. Verify each is under 100MB and at least 6 seconds before pushing.
