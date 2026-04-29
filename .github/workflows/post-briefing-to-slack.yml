@@ -20,20 +20,10 @@ jobs:
         run: |
           FILE=$(git diff --name-only HEAD~1 HEAD | grep '^briefings/' | head -n 1)
           if [ -z "$FILE" ]; then
-            echo "No briefing file found in diff, looking for latest..."
             FILE=$(ls briefings/*.txt 2>/dev/null | sort | tail -n 1)
           fi
-          echo "Using file: $FILE"
+          echo "Posting file: $FILE"
           CONTENT=$(cat "$FILE")
-          python3 -c "
-import os, json, urllib.request
-content = open('$FILE').read()
-payload = json.dumps({'text': '\`\`\`' + content + '\`\`\`'}).encode()
-req = urllib.request.Request(
-    os.environ['SLACK_WEBHOOK_URL'],
-    data=payload,
-    headers={'Content-Type': 'application/json'}
-)
-urllib.request.urlopen(req)
-print('Posted to Slack successfully.')
-"
+          PAYLOAD=$(jq -n --arg text "$(printf '```\n%s\n```' "$CONTENT")" '{text: $text}')
+          curl -s -X POST -H 'Content-Type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL"
+          echo "Done."
