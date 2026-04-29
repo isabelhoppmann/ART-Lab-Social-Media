@@ -15,6 +15,21 @@ This ensures the group never sees partial output or error messages.
 
 ---
 
+## STEP 0 — LOAD PREVIOUS BRIEFING (DEDUPLICATION)
+
+Before searching for news, fetch yesterday's briefing to avoid repeating the same stories.
+
+Use Python with urllib. GITHUB_TOKEN and GITHUB_REPO are passed in as variables.
+
+1. Compute yesterday's date as YYYY-MM-DD.
+2. GET `https://api.github.com/repos/{GITHUB_REPO}/contents/briefings/{yesterday}.txt` with Authorization header.
+3. If 200: base64-decode the content field. Extract every URL from the text (any string starting with http). Store as `seen_urls` set.
+4. If 404 or any error: set `seen_urls` to an empty set and continue.
+
+Any story whose URL is in `seen_urls` must be excluded from today's briefing entirely.
+
+---
+
 ## STEP 1 — RESEARCH NEWS
 
 Run ALL of these web searches. Only keep items from the **last 48 hours**, or upcoming Bay Area events within 2 weeks. Be selective — quality over quantity.
@@ -47,6 +62,8 @@ Run ALL of these web searches. Only keep items from the **last 48 hours**, or up
 21. "Samsung" home robot OR AI assistant 2026
 22. "LG" home robot OR AI product 2026
 23. "Lenovo" AI robot OR smart home 2026
+
+After collecting results, remove any item whose URL is in `seen_urls` from Step 0.
 
 ---
 
@@ -84,17 +101,42 @@ Omit this section entirely if nothing notable within 2 weeks.
 
 ---
 
-## STEP 3 — ARCHIVE TO GITHUB
+## STEP 3 — SAVE AS PENDING + EMAIL ISABEL FOR APPROVAL
 
-This is the step that triggers Slack delivery via GitHub Actions. It must succeed for the briefing to reach the team.
+This step saves the briefing for approval and emails Isabel. The briefing will NOT go to Slack until Isabel approves it by running the "Post Briefing to Slack" trigger.
 
-Use Python with urllib only (no pip). GITHUB_TOKEN and GITHUB_REPO are passed in as variables.
+Use Python with urllib only (no pip).
 
-Push the composed briefing text to briefings/YYYY-MM-DD.txt (today's date). This push will automatically trigger the GitHub Action that posts to Slack.
+### Part A — Save to GitHub as pending
+
+Push the composed briefing text to `briefings/pending/YYYY-MM-DD.txt` (today's date).
 
 CRITICAL to avoid 422 errors: Always GET the file first before PUT.
 - If GET returns 200: extract sha and include it in the PUT body
 - If GET returns 404: set sha = None and omit it from PUT body
 - If GET returns anything else: raise the error
 
-Commit message: "Daily briefing YYYY-MM-DD"
+Commit message: "Pending briefing YYYY-MM-DD"
+
+### Part B — Email Isabel
+
+Get a Gmail access token:
+POST https://oauth2.googleapis.com/token with:
+  client_id=GMAIL_CLIENT_ID, client_secret=GMAIL_SECRET, refresh_token=GMAIL_REFRESH, grant_type=refresh_token
+
+Build and send an email:
+- From: isabel@artlab.ai
+- To: isabel@artlab.ai
+- Subject: [APPROVE] Morning Briefing {Month} {Date}, {Year}
+- Body:
+  Review the briefing below. To post it to Slack, run the "Post Briefing to Slack" trigger on claude.ai.
+
+  ---
+
+  {full briefing text}
+
+Encode as RFC 2822, base64url-encode, and POST to:
+https://gmail.googleapis.com/gmail/v1/users/me/messages/send
+with body: { "raw": "<encoded>" }
+
+(Send directly — do not create a draft.)
