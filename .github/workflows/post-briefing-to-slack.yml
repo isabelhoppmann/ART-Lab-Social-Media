@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'briefings/*.txt'
+  workflow_dispatch:
 
 jobs:
   post-to-slack:
@@ -23,7 +24,6 @@ jobs:
             FILE=$(ls briefings/*.txt 2>/dev/null | sort | tail -n 1)
           fi
           echo "Posting file: $FILE"
-          CONTENT=$(cat "$FILE")
-          PAYLOAD=$(jq -n --arg text "$(printf '```\n%s\n```' "$CONTENT")" '{text: $text}')
+          PAYLOAD=$(jq -n --arg text "$(printf '```\n%s\n```' "$(cat "$FILE")")" '{text: $text}')
           curl -s -X POST -H 'Content-Type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL"
           echo "Done."
