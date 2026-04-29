@@ -139,11 +139,11 @@ def gif_to_mp4(gif_url, output_path, overlay_text):
         "-i", tmp_gif,
         "-i", text_card_path,
         "-filter_complex",
-        ("[0:v]split[bg][fg];"
-         "[bg]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,gblur=sigma=30[bg2];"
-         "[fg]scale=1000:-2:force_original_aspect_ratio=decrease[fg2];"
-         "[bg2][fg2]overlay=(W-w)/2:(H-h)/2,setsar=1[base];"
+        ("[0:v]scale=1000:-2:force_original_aspect_ratio=decrease[fg];"
+         "color=c=white:s=1080x1920:r=30[bg];"
+         "[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1[base];"
          "[base][1:v]overlay=0:120"),
+        "-t", "6",
         "-r", "30",
         "-c:v", "libx264",
         "-pix_fmt", "yuv420p",
