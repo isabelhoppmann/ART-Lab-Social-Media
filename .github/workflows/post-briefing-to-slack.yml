@@ -24,6 +24,6 @@ jobs:
             FILE=$(ls briefings/*.txt 2>/dev/null | sort | tail -n 1)
           fi
           echo "Posting file: $FILE"
-          PAYLOAD=$(jq -n --arg text "$(printf '```\n%s\n```' "$(cat "$FILE")")" '{text: $text}')
+          PAYLOAD=$(jq -n --rawfile text "$FILE" '{text: $text}')
           curl -s -X POST -H 'Content-Type: application/json' -d "$PAYLOAD" "$SLACK_WEBHOOK_URL"
           echo "Done."
