@@ -21,12 +21,13 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
         run: |
-          export BRIEFING_FILE=$(git diff --name-only HEAD~1 HEAD -- "briefings/*.txt" | head -1)
+          BRIEFING_FILE=$(git diff --name-only HEAD~1 HEAD -- "briefings/*.txt" | head -1)
           if [ -z "$BRIEFING_FILE" ]; then
-            export BRIEFING_FILE=$(ls briefings/*.txt | sort | tail -1)
+            BRIEFING_FILE=$(ls briefings/*.txt | sort | tail -1)
           fi
           echo "Posting $BRIEFING_FILE to Slack"
-          python3 - <<PYEOF
+
+          cat > /tmp/post_to_slack.py << 'PYEOF'
 import os, json, urllib.request, sys, re
 from datetime import datetime
 
@@ -54,7 +55,7 @@ try:
         section_body = match.group(2).strip()
         if not section_body:
             continue
-        lines = ["• " + l[2:] if l.startswith("- ") else l for l in section_body.split("\n")]
+        lines = ["\u2022 " + l[2:] if l.startswith("- ") else l for l in section_body.split("\n")]
         text = "*" + section_name + "*\n" + "\n".join(lines)
         blocks.append({"type": "divider"})
         blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": text}})
@@ -78,3 +79,5 @@ except Exception as e:
         pass
     sys.exit(1)
 PYEOF
+
+          BRIEFING_FILE="$BRIEFING_FILE" python3 /tmp/post_to_slack.py
