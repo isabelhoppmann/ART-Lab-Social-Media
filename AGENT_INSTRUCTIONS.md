@@ -29,9 +29,10 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
 2. **Quality check (REQUIRED):** WebFetch each candidate. Reject if: blurry/low-res, obscure source, clip art, or ANY explicit/adult content.
-3. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
-4. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
-5. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
+3. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
+4. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
+5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
+6. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
 For each meme produce THREE pieces of text (matching Zenie's existing IG style — see @zenie.app):
 
