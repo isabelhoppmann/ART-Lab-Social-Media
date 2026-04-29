@@ -130,18 +130,17 @@ def gif_to_mp4(gif_url, output_path, overlay_text):
     render_meme_text_card(overlay_text, text_card_path)
 
     # Filter chain:
-    # - GIF scaled to 1080px wide (no crop), centered on white 1080x1920 background
-    # - white text card overlaid at top (sits in the white space above the GIF)
+    # - GIF scaled+cropped to fill full 1080x1920 frame
+    # - white text card overlaid near the bottom so it clears the subject's face
     cmd = [
         FFMPEG, "-y",
         "-stream_loop", "-1", "-t", "6",
         "-i", tmp_gif,
         "-i", text_card_path,
         "-filter_complex",
-        ("color=c=white:s=1080x1920:r=30[bg];"
-         "[0:v]scale=1080:-2:force_original_aspect_ratio=decrease[fg];"
-         "[bg][fg]overlay=(W-w)/2:(H-h)/2,setsar=1[base];"
-         "[base][1:v]overlay=0:60"),
+        ("[0:v]scale=1080:1920:force_original_aspect_ratio=increase,"
+         "crop=1080:1920,setsar=1[base];"
+         "[base][1:v]overlay=0:H-h-60"),
         "-t", "6",
         "-r", "30",
         "-c:v", "libx264",
