@@ -124,18 +124,32 @@ Get a Gmail access token:
 POST https://oauth2.googleapis.com/token with:
   client_id=GMAIL_CLIENT_ID, client_secret=GMAIL_SECRET, refresh_token=GMAIL_REFRESH, grant_type=refresh_token
 
-Build and send an email:
-- From: isabel@art-lab.ai
-- To: isabel@art-lab.ai
-- Subject: [APPROVE] Morning Briefing {Month} {Date}, {Year}
-- Body:
-  Review the briefing below. To post it to Slack, run the "Post Briefing to Slack" trigger on claude.ai.
+Build and send an HTML email matching the ART Lab briefing style.
 
-  ---
+Subject: [APPROVE] Morning Briefing {Month} {Date}, {Year}
+From: isabel@art-lab.ai
+To: isabel@art-lab.ai
 
-  {full briefing text}
+Use multipart/alternative with both a plain text part and an HTML part.
 
-Encode as RFC 2822, base64url-encode, and POST to:
+HTML structure:
+- Header: small grey "ART Lab Daily Briefing" label, then bold date as h2
+- One-liner approve instruction in small grey text
+- For each section: an h3 in small uppercase with a grey bottom border, then a ul of bullet items
+- Each bullet: story text followed by a hyperlinked short domain (e.g. <a href="URL">domain.com</a>)
+- For Competitor Watch bullets: bold the company name before the em dash
+
+Inline styles to use:
+  body: font-family sans-serif, font-size 14px, color #111, max-width 620px, margin 0 auto
+  eyebrow label: font-size 11px, color #888, margin-bottom 4px
+  h2: margin 0 0 20px 0, font-size 20px
+  approve note: font-size 12px, color #555, margin-bottom 24px
+  h3: font-size 13px, text-transform uppercase, letter-spacing 1px, color #444, border-bottom 1px solid #ddd, padding-bottom 4px
+  ul: padding-left 20px, line-height 1.7
+
+Plain text part: prepend "To post to Slack, run the Post Briefing to Slack trigger on claude.ai." then the full briefing text from Step 2.
+
+Build the RFC 2822 MIME multipart/alternative email string, base64url-encode it, and POST to:
 https://gmail.googleapis.com/gmail/v1/users/me/messages/send
 with body: { "raw": "<encoded>" }
 
