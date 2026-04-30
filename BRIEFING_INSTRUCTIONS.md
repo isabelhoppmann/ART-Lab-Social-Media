@@ -124,32 +124,34 @@ Get a Gmail access token:
 POST https://oauth2.googleapis.com/token with:
   client_id=GMAIL_CLIENT_ID, client_secret=GMAIL_SECRET, refresh_token=GMAIL_REFRESH, grant_type=refresh_token
 
-Build and send an HTML email matching the ART Lab briefing style.
+Send a multipart/alternative HTML email with the following exact structure:
 
 Subject: [APPROVE] Morning Briefing {Month} {Date}, {Year}
 From: isabel@art-lab.ai
 To: isabel@art-lab.ai
 
-Use multipart/alternative with both a plain text part and an HTML part.
+HTML structure and colors (match exactly):
+- Outer: white card, max-width 640px, border-radius 8px, box-shadow, on #f3f4f6 background
+- Header div: background #3b0764, padding 24px 28px 20px
+  - Eyebrow: color #e9d5ff, font-size 11px, uppercase, letter-spacing 0.1em — text: "ART Lab Daily Briefing"
+  - Date: color #fff, font-size 22px, font-weight 700 — e.g. "April 30, 2026"
+  - Approve note: color #d8b4fe, font-size 12px — "To post to Slack, run the Post Briefing to Slack trigger on claude.ai."
+- Body div: padding 24px 28px 32px, font-size 14px, color #1f2937, line-height 1.6
+  - Each section: colored pill badge + ul of bullets
+  - Section badge colors (background, white text, padding 3px 10px, border-radius 4px, font-size 12px, font-weight 700):
+    - ROBOTICS & AI: #7c3aed
+    - RESEARCH: #1d4ed8
+    - FUNDING & INVESTMENT: #15803d
+    - COMPETITOR WATCH: #b91c1c
+    - BAY AREA: #0e7490
+  - Bullet items: li style margin-bottom 8px, line-height 1.5
+  - Links: color #6d28d9, word-break break-all — use full URLs (not shortened)
+- Footer div: background #f9fafb, border-top 1px solid #e5e7eb, padding 16px 28px, font-size 11px, color #6b7280
+  - Text: "ART Lab · Seed-stage AI Consumer Robotics · Automated Daily Briefing"
 
-HTML structure:
-- Header: small grey "ART Lab Daily Briefing" label, then bold date as h2
-- One-liner approve instruction in small grey text
-- For each section: an h3 in small uppercase with a grey bottom border, then a ul of bullet items
-- Each bullet: story text followed by a hyperlinked short domain (e.g. <a href="URL">domain.com</a>)
-- For Competitor Watch bullets: bold the company name before the em dash
+Plain text part: prepend "To post to Slack, run the Post Briefing to Slack trigger on claude.ai." then a blank line, then the full briefing text from Step 2.
 
-Inline styles to use:
-  body: font-family sans-serif, font-size 14px, color #111, max-width 620px, margin 0 auto
-  eyebrow label: font-size 11px, color #888, margin-bottom 4px
-  h2: margin 0 0 20px 0, font-size 20px
-  approve note: font-size 12px, color #555, margin-bottom 24px
-  h3: font-size 13px, text-transform uppercase, letter-spacing 1px, color #444, border-bottom 1px solid #ddd, padding-bottom 4px
-  ul: padding-left 20px, line-height 1.7
-
-Plain text part: prepend "To post to Slack, run the Post Briefing to Slack trigger on claude.ai." then the full briefing text from Step 2.
-
-Build the RFC 2822 MIME multipart/alternative email string, base64url-encode it, and POST to:
+Build as RFC 2822 MIME multipart/alternative, base64url-encode, POST to:
 https://gmail.googleapis.com/gmail/v1/users/me/messages/send
 with body: { "raw": "<encoded>" }
 
