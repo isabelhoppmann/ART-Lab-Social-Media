@@ -1,0 +1,18 @@
+Morning Briefing April 30, 2026
+
+=== ROBOTICS & AI ===
+- Bloomberg published a deep analysis examining why humanoid robots are becoming the ultimate AI frontier, with investor capital accelerating commercial deployments across the industry. https://www.bloomberg.com/news/articles/2026-04-29/why-humanoid-robots-will-soon-become-the-ultimate-ai-frontier
+
+=== RESEARCH ===
+- Sony AI's Project Ace was published on the cover of Nature — the first autonomous system to achieve expert human-level competitive table tennis, marking a landmark for real-world physical AI that can perceive, reason, and act under pressure. https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics
+
+=== FUNDING & INVESTMENT ===
+- Figure AI exceeded $1B in Series C at a $39B post-money valuation, led by Parkway Venture Capital with backing from NVIDIA, LG Technology Ventures, Salesforce, Qualcomm Ventures, and others. https://www.figure.ai/news/series-c
+- AI2 Robotics raised CN¥1.2B (~$145M USD) Series B to advance AlphaBot, its embodied AI platform. https://www.therobotreport.com/ai2-robotics-raises-series-b-funding-advance-alphabot-embodied-ai/
+
+=== COMPETITOR WATCH ===
+- [1X Technologies] CEO Bernt Børnich teased an upcoming announcement about NEO delivery logistics — how the humanoid robot will ship and arrive at consumers' doors. https://www.humanoidsdaily.com/news/the-robot-in-the-box-1x-teases-neo-delivery-logistics-as-humanoid-production-war-heats-up
+- [Apple] Analysts predict Apple's AI push will generate three new hardware categories for the home, including a tabletop robot arm with a display, targeted for 2027. https://appleinsider.com/articles/26/04/26/apples-ai-push-alone-will-generate-three-new-hardware-categories
+
+=== BAY AREA ===
+- AI Tinkerers SF: Generative UI Global Hackathon, May 9, 2026, San Francisco. https://sf.aitinkerers.org/
