@@ -125,8 +125,8 @@ POST https://oauth2.googleapis.com/token with:
   client_id=GMAIL_CLIENT_ID, client_secret=GMAIL_SECRET, refresh_token=GMAIL_REFRESH, grant_type=refresh_token
 
 Build and send an email:
-- From: isabel@artlab.ai
-- To: isabel@artlab.ai
+- From: isabel@art-lab.ai
+- To: isabel@art-lab.ai
 - Subject: [APPROVE] Morning Briefing {Month} {Date}, {Year}
 - Body:
   Review the briefing below. To post it to Slack, run the "Post Briefing to Slack" trigger on claude.ai.
