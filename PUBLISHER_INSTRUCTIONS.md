@@ -25,12 +25,16 @@ If zero matches, exit early: print `No approved posts to schedule. Nothing to do
 ## Step 2: For each approved post
 
 Read these fields:
-- `Caption`, `Hashtags`, `Media URL`, `Post Type`, `Scheduled Date`
+- `Caption`, `FB Caption`, `Hashtags`, `Media URL`, `Post Type`, `Scheduled Date`
 - The Notion page ID (for updating later)
 
-Build the combined caption:
+Build captions:
+- **Meme posts:** use `Caption` for IG, `FB Caption` for FB. Both platforms.
+- **Quote Image posts:** Facebook only — skip Instagram entirely. Use `FB Caption` for FB.
+
+Combined caption format (append hashtags to whichever caption is used):
 ```
-{Caption}
+{Caption or FB Caption}
 
 {Hashtags}
 ```
@@ -109,7 +113,7 @@ def ig_publish_now(ig_user_id, page_token, container_id):
         return json.load(r)["permalink"]
 ```
 
-For **Quote Image** posts, call `ig_schedule_image`. For **Meme** posts, call `ig_schedule_reel`. If immediate (delay < 600), don't pass `scheduled_unix` and call `ig_publish_now` after — capture the returned permalink. If scheduled, save the container_id as a stand-in URL: `https://www.instagram.com/p/scheduled-{container_id}/` (placeholder; will be resolved later when the post goes live).
+For **Meme** posts only, call `ig_schedule_reel`. **Skip Instagram entirely for Quote Image posts.** If immediate (delay < 600), don't pass `scheduled_unix` and call `ig_publish_now` after — capture the returned permalink. If scheduled, save the container_id as a stand-in URL: `https://www.instagram.com/p/scheduled-{container_id}/` (placeholder; will be resolved later when the post goes live).
 
 ### 2B. Schedule on Facebook
 
