@@ -113,7 +113,7 @@ def ig_publish_now(ig_user_id, page_token, container_id):
         return json.load(r)["permalink"]
 ```
 
-For **Meme** posts only, call `ig_schedule_reel`. **Skip Instagram entirely for Quote Image posts.** If immediate (delay < 600), don't pass `scheduled_unix` and call `ig_publish_now` after — capture the returned permalink. If scheduled, save the container_id as a stand-in URL: `https://www.instagram.com/p/scheduled-{container_id}/` (placeholder; will be resolved later when the post goes live).
+**Skip Instagram entirely for all posts.** Meme posts go to Facebook only via the publisher — Instagram Reels must be posted manually (Meta API requires whitelist access for Reels scheduling). Quote Image posts are Facebook-only by design.
 
 ### 2B. Schedule on Facebook
 
@@ -159,13 +159,13 @@ After **both** platforms accept the scheduled (or immediate) post, update the No
 **If scheduled (delay >= 600):**
 - `Status` → `"Scheduled"`
 - `Posted At` → the scheduled datetime (when Meta will actually publish it)
-- `IG Post URL` → the IG container/permalink string
+- `IG Post URL` → leave blank (IG is posted manually)
 - `FB Post URL` → the FB scheduled-post URL
 
 **If posted immediately (delay < 600):**
 - `Status` → `"Posted"`
 - `Posted At` → current UTC datetime
-- `IG Post URL` → the actual permalink
+- `IG Post URL` → leave blank (IG is posted manually)
 - `FB Post URL` → the actual permalink
 
 If one platform succeeded and the other failed: save the URL that worked, leave `Status` as `"Approved"`, log the error. The user can re-run the publisher to retry the failed platform — your code already skips platforms that already have a URL filled in.
@@ -178,13 +178,13 @@ Print a clear summary so the user knows what happened:
 ```
 Publisher run at {UTC timestamp}
 
-Scheduled to post automatically:
-- {N} posts queued with Meta — they'll publish at their scheduled times
-  • {Post Name} — {Scheduled Date} (IG + FB)
+Scheduled on Facebook automatically:
+  • {Post Name} — {Scheduled Date}
 
-Posted immediately:
-- {M} posts (scheduled time was < 10 min away or in the past)
-  • {Post Name} — IG: {url} | FB: {url}
+⚠️  POST THESE MANUALLY ON INSTAGRAM (Reels):
+  • {Meme Name} — due {Scheduled Date}
+    Video: {Media URL}
+    Caption: {ig_caption + hashtags}
 
 Errors:
 - {K} posts failed (see details above)
