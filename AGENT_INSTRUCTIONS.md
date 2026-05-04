@@ -309,8 +309,9 @@ The design is: **a beautiful full-bleed photo background with a floating cream c
 - Example: quote="A crack is where the light comes in.", attribution="Rumi"
 - **Use the Performance Brief:** if quote images drove higher saves on IG, lean into themes that resonated (e.g. inner peace, relationships). Pick quotes that match those themes.
 
-For each quote image, produce two captions:
-- **`ig_caption`** — 1 sentence + emoji. Warm, aspirational. Example: *"A reminder for the soft-life girlies: what's meant for you is already on its way. 🌸"*
+**Quote images are Facebook-only. Do NOT post quote images to Instagram.**
+
+For each quote image, produce one caption only:
 - **`fb_caption`** — 2–3 sentences, more reflective. Invite a comment or share. Example: *"Sometimes a single line can reframe your whole day. ✨ Save this one for when you need a reminder. Who would you share this with?"*
 
 ### Step A — Download Playfair Display fonts
@@ -660,7 +661,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Quote Image 1:**
 - Name: `Quote 1 — [DATE]`
 - Post Type: `Quote Image`
-- Caption: `ig_caption`
+- Caption: *(leave blank — quote images are Facebook only)*
 - FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.jpg`
@@ -672,7 +673,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Quote Image 2:**
 - Name: `Quote 2 — [DATE]`
 - Post Type: `Quote Image`
-- Caption: `ig_caption`
+- Caption: *(leave blank — quote images are Facebook only)*
 - FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.jpg`
