@@ -7,7 +7,7 @@ ART Lab is a seed-stage AI consumer robotics startup building physical AI system
 
 ## ERROR HANDLING (CRITICAL)
 Wrap your ENTIRE execution in a try/except. If ANY step fails for ANY reason:
-1. Do NOT attempt to archive to GitHub (it may produce a partial/corrupt file)
+1. Do NOT attempt to publish to GitHub (it may produce a partial/corrupt file)
 2. Try to send an alert to SLACK_ERROR_WEBHOOK_URL — but if that also fails, ignore it silently
 3. Exit immediately
 
@@ -101,58 +101,32 @@ Omit this section entirely if nothing notable within 2 weeks.
 
 ---
 
-## STEP 3 — SAVE AS PENDING + EMAIL ISABEL FOR APPROVAL
+## STEP 3 — PUBLISH DIRECTLY TO SLACK
 
-This step saves the briefing for approval and emails Isabel. The briefing will NOT go to Slack until Isabel approves it by running the "Post Briefing to Slack" trigger.
+This step publishes the briefing to GitHub, which triggers a GitHub Action that posts it to Slack automatically. Send only once per day — do not publish if a file for today already exists.
 
 Use Python with urllib only (no pip).
 
-### Part A — Save to GitHub as pending
+### Check if already published today
 
-Push the composed briefing text to `briefings/pending/YYYY-MM-DD.txt` (today's date).
+GET `https://api.github.com/repos/{GITHUB_REPO}/contents/briefings/{today}.txt` with Authorization header.
+- If 200: print "Briefing for {today} already published. Skipping to avoid duplicate." and exit.
+- If 404: continue to publish.
+- If any other error: raise it.
+
+### Publish to GitHub
 
 CRITICAL to avoid 422 errors: Always GET the file first before PUT.
-- If GET returns 200: extract sha and include it in the PUT body
-- If GET returns 404: set sha = None and omit it from PUT body
-- If GET returns anything else: raise the error
+- GET `https://api.github.com/repos/{GITHUB_REPO}/contents/briefings/{today}.txt`
+- If 200: extract sha and include in PUT body
+- If 404: sha = None, omit from PUT body
+- If any other error: raise it
 
-Commit message: "Pending briefing YYYY-MM-DD"
+PUT `https://api.github.com/repos/{GITHUB_REPO}/contents/briefings/{today}.txt` with:
+  message: "Briefing {today}"
+  content: base64-encoded briefing text from Step 2
+  sha: (include only if not None)
 
-### Part B — Email Isabel
+This triggers the GitHub Action that posts the briefing to Slack.
 
-Get a Gmail access token:
-POST https://oauth2.googleapis.com/token with:
-  client_id=GMAIL_CLIENT_ID, client_secret=GMAIL_SECRET, refresh_token=GMAIL_REFRESH, grant_type=refresh_token
-
-Send a multipart/alternative HTML email with the following exact structure:
-
-Subject: [APPROVE] Morning Briefing {Month} {Date}, {Year}
-From: isabel@art-lab.ai
-To: isabel@art-lab.ai
-
-HTML structure and colors (match exactly):
-- Outer: white card, max-width 640px, border-radius 8px, box-shadow, on #f3f4f6 background
-- Header div: background #3b0764, padding 24px 28px 20px
-  - Eyebrow: color #e9d5ff, font-size 11px, uppercase, letter-spacing 0.1em — text: "ART Lab Daily Briefing"
-  - Date: color #fff, font-size 22px, font-weight 700 — e.g. "April 30, 2026"
-  - Approve note: color #d8b4fe, font-size 12px — "To post to Slack, run the Post Briefing to Slack trigger on claude.ai."
-- Body div: padding 24px 28px 32px, font-size 14px, color #1f2937, line-height 1.6
-  - Each section: colored pill badge + ul of bullets
-  - Section badge colors (background, white text, padding 3px 10px, border-radius 4px, font-size 12px, font-weight 700):
-    - ROBOTICS & AI: #7c3aed
-    - RESEARCH: #1d4ed8
-    - FUNDING & INVESTMENT: #15803d
-    - COMPETITOR WATCH: #b91c1c
-    - BAY AREA: #0e7490
-  - Bullet items: li style margin-bottom 8px, line-height 1.5
-  - Links: color #6d28d9, word-break break-all — use full URLs (not shortened)
-- Footer div: background #f9fafb, border-top 1px solid #e5e7eb, padding 16px 28px, font-size 11px, color #6b7280
-  - Text: "ART Lab · Seed-stage AI Consumer Robotics · Automated Daily Briefing"
-
-Plain text part: prepend "To post to Slack, run the Post Briefing to Slack trigger on claude.ai." then a blank line, then the full briefing text from Step 2.
-
-Build as RFC 2822 MIME multipart/alternative, base64url-encode, POST to:
-https://gmail.googleapis.com/gmail/v1/users/me/messages/send
-with body: { "raw": "<encoded>" }
-
-(Send directly — do not create a draft.)
+Print: "Briefing for {today} published to Slack successfully."
