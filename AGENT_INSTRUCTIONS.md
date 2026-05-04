@@ -158,9 +158,11 @@ For each meme, search for the specific trending format:
 5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
 6. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
+**Before writing copy, look at the GIF and read its energy** — the vibe, expression, tone, and momentum of the clip. Then use humor and inference to write copy that *feels* like it belongs with that specific GIF. The joke doesn't have to describe the clip literally — it should use the GIF's energy as the punchline or reaction. Use the top-performing posts from the Performance Brief as inspiration for humor style and tone.
+
 For each meme produce FOUR pieces of text:
 
-- **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
+- **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Should feel like it was written *for* this specific GIF's energy — not interchangeable with any other clip. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
 - **`ig_caption`** — short reaction/wink for the Instagram caption field. 2–8 words + optional emoji. Do NOT repeat overlay_text — riff on it. Examples: *"She knows…"*, *"He couldn't do anything to make me happier!"*
 - **`fb_caption`** — Facebook caption. More conversational, 1–3 sentences. Drive a reaction or question to spark comments/shares (FB algorithm rewards both). Example: *"Okay but why does this describe my entire Tuesday? 😅 Tag a friend who gets it."*
 - **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp. Same set used on both platforms.
