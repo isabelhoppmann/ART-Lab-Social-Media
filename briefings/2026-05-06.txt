@@ -9,7 +9,7 @@ Morning Briefing May 6, 2026
 - NVIDIA GR00T N1.7 is now in early access with commercial licensing, bringing generalized dexterous robot skills to production deployments. https://nvidianews.nvidia.com/news/nvidia-accelerates-robotics-research-and-development-with-new-open-models-and-simulation-libraries
 
 === FUNDING & INVESTMENT ===
-- SoftBank is reportedly weighing a B valuation for a new standalone AI and robotics spinout called "Roze" targeting a US IPO, to build data centers and robotics systems. https://www.cnbc.com/2026/04/30/softbank-roze-ai-robotics-ipo-100-billion-ft-report.html
+- SoftBank is reportedly weighing a $100B valuation for a new standalone AI and robotics spinout called "Roze" targeting a US IPO, to build data centers and robotics systems. https://www.cnbc.com/2026/04/30/softbank-roze-ai-robotics-ipo-100-billion-ft-report.html
 
 === COMPETITOR WATCH ===
-- [Apple] New reports confirm Apple Home Hub (7-inch display, ) on track for 2026; tabletop robot with iPad-on-robotic-arm design shifted to 2027. https://appleinsider.com/articles/26/04/26/apples-ai-push-alone-will-generate-three-new-hardware-categories
+- [Apple] New reports confirm Apple Home Hub (7-inch display, $350) on track for 2026; tabletop robot with iPad-on-robotic-arm design shifted to 2027. https://appleinsider.com/articles/26/04/26/apples-ai-push-alone-will-generate-three-new-hardware-categories
