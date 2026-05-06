@@ -152,7 +152,7 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
-2. **Quality check (REQUIRED):** WebFetch each candidate. Reject if: blurry/low-res, obscure source, clip art, or ANY explicit/adult content.
+2. **Quality check (REQUIRED):** WebFetch each candidate. Reject if: blurry/low-res, obscure source, clip art, ANY explicit/adult content, or any visible brand logos/platform watermarks (e.g. Giphy logo, TikTok logo, source attribution text) burned into the GIF itself. If a GIF is from a branded account (Apple Music, a TV network, etc.) and the brand logo is visible in the clip, reject it and find a different GIF.
 3. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
 4. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
 5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
@@ -303,10 +303,12 @@ The design is: **a beautiful full-bleed photo background with a floating cream c
 ### Quotes
 - Source REAL attributed quotes from famous thinkers, writers, philosophers (Buddha, Rumi, Maya Angelou, Brené Brown, Stoics, poets, etc.)
 - Tone: self-reflection, growth, relationships, intentional living, inner peace
-- Length: 10–25 words is fine — the card has room
+- Length: **10–18 words max** — prefer short, elegant, poetic quotes. Avoid long or analytical quotes that require unpacking. The best quotes land instantly.
+- Style: lean toward poets, writers, and spiritual thinkers (Rilke, Rumi, Mary Oliver, Kahlil Gibran, Maya Angelou). Be cautious with psychologists/analysts (Jung, Freud) — their quotes often feel clinical rather than warm.
 - Format: include the attribution (name of person, or "Unknown")
 - Example: quote="When life gets blurry, adjust your focus, not your vision.", attribution="Unknown"
 - Example: quote="A crack is where the light comes in.", attribution="Rumi"
+- Example (ideal style): quote="The only journey is the one within.", attribution="Rainer Maria Rilke"
 - **Use the Performance Brief:** if quote images drove higher saves on IG, lean into themes that resonated (e.g. inner peace, relationships). Pick quotes that match those themes.
 
 **Quote images are Facebook-only. Do NOT post quote images to Instagram.**
@@ -353,9 +355,10 @@ def load_font(path, size, weight=None):
 import urllib.request, json, random, io
 from PIL import Image, ImageEnhance
 
-def get_curated_photo(pexels_key):
+def get_curated_photo(pexels_key, page=None):
     # Pexels API and CDN both reject requests without a User-Agent — always send one.
-    page = random.randint(1, 8)
+    if page is None:
+        page = random.randint(1, 8)
     url = f"https://api.pexels.com/v1/curated?per_page=80&page={page}"
     req = urllib.request.Request(url, headers={
         "Authorization": pexels_key,
@@ -392,7 +395,8 @@ def get_curated_photo(pexels_key):
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import textwrap, random
 
-def make_quote_image(quote, attribution, filename, pexels_key):
+def make_quote_image(quote, attribution, filename, bg_img):
+    """bg_img: a PIL Image pre-fetched via get_curated_photo(). Pass a different one for each quote."""
     SIZE = 1080
     CARD_W, CARD_H = 730, 730
     CARD_X = (SIZE - CARD_W) // 2   # 175
@@ -403,7 +407,7 @@ def make_quote_image(quote, attribution, filename, pexels_key):
     CREAM = (250, 247, 241, 248)     # warm cream card, very slightly transparent
 
     # --- 1. Background photo (no dark overlay — photo is fully visible) ---
-    bg = get_curated_photo(pexels_key).convert("RGBA")
+    bg = bg_img.convert("RGBA")
 
     # --- 2. Card shadow ---
     shadow = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
@@ -487,9 +491,12 @@ def make_quote_image(quote, attribution, filename, pexels_key):
 
     bg_rgb.save(filename, format="JPEG", quality=95)
 
-# Call for each quote
-make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.jpg", PEXELS_KEY)
-make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", PEXELS_KEY)
+# Fetch two distinct backgrounds — use different page numbers to guarantee different photos
+bg_1 = get_curated_photo(PEXELS_KEY, page=random.randint(1, 4))
+bg_2 = get_curated_photo(PEXELS_KEY, page=random.randint(5, 8))
+
+make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.jpg", bg_1)
+make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", bg_2)
 ```
 
 ---
