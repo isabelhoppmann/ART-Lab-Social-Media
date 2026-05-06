@@ -1,0 +1,15 @@
+Morning Briefing May 6, 2026
+
+=== ROBOTICS & AI ===
+- China's AGIBOT A2 humanoid made its Met Gala debut (May 5), completing beverage delivery and stable object handling at The Mark Hotel NY—the first embodied AI robot to appear at the event alongside designer Alexander Wang. https://www.manilatimes.net/2026/05/06/tmt-newswire/pr-newswire/agibot-a2-joins-alexander-wang-at-the-met-gala-embodied-ai-makes-historic-fashion-debut/2336417
+- Mimic Robotics released a video-action model achieving 10x better sample efficiency and 2x faster convergence on real-world manipulation tasks, cutting the data needed to teach robots new skills. https://www.sciencedaily.com/releases/2026/04/260405003952.htm
+
+=== RESEARCH ===
+- Sony AI's ACE robot achieved expert-level competitive table tennis against humans (April 23), the first time a robot reached professional-level play in a widely-played sport—published on the cover of Nature. https://ai.sony/news/sony-ai-announces-breakthrough-research-in-real-world-artificial-intelligence-and-robotics
+- NVIDIA GR00T N1.7 is now in early access with commercial licensing, bringing generalized dexterous robot skills to production deployments. https://nvidianews.nvidia.com/news/nvidia-accelerates-robotics-research-and-development-with-new-open-models-and-simulation-libraries
+
+=== FUNDING & INVESTMENT ===
+- SoftBank is reportedly weighing a B valuation for a new standalone AI and robotics spinout called "Roze" targeting a US IPO, to build data centers and robotics systems. https://www.cnbc.com/2026/04/30/softbank-roze-ai-robotics-ipo-100-billion-ft-report.html
+
+=== COMPETITOR WATCH ===
+- [Apple] New reports confirm Apple Home Hub (7-inch display, ) on track for 2026; tabletop robot with iPad-on-robotic-arm design shifted to 2027. https://appleinsider.com/articles/26/04/26/apples-ai-push-alone-will-generate-three-new-hardware-categories
