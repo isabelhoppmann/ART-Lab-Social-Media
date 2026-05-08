@@ -152,7 +152,7 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
-2. **Quality check (REQUIRED):** WebFetch each candidate. Reject if: blurry/low-res, obscure source, clip art, ANY explicit/adult content, or any visible brand logos/platform watermarks (e.g. Giphy logo, TikTok logo, source attribution text) burned into the GIF itself. If a GIF is from a branded account (Apple Music, a TV network, etc.) and the brand logo is visible in the clip, reject it and find a different GIF.
+2. **Logo/watermark check (REQUIRED — non-negotiable):** WebFetch each candidate and explicitly describe out loud everything visible in the GIF: subjects, text, logos, watermarks. Then make a go/no-go decision. Reject ANY GIF that has: a visible logo, brand mark, watermark, platform bug (TikTok, Instagram, YouTube, Apple Music, TV network, etc.), or source attribution text anywhere in the frame — even partially visible at an edge or corner. This applies to BOTH memes. There are no exceptions. If a GIF has a logo, do not use it — find a completely different GIF. Do not crop or work around it.
 3. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
 4. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
 5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
@@ -491,9 +491,12 @@ def make_quote_image(quote, attribution, filename, bg_img):
 
     bg_rgb.save(filename, format="JPEG", quality=95)
 
-# Fetch two distinct backgrounds — use different page numbers to guarantee different photos
-bg_1 = get_curated_photo(PEXELS_KEY, page=random.randint(1, 4))
-bg_2 = get_curated_photo(PEXELS_KEY, page=random.randint(5, 8))
+# Fetch two visually distinct backgrounds — different page ranges AND different subjects
+# After fetching, describe both photos out loud (subject, dominant colors, mood).
+# If they look similar (same dominant color, same type of scene, same mood), discard one and fetch again from a different page.
+# The two backgrounds MUST look clearly different from each other.
+bg_1 = get_curated_photo(PEXELS_KEY, page=random.randint(1, 3))
+bg_2 = get_curated_photo(PEXELS_KEY, page=random.randint(6, 8))
 
 make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.jpg", bg_1)
 make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", bg_2)
@@ -690,3 +693,4 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Week: [DATE]
 
 After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database with scheduled dates."
+
