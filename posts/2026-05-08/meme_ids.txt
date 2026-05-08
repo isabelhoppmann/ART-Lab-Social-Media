@@ -1,0 +1,11 @@
+MEME_1_GIF_SOURCE=giphy
+MEME_1_GIF_ID=zijApLOAZ8rWSJshux
+MEME_1_EMBED_URL=https://giphy.com/embed/zijApLOAZ8rWSJshux
+MEME_1_OVERLAY_TEXT=Me after journaling for 3 days straight ✨
+MEME_1_MP4=https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-08/meme_1.mp4
+
+MEME_2_GIF_SOURCE=giphy
+MEME_2_GIF_ID=Wq3tro0BwBjfmmMG6o
+MEME_2_EMBED_URL=https://giphy.com/embed/Wq3tro0BwBjfmmMG6o
+MEME_2_OVERLAY_TEXT=Me and my bestie debriefing every situationship in real time
+MEME_2_MP4=https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-08/meme_2.mp4
