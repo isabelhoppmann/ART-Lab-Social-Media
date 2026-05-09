@@ -1,0 +1,11 @@
+MEME_1_GIF_SOURCE=giphy
+MEME_1_GIF_ID=r17CORskgCZKZSWVem
+MEME_1_EMBED_URL=https://giphy.com/embed/r17CORskgCZKZSWVem
+MEME_1_OVERLAY_TEXT=Me after 7 days of journaling and becoming my own hype woman ✨
+MEME_1_MP4=https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-09/meme_1.mp4
+
+MEME_2_GIF_SOURCE=giphy
+MEME_2_GIF_ID=3IULAq9KbzlIaV3giH
+MEME_2_EMBED_URL=https://giphy.com/embed/3IULAq9KbzlIaV3giH
+MEME_2_OVERLAY_TEXT=When he says he's 'not ready' but you've already journaled your way out of that era 💅
+MEME_2_MP4=https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-09/meme_2.mp4
