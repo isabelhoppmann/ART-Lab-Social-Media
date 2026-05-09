@@ -255,7 +255,22 @@ def gif_to_mp4(gif_url, output_path, overlay_text):
     """Download GIF, convert to vertical 9:16 MP4 with white text card overlay (Zenie meme style)."""
     tmp_gif = "/tmp/meme_input.gif"
     text_card_path = "/tmp/meme_text_card.png"
-    urllib.request.urlretrieve(gif_url, tmp_gif)
+
+    # Download GIF with browser-like User-Agent (Giphy blocks server-side requests without one)
+    req = urllib.request.Request(gif_url, headers={
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Referer": "https://giphy.com/",
+        "Accept": "image/gif,image/*,*/*",
+    })
+    with urllib.request.urlopen(req) as r:
+        data = r.read()
+    if len(data) < 10000:
+        raise RuntimeError(f"GIF download too small ({len(data)} bytes) — likely blocked or invalid. URL: {gif_url}")
+    if not (data[:3] == b'GIF' or data[:4] == b'\x89PNG'):
+        raise RuntimeError(f"Downloaded file is not a valid GIF (got: {data[:20]}). Giphy may have blocked the request. Try a different GIF.")
+    with open(tmp_gif, 'wb') as f:
+        f.write(data)
+
     render_meme_text_card(overlay_text, text_card_path)
 
     # Filter chain:
