@@ -152,8 +152,9 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
-2. **Logo/watermark check (REQUIRED — non-negotiable):** WebFetch each candidate and explicitly describe out loud everything visible in the GIF: subjects, text, logos, watermarks. Then make a go/no-go decision. Reject ANY GIF that has: a visible logo, brand mark, watermark, platform bug (TikTok, Instagram, YouTube, Apple Music, TV network, etc.), or source attribution text anywhere in the frame — even partially visible at an edge or corner. This applies to BOTH memes. There are no exceptions. If a GIF has a logo, do not use it — find a completely different GIF. Do not crop or work around it.
-3. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
+2. **Real humans only (REQUIRED):** GIFs must feature real people in real footage — no illustrations, cartoons, drawings, animations, anime, or CGI characters. If it's not a real human being filmed, reject it and find another.
+3. **Logo/watermark check (REQUIRED — non-negotiable):** WebFetch each candidate. Before accepting, write out loud: "I see: [describe every visible element — people, text, logos, watermarks, corner bugs]." Then decide. Reject ANY GIF with a visible logo, brand mark, watermark, platform bug, or attribution text anywhere in the frame — corner, edge, anywhere. Platforms include TikTok, Instagram, YouTube, Apple Music, MTV, any TV network, any record label, etc. No exceptions. If it has a logo, find a completely different GIF — do not try to crop or work around it. If you cannot find a clean GIF for a meme idea after 3 tries, switch to a different meme entirely.
+4. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
 4. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
 5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
 6. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
@@ -491,10 +492,10 @@ def make_quote_image(quote, attribution, filename, bg_img):
 
     bg_rgb.save(filename, format="JPEG", quality=95)
 
-# Fetch two visually distinct backgrounds — different page ranges AND different subjects
-# After fetching, describe both photos out loud (subject, dominant colors, mood).
-# If they look similar (same dominant color, same type of scene, same mood), discard one and fetch again from a different page.
-# The two backgrounds MUST look clearly different from each other.
+# Fetch two backgrounds that are DIFFERENT STYLES — not just different colors or different photos of the same type of scene.
+# After fetching each, write out loud: "bg_1 is: [subject, setting, mood, style]" and "bg_2 is: [subject, setting, mood, style]"
+# They must differ in STYLE — e.g. one is nature/outdoors and the other is cozy interior; or one is abstract/minimal and the other is lush botanical; or one is moody dark tones and the other is bright airy. Same vibe in different colors is NOT acceptable.
+# If they are the same style, discard bg_2 and fetch again until they are genuinely different in style.
 bg_1 = get_curated_photo(PEXELS_KEY, page=random.randint(1, 3))
 bg_2 = get_curated_photo(PEXELS_KEY, page=random.randint(6, 8))
 
