@@ -291,9 +291,11 @@ Both `.mp4` files will be pushed to GitHub in Step 3. Verify each is under 100MB
 ---
 
 ## Step 2B: Find 2 Repost Videos (WebSearch)
-Find 2 real TikTok/Instagram video URLs from wellness/relationships/self-growth creators.
-Search: site:tiktok.com self-care OR journaling OR relationships 2026
-Get: video URL, creator handle, repost caption, best time to post.
+Find 2 Instagram Reels from wellness/relationships/self-growth creators. Instagram only — no TikTok.
+Search: site:instagram.com/reel self-care OR journaling OR relationships 2026
+The URL must link directly to the specific video/reel — not to a creator's profile page or homepage. A valid URL looks like: instagram.com/reel/[ID]/ or instagram.com/p/[ID]/
+If you can only find a profile page URL, search harder for the specific reel link before including it.
+Get: direct reel URL, creator handle, repost caption, best time to post.
 
 ---
 
