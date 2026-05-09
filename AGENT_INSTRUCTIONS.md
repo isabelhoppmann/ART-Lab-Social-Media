@@ -291,11 +291,21 @@ Both `.mp4` files will be pushed to GitHub in Step 3. Verify each is under 100MB
 ---
 
 ## Step 2B: Find 2 Repost Videos (WebSearch)
-Find 2 Instagram Reels from wellness/relationships/self-growth creators. Instagram only — no TikTok.
-Search: site:instagram.com/reel self-care OR journaling OR relationships 2026
-The URL must link directly to the specific video/reel — not to a creator's profile page or homepage. A valid URL looks like: instagram.com/reel/[ID]/ or instagram.com/p/[ID]/
-If you can only find a profile page URL, search harder for the specific reel link before including it.
-Get: direct reel URL, creator handle, repost caption, best time to post.
+Find 2 Instagram Reels. **TikTok is absolutely not allowed — do not use TikTok under any circumstances.**
+
+Search strategies (try all until you find 2 valid Instagram reel URLs):
+- WebSearch("instagram reel self-care 2026 site:instagram.com")
+- WebSearch("instagram.com/reel journaling women relationships")
+- WebSearch("instagram reel viral wellness women 2026")
+
+A valid URL must:
+1. Contain "instagram.com" — not "tiktok.com", not any other domain
+2. Link directly to a specific reel or post — format: instagram.com/reel/[ID]/ or instagram.com/p/[ID]/
+3. NOT be a profile page (instagram.com/username/ with no post ID is invalid)
+
+Before including each repost, write out loud: "This URL is: [URL]. It is from: [platform]. It links to: [specific post or profile page]." If it is not Instagram or not a direct post link, reject it and search again.
+
+Get: direct Instagram reel URL, creator handle, repost caption, best time to post.
 
 ---
 
