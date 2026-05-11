@@ -1,0 +1,20 @@
+Morning Briefing May 11, 2026
+
+=== ROBOTICS & AI ===
+- China's AGIBOT A2 humanoid debuted at the Met Gala on May 5, becoming the first embodied AI robot at the event, demonstrating crowd navigation, beverage delivery, and object handling. https://interestingengineering.com/ai-robotics/agibot-a2-makes-history-at-met-gala
+
+=== RESEARCH ===
+- Physical Intelligence released π0.7, a steerable robotic foundation model showing a step-change in generalization across diverse robot tasks and environments. https://www.pi.website/
+
+=== FUNDING & INVESTMENT ===
+- Robotera (China) raised $200M+ led by SF Group as the humanoid maker begins thousand-unit deliveries in Q2 2026 with 300%+ growth. https://theaiinsider.tech/2026/05/08/chinas-humanoid-robot-maker-robotera-raises-over-usd-200m-in-new-funding-round/
+- NVIDIA topped $40B in total equity investments in AI companies as of May 9, deepening its physical AI infrastructure commitment. https://www.cnbc.com/2026/05/09/nvidia-embraces-ai-investor-topping-40-billion-in-equity-bets-2026.html
+
+=== COMPETITOR WATCH ===
+- [Figure AI] Two Helix-02 humanoids collaboratively tidied a bedroom in under 2 minutes on May 8, demonstrating bimanual dexterity, multi-robot coordination, and real-world task sequencing. https://www.figure.ai/news/helix-02-bedroom-tidy
+- [Meta] Acquired humanoid AI startup Assured Robot Intelligence (ARI) for ~$150-200M on May 4; ARI's co-founders join Meta's Superintelligence Labs to build robot foundation models. https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/
+- [1X Technologies] Opened a 58,000 sq ft NEO robot factory in Hayward, CA on May 1 — America's first vertically integrated humanoid factory, targeting 10,000 units in year one. https://www.globenewswire.com/news-release/2026/04/30/3285118/0/en/1x-opens-neo-factory-in-hayward-ca-america-s-first-vertically-integrated-humanoid-robot-factory-with-consumer-shipments-planned-for-2026.html
+
+=== BAY AREA ===
+- AI Council 2026, May 12–14, San Francisco — 3-day AI engineering conference, 10 tracks, 1,500+ attendees, speakers from OpenAI, Hugging Face, and Databricks. https://aicouncil.com/sf-2026
+- AI Tinkerers Build Night: Agents w/ Real-time Data, May 13, San Francisco — free meetup on building AI agents with live data. https://sf.aitinkerers.org/
