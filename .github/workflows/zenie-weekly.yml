@@ -1,0 +1,36 @@
+name: Zenie Weekly Diagnostics
+
+on:
+  schedule:
+    - cron: "0 21 * * 0"   # Every Sunday at 9pm UTC
+  workflow_dispatch:         # Allow manual trigger
+
+jobs:
+  weekly-report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run Zenie diagnostics
+        env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: "17841465217874624"
+          FB_PAGE_ID: "227999857070404"
+        run: python3 .github/scripts/zenie_diagnostics.py
+
+      - name: Commit and push report
+        run: |
+          git config user.name  "Zenie Agent"
+          git config user.email "zenie-agent@users.noreply.github.com"
+          git add reports/
+          git diff --cached --quiet || git commit -m "Weekly diagnostics report $(date +%Y-%m-%d)"
+          git push
