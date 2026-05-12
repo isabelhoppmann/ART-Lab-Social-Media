@@ -1,0 +1,64 @@
+{
+  "week_date": "2026-05-12",
+  "slack_thread_ts": null,
+  "channel_id": "C0B32JUDVD3",
+  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-05-12/",
+  "slack_blocked_in_sandbox": true,
+  "posts": {
+    "meme_1": {
+      "label": "Meme 1",
+      "notion_page_id": "35ec2cdd-459d-81e5-ba57-d07fe20cc591",
+      "overlay_text": "Me after 30 days of journaling like I didn't use to spiral about everything",
+      "ig_caption": "A different person walked out of those 30 days \u2728",
+      "fb_caption": "POV: You started journaling 30 days ago and now your whole energy has upgraded. Better sleep, clearer thoughts, actual boundaries. \ud83d\ude0c Who else started journaling and never looked back? Tag a friend who needs to hear this!",
+      "hashtags": "#Zenie #zenieapp #journaling #maincharacter #glowup #selfreflection #thatgirl #PersonalGrowth",
+      "gif_url": "https://media.giphy.com/media/3kNhJyIvtONcGRu1IS/giphy.gif",
+      "giphy_embed_id": "3kNhJyIvtONcGRu1IS",
+      "approved": false
+    },
+    "meme_2": {
+      "label": "Meme 2",
+      "notion_page_id": "35ec2cdd-459d-816f-8b8d-e5de48f5e137",
+      "overlay_text": "Me when he said he's not looking for anything serious after 3 months",
+      "ig_caption": "Babe I wrote about this in my journal and I'm not even mad anymore \ud83d\udc85",
+      "fb_caption": "Okay why does this face say EVERYTHING about modern dating? \ud83d\ude05 If your journaling entries sound like 'I am fine, I will not text first, I am thriving' \u2014 you're our people. Tag someone who gets it. \ud83d\udc47",
+      "hashtags": "#Zenie #zenieapp #datinglife #modernwomen #journaling #relatableaf #thatgirllife #SingleLife",
+      "gif_url": "https://media.giphy.com/media/YMqVRe8g0q7eEhfuVA/giphy.gif",
+      "giphy_embed_id": "YMqVRe8g0q7eEhfuVA",
+      "approved": false
+    },
+    "repost_1": {
+      "label": "Repost 1",
+      "url": "https://www.instagram.com/reel/DUWhoPckn1Q/",
+      "creator": "journalingoutloud",
+      "ig_caption": "Take care of your mind, one page at a time \ud83c\udf9e\ufe0f This reel is such a gentle reminder that your inner world deserves attention too. \u2728",
+      "approved": false
+    },
+    "repost_2": {
+      "label": "Repost 2",
+      "url": "https://www.instagram.com/thejournallab/reel/C_hhsauyq_T/",
+      "creator": "thejournallab",
+      "ig_caption": "\"Self-care is the time you give back to yourself\" \ud83d\udc9c @thejournallab gets it \u2014 journaling isn't a chore, it's a gift to future you.",
+      "approved": false
+    },
+    "quote_1": {
+      "label": "Quote 1",
+      "notion_page_id": "35ec2cdd-459d-8106-abfd-f4996a7f0f06",
+      "quote": "The only journey is the one within.",
+      "attribution": "Rainer Maria Rilke",
+      "fb_caption": "Sometimes the most profound adventure is the one happening quietly inside you. \u2728 Save this one for a moment when you need a reminder to look inward. Who would you share this with?",
+      "hashtags": "#Zenie #zenieapp #selfreflection #innerpeace #intentionalliving #dailyquote #quoteoftheday #personalgrowth",
+      "approved": false
+    },
+    "quote_2": {
+      "label": "Quote 2",
+      "notion_page_id": "35ec2cdd-459d-8124-9e2b-de2e1b27ceaf",
+      "quote": "To love oneself is the beginning of a lifelong romance.",
+      "attribution": "Oscar Wilde",
+      "fb_caption": "This one never gets old. \ud83d\udc9c Learning to be your own biggest fan is the greatest project you'll ever take on. Save this for the days you forget. Who in your life needs to read this today?",
+      "hashtags": "#Zenie #zenieapp #selflove #selfworth #journaling #dailyaffirmation #quoteoftheday #loveyourself",
+      "approved": false
+    }
+  },
+  "processed_message_ts": []
+}
