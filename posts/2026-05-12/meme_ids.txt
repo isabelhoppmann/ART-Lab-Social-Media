@@ -1,0 +1,28 @@
+Week: 2026-05-12
+
+MEME 1 — Journaling Glow-Up (Rebrand Journal 2026 trend)
+  Giphy ID: 3kNhJyIvtONcGRu1IS
+  Giphy Page: https://giphy.com/gifs/walk-bpr-jca-3kNhJyIvtONcGRu1IS
+  Embed URL: https://giphy.com/embed/3kNhJyIvtONcGRu1IS
+  GIF URL: https://media.giphy.com/media/3kNhJyIvtONcGRu1IS/giphy.gif
+  Overlay Text: Me after 30 days of journaling like I didn't use to spiral about everything
+  ⚠️ NOTE: Cannot verify watermark from server (Giphy CDN blocked in agent sandbox).
+     Please verify at giphy.com/gifs/walk-bpr-jca-3kNhJyIvtONcGRu1IS before posting.
+
+MEME 2 — Dating Humor (Modern Dating 2026)
+  Giphy ID: YMqVRe8g0q7eEhfuVA
+  Giphy Page: https://giphy.com/gifs/Bounce-TV-smh-side-eye-saintsandsinners-YMqVRe8g0q7eEhfuVA
+  Embed URL: https://giphy.com/embed/YMqVRe8g0q7eEhfuVA
+  GIF URL: https://media.giphy.com/media/YMqVRe8g0q7eEhfuVA/giphy.gif
+  Overlay Text: Me when he said he's not looking for anything serious after 3 months
+  ⚠️ NOTE: This GIF is from Bounce TV (Saints & Sinners). It likely has a Bounce TV watermark.
+     MUST be verified before posting — replace if any logo is visible.
+
+REPOSTS:
+  Repost 1: https://www.instagram.com/reel/DUWhoPckn1Q/
+  Repost 2: https://www.instagram.com/thejournallab/reel/C_hhsauyq_T/
+
+MP4 FILES NOTE:
+  meme_1.mp4 and meme_2.mp4 use Zenie branded gradient backgrounds (deep violet to lavender/blush)
+  because Giphy/Tenor CDN was blocked in the agent sandbox. Actual GIF can be composited server-side
+  by fetching the Giphy GIF URL and running through the gif_to_mp4 pipeline manually.
