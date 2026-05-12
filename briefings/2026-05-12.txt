@@ -1,0 +1,16 @@
+Morning Briefing May 12, 2026
+
+=== ROBOTICS & AI ===
+- Persona AI and Under Armour announced a collaboration on May 11 to develop performance materials for next-gen humanoid robots operating in physically demanding environments. https://macaubusiness.com/persona-ai-collaborates-with-under-armour-to-explore-performance-materials-for-humanoid-robotics/
+
+=== RESEARCH ===
+- NVIDIA open-sourced the Newton Physics Engine (co-developed with Google DeepMind and Disney Research) and released Isaac GR00T N1.6, a reasoning vision-language-action model, both now in Isaac Lab to accelerate sim-to-real robot development. https://nvidianews.nvidia.com/news/nvidia-accelerates-robotics-research-and-development-with-new-open-models-and-simulation-libraries
+- Google DeepMind released Gemini Robotics ER 1.6, improving spatial reasoning, instrument reading, and object detection for robot developers, accessible via the Gemini API. https://deepmind.google/blog/gemini-robotics-er-1-6/
+
+=== FUNDING & INVESTMENT ===
+- Vbot (China): ~$73M Pre-A to scale humanoid robot production; its first product, a robotic dog, is shipping commercially with 2,500 units/month targeted by June. https://theaiinsider.tech/2026/05/11/report-chinese-humanoid-robot-startup-vbot-raises-usd-73m-in-pre-a-funding/
+- Robotera (China): $200M+ led by SF Group for humanoid deployments in logistics and industrial automation; 1,000-unit deliveries began Q2 2026. https://theaiinsider.tech/2026/05/08/chinas-humanoid-robot-maker-robotera-raises-over-usd-200m-in-new-funding-round/
+- Physical Intelligence: in talks to raise ~$1B at an $11B valuation; Founders Fund and Lightspeed Venture Partners reportedly in discussions. https://techfundingnews.com/physical-intelligence-1b-raise-11b-valuation-founders-fund-lightspeed/
+
+=== COMPETITOR WATCH ===
+- [Figure AI] Two Helix-02 humanoids reset a bedroom in under 2 minutes (May 8) — hanging clothes, making a bed together, and operating a trash can — the most advanced consumer home-environment robot demo to date. https://www.figure.ai/news/helix-02-bedroom-tidy
