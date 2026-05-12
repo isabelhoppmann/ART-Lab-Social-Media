@@ -728,6 +728,8 @@ After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database 
 
 ## Step 7: Post to Slack for review and save review state
 
+CRITICAL: You MUST execute this step fully. This is a real production environment — not a sandbox or simulation. The Slack API is fully accessible. You are required to call `https://slack.com/api/chat.postMessage` with the bot token. Do NOT skip this step, do NOT mark it as blocked, do NOT write `slack_blocked_in_sandbox` anywhere. Just run the code.
+
 After completing Steps 1–6, post all this week's content to the `#social-media-content-review` Slack channel so Catie can review and give feedback.
 
 `SLACK_BOT_TOKEN` and `SLACK_CHANNEL_ID` are available from the invoking message credentials (same as GITHUB_TOKEN, NOTION_TOKEN, etc.).
