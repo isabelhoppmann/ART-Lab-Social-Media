@@ -1,0 +1,19 @@
+Title: Morning Briefing May 13, 2026
+
+=== ROBOTICS & AI ===
+- Figure AI introduces Figure 03, a 3rd-generation humanoid with a completely redesigned hand system and sensory suite purpose-built for home deployment via its Helix VLA model. https://www.figure.ai/news/introducing-figure-03
+- Genesis AI (Khosla-backed, $105M seed) debuted GENE-26.5, claiming human-level robotic manipulation via proprietary dexterous hands and tactile data gloves, demonstrated in cooking a 20-step meal, lab pipetting, and playing piano. https://techcrunch.com/2026/05/06/khosla-backed-robotics-startup-genesis-ai-has-gone-full-stack-demo-shows/
+
+=== RESEARCH ===
+- New 2026 VLA/embodied AI industry report finds world models becoming standard as consumer OEMs enter the robotics market and race toward mass production. https://www.globenewswire.com/news-release/2026/05/13/3293694/28124/en/Embodied-AI-Robot-Large-Model-Including-VLA-Research-Report-2026-World-Models-Are-About-to-Become-Standard-and-OEMs-Enter-and-Accelerate-Mass-Production-and-Application.html
+- NVIDIA released new open physical AI models including updated Isaac GR00T and Cosmos world models alongside new simulation tools for robotics developers. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+
+=== FUNDING & INVESTMENT ===
+No major new confirmed funding rounds in the last 48 hours; Physical Intelligence's $1B raise at $11B valuation remains this week's largest robotics deal (covered in yesterday's briefing).
+
+=== COMPETITOR WATCH ===
+- [Meta] Acquired Assured Robot Intelligence (ARI) to build humanoid foundation models for household tasks; ARI co-founders join Meta's Superintelligence Labs, marking Meta's first major move into physical AI (May 1). https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/
+
+=== BAY AREA ===
+- AI Tinkerers Build Night: Agents w/ Real-time Data — today (May 13), San Francisco, free. https://sf.aitinkerers.org/
+- SaaStr AI Annual 2026 — May 12-14, San Francisco Bay Area; large AI and enterprise SaaS conference wrapping up today. https://www.saastrannual.com/
