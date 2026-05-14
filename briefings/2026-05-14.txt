@@ -1,0 +1,15 @@
+Title: Morning Briefing May 14, 2026
+
+=== ROBOTICS & AI ===
+- AGIBOT and partners opened the first Hong Kong Embodied AI Industry Summit, declaring 2026 the year the sector transitions from R&D into real-world deployment and productivity. https://www.prnewswire.com/apac/news-releases/the-first-hong-kong-embodied-ai-industry-summit-and-agibot-partner-conference-2026-hong-kong-opens-302770944.html
+
+- Richtech Robotics is partnering with SoundHound AI to add agentic voice control to its food-service robots, with demos set for the National Restaurant Association Show this month. https://stockstotrade.com/news/richtech-robotics-inc-rr-news-2026_05_13/
+
+=== RESEARCH ===
+- Lead Intelligent and the Beijing Humanoid Robot Innovation Center signed a strategic partnership at CIBF 2026 to fast-track humanoid robots from lab settings into large-scale industrial production lines. https://finance.yahoo.com/news/lead-intelligent-beijing-humanoid-robot-104700960.html
+
+=== FUNDING & INVESTMENT ===
+- Mind Robotics (Rivian spinoff), $400M additional raise led by Kleiner Perkins with participation from Volkswagen and Salesforce — total now exceeds $1B, valuing the company at $3B+, just two months after its prior $500M round. https://techcrunch.com/2026/05/13/rivian-spinoff-mind-robotics-raises-another-400m/
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
