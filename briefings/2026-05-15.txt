@@ -1,0 +1,14 @@
+Title: Morning Briefing May 15, 2026
+
+=== ROBOTICS & AI ===
+- Figure AI's Helix-02 humanoids completed full autonomous 8-hour factory work shifts for the first time, sorting packages purely from camera pixels using "System 0," a neural whole-body controller that replaces 109,000 lines of hand-coded C++. https://www.techtimes.com/articles/316632/20260514/figure-ais-helix-02-robots-complete-full-8-hour-autonomous-shifts-humanoid-race-intensifies.htm
+
+=== RESEARCH ===
+- Sony AI's "Project Ace" robot beat professional table tennis players in Nature-published research — the first autonomous system to reach elite human performance in a real-world competitive sport, with broad implications for high-speed dexterous physical AI. https://roboticsandautomationnews.com/2026/05/14/sony-achieves-major-breakthrough-with-tennis-playing-robot/101509/
+- O'Reilly's May 2026 Radar Trends report flags world models for robotics, video-trained VLAs, and edge-deployable multimodal models as the most consequential near-term shifts for builders. https://www.oreilly.com/radar/radar-trends-to-watch-may-2026/
+
+=== FUNDING & INVESTMENT ===
+- Anvil Robotics raised $5.5M seed to build a modular "Legos for Robots" platform, letting physical AI teams rapidly assemble and deploy custom robot systems. https://news.crunchbase.com/robotics/physical-ai-custom-robot-builder-seed-funding-anvil/
+
+=== COMPETITOR WATCH ===
+- [1X Technologies] Celebrates its 11th founding anniversary today (May 15) as NEO home robot production scales at its Hayward, CA factory — first US-built consumer humanoid now shipping to early adopters. https://www.pr.com/press-release/968645
