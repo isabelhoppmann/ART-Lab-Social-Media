@@ -1,6 +1,6 @@
 name: Post Social Content to Slack                                                
                                                             
-  on:
+  'on':
     push:
       paths:
         - 'social/review-state.json'
