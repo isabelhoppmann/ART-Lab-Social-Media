@@ -1,0 +1,17 @@
+Morning Briefing May 18, 2026
+
+=== ROBOTICS & AI ===
+- Microsoft AI chief Mustafa Suleiman stated that AI will automate all white-collar work within 18 months, signaling an accelerating timeline for intelligent automation. https://fortune.com/article/why-microsoft-ai-chief-mustafa-suleiman-predicts-ai-automation-18-months/
+
+=== RESEARCH ===
+- A 2026 embodied AI industry report finds vision-language-action (VLA) models and world models are now standard equipment, with major OEMs entering robotics and scaling mass production for unstructured environments. https://www.globenewswire.com/news-release/2026/05/13/3293694/28124/en/Embodied-AI-Robot-Large-Model-Including-VLA-Research-Report-2026-World-Models-Are-About-to-Become-Standard-and-OEMs-Enter-and-Accelerate-Mass-Production-and-Application.html
+
+=== FUNDING & INVESTMENT ===
+- Mind Robotics (Rivian spinoff), $400M led by Kleiner Perkins at a $3.4B valuation — building and deploying AI-powered factory robots trained inside Rivian's own manufacturing plants. https://techcrunch.com/2026/05/13/rivian-spinoff-mind-robotics-raises-another-400m/
+
+=== COMPETITOR WATCH ===
+- [Figure AI] CEO Brett Adcock confirmed Helix-02 humanoids sorted 28,000+ packages over 50+ continuous hours without human intervention, framing the milestone as proof humanoids are ready for real-world labor deployment. https://www.bloomberg.com/news/articles/2026-05-15/robotics-ceo-vows-no-intervention-in-humanoids-viral-trial-run
+
+=== BAY AREA ===
+- Google I/O 2026: May 19–20, Shoreline Amphitheatre, Mountain View — Gemini 4.0, Android XR glasses, and Boston Dynamics Atlas robotics demos expected; keynote starts 10am PT tomorrow. https://www.aixploria.com/en/ai-radar/google-io-2026-gemini-announcements-preview/
+- AI Tinkerers SF: May 18 (today), San Francisco — GTM Engineering Track meetup, free admission. https://sf.aitinkerers.org/
