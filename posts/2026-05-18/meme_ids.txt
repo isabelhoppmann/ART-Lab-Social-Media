@@ -1,0 +1,11 @@
+Meme 1:
+  Giphy ID: WwK9nYJ2VuhP3iUoWZ
+  GIF URL: https://media.giphy.com/media/WwK9nYJ2VuhP3iUoWZ/giphy.gif
+  Embed: https://giphy.com/embed/WwK9nYJ2VuhP3iUoWZ
+  Overlay: When you start journaling and your whole personality upgrades
+
+Meme 2:
+  Giphy ID: fobH1pNbIhxvADvGJM
+  GIF URL: https://media.giphy.com/media/fobH1pNbIhxvADvGJM/giphy.gif
+  Embed: https://giphy.com/embed/fobH1pNbIhxvADvGJM
+  Overlay: Me writing in my diary instead of texting him back
