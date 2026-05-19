@@ -1,0 +1,16 @@
+Morning Briefing May 19, 2026
+
+=== ROBOTICS & AI ===
+- Arrive AI is using NVIDIA Isaac Sim and Blackwell GPUs to train and deploy autonomous drone delivery systems at commercial scale, the first publicly confirmed production use of Blackwell in robotics sim. https://roboticsandautomationnews.com/2026/05/18/arrive-ai-using-nvidia-isaac-sim-and-blackwell-gpus-to-develop-autonomous-drone-delivery-network/101651/
+
+=== RESEARCH ===
+No significant new research published in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Skild AI raised $1.4B, tripling its valuation to $14B in just 7 months; the company is building a universal "omni-bodied" robot brain designed to operate any robot on any task. https://news.crunchbase.com/venture/robotics-startup-skild-ai-triples-valuation/
+
+=== COMPETITOR WATCH ===
+- [Figure AI] Robot "Jim" autonomously sorted 101,391 packages over 81 hours with zero human teleoperation, using only its Helix-02 AI — the most sustained unassisted humanoid task performance reported to date. https://en.sedaily.com/international/2026/05/17/figure-ai-robot-sorts-100000-packages-in-81-hours-without
+
+=== BAY AREA ===
+- Tech Deep Dive: Real-Time AI Video Generation (Vol. 2), May 21, San Francisco — in-person meetup with demos and networking across AI, robotics, and computer vision. https://agendahero.com/schedule/0f8899a0-3dbc-4d6a-ad05-58225b751316
