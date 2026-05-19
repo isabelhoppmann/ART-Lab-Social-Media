@@ -5,7 +5,7 @@ Meme 1:
   Overlay: When you start journaling and your whole personality upgrades
 
 Meme 2:
-  Giphy ID: fobH1pNbIhxvADvGJM
-  GIF URL: https://media.giphy.com/media/fobH1pNbIhxvADvGJM/giphy.gif
-  Embed: https://giphy.com/embed/fobH1pNbIhxvADvGJM
+  Giphy ID: uB093Z0mVyrjcF6UB7
+  GIF URL: https://media.giphy.com/media/uB093Z0mVyrjcF6UB7/giphy.gif
+  Embed: https://giphy.com/embed/uB093Z0mVyrjcF6UB7
   Overlay: Me writing in my diary instead of texting him back
