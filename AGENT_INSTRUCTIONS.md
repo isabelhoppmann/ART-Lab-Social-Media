@@ -159,6 +159,10 @@ For each meme, search for the specific trending format:
 5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
 6. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
+**No duplicate GIF sources (REQUIRED):** The two meme GIFs must come from completely different creators, shows, or source accounts. Do NOT pick two GIFs from the same person, artist, or channel — even if the Giphy IDs are different. Before finalising both GIFs, explicitly verify: "Meme 1 GIF is from [creator/source]. Meme 2 GIF is from [creator/source]. These are different." If they are from the same source, replace one of them.
+
+**No visually identical or near-identical GIFs:** If both GIFs show the same scene, setting, or action (e.g. both show someone writing in a notebook, or both show someone sitting at a desk), that is not acceptable even if the creators differ. The two GIFs must have clearly distinct visual energy and subject matter.
+
 **Before writing copy, look at the GIF and read its energy** — the vibe, expression, tone, and momentum of the clip. Then use humor and inference to write copy that *feels* like it belongs with that specific GIF. The joke doesn't have to describe the clip literally — it should use the GIF's energy as the punchline or reaction. Use the top-performing posts from the Performance Brief as inspiration for humor style and tone.
 
 For each meme produce FOUR pieces of text:
