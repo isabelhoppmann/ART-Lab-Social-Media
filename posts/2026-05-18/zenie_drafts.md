@@ -17,7 +17,7 @@ Preview: https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-05-18/
 ---
 
 ## Meme 2 — Diary vs. Drama
-**Giphy ID:** fobH1pNbIhxvADvGJM
+**Giphy ID:** uB093Z0mVyrjcF6UB7
 **Overlay:** Me writing in my diary instead of texting him back
 **IG Caption:** Diary > drama 📓
 **FB Caption:** Not me choosing my journal over sending that midnight text. 😅 The healing era is real. Has your journal ever saved you from yourself? Drop a ✨ if journaling helped you get through something tough.
