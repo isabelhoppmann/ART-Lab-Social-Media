@@ -1,0 +1,15 @@
+Title: Morning Briefing May 20, 2026
+
+=== ROBOTICS & AI ===
+- Google's I/O 2026 keynote (May 19) unveiled Gemini Omni, a world model that simulates physics and kinetic motion — directly relevant to robot training and physical AI; also launched Gemini 3.5 Flash and agentic Gemini Spark. https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html
+- New industry analysis finds humanoid robots are showing clearer commercial ROI in 2026, but sustained success depends on reliable output across real-world operating conditions. https://roboticsandautomationnews.com/2026/05/19/humanoid-robots-show-clearer-roi-but-commercial-success-depends-on-effective-output/101714/
+
+=== RESEARCH ===
+- CVPR 2026 (June 3–7, Denver, CO) will host 100+ robotics and AI companies with 30 live embodied AI and autonomous systems demos — a major upcoming benchmark for the state of the field. https://roboticsandautomationnews.com/2026/05/19/cvpr-2026-to-showcase-next-generation-of-embodied-ai-robotics-and-autonomous-systems/101727/
+
+=== FUNDING & INVESTMENT ===
+- Robotphoenix (industrial robotics, China) completed an ~$86M HKEX IPO, announced May 18, 2026; shares surged ~80% on debut, signaling continued public market appetite for robotics. https://thebambooworks.com/robotphoenix-launches-86-million-hong-kong-ipo/
+
+=== COMPETITOR WATCH ===
+- [Google] Gemini Omni world model launched at I/O 2026 (May 19) — see ROBOTICS & AI above for full detail; no separate robotics-specific competitor announcement beyond this.
+- [OpenAI] Launched the OpenAI Deployment Company on May 19, 2026 — a $4B enterprise unit that embeds forward-deployed engineers inside client organizations, marking a significant push deeper into enterprise AI integration. https://hrexecutive.com/openais-new-4b-consulting-venture-lands-squarely-in-hr-territory/
