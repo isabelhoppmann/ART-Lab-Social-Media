@@ -1,0 +1,17 @@
+Morning Briefing May 21, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA reported record Q1 FY2027 revenue of $81.6B (up 85% YoY), with CEO Jensen Huang citing physical AI and robotics as a primary demand driver for Blackwell GPU infrastructure. https://www.globenewswire.com/news-release/2026/05/20/3298888/0/en/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027.html
+
+=== RESEARCH ===
+No new research publications or model releases verified in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+No confirmed robotics or embodied AI funding rounds announced in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- [Figure AI] Figure 03 robots autonomously sorted packages for 24+ hours in a viral livestream hitting 10M+ views; a human intern narrowly outpaced the robots in a live "Man vs. Machine" challenge (announced May 20). https://www.technology.org/2026/05/20/figure-ai-humanoid-robots-livestream-package-sorting/
+- [Google DeepMind] At Google I/O (May 19), Google demonstrated Gemini AI powering Boston Dynamics Atlas robots and launched Gemini 3.5 Flash (faster frontier model with agentic capabilities) and Gemini Spark (personal AI agent). https://9to5google.com/2026/05/19/google-io-2026-news/
+
+=== BAY AREA ===
+- Hard Tech Week 2026, May 31–June 6, San Francisco — week-long gathering of founders, operators, and investors in robotics, defense, biotech, energy, and deep tech. https://hardtechweek.com/
