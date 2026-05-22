@@ -1,0 +1,19 @@
+Title: Morning Briefing May 22, 2026
+
+=== ROBOTICS & AI ===
+- Home robots in 2026: a market tracker shows 1X NEO open for pre-order at $20K/$499/mo, Amazon Astro live at $1,599 (invite-only), and Samsung Ballie slated for mid-2026 — a real-time snapshot of what's shipping vs. vaporware. https://the-gadgeteer.com/2026/05/20/home-robots-available-2026/
+- Samsung, LG, SK, and Hyundai are accelerating AI and robotics across factories and offices, partnering with Nvidia on Isaac platform deployments to offset rising Korean labor costs. https://en.sedaily.com/finance/2026/05/22/korean-conglomerates-accelerate-ai-robotics-push-amid-bonus
+
+=== RESEARCH ===
+No new research publications confirmed within the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Doozy Robotics (Singapore, physical AI / industrial humanoid workforce) raised seed funding from Cocoon Capital, signed a $144M MOU with a major industrial conglomerate, and is planning a Series A — announced May 21, 2026. https://www.roboticstomorrow.com/news/2026/05/21/doozy-robotics-announces-global-expansion-with-seed-funding-to-scale-physical-ai-industrial-workforce/26599/
+
+=== COMPETITOR WATCH ===
+- [LG] Stock surged to daily upper limit (+29.83%) on physical AI/robotics momentum; company confirmed its upcoming Q9 home robot will integrate Nvidia Isaac platform, targeting launch next year. https://en.sedaily.com/finance/2026/05/21/lg-electronics-hits-daily-limit-on-physical-ai-robotics
+- [Lenovo] AI revenue nearly doubled (+84%) in Q4, reaching 38% of total revenue; stock hit a 26-year high on record earnings — announced May 22, 2026. https://www.cnbc.com/amp/2026/05/22/lenovo-shares-jump-15percent-on-record-earnings-as-ai-revenue-nearly-doubles.html
+
+=== BAY AREA ===
+- Snowflake Dev Day SF — free in-person AI event with bootcamps, demos from major AI companies, and networking. June 4, San Francisco. https://allconferencealert.com/san-francisco/ai-conference.html
+- ICAIRME 2026 (International Conference on AI, Robots and Mechanical Engineering) — June 5–7, San Francisco. https://allconferencealert.com/san-francisco/ai-conference.html
