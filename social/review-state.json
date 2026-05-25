@@ -69,7 +69,8 @@
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-25/quote_1.jpg",
       "best_time": "Wednesday 7\u20139 PM EST",
       "scheduled_date": "2026-05-28T01:00:00.000+00:00",
-      "approved": false
+      "approved": false,
+      "slack_posted": true
     },
     {
       "label": "Quote Image 2",
@@ -82,7 +83,8 @@
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-25/quote_2.jpg",
       "best_time": "Friday 7\u20139 PM EST",
       "scheduled_date": "2026-05-30T01:00:00.000+00:00",
-      "approved": false
+      "approved": false,
+      "slack_posted": true
     }
   ]
 }
