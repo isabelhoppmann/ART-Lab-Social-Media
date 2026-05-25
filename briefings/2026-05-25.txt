@@ -1,0 +1,18 @@
+Morning Briefing May 25, 2026
+
+=== ROBOTICS & AI ===
+- Figure AI's four Helix-02 humanoids completed a new 24-hour autonomous package-sorting run, sorting 28,000 packages with zero teleoperation or reported failures — the company's latest live stress test of its full-body autonomy system after last week's 81-hour demo. https://interestingengineering.com/ai-robotics/figure-ai-humanoids-24-hour-autonomous-run
+
+- Waymo suspended robotaxi service in Atlanta, Dallas, Houston, San Antonio, Austin, and Nashville after vehicles repeatedly failed to navigate heavy rain and flooded roads — a concrete reminder that physical AI systems face real deployment gaps in adverse real-world conditions. https://techcrunch.com/2026/05/24/techcrunch-mobility-robotaxi-reality-check/
+
+=== RESEARCH ===
+No new research verified within the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+No new funding rounds confirmed within the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- AI Tinkerers VIP Dinner: Harnessing Agents, June 2, San Francisco — hands-on AI builders event covering LLM agents, computer vision, and robotics. https://sf.aitinkerers.org/events
