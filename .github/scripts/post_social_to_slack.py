@@ -67,8 +67,10 @@ for post in posts:
         text = f"*{label} — Meme*\n_{post.get('overlay_text', '')}_\n\n*IG:* {post.get('ig_caption', '')}\n`{post.get('hashtags', '')}`\nGIF: {post.get('gif_url', '')}"
     elif post_type == "repost":
         text = f"*{label} — Repost*\nFrom @{post.get('creator', '')} — {post.get('url', '')}\n*Caption:* {post.get('ig_caption', '')}"
-    elif post_type == "quote":
-        text = f"*{label} — Quote (FB only)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n*FB caption:* {post.get('fb_caption', '')}\n`{post.get('hashtags', '')}`"
+    elif post_type in ("quote", "quote image"):
+        media = post.get("media_url", "")
+        media_line = f"\nImage: {media}" if media else ""
+        text = f"*{label} — Quote (FB only)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n*FB caption:* {post.get('fb_caption', '')}\n`{post.get('hashtags', '')}`{media_line}"
     else:
         print(f"Skipping {label}: unknown post_type {post.get('post_type')!r}")
         continue
