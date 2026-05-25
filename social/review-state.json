@@ -1,64 +1,84 @@
 {
-  "week_date": "2026-05-18",
-  "slack_thread_ts": "1779123127.159519",
+  "week_date": "2026-05-25",
+  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-05-25/",
+  "slack_thread_ts": null,
   "slack_error": null,
-  "channel_id": "C0B32JUDVD3",
-  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-05-18/",
-  "posts": {
-    "meme_1": {
+  "posts": [
+    {
       "label": "Meme 1",
-      "notion_page_id": "364c2cdd-459d-81af-836d-d004252eb439",
-      "overlay_text": "When you start journaling and your whole personality upgrades",
-      "ig_caption": "She understood the assignment \u2728",
-      "fb_caption": "Y'all, I didn't believe in journaling until I actually started. Three months later I barely recognize how unbothered I am. \ud83d\ude0c Who else has a journal that's basically their therapist? Tag your journaling bestie below!",
-      "hashtags": "#Zenie #zenieapp #journaling #maincharacter #glowup #selflove #personalgrowth #journalinglife",
-      "gif_url": "https://media.giphy.com/media/WwK9nYJ2VuhP3iUoWZ/giphy.gif",
-      "giphy_embed_id": "WwK9nYJ2VuhP3iUoWZ",
+      "notion_page_id": "36bc2cdd-459d-81c1-9f61-cddb3860cbee",
+      "post_type": "Meme",
+      "overlay_text": "When you finally stop shrinking yourself and walk into your era",
+      "ig_caption": "She woke up different. ✨",
+      "fb_caption": "Okay but can we talk about how different life feels when you stop playing small? 💜 This is your sign — your era is here, walk into it. What's one thing you're claiming this week? Drop it below 👇",
+      "hashtags": "#Zenie #zenieapp #maincharacterenergy #glowup #selfgrowth #womenempowerment #journaling",
+      "gif_url": "https://media.giphy.com/media/3kNhJyIvtONcGRu1IS/giphy.gif",
+      "giphy_embed_id": "3kNhJyIvtONcGRu1IS",
+      "mp4_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-25/meme_1.mp4",
+      "best_time": "Tuesday 7–9 PM EST",
+      "scheduled_date": "2026-05-27T01:00:00.000+00:00",
       "approved": false
     },
-    "meme_2": {
+    {
       "label": "Meme 2",
-      "notion_page_id": "364c2cdd-459d-8159-8f46-fb84d5ccb385",
-      "overlay_text": "Me writing in my diary instead of texting him back",
-      "ig_caption": "Diary > drama \ud83d\udcd3",
-      "fb_caption": "Not me choosing my journal over sending that midnight text. \ud83d\ude05 The healing era is real. Has your journal ever saved you from yourself? Drop a \u2728 if journaling helped you get through something tough.",
-      "hashtags": "#Zenie #zenieapp #journalinglife #healingjourney #notetoself #selflove #diaryentry #womenwhoheal",
-      "gif_url": "https://media.giphy.com/media/fobH1pNbIhxvADvGJM/giphy.gif",
-      "giphy_embed_id": "fobH1pNbIhxvADvGJM",
+      "notion_page_id": "36bc2cdd-459d-8103-baa9-dcc82b9177a1",
+      "post_type": "Meme",
+      "overlay_text": "Me starting my journaling era like it's giving clarity and peace",
+      "ig_caption": "The pen never lies 📓",
+      "fb_caption": "It sounds so simple but actually writing your thoughts down changes everything. 🌿 The clarity from journaling? Unmatched. Have you started? Tell us what happened when you did 👇",
+      "hashtags": "#Zenie #zenieapp #journaling #selfcare #writingtherapy #selfgrowth #mentalhealth",
+      "gif_url": "https://media.giphy.com/media/MamnaxO9RWKjcjq3qX/giphy.gif",
+      "giphy_embed_id": "MamnaxO9RWKjcjq3qX",
+      "mp4_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-25/meme_2.mp4",
+      "best_time": "Thursday 6–8 PM EST",
+      "scheduled_date": "2026-05-29T00:00:00.000+00:00",
       "approved": false
     },
-    "repost_1": {
+    {
       "label": "Repost 1",
-      "url": "https://www.instagram.com/thejournallab/reel/C_hhsauyq_T/",
-      "creator": "thejournallab",
-      "ig_caption": "Self-care starts when you give time back to yourself. This reel is a beautiful reminder that journaling isn't just a trend \u2014 it's a practice. Save it for when you need a reset. \u270d\ufe0f",
+      "notion_page_id": null,
+      "post_type": "Repost",
+      "url": "https://www.instagram.com/reel/DQeegq7AJ0x/",
+      "creator": "@swellbottle (Swell Girl)",
+      "ig_caption": "The journaling life is a whole vibe ✍️ — give this creator a follow! 🌸",
+      "best_time": "Wednesday 12–2 PM EST",
       "approved": false
     },
-    "repost_2": {
+    {
       "label": "Repost 2",
-      "url": "https://www.instagram.com/reel/DUlmdfRk5c6/",
-      "creator": "thematthewhussey",
-      "ig_caption": "Relationships, healing, and dating advice from one of the best coaches in the game. @thematthewhussey always drops gems that make you stop and reflect. \ud83d\udcad Save this one for your next journaling session.",
+      "notion_page_id": null,
+      "post_type": "Repost",
+      "url": "https://www.instagram.com/reel/DPrnrrXgYKL/",
+      "creator": "NYC Wellness Creator",
+      "ig_caption": "Self-care is a lifestyle, not a trend 🌿 — watch this and send it to your bestie 🤍",
+      "best_time": "Saturday 10 AM–12 PM EST",
       "approved": false
     },
-    "quote_1": {
-      "label": "Quote 1",
-      "notion_page_id": "364c2cdd-459d-81be-99f2-dcebaa2daf31",
-      "quote": "Tell me, what is it you plan to do with your one wild and precious life?",
-      "attribution": "Mary Oliver",
-      "fb_caption": "This question stops me every time. \u2728 Save it for when you need a reminder that this life is yours to design \u2014 not to defer. What would your answer be today? Tell us below \ud83d\udc47",
-      "hashtags": "#Zenie #zenieapp #MaryOliver #intentionalliving #selfreflection #quoteoftheday #womenempowerment #journaling",
+    {
+      "label": "Quote Image 1",
+      "notion_page_id": "36bc2cdd-459d-81e4-a711-e3bd0324611a",
+      "post_type": "Quote Image",
+      "quote": "The only journey is the one within.",
+      "attribution": "Rainer Maria Rilke",
+      "fb_caption": "Sometimes a single line can reframe your entire week. 🌷 Save this one for a moment when you need to come back to yourself. Who would you share this with?",
+      "hashtags": "#Zenie #zenieapp #quotes #selfgrowth #intentionalliving #innerpeace #journaling",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-25/quote_1.jpg",
+      "best_time": "Wednesday 7–9 PM EST",
+      "scheduled_date": "2026-05-28T01:00:00.000+00:00",
       "approved": false
     },
-    "quote_2": {
-      "label": "Quote 2",
-      "notion_page_id": "364c2cdd-459d-8121-b285-f72d7528e009",
-      "quote": "The wound is the place where the Light enters you.",
-      "attribution": "Rumi",
-      "fb_caption": "Let that land for a second. \ud83d\udc9c Whatever you're carrying right now \u2014 it's not the end of your story. Sometimes the hardest chapters hold the most light. Share this with someone who needs to hear it today.",
-      "hashtags": "#Zenie #zenieapp #Rumi #healingjourney #selflove #quoteoftheday #innerstrength #womenwhoheal",
+    {
+      "label": "Quote Image 2",
+      "notion_page_id": "36bc2cdd-459d-81f4-a08d-c72027222791",
+      "post_type": "Quote Image",
+      "quote": "You yourself, as much as anybody, deserve your love and affection.",
+      "attribution": "Buddha",
+      "fb_caption": "The relationship with yourself is the longest one you'll ever have. 💜 How well are you treating yourself today? Save this and let it be your reminder.",
+      "hashtags": "#Zenie #zenieapp #selflove #quotes #selfcare #mindfulness #womenempowerment",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-05-25/quote_2.jpg",
+      "best_time": "Friday 7–9 PM EST",
+      "scheduled_date": "2026-05-30T01:00:00.000+00:00",
       "approved": false
     }
-  },
-  "processed_message_ts": []
+  ]
 }
