@@ -143,6 +143,10 @@ for p in all_this_week:
 # ── Step 3: narrative ──────────────────────────────────────────────────────────
 no_data = not ig_posts and not fb_posts
 if no_data:
+    # Signal the workflow that the token needs renewal so a GitHub Issue gets opened.
+    # The "Open renewal reminder" step reads /tmp/needs_renewal.txt.
+    with open('/tmp/needs_renewal.txt', 'w') as _f:
+        _f.write('EXPIRED')
     boss_brief = (
         "This week's diagnostics could not retrieve live data -- the Meta API access token "
         "may be expired or the account connection needs to be refreshed. "
