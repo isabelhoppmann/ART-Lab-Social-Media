@@ -1,0 +1,16 @@
+Morning Briefing May 26, 2026
+
+=== ROBOTICS & AI ===
+- IntBot and Certis Group partnered to deploy socially intelligent robots across Singapore's transit, hospitality, healthcare, and retail sectors, signaling that enterprise physical AI is moving from pilot into live operations (announced May 26, 2026). https://www.prnewswire.com/news-releases/intbot-and-certis-group-partner-to-scale-enterprise-physical-ai-across-singapore-302781553.html
+
+=== RESEARCH ===
+No qualifying research announcements verified within the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+No robotics or AI funding rounds with confirmed announcement dates within the last 48 hours. Heads-up: Bloomberg reported May 22 that Anthropic is set to close a $30B+ round at a $900B+ valuation "as soon as next week" — watch for official announcement this week. https://www.bloomberg.com/news/articles/2026-05-22/anthropic-to-close-over-30-billion-round-as-soon-as-next-week
+
+=== COMPETITOR WATCH ===
+- [AGIBOT] Chinese humanoid maker showcased its embodied AI systems at the GSMA Digital Nation Summit in Hanoi on May 26, pushing into Vietnam and broader Asia Pacific; company produced its 10,000th robot in March 2026. https://www.manilatimes.net/2026/05/26/tmt-newswire/pr-newswire/agibot-showcases-humanoid-robotics-at-gsma-digital-nation-summit-hanoi-2026/2351715
+
+=== BAY AREA ===
+- AI DevSummit 2026, May 27–28, South San Francisco Conference Center — 1,000+ AI/ML engineers, 70+ speakers, 60+ sessions on production-scale AI systems; co-located DevNetwork hackathon. https://aidevsummit.co/
