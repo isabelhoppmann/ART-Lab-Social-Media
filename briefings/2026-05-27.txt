@@ -1,0 +1,16 @@
+Morning Briefing May 27, 2026
+
+=== ROBOTICS & AI ===
+- Rotaku, a Bay Area startup, opens reservations for Domo — a compact humanoid robot development platform starting at $2,999 — targeting developers, educators, and embodied AI researchers who want to work with real humanoid hardware. https://roboticsandautomationnews.com/2026/05/26/rotaku-launches-domo-humanoid-robot-platform-starting-at-2999-for-developers/101878/
+
+=== RESEARCH ===
+- Hugging Face's LeRobot platform surpassed 58,000 community-contributed robotics datasets — a 50× increase in five months — pushing robotics to the single largest category on the Hugging Face Hub and marking open-source robot learning as production-grade tooling. https://www.techtimes.com/articles/317129/20260525/open-source-robotics-ai-reaches-inflection-point-lerobot-hub-surpasses-58000-datasets-one-year.htm
+
+=== FUNDING & INVESTMENT ===
+- Human Archive raised $8.2M seed (announced May 26, 2026) from Wing VC, NVP Capital, Y Combinator, and angels from OpenAI, Nvidia, Google, and Meta to equip Indian gig workers with egocentric video headsets and collect multimodal data for physical AI robot training. https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai/
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- AI Tinkerers SF VIP Dinner "Harnessing Agents" — June 2, 2026, San Francisco; live demos and networking for AI builders. https://sf.aitinkerers.org/
