@@ -1,0 +1,17 @@
+Morning Briefing May 28, 2026
+
+=== ROBOTICS & AI ===
+- 2026 Robotics Summit & Expo opened today in Boston with 5,000+ developers; Amazon Vulcan robot named RBR50 Robot of the Year; Day 2 keynote by Intrinsic CTO Brian Gerkey calls for an open foundation for AI-powered robots. https://www.therobotreport.com/a-guide-to-day-1-of-the-2026-robotics-summit-expo/
+
+- Computex 2026 adds a dedicated robotics zone for the first time, drawing Taiwan's full supply chain — sensors, motors, reducers, and system integrators — as NVIDIA and AMD prepare robotics showcases at the show. https://www.digitimes.com/news/a20260527PD244/robotics-computex-2026-taiwan-robot.html
+
+=== RESEARCH ===
+- Genesis AI open-sourced Genesis World 1.0 (May 27), a GPU-accelerated robotics simulation platform with 10x faster launch times, near-real-time multi-physics simulation, and near-zero sim-to-real gap enabling zero-shot model evaluation. https://github.com/Genesis-Embodied-AI/genesis-world
+
+=== FUNDING & INVESTMENT ===
+No confirmed robotics or consumer AI funding announcements in the past 48 hours.
+
+=== COMPETITOR WATCH ===
+- [Figure AI] Figure 03 robots completed a 200-hour nonstop autonomous logistics test sorting 250,000 packages, running Helix 02 AI — a new endurance and scale milestone for the company (announced May 26). https://en.sedaily.com/international/2026/05/26/figure-ais-humanoid-robot-works-200-hours-nonstop-sorting
+
+No significant activity from 1X Technologies, Physical Intelligence, Gemini Robotics, OpenAI, Meta, Apple, Samsung, LG, Lenovo, ElliQ, TCL, or Loona in the last 48 hours.
