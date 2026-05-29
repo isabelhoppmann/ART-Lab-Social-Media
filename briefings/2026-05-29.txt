@@ -1,0 +1,15 @@
+Morning Briefing May 29, 2026
+
+=== ROBOTICS & AI ===
+- Robotics Summit & Expo 2026 wrapped in Boston on May 27-28; Amazon Vulcan — the first warehouse robot with genuine AI-driven touch sensing capable of handling 75% of warehouse inventory — was named 2026 RBR50 Robot of the Year. https://www.techtimes.com/articles/317330/20260528/robotics-summit-2026-wraps-neuralink-users-live-demo-closes-boston-show.htm
+
+- Tesla's dedicated Optimus humanoid robot factory at Giga Texas hit a milestone on May 27 with its first steel structure standing; Tesla is targeting 10M Optimus units per year long-term and ~1M/year from a converted Fremont facility starting late 2026. https://www.therobotreport.com/from-evs-to-robotics-tesla-targets-10m-optimus-units-with-new-texas-plant/
+
+=== RESEARCH ===
+- OpenAI published its Frontier Governance Framework on May 28, detailing risk management protocols for advanced AI across cybersecurity, CBRN, and manipulation risks, aligned with California's Transparency in Frontier AI Act and the EU AI Act. https://openai.com/index/openai-frontier-governance-framework/
+
+=== FUNDING & INVESTMENT ===
+- Slamcore raised $14M (announced May 27, 2026), bringing its total to $40M; the London-based startup builds visual AI for intralogistics robots in factories and warehouses; investors include Rockwell Automation, Toyota Ventures, Amadeus Capital Partners, MMC Ventures, and IP Group. https://www.prnewswire.com/news-releases/slamcore-secures-14m-backed-by-investors-including-rockwell-automation-to-scale-visual-ai-across-intralogistics-302782212.html
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
