@@ -6,7 +6,7 @@ Credentials are in the message that invoked you (GitHub token, Notion token, Pex
 Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: You MUST embed Giphy or Tenor GIFs in the HTML preview. You MUST NOT generate static PNG files for memes. You MUST also generate an MP4 version (Step 2A.5) for the auto-publisher.
+- MEMES: Try Giphy/Tenor first. If after 3 candidates per meme you cannot find one that passes BOTH the zero-tolerance watermark check AND the source quality check (Step 2A points 3 + 4), fall back to a clean HD Pexels stock video (Step 2A-PEXELS). You MUST NOT generate static PNG files for memes. You MUST always generate an MP4 with text overlay (Step 2A.5) — the MP4 is the canonical posting asset; HTML preview is secondary.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
@@ -153,11 +153,12 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
 2. **Real humans only (REQUIRED):** GIFs must feature real people in real footage — no illustrations, cartoons, drawings, animations, anime, or CGI characters. If it's not a real human being filmed, reject it and find another.
-3. **Logo/watermark check (REQUIRED — non-negotiable):** WebFetch each candidate. Before accepting, write out loud: "I see: [describe every visible element — people, text, logos, watermarks, corner bugs]." Then decide. Reject ANY GIF with a visible logo, brand mark, watermark, platform bug, or attribution text anywhere in the frame — corner, edge, anywhere. Platforms include TikTok, Instagram, YouTube, Apple Music, MTV, any TV network, any record label, etc. No exceptions. If it has a logo, find a completely different GIF — do not try to crop or work around it. If you cannot find a clean GIF for a meme idea after 3 tries, switch to a different meme entirely.
-4. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
-4. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
-5. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
-6. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
+3. **Logo/watermark check (REQUIRED — ZERO TOLERANCE):** WebFetch each candidate. Then sample the GIF at THREE distinct moments — first frame, middle frame, last frame — because many watermarks fade in/out or only appear mid-clip. For each frame, write out loud: "Frame [N]: I see [describe every pixel of text, logo, icon, signature, channel handle, episode bug, network ident, song-credit tag, brand mark, platform bug, subtitle, caption, or any letter/number anywhere in the frame — including faint, semi-transparent, or corner-tucked marks]." If you see ANY text, logo, watermark, handle, network bug, song credit, attribution, or burned-in subtitle in ANY frame, REJECT. This includes: TikTok logo + username, Instagram handle, YouTube logo, Twitter/X logo, Apple Music/Spotify song-credit bars, MTV/network/TV-channel idents, late-night-show logos, record-label tags, Giphy/Tenor stickers, "for X" credits, episode titles, subtitles/captions, creator signatures, dating-show name plates, and reaction-channel logos. No exceptions, no cropping workarounds, no "it's small so it's fine." If a GIF looks promising but has any mark, find a completely different GIF. If you cannot find a 100% clean GIF for a meme idea after 3 tries, switch to a different meme entirely. **Last week's "Meme 2" shipped with a visible watermark — this check is failing, treat it as the most important step in this section.**
+4. **Source quality check (REQUIRED — no grainy footage):** Reject low-resolution, pixelated, heavily compressed, or visibly grainy GIFs — they look amateur when scaled up to 1080×1920. Before accepting, check the GIF's native dimensions (e.g. via WebFetch of the Giphy page — look for the image-source dimensions, or load the direct .gif URL and read the size). Minimum acceptable native size: **480px on the shorter side**. Strongly prefer GIFs ≥720p source. Also reject GIFs that look softened, motion-blurry, dim, color-washed, or like screen-recordings of small videos. When two candidates are otherwise equal, pick the higher-resolution one. Aim for footage that looks crisp at full Reel size.
+5. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
+6. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
+7. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
+8. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
 **No duplicate GIF sources (REQUIRED):** The two meme GIFs must come from completely different creators, shows, or source accounts. Do NOT pick two GIFs from the same person, artist, or channel — even if the Giphy IDs are different. Before finalising both GIFs, explicitly verify: "Meme 1 GIF is from [creator/source]. Meme 2 GIF is from [creator/source]. These are different." If they are from the same source, replace one of them.
 
@@ -174,9 +175,36 @@ For each meme produce FOUR pieces of text:
 
 ---
 
-## Step 2A.5: Convert each meme GIF to MP4 with text overlay (Zenie meme style)
+## Step 2A-PEXELS: Pexels fallback (only when Giphy/Tenor fails the new bar)
 
-The auto-publisher posts to Instagram as Reels (vertical 9:16), which does not accept GIFs — it requires MP4 video. Style: GIF scaled+cropped to fill the full 1080×1920 frame, with a **white card near the bottom containing black bold sans-serif text** (`overlay_text`) overlaid directly on the video — no white space outside the GIF. The HTML preview uses the Giphy iframe; the MP4 is what gets posted.
+If after 3 Giphy/Tenor candidates per meme you cannot find a clean HD GIF, fall back to Pexels stock video. Pexels videos are 1080×1920 vertical, license-free, no watermarks, no compression artifacts — they pass the new quality bar by default.
+
+```python
+import urllib.request, urllib.parse, json
+def pexels_search(query, per_page=10):
+    url = f"https://api.pexels.com/videos/search?{urllib.parse.urlencode({'query': query, 'orientation': 'portrait', 'per_page': per_page})}"
+    req = urllib.request.Request(url, headers={"Authorization": PEXELS_KEY})
+    with urllib.request.urlopen(req) as r:
+        data = json.load(r)
+    out = []
+    for v in data.get("videos", []):
+        hd = [f for f in v["video_files"] if f.get("width") == 1080 and f.get("height") in (1920, 2048)]
+        if hd:
+            out.append({"id": v["id"], "duration": v["duration"], "url": hd[0]["link"], "page": v.get("url", "")})
+    return out
+```
+
+Then download the source MP4 and feed it into Step 2A.5 in place of the GIF (the rendering pipeline handles both inputs — only the source loader changes). For each Pexels pick, write out loud: "I see: [describe people, clothing, setting, any text]." Same family-friendly + brand-fit rules as Giphy: real humans only, modest clothing, no logos/brand marks, on-theme. Note the Pexels video ID in `meme_ids.txt` for traceability.
+
+When using a Pexels fallback, the HTML preview should embed the local MP4 (`<video src="meme_N.mp4" autoplay loop muted playsinline>`) instead of a Giphy iframe.
+
+---
+
+## Step 2A.5: Convert each meme GIF to MP4 with text overlay (Zenie meme style) — HARD REQUIREMENT
+
+**This step is non-negotiable. Every meme MUST ship as an MP4 with the white-card text overlay burned in. The raw GIF is NEVER what gets posted to Instagram — not as a Reel, not as a feed post, not as a fallback. If MP4 generation fails for a meme, that meme is dropped from this week's batch (find a replacement GIF and retry); the agent must NOT proceed with the GIF-only version.**
+
+Style is the classic Instagram Reel / TikTok caption look: GIF scaled+cropped to fill the full 1080×1920 frame, with a **solid white card containing bold black sans-serif text** (`overlay_text`) burned onto the video near the bottom. No white space outside the GIF. The HTML preview uses the Giphy iframe for Catie's review; the MP4 is the canonical posting asset.
 
 ```python
 import urllib.request, subprocess, shutil, os, textwrap
@@ -305,7 +333,47 @@ gif_to_mp4(MEME_1_GIF_URL, "/tmp/meme_1.mp4", MEME_1_OVERLAY_TEXT)
 gif_to_mp4(MEME_2_GIF_URL, "/tmp/meme_2.mp4", MEME_2_OVERLAY_TEXT)
 ```
 
-Both `.mp4` files will be pushed to GitHub in Step 3. Verify each is under 100MB and at least 6 seconds before pushing.
+### Post-generation verification (REQUIRED)
+
+After both `gif_to_mp4` calls, verify each MP4 actually exists, is well-formed, and contains the overlay. Do NOT skip this — last week's posts shipped without the white-card overlay because MP4 generation silently failed and the publisher fell back to the raw GIF.
+
+```python
+import os, subprocess, json
+
+def verify_meme_mp4(mp4_path, label):
+    # 1. File exists and is non-trivial
+    if not os.path.exists(mp4_path):
+        raise RuntimeError(f"{label}: MP4 not generated at {mp4_path}. Drop this meme and find a replacement GIF.")
+    size = os.path.getsize(mp4_path)
+    if size < 50_000:
+        raise RuntimeError(f"{label}: MP4 suspiciously small ({size} bytes). Probably corrupt. Drop this meme.")
+    if size > 100 * 1024 * 1024:
+        raise RuntimeError(f"{label}: MP4 over 100MB ({size} bytes). Re-encode or drop.")
+
+    # 2. ffprobe to confirm it's a valid 1080x1920 video of at least 6s
+    probe = subprocess.run(
+        [FFMPEG.replace("ffmpeg", "ffprobe"), "-v", "error", "-show_entries",
+         "stream=width,height,duration,codec_type", "-of", "json", mp4_path],
+        capture_output=True, text=True,
+    )
+    meta = json.loads(probe.stdout or "{}")
+    streams = [s for s in meta.get("streams", []) if s.get("codec_type") == "video"]
+    if not streams:
+        raise RuntimeError(f"{label}: no video stream in MP4. Drop this meme.")
+    w, h = streams[0].get("width"), streams[0].get("height")
+    if (w, h) != (1080, 1920):
+        raise RuntimeError(f"{label}: MP4 dimensions {w}x{h}, expected 1080x1920. Drop this meme.")
+    dur = float(streams[0].get("duration") or 0)
+    if dur < 5.5:
+        raise RuntimeError(f"{label}: MP4 duration {dur}s, expected ≥6s. Drop this meme.")
+
+    print(f"  ✅ {label}: {w}x{h}, {dur:.1f}s, {size//1024}KB — overlay burned in")
+
+verify_meme_mp4("/tmp/meme_1.mp4", "Meme 1")
+verify_meme_mp4("/tmp/meme_2.mp4", "Meme 2")
+```
+
+If either verification raises, DROP that meme from this week's batch and either (a) find a replacement GIF and re-run Step 2A.5 for it, or (b) ship only the surviving meme and note the drop in the Slack handoff message. **Do not proceed past this step with a missing or malformed MP4. Do not commit the raw GIF as a substitute. Do not let the auto-publisher fall back to the GIF.**
 
 ---
 
@@ -737,3 +805,4 @@ Build `social/review-state.json` with the full post state: week_date, preview_ur
 Push this file to GitHub using the standard push_file() helper. A GitHub Action (`post-social-to-slack.yml`) will automatically detect the push, post all content to #social-media-content-review in Slack with full thread replies per post, and update slack_thread_ts in the file.
 
 Do NOT call the Slack API directly from this agent. The network environment blocks slack.com — the GitHub Action handles this instead.
+
