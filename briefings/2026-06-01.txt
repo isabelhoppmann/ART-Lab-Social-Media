@@ -1,0 +1,16 @@
+Morning Briefing June 1, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA unveiled the Isaac GR00T Reference Humanoid Robot today at GTC Taipei — the first open reference design combining Unitree's H2 Plus chassis (nearly 6 ft tall, 75 degrees of freedom, Sharpa tactile five-finger hands) with Jetson Thor compute and the Isaac GR00T platform; NVIDIA also previewed GR00T N2, a next-gen world-action model that more than doubles task success rates vs. leading VLA models, with Stanford Robotics Center, ETH Zurich, Ai2, and UC San Diego as early adopters. https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-NVIDIA-Isaac-GR00T-Reference-Humanoid-Robot-for-Academic-Research/default.aspx
+
+=== RESEARCH ===
+- PaXini Technology released a ten-billion-scale multimodal embodied AI dataset at the World Intelligence Expo 2026 in Tianjin (May 30), pairing it with cross-border data collaboration cases as China's embodied AI sector reports 50%+ annual growth and a projected ¥1 trillion market by 2035. https://english.news.cn/20260530/392e26b4537147e88169939f3977b210/c.html
+
+=== FUNDING & INVESTMENT ===
+No confirmed robotics or AI funding rounds announced in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- WWDC 2026: Apple's Worldwide Developers Conference runs June 8–12 at Apple Park, Cupertino — AI is the headline this year, with a major Siri 2.0 overhaul and broad on-device AI updates expected across all Apple platforms. https://developer.apple.com/wwdc26/
