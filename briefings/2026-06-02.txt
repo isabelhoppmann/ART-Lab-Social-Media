@@ -1,0 +1,19 @@
+Morning Briefing June 2, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA unveils Cosmos Reason 2, Cosmos Predict 2.5, and Isaac GR00T N1.6 open VLA models at GTC Taipei; partner robots from Boston Dynamics, LG, NEURA Robotics, and Unitree launched simultaneously on June 1. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+
+- OpenAI revives its robotics division (dormant since 2021) and begins hiring hardware, systems, and ML engineers to build robots for data centers, power grids, and factories — Sam Altman's stated goal: "everyone having a personal robot." https://techfundingnews.com/sam-altmans-openai-just-made-robotics-its-next-frontier-and-its-hiring-to-prove-it/
+
+=== RESEARCH ===
+- NVIDIA releases the Isaac GR00T open reference humanoid robot platform for academic research; first hardware partner is Unitree H2 Plus (6ft, 75 DOF, 150 lbs); launch institutions include Stanford Robotics Center, AI2, ETH Zurich, and UC San Diego. https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design
+
+=== FUNDING & INVESTMENT ===
+No confirmed funding announcements in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- AI Tinkerers VIP Dinner: Harnessing Agents, tonight (June 2), San Francisco — invite-only AI agents dinner happening today. https://sf.aitinkerers.org/p/ai-tinkerers-vip-dinner-harnessing-agents
+- Microsoft Build 2026, June 2–3, Fort Mason Center, San Francisco — major AI developer conference with AI agents and model announcements. https://build.microsoft.com
