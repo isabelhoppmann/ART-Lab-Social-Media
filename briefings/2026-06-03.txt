@@ -1,0 +1,17 @@
+Morning Briefing June 3, 2026
+
+=== ROBOTICS & AI ===
+- Humanoid robots are the next trillion-dollar AI investment opportunity: SoftBank CEO Masayoshi Son told CNBC this week that physical AI is where the next mega-company emerges, with analysts projecting the market growing from $2–3B today to $200B by 2035. https://www.cnbc.com/2026/06/03/humanoid-robots-trillion-dollar-ai-market.html
+- Trump signs White House AI executive order on innovation and security, directing companies to voluntarily submit advanced models for government review 30 days before public release and establishing an AI cybersecurity clearinghouse. https://www.npr.org/2026/06/02/nx-s1-5844347/ai-safety-trump-executive-order
+
+=== RESEARCH ===
+- NVIDIA launched Cosmos 3, an open frontier foundation model for physical AI built on a mixture-of-transformers architecture that natively unifies vision reasoning, world generation, and action prediction, reducing robot training and evaluation cycles from months to days; trained on 20 trillion tokens of multimodal data. https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai
+
+=== FUNDING & INVESTMENT ===
+- Mecka AI raised $60M Series A led by Framework Ventures (with Menlo Ventures, SV Angel, Kindred Ventures) to build large-scale human-motion datasets for physical AI training using body sensors and iPhones; company reports $100M ARR run rate on signed contracts, announced June 1, 2026. https://fortune.com/2026/06/01/mecka-ai-series-a-60-million-robotics-data-training/
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Databricks Data + AI Summit 2026: world's largest data and AI conference, 800+ sessions spanning data engineering, AI agents, and LLMs; June 15–18, Moscone Center, San Francisco. https://www.databricks.com/dataaisummit
