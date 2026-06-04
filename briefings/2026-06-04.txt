@@ -1,0 +1,16 @@
+Morning Briefing June 4, 2026
+
+=== ROBOTICS & AI ===
+- KraneShares Global Humanoid Robotics ETF marks its one-year anniversary with $241M AUM and $89M in YTD inflows, as analysts forecast humanoid robots growing from a $2-3B market today to $200B by 2035. https://www.fool.com/investing/2026/06/03/mr-roboto-tap-into-the-humanoid-robotics-boom-with/
+
+=== RESEARCH ===
+- CVPR 2026's Embodied AI Workshop runs today (June 4) at the annual computer vision conference, featuring the ManipArena live robot manipulation competition and invited talks on Vision-Language-Action models and spatial reasoning. https://embodied-ai.org/cvpr2026/
+
+=== FUNDING & INVESTMENT ===
+- Generalist AI raised $400M (valuation: $2B), led by Radical Ventures with participation from Nvidia, Bezos Expeditions, 8VC, and Union Square Ventures; founded by ex-Google Brain researchers Pete Florence and Andy Zeng to build generalizable AI for robots tackling complex real-world tasks; announced June 4, 2026. https://www.bloomberg.com/news/articles/2026-06-04/nvidia-backed-robotics-startup-generalist-ai-valued-at-2-billion
+
+=== COMPETITOR WATCH ===
+- [Samsung] Bespoke AI Steam robot vacuum hit 20,000 monthly unit sales for the first time in May 2026, a 60% YoY surge, with strong uptake among newlywed buyers; the 2026 model features 10W suction (double prior gen) and automatic water supply/drainage. https://en.sedaily.com/finance/2026/06/02/samsungs-ai-robot-vacuum-sells-over-20000-units-monthly
+
+=== BAY AREA ===
+- WWDC 2026, June 8-12, Apple Park, Cupertino: Apple expected to reveal HomePad smart home display (~$350, A18 chip, homeOS) with an upgraded agentic Siri; a tabletop robot arm is targeted for 2027. https://www.newsweek.com/wwdc-2026-everything-apple-is-expected-to-announce-on-june-8-12016937
