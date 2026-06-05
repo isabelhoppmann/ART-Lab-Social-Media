@@ -1,0 +1,20 @@
+Morning Briefing June 5, 2026
+
+=== ROBOTICS & AI ===
+- Hello Robot's Stretch 4 spotlighted in TechCrunch profile of Silicon Valley's home robot push, showcasing the startup's bet on wheeled, practical robots over humanoid hype — Stretch 4 runs $29,950 and is already shipping to research labs. https://techcrunch.com/2026/06/04/is-silicon-valley-ready-to-put-robots-in-peoples-homes-hello-robot-is/
+
+- JAKA Robotics unveiled Pi at Computex 2026, a compact 1.22m/92lb humanoid for research and education featuring a dual-brain architecture that separates high-level AI reasoning from real-time motor control. https://pandaily.com/jaka-robotics-jaka-pi-jun2026
+
+- Intel debuted its OpenVINO Physical AI open-source framework at Computex 2026, targeting the sim-to-real deployment gap for robot policies and claiming cost advantages over NVIDIA Jetson platforms. https://www.neowin.net/news/computex-2026-intel-says-its-solved-one-of-the-biggest-physical-ai-and-robotics-issue/
+
+=== RESEARCH ===
+No significant research publications confirmed in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Generalist AI raised $400M at a $2B valuation, announced June 4, 2026; led by Radical Ventures with 8VC, Union Square Ventures, Norwest, and Hanabi Capital; existing backers NVIDIA NVentures and Bezos Expeditions also participated. Generalist builds foundation models designed to work across diverse robot platforms. https://theaiinsider.tech/2026/06/04/generalist-ai-raises-400m-in-new-funding-to-develop-physical-agi/
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- WWDC 2026 keynote — June 8, Apple Park, Cupertino; Apple expected to announce AI-first Siri overhaul, a new HomeOS smart home platform, and on-device AI strategy across all platforms; relevant given Apple's rumored 2027 tabletop home robot. https://techcrunch.com/2026/03/23/apple-wwdc-june-8-12-ai-advancements-siri-developers-conference/
