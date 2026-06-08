@@ -1,0 +1,13 @@
+Morning Briefing June 8, 2026
+
+=== ROBOTICS & AI ===
+- CVPR 2026, the world's top computer vision conference, wrapped up June 7 in Denver after accepting 4,090 papers; robotics and embodied AI was the second-fastest-growing category, jumping from 2.9% to 6.2% of highlighted work as physical AI becomes central to mainstream computer vision research. https://cvpr.thecvf.com/
+
+=== RESEARCH ===
+- D4RT (Google DeepMind, UCL & Oxford) won the CVPR 2026 Best Paper Award, announced June 7; the model uses a single transformer to reconstruct dynamic 4D scenes from ordinary video ~300x faster than prior methods, with direct applications to real-time robot scene understanding in dynamic home environments. https://d4rt-paper.github.io/
+
+=== FUNDING & INVESTMENT ===
+- PhysicsX raised $300M Series C led by Temasek at a $2.4B valuation — NVIDIA and Applied Materials also participated; the London company builds AI-based Large Physics Models for engineering simulation with direct sim-to-real robotics applications, announced June 8, 2026. https://thenextweb.com/news/physicsx-temasek-300m-series-c-ai-simulation
+
+=== COMPETITOR WATCH ===
+- [Apple] At WWDC 2026 on June 8, Apple unveiled a rebuilt Siri powered by Google's Gemini model and introduced iOS 27 "Extensions" letting users choose Claude or ChatGPT as their default AI; Apple also confirmed its tabletop home robot slipped to 2028 due to Siri readiness delays — a direct signal of how difficult consumer home AI remains. https://letsdatascience.com/news/apple-unveils-gemini-powered-siri-and-ios-27-at-wwdc-2026-b757953c
