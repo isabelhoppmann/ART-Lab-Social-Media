@@ -1,0 +1,21 @@
+name: Check Slack Bot Scopes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print granted bot scopes
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: |
+          echo "Calling auth.test..."
+          curl -sS -D headers.txt \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            https://slack.com/api/auth.test
+          echo ""
+          echo "--- response headers ---"
+          grep -i "^x-oauth-scopes:" headers.txt || echo "(no x-oauth-scopes header)"
+          grep -i "^x-accepted-oauth-scopes:" headers.txt || true

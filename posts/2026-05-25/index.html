@@ -12,6 +12,8 @@
   .post h2 { font-size: .8em; text-transform: uppercase; letter-spacing: .08em; color: var(--purple); margin: 0 0 12px; }
   .giphy-wrap { width: 100%; padding-bottom: 100%; height: 0; position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
   .giphy-wrap iframe { position: absolute; width: 100%; height: 100%; border: 0; }
+  .meme-wrap { width: 100%; padding-bottom: 177.78%; height: 0; position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 12px; background: #000; }
+  .meme-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
   .quote-wrap { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
   .quote-wrap img { width: 100%; display: block; animation: kenburns 12s ease-in-out infinite alternate; transform-origin: center; }
   @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.06); } }
@@ -30,7 +32,7 @@
 
 <div class="post">
   <h2>Meme 1 — Instagram &amp; Facebook</h2>
-  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/3kNhJyIvtONcGRu1IS" allowFullScreen></iframe></div>
+  <div class="meme-wrap"><video src="meme_1.mp4" autoplay loop muted playsinline controls></video></div>
   <p class="label">IG Caption</p>
   <p class="caption">She woke up different. ✨</p>
   <p class="label">FB Caption</p>
@@ -41,7 +43,7 @@
 
 <div class="post">
   <h2>Meme 2 — Instagram &amp; Facebook</h2>
-  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/MamnaxO9RWKjcjq3qX" allowFullScreen></iframe></div>
+  <div class="meme-wrap"><video src="meme_2.mp4" autoplay loop muted playsinline controls></video></div>
   <p class="label">IG Caption</p>
   <p class="caption">The pen never lies 📓</p>
   <p class="label">FB Caption</p>

@@ -6,7 +6,8 @@ Credentials are in the message that invoked you (GitHub token, Notion token, Pex
 Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: Try Giphy/Tenor first. If after 3 candidates per meme you cannot find one that passes BOTH the zero-tolerance watermark check AND the source quality check (Step 2A points 3 + 4), fall back to a clean HD Pexels stock video (Step 2A-PEXELS). You MUST NOT generate static PNG files for memes. You MUST always generate an MP4 with text overlay (Step 2A.5) — the MP4 is the canonical posting asset; HTML preview is secondary.
+- MEMES: Try Giphy/Tenor first. If after 3 candidates per meme you cannot find one that passes BOTH the zero-tolerance watermark check AND the source quality check (Step 2A points 3 + 4), fall back to a clean HD Pexels stock video (Step 2A-PEXELS). You MUST NOT generate static PNG files for memes. You MUST always generate an MP4 with text overlay (Step 2A.5) — the MP4 is the canonical posting asset, AND the HTML preview MUST embed it via a `<video>` tag pointing to `meme_1.mp4` / `meme_2.mp4` (Step 4). DO NOT use Giphy/Tenor iframes in the preview — reviewers must see the exact MP4 that will be posted to Meta, and many browsers / Slack link previews block third-party iframes.
+- NO PLACEHOLDER MEMES: If Giphy, Tenor, AND Pexels all fail in the sandbox (e.g. network blocks), do NOT ship a gradient/solid-color placeholder MP4 — the reviewer can't tell what was intended and the post is unusable. Instead, fail loudly: skip that meme slot, log the failure in `zenie_drafts.md`, and continue with the remaining posts.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
@@ -156,9 +157,8 @@ For each meme, search for the specific trending format:
 3. **Logo/watermark check (REQUIRED — ZERO TOLERANCE):** WebFetch each candidate. Then sample the GIF at THREE distinct moments — first frame, middle frame, last frame — because many watermarks fade in/out or only appear mid-clip. For each frame, write out loud: "Frame [N]: I see [describe every pixel of text, logo, icon, signature, channel handle, episode bug, network ident, song-credit tag, brand mark, platform bug, subtitle, caption, or any letter/number anywhere in the frame — including faint, semi-transparent, or corner-tucked marks]." If you see ANY text, logo, watermark, handle, network bug, song credit, attribution, or burned-in subtitle in ANY frame, REJECT. This includes: TikTok logo + username, Instagram handle, YouTube logo, Twitter/X logo, Apple Music/Spotify song-credit bars, MTV/network/TV-channel idents, late-night-show logos, record-label tags, Giphy/Tenor stickers, "for X" credits, episode titles, subtitles/captions, creator signatures, dating-show name plates, and reaction-channel logos. No exceptions, no cropping workarounds, no "it's small so it's fine." If a GIF looks promising but has any mark, find a completely different GIF. If you cannot find a 100% clean GIF for a meme idea after 3 tries, switch to a different meme entirely. **Last week's "Meme 2" shipped with a visible watermark — this check is failing, treat it as the most important step in this section.**
 4. **Source quality check (REQUIRED — no grainy footage):** Reject low-resolution, pixelated, heavily compressed, or visibly grainy GIFs — they look amateur when scaled up to 1080×1920. Before accepting, check the GIF's native dimensions (e.g. via WebFetch of the Giphy page — look for the image-source dimensions, or load the direct .gif URL and read the size). Minimum acceptable native size: **480px on the shorter side**. Strongly prefer GIFs ≥720p source. Also reject GIFs that look softened, motion-blurry, dim, color-washed, or like screen-recordings of small videos. When two candidates are otherwise equal, pick the higher-resolution one. Aim for footage that looks crisp at full Reel size.
 5. **Aspect ratio check (REQUIRED):** The GIF will be cropped to fill a 9:16 portrait frame. Only accept GIFs where the subject is **centered horizontally** in the frame AND the GIF is square (1:1) or portrait (tall) — or at most mildly landscape (no wider than ~4:3). Reject any ultra-wide landscape GIFs (16:9 or wider) where the subject is off-center — they will crop the subject out of frame. If no suitable GIF exists for a meme idea, choose a different meme.
-6. Giphy direct .gif URL: `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
-7. Giphy embed (for HTML preview only): `https://giphy.com/embed/[ID]`
-8. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
+6. Giphy direct .gif URL (for Step 2A.5 MP4 conversion): `https://media.giphy.com/media/[ID]/giphy.gif` (ID = last segment of share URL after final dash)
+7. Tenor: WebFetch the share page to find the direct `media.tenor.com/.../...gif` URL.
 
 **No duplicate GIF sources (REQUIRED):** The two meme GIFs must come from completely different creators, shows, or source accounts. Do NOT pick two GIFs from the same person, artist, or channel — even if the Giphy IDs are different. Before finalising both GIFs, explicitly verify: "Meme 1 GIF is from [creator/source]. Meme 2 GIF is from [creator/source]. These are different." If they are from the same source, replace one of them.
 
@@ -196,7 +196,7 @@ def pexels_search(query, per_page=10):
 
 Then download the source MP4 and feed it into Step 2A.5 in place of the GIF (the rendering pipeline handles both inputs — only the source loader changes). For each Pexels pick, write out loud: "I see: [describe people, clothing, setting, any text]." Same family-friendly + brand-fit rules as Giphy: real humans only, modest clothing, no logos/brand marks, on-theme. Note the Pexels video ID in `meme_ids.txt` for traceability.
 
-When using a Pexels fallback, the HTML preview should embed the local MP4 (`<video src="meme_N.mp4" autoplay loop muted playsinline>`) instead of a Giphy iframe.
+The HTML preview always embeds the local MP4 — whether the source was Giphy, Tenor, or Pexels — via `<video src="meme_N.mp4" autoplay loop muted playsinline controls>`. Pexels-sourced memes follow the same pipeline as Giphy: the only difference is the input file in Step 2A.5.
 
 ---
 
@@ -204,7 +204,7 @@ When using a Pexels fallback, the HTML preview should embed the local MP4 (`<vid
 
 **This step is non-negotiable. Every meme MUST ship as an MP4 with the white-card text overlay burned in. The raw GIF is NEVER what gets posted to Instagram — not as a Reel, not as a feed post, not as a fallback. If MP4 generation fails for a meme, that meme is dropped from this week's batch (find a replacement GIF and retry); the agent must NOT proceed with the GIF-only version.**
 
-Style is the classic Instagram Reel / TikTok caption look: GIF scaled+cropped to fill the full 1080×1920 frame, with a **solid white card containing bold black sans-serif text** (`overlay_text`) burned onto the video near the bottom. No white space outside the GIF. The HTML preview uses the Giphy iframe for Catie's review; the MP4 is the canonical posting asset.
+Style is the classic Instagram Reel / TikTok caption look: GIF scaled+cropped to fill the full 1080×1920 frame, with a **solid white card containing bold black sans-serif text** (`overlay_text`) burned onto the video near the bottom. No white space outside the GIF. The HTML preview embeds this same MP4 via `<video src="meme_N.mp4">` so Catie reviews the exact file that ships to Meta.
 
 ```python
 import urllib.request, subprocess, shutil, os, textwrap
@@ -637,7 +637,7 @@ Push: quote_1.jpg, quote_2.jpg, meme_1.mp4, meme_2.mp4, meme_ids.txt, index.html
 
 ## Step 4: Build and push index.html
 
-For Giphy memes use iframes. For Tenor memes use img tags with the direct .gif URL.
+For memes: use a `<video>` tag pointing to the local MP4 (`meme_1.mp4` / `meme_2.mp4`) — this is the same file that ships to Meta, with the white-card overlay burned in. Do NOT embed Giphy/Tenor iframes — third-party iframes are blocked by many browsers and by Slack's link unfurler, which is what reviewers see.
 For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 
 ```html
@@ -653,12 +653,11 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
   .back { color: var(--purple); text-decoration: none; font-size: .9em; display: block; margin-bottom: 20px; }
   .post { background: white; border-radius: 16px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(107,63,160,.1); border-top: 3px solid var(--lavender); }
   .post h2 { font-size: .8em; text-transform: uppercase; letter-spacing: .08em; color: var(--purple); margin: 0 0 12px; }
-  .giphy-wrap { width: 100%; padding-bottom: 100%; height: 0; position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
-  .giphy-wrap iframe { position: absolute; width: 100%; height: 100%; border: 0; }
+  .meme-wrap { width: 100%; padding-bottom: 177.78%; height: 0; position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 12px; background: #000; }
+  .meme-wrap video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
   .quote-wrap { width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
   .quote-wrap img { width: 100%; display: block; animation: kenburns 12s ease-in-out infinite alternate; transform-origin: center; }
   @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.06); } }
-  img.meme { width: 100%; border-radius: 12px; margin-bottom: 12px; }
   .caption { margin-bottom: 6px; font-size: .95em; }
   .tags { font-size: .85em; color: var(--purple); margin-bottom: 6px; }
   .time { font-size: .8em; color: #999; }
@@ -672,7 +671,7 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 
 <div class="post">
   <h2>Meme 1</h2>
-  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID]" allowFullScreen></iframe></div>
+  <div class="meme-wrap"><video src="meme_1.mp4" autoplay loop muted playsinline controls></video></div>
   <p class="caption">[CAPTION]</p>
   <p class="tags">[HASHTAGS]</p>
   <p class="time">Best time: [TIME]</p>
@@ -680,7 +679,7 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 
 <div class="post">
   <h2>Meme 2</h2>
-  <div class="giphy-wrap"><iframe src="https://giphy.com/embed/[GIPHY_ID]" allowFullScreen></iframe></div>
+  <div class="meme-wrap"><video src="meme_2.mp4" autoplay loop muted playsinline controls></video></div>
   <p class="caption">[CAPTION]</p>
   <p class="tags">[HASHTAGS]</p>
   <p class="time">Best time: [TIME]</p>
@@ -800,7 +799,7 @@ After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database 
 
 ## Step 7: Save review state to GitHub (Slack posting is handled automatically)
 
-Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, gif_url/giphy_embed_id (memes), url/creator (reposts), quote/attribution (quotes), approved=false.
+Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url` (memes AND quote images — the jsdelivr URL of the .mp4 or .jpg; the Slack workflow downloads from here and uploads as an inline file attachment), url/creator (reposts), quote/attribution (quotes), approved=false.
 
 Push this file to GitHub using the standard push_file() helper. A GitHub Action (`post-social-to-slack.yml`) will automatically detect the push, post all content to #social-media-content-review in Slack with full thread replies per post, and update slack_thread_ts in the file.
 
