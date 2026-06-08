@@ -1,0 +1,35 @@
+Zenie Social Media Drafts — 2026-06-08
+
+=== MEME SOURCES ===
+
+Meme 1: Dating/Healing Theme
+  Source: Synthesized Pexels-style content (gradient animation)
+  Approach: Giphy/Tenor both blocked (403) in this network environment;
+            Pexels API key returned 403; used PIL+ffmpeg gradient animation as fallback.
+  Overlay Text: "Me finally choosing healing over another situationship"
+  Background: Deep violet (#6B3FA0) → soft lavender (#C9B1E8), slow Ken Burns zoom
+  Output: posts/2026-06-08/meme_1.mp4 (1080x1920, 6s)
+
+Meme 2: Journaling Glow-Up Theme
+  Source: Synthesized Pexels-style content (gradient animation)
+  Approach: Same as Meme 1 — gradient fallback
+  Overlay Text: "When you finally start journaling and your whole vibe upgrades"
+  Background: Blush pink (#F0A0C0) → lavender (#C9B1E8) → deep violet (#6B3FA0), slow Ken Burns zoom
+  Output: posts/2026-06-08/meme_2.mp4 (1080x1920, 6s)
+
+=== QUOTE IMAGES ===
+Quote 1: "The only journey is the one within." — Rainer Maria Rilke
+  Background: Forest teal to sage to lavender gradient (cool, meditative)
+  Output: posts/2026-06-08/quote_1.jpg
+
+Quote 2: "Turn your wounds into wisdom." — Oprah Winfrey
+  Background: Warm amber to coral to deep purple gradient (warm, empowering)
+  Output: posts/2026-06-08/quote_2.jpg
+
+=== REPOSTS ===
+Repost 1: https://www.instagram.com/thejournallab/reel/C_hhsauyq_T/
+  Creator: @thejournallab
+  Theme: Self-care journaling
+
+Repost 2: https://www.instagram.com/reel/DT7669ojr0d/
+  Theme: Toxic relationships / self-healing journey
