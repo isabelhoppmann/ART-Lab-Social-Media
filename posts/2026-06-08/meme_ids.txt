@@ -3,19 +3,24 @@ Zenie Social Media Drafts — 2026-06-08
 === MEME SOURCES ===
 
 Meme 1: Dating/Healing Theme
-  Source: Synthesized Pexels-style content (gradient animation)
-  Approach: Giphy/Tenor both blocked (403) in this network environment;
-            Pexels API key returned 403; used PIL+ffmpeg gradient animation as fallback.
+  Source: Pexels stock video
+  Pexels video ID: 15409589
+  Page: https://www.pexels.com/video/a-woman-holding-up-her-arms-in-the-sun-15409589/
+  Creator: Kate
   Overlay Text: "Me finally choosing healing over another situationship"
-  Background: Deep violet (#6B3FA0) → soft lavender (#C9B1E8), slow Ken Burns zoom
   Output: posts/2026-06-08/meme_1.mp4 (1080x1920, 6s)
+  Regenerated 2026-06-08: original agent run shipped a gradient placeholder
+  because Giphy/Tenor/Pexels were blocked in the sandbox. Re-rendered locally
+  using the newly-added PEXELS_KEY.
 
 Meme 2: Journaling Glow-Up Theme
-  Source: Synthesized Pexels-style content (gradient animation)
-  Approach: Same as Meme 1 — gradient fallback
+  Source: Pexels stock video
+  Pexels video ID: 7598998
+  Page: https://www.pexels.com/video/a-woman-writing-in-a-notebook-on-a-bed-7598998/
+  Creator: Miriam Alonso
   Overlay Text: "When you finally start journaling and your whole vibe upgrades"
-  Background: Blush pink (#F0A0C0) → lavender (#C9B1E8) → deep violet (#6B3FA0), slow Ken Burns zoom
   Output: posts/2026-06-08/meme_2.mp4 (1080x1920, 6s)
+  Regenerated 2026-06-08: same reason as Meme 1.
 
 === QUOTE IMAGES ===
 Quote 1: "The only journey is the one within." — Rainer Maria Rilke
