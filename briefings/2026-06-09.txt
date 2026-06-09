@@ -1,0 +1,14 @@
+Morning Briefing June 9, 2026
+
+=== ROBOTICS & AI ===
+- CNBC's China Connection newsletter asks who will actually buy humanoid robots as global production ramps, spotlighting the growing gap between manufacturing scale-up and real commercial demand. https://www.cnbc.com/amp/2026/06/08/cnbcs-the-china-connection-newsletter-who-will-buy-the-humanoids.html
+
+=== RESEARCH ===
+- No new research papers confirmed in the last 48 hours; CVPR 2026 (concluded June 7) was covered in prior briefings.
+
+=== FUNDING & INVESTMENT ===
+- No new robotics or AI funding rounds confirmed in the last 48 hours; PhysicsX ($300M, announced June 8, 2026) was covered in yesterday's briefing.
+
+=== COMPETITOR WATCH ===
+- [Apple] At WWDC on June 8, Apple previewed homeOS — a new dedicated OS for its upcoming HomePad smart home hub (7-inch display, A18 chip, Face ID, autumn 2026 launch) — marking Apple's formal entry into the home AI platform market. https://www.techtimes.com/articles/317985/20260608/apple-wwdc-2026-siri-rebuilt-gemini-homeos-previewed-cook-farewell-keynote.htm
+- [LG + NVIDIA] On June 7, LG Group and NVIDIA announced a sweeping partnership to co-build an AI factory spanning home robotics, autonomous driving, and sovereign AI development — NVIDIA's broadest single-company collaboration with a Korean conglomerate to date. https://blogs.nvidia.com/blog/nvidia-and-lg-group-ai-factory/
