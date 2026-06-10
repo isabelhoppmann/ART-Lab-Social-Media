@@ -1,0 +1,16 @@
+Morning Briefing June 10, 2026
+
+=== ROBOTICS & AI ===
+- Physical AI is cutting into real-world deployment: a June 9 DigiTimes analysis from ICRA 2026 and Computex finds robotics startups shifting from general-purpose demos to specific commercial workflows — warehousing, inspection, and domestic assistance — as purpose-built AI-native hardware matures. https://www.digitimes.com/news/a20260609PD214/robotics-2026-startup-data.html
+
+=== RESEARCH ===
+- Anthropic released Claude Fable 5 on June 9, making its Mythos-class model publicly available for the first time; free on all paid plans through June 22, it leads benchmarks in software engineering, vision, and knowledge work, raising the public-access frontier for general AI capabilities. https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/
+
+=== FUNDING & INVESTMENT ===
+- Standard Bots raised $200M Series C at a $1B valuation, announced June 9, 2026; led by RoboStrategy and General Catalyst with participation from Amazon Alexa Fund and Samsung Next; expanding its 70,000 sq ft Glen Cove, NY facility to scale American-made AI-native industrial robots. https://www.prnewswire.com/news-releases/standard-bots-raises-200-million-series-c-at-1-billion-valuation-to-scale-american-made-ai-native-industrial-robots-302795268.html
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Cerebral Valley AI builders gathering, June 18, Shack15 San Francisco — live demos and founder panel on deploying production AI systems; focused on agents, infrastructure, and real AI in production. https://cerebralvalley.ai/events
