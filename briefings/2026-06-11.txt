@@ -1,0 +1,18 @@
+Morning Briefing June 11, 2026
+
+=== ROBOTICS & AI ===
+- BYD officially confirmed its humanoid robot program, codenamed "Yao-Shun-Yu," leveraging the company's EV battery, motor, and AI tech; BYD plans to sell robots through its global dealer network and deploy them in its own factories first — one of the largest consumer brands yet to enter the home robot market. https://www.starnewskorea.com/en/business-life/2026/06/09/2026060908100871220
+
+- Zoomlion's bipedal humanoid Z01 debuted publicly at KOMATEK 2026 in Istanbul with live Tai Chi demonstrations alongside heavy construction machinery, underscoring the growing push by industrial conglomerates to bring embodied AI into physical labor. https://www.prnewswire.com/news-releases/zoomlions-humanoid-robot-z01-shines-at-komatek-2026-showcasing-advances-in-embodied-ai-and-industrial-robotics-302796128.html
+
+=== RESEARCH ===
+- CVPR 2026's Best Paper Award went to D4RT (Google DeepMind, UCL, Oxford) — a unified real-time method for 4D dynamic scene reconstruction from video at ~200 FPS, with direct relevance to robot scene understanding and sim-to-real pipelines. https://www.newswise.com/articles/cvpr-2026-honors-the-year-s-most-innovative-computer-vision-and-ai-research
+
+=== FUNDING & INVESTMENT ===
+- NEURA Robotics raised up to $1.4B Series C, announced June 10, 2026; led by Tether with Nvidia, Amazon, Qualcomm, Bosch, Schaeffler, and the European Investment Bank; German humanoid robotics firm valued at ~$7B; full amount contingent on production milestones. https://www.bloomberg.com/news/articles/2026-06-10/tether-backs-german-robotics-startup-neura-in-1-4-billion-round
+
+=== COMPETITOR WATCH ===
+- [NVIDIA] Jensen Huang will deliver a GTC Paris keynote at VivaTech (June 17-20) covering AI factories, sovereign AI, and robotics; watch for new physical AI infrastructure and platform announcements. https://www.techtimes.com/articles/318178/20260610/nvidia-gtc-paris-keynote-headlines-vivatech-june-17-20ai-factories-sovereign-ai-robotics-europe.htm
+
+=== BAY AREA ===
+- AI Production Summit at Shack15 (SF), June 18: AI builders and founders on moving from demos to production, with live demos and founder panel. https://agendahero.com/schedule/0f8899a0-3dbc-4d6a-ad05-58225b751316
