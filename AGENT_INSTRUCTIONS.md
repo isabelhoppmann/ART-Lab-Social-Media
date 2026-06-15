@@ -207,6 +207,33 @@ def pexels_download(mp4_url, out_path):
 
 Then call `pexels_download(pick["url"], "source_meme_N.mp4")` and feed the result into Step 2A.5 in place of the GIF (the rendering pipeline handles both inputs — only the source loader changes). For each Pexels pick, write out loud: "I see: [describe people, clothing, setting, any text]." Same family-friendly + brand-fit rules as Giphy: real humans only, modest clothing, no logos/brand marks, on-theme. Note the Pexels video ID in `meme_ids.txt` for traceability.
 
+### Query strategy — try multiple queries before declaring a meme SKIPPED
+
+**Do NOT give up on Pexels after a single empty search.** Catie's reviewers see a SKIPPED meme as a broken week. For each meme, run AT LEAST 3 different search queries before concluding Pexels has no usable clip. Vary the queries along these axes:
+
+- The literal feeling ("exhausted woman", "stressed woman", "frustrated woman")
+- The setting ("woman couch", "woman home", "woman office")
+- The body language ("woman head in hands", "woman eye roll", "woman sigh")
+- The vibe word ("woman tired", "woman drained", "woman burnt out")
+
+Concrete example for a meme about emotional labor / friend-group therapist energy:
+```python
+QUERIES_MEME_1 = [
+    "exhausted woman couch",
+    "tired woman home",
+    "woman head in hands",
+    "stressed woman laptop",
+]
+candidates = []
+for q in QUERIES_MEME_1:
+    candidates.extend(pexels_search(q, per_page=5))
+    if len(candidates) >= 6:
+        break  # plenty to choose from
+# Now apply quality bar + brand fit + dedupe by id, pick one
+```
+
+Only declare a meme SKIPPED if ALL queries return zero viable candidates (videos that pass the watermark check, are 1080×1920 HD, and meet the family-friendly + brand-fit rules). When you do skip, log every query you tried and what they returned in `zenie_drafts.md` so a human reviewer can re-run with different terms.
+
 The HTML preview always embeds the local MP4 — whether the source was Giphy, Tenor, or Pexels — via `<video src="meme_N.mp4" autoplay loop muted playsinline controls>`. Pexels-sourced memes follow the same pipeline as Giphy: the only difference is the input file in Step 2A.5.
 
 ---
