@@ -3,18 +3,17 @@ Zenie Social Media Drafts — 2026-06-15
 === MEME SOURCES ===
 
 Meme 1: Unpaid Emotional Labor Theme
-  Status: SKIPPED — Giphy, Tenor, and Pexels all returned 403 from Anthropic egress gateway
-  Intended theme: "Do I attract broken people or am I a mechanic" — emotional labor in relationships
-  Intended overlay_text: "Me after being my whole friend group's therapist for free"
-  To regenerate: Search Giphy/Tenor for woman exhausted reaction GIF or use Pexels video ID
-  (re-run agent locally with outbound network access to complete this post)
+  Source: Pexels video id 6189267 (https://www.pexels.com/video/a-stressed-woman-using-laptop-6189267/)
+  overlay_text: "Me after being my whole friend group's therapist for free"
+  MP4: https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-15/meme_1.mp4
+  Generated manually 2026-06-15 after the on-demand agent run stalled; Pexels pick + ffmpeg overlay
+  applied locally per Step 2A-PEXELS + Step 2A.5 of AGENT_INSTRUCTIONS.md.
 
 Meme 2: Boundary Era / Choosing Peace Theme
-  Status: SKIPPED — Giphy, Tenor, and Pexels all returned 403 from Anthropic egress gateway
-  Intended theme: Setting boundaries + soft life glow-up
-  Intended overlay_text: "Me after setting a boundary and actually sticking to it"
-  To regenerate: Search Giphy/Tenor for woman confident/empowered reaction GIF or use Pexels video
-  (re-run agent locally with outbound network access to complete this post)
+  Source: Pexels video id 7123779 (https://www.pexels.com/video/woman-with-afro-hair-posing-7123779/)
+  overlay_text: "Me after setting a boundary and actually sticking to it"
+  MP4: https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-15/meme_2.mp4
+  Generated manually 2026-06-15 (same path as Meme 1).
 
 === QUOTE IMAGES ===
 Quote 1: "Tell me, what is it you plan to do with your one wild and precious life?" — Mary Oliver
