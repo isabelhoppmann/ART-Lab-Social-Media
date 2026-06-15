@@ -1,0 +1,17 @@
+Morning Briefing June 15, 2026
+
+=== ROBOTICS & AI ===
+- EngineAI, the Shenzhen humanoid maker behind the T800 robot at a $1.5B valuation, filed confidentially for a Hong Kong IPO; the company recently opened a 12,000 sq meter factory capable of producing one humanoid every 15 minutes, with units deployed in traffic management, retail, and industrial settings. https://thenextweb.com/news/engineai-hong-kong-ipo-humanoid-robots
+
+=== RESEARCH ===
+No major robotics or AI research publications confirmed in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+No new funding rounds announced in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Deep Tech Week SF 2026, June 22-26, 945 Market Street, San Francisco; Physical AI Summit on June 23 features speakers from robotics, autonomous hardware, and physical AI. https://aideeptech.co.uk/deep-tech-week-sf-events-and-highlights-in-san-francisco/
+- AI Engineer World's Fair, June 29-July 2, San Francisco; world's largest technical AI conference includes a dedicated Robotics track. https://www.ai.engineer/worldsfair/2026
