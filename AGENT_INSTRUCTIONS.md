@@ -801,6 +801,11 @@ After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database 
 
 Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url` (memes AND quote images — the jsdelivr URL of the .mp4 or .jpg; the Slack workflow downloads from here and uploads as an inline file attachment), url/creator (reposts), quote/attribution (quotes), approved=false.
 
+**`preview_url` MUST be the GitHub Pages URL, not jsDelivr.** Use exactly this format:
+`https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/`
+
+Reason: jsDelivr serves `.html` with `Content-Type: text/plain` (anti-abuse policy), so reviewers clicking a jsdelivr index.html link see raw HTML source instead of the rendered preview. GitHub Pages serves the same file with the correct `text/html` type. Keep `media_url` on jsDelivr — that policy only affects HTML, not `.mp4` or `.jpg`.
+
 Push this file to GitHub using the standard push_file() helper. A GitHub Action (`post-social-to-slack.yml`) will automatically detect the push, post all content to #social-media-content-review in Slack with full thread replies per post, and update slack_thread_ts in the file.
 
 Do NOT call the Slack API directly from this agent. The network environment blocks slack.com — the GitHub Action handles this instead.
