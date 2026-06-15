@@ -6,11 +6,9 @@
 
 ---
 
-## Meme 1 — Unpaid Emotional Labor ⚠️ SKIPPED
+## Meme 1 — Unpaid Emotional Labor
 
-**⚠️ SKIPPED — Giphy, Tenor, and Pexels all blocked by sandbox network policy (Anthropic egress gateway returned 403). Per instructions, no placeholder MP4 was generated. Re-run locally with outbound network access to complete this post.**
-
-**Intended overlay_text:** Me after being my whole friend group's therapist for free
+**overlay_text:** Me after being my whole friend group's therapist for free
 
 **ig_caption:** Time to send the invoice 😤
 
@@ -20,13 +18,13 @@
 
 **Best time to post:** Tuesday, 7–9 PM EST
 
+**Asset:** meme_1.mp4 (1080×1920, Pexels source + white-card overlay)
+
 ---
 
-## Meme 2 — Boundary Era ⚠️ SKIPPED
+## Meme 2 — Boundary Era
 
-**⚠️ SKIPPED — Same reason as Meme 1. No placeholder MP4 generated.**
-
-**Intended overlay_text:** Me after setting a boundary and actually sticking to it
+**overlay_text:** Me after setting a boundary and actually sticking to it
 
 **ig_caption:** Level unlocked 💜
 
@@ -35,6 +33,8 @@
 **hashtags:** #Zenie #ZenieApp #BoundaryEra #SoftLife #SayingNo #MainCharacterEnergy #SelfLove
 
 **Best time to post:** Wednesday, 7–9 PM EST
+
+**Asset:** meme_2.mp4 (1080×1920, Pexels source + white-card overlay)
 
 ---
 
