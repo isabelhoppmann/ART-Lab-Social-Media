@@ -7,7 +7,7 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 
 ## CRITICAL RULES — DO NOT VIOLATE
 - MEMES: Try Giphy/Tenor first. If after 3 candidates per meme you cannot find one that passes BOTH the zero-tolerance watermark check AND the source quality check (Step 2A points 3 + 4), fall back to a clean HD Pexels stock video (Step 2A-PEXELS). You MUST NOT generate static PNG files for memes. You MUST always generate an MP4 with text overlay (Step 2A.5) — the MP4 is the canonical posting asset, AND the HTML preview MUST embed it via a `<video>` tag pointing to `meme_1.mp4` / `meme_2.mp4` (Step 4). DO NOT use Giphy/Tenor iframes in the preview — reviewers must see the exact MP4 that will be posted to Meta, and many browsers / Slack link previews block third-party iframes.
-- NO PLACEHOLDER MEMES: If Giphy, Tenor, AND Pexels all fail in the sandbox (e.g. network blocks), do NOT ship a gradient/solid-color placeholder MP4 — the reviewer can't tell what was intended and the post is unusable. Instead, fail loudly: skip that meme slot, log the failure in `zenie_drafts.md`, and continue with the remaining posts.
+- NO PLACEHOLDER MEMES: If Giphy, Tenor, AND Pexels all fail in the sandbox (e.g. network blocks), do NOT ship a gradient/solid-color placeholder MP4 — the reviewer can't tell what was intended and the post is unusable. Instead, fail loudly: skip that meme slot, record `skipped=True` plus a one-sentence reason on the meme's in-memory state struct, and continue with the remaining posts. Do NOT write to `zenie_drafts.md` mid-execution — that file is built once at the end from final state (see Step 2D).
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
@@ -232,7 +232,7 @@ for q in QUERIES_MEME_1:
 # Now apply quality bar + brand fit + dedupe by id, pick one
 ```
 
-Only declare a meme SKIPPED if ALL queries return zero viable candidates (videos that pass the watermark check, are 1080×1920 HD, and meet the family-friendly + brand-fit rules). When you do skip, log every query you tried and what they returned in `zenie_drafts.md` so a human reviewer can re-run with different terms.
+Only declare a meme SKIPPED if ALL queries return zero viable candidates (videos that pass the watermark check, are 1080×1920 HD, and meet the family-friendly + brand-fit rules). When you do skip, record every query you tried and what they returned on the meme's in-memory state struct (e.g. `meme_N_state["queries_tried"]`). Do NOT write to `zenie_drafts.md` mid-execution — that file is built once at the end from final state (see Step 2D). The in-memory query log becomes part of the SKIPPED block emitted in Step 2D.
 
 The HTML preview always embeds the local MP4 — whether the source was Giphy, Tenor, or Pexels — via `<video src="meme_N.mp4" autoplay loop muted playsinline controls>`. Pexels-sourced memes follow the same pipeline as Giphy: the only difference is the input file in Step 2A.5.
 
@@ -639,6 +639,111 @@ bg_2 = get_curated_photo(PEXELS_KEY, page=random.randint(6, 8))
 make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_1.jpg", bg_1)
 make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", bg_2)
 ```
+
+---
+
+## Step 2D: Build `zenie_drafts.md` from FINAL STATE (do NOT write earlier)
+
+`zenie_drafts.md` is Catie's plain-English briefing for the week. It MUST be written exactly once, at this step, deterministically from the FINAL on-disk state of each asset. NEVER accumulate notes into this file during Steps 1–2C. If you wrote a SKIPPED warning into the briefing earlier and a Pexels (or other) fallback later succeeded, the briefing ships stale and Catie discards real, postable memes. (Concrete incident: 2026-06-15 — both memes were generated successfully via Pexels fallback, but `zenie_drafts.md` still said "Giphy/Tenor/Pexels all blocked ⚠️ SKIPPED" for both. The watchdog can't fully unwind this — fix the source by writing this file ONCE here.)
+
+Build the file as a single Python string (`drafts_md`), then push it in Step 3 alongside the other assets. Do NOT call the GitHub API to push `zenie_drafts.md` from any earlier step.
+
+### Header (always)
+
+```
+# Zenie Social Media Drafts — {DATE}
+
+**Performance Brief:** {brief_text_from_step_0}
+
+**Trending Themes ({Month YYYY}):** {themes_from_step_1}
+
+---
+```
+
+### Per-meme section (deterministic from disk)
+
+For each meme slot N in (1, 2):
+
+```python
+import os
+mp4 = f"/tmp/meme_{N}.mp4"
+is_real = os.path.exists(mp4) and os.path.getsize(mp4) >= 100_000
+```
+
+If `is_real`:
+```
+## Meme N — {theme}
+
+**overlay_text:** {text}
+
+**ig_caption:** {ig_caption}
+
+**fb_caption:** {fb_caption}
+
+**hashtags:** {hashtags}
+
+**Best time to post:** {day, time}
+
+**Asset:** meme_N.mp4 (1080×1920, {Giphy|Tenor|Pexels} source + white-card overlay)
+
+---
+```
+
+If NOT `is_real` (the meme is genuinely skipped):
+```
+## Meme N — {theme} ⚠️ SKIPPED
+
+**⚠️ SKIPPED — {one_sentence_reason_from_meme_N_state}.**
+
+**Queries tried:** {queries_tried_from_state, comma-separated}
+
+**Intended overlay_text:** {text}
+
+**ig_caption:** {ig_caption}
+
+**fb_caption:** {fb_caption}
+
+**hashtags:** {hashtags}
+
+**Best time to post:** {day, time}
+
+---
+```
+
+### Per-quote section (deterministic from disk)
+
+For each quote slot N in (1, 2):
+
+```python
+jpg = f"/tmp/quote_{N}.jpg"
+is_real = os.path.exists(jpg) and os.path.getsize(jpg) >= 20_000
+```
+
+Render the normal Quote section if `is_real` (with `**Asset:** quote_N.jpg ...`), otherwise a SKIPPED Quote section using the same shape as the meme SKIPPED block.
+
+### Per-repost section (always rendered — no asset generation)
+
+```
+## Repost N — {theme}
+
+**URL:** {url}
+
+**Creator:** {creator_or_placeholder}
+
+**Repost caption:** {caption}
+
+**Best time to post:** {day, time}
+
+---
+```
+
+### Footer
+
+```
+*Generated: {YYYY-MM-DD} | Zenie Social Media Agent*
+```
+
+After concatenating header + sections + footer into `drafts_md`, save to `/tmp/zenie_drafts.md` and queue it for the Step 3 push. The on-disk file is the single source of truth for the briefing — no other step should append, modify, or duplicate-push it.
 
 ---
 
