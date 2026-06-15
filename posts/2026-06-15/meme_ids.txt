@@ -1,0 +1,35 @@
+Zenie Social Media Drafts — 2026-06-15
+
+=== MEME SOURCES ===
+
+Meme 1: Unpaid Emotional Labor Theme
+  Status: SKIPPED — Giphy, Tenor, and Pexels all returned 403 from Anthropic egress gateway
+  Intended theme: "Do I attract broken people or am I a mechanic" — emotional labor in relationships
+  Intended overlay_text: "Me after being my whole friend group's therapist for free"
+  To regenerate: Search Giphy/Tenor for woman exhausted reaction GIF or use Pexels video ID
+  (re-run agent locally with outbound network access to complete this post)
+
+Meme 2: Boundary Era / Choosing Peace Theme
+  Status: SKIPPED — Giphy, Tenor, and Pexels all returned 403 from Anthropic egress gateway
+  Intended theme: Setting boundaries + soft life glow-up
+  Intended overlay_text: "Me after setting a boundary and actually sticking to it"
+  To regenerate: Search Giphy/Tenor for woman confident/empowered reaction GIF or use Pexels video
+  (re-run agent locally with outbound network access to complete this post)
+
+=== QUOTE IMAGES ===
+Quote 1: "Tell me, what is it you plan to do with your one wild and precious life?" — Mary Oliver
+  Background: Cool forest-green to teal to lavender to Zenie violet gradient
+  Output: posts/2026-06-15/quote_1.jpg
+
+Quote 2: "The wound is the place where the Light enters you." — Rumi
+  Background: Warm amber-gold to coral rose to raspberry to deep violet gradient
+  Output: posts/2026-06-15/quote_2.jpg
+
+=== REPOSTS ===
+Repost 1: https://www.instagram.com/reel/DPmy9K2DAkv/
+  Creator: (verify handle before posting)
+  Theme: Embracing the Power of Journaling for Mindful Wellness
+
+Repost 2: https://www.instagram.com/reel/DW1ktzRxiU8/
+  Creator: (verify handle before posting)
+  Theme: Journaling vs venting — how to use your journal for real healing
