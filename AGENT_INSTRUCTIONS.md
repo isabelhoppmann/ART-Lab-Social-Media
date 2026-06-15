@@ -181,9 +181,15 @@ If after 3 Giphy/Tenor candidates per meme you cannot find a clean HD GIF, fall 
 
 ```python
 import urllib.request, urllib.parse, json
+# Pexels API and CDN both reject requests without a User-Agent — always send one
+# on BOTH the search request and the MP4 download below. Same requirement as the
+# quote-image Pexels pipeline (Step B). Missing User-Agent = 403, which the agent
+# may misread as a sandbox egress block.
+PEXELS_UA = {"User-Agent": "ZenieAgent/1.0"}
+
 def pexels_search(query, per_page=10):
     url = f"https://api.pexels.com/videos/search?{urllib.parse.urlencode({'query': query, 'orientation': 'portrait', 'per_page': per_page})}"
-    req = urllib.request.Request(url, headers={"Authorization": PEXELS_KEY})
+    req = urllib.request.Request(url, headers={"Authorization": PEXELS_KEY, **PEXELS_UA})
     with urllib.request.urlopen(req) as r:
         data = json.load(r)
     out = []
@@ -192,9 +198,14 @@ def pexels_search(query, per_page=10):
         if hd:
             out.append({"id": v["id"], "duration": v["duration"], "url": hd[0]["link"], "page": v.get("url", "")})
     return out
+
+def pexels_download(mp4_url, out_path):
+    req = urllib.request.Request(mp4_url, headers=PEXELS_UA)
+    with urllib.request.urlopen(req) as r, open(out_path, "wb") as f:
+        f.write(r.read())
 ```
 
-Then download the source MP4 and feed it into Step 2A.5 in place of the GIF (the rendering pipeline handles both inputs — only the source loader changes). For each Pexels pick, write out loud: "I see: [describe people, clothing, setting, any text]." Same family-friendly + brand-fit rules as Giphy: real humans only, modest clothing, no logos/brand marks, on-theme. Note the Pexels video ID in `meme_ids.txt` for traceability.
+Then call `pexels_download(pick["url"], "source_meme_N.mp4")` and feed the result into Step 2A.5 in place of the GIF (the rendering pipeline handles both inputs — only the source loader changes). For each Pexels pick, write out loud: "I see: [describe people, clothing, setting, any text]." Same family-friendly + brand-fit rules as Giphy: real humans only, modest clothing, no logos/brand marks, on-theme. Note the Pexels video ID in `meme_ids.txt` for traceability.
 
 The HTML preview always embeds the local MP4 — whether the source was Giphy, Tenor, or Pexels — via `<video src="meme_N.mp4" autoplay loop muted playsinline controls>`. Pexels-sourced memes follow the same pipeline as Giphy: the only difference is the input file in Step 2A.5.
 
