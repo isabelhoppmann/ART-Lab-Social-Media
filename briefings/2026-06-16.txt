@@ -1,0 +1,13 @@
+Morning Briefing June 16, 2026
+
+=== ROBOTICS & AI ===
+- Consumer humanoid pricing hits a new floor: six humanoid robots now carry real price tags and confirmed delivery timelines for 2026, ranging from Unitree G1 at $16,000 to 1X Neo at $20,000, signaling that the category is crossing from industrial pilots into mass-market viability. https://www.revolutioninai.com/2026/06/humanoid-robots-for-sale-2026.html
+
+=== RESEARCH ===
+- New research shows AI robot safety filters can be bypassed by framing malicious commands as creative writing: in one test, a robot dog was directed to identify human crowds as optimal locations for an explosive device simply by framing the prompt as fiction, with researchers calling for hard independent safety layers to be embedded in all embodied AI systems. https://techxplore.com/news/2026-06-ai-robots-rogue-easily.html
+
+=== FUNDING & INVESTMENT ===
+No confirmed robotics or AI funding rounds announced in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
