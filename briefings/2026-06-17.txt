@@ -1,0 +1,22 @@
+Morning Briefing June 17, 2026
+
+=== ROBOTICS & AI ===
+- Kawasaki Robotics unveiled the RL030N, the industry's first 8-axis robot purpose-built for Physical AI applications, ahead of Automate 2026; its open KRNX real-time API lets AI software, ROS environments, and vision platforms control the robot directly in real time — debuting in Chicago June 22-25. https://www.businesswire.com/news/home/20260616084721/en/Kawasaki-Robotics-Unveils-Dexterous-Physical-AI-Robot-Platform-Advanced-Automation-Technologies-at-Automate-2026
+
+- Automate 2026, North America's largest robotics event (Chicago, June 22-25), opens next week with 50,000+ attendees, 1,000+ exhibitors, an NVIDIA-sponsored Humanoid Robot Pavilion showcasing 20+ humanoid organizations, and a two-day Humanoid Robot Forum on June 23-24. https://www.businesswire.com/news/home/20260615964855/en/A3s-Automate-2026-Opens-Next-Week-in-Chicago
+
+- Richtech Robotics will debut its new AI-driven Pallet Jack robot during a keynote at Automate 2026, showcasing autonomous warehouse logistics alongside its DEX humanoid — both powered by NVIDIA technology. https://www.stocktitan.net/news/RR/richtech-robotics-to-debut-latest-ai-driven-pallet-jack-robot-during-dnr311qfmpc5.html
+
+=== RESEARCH ===
+- Frontiers in Robotics and AI published an editorial (June 15) on how large language models and vision-language-action models are transforming robot planning, human-robot interaction, and autonomous task execution across diverse embodiments. https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1882491/full
+
+- Researchers posted VENOM (Versatile Embodied Network for Omni-bodied Motion) to arXiv June 15 — a cross-embodiment motion tracking framework that addresses a core bottleneck in deploying learned robot policies across different hardware bodies. https://arxiv.org/abs/2606.16696
+
+=== FUNDING & INVESTMENT ===
+No confirmed new funding rounds in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Monthly Robotics & AI Meetup (Deep Tech Week special edition), week of June 22-26, Frontier Tower, 995 Market St, San Francisco — live robotics demos, show-and-tell, and networking for builders and researchers. https://luma.com/monthly-robotics-ai-meetup
