@@ -1,0 +1,15 @@
+Morning Briefing June 18, 2026
+
+=== ROBOTICS & AI ===
+- Alibaba's Qwen team released the Qwen-Robot Suite (June 16), three open foundation models for embodied AI: Qwen-RobotNav for autonomous navigation, Qwen-RobotManip (built on Qwen3.5-4B) for dexterous manipulation, and Qwen-RobotWorld for physics-based scene prediction — two of the three are open-sourced on GitHub. https://www.marktechpost.com/2026/06/16/meet-qwen-robotsuite-three-embodied-ai-models-for-vla-manipulation-video-world-modeling-and-navigation/
+- Faraday Future unveiled its EAI Robot World at a June 16 LA event: six product series including the "Futurist" full-size humanoid (5'8", 11 mph, 31 DOF, NVIDIA Sonic motion-control integration) and the FX Navi quadruped priced at $1,990, targeting U.S. consumer and education markets. https://www.businesswire.com/news/home/20260616306065/en/Faraday-Future-Unveils-Full-Form-EAI-Robot-World-Spanning-Six-Product-Series-Launches-Worlds-First-Three-in-One-EAI-Robotics-Education-Ecosystem-Strategy-and-Debuts-All-New-Futurist-Humanoid-Robot-and-FX-Navi-Priced-at-$1990
+
+=== RESEARCH ===
+- XDOF emerged from stealth (June 17) and released ABC-130K, a dataset of 130,000 robot manipulation trajectories plus 300 hours of simulation developed with UC Berkeley, CMU, MIT, and Amazon, addressing the physical-world data bottleneck that frontier AI labs say is slowing humanoid development. https://siliconangle.com/2026/06/17/robotic-teleoperation-data-startup-xdof-launches-70m-funding/
+
+=== FUNDING & INVESTMENT ===
+- Odyssey, a world-model AI startup building physics-accurate simulation for robotics and autonomous systems (founded by AV pioneers Oliver Cameron and Jeff Hawke), raised $310M Series B at a $1.45B valuation; led by Natural Capital with Amazon, AMD Ventures, GV, EQT, and In-Q-Tel; strategic AWS partnership announced alongside; announced June 17, 2026. https://www.unite.ai/odyssey-raises-310-million-series-b-at-1-45-billion-valuation-to-advance-ai-world-models/
+- XDOF, a robot training-data infrastructure startup, raised $70M from Thrive Capital, Spark Capital, a16z, Lux, and WndrCo to build teleoperation data pipelines and annotation systems for frontier AI labs; announced June 17, 2026. https://siliconangle.com/2026/06/17/robotic-teleoperation-data-startup-xdof-launches-70m-funding/
+
+=== COMPETITOR WATCH ===
+- [NVIDIA] Jensen Huang delivered his GTC Paris keynote at VivaTech 2026 (June 17–20, Paris Expo Porte de Versailles), presenting physical AI, AI factories, and agentic systems as the core of the next industrial revolution; the 10th edition of VivaTech drew 180,000+ attendees with robotics and deep tech as central themes. https://news.cgtn.com/news/2026-06-18/VivaTech-2026-highlights-AI-agents-and-deep-tech-innovation-1O4TnDaeHMA/p.html
