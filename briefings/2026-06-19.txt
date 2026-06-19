@@ -1,0 +1,13 @@
+Morning Briefing June 19, 2026
+
+=== ROBOTICS & AI ===
+- New industry analysis (June 18) finds that embodied-AI world-model companies attracted ~$6B in Q1 2026, but argues the LLM scaling analogy may not hold: unlike text, the physical world has no universal token, and pixel-based, latent, and explicit architectures are competing without a clear winner. https://www.techtimes.com/articles/318671/20260618/embodied-ai-world-models-attracted-6-billion-llm-parallel-may-not-hold.htm
+
+=== RESEARCH ===
+- Chinese startup Omega-EVA (June 17) launched a world model for real-world robotics deployment, joining a fast-expanding cohort of world-model entrants — including NVIDIA Cosmos 3 (June 1) — as physical AI moves from simulation to embodied hardware. https://www.digitimes.com/news/a20260617VL206/robotics-startup-launch.html
+
+=== FUNDING & INVESTMENT ===
+- No new funding rounds confirmed in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
