@@ -1,0 +1,16 @@
+Morning Briefing June 22, 2026
+
+=== ROBOTICS & AI ===
+- Automate 2026 opens in Chicago with Kawasaki's world premiere of the RL030N — the industry's first 8-DOF physical AI robot — alongside ABB's debut of its complete Physical AI Toolchain (data generation through deployment), and NVIDIA's first dedicated Humanoid Robot Pavilion featuring 20+ humanoid robots, marking the industry's formal shift from prototype to production. https://www.techtimes.com/articles/318820/20260622/automate-2026-day-day-kawasaki-8-dof-premiere-abb-physical-ai-launch-humanoid-forum.htm
+
+=== RESEARCH ===
+No significant new research publications confirmed in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+No robotics or AI funding rounds confirmed as announced in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- [Apple] Updated timeline report confirms Apple's home hub with HomeOS (codename "Charismatic") is still on track for 2026, but the tabletop robot has slipped to 2027 and further smart home releases stretch to 2028 — giving the home robot market more runway before Apple's direct entry. https://appleinsider.com/articles/26/06/21/apples-home-automation-updates-new-product-releases-will-stretch-into-2028
+
+=== BAY AREA ===
+- Deep Tech Week SF 2026, June 22-26, 945 Market Street, San Francisco — a decentralized 87-event conference week covering physical AI, robotics, space, and defense; VIP passes available via Luma. https://www.deep-tech-week.com/sf-2026
