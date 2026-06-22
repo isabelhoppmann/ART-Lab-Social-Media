@@ -1,11 +1,18 @@
 # Zenie Meme Assets — 2026-06-22
 
 ## Meme 1 — Late-night journaling / reinventing myself
-STATUS: SKIPPED
-REASON: Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist (403 Forbidden on api.pexels.com, media.giphy.com, tenor.com) — cannot download GIF or MP4 source.
-QUERIES TRIED: site:giphy.com woman journaling writing notebook reaction; site:giphy.com journaling reaction; site:tenor.com journaling gif
+Source: Pexels stock video
+Pexels video ID: 8705262
+Page: https://www.pexels.com/video/woman-writing-on-a-notebook-while-in-bed-8705262/
+Overlay Text: "Me at 3am writing in my journal like I'm about to change my entire life"
+Output: posts/2026-06-22/meme_1.mp4 (1080x1920, 6s)
+Note: Regenerated locally 2026-06-22 — the cloud drafting agent's sandbox returned
+403 on Giphy/Tenor/Pexels, so it shipped SKIPPED. Re-rendered here using PEXELS_KEY.
 
 ## Meme 2 — Talking stage chaos / emotional availability humor
-STATUS: SKIPPED
-REASON: Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist (403 Forbidden) — cannot download GIF or MP4 source.
-QUERIES TRIED: site:giphy.com woman eye roll reaction dating; site:giphy.com talking stage reaction; site:tenor.com woman reaction funny
+Source: Pexels stock video
+Pexels video ID: 5234890
+Page: https://www.pexels.com/video/woman-talking-on-the-mobile-phone-5234890/
+Overlay Text: "When he finally texts back and now you don't know how to act normal"
+Output: posts/2026-06-22/meme_2.mp4 (1080x1920, 6s)
+Note: Regenerated locally 2026-06-22 — same reason as Meme 1.

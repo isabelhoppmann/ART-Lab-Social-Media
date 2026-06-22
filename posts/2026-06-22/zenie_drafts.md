@@ -1,18 +1,16 @@
 # Zenie Social Media Drafts — 2026-06-22
 
-**Performance Brief:** IG and FB data not available (PAGE_ACCESS_TOKEN not configured — API returned 403). Applying best practices: IG rewards Reels plays + saves; FB rewards shares + conversational copy. Meme GIF assets skipped due to network egress restrictions (Giphy/Tenor/Pexels all blocked). Quote images generated successfully using blurred backgrounds from previous weeks.
+**Performance Brief:** IG and FB data not available (PAGE_ACCESS_TOKEN not configured — API returned 403). Applying best practices: IG rewards Reels plays + saves; FB rewards shares + conversational copy. Both meme videos were regenerated locally from Pexels stock footage on 2026-06-22 (the cloud agent's sandbox had blocked all media CDNs). Quote images generated successfully using blurred backgrounds from previous weeks.
 
 **Trending Themes (June 2026):** 1. 'Reinventing myself at 3 AM' — late-night journaling self-improvement chaos (relatable + save-worthy for IG). 2. Talking stage / attachment-style humor — emotional complexity + dating dynamics for women 20–35. 3. 'Rare aesthetic' — oddly specific relatable lifestyle moments going viral on TikTok/Reels.
 
 ---
 
-## Meme 1 — Late-night journaling / reinventing myself ⚠️ SKIPPED
+## Meme 1 — Late-night journaling / reinventing myself
 
-**⚠️ SKIPPED — Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist (403 Forbidden on api.pexels.com, media.giphy.com, tenor.com) — cannot download GIF or MP4 source..**
+**Source:** Pexels stock video 8705262 — "Woman writing on a notebook while in bed" (https://www.pexels.com/video/woman-writing-on-a-notebook-while-in-bed-8705262/). Regenerated locally 2026-06-22 after the cloud agent's sandbox blocked all media CDNs.
 
-**Queries tried:** site:giphy.com woman journaling writing notebook reaction, site:giphy.com journaling reaction, site:tenor.com journaling gif
-
-**Intended overlay_text:** Me at 3am writing in my journal like I'm about to change my entire life
+**overlay_text:** Me at 3am writing in my journal like I'm about to change my entire life
 
 **ig_caption:** She's delusional (in the best way) 🌙
 
@@ -24,13 +22,11 @@
 
 ---
 
-## Meme 2 — Talking stage chaos / emotional availability humor ⚠️ SKIPPED
+## Meme 2 — Talking stage chaos / emotional availability humor
 
-**⚠️ SKIPPED — Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist (403 Forbidden) — cannot download GIF or MP4 source..**
+**Source:** Pexels stock video 5234890 — "Woman talking on the mobile phone" (https://www.pexels.com/video/woman-talking-on-the-mobile-phone-5234890/). Regenerated locally 2026-06-22 after the cloud agent's sandbox blocked all media CDNs.
 
-**Queries tried:** site:giphy.com woman eye roll reaction dating, site:giphy.com talking stage reaction, site:tenor.com woman reaction funny
-
-**Intended overlay_text:** When he finally texts back and now you don't know how to act normal
+**overlay_text:** When he finally texts back and now you don't know how to act normal
 
 **ig_caption:** The cognitive dissonance is real 😭
 

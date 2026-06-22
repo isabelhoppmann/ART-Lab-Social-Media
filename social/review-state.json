@@ -8,31 +8,29 @@
       "label": "Meme 1",
       "notion_page_id": null,
       "post_type": "Meme",
-      "skipped": true,
-      "skip_reason": "Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist \u2014 cannot download GIF or MP4 source.",
+      "skipped": false,
       "overlay_text": "Me at 3am writing in my journal like I'm about to change my entire life",
       "ig_caption": "She's delusional (in the best way) \ud83c\udf19",
       "fb_caption": "Raise your hand if 3am journaling hits different than any therapy session \ud83d\ude05 Tag a friend who's been there.",
       "hashtags": "#Zenie #zenieapp #JournalingLife #MidnightThoughts #MainCharacterEnergy #SelfGrowth #JournalingCommunity",
-      "media_url": null,
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-22/meme_1.mp4",
       "best_time": "Tuesday 7\u20139 PM EST",
       "approved": false,
-      "slack_posted": true
+      "slack_posted": false
     },
     {
       "label": "Meme 2",
       "notion_page_id": null,
       "post_type": "Meme",
-      "skipped": true,
-      "skip_reason": "Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist \u2014 cannot download GIF or MP4 source.",
+      "skipped": false,
       "overlay_text": "When he finally texts back and now you don't know how to act normal",
       "ig_caption": "The cognitive dissonance is real \ud83d\ude2d",
       "fb_caption": "Why does getting what you wanted suddenly make you spiral? \ud83d\ude02 Drop a \ud83d\udc80 if this is you during the talking stage.",
       "hashtags": "#Zenie #zenieapp #DatingHumor #TalkingStage #RelationshipMemes #GlowUp #WomenWhoJournal",
-      "media_url": null,
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-22/meme_2.mp4",
       "best_time": "Wednesday 6\u20138 PM EST",
       "approved": false,
-      "slack_posted": true
+      "slack_posted": false
     },
     {
       "label": "Repost 1",
