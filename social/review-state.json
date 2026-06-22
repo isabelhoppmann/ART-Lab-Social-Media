@@ -16,7 +16,7 @@
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-22/meme_1.mp4",
       "best_time": "Tuesday 7\u20139 PM EST",
       "approved": false,
-      "slack_posted": false
+      "slack_posted": true
     },
     {
       "label": "Meme 2",
@@ -30,7 +30,7 @@
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-22/meme_2.mp4",
       "best_time": "Wednesday 6\u20138 PM EST",
       "approved": false,
-      "slack_posted": false
+      "slack_posted": true
     },
     {
       "label": "Repost 1",
