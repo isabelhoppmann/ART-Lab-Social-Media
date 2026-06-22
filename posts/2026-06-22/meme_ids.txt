@@ -1,0 +1,11 @@
+# Zenie Meme Assets — 2026-06-22
+
+## Meme 1 — Late-night journaling / reinventing myself
+STATUS: SKIPPED
+REASON: Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist (403 Forbidden on api.pexels.com, media.giphy.com, tenor.com) — cannot download GIF or MP4 source.
+QUERIES TRIED: site:giphy.com woman journaling writing notebook reaction; site:giphy.com journaling reaction; site:tenor.com journaling gif
+
+## Meme 2 — Talking stage chaos / emotional availability humor
+STATUS: SKIPPED
+REASON: Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist (403 Forbidden) — cannot download GIF or MP4 source.
+QUERIES TRIED: site:giphy.com woman eye roll reaction dating; site:giphy.com talking stage reaction; site:tenor.com woman reaction funny
