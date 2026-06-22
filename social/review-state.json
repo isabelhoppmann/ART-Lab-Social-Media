@@ -1,7 +1,7 @@
 {
   "week_date": "2026-06-22",
   "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-06-22/",
-  "slack_thread_ts": null,
+  "slack_thread_ts": "1782098020.628849",
   "slack_error": null,
   "posts": [
     {
@@ -9,28 +9,30 @@
       "notion_page_id": null,
       "post_type": "Meme",
       "skipped": true,
-      "skip_reason": "Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist — cannot download GIF or MP4 source.",
+      "skip_reason": "Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist \u2014 cannot download GIF or MP4 source.",
       "overlay_text": "Me at 3am writing in my journal like I'm about to change my entire life",
-      "ig_caption": "She's delusional (in the best way) 🌙",
-      "fb_caption": "Raise your hand if 3am journaling hits different than any therapy session 😅 Tag a friend who's been there.",
+      "ig_caption": "She's delusional (in the best way) \ud83c\udf19",
+      "fb_caption": "Raise your hand if 3am journaling hits different than any therapy session \ud83d\ude05 Tag a friend who's been there.",
       "hashtags": "#Zenie #zenieapp #JournalingLife #MidnightThoughts #MainCharacterEnergy #SelfGrowth #JournalingCommunity",
       "media_url": null,
-      "best_time": "Tuesday 7–9 PM EST",
-      "approved": false
+      "best_time": "Tuesday 7\u20139 PM EST",
+      "approved": false,
+      "slack_posted": true
     },
     {
       "label": "Meme 2",
       "notion_page_id": null,
       "post_type": "Meme",
       "skipped": true,
-      "skip_reason": "Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist — cannot download GIF or MP4 source.",
+      "skip_reason": "Giphy, Tenor, and Pexels media CDNs are all blocked by the network egress allowlist \u2014 cannot download GIF or MP4 source.",
       "overlay_text": "When he finally texts back and now you don't know how to act normal",
-      "ig_caption": "The cognitive dissonance is real 😭",
-      "fb_caption": "Why does getting what you wanted suddenly make you spiral? 😂 Drop a 💀 if this is you during the talking stage.",
+      "ig_caption": "The cognitive dissonance is real \ud83d\ude2d",
+      "fb_caption": "Why does getting what you wanted suddenly make you spiral? \ud83d\ude02 Drop a \ud83d\udc80 if this is you during the talking stage.",
       "hashtags": "#Zenie #zenieapp #DatingHumor #TalkingStage #RelationshipMemes #GlowUp #WomenWhoJournal",
       "media_url": null,
-      "best_time": "Wednesday 6–8 PM EST",
-      "approved": false
+      "best_time": "Wednesday 6\u20138 PM EST",
+      "approved": false,
+      "slack_posted": true
     },
     {
       "label": "Repost 1",
@@ -39,12 +41,13 @@
       "skipped": false,
       "url": "https://www.instagram.com/reel/DZbEyzrvZ-v/",
       "creator": "@journaling (Instagram journaling content creator)",
-      "ig_caption": "Save this for your next journaling session 📓 These prompts will change the way you see yourself. 💜 Drop '✨' below if you journal regularly! #Zenie #zenieapp #JournalingPrompts #SelfReflection",
-      "fb_caption": "Save this for your next journaling session 📓 These prompts will change the way you see yourself. 💜 Drop '✨' below if you journal regularly! #Zenie #zenieapp #JournalingPrompts #SelfReflection",
+      "ig_caption": "Save this for your next journaling session \ud83d\udcd3 These prompts will change the way you see yourself. \ud83d\udc9c Drop '\u2728' below if you journal regularly! #Zenie #zenieapp #JournalingPrompts #SelfReflection",
+      "fb_caption": "Save this for your next journaling session \ud83d\udcd3 These prompts will change the way you see yourself. \ud83d\udc9c Drop '\u2728' below if you journal regularly! #Zenie #zenieapp #JournalingPrompts #SelfReflection",
       "hashtags": "#Zenie #zenieapp #JournalingPrompts #SelfReflection",
       "media_url": null,
-      "best_time": "Monday 7–9 PM EST",
-      "approved": false
+      "best_time": "Monday 7\u20139 PM EST",
+      "approved": false,
+      "slack_posted": true
     },
     {
       "label": "Repost 2",
@@ -53,12 +56,13 @@
       "skipped": false,
       "url": "https://www.instagram.com/reel/DUWhoPckn1Q/",
       "creator": "@journalingoutloud (journaling / mental wellness creator)",
-      "ig_caption": "Taking care of your mind is the most important thing you can do 🌸 Save this reel and share it with someone who needs a reminder. 💜 #Zenie #zenieapp #MentalWellness #JournalingLife #MindfulLiving",
-      "fb_caption": "Taking care of your mind is the most important thing you can do 🌸 Save this reel and share it with someone who needs a reminder. 💜 #Zenie #zenieapp #MentalWellness #JournalingLife #MindfulLiving",
+      "ig_caption": "Taking care of your mind is the most important thing you can do \ud83c\udf38 Save this reel and share it with someone who needs a reminder. \ud83d\udc9c #Zenie #zenieapp #MentalWellness #JournalingLife #MindfulLiving",
+      "fb_caption": "Taking care of your mind is the most important thing you can do \ud83c\udf38 Save this reel and share it with someone who needs a reminder. \ud83d\udc9c #Zenie #zenieapp #MentalWellness #JournalingLife #MindfulLiving",
       "hashtags": "#Zenie #zenieapp #MentalWellness #JournalingLife #MindfulLiving",
       "media_url": null,
-      "best_time": "Friday 7–9 PM EST",
-      "approved": false
+      "best_time": "Friday 7\u20139 PM EST",
+      "approved": false,
+      "slack_posted": true
     },
     {
       "label": "Quote 1",
@@ -68,12 +72,13 @@
       "quote": "The only journey is the one within.",
       "attribution": "Rainer Maria Rilke",
       "ig_caption": "",
-      "fb_caption": "Sometimes a single line can shift your whole day. ✨ Save this one for a quiet moment. What does your inner journey look like right now? 💜",
+      "fb_caption": "Sometimes a single line can shift your whole day. \u2728 Save this one for a quiet moment. What does your inner journey look like right now? \ud83d\udc9c",
       "hashtags": "#Zenie #zenieapp #SelfReflection #Journaling #InnerJourney #PersonalGrowth #MindfulLiving",
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-22/quote_1.jpg",
-      "best_time": "Thursday 7–9 PM EST",
+      "best_time": "Thursday 7\u20139 PM EST",
       "scheduled_date": "2026-06-27T01:00:00.000+00:00",
-      "approved": false
+      "approved": false,
+      "slack_posted": true
     },
     {
       "label": "Quote 2",
@@ -83,12 +88,13 @@
       "quote": "The privilege of a lifetime is to become who you truly are.",
       "attribution": "Carl Gustav Jung",
       "ig_caption": "",
-      "fb_caption": "This one hits different when you're in the middle of a transformation. 💜 Save it for the days you forget who you're becoming. Share with a friend who's growing.",
+      "fb_caption": "This one hits different when you're in the middle of a transformation. \ud83d\udc9c Save it for the days you forget who you're becoming. Share with a friend who's growing.",
       "hashtags": "#Zenie #zenieapp #GlowUp #BecomeYourself #SelfDiscovery #WomenEmpowerment #Journaling",
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-06-22/quote_2.jpg",
-      "best_time": "Sunday 10 AM–12 PM EST",
+      "best_time": "Sunday 10 AM\u201312 PM EST",
       "scheduled_date": "2026-06-29T16:00:00.000+00:00",
-      "approved": false
+      "approved": false,
+      "slack_posted": true
     }
   ]
 }
