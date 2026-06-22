@@ -8,7 +8,34 @@ with open(STATE_PATH) as f:
     state = json.load(f)
 
 week = state.get("week_date", "")
-preview_url = state.get("preview_url", "")
+
+
+def normalize_preview_url(url):
+    """jsDelivr serves .html with Content-Type: text/plain, so the preview page shows
+    raw source and the meme videos don't render. Force HTML previews onto GitHub Pages,
+    which serves text/html. Non-HTML media_url links are left alone (jsDelivr serves
+    .mp4/.jpg with correct content-types). This is a guardrail: the agent is also
+    instructed to never use a jsDelivr URL for preview_url, but it has regressed before."""
+    if not url or "cdn.jsdelivr.net/gh/" not in url:
+        return url
+    if not (url.endswith(".html") or url.endswith("/")):
+        return url  # only rewrite HTML previews, not media files
+    rest = url.split("cdn.jsdelivr.net/gh/", 1)[1]      # OWNER/REPO@BRANCH/PATH...
+    parts = rest.split("/")
+    if len(parts) < 2:
+        return url
+    owner = parts[0]
+    repo = parts[1].split("@")[0]                        # strip @branch
+    path = "/".join(parts[2:])
+    if path.endswith("index.html"):
+        path = path[: -len("index.html")]                # Pages serves dir → index.html
+    pages = f"https://{owner}.github.io/{repo}/{path}"
+    if pages != url:
+        print(f"Rewrote jsDelivr preview_url to GitHub Pages: {pages}")
+    return pages
+
+
+preview_url = normalize_preview_url(state.get("preview_url", ""))
 posts = state.get("posts", [])
 
 # Backward compat: support legacy dict-keyed format
@@ -20,6 +47,55 @@ if isinstance(posts, dict):
         post.setdefault("post_type", key.split("_")[0].capitalize())
         legacy.append(post)
     posts = legacy
+
+
+def local_path_for(url):
+    """Map a media/preview URL to its checked-out file path. The GitHub Action
+    checks out the repo, so the real bytes are on disk — using them avoids CDN
+    propagation lag (jsDelivr/Pages can 404 for a minute right after a push)."""
+    if url and "/posts/" in url:
+        return "posts/" + url.split("/posts/", 1)[1]
+    return ""
+
+
+# Minimum sane file sizes — anything smaller is a broken/placeholder asset.
+# Mirrors the watchdog's SIZE_FLOOR so the gate and the alarm agree.
+SIZE_FLOOR = {".mp4": 100_000, ".jpg": 20_000, ".jpeg": 20_000, ".html": 1_500}
+
+
+def _check_asset(label, path, problems):
+    ext = os.path.splitext(path)[1].lower()
+    floor = SIZE_FLOOR.get(ext, 1)
+    if not path:
+        problems.append(f"{label}: media_url doesn't map to a repo file.")
+    elif not os.path.isfile(path):
+        problems.append(f"{label}: file is missing on disk ({path}) — not openable.")
+    elif os.path.getsize(path) < floor:
+        sz = os.path.getsize(path)
+        problems.append(f"{label}: file is suspiciously small ({sz} bytes < {floor}) at {path} — likely broken/placeholder.")
+
+
+def preflight(preview_url, posts):
+    """Return a list of plain-English problems. If non-empty, we post NOTHING to
+    Slack — Catie should never receive a review where something won't open."""
+    problems = []
+    if not preview_url.startswith("https://isabelhoppmann.github.io/"):
+        problems.append(
+            f"Preview link is not a GitHub Pages URL ({preview_url!r}) — it would show source code instead of rendering the videos."
+        )
+    if "/posts/" in preview_url:
+        seg = preview_url.split("/posts/", 1)[1].strip("/").split("/")[0]  # the DATE folder
+        _check_asset("Preview page (index.html)", f"posts/{seg}/index.html", problems)
+    for post in posts:
+        ptype = (post.get("post_type") or "").lower()
+        if ptype in ("meme", "quote", "quote image"):
+            label = post.get("label", "?")
+            url = post.get("media_url") or post.get("mp4_url") or ""
+            if not url:
+                problems.append(f"{label}: no media_url in review-state.json — nothing to attach.")
+                continue
+            _check_asset(label, local_path_for(url), problems)
+    return problems
 
 def slack_api(path, payload, content_type="application/json"):
     if content_type == "application/json":
@@ -43,11 +119,18 @@ def slack_post(channel, blocks, thread_ts=None, text_fallback=None):
     return slack_api("chat.postMessage", payload)
 
 def slack_upload_to_thread(channel, thread_ts, media_url, filename, comment):
-    """Download media bytes and upload as a file attached to a thread reply.
+    """Upload media as a file attached to a thread reply. Prefers the local
+    checked-out file (the exact bytes that passed pre-flight, no CDN lag); falls
+    back to downloading media_url only if the local file isn't present.
     Returns the completeUploadExternal result. Raises on any network/API failure."""
-    req = urllib.request.Request(media_url, headers={"User-Agent": "ZenieSlackBot/1.0"})
-    with urllib.request.urlopen(req) as r:
-        content = r.read()
+    local = local_path_for(media_url)
+    if local and os.path.isfile(local):
+        with open(local, "rb") as f:
+            content = f.read()
+    else:
+        req = urllib.request.Request(media_url, headers={"User-Agent": "ZenieSlackBot/1.0"})
+        with urllib.request.urlopen(req) as r:
+            content = r.read()
     step1 = slack_api(
         "files.getUploadURLExternal",
         {"filename": filename, "length": str(len(content))},
@@ -90,6 +173,21 @@ def save_state():
     with open(STATE_PATH, "w") as f:
         json.dump(state, f, indent=2)
 
+# Pre-flight gate: refuse to post ANYTHING to Slack if any asset isn't openable.
+# Catie should never receive a review with a broken preview or missing media.
+# Only enforced before the thread exists — once the header is up we just fill in
+# any still-missing replies (a re-run shouldn't be blocked by a later hiccup).
+if not state.get("slack_thread_ts"):
+    problems = preflight(preview_url, posts)
+    if problems:
+        state["slack_error"] = " | ".join(problems)
+        save_state()
+        print(f"PRE-FLIGHT FAILED — refusing to post to Slack ({len(problems)} issue(s)):")
+        for p in problems:
+            print("  -", p)
+        sys.exit(1)
+    state["preview_url"] = preview_url  # persist the normalized (Pages) URL
+
 thread_ts = state.get("slack_thread_ts")
 if thread_ts:
     print(f"Header already posted (ts: {thread_ts}). Will post any missing thread replies.")
@@ -125,7 +223,9 @@ for post in posts:
         meme_url = post.get("media_url") or post.get("mp4_url") or ""
         reply = post_media_or_fallback(label, comment, meme_url, filename, thread_ts)
     elif post_type == "repost":
-        text = f"*{label} — Repost*\nFrom @{post.get('creator', '')} — {post.get('url', '')}\n*Caption:* {post.get('ig_caption', '')}"
+        hashtags = post.get('hashtags', '')
+        hashtags_line = f"\n`{hashtags}`" if hashtags else ""
+        text = f"*{label} — Repost*\nFrom @{post.get('creator', '')} — {post.get('url', '')}\n*Caption:* {post.get('ig_caption', '')}{hashtags_line}"
         reply = slack_post(
             SLACK_CHANNEL_ID,
             [{"type": "section", "text": {"type": "mrkdwn", "text": text[:3000]}}],
