@@ -194,7 +194,7 @@ if thread_ts:
 else:
     main_blocks = [
         {"type": "header", "text": {"type": "plain_text", "text": f"\U0001f3a8 Zenie — Week of {week}"}},
-        {"type": "section", "text": {"type": "mrkdwn", "text": f"*{len(posts)} posts ready for review.* <{preview_url}|Open preview ↗>\nReact ✅ to approve or reply with feedback."}},
+        {"type": "section", "text": {"type": "mrkdwn", "text": f"*{len(posts)} posts ready for review.* <{preview_url}|Open preview ↗>\n*Reply in this thread* to approve or request changes — e.g. _“approve meme 1”_, _“make meme 2 funnier”_, _“new background for quote 1”_. I'll update them right here."}},
         {"type": "divider"}
     ]
     result = slack_post(SLACK_CHANNEL_ID, main_blocks, text_fallback=f"Zenie Week of {week}")
@@ -213,9 +213,12 @@ for post in posts:
         continue
     label = post.get("label", "Post")
     post_type = (post.get("post_type") or "").lower()
+    # When a re-render came from Catie's feedback, flag the reply so she knows this
+    # is the revised version (not a duplicate of the original post).
+    rev = "🔄 *Updated based on your feedback*\n" if post.get("revised") else ""
     if post_type == "meme":
         comment = (
-            f"*{label} — Meme*\n_{post.get('overlay_text', '')}_\n\n"
+            f"{rev}*{label} — Meme*\n_{post.get('overlay_text', '')}_\n\n"
             f"*IG:* {post.get('ig_caption', '')}\n`{post.get('hashtags', '')}`"
         )
         filename = f"{label.replace(' ', '_').lower()}.mp4"
@@ -234,7 +237,7 @@ for post in posts:
         )
     elif post_type in ("quote", "quote image"):
         comment = (
-            f"*{label} — Quote (FB only)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n"
+            f"{rev}*{label} — Quote (FB only)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n"
             f"*FB caption:* {post.get('fb_caption', '')}\n`{post.get('hashtags', '')}`"
         )
         filename = f"{label.replace(' ', '_').lower()}.jpg"
@@ -247,6 +250,7 @@ for post in posts:
         save_state()
         sys.exit(1)
     post["slack_posted"] = True
+    post.pop("revised", None)
     any_posted = True
     print(f"Posted {label} to thread")
 

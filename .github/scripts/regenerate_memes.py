@@ -123,7 +123,20 @@ def verify(path):
         raise RuntimeError(f"bad dims {s['width']}x{s['height']}")
 
 
-def pick_and_render(overlay_text, out_path):
+def pick_and_render(overlay_text, out_path, source_url=None):
+    """Render a meme. If source_url is given (an edit that wants to keep the exact
+    clip Catie already saw), re-download that clip and just re-overlay the new text.
+    Otherwise search Pexels fresh for an on-theme clip."""
+    src = "/tmp/zenie_src.mp4"
+    if source_url:
+        try:
+            pexels_download(source_url, src)
+            make_mp4(src, overlay_text, out_path)
+            verify(out_path)
+            return {"id": "reused", "duration": 0, "query": "(kept original clip)",
+                    "page": source_url, "url": source_url}
+        except Exception as e:
+            print(f"    keep-clip re-download failed ({e}); falling back to fresh search")
     cands, seen = [], set()
     for q in queries_for(overlay_text):
         try:
@@ -137,7 +150,6 @@ def pick_and_render(overlay_text, out_path):
     if not cands:
         raise RuntimeError("no Pexels candidates from any query")
     pick = sorted(cands, key=lambda c: abs(c["duration"] - 6))[0]
-    src = "/tmp/zenie_src.mp4"
     pexels_download(pick["url"], src)
     make_mp4(src, overlay_text, out_path)
     verify(out_path)
@@ -182,22 +194,35 @@ def main():
     for post in state.get("posts", []):
         if (post.get("post_type") or "").lower() != "meme":
             continue
-        if post.get("media_url") and not post.get("skipped"):
-            continue  # already has a real meme
+        # Render when: the agent shipped it SKIPPED, the media is missing, OR Catie's
+        # feedback flagged it for a re-render (new overlay text / "make it funnier").
+        needs_feedback_render = bool(post.get("needs_render"))
+        missing_or_skipped = post.get("skipped") or not post.get("media_url")
+        if not (needs_feedback_render or missing_or_skipped):
+            continue
         label = post.get("label", "")
         m = re.search(r"\d+", label)
         if not m:
             continue
         n = m.group(0)
         overlay = post.get("overlay_text", "")
+        # keep_clip: a text-only tweak (typo/wording) that should reuse the exact
+        # clip Catie already saw. The agent sets it; we honor it only if we know the source.
+        source_url = post.get("source_url") if post.get("keep_clip") else None
         out_path = f"posts/{week}/meme_{n}.mp4"
-        print(f"Regenerating {label} (overlay: {overlay!r})")
+        why = "feedback re-render" if needs_feedback_render else "skipped/missing"
+        print(f"Regenerating {label} ({why}; overlay: {overlay!r}; keep_clip={bool(source_url)})")
         try:
-            pick = pick_and_render(overlay, out_path)
+            pick = pick_and_render(overlay, out_path, source_url=source_url)
             post["skipped"] = False
             post.pop("skip_reason", None)
+            post["source_url"] = pick.get("url", post.get("source_url"))
             post["media_url"] = f"https://cdn.jsdelivr.net/gh/{REPO}@main/posts/{week}/meme_{n}.mp4"
-            post["slack_posted"] = False
+            post["slack_posted"] = False           # so it re-posts into the thread
+            if needs_feedback_render:
+                post["revised"] = True             # so the Slack comment is marked "Updated"
+            post.pop("needs_render", None)
+            post.pop("keep_clip", None)
             update_index_html(f"posts/{week}/index.html", n, post)
             clear_md_skip(f"posts/{week}/zenie_drafts.md", n)
             changed = True

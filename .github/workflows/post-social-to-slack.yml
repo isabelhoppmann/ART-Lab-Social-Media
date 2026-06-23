@@ -28,6 +28,10 @@ jobs:
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
         run: python3 .github/scripts/regenerate_memes.py
+      - name: Regenerate quote images flagged by review feedback
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+        run: python3 .github/scripts/regenerate_quotes.py
       - name: Post to Slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
