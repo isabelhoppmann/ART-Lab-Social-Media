@@ -104,6 +104,62 @@
       "vibes": ["confused", "huh", "wait what", "makes no sense", "lost", "does not add up"],
       "use_when": "Pure confusion — when something genuinely doesn't add up and you have visible question marks over your head.",
       "example_overlay": "when he says he misses me but never once makes a plan"
+    },
+    {
+      "slug": "eye_roll",
+      "title": "Rihanna dramatic eye-roll",
+      "file": "meme_library/clips/eye_roll.mp4",
+      "vibes": ["over it", "unimpressed", "annoyed", "done with this", "exasperated", "not impressed"],
+      "use_when": "Dramatic exasperation / over-it eye-roll — when someone says something tiring or you're done with the conversation.",
+      "example_overlay": "when he says 'you're kind of overreacting'"
+    },
+    {
+      "slug": "hair_flip",
+      "title": "Confident hair flip (Zendaya)",
+      "file": "meme_library/clips/hair_flip.mp4",
+      "vibes": ["unbothered", "confident", "main character", "unfazed", "took that personally", "moving on"],
+      "use_when": "Unbothered, confident, main-character energy — flipping your hair and moving on, didn't let it faze you.",
+      "example_overlay": "me leaving him on read after he took 3 days to reply"
+    },
+    {
+      "slug": "fake_smile",
+      "title": "Forced uncomfortable smile (Britney)",
+      "file": "meme_library/clips/fake_smile.mp4",
+      "vibes": ["forced smile", "uncomfortable", "pretending it's fine", "fake nice", "gritting teeth", "awkward"],
+      "use_when": "Strained, forced-smile politeness — pretending to be fine or nice while internally not okay.",
+      "example_overlay": "smiling at his situationship in the group photo"
+    },
+    {
+      "slug": "heart_eyes",
+      "title": "Tom & Jerry heart eyes (swooning)",
+      "file": "meme_library/clips/heart_eyes.mp4",
+      "vibes": ["in love", "smitten", "heart eyes", "obsessed", "swooning", "down bad"],
+      "use_when": "Head-over-heels, heart-eyes infatuation — catching feelings fast, down bad after the smallest thing.",
+      "example_overlay": "me after he remembered my coffee order one time"
+    },
+    {
+      "slug": "mind_blown",
+      "title": "Homer Simpson head exploding (mind blown)",
+      "file": "meme_library/clips/mind_blown.mp4",
+      "vibes": ["mind blown", "revelation", "can't process", "plot twist", "sudden clarity"],
+      "use_when": "A realization or plot twist so big your brain explodes — sudden clarity or shocking info.",
+      "example_overlay": "realizing the 'ick' was just me finally having standards"
+    },
+    {
+      "slug": "table_flip",
+      "title": "Anime rage table flip",
+      "file": "meme_library/clips/table_flip.mp4",
+      "vibes": ["rage", "fed up", "losing it", "flipping out", "done dramatically", "had enough"],
+      "use_when": "Explosive 'I'm done' rage — flipping the table on a frustrating situation.",
+      "example_overlay": "me after the third 'wyd' text with zero actual plans"
+    },
+    {
+      "slug": "dead_inside_stare",
+      "title": "Jim Halpert deadpan camera stare",
+      "file": "meme_library/clips/dead_inside_stare.mp4",
+      "vibes": ["dead inside", "deadpan", "done", "unimpressed stare", "blank", "i can't even"],
+      "use_when": "Deadpan look-to-camera — silently dead inside or done, reacting to something absurd someone said.",
+      "example_overlay": "him: 'i don't really do labels' — me staring into the camera:"
     }
   ]
 }

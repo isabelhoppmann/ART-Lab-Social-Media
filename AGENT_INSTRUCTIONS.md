@@ -6,9 +6,8 @@ Credentials are in the message that invoked you (GitHub token, Notion token, Pex
 Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: Try Giphy/Tenor first. If after 3 candidates per meme you cannot find one that passes BOTH the zero-tolerance watermark check AND the source quality check (Step 2A points 3 + 4), fall back to a clean HD Pexels stock video (Step 2A-PEXELS). You MUST NOT generate static PNG files for memes. You MUST always generate an MP4 with text overlay (Step 2A.5) — the MP4 is the canonical posting asset, AND the HTML preview MUST embed it via a `<video>` tag pointing to `meme_1.mp4` / `meme_2.mp4` (Step 4). DO NOT use Giphy/Tenor iframes in the preview — reviewers must see the exact MP4 that will be posted to Meta, and many browsers / Slack link previews block third-party iframes.
-- NO PLACEHOLDER MEMES: If Giphy, Tenor, AND Pexels all fail in the sandbox (e.g. network blocks), do NOT ship a gradient/solid-color placeholder MP4 — the reviewer can't tell what was intended and the post is unusable. Instead, fail loudly: skip that meme slot, record `skipped=True` plus a one-sentence reason on the meme's in-memory state struct, and continue with the remaining posts. Do NOT write to `zenie_drafts.md` mid-execution — that file is built once at the end from final state (see Step 2D).
-  - SAFETY NET (do not fight it): when a meme ships `skipped=True` with `media_url=null`, the `post-social-to-slack` GitHub Action automatically re-sources + renders it from Pexels on its open-internet runner (`.github/scripts/regenerate_memes.py`) BEFORE posting to Slack, then flips `skipped=false` and fills `media_url`. So a sandbox CDN block is expected and self-heals — keep skipping cleanly with a real `overlay_text` (the CI needs it to render). Do not invent workarounds that post partial/placeholder memes.
+- MEMES: Do NOT source from Giphy/Tenor/Pexels and do NOT render meme MP4s yourself. Pick TWO distinct meme formats from the vetted library (Step 2A), obeying the no-repeat rule (never reuse a slug in `meme_library/used.json`). Write each meme's `overlay_text` + captions, set its `meme_slug`, and ship it with `skipped=true` + `media_url=null` in review-state (Step 7). The `post-social-to-slack` GitHub Action renders `meme_library/clips/<meme_slug>.mp4` with your overlay (white-card style), fills `media_url`, marks the slug used, creates the Notion row, and posts it. You MUST NOT generate static PNGs or placeholder memes.
+  - SAFETY NET (do not fight it): rendering happens on the Action's open-internet runner (`.github/scripts/regenerate_memes.py`), not here. Just ship each meme cleanly with a real `meme_slug` + `overlay_text`. Only mark a meme genuinely SKIPPED if the library has fewer than 2 available (unused) clips — then note in the Slack handoff that the library needs new clips.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
@@ -150,7 +149,30 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 
 ---
 
-## Step 2A: Find 2 GIFs matching trending memes
+## Step 2A: Choose 2 meme formats from the vetted library
+
+**THIS REPLACES ALL GIF SOURCING.** Do NOT search Giphy/Tenor, do NOT download or render memes, and IGNORE everything below in this section as well as Step 2A-PEXELS and Step 2A.5 — those are legacy and no longer apply. Memes now come from a curated, pre-vetted, watermark-free clip library committed in the repo, and GitHub Actions renders them automatically after you push (you can't reach the media CDNs from here anyway).
+
+Do this instead:
+
+1. Fetch the library and the no-repeat ledger:
+```python
+import urllib.request, json
+def _raw(p):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(
+        "https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/" + p,
+        headers={"User-Agent": "ZenieAgent/1.0"})).read())
+lib  = _raw("meme_library/library.json")["clips"]   # each: slug, title, vibes[], use_when, example_overlay
+used = {u["slug"] for u in _raw("meme_library/used.json").get("used", [])}
+available = [c for c in lib if c["slug"] not in used]
+```
+2. From `available` ONLY, pick the TWO clips whose `vibes`/`use_when` best fit your two trending meme ideas this week. The two MUST be different slugs. Read each chosen clip's `example_overlay` for tone.
+3. **NO-REPEAT RULE (critical):** never pick a slug listed in `used` — a format may be used only ONCE, ever, even with a different caption. If `available` has fewer than 2 clips, cover only the meme(s) you can and note in the Slack handoff that the meme library is running low and needs new clips added. Never reuse a used clip.
+4. Record each meme's chosen slug (you'll write it to review-state as `meme_slug` in Step 7). Then write the FOUR pieces of copy described just below, making the joke fit BOTH the chosen clip's energy and this week's topic. After that, go straight to Step 2B — skip Step 2A-PEXELS and Step 2A.5 entirely.
+
+---
+
+<details><summary>LEGACY GIF-sourcing steps (IGNORED — kept for reference only)</summary>
 
 For each meme, search for the specific trending format:
 1. WebSearch("site:giphy.com [SPECIFIC MEME NAME]") AND WebSearch("site:tenor.com [SPECIFIC MEME NAME]")
@@ -167,7 +189,9 @@ For each meme, search for the specific trending format:
 
 **Before writing copy, look at the GIF and read its energy** — the vibe, expression, tone, and momentum of the clip. Then use humor and inference to write copy that *feels* like it belongs with that specific GIF. The joke doesn't have to describe the clip literally — it should use the GIF's energy as the punchline or reaction. Use the top-performing posts from the Performance Brief as inspiration for humor style and tone.
 
-For each meme produce FOUR pieces of text:
+</details>
+
+For each meme produce FOUR pieces of text (write these for BOTH memes — they apply whether the clip came from the library or legacy sourcing):
 
 - **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Should feel like it was written *for* this specific GIF's energy — not interchangeable with any other clip. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
 - **`ig_caption`** — short reaction/wink for the Instagram caption field. 2–8 words + optional emoji. Do NOT repeat overlay_text — riff on it. Examples: *"She knows…"*, *"He couldn't do anything to make me happier!"*
@@ -176,7 +200,9 @@ For each meme produce FOUR pieces of text:
 
 ---
 
-## Step 2A-PEXELS: Pexels fallback (only when Giphy/Tenor fails the new bar)
+## Step 2A-PEXELS: Pexels fallback (LEGACY — IGNORED)
+
+> **DEPRECATED: skip this entire step.** Memes come from the library (Step 2A) and are rendered by GitHub Actions. Do not source memes from Pexels here.
 
 If after 3 Giphy/Tenor candidates per meme you cannot find a clean HD GIF, fall back to Pexels stock video. Pexels videos are 1080×1920 vertical, license-free, no watermarks, no compression artifacts — they pass the new quality bar by default.
 
@@ -239,7 +265,13 @@ The HTML preview always embeds the local MP4 — whether the source was Giphy, T
 
 ---
 
-## Step 2A.5: Convert each meme GIF to MP4 with text overlay (Zenie meme style) — HARD REQUIREMENT
+## Step 2A.5: Convert meme GIF to MP4 (LEGACY — IGNORED)
+
+> **DEPRECATED: skip this entire step.** You do NOT render memes. GitHub Actions renders your chosen library clip (with your `overlay_text`) into `meme_N.mp4` after you push, using the same white-card overlay style. Just make sure each meme's `meme_slug` and `overlay_text` are in review-state (Step 7).
+
+<details><summary>Legacy in-sandbox MP4 rendering (ignored)</summary>
+
+### Original Step 2A.5 — Convert each meme GIF to MP4 with text overlay (Zenie meme style)
 
 **This step is non-negotiable. Every meme MUST ship as an MP4 with the white-card text overlay burned in. The raw GIF is NEVER what gets posted to Instagram — not as a Reel, not as a feed post, not as a fallback. If MP4 generation fails for a meme, that meme is dropped from this week's batch (find a replacement GIF and retry); the agent must NOT proceed with the GIF-only version.**
 
@@ -413,6 +445,8 @@ verify_meme_mp4("/tmp/meme_2.mp4", "Meme 2")
 ```
 
 If either verification raises, DROP that meme from this week's batch and either (a) find a replacement GIF and re-run Step 2A.5 for it, or (b) ship only the surviving meme and note the drop in the Slack handoff message. **Do not proceed past this step with a missing or malformed MP4. Do not commit the raw GIF as a substitute. Do not let the auto-publisher fall back to the GIF.**
+
+</details>
 
 ---
 
@@ -665,10 +699,13 @@ Build the file as a single Python string (`drafts_md`), then push it in Step 3 a
 
 For each meme slot N in (1, 2):
 
+Memes are now rendered downstream by GitHub Actions from the library, so the MP4
+does NOT exist on disk yet at this step. A meme is "real" if you assigned it a
+`meme_slug` (it WILL be rendered); only treat it as skipped if you couldn't
+assign a slug (e.g. the library ran out of available clips).
+
 ```python
-import os
-mp4 = f"/tmp/meme_{N}.mp4"
-is_real = os.path.exists(mp4) and os.path.getsize(mp4) >= 100_000
+is_real = bool(meme_N_state.get("meme_slug"))   # a slug was chosen → it will render
 ```
 
 If `is_real`:
@@ -685,18 +722,16 @@ If `is_real`:
 
 **Best time to post:** {day, time}
 
-**Asset:** meme_N.mp4 (1080×1920, {Giphy|Tenor|Pexels} source + white-card overlay)
+**Asset:** meme_N.mp4 — rendered automatically from library clip `{meme_slug}` ({clip title}) with white-card overlay
 
 ---
 ```
 
-If NOT `is_real` (the meme is genuinely skipped):
+If NOT `is_real` (no library clip was available for this meme):
 ```
 ## Meme N — {theme} ⚠️ SKIPPED
 
-**⚠️ SKIPPED — {one_sentence_reason_from_meme_N_state}.**
-
-**Queries tried:** {queries_tried_from_state, comma-separated}
+**⚠️ SKIPPED — no library clip was available (the meme library is exhausted; add new clips to `meme_library/`).**
 
 **Intended overlay_text:** {text}
 
@@ -775,7 +810,8 @@ def push_file(path, content_bytes, message):
         print(f"Pushed {path}: {r.status}")
 ```
 
-Push: quote_1.jpg, quote_2.jpg, meme_1.mp4, meme_2.mp4, meme_ids.txt, index.html, zenie_drafts.md
+Push: quote_1.jpg, quote_2.jpg, index.html, zenie_drafts.md
+(Do NOT push meme_1.mp4 / meme_2.mp4 / meme_ids.txt — you don't render memes anymore; GitHub Actions renders them from the library after the review-state push in Step 7 and commits the MP4s itself.)
 
 ---
 
@@ -873,9 +909,9 @@ New entry: <a class="week latest" href="posts/[DATE]/"><span class="week-date">[
 
 ## Step 6: Save posts to Notion database
 
-After pushing files to GitHub, save each post to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
+After pushing files to GitHub, save the **quote images only** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
 
-Save 4 posts (memes and quote images only — skip reposts).
+**Save 2 posts (the two quote images only).** Do NOT create Notion rows for the memes — the render step (`regenerate_memes.py`) creates each meme's Notion row automatically when it renders the library clip, so creating them here would duplicate them. Skip reposts as before. (The Meme 1/Meme 2 property templates below are kept only as a field reference for the automated render step.)
 
 ### Calculating Scheduled Dates
 Each post has a recommended Best Time (e.g. "Wednesday 7–9 PM EST"). Convert this into a real ISO-8601 datetime for the coming week starting from today's date (the date you are running):
@@ -935,7 +971,9 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Scheduled Date: calculated ISO-8601 datetime
 - Week: [DATE]
 
-After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database with scheduled dates."
+After creating the 2 quote rows, print: "Saved 2 quote posts to Notion (memes are added automatically by the render step)."
+
+Make sure every post (both memes and both quotes) has a distinct `best_time` on a different day — the render step computes the memes' Notion Scheduled Date from their `best_time`, so distinct days still matter.
 
 
 
@@ -943,7 +981,15 @@ After creating all 4 rows, print: "Saved 4 posts to Notion Zenie Posts database 
 
 ## Step 7: Save review state to GitHub (Slack posting is handled automatically)
 
-Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url` (memes AND quote images — the jsdelivr URL of the .mp4 or .jpg; the Slack workflow downloads from here and uploads as an inline file attachment), url/creator (reposts), quote/attribution (quotes), approved=false.
+Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution (quotes), approved=false.
+
+**Memes (library-rendered — IMPORTANT):** you did NOT render the meme MP4s; GitHub Actions does. For each of the two meme posts set:
+- `meme_slug` = the library slug you chose in Step 2A
+- `overlay_text` = your meme overlay line
+- `skipped` = true  and  `media_url` = null  (this is the signal that tells the render step to build it)
+- `notion_page_id` = null (the render step creates the meme's Notion row automatically — do NOT create meme rows yourself in Step 6)
+- plus `ig_caption`, `fb_caption`, `hashtags`, `best_time`
+The `post-social-to-slack` Action will render `meme_library/clips/<meme_slug>.mp4` with your overlay, fill `media_url`, set `skipped=false`, mark the slug used (no-repeat), create the Notion row, and post it to Slack. **Quote images keep `media_url`** = the jsdelivr URL of the .jpg (you rendered those). Reposts carry url/creator.
 
 **`preview_url` MUST be the GitHub Pages URL, not jsDelivr.** Use exactly this format:
 `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/`
