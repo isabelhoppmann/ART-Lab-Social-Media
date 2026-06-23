@@ -27,6 +27,7 @@ jobs:
       - name: Regenerate skipped memes from Pexels
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: python3 .github/scripts/regenerate_memes.py
       - name: Regenerate quote images flagged by review feedback
         env:

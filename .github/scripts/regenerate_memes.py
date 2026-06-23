@@ -16,6 +16,10 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 REPO = "isabelhoppmann/ART-Lab-Social-Media"
 STATE_PATH = "social/review-state.json"
 PEXELS_KEY = os.environ.get("PEXELS_KEY", "")
+NOTION_TOKEN = os.environ.get("NOTION_TOKEN", "")
+NOTION_DB = "24e014f9-d62c-43b2-b474-44072b7eff95"   # Zenie Posts database
+WEEKDAYS = {"monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
+            "friday": 4, "saturday": 5, "sunday": 6}
 PEXELS_UA = {"User-Agent": "ZenieAgent/1.0"}
 VIDEO_W, VIDEO_H = 1080, 1920
 
@@ -185,6 +189,68 @@ def clear_md_skip(path, meme_num):
     open(path, "w", encoding="utf-8").write(md)
 
 
+def parse_scheduled_date(best_time):
+    """Best-effort: 'Thursday 7-9 PM EST' -> ISO-8601 UTC for the next such weekday
+    at the time-range midpoint (mirrors AGENT_INSTRUCTIONS Step 6). None if unparseable."""
+    import datetime as dt
+    if not best_time:
+        return None
+    t = best_time.lower().replace("–", "-").replace("—", "-")
+    wd = next((WEEKDAYS[w] for w in WEEKDAYS if w in t), None)
+    if wd is None:
+        return None
+    nums = re.findall(r"\d+", t)
+    if nums:
+        hrs = [int(x) for x in nums[:2]]
+        h = int(round(sum(hrs) / len(hrs)))
+    else:
+        h = 7
+    if "pm" in t and h != 12:
+        h += 12
+    if "am" in t and h == 12:
+        h = 0
+    today = dt.datetime.utcnow().date()
+    target = today + dt.timedelta(days=(wd - today.weekday()) % 7)
+    est_dt = dt.datetime(target.year, target.month, target.day, h % 24, 0)
+    utc_dt = est_dt + dt.timedelta(hours=5)          # EST = UTC-5
+    return utc_dt.strftime("%Y-%m-%dT%H:%M:00.000+00:00")
+
+
+def notion_create_meme_row(post, n, week):
+    """Create a Zenie Posts row for a regenerated meme that has none yet, so memes
+    land in Notion like the quotes do and can flow to the publisher. Mirrors the
+    live DB schema. Returns the new page id, or None. Idempotent: skips if the post
+    already has a notion_page_id or no token is configured."""
+    if not NOTION_TOKEN or post.get("notion_page_id"):
+        return None
+    props = {
+        "Name": {"title": [{"text": {"content": f"Meme {n} — {week}"}}]},
+        "Post Type": {"select": {"name": "Meme"}},
+        "IG Caption": {"rich_text": [{"text": {"content": post.get("ig_caption", "")}}]},
+        "FB Caption": {"rich_text": [{"text": {"content": post.get("fb_caption", "")}}]},
+        "Hashtags": {"rich_text": [{"text": {"content": post.get("hashtags", "")}}]},
+        "Media URL": {"url": post.get("media_url") or None},
+        "Status": {"select": {"name": "Draft"}},
+        "Best Time": {"rich_text": [{"text": {"content": post.get("best_time", "")}}]},
+    }
+    if week:
+        props["Week"] = {"date": {"start": week}}
+    sched = parse_scheduled_date(post.get("best_time", ""))
+    if sched:
+        props["Scheduled Date"] = {"date": {"start": sched}}
+    req = urllib.request.Request(
+        "https://api.notion.com/v1/pages",
+        data=json.dumps({"parent": {"database_id": NOTION_DB}, "properties": props}).encode(),
+        headers={"Authorization": f"Bearer {NOTION_TOKEN}", "Notion-Version": "2022-06-28",
+                 "Content-Type": "application/json"}, method="POST")
+    try:
+        with urllib.request.urlopen(req) as r:
+            return json.load(r)["id"]
+    except Exception as e:
+        print(f"    Notion row create failed for Meme {n}: {e}")
+        return None
+
+
 def main():
     if not PEXELS_KEY:
         print("regenerate_memes: PEXELS_KEY not set — skipping"); return
@@ -225,6 +291,10 @@ def main():
             post.pop("keep_clip", None)
             update_index_html(f"posts/{week}/index.html", n, post)
             clear_md_skip(f"posts/{week}/zenie_drafts.md", n)
+            pid = notion_create_meme_row(post, n, week)
+            if pid:
+                post["notion_page_id"] = pid
+                print(f"  + created Notion row {pid} for {label}")
             changed = True
             print(f"  OK {label} <- Pexels {pick['id']} ({pick['duration']}s) q='{pick['query']}' {pick['page']}")
         except Exception as e:
