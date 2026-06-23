@@ -1,0 +1,16 @@
+Morning Briefing June 23, 2026
+
+=== ROBOTICS & AI ===
+- Robot.com commercially launches R-noid, a wheeled humanoid purpose-built for food service, logistics, and healthcare, at Automate 2026 in Chicago on June 22 — fewer than 40 units deployed across a dozen early customers; site to full autonomous operation in 8–12 weeks. http://www.prnewswire.com/news-releases/robotcom-launches-r-noid-a-humanoid-built-for-the-work-that-burns-people-out-no-legs-all-lift-to-the-bottom-line-302806619.html
+
+=== RESEARCH ===
+No significant new research publications confirmed in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+No robotics or AI funding rounds confirmed as announced in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- [NVIDIA] Announced Halos for Robotics at Automate 2026 on June 22 — the industry's first full-stack open safety system for physical AI, spanning compute, OS, sensors, and a certification inspection lab, with 43 partners including Agility Robotics (deploying Digit at Amazon) and Boston Dynamics already adopting it. https://www.globenewswire.com/news-release/2026/06/22/3315323/0/en/NVIDIA-Announces-Halos-for-Robotics-the-Industry-s-First-Full-Stack-Safety-System-for-Physical-AI.html
+
+=== BAY AREA ===
+- Robotics Center of Silicon Valley Grand Opening, June 26, 6–9 PM, 90 Welsh St SF — free with RSVP, featuring live demos of Unitree, Booster, AgiBot, ALOHA Arm, Piper, and OpenArm alongside the center's egocentric data hardware. https://www.roboticscenter.ai/events
