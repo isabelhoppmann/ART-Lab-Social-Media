@@ -160,6 +160,22 @@
       "vibes": ["dead inside", "deadpan", "done", "unimpressed stare", "blank", "i can't even"],
       "use_when": "Deadpan look-to-camera — silently dead inside or done, reacting to something absurd someone said.",
       "example_overlay": "him: 'i don't really do labels' — me staring into the camera:"
+    },
+    {
+      "slug": "facepalm",
+      "title": "Frustrated facepalm",
+      "file": "meme_library/clips/facepalm.mp4",
+      "vibes": ["frustrated", "can't believe this", "secondhand embarrassment", "exasperated", "done", "why"],
+      "use_when": "Frustrated facepalm / secondhand embarrassment — when someone (or you) does something facepalm-worthy.",
+      "example_overlay": "when he says 'i was gonna text but i fell asleep' for the 4th time"
+    },
+    {
+      "slug": "mic_drop",
+      "title": "Confident mic drop / walk-off",
+      "file": "meme_library/clips/mic_drop.mp4",
+      "vibes": ["confident", "mic drop", "said what i said", "walking away victorious", "no notes", "iconic exit"],
+      "use_when": "Confident mic-drop / walk-away-victorious energy — you said what you said and you're done.",
+      "example_overlay": "me after telling him exactly why it won't work, then leaving"
     }
   ]
 }
