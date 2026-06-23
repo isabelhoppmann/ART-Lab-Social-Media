@@ -18,6 +18,8 @@ STATE_PATH = "social/review-state.json"
 PEXELS_KEY = os.environ.get("PEXELS_KEY", "")
 NOTION_TOKEN = os.environ.get("NOTION_TOKEN", "")
 NOTION_DB = "24e014f9-d62c-43b2-b474-44072b7eff95"   # Zenie Posts database
+LIBRARY_DIR = "meme_library/clips"                    # vetted, watermark-free meme clips
+USED_PATH = "meme_library/used.json"                  # no-repeat ledger
 WEEKDAYS = {"monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
             "friday": 4, "saturday": 5, "sunday": 6}
 PEXELS_UA = {"User-Agent": "ZenieAgent/1.0"}
@@ -116,6 +118,24 @@ def make_mp4(src, overlay_text, out_path):
     subprocess.run(cmd, check=True, capture_output=True)
 
 
+def make_mp4_fit(src, overlay_text, out_path):
+    """Render a landscape/square meme clip into a 9:16 frame by fitting the WHOLE
+    clip centered over a blurred, scaled-up copy of itself. Used for library meme
+    clips (Kermit, Math Lady, etc.) — a center-crop would zoom in and cut off the
+    parts that make the meme recognizable, so we letterbox over a blur instead."""
+    card = "/tmp/zenie_card.png"
+    render_text_card(overlay_text, card)
+    fc = ("[0:v]split=2[a][b];"
+          "[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=25:3,eq=brightness=-0.10[bg];"
+          "[b]scale=1080:1920:force_original_aspect_ratio=decrease[fg];"
+          "[bg][fg]overlay=(W-w)/2:(H-h)/2[base];"
+          "[base][1:v]overlay=0:H-h-60[v]")
+    cmd = ["ffmpeg", "-y", "-stream_loop", "-1", "-t", "6", "-i", src, "-i", card,
+           "-filter_complex", fc, "-map", "[v]", "-t", "6", "-r", "30", "-c:v", "libx264",
+           "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", out_path]
+    subprocess.run(cmd, check=True, capture_output=True)
+
+
 def verify(path):
     if os.path.getsize(path) < 100_000:
         raise RuntimeError("rendered mp4 too small")
@@ -187,6 +207,22 @@ def clear_md_skip(path, meme_num):
     md = re.sub(r'(## Meme ' + str(meme_num) + r'\b[^\n]*?) ?⚠️ SKIPPED', r'\1', md)
     md = re.sub(r'\n\*\*⚠️ SKIPPED[^\n]*\*\*\n', '\n', md)
     open(path, "w", encoding="utf-8").write(md)
+
+
+def mark_meme_used(slug, week, label):
+    """No-repeat rule: record a library clip as permanently consumed the moment it's
+    rendered into a post, so it can never be picked again. Idempotent."""
+    if not slug:
+        return
+    try:
+        data = json.load(open(USED_PATH)) if os.path.exists(USED_PATH) else {}
+    except Exception:
+        data = {}
+    used = data.setdefault("used", [])
+    if not any(u.get("slug") == slug for u in used):
+        used.append({"slug": slug, "week": week, "label": label})
+        json.dump(data, open(USED_PATH, "w"), indent=2, ensure_ascii=False)
+        print(f"  marked '{slug}' used (no-repeat)")
 
 
 def parse_scheduled_date(best_time):
@@ -272,17 +308,31 @@ def main():
             continue
         n = m.group(0)
         overlay = post.get("overlay_text", "")
-        # keep_clip: a text-only tweak (typo/wording) that should reuse the exact
-        # clip Catie already saw. The agent sets it; we honor it only if we know the source.
-        source_url = post.get("source_url") if post.get("keep_clip") else None
         out_path = f"posts/{week}/meme_{n}.mp4"
+        # Preferred source: a vetted library clip the agent picked (meme_slug).
+        # These are real, recognizable, watermark-free memes — rendered fit-with-blur
+        # so the whole meme stays visible. Falls back to Pexels stock if no slug.
+        slug = post.get("meme_slug")
+        lib_clip = os.path.join(LIBRARY_DIR, f"{slug}.mp4") if slug else None
         why = "feedback re-render" if needs_feedback_render else "skipped/missing"
-        print(f"Regenerating {label} ({why}; overlay: {overlay!r}; keep_clip={bool(source_url)})")
         try:
-            pick = pick_and_render(overlay, out_path, source_url=source_url)
+            if lib_clip and os.path.exists(lib_clip):
+                print(f"Regenerating {label} ({why}) from library '{slug}' (overlay: {overlay!r})")
+                make_mp4_fit(lib_clip, overlay, out_path)
+                verify(out_path)
+                mark_meme_used(slug, week, label)   # consume it — never reuse
+                source_desc = f"library:{slug}"
+            else:
+                if slug:
+                    print(f"  WARNING: meme_slug '{slug}' not found in {LIBRARY_DIR}; falling back to Pexels")
+                # keep_clip: a text-only tweak that should reuse the exact Pexels clip.
+                source_url = post.get("source_url") if post.get("keep_clip") else None
+                print(f"Regenerating {label} ({why}) from Pexels (overlay: {overlay!r}; keep_clip={bool(source_url)})")
+                pick = pick_and_render(overlay, out_path, source_url=source_url)
+                post["source_url"] = pick.get("url", post.get("source_url"))
+                source_desc = f"Pexels {pick['id']} q='{pick['query']}'"
             post["skipped"] = False
             post.pop("skip_reason", None)
-            post["source_url"] = pick.get("url", post.get("source_url"))
             post["media_url"] = f"https://cdn.jsdelivr.net/gh/{REPO}@main/posts/{week}/meme_{n}.mp4"
             post["slack_posted"] = False           # so it re-posts into the thread
             if needs_feedback_render:
@@ -296,7 +346,7 @@ def main():
                 post["notion_page_id"] = pid
                 print(f"  + created Notion row {pid} for {label}")
             changed = True
-            print(f"  OK {label} <- Pexels {pick['id']} ({pick['duration']}s) q='{pick['query']}' {pick['page']}")
+            print(f"  OK {label} <- {source_desc}")
         except Exception as e:
             print(f"  FAILED to regenerate {label}: {e}")
             traceback.print_exc()

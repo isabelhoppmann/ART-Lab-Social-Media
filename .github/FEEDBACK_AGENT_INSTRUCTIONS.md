@@ -202,18 +202,35 @@ object you found via `find_post`). The actions:
 - `post["hashtags"] = new_tags`; Notion `"Hashtags"` rich_text.
 - `done.append(f"✏️ {post['label']} — hashtags updated")`
 
-**OVERLAY / JOKE CHANGE (memes)** — explicit ("change the overlay text on meme 2 to ...")
-or creative ("meme 1 is too sincere / not funny / unoriginal — redo it", "make meme 2 funnier"):
-- If Catie gave exact text, use it. Otherwise **write a new overlay line yourself**
-  in the Zenie voice: ultra-short, lowercase-ish, a relatable "when X but Y" dating /
-  situationship / bestie / self-care scenario; specific and honest; never generic,
-  never explaining the joke. Keep it one or two short lines.
-- `post["overlay_text"] = new_line`
-- `post["needs_render"] = True`  → GitHub Actions re-renders the MP4.
-- `post["keep_clip"] = True` ONLY if it's a pure wording/typo fix that should keep the
-  exact same clip; for "make it funnier / redo / new concept" leave keep_clip unset
-  (a fresh on-theme clip is fetched).
-- `done.append(f"🎨 {post['label']} — re-rendering with new text: \"{new_line}\" (updated version will post here shortly)")`
+**MEME CHANGE (memes)** — covers both a wording tweak and a "make it a real/better/funnier meme" request.
+
+First, fetch the vetted meme-clip library AND the no-repeat ledger (do this once):
+```python
+import urllib.request, json
+def _raw(path):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(
+        f"https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/{path}",
+        headers={"User-Agent": "ZenieFeedback/1.0"})).read())
+lib  = _raw("meme_library/library.json")["clips"]   # each: slug, title, vibes[], use_when, example_overlay
+used = {u["slug"] for u in _raw("meme_library/used.json").get("used", [])}
+available = [c for c in lib if c["slug"] not in used]   # NO-REPEAT: only ever pick from these
+```
+**No-repeat rule (critical):** a meme format may be used only ONCE, ever — never reuse a slug that's in `used`, even with a different caption. Pick only from `available`, and never pick the same slug twice in one run. If `available` is empty, the library is exhausted — don't reuse anything; reply asking Isabel to add new clips.
+
+Decide which kind of change Catie wants:
+
+(a) **Pure wording/typo tweak** — "change the overlay on meme 1 to ‘…’", keep the same visual:
+- `post["overlay_text"] = new_line` (use her exact text)
+- `post["needs_render"] = True` (leave `meme_slug` as-is so the SAME clip re-renders)
+
+(b) **Content / "make it a real meme" change** — "too sincere/unoriginal", "not funny", "make it a cartoon / pop-culture reference / a familiar meme", "more extreme", "she should look unhinged", etc.:
+- **Pick the clip from `available` whose `vibes`/`use_when` best match what Catie wants** for this post's topic (never one already in `used`), and read its `example_overlay` for tone. Set `post["meme_slug"] = chosen_slug`.
+- **Write a new overlay line yourself** in the Zenie voice that fits BOTH the chosen meme and the post's topic: ultra-short, lowercase-ish, a relatable, specific dating / situationship / bestie / self-care scenario; never generic, never explaining the joke. Set `post["overlay_text"] = new_line`.
+- `post["needs_render"] = True`.
+- If genuinely nothing in the library fits, leave `meme_slug` unset (it will fall back to stock video) and say so in your reply so Isabel can add a clip.
+
+GitHub Actions renders `meme_library/clips/<meme_slug>.mp4` with your overlay (or the same slug already on the post) and re-posts it to the thread.
+- `done.append(f"🎨 {post['label']} — rebuilding as the '{post.get('meme_slug','(stock)')}' meme with new text: \"{new_line}\" (updated version will post here shortly)")`
 
 **NEW BACKGROUND (quotes)** — "use a different photo for quote 1", "new background on quote 2":
 - `post["needs_new_background"] = True` (keeps the same quote + attribution).

@@ -1,0 +1,109 @@
+{
+  "_comment": "Vetted, watermark-free meme clips for Zenie. Each was frame-checked clean. The drafting agent and the feedback agent pick the best-matching slug for a meme concept and write it to review-state.json as `meme_slug`; GitHub Actions renders meme_library/clips/<slug>.mp4 with the overlay text (fit-with-blur). NO-REPEAT RULE: a slug listed in meme_library/used.json has already been used and must NEVER be reused, even with a different caption — always pick from library minus used. When that set is empty, the library is exhausted; add new clips. To add a clip: source a clean HD GIF, frame-check every corner for watermarks/handles/network bugs, normalize to meme_library/clips/<slug>.mp4, and add an entry here. All clips render centered over a blurred background so the whole meme stays visible.",
+  "clips": [
+    {
+      "slug": "kermit_typing",
+      "title": "Kermit typing furiously",
+      "file": "meme_library/clips/kermit_typing.mp4",
+      "vibes": ["manic", "frantic productivity", "delusional ambition", "overcommitting", "late-night energy", "manifesting", "trying way too hard"],
+      "use_when": "Over-the-top, manic productivity or self-improvement energy — journaling, planning, or manifesting like you're single-handedly about to change your entire life at 3am.",
+      "example_overlay": "me at 3am journaling like i'm about to change my entire life"
+    },
+    {
+      "slug": "math_lady",
+      "title": "Confused Math Lady (woman with floating equations)",
+      "file": "meme_library/clips/math_lady.mp4",
+      "vibes": ["overthinking", "calculating", "spiraling", "analyzing every detail", "mentally unwell", "trying to make it make sense"],
+      "use_when": "Frantically calculating or overthinking something simple — decoding a text, doing relationship math. The woman looks completely out of her mind doing equations.",
+      "example_overlay": "me calculating exactly how long to wait before texting him back"
+    },
+    {
+      "slug": "kombucha_girl",
+      "title": "Kombucha Girl (skeptical taste then reconsidering)",
+      "file": "meme_library/clips/kombucha_girl.mp4",
+      "vibes": ["skeptical", "mixed feelings", "conflicted", "ehh maybe", "judging then reconsidering", "intrigued against my will"],
+      "use_when": "Conflicted, mixed-feelings reaction — something is questionable but you're weirdly into it, or you start out judging and end up reconsidering (red flags you're choosing to ignore).",
+      "example_overlay": "when he says he's 'not really looking for anything serious'"
+    },
+    {
+      "slug": "monkey_puppet",
+      "title": "Awkward Look Monkey Puppet (nervous side-eye)",
+      "file": "meme_library/clips/monkey_puppet.mp4",
+      "vibes": ["awkward", "caught", "guilty", "nervous side-eye", "pretending I didn't do that", "uncomfortable"],
+      "use_when": "Awkward, caught-red-handed, or guilty side-eye energy — when you said/did something you shouldn't have, or a situation suddenly got uncomfortable.",
+      "example_overlay": "when she asks if i've been journaling and i lie"
+    },
+    {
+      "slug": "this_is_fine",
+      "title": "This Is Fine dog (sitting calmly in a burning room)",
+      "file": "meme_library/clips/this_is_fine.mp4",
+      "vibes": ["coping", "denial", "everything is chaos but pretending it's okay", "forced calm", "burnout", "barely holding it together"],
+      "use_when": "Forced-calm-amid-total-chaos energy — pretending everything is fine while your life is on fire. Coping, denial, holding it together by a thread.",
+      "example_overlay": "me journaling 'today was a good day' after the worst week of my life"
+    },
+    {
+      "slug": "mj_popcorn",
+      "title": "Michael Jackson eating popcorn (Thriller)",
+      "file": "meme_library/clips/mj_popcorn.mp4",
+      "vibes": ["here for the drama", "watching it unfold", "entertained by chaos", "nosy", "loving the tea", "spectating"],
+      "use_when": "Sitting back and enjoying drama that isn't yours — watching the group chat or a friend's situationship implode while you snack.",
+      "example_overlay": "me reading the group chat while two of my friends fight over the same guy"
+    },
+    {
+      "slug": "disaster_girl",
+      "title": "Disaster Girl (smirking in front of a house fire)",
+      "file": "meme_library/clips/disaster_girl.mp4",
+      "vibes": ["chaotic", "villain energy", "secretly the problem", "no regrets", "menacing", "i did that"],
+      "use_when": "Gleeful chaos / villain energy — when you caused the mess and aren't sorry, or you're thriving in the disaster.",
+      "example_overlay": "me walking away after telling my friend exactly what i think of her ex"
+    },
+    {
+      "slug": "side_eye_chloe",
+      "title": "Side-Eyeing Chloe (skeptical little girl)",
+      "file": "meme_library/clips/side_eye_chloe.mp4",
+      "vibes": ["skeptical", "unimpressed", "side-eye", "judging", "not buying it", "suspicious"],
+      "use_when": "Deeply skeptical, unimpressed side-eye — when someone says something you absolutely do not believe.",
+      "example_overlay": "when he says 'i barely even talk to my ex anymore'"
+    },
+    {
+      "slug": "amazing_sweetie",
+      "title": "Kris Jenner 'you're doing amazing sweetie'",
+      "file": "meme_library/clips/amazing_sweetie.mp4",
+      "vibes": ["supportive", "hyping you up", "proud mom energy", "encouraging", "bestie support", "cheerleader"],
+      "use_when": "Over-the-top supportive bestie/mom energy — hyping someone up no matter how questionable the decision.",
+      "example_overlay": "me to my bestie after she texts him back in 0.2 seconds"
+    },
+    {
+      "slug": "taylor_shocked",
+      "title": "Shocked reaction at an awards show",
+      "file": "meme_library/clips/taylor_shocked.mp4",
+      "vibes": ["shocked", "gasp", "caught off guard", "stunned", "did not see that coming", "jaw drop"],
+      "use_when": "Genuine shock / jaw-drop — reacting to surprising news or a plot twist.",
+      "example_overlay": "when she says they're 'just friends' but he liked all her 2019 photos"
+    },
+    {
+      "slug": "spongebob_imagination",
+      "title": "SpongeBob 'imagination' rainbow hands",
+      "file": "meme_library/clips/spongebob_imagination.mp4",
+      "vibes": ["delusional fantasy", "daydreaming", "manifesting", "romanticizing", "living in my head", "best-case scenario"],
+      "use_when": "Romanticizing or fantasizing about a delusional best-case scenario in your head after the smallest sign of interest.",
+      "example_overlay": "me planning our whole future after one decent text back"
+    },
+    {
+      "slug": "spongebob_mocking",
+      "title": "Mocking SpongeBob (chicken pose)",
+      "file": "meme_library/clips/spongebob_mocking.mp4",
+      "vibes": ["mocking", "sarcastic", "repeating what he said", "petty", "clowning", "imitating"],
+      "use_when": "Sarcastically mocking or repeating back something someone said — classic mocking-SpongeBob energy.",
+      "example_overlay": "him: i'm just really bad at texting back"
+    },
+    {
+      "slug": "confused_nick_young",
+      "title": "Nick Young confused (face with question marks)",
+      "file": "meme_library/clips/confused_nick_young.mp4",
+      "vibes": ["confused", "huh", "wait what", "makes no sense", "lost", "does not add up"],
+      "use_when": "Pure confusion — when something genuinely doesn't add up and you have visible question marks over your head.",
+      "example_overlay": "when he says he misses me but never once makes a plan"
+    }
+  ]
+}
