@@ -1,0 +1,22 @@
+Morning Briefing June 24, 2026
+
+=== ROBOTICS & AI ===
+- MWC Shanghai 2026 opened today with HONOR's humanoid robots Flash and Vita Boy walking on stage before any human speaker, as GSMA declared 5G-Advanced networks the "nervous system of embodied AI"; the 3-day event runs through June 26 with 500 exhibitors. https://www.techtimes.com/articles/318972/20260624/mwc-shanghai-2026-humanoid-robots-open-day-one-telcos-declare-embodied-ai-era.htm
+
+- NVIDIA announced Halos for Robotics on June 22 at Automate 2026 in Chicago, the industry's first full-stack safety system for physical AI spanning compute (IGX Thor), sensor connectivity (Holoscan Sensor Bridge), safety OS, and a certification lab; Agility Robotics is the first adopter. https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai
+
+- Alphabet's Intrinsic unveiled the Intelligence Cell at Automate 2026 (June 22, Chicago), a modular AI workcell on IntrinsicOS that eliminates manual robot coding and enables high-mix small-batch production via FANUC-powered assembly demos. https://www.therobotreport.com/how-intrinsic-eliminates-manual-robot-coding/
+
+=== RESEARCH ===
+- No confirmed research publications or AI breakthroughs within the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No confirmed robotics or AI funding announcements within the last 48 hours.
+
+=== COMPETITOR WATCH ===
+No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Robotics Center of Silicon Valley SF HQ Grand Opening, June 26, San Francisco — free event featuring Unitree, Booster, and AgiBot humanoid demos plus ALOHA Arm, Piper, and OpenArm; starts 6 PM. https://www.roboticscenter.ai/events
+
+- Deep Tech Week SF 2026 (ongoing through June 26), 945 Market St, San Francisco — robotics, physical AI, space, and defense conference; closes Friday with RunRobot x UFB: LIVE Playground demo. https://www.deep-tech-week.com/sf-2026
