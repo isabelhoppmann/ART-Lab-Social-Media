@@ -8,7 +8,7 @@
 
 ## Meme 1 — Late-night journaling / reinventing myself
 
-**Source:** Pexels stock video 8705262 — "Woman writing on a notebook while in bed" (https://www.pexels.com/video/woman-writing-on-a-notebook-while-in-bed-8705262/). Regenerated locally 2026-06-22 after the cloud agent's sandbox blocked all media CDNs.
+**Source:** Giphy reaction GIF (creator BlackBoujeeBeauty) — woman in towel turban + sunglasses with "The Five Minute Journal" (https://media.giphy.com/media/nmikxwV7wY9oHneZr4/giphy.gif). Real reaction-meme clip, crop-filled full-frame (no blur-pad); sourced locally 2026-06-25. Clip depicts the joke (journaling).
 
 **overlay_text:** Me at 3am writing in my journal like I'm about to change my entire life
 
@@ -22,17 +22,17 @@
 
 ---
 
-## Meme 2 — Talking stage chaos / emotional availability humor
+## Meme 2 — "I'm fine" but visibly not fine
 
-**Source:** Pexels stock video 5234890 — "Woman talking on the mobile phone" (https://www.pexels.com/video/woman-talking-on-the-mobile-phone-5234890/). Regenerated locally 2026-06-22 after the cloud agent's sandbox blocked all media CDNs.
+**Source:** Giphy reaction GIF (creator renzufu) — close-up of a woman visibly sweating / holding it together (https://media.giphy.com/media/eTQlZaiOms9yqQNW08/giphy.gif). Real reaction-meme clip, crop-filled full-frame (no blur-pad); sourced locally 2026-06-25. Clip depicts the joke (visible sweating). Theme changed from the earlier talking-stage concept so the footage and caption align.
 
-**overlay_text:** When he finally texts back and now you don't know how to act normal
+**overlay_text:** me insisting i'm totally fine while visibly sweating through the entire conversation
 
-**ig_caption:** The cognitive dissonance is real 😭
+**ig_caption:** so normal. so chill. so fine 😅
 
-**fb_caption:** Why does getting what you wanted suddenly make you spiral? 😂 Drop a 💀 if this is you during the talking stage.
+**fb_caption:** Why does my body always expose me at the worst possible moment? 😂 Tag someone who's a pro at the fake "I'm fine."
 
-**hashtags:** #Zenie #zenieapp #DatingHumor #TalkingStage #RelationshipMemes #GlowUp #WomenWhoJournal
+**hashtags:** #Zenie #zenieapp #ImFine #Relatable #AnxietyHumor #SelfAwareness #WomenWhoJournal
 
 **Best time to post:** Wednesday 6–8 PM EST
 

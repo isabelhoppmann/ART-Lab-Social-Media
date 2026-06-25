@@ -167,6 +167,7 @@ used = {u["slug"] for u in _raw("meme_library/used.json").get("used", [])}
 available = [c for c in lib if c["slug"] not in used]
 ```
 2. From `available` ONLY, pick the TWO clips whose `vibes`/`use_when` best fit your two trending meme ideas this week. The two MUST be different slugs. Read each chosen clip's `example_overlay` for tone.
+   - **THE CLIP AND THE JOKE MUST ALIGN — the clip has to DEPICT the joke's scenario, not just match its "energy" (REQUIRED, Isabel's rule).** A viewer should look at the footage and see the situation the caption describes. Correct: a journaling joke → a journaling/notebook clip; an "I'm fine but not fine" joke → a clip of someone visibly cracking/sweating (e.g. `fake_smile`, `this_is_fine`, `dead_inside_stare`); a texting joke → a clip of someone on their phone (e.g. `kermit_typing`). WRONG: pairing a sweating or shifty-eyes clip with a texting joke just because the anxious energy matches. If no available clip depicts your meme idea, change the joke/topic to fit a clip that does — alignment beats any pre-decided caption.
 3. **NO-REPEAT RULE (critical):** never pick a slug listed in `used` — a format may be used only ONCE, ever, even with a different caption. If `available` has fewer than 2 clips, cover only the meme(s) you can and note in the Slack handoff that the meme library is running low and needs new clips added. Never reuse a used clip.
 4. Record each meme's chosen slug (you'll write it to review-state as `meme_slug` in Step 7). Then write the FOUR pieces of copy described just below, making the joke fit BOTH the chosen clip's energy and this week's topic. After that, go straight to Step 2B — skip Step 2A-PEXELS and Step 2A.5 entirely.
 
@@ -193,7 +194,7 @@ For each meme, search for the specific trending format:
 
 For each meme produce FOUR pieces of text (write these for BOTH memes — they apply whether the clip came from the library or legacy sourcing):
 
-- **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Should feel like it was written *for* this specific GIF's energy — not interchangeable with any other clip. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
+- **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Must describe the actual scene in THIS clip — someone looking at it should recognize the situation in the footage (see the alignment rule in Step 2A). Not interchangeable with any other clip. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
 - **`ig_caption`** — short reaction/wink for the Instagram caption field. 2–8 words + optional emoji. Do NOT repeat overlay_text — riff on it. Examples: *"She knows…"*, *"He couldn't do anything to make me happier!"*
 - **`fb_caption`** — Facebook caption. More conversational, 1–3 sentences. Drive a reaction or question to spark comments/shares (FB algorithm rewards both). Example: *"Okay but why does this describe my entire Tuesday? 😅 Tag a friend who gets it."*
 - **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp. Same set used on both platforms.
