@@ -118,18 +118,17 @@ def make_mp4(src, overlay_text, out_path):
     subprocess.run(cmd, check=True, capture_output=True)
 
 
-def make_mp4_fit(src, overlay_text, out_path):
-    """Render a landscape/square meme clip into a 9:16 frame by fitting the WHOLE
-    clip centered over a blurred, scaled-up copy of itself. Used for library meme
-    clips (Kermit, Math Lady, etc.) — a center-crop would zoom in and cut off the
-    parts that make the meme recognizable, so we letterbox over a blur instead."""
+def make_mp4_square(src, overlay_text, out_path):
+    """Render a meme clip into a 1080x1080 SQUARE (a native Instagram feed size) by
+    crop-filling: scale up until the clip covers the square, then center-crop. NO
+    background/letterbox of any kind (Isabel's rule: memes must natively fit IG
+    sizing, never sit on a background). Square library clips fill pixel-perfect;
+    landscape clips get a gentle side-crop that keeps the full height and the
+    centered subject — recognizable, with no blurred/padded bars."""
     card = "/tmp/zenie_card.png"
     render_text_card(overlay_text, card)
-    fc = ("[0:v]split=2[a][b];"
-          "[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=25:3,eq=brightness=-0.10[bg];"
-          "[b]scale=1080:1920:force_original_aspect_ratio=decrease[fg];"
-          "[bg][fg]overlay=(W-w)/2:(H-h)/2[base];"
-          "[base][1:v]overlay=0:H-h-60[v]")
+    fc = ("[0:v]scale=1080:1080:force_original_aspect_ratio=increase,crop=1080:1080,setsar=1[base];"
+          "[base][1:v]overlay=0:H-h-40[v]")
     cmd = ["ffmpeg", "-y", "-stream_loop", "-1", "-t", "6", "-i", src, "-i", card,
            "-filter_complex", fc, "-map", "[v]", "-t", "6", "-r", "30", "-c:v", "libx264",
            "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-an", out_path]
@@ -143,8 +142,10 @@ def verify(path):
                             "stream=width,height,codec_type", "-of", "json", path],
                            capture_output=True, text=True)
     s = [x for x in json.loads(probe.stdout)["streams"] if x.get("codec_type") == "video"][0]
-    if (s["width"], s["height"]) != (1080, 1920):
-        raise RuntimeError(f"bad dims {s['width']}x{s['height']}")
+    # Library memes render square 1080x1080; the Pexels portrait fallback renders
+    # vertical 1080x1920. Both are native Instagram sizes with no background.
+    if s["width"] != 1080 or s["height"] not in (1080, 1920):
+        raise RuntimeError(f"bad dims {s['width']}x{s['height']} (expected 1080x1080 or 1080x1920)")
 
 
 def pick_and_render(overlay_text, out_path, source_url=None):
@@ -310,15 +311,15 @@ def main():
         overlay = post.get("overlay_text", "")
         out_path = f"posts/{week}/meme_{n}.mp4"
         # Preferred source: a vetted library clip the agent picked (meme_slug).
-        # These are real, recognizable, watermark-free memes — rendered fit-with-blur
-        # so the whole meme stays visible. Falls back to Pexels stock if no slug.
+        # These are real, recognizable, watermark-free memes — rendered square 1:1
+        # (crop-fill, no background). Falls back to Pexels stock if no slug.
         slug = post.get("meme_slug")
         lib_clip = os.path.join(LIBRARY_DIR, f"{slug}.mp4") if slug else None
         why = "feedback re-render" if needs_feedback_render else "skipped/missing"
         try:
             if lib_clip and os.path.exists(lib_clip):
                 print(f"Regenerating {label} ({why}) from library '{slug}' (overlay: {overlay!r})")
-                make_mp4_fit(lib_clip, overlay, out_path)
+                make_mp4_square(lib_clip, overlay, out_path)
                 verify(out_path)
                 mark_meme_used(slug, week, label)   # consume it — never reuse
                 source_desc = f"library:{slug}"
