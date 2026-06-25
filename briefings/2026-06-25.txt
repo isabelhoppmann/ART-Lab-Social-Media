@@ -1,0 +1,16 @@
+Morning Briefing June 25, 2026
+
+=== ROBOTICS & AI ===
+- MWC Shanghai 2026 opened June 24 with humanoid robots walking on stage before any human speaker, as GSMA declared the mobile industry has formally shifted its mission from connecting people to enabling intelligent machines, with AgiBot spotlighted for its Robotics-as-a-Service deployments in aviation and logistics. https://www.techtimes.com/articles/318972/20260624/mwc-shanghai-2026-humanoid-robots-open-day-one-telcos-declare-embodied-ai-era.htm
+
+=== RESEARCH ===
+- MIT published research on June 23 introducing Gleanmer, a 6 mW system-on-a-chip that enables tiny robots and drones to build real-time 3D maps of their surroundings in a single pass using minimal memory and power, enabling autonomous navigation in confined spaces like warehouses, tunnels, and ventilation systems. https://news.mit.edu/2026/new-chip-could-help-tiny-robots-traverse-complex-environments-0623
+
+=== FUNDING & INVESTMENT ===
+- Agility Robotics (maker of the Digit v5 bipedal humanoid) agreed on June 24, 2026 to go public via SPAC merger with Churchill Capital Corp XI at a $2.5B pre-money valuation, expected to generate $620M+ in proceeds; the deal would create the only U.S.-listed pure-play humanoid company with active commercial deployments at GXO, Schaeffler, and Toyota Motor Manufacturing Canada, with $300M+ in contracted orders. https://www.businesswire.com/news/home/20260624555633/en/Agility-Robotics-to-Go-Public-Through-$2.5-Billion-Merger-with-Churchill-Capital-Corp-XI
+
+=== COMPETITOR WATCH ===
+- [1X Technologies] CEO Bernt Bornich announced June 24 that 1X is accelerating the release of its NEO humanoid developer platform to software researchers, citing the need for a viable Western alternative after U.S. import restrictions began cutting AI labs off from Chinese-supplied Unitree robots. https://www.humanoidsdaily.com/news/1x-accelerates-neo-developer-release-to-counter-u-s-bans-on-chinese-humanoids
+
+=== BAY AREA ===
+- Robotics Center of Silicon Valley Grand Opening of SF HQ + Robots & Data meetup, June 26 (tomorrow), 6-9 PM, 90 Welsh St, San Francisco - free with RSVP, featuring live demos of Unitree, Booster, AgiBot, ALOHA Arm, and tactile hardware. https://www.roboticscenter.ai/events
