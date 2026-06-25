@@ -1,0 +1,78 @@
+name: Daily Briefing
+
+# The claude.ai routine (free under the Claude subscription) researches and
+# composes the briefing and EMAILS it. This Action fetches that email via the
+# Gmail API and publishes it — no Claude API call, so no metered cost.
+#
+# Background: the routine's sandbox can no longer write to api.github.com (its
+# managed GitHub proxy rejects the hardcoded PAT -> "502 builtin injection
+# failed"). A GitHub Action has native GitHub access, so it handles the publish
+# the sandbox can't.
+
+on:
+  schedule:
+    - cron: '30 14 * * 1-5'   # 14:30 UTC Mon–Fri — ~30 min after the routine's 14:00 run
+  workflow_dispatch:           # lets you run it on demand to test
+
+permissions:
+  contents: write              # to commit + push today's briefing file
+
+concurrency:
+  group: daily-briefing
+  cancel-in-progress: false
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch briefing from email and write file
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: python .github/scripts/publish_from_email.py
+
+      - name: Detect new briefing file
+        id: detect
+        run: |
+          FILE=$(git status --porcelain briefings/ | awk '{print $2}' | head -n 1)
+          if [ -n "$FILE" ]; then
+            echo "created=true" >> "$GITHUB_OUTPUT"
+            echo "file=$FILE" >> "$GITHUB_OUTPUT"
+            echo "New briefing: $FILE"
+          else
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            echo "No new briefing (already published today, or skipped)."
+          fi
+
+      - name: Commit & push
+        if: steps.detect.outputs.created == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add briefings/
+          git commit -m "Briefing $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Post to Slack
+        if: steps.detect.outputs.created == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+          BRIEFING_FILE: ${{ steps.detect.outputs.file }}
+        run: python .github/scripts/post_to_slack.py
+
+      - name: Notify error channel on failure
+        if: failure()
+        env:
+          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST -H 'Content-Type: application/json' \
+            -d "{\"text\":\"⚠️ Daily Briefing Action failed for $(date -u +%Y-%m-%d). Check the Actions tab: https://github.com/${GITHUB_REPOSITORY}/actions\"}" \
+            "$SLACK_ERROR_WEBHOOK_URL" || true
