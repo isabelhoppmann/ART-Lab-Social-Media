@@ -1,0 +1,75 @@
+name: Daily Briefing
+
+# Replaces the old claude.ai routine (its sandbox can no longer write to
+# api.github.com). A GitHub Action has native GitHub access, so the publish
+# step that used to fail with "502 builtin injection failed" just works here.
+
+on:
+  schedule:
+    - cron: '0 14 * * 1-5'   # 14:00 UTC, Mon–Fri (same slot as the old routine)
+  workflow_dispatch:          # lets you run it on demand to test
+
+permissions:
+  contents: write             # to commit + push today's briefing file
+
+concurrency:
+  group: daily-briefing
+  cancel-in-progress: false
+
+jobs:
+  briefing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install --quiet anthropic
+
+      - name: Generate briefing
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: claude-opus-4-8   # set to claude-sonnet-4-6 to cut cost ~40%
+        run: python .github/scripts/generate_briefing.py
+
+      - name: Detect new briefing file
+        id: detect
+        run: |
+          FILE=$(git status --porcelain briefings/ | awk '{print $2}' | head -n 1)
+          if [ -n "$FILE" ]; then
+            echo "created=true" >> "$GITHUB_OUTPUT"
+            echo "file=$FILE" >> "$GITHUB_OUTPUT"
+            echo "New briefing: $FILE"
+          else
+            echo "created=false" >> "$GITHUB_OUTPUT"
+            echo "No new briefing (already published today, or skipped)."
+          fi
+
+      - name: Commit & push
+        if: steps.detect.outputs.created == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add briefings/
+          git commit -m "Briefing $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Post to Slack
+        if: steps.detect.outputs.created == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+          BRIEFING_FILE: ${{ steps.detect.outputs.file }}
+        run: python .github/scripts/post_to_slack.py
+
+      - name: Notify error channel on failure
+        if: failure()
+        env:
+          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST -H 'Content-Type: application/json' \
+            -d "{\"text\":\"⚠️ Daily Briefing Action failed for $(date -u +%Y-%m-%d). Check the Actions tab: https://github.com/${GITHUB_REPOSITORY}/actions\"}" \
+            "$SLACK_ERROR_WEBHOOK_URL" || true
