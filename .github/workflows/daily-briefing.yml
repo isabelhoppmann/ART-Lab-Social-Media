@@ -1,16 +1,21 @@
 name: Daily Briefing
 
-# Replaces the old claude.ai routine (its sandbox can no longer write to
-# api.github.com). A GitHub Action has native GitHub access, so the publish
-# step that used to fail with "502 builtin injection failed" just works here.
+# The claude.ai routine (free under the Claude subscription) researches and
+# composes the briefing and EMAILS it. This Action fetches that email via the
+# Gmail API and publishes it — no Claude API call, so no metered cost.
+#
+# Background: the routine's sandbox can no longer write to api.github.com (its
+# managed GitHub proxy rejects the hardcoded PAT -> "502 builtin injection
+# failed"). A GitHub Action has native GitHub access, so it handles the publish
+# the sandbox can't.
 
 on:
   schedule:
-    - cron: '0 14 * * 1-5'   # 14:00 UTC, Mon–Fri (same slot as the old routine)
-  workflow_dispatch:          # lets you run it on demand to test
+    - cron: '30 14 * * 1-5'   # 14:30 UTC Mon–Fri — ~30 min after the routine's 14:00 run
+  workflow_dispatch:           # lets you run it on demand to test
 
 permissions:
-  contents: write             # to commit + push today's briefing file
+  contents: write              # to commit + push today's briefing file
 
 concurrency:
   group: daily-briefing
@@ -26,14 +31,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install --quiet anthropic
-
-      - name: Generate briefing
+      - name: Fetch briefing from email and write file
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          MODEL: claude-opus-4-8   # set to claude-sonnet-4-6 to cut cost ~40%
-        run: python .github/scripts/generate_briefing.py
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: python .github/scripts/publish_from_email.py
 
       - name: Detect new briefing file
         id: detect
