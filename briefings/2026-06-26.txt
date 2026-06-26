@@ -1,0 +1,18 @@
+Morning Briefing June 26, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- General Intuition raised $320 million at a $2.3 billion valuation on June 25, 2026, to scale AI trained on millions of hours of video game data toward real-world robot and agent decision-making. https://techcrunch.com/2026/06/25/from-fortnite-to-robots-general-intuitions-2-3b-bet-that-video-games-can-train-ai-agents-for-the-real-world/
+- Patronus AI raised $50 million on June 25, 2026, to build simulation environments that stress-test AI agents for safety and robustness before real-world deployment. https://techcrunch.com/2026/06/25/patronus-ai-lands-50m-to-build-digital-worlds-that-stress-test-ai-agents/
+
+=== COMPETITOR WATCH ===
+- OpenAI and Broadcom unveiled Jalapeño on June 24, 2026, OpenAI's first custom AI inference chip, developed in nine months and targeting initial deployment by end of 2026 to power LLM inference at gigawatt-scale data centers. https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/
+- The White House told OpenAI on June 25, 2026, to restrict its newest model GPT-5.6 to a small group of close partners over safety concerns, marking the first known U.S. government intervention to limit an AI model release. https://techcrunch.com/2026/06/25/the-white-house-is-asking-openai-to-slow-roll-the-release-of-its-new-model-over-safety-concerns/
+
+=== BAY AREA ===
+- AI Engineer World's Fair runs June 29 to July 2 at Moscone West in San Francisco, with 6,000+ engineers, founders, and researchers attending 20+ technical tracks on LLMs, agents, and AI infrastructure. https://www.ai.engineer/worldsfair/2026
