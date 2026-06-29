@@ -684,6 +684,8 @@ make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", bg_2)
 
 Build the file as a single Python string (`drafts_md`), then push it in Step 3 alongside the other assets. Do NOT call the GitHub API to push `zenie_drafts.md` from any earlier step.
 
+**Posting-time timezone — ALWAYS PST.** Every `**Best time to post:**` value in this file (memes, quotes, reposts) MUST be expressed in Pacific time and labelled `PST` — e.g. `Tuesday 6–8 PM PST`. Do NOT use EST. The same PST `best_time` string flows into Notion (Step 6) and is converted to a UTC Scheduled Date there.
+
 ### Header (always)
 
 ```
@@ -910,17 +912,25 @@ New entry: <a class="week latest" href="posts/[DATE]/"><span class="week-date">[
 
 ## Step 6: Save posts to Notion database
 
-After pushing files to GitHub, save the **quote images only** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
+After pushing files to GitHub, save the **two quote images and the two reposts** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
 
-**Save 2 posts (the two quote images only).** Do NOT create Notion rows for the memes — the render step (`regenerate_memes.py`) creates each meme's Notion row automatically when it renders the library clip, so creating them here would duplicate them. Skip reposts as before. (The Meme 1/Meme 2 property templates below are kept only as a field reference for the automated render step.)
+**Save 4 posts (the two quote images + the two reposts).** Do NOT create Notion rows for the memes — the render step (`regenerate_memes.py`) creates each meme's Notion row automatically when it renders the library clip, so creating them here would duplicate them. (The Meme 1/Meme 2 property templates below are kept only as a field reference for the automated render step.)
+
+### Idempotency — check BEFORE creating (prevents retry duplicates)
+This step can run more than once for the same week: if an earlier run failed partway (e.g. an egress/proxy error blocked the GitHub push or Slack post), the agent gets re-invoked and reaches Step 6 again. `notion-create-pages` ALWAYS creates new rows, so a naive re-run produces duplicate `Quote 1 — [DATE]` / `Quote 2 — [DATE]` / `Repost 1 — [DATE]` / `Repost 2 — [DATE]` pages (this happened on 2026-06-29: three of each quote). Before creating, you MUST check for an existing row for **each of the 4 slots** (`Quote 1`, `Quote 2`, `Repost 1`, `Repost 2`):
+1. Call `notion-search` with `data_source_url: collection://468afa8e-3a1a-49dd-8852-c130077221d5` and query the exact slot name, e.g. `Quote 1 — [DATE]`, then `Quote 2 — [DATE]`, then `Repost 1 — [DATE]`, then `Repost 2 — [DATE]`. Do NOT use `notion-query-data-sources` — it is gated on this workspace.
+2. If a page titled EXACTLY `<slot> — [DATE]` already exists, UPDATE it in place with `notion-update-page` (`update_properties`) using the properties below — do not create a second one.
+3. Only call `notion-create-pages` for a slot that has no existing row.
+
+This makes Step 6 safe to re-run: exactly one row per slot per week, no matter how many times the agent retries. (Note: Notion's search index can lag a minute or two behind a just-created page, so this catches retries that are minutes apart but is not bulletproof for back-to-back runs. The fully robust fix is to move quote-row creation into the `post-social-to-slack` Action the same way memes already work — the Action runs once per pipeline, so it cannot duplicate. Do that if retry-duplication recurs.)
 
 ### Calculating Scheduled Dates
-Each post has a recommended Best Time (e.g. "Wednesday 7–9 PM EST"). Convert this into a real ISO-8601 datetime for the coming week starting from today's date (the date you are running):
+Each post has a recommended Best Time (e.g. "Wednesday 7–9 PM PST"). Convert this into a real ISO-8601 datetime for the coming week starting from today's date (the date you are running):
 - Find the next occurrence of that weekday at the midpoint of the time range (e.g. "7–9 PM" → 20:00, "6–8 PM" → 19:00, "10 AM–12 PM" → 11:00)
-- Use EST = UTC-5 offset, so add 5 hours (e.g. 8 PM EST = 01:00 next day UTC)
+- Convert that Pacific local time to UTC. Pacific is **UTC-7 during US daylight saving** (roughly mid-March to early November — this covers most of the year) and **UTC-8 otherwise**; pick the offset that applies to the run date. So in summer 8 PM PST → add 7 hours = 03:00 next day UTC; in winter add 8 hours.
 - Format: `YYYY-MM-DDTHH:MM:00.000+00:00`
 - If the weekday has already passed this week, use next week's occurrence
-- All 4 posts must be on different days
+- Spread the posts across different days — aim for all 6 (2 memes, 2 quotes, 2 reposts) on distinct days where possible, and never schedule two on the same day+time
 
 For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49dd-8852-c130077221d5` and these properties:
 
@@ -972,9 +982,33 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Scheduled Date: calculated ISO-8601 datetime
 - Week: [DATE]
 
-After creating the 2 quote rows, print: "Saved 2 quote posts to Notion (memes are added automatically by the render step)."
+**Repost 1:** *(the Zenie Posts DB has no Creator field, so put the credit in the caption and the reel link in Media URL)*
+- Name: `Repost 1 — [DATE]`
+- Post Type: `Repost`
+- Caption: the repost caption (the IG-facing reshare caption)
+- FB Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]`
+- Hashtags: the repost hashtags (if any)
+- Media URL: the **direct Instagram reel URL** being reposted (this is the link, not a file we host)
+- Status: `Draft`
+- Best Time: the recommended posting time text
+- Scheduled Date: calculated ISO-8601 datetime
+- Week: [DATE]
 
-Make sure every post (both memes and both quotes) has a distinct `best_time` on a different day — the render step computes the memes' Notion Scheduled Date from their `best_time`, so distinct days still matter.
+**Repost 2:**
+- Name: `Repost 2 — [DATE]`
+- Post Type: `Repost`
+- Caption: the repost caption
+- FB Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]`
+- Hashtags: the repost hashtags (if any)
+- Media URL: the direct Instagram reel URL being reposted
+- Status: `Draft`
+- Best Time: the recommended posting time text
+- Scheduled Date: calculated ISO-8601 datetime
+- Week: [DATE]
+
+After creating the rows, print: "Saved 2 quote + 2 repost posts to Notion (memes are added automatically by the render step)."
+
+Make sure every post (both memes, both quotes, and both reposts) has a distinct `best_time` on a different day — the render step computes the memes' Notion Scheduled Date from their `best_time`, so distinct days still matter.
 
 
 
