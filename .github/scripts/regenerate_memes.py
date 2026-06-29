@@ -242,8 +242,20 @@ def mark_meme_used(slug, week, label):
         print(f"  marked '{slug}' used (no-repeat)")
 
 
+def _pacific_to_utc_hours(target):
+    """Hours to ADD to a Pacific local time to get UTC: 7 during US daylight
+    saving (PDT, 2nd Sun of March → 1st Sun of November), else 8 (PST)."""
+    import datetime as dt
+    y = target.year
+    mar = dt.date(y, 3, 1)
+    dst_start = mar + dt.timedelta(days=(6 - mar.weekday()) % 7 + 7)  # 2nd Sunday of March
+    nov = dt.date(y, 11, 1)
+    dst_end = nov + dt.timedelta(days=(6 - nov.weekday()) % 7)        # 1st Sunday of November
+    return 7 if dst_start <= target < dst_end else 8
+
+
 def parse_scheduled_date(best_time):
-    """Best-effort: 'Thursday 7-9 PM EST' -> ISO-8601 UTC for the next such weekday
+    """Best-effort: 'Thursday 7-9 PM PST' -> ISO-8601 UTC for the next such weekday
     at the time-range midpoint (mirrors AGENT_INSTRUCTIONS Step 6). None if unparseable."""
     import datetime as dt
     if not best_time:
@@ -264,8 +276,8 @@ def parse_scheduled_date(best_time):
         h = 0
     today = dt.datetime.utcnow().date()
     target = today + dt.timedelta(days=(wd - today.weekday()) % 7)
-    est_dt = dt.datetime(target.year, target.month, target.day, h % 24, 0)
-    utc_dt = est_dt + dt.timedelta(hours=5)          # EST = UTC-5
+    pt_dt = dt.datetime(target.year, target.month, target.day, h % 24, 0)
+    utc_dt = pt_dt + dt.timedelta(hours=_pacific_to_utc_hours(target))   # Pacific (PST/PDT) → UTC
     return utc_dt.strftime("%Y-%m-%dT%H:%M:00.000+00:00")
 
 
