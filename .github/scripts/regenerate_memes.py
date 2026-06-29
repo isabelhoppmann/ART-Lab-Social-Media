@@ -82,7 +82,23 @@ def pexels_download(mp4_url, out_path):
         f.write(r.read())
 
 
+# The bold sans-serif overlay font has no color-emoji glyphs, so any emoji in the
+# overlay text renders as a tofu box (□) burned into the video. Strip emoji +
+# symbols/dingbats/flags/variation-selectors from the BURNED-IN text only (the
+# Slack/IG captions keep their emoji — those render fine as real text).
+_EMOJI_RE = re.compile(
+    "[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U0001F1E6-\U0001F1FF"
+    "\U00002B00-\U00002BFF\U0000FE00-\U0000FE0F\U0000200D]+",
+    flags=re.UNICODE,
+)
+
+
+def strip_unrenderable(text):
+    return re.sub(r"\s+", " ", _EMOJI_RE.sub("", text or "")).strip()
+
+
 def render_text_card(text, path):
+    text = strip_unrenderable(text)
     font_path = next((p for p in FONT_CANDIDATES if os.path.exists(p)), None)
     if not font_path:
         raise RuntimeError("no bold sans-serif font found")

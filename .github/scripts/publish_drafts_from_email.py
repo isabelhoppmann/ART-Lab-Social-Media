@@ -91,16 +91,25 @@ def find_bundle_email(token, today_str):
         "https://gmail.googleapis.com/gmail/v1/users/me/messages?q="
         + urllib.parse.quote(query)
     )
-    listing = gmail_get(list_url, token)
-    msgs = listing.get("messages") or []
-    if not msgs:
-        return None
-    # Newest first; take the most recent match.
-    msg = gmail_get(
-        f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msgs[0]['id']}?format=full",
-        token,
-    )
-    return extract_plain_body(msg.get("payload", {}))
+    # Newest first. Subject search can collide with watchdog/failure emails that
+    # share the words "Zenie Drafts", so return the newest one whose body actually
+    # parses AND validates as a bundle — not merely the newest subject match.
+    msgs = gmail_get(list_url, token).get("messages") or []
+    for m in msgs:
+        msg = gmail_get(
+            f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{m['id']}?format=full",
+            token,
+        )
+        body = extract_plain_body(msg.get("payload", {}))
+        if not body:
+            continue
+        try:
+            bundle = parse_bundle(body)
+        except Exception:
+            continue
+        if validate(bundle, today_str) is None:
+            return body
+    return None
 
 
 def parse_bundle(body):
