@@ -1,0 +1,16 @@
+Morning Briefing June 29, 2026
+
+=== ROBOTICS & AI ===
+- AGIBOT rolled its 15,000th robot off the production line on June 28, 2026, completing approximately 100 consecutive hours of factory livestream with G2 humanoids working alongside human operators in a live consumer-electronics quality-inspection line — the first large-scale demonstration of embodied AI integrated into a core mass-production workflow. https://www.therobotreport.com/agibot-produces-15000th-robot-marking-milestone-embodied-ai-deployment/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Google delayed Gemini 3.5 Pro to July 2026, citing early tester feedback on coding and long-task performance, pushing back the broader Gemini 3.x upgrade cycle that underpins the Gemini Robotics model roadmap. https://www.investing.com/news/stock-market-news/google-delays-gemini-35-pro-model-release-to-july--insider-93CH-4758816
+
+=== BAY AREA ===
+- Silicon Valley Robotics hosts Bots, Bevs and Devs at Blue River Technologies in Santa Clara on July 8, 2026, featuring robot and AI demos, short talks, and networking for founders, developers, and engineers. https://www.eventbrite.com/e/bots-bevs-and-devs-tickets-1991873639676?aff=oddtdtcreator
