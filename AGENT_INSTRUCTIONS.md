@@ -10,7 +10,7 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
   - SAFETY NET (do not fight it): rendering happens on the Action's open-internet runner (`.github/scripts/regenerate_memes.py`), not here. Just ship each meme cleanly with a real `meme_slug` + `overlay_text`. Only mark a meme genuinely SKIPPED if the library has fewer than 2 available (unused) clips — then note in the Slack handoff that the library needs new clips.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
-- GITHUB PUSH: To push a file, always use PUT. If a file already exists, GET it first to retrieve its SHA, then include the SHA in the PUT body. If a file does not exist yet, omit the SHA.
+- PUBLISHING: You do NOT push to GitHub (your sandbox can't — api.github.com returns `502 builtin injection failed`). You collect every output file into one BUNDLE and EMAIL it in Step 8; a GitHub Action publishes it. Never call api.github.com.
 
 ---
 
@@ -151,7 +151,7 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 
 ## Step 2A: Choose 2 meme formats from the vetted library
 
-**THIS REPLACES ALL GIF SOURCING.** Do NOT search Giphy/Tenor, do NOT download or render memes, and IGNORE everything below in this section as well as Step 2A-PEXELS and Step 2A.5 — those are legacy and no longer apply. Memes now come from a curated, pre-vetted, watermark-free clip library committed in the repo, and GitHub Actions renders them automatically after you push (you can't reach the media CDNs from here anyway).
+**THIS REPLACES ALL GIF SOURCING.** Do NOT search Giphy/Tenor, do NOT download or render memes, and IGNORE everything below in this section as well as Step 2A-PEXELS and Step 2A.5 — those are legacy and no longer apply. Memes now come from a curated, pre-vetted, watermark-free clip library committed in the repo, and GitHub Actions renders them automatically after you publish (you can't reach the media CDNs from here anyway).
 
 Do this instead:
 
@@ -268,7 +268,7 @@ The HTML preview always embeds the local MP4 — whether the source was Giphy, T
 
 ## Step 2A.5: Convert meme GIF to MP4 (LEGACY — IGNORED)
 
-> **DEPRECATED: skip this entire step.** You do NOT render memes. GitHub Actions renders your chosen library clip (with your `overlay_text`) into `meme_N.mp4` after you push, using the same white-card overlay style. Just make sure each meme's `meme_slug` and `overlay_text` are in review-state (Step 7).
+> **DEPRECATED: skip this entire step.** You do NOT render memes. GitHub Actions renders your chosen library clip (with your `overlay_text`) into `meme_N.mp4` after you publish, using the same white-card overlay style. Just make sure each meme's `meme_slug` and `overlay_text` are in review-state (Step 7).
 
 <details><summary>Legacy in-sandbox MP4 rendering (ignored)</summary>
 
@@ -682,7 +682,7 @@ make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", bg_2)
 
 `zenie_drafts.md` is Catie's plain-English briefing for the week. It MUST be written exactly once, at this step, deterministically from the FINAL on-disk state of each asset. NEVER accumulate notes into this file during Steps 1–2C. If you wrote a SKIPPED warning into the briefing earlier and a Pexels (or other) fallback later succeeded, the briefing ships stale and Catie discards real, postable memes. (Concrete incident: 2026-06-15 — both memes were generated successfully via Pexels fallback, but `zenie_drafts.md` still said "Giphy/Tenor/Pexels all blocked ⚠️ SKIPPED" for both. The watchdog can't fully unwind this — fix the source by writing this file ONCE here.)
 
-Build the file as a single Python string (`drafts_md`), then push it in Step 3 alongside the other assets. Do NOT call the GitHub API to push `zenie_drafts.md` from any earlier step.
+Build the file as a single Python string (`drafts_md`), save it to `/tmp/zenie_drafts.md`, and add it to the BUNDLE in Step 3 alongside the other assets. Do NOT write or transmit `zenie_drafts.md` from any earlier step.
 
 ### Header (always)
 
@@ -780,43 +780,58 @@ Render the normal Quote section if `is_real` (with `**Asset:** quote_N.jpg ...`)
 *Generated: {YYYY-MM-DD} | Zenie Social Media Agent*
 ```
 
-After concatenating header + sections + footer into `drafts_md`, save to `/tmp/zenie_drafts.md` and queue it for the Step 3 push. The on-disk file is the single source of truth for the briefing — no other step should append, modify, or duplicate-push it.
+After concatenating header + sections + footer into `drafts_md`, save to `/tmp/zenie_drafts.md` and add it to the BUNDLE in Step 3. The on-disk file is the single source of truth for the briefing — no other step should append, modify, or duplicate it.
 
 ---
 
-## Step 3: Push all files to GitHub using the API
+## Step 3: Publishing = email a bundle (your sandbox CANNOT push to GitHub)
+
+Your sandbox can no longer write to GitHub — every call to `api.github.com`
+returns `502 builtin injection failed`. So you do **NOT** push anything and you do
+**NOT** call api.github.com. Instead you collect every output file into one
+in-memory bundle and EMAIL it at the very end (Step 8). A GitHub Action
+(`publish-drafts-from-email.yml`) receives the email, writes the files into the
+repo, renders the library memes, and posts to Slack — exactly as a push would have.
+
+Set up the bundle now, then add to it as you build each file in the later steps:
 
 ```python
-import urllib.request, json, base64
+import base64
 
-TOKEN = "YOUR_GITHUB_TOKEN"
-REPO = "isabelhoppmann/ART-Lab-Social-Media"
-DATE = "TODAYS_DATE"
+DATE = "TODAYS_DATE"   # YYYY-MM-DD — the Monday you are running
+BUNDLE = {"week_date": DATE, "text_files": {}, "binary_files": {}}
 
-def push_file(path, content_bytes, message):
-    url = f"https://api.github.com/repos/{REPO}/contents/{path}"
-    try:
-        req = urllib.request.Request(url, headers={"Authorization": f"token {TOKEN}", "User-Agent": "agent"})
-        with urllib.request.urlopen(req) as r:
-            sha = json.load(r)["sha"]
-    except:
-        sha = None
-    payload = {"message": message, "content": base64.b64encode(content_bytes).decode()}
-    if sha:
-        payload["sha"] = sha
-    req = urllib.request.Request(url, data=json.dumps(payload).encode(),
-        headers={"Authorization": f"token {TOKEN}", "Content-Type": "application/json", "User-Agent": "agent"},
-        method="PUT")
-    with urllib.request.urlopen(req) as r:
-        print(f"Pushed {path}: {r.status}")
+def add_text(path, content):       # path is repo-relative, e.g. f"posts/{DATE}/index.html"
+    BUNDLE["text_files"][path] = content
+
+def add_binary(path, content_bytes):
+    BUNDLE["binary_files"][path] = base64.b64encode(content_bytes).decode()
 ```
 
-Push: quote_1.jpg, quote_2.jpg, index.html, zenie_drafts.md
-(Do NOT push meme_1.mp4 / meme_2.mp4 / meme_ids.txt — you don't render memes anymore; GitHub Actions renders them from the library after the review-state push in Step 7 and commits the MP4s itself.)
+Add the two quote images you rendered in Step 2C (saved as `quote_1.jpg` and
+`quote_2.jpg` in the working directory):
+
+```python
+for n in (1, 2):
+    with open(f"quote_{n}.jpg", "rb") as f:
+        add_binary(f"posts/{DATE}/quote_{n}.jpg", f.read())
+```
+
+Add the `zenie_drafts.md` you built in Step 2D (saved at `/tmp/zenie_drafts.md`):
+
+```python
+with open("/tmp/zenie_drafts.md", encoding="utf-8") as f:
+    add_text(f"posts/{DATE}/zenie_drafts.md", f.read())
+```
+
+Do NOT add meme MP4s — you don't render memes; the Action renders them from the
+library after it reads your `review-state.json` (Step 7). The remaining files
+(this week's `index.html`, the root `index.html`, and `review-state.json`) get
+added to the bundle in Steps 4, 5, and 7 below.
 
 ---
 
-## Step 4: Build and push index.html
+## Step 4: Build this week's preview index.html
 
 For memes: use a `<video>` tag pointing to the local MP4 (`meme_1.mp4` / `meme_2.mp4`) — this is the same file that ships to Meta, with the white-card overlay burned in. Do NOT embed Giphy/Tenor iframes — third-party iframes are blocked by many browsers and by Slack's link unfurler, which is what reviewers see.
 For quote images: add a subtle CSS Ken Burns animation (slow zoom).
@@ -899,18 +914,37 @@ For quote images: add a subtle CSS Ken Burns animation (slow zoom).
 </body></html>
 ```
 
+Add the finished HTML string to the bundle (do NOT push it):
+
+```python
+add_text(f"posts/{DATE}/index.html", html)   # `html` = the preview page you just built
+```
+
 ---
 
-## Step 5: Update root index.html
-Fetch, decode, prepend new entry at top, remove "latest" from previous entry, push.
-New entry: <a class="week latest" href="posts/[DATE]/"><span class="week-date">[Month Day, Year]</span><span class="week-arrow">→</span></a>
+## Step 5: Update the root index.html
+The root `index.html` lists every week. READ the current one via the **raw URL**
+(reads still work from the sandbox), prepend this week's entry at the top, remove
+`latest` from the previously-latest entry, then add the updated HTML to the bundle.
+Do NOT push it.
+
+```python
+import urllib.request
+root_html = urllib.request.urlopen(
+    "https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/index.html"
+).read().decode()
+# prepend the new entry, strip "latest" from the old one -> root_new
+add_text("index.html", root_new)
+```
+
+New entry: `<a class="week latest" href="posts/[DATE]/"><span class="week-date">[Month Day, Year]</span><span class="week-arrow">→</span></a>`
 
 
 ---
 
 ## Step 6: Save posts to Notion database
 
-After pushing files to GitHub, save the **quote images only** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
+After building the files (and before emailing the bundle in Step 8), save the **quote images only** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
 
 **Save 2 posts (the two quote images only).** Do NOT create Notion rows for the memes — the render step (`regenerate_memes.py`) creates each meme's Notion row automatically when it renders the library clip, so creating them here would duplicate them. Skip reposts as before. (The Meme 1/Meme 2 property templates below are kept only as a field reference for the automated render step.)
 
@@ -980,7 +1014,7 @@ Make sure every post (both memes and both quotes) has a distinct `best_time` on 
 
 ---
 
-## Step 7: Save review state to GitHub (Slack posting is handled automatically)
+## Step 7: Build review state (added to the bundle; Slack posting is handled automatically)
 
 Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution (quotes), approved=false.
 
@@ -997,7 +1031,71 @@ The `post-social-to-slack` Action will render `meme_library/clips/<meme_slug>.mp
 
 Reason: jsDelivr serves `.html` with `Content-Type: text/plain` (anti-abuse policy), so reviewers clicking a jsdelivr index.html link see raw HTML source instead of the rendered preview. GitHub Pages serves the same file with the correct `text/html` type. Keep `media_url` on jsDelivr — that policy only affects HTML, not `.mp4` or `.jpg`.
 
-Push this file to GitHub using the standard push_file() helper. A GitHub Action (`post-social-to-slack.yml`) will automatically detect the push, post all content to #social-media-content-review in Slack with full thread replies per post, and update slack_thread_ts in the file.
+Add this file to the bundle instead of pushing it (leave `slack_thread_ts` = null —
+the Action sets it after it posts):
+
+```python
+import json
+add_text("social/review-state.json", json.dumps(state, indent=2, ensure_ascii=False))
+```
+
+The publish Action (`publish-drafts-from-email.yml`) receives your emailed bundle,
+writes `review-state.json`, renders the library memes, and posts all content to
+#social-media-content-review in Slack with full thread replies per post — then
+commits the updated file with `slack_thread_ts` set.
 
 Do NOT call the Slack API directly from this agent. The network environment blocks slack.com — the GitHub Action handles this instead.
+
+---
+
+## Step 8: Email the bundle (this is how everything gets published)
+
+Send the bundle as the **plain-text body of one email**. The publish Action polls
+for it (subject match), parses it, and publishes everything. Use `urllib` only.
+
+- **Subject:** EXACTLY `ZENIE DRAFTS <DATE>` — e.g. `ZENIE DRAFTS 2026-06-29`
+- **From / To:** isabel@art-lab.ai
+- **Body:** `json.dumps(BUNDLE)` and nothing else — no greeting, no ``` fences, no commentary.
+
+Use the GMAIL_CLIENT_ID / GMAIL_SECRET / GMAIL_REFRESH credentials from your run
+message (the same ones you'd use for a failure email): POST them to
+`https://oauth2.googleapis.com/token` (grant_type=refresh_token) to get an
+access_token, build an RFC 2822 message (From, To, Subject, `Content-Type: text/plain; charset="utf-8"`,
+then the body), base64url-encode the whole message, and POST to
+`https://gmail.googleapis.com/gmail/v1/users/me/messages/send` with
+`Authorization: Bearer <access_token>` and body `{"raw": "<encoded>"}`.
+
+```python
+import json, base64, urllib.parse, urllib.request
+
+raw_msg = (
+    "From: isabel@art-lab.ai\r\n"
+    "To: isabel@art-lab.ai\r\n"
+    f"Subject: ZENIE DRAFTS {DATE}\r\n"
+    'Content-Type: text/plain; charset="utf-8"\r\n\r\n'
+    + json.dumps(BUNDLE)
+).encode("utf-8")
+encoded = base64.urlsafe_b64encode(raw_msg).decode()
+
+tok = json.load(urllib.request.urlopen(urllib.request.Request(
+    "https://oauth2.googleapis.com/token",
+    data=urllib.parse.urlencode({
+        "client_id": GMAIL_CLIENT_ID, "client_secret": GMAIL_SECRET,
+        "refresh_token": GMAIL_REFRESH, "grant_type": "refresh_token",
+    }).encode())))["access_token"]
+
+req = urllib.request.Request(
+    "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+    data=json.dumps({"raw": encoded}).encode(),
+    headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json"},
+    method="POST")
+urllib.request.urlopen(req)
+```
+
+After it sends, print `Emailed ZENIE DRAFTS <DATE> bundle (<N> files)` and STOP.
+Do NOT attempt any GitHub push. Do NOT call Slack. The publish Action takes it
+from here (it runs ~40 min later on Monday, or can be run on demand).
+
+If the email send itself fails, fall back to the failure-email path in your run
+message so Isabel is alerted.
 
