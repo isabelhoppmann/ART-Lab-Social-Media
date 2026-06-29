@@ -87,8 +87,9 @@ def extract_plain_body(payload):
 
 def find_bundle_email(token, today_str):
     query = f'subject:"{SUBJECT_PREFIX} {today_str}" newer_than:2d'
+    # includeSpamTrash so a re-run still finds the bundle after we trash it below.
     list_url = (
-        "https://gmail.googleapis.com/gmail/v1/users/me/messages?q="
+        "https://gmail.googleapis.com/gmail/v1/users/me/messages?includeSpamTrash=true&q="
         + urllib.parse.quote(query)
     )
     # Newest first. Subject search can collide with watchdog/failure emails that
@@ -108,8 +109,29 @@ def find_bundle_email(token, today_str):
         except Exception:
             continue
         if validate(bundle, today_str) is None:
-            return body
-    return None
+            return body, m["id"]
+    return None, None
+
+
+def trash_bundle_email(token, msg_id):
+    """Trash the processed bundle email so the bulky machine-to-machine JSON (which
+    the agent sends from Isabel to Isabel, so it lands in Sent) stops cluttering her
+    mailbox each week. The full content lives in git, and Trash is 30-day
+    recoverable + still found by find_bundle_email (includeSpamTrash=true), so a
+    re-run is safe. Best-effort — never fail the publish over this."""
+    if not msg_id:
+        return
+    try:
+        req = urllib.request.Request(
+            f"https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}/trash",
+            data=b"",
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            method="POST",
+        )
+        urllib.request.urlopen(req, timeout=30)
+        print(f"Trashed bundle email {msg_id} (content preserved in git).")
+    except Exception as e:
+        print(f"(non-fatal) could not trash bundle email: {e}")
 
 
 def parse_bundle(body):
@@ -201,9 +223,9 @@ def main():
 
     token = gmail_access_token()
 
-    body = None
+    body, msg_id = None, None
     for attempt in range(1, FETCH_ATTEMPTS + 1):
-        body = find_bundle_email(token, today_str)
+        body, msg_id = find_bundle_email(token, today_str)
         if body:
             break
         if attempt < FETCH_ATTEMPTS:
@@ -249,6 +271,7 @@ def main():
         written.append(rel)
 
     normalize_review_state()
+    trash_bundle_email(token, msg_id)
 
     print(f"Materialized {len(written)} file(s) for week {today_str}:")
     for w in sorted(written):
