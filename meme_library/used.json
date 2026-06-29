@@ -1,7 +1,25 @@
 {
   "_comment": "NO-REPEAT LEDGER. Every meme format slug listed here has already been used in a Zenie post and must NEVER be used again — not even with a different caption or overlay text. The drafting agent and the feedback agent must exclude these slugs when picking from library.json. GitHub Actions (regenerate_memes.py) appends to this automatically the moment it renders a meme from a library clip, so the rule is enforced at render time even if an agent slips. When library.json minus this list is empty, the library is exhausted and needs new clips added.",
   "used": [
-    { "slug": "kermit_typing", "week": "2026-06-22", "label": "Meme 1" },
-    { "slug": "math_lady", "week": "2026-06-22", "label": "Meme 2" }
+    {
+      "slug": "kermit_typing",
+      "week": "2026-06-22",
+      "label": "Meme 1"
+    },
+    {
+      "slug": "math_lady",
+      "week": "2026-06-22",
+      "label": "Meme 2"
+    },
+    {
+      "slug": "spongebob_mocking",
+      "week": "2026-06-29",
+      "label": "Meme 1"
+    },
+    {
+      "slug": "this_is_fine",
+      "week": "2026-06-29",
+      "label": "Meme 2"
+    }
   ]
 }
