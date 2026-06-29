@@ -139,6 +139,34 @@ def safe_join(root, rel):
     return dest
 
 
+LABEL_TO_POST_TYPE = (("meme", "Meme"), ("repost", "Repost"), ("quote", "Quote Image"))
+
+
+def normalize_review_state():
+    """Safety net: the drafting agent sometimes emits posts with a null/empty
+    post_type. The render + Slack scripts gate on post_type ("meme"/"quote"/
+    "repost"), so a blank one silently drops the post (no meme render, no Slack
+    reply). Derive it from the label, which is reliably "Meme N" / "Quote N" /
+    "Repost N"."""
+    if not os.path.exists(STATE_PATH):
+        return
+    state = json.load(open(STATE_PATH))
+    fixed = 0
+    for post in state.get("posts", []):
+        if post.get("post_type"):
+            continue
+        label = (post.get("label") or "").strip().lower()
+        for prefix, ptype in LABEL_TO_POST_TYPE:
+            if label.startswith(prefix):
+                post["post_type"] = ptype
+                fixed += 1
+                break
+    if fixed:
+        with open(STATE_PATH, "w", encoding="utf-8") as f:
+            json.dump(state, f, indent=2, ensure_ascii=False)
+        print(f"normalize: filled missing post_type on {fixed} post(s) from labels.")
+
+
 def already_published(today_str):
     """True if this week's review-state is already committed AND posted to Slack.
     A re-run must NOT clobber it with the email's fresh (thread_ts=null) copy and
@@ -210,6 +238,8 @@ def main():
         with open(dest, "wb") as f:
             f.write(base64.b64decode(b64))
         written.append(rel)
+
+    normalize_review_state()
 
     print(f"Materialized {len(written)} file(s) for week {today_str}:")
     for w in sorted(written):
