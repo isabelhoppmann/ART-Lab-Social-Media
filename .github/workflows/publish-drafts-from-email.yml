@@ -1,0 +1,82 @@
+name: Publish Zenie Drafts from Email
+
+# The claude.ai drafting routine (free under the Claude subscription) researches,
+# writes the copy, renders the quote images, and EMAILS the whole week as one JSON
+# bundle (subject "ZENIE DRAFTS <YYYY-MM-DD>"). Its sandbox can no longer write to
+# api.github.com (managed GitHub proxy -> "502 builtin injection failed"), so this
+# Action -- which has native GitHub access -- materializes the emailed files and
+# runs the same render+post pipeline as post-social-to-slack.yml. No Claude API
+# call -> no metered cost.
+#
+# Note: this commits social/review-state.json with the default GITHUB_TOKEN, which
+# deliberately does NOT re-trigger post-social-to-slack.yml (GitHub suppresses
+# workflow chains from the default token). That's why we run the render+post steps
+# inline here rather than relying on that push trigger.
+
+on:
+  schedule:
+    - cron: '40 3 * * 1'    # Mon 03:40 UTC -- ~40 min after the routine's 03:00 run
+  workflow_dispatch:         # run on demand to test or to regenerate a week
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-zenie-drafts
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install ffmpeg + Pillow
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install --quiet Pillow
+
+      - name: Materialize drafts from email bundle
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: python3 .github/scripts/publish_drafts_from_email.py
+
+      - name: Render library memes (agent ships them skipped)
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python3 .github/scripts/regenerate_memes.py
+
+      - name: Regenerate quote images flagged for re-render (usually a no-op)
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+        run: python3 .github/scripts/regenerate_quotes.py
+
+      - name: Post to Slack for review
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: python3 .github/scripts/post_social_to_slack.py
+
+      - name: Commit drafts + rendered assets
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts/ social/review-state.json meme_library/used.json index.html
+          git diff --staged --quiet || git commit -m "Zenie drafts $(date -u +%Y-%m-%d) (email-relay)"
+          git push
+
+      - name: Notify error channel on failure
+        if: failure()
+        env:
+          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+        run: |
+          curl -s -X POST -H 'Content-Type: application/json' \
+            -d "{\"text\":\"⚠️ Zenie drafts publish (email-relay) failed for $(date -u +%Y-%m-%d). Actions: https://github.com/${GITHUB_REPOSITORY}/actions\"}" \
+            "$SLACK_ERROR_WEBHOOK_URL" || true
