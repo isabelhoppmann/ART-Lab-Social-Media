@@ -1,0 +1,16 @@
+Morning Briefing July 1, 2026
+
+=== ROBOTICS & AI ===
+- Anthropic launched Claude Sonnet 5 on June 30, 2026, making it the default model for all Claude tiers with substantially improved agentic performance on tool use, coding, and long-horizon tasks at a lower price than Opus 4.8. https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Queue raised a $12.6 million seed round led by AlleyCorp on June 30, 2026 to deploy the world's first fully autonomous robotic pharmacy kiosk, handling dispensing and verification without an on-site pharmacist. https://www.businesswire.com/news/home/20260630454561/en/Queue-Raises-$12.6-Million-to-Launch-the-Worlds-First-Fully-Autonomous-Robotic-Pharmacy
+
+=== COMPETITOR WATCH ===
+- UBTECH launched its UWORLD U1 consumer companion humanoid robot series on June 30, 2026 in Shenzhen — priced from ~$16,700 (~119,800 RMB) — with 13,361 pre-orders at launch, positioning it as the first full-size mass-produced bionic home robot offered for direct consumer sale. https://www.prnewswire.com/news-releases/ubtech-launches-uworld-u1-the-worlds-first-full-size-mass-produced-ultra-bionic-humanoid-robot-302815272.html
+
+=== BAY AREA ===
+- AGI Summit 2026 runs July 18-19 at the Palace of Fine Arts in San Francisco with 15,000+ attendees and 200+ speakers from OpenAI, Anthropic, Google DeepMind, NVIDIA, and Meta, themed around the rise of agentic AI. https://agisummit.ai/
