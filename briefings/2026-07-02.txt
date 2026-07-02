@@ -1,0 +1,18 @@
+Morning Briefing July 2, 2026
+
+=== ROBOTICS & AI ===
+- Tesla showcased its Optimus Gen 3 humanoid production line at Fremont on July 2 with CEO Elon Musk sharing photos confirming the facility is on track for production to begin in late July or August, targeting 1 million units per year capacity. https://cryptobriefing.com/tesla-optimus-production-line-fremont/
+- Anthropic launched Claude Sonnet 5 on June 30 as the new default model for Free and Pro users, with improved agentic and coding capabilities and introductory API pricing of $2/$10 per million input/output tokens through August 31. https://www.anthropic.com/news/claude-sonnet-5
+- Anthropic restored global access to Claude Fable 5 on July 1 after the U.S. Department of Commerce lifted export controls, with a new cybersecurity classifier also added in the same update. https://www.marktechpost.com/2026/07/01/anthropic-redeploys-claude-fable-5-on-july-1-after-us-export-controls-lift-adds-new-cybersecurity-classifier/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Meta announced on July 1 plans for a new cloud business to sell excess AI computing capacity and hosted access to its models to outside customers, competing with AWS, Azure, and Google Cloud, and freeing infrastructure investment to support its growing robotics and embodied AI programs. https://techcrunch.com/2026/07/01/meta-like-spacex-looks-to-turn-excess-ai-compute-into-cash/
+
+=== BAY AREA ===
+- AI Tinkerers San Francisco hosts its July GTM Engineering Track on July 8, 6-9 PM PDT, featuring builder demos on LLM-powered products and agentic workflows. https://sf.aitinkerers.org/p/ai-tinkerers-san-francisco-gtm-engineering-track
