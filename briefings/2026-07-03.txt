@@ -1,0 +1,18 @@
+Morning Briefing July 3, 2026
+
+=== ROBOTICS & AI ===
+- A market analysis published July 1 forecasts the global physical AI market will surpass $430 billion by 2030, driven by humanoid robots, autonomous vehicles, and AI-enabled manufacturing across nine verticals. https://www.globenewswire.com/news-release/2026/07/01/3320809/28124/en/Physical-AI-Market-Set-to-Surpass-430-Billion-by-2030-Driven-by-Nine-Key-Vertical-Sectors.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- CarbonSix raised $40 million in a Series A on July 1, 2026, co-led by DSC Investment and LB Investment, to scale its physical AI platform for robotic manipulation and manufacturing automation. https://www.prnewswire.com/news-releases/carbonsix-secures-40m-series-a-to-deploy-physical-ai-across-global-manufacturing-302815871.html
+- Luxonis closed a $14 million Series A on July 2, 2026, led by Denali Growth Partners, to expand its OAK camera depth-perception platform for physical AI and robotic vision. https://www.businesswire.com/news/home/20260702484095/en/Luxonis-Raises-$14-Million-Series-A-to-Power-the-Perception-Layer-Behind-Physical-AI
+- Together AI raised $800 million Series C at an $8.3 billion valuation on July 1, 2026, led by Aramco Ventures, to grow its open-source AI cloud serving agents and physical AI workloads. https://techcrunch.com/2026/07/01/neocloud-together-ai-raises-800m-leaps-to-8-3b-valuation/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- SF AI Engineers hosts its July Tech Talk on July 15, 2026 at 6 PM in San Francisco, featuring live AI engineering project demos and networking. https://www.meetup.com/san-francisco-ai-engineers/events/313346812/
