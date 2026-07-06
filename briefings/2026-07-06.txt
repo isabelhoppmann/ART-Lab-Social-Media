@@ -1,0 +1,17 @@
+Morning Briefing July 6, 2026
+
+=== ROBOTICS & AI ===
+- RoboCup 2026 Humanoid Soccer League crowned its first-ever division winners in Incheon, Korea on July 6 — Invic (Wuhan University) Small Division, B-Human (Bremen/DFKI) Middle Division, and Tsinghua Hephaestus Large Division — in the inaugural competition under the newly merged HSL format. https://letsdatascience.com/news/robocup-2026-humanoid-league-declares-division-winners-ffe56ef5
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Boston Dynamics electric Atlas humanoid performed goal celebrations and delivered the match ball at halftime of the Brazil vs. Norway FIFA World Cup Round of 16 on July 5, 2026, demonstrating Google DeepMind-powered physical AI training to a global audience. https://fortune.com/2026/07/05/humanoid-robot-delivered-game-ball-brazil-norway-world-cup-match-fifa-boston-dynamics-hyundai/
+- Agility Robotics CEO Damion Shelton said in a July 5 profile that home robots are not coming soon even as the company finalizes its $2.5B SPAC merger with Churchill Capital Corp XI, the largest capital raise in humanoid robotics to date. https://techcrunch.com/2026/07/05/this-humanoid-robotics-company-is-going-public-but-its-ceo-isnt-promising-a-robot-in-your-home-anytime-soon/
+
+=== BAY AREA ===
+- AUTONOMOUS 2026, a one-day conference on the future of robotics and physical AI, takes place July 16 at The Midway in San Francisco with 500 founders, engineers, and investors across tracks on humanoid robotics, physical AI investment, and real-world deployment. https://autonomousfuture.co/
