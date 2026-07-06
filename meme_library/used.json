@@ -20,6 +20,16 @@
       "slug": "this_is_fine",
       "week": "2026-06-29",
       "label": "Meme 2"
+    },
+    {
+      "slug": "facepalm",
+      "week": "2026-07-06",
+      "label": "Meme 1"
+    },
+    {
+      "slug": "hair_flip",
+      "week": "2026-07-06",
+      "label": "Meme 2"
     }
   ]
 }
