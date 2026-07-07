@@ -1,0 +1,16 @@
+Morning Briefing July 7, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA and Hugging Face announced on July 6 that Isaac GR00T 1.7—an open vision-language-action model for humanoid robots—and the Isaac Teleop framework are now available through the open-source LeRobot library, democratizing foundation model training and deployment for the robotics community. https://blogs.nvidia.com/blog/hugging-face-lerobot-models-frameworks-open-robotics/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Apptronik opened an expanded Robot Park in Austin on July 6 to scale large-scale data collection for its Apollo 2 humanoid, with the facility feeding training data directly into Google DeepMind's Gemini Robotics foundation models as additional Robot Park locations are planned globally. https://roboticsandautomationnews.com/2026/07/06/apptronik-launches-robot-park-to-train-apollo-humanoid-robots-with-google-deepmind/103069/
+
+=== BAY AREA ===
+- AGI Summit / GenAI Summit SF 2026 takes place July 18-19 at the Palace of Fine Arts in San Francisco, with 15,000+ expected attendees and 200+ speakers covering generative AI, agentic systems, and physical AI advances. https://luma.com/agisummit2026
