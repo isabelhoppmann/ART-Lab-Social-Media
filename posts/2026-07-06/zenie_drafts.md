@@ -6,25 +6,27 @@
 
 ---
 
-## Meme 1 — Modern Dating / Texting Excuses
+## Meme 1 — Modern Dating / Confusing Texts
 
-**overlay_text:** when he says 'sorry i fell asleep' at 3pm on a Tuesday
+**overlay_text:** me trying to follow his texts
 
-**ig_caption:** Not the lunchtime nap 😭
+**ig_caption:** The mixed signals are wild 😭
 
-**fb_caption:** We've been collecting these excuses for how long now? 😂 Tag someone who has heard literally every one of them. What's the most creative 'sorry I didn't text back' excuse you've ever gotten?
+**fb_caption:** Reading his texts like it's a final exam I didn't study for 😂 The 'k', the one-word replies, the vanishing act… Tag someone who has to help you decode them. What's the most confusing text you've ever had to decipher?
 
 **hashtags:** #Zenie #zenieapp #moderndating #datinghumor #relatable #datinglife #selfreflection
 
 **Best time to post:** Tuesday 6–8 PM PST
 
-**Asset:** meme_1.mp4 — rendered automatically from library clip `facepalm` (Frustrated facepalm) with white-card overlay
+**Asset:** meme_1.mp4 — rendered automatically from library clip `confused_nick_young` (Confused reaction) with white-card overlay
+
+*Revised per Catie's feedback: clip + caption reworked so the joke reads clearly.*
 
 ---
 
 ## Meme 2 — Journaling Glow-Up / Self-Worth
 
-**overlay_text:** me after journaling for one week and realizing I deserve so much more
+**overlay_text:** me realizing i deserve so much more
 
 **ig_caption:** She woke up ✨
 
@@ -38,11 +40,11 @@
 
 ---
 
-## Quote Image 1 — Rainer Maria Rilke
+## Quote Image 1 — Aristotle
 
-**Quote:** "The only journey is the one within."
+**Quote:** "Knowing yourself is the beginning of all wisdom."
 
-**Attribution:** Rainer Maria Rilke
+**Attribution:** Aristotle
 
 **fb_caption:** Sometimes we look everywhere for answers — until we realize the deepest ones live inside us. ✨ Save this if you need a gentle reminder to slow down and turn inward. Who would you share this with today?
 
