@@ -1,0 +1,17 @@
+Morning Briefing July 8, 2026
+
+=== ROBOTICS & AI ===
+- Tesla launched its Robotaxi in Miami on July 6, 2026 without a safety driver on board for the first time, operating in a geofenced 10-14 sq mile zone of West Miami and Coral Gables and marking a landmark moment in fully-autonomous commercial vehicle deployment. https://thenextweb.com/news/tesla-robotaxi-miami-no-safety-monitor
+- Anthropic's Claude Fable 5 moved from subscription plans to pay-per-use billing starting July 8, now costing $10/1M input and $50/1M output tokens for all tiers as the company shifts its most capable model to consumption-based pricing. https://www.androidheadlines.com/2026/07/claude-fable-5-drops-subscriptions-pay-per-use-credits.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Ex-Apple smart glasses startup Even Realities raised $150M in a pre-Series B led by Meituan and Tencent at a $1B valuation, announced July 6, 2026, for privacy-first AI glasses that beam information into the wearer's line of sight without a camera. https://techcrunch.com/2026/07/06/smart-glasses-maker-even-realities-hits-1b-valuation-with-150m-funding-led-by-meituan-tencent/
+
+=== COMPETITOR WATCH ===
+- NVIDIA released new open physical AI model families on July 6 including Cosmos Reason 2, a reasoning vision-language model for robots, and Isaac GR00T N1.7, with global partners Boston Dynamics, Caterpillar, and NEURA Robotics unveiling next-generation robots built on the stack. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+
+=== BAY AREA ===
+- Silicon Valley Robotics hosts Bots, Bevs and Devs tonight (July 8) at Blue River Technologies in Santa Clara, 6-8:30pm, featuring short talks, humanoid robot demos, and physical AI networking. https://www.discoversantaclara.org/event/silicon-valley-robotics-bots-bevs-and-devs-2026-07-08/
