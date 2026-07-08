@@ -466,7 +466,9 @@ A valid URL must:
 
 Before including each repost, write out loud: "This URL is: [URL]. It is from: [platform]. It links to: [specific post or profile page]." If it is not Instagram or not a direct post link, reject it and search again.
 
-Get: direct Instagram reel URL, creator handle, repost caption, best time to post.
+**Creator handle — TREAT AS UNVERIFIED.** WebSearch cannot reliably tell you who actually *made* a reel. Self-care and wellness reels are constantly re-shared by aggregator/repost accounts, so the handle that appears in search results is very often the aggregator, not the original creator. Do NOT trust a handle that came only from a search snippet. Best effort to confirm: WebFetch the reel URL and read the author from the page title / `og:title` (Instagram pages usually read "<Name> (@handle) on Instagram: …"); use that handle if you can read it. If you cannot confirm the original creator with confidence, still fill your best guess, but **flag it**: append ` ⚠️ UNVERIFIED — confirm creator against the reel before posting` to the Creator line in the review bundle so the human checks it during Slack review. Never present a repost credit as confirmed when it came only from a search result.
+
+Get: direct Instagram reel URL, creator handle (per the caution above), repost caption, best time to post. **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
 ---
 
@@ -1019,7 +1021,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Repost 1:** *(the Zenie Posts DB has no Creator field, so put the credit in the caption and the reel link in Media URL)*
 - Name: `Repost 1 — [DATE]`
 - Post Type: `Repost`
-- Caption: the repost caption (the IG-facing reshare caption)
+- Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]` (Instagram caption — now carries the credit too)
 - FB Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]`
 - Hashtags: the repost hashtags (if any)
 - Media URL: the **direct Instagram reel URL** being reposted (this is the link, not a file we host)
@@ -1031,7 +1033,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Repost 2:**
 - Name: `Repost 2 — [DATE]`
 - Post Type: `Repost`
-- Caption: the repost caption
+- Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]` (Instagram caption — now carries the credit too)
 - FB Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]`
 - Hashtags: the repost hashtags (if any)
 - Media URL: the direct Instagram reel URL being reposted
