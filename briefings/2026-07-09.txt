@@ -1,0 +1,18 @@
+Morning Briefing July 9, 2026
+
+=== ROBOTICS & AI ===
+- Paris-based startup UMA, co-founded by an ex-Tesla Optimus scientist, unveiled Northstar, an industrial humanoid robot with a Real-Time Learning architecture that enables skill acquisition through live demonstration rather than manual programming, announced July 7, 2026. https://www.businesswire.com/news/home/20260707215927/en/UMA-Unveils-Its-Vision-for-the-Next-Generation-of-Humanoid-Robots
+
+=== RESEARCH ===
+- Researchers submitted "Vision as Unified Multimodal Generation" (July 7, 2026), a model that frames all computer vision tasks as multimodal generation, producing text, images, or mixed outputs from natural-language instructions without task-specific architectures. https://arxiv.org/abs/2607.06560
+
+=== FUNDING & INVESTMENT ===
+- Zeroth, a Chinese home-robot startup building M1 and W1 robots for smart home, early childhood education, and pet companionship, raised $74 million in a pre-Series A led by Ant Group on July 8, 2026, reporting 30,000+ orders and 600% YoY revenue growth in H1 2026. https://theaiinsider.tech/2026/07/08/chinas-humanoid-robot-maker-zeroth-announces-74m-in-pre-series-a-funding/
+- Mowito raised $3 million in pre-seed funding on July 7, 2026, to develop AI foundation models for industrial robotic arms. https://theaiinsider.tech/2026/07/07/robotics-startup-mowito-raises-3m-in-pre-seed-funding-to-expand-ai-foundation-models-for-industrial-robotic-arms/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- AGI Summit SF 2026 is at Palace of Fine Arts July 18-19, with 15,000+ attendees and speakers from OpenAI, Google DeepMind, and NVIDIA focused on AI agents and physical AI deployment. https://agisummit.ai/
+- Best of ICRA, a virtual meetup organized by the San Francisco AI Meetup Group, runs July 21 and features ICRA 2026 accepted papers on robotics and automation. https://www.meetup.com/san-francisco-ai-meetup-group/events/315398845/
