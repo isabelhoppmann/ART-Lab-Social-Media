@@ -1,0 +1,10 @@
+Morning Briefing July 10, 2026
+=== ROBOTICS & AI ===
+- Surgeons at UC San Diego performed the world's first live surgeries using teleoperated humanoid robots—including a gallbladder removal—with results published in Nature on July 8, 2026. https://today.ucsd.edu/story/surgeons-use-teleoperated-humanoid-robots-to-perform-live-surgery-a-world-first
+- General Intuition, a startup building physics-aware world models for robots, argues the field is nearing a ChatGPT-scale inflection point as foundation models reach critical capability thresholds, per TechCrunch on July 8, 2026. https://techcrunch.com/2026/07/08/this-startup-thinks-robotics-is-about-to-have-its-chatgpt-moment/
+=== RESEARCH ===
+- Mistral AI released Robostral Navigate on July 8, 2026, an 8B single-camera robot navigation model achieving 76.6% on the R2R-CE benchmark—outperforming multi-sensor systems—trained entirely in simulation and deployable on any robot fleet. https://mistral.ai/news/robostral-navigate/
+=== FUNDING & INVESTMENT ===
+- SambaNova Systems closed a $1 billion Series F first close led by General Atlantic (announced July 8, 2026), valuing the AI inference platform at $11 billion as demand for physical AI and robotics compute accelerates. https://techstartups.com/2026/07/09/venture-capital-startup-funding-roundup-july-9-2026-sequoia-khosla-ventures-y-combinator-a16z-accel/
+=== COMPETITOR WATCH ===
+- OpenAI released GPT-5.6 on July 9, 2026, claiming 54% greater token efficiency on agentic coding versus rival models—a gain that lowers inference costs for robotics and AI agent pipelines. https://techstartups.com/2026/07/09/openais-gpt-5-6-is-54-more-token-efficient-on-agentic-coding-than-rival-ai-models-sam-altman-says/
