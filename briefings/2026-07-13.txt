@@ -1,0 +1,14 @@
+Morning Briefing July 13, 2026
+
+=== ROBOTICS & AI ===
+- China's announcement that President Xi Jinping will personally attend and keynote the 2026 World AI Conference (Shanghai, July 17-20), his first-ever in-person appearance at the summit, signals intensifying state-level commitment to AI leadership and global tech governance at a time of heightened US-China AI competition. https://english.news.cn/20260713/f7e3e7febe9e4feea2cc28989cb14d2d/c.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- South Korean startup Holiday Robotics raised $103.4 million in Series A funding (announced July 13, 2026) to scale manufacturing of FRIDAY, a 176 cm 64-DoF wheeled humanoid for industrial environments, with Stonebridge Ventures, Atinum Investment, IMM Investment, KDB, and IBK among the investors and commercial launch targeted for H2 2026. https://en.wowtale.net/2026/07/13/234452/
+
+=== COMPETITOR WATCH ===
+- Apple quietly opened its Foundation Models API to all registered developers on July 11, 2026, letting third-party apps route tasks to on-device Apple Intelligence or to Claude, Gemini, or ChatGPT via Private Cloud Compute, marking the first time developers can build directly on Apple Intelligence's underlying inference infrastructure. https://medium.com/adi-insights-innovations-collective/ai-pulse-saturday-july-11-2026-aa2bcf824571
+- Apple filed a federal lawsuit against OpenAI and Jony Ive's io Products on July 10, 2026, alleging that more than 400 former Apple hardware and chip employees now at OpenAI systematically transferred trade secrets including device specs and supply chain data, which could freeze OpenAI's consumer hardware roadmap. https://www.japantimes.co.jp/business/2026/07/11/tech/apple-sues-openai-secret-theft/
