@@ -11,6 +11,12 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - PUBLISHING: You do NOT push to GitHub (your sandbox can't — api.github.com returns `502 builtin injection failed`). You collect every output file into one BUNDLE and EMAIL it in Step 8; a GitHub Action publishes it. Never call api.github.com.
+- **RUN ROBUSTNESS — READ FIRST (added 2026-07-13 after three silent, output-less runs). Your #1 obligation is to REACH Step 8 and email something. A run that produces nothing is the worst outcome. Enforce all of the following:**
+  - **At the very start of your Python, run `import socket; socket.setdefaulttimeout(25)` so no network call can ever hang the run.** This is mandatory.
+  - **Every step before Step 8 is BEST-EFFORT.** Wrap each step in `try/except`. If a step fails, times out, or its data is unavailable: log one line, skip that piece, and CONTINUE. Never let any pre-Step-8 step abort the run.
+  - **Never retry a network call more than once.** No loops that keep hitting an API/search until success — one retry max, then move on with what you have.
+  - **Step 0 (Instagram/Facebook performance data) is optional context only.** If the Graph API errors or times out (e.g. an expired Meta token), skip it entirely and proceed — do NOT retry or block on it.
+  - **Partial output is a SUCCESS.** If you produced e.g. the quotes but had to skip a meme, still go to Step 8 and email the BUNDLE with what you have (mark the missing piece SKIPPED). Only if you produced literally zero usable files, send the error alert instead of the bundle.
 
 ---
 
