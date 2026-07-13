@@ -1,6 +1,6 @@
 # Zenie Agent Instructions
 
-Credentials are in the message that invoked you (GitHub token, Notion token, Pexels key).
+The only credential you need is the Gmail account (to email the finished bundle in Step 8) — it is in the message that invoked you. Notion is handled through the connected Notion MCP tool (no token needed). You do NOT need a GitHub token (you only read the public repo) or a Pexels key (quote images render on the GitHub runner — see Step 2C).
 
 ## ABOUT ZENIE
 Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
@@ -479,6 +479,8 @@ Get: direct Instagram reel URL, creator handle (per the caution above), repost c
 ---
 
 ## Step 2C: Create 2 Quote Images — EXACT DESIGN SPEC
+
+> **⚠️ RENDERING MOVED TO THE RUNNER (2026-07-13) — DO NOT render the quote images yourself, and do NOT use Pexels or PIL here.** For each of the 2 quotes, only DECIDE the quote text + attribution + the caption(s), and write them into review-state (Step 7) as a `Quote Image` post with `needs_render: true` and `media_url: null`. The GitHub Action's `regenerate_quotes.py` renders the actual `quote_{n}.jpg` on its open-internet runner (it sources its own Pexels background), fills `media_url`, and updates the preview page. The design spec below still governs the FINISHED image, so pick quotes that suit it — but you produce only the TEXT, not the image. Skip every Pexels/PIL/font/rendering instruction in this section; you do not need a Pexels key.
 
 The design is: **a beautiful full-bleed photo background with a floating cream card on top**, with decorative watercolor/botanical elements at the card corners. This matches Zenie's existing Instagram aesthetic exactly.
 
