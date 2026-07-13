@@ -954,7 +954,11 @@ New entry: `<a class="week latest" href="posts/[DATE]/"><span class="week-date">
 
 ## Step 6: Save posts to Notion database
 
-After building the files (and before emailing the bundle in Step 8), save the **two quote images and the two reposts** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
+> **⚠️ ORDER CHANGED 2026-07-13 — DO STEPS 7 AND 8 (build review-state + EMAIL THE BUNDLE) BEFORE THIS STEP.** Publishing must NEVER depend on Notion. A hanging Notion MCP call here silently killed four drafting runs (2026-07-13) before they could email anything — and an MCP call is NOT covered by the socket timeout, so it can hang indefinitely. Therefore: finish the files, build review-state (Step 7), and **email the bundle (Step 8) FIRST**. Only AFTER the bundle email is sent do you come back and do this Notion save.
+>
+> **This Notion save is BEST-EFFORT and fully skippable.** Give the Notion MCP calls at most ~30 seconds of total effort. If `notion-search`/`notion-create-pages`/`notion-update-page` is slow, errors, or seems to hang, STOP immediately and just finish — do not retry, do not wait. Skipping Notion only means the quote/repost rows are missing from the database (a human can add them later); the week is already published via the emailed bundle, which is all that matters.
+
+After building the files AND after emailing the bundle (Step 8), save the **two quote images and the two reposts** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
 
 **Save 4 posts (the two quote images + the two reposts).** Do NOT create Notion rows for the memes — the render step (`regenerate_memes.py`) creates each meme's Notion row automatically when it renders the library clip, so creating them here would duplicate them. (The Meme 1/Meme 2 property templates below are kept only as a field reference for the automated render step.)
 
@@ -1091,6 +1095,8 @@ Do NOT call the Slack API directly from this agent. The network environment bloc
 ---
 
 ## Step 8: Email the bundle (this is how everything gets published)
+
+> **DO THIS BEFORE Step 6 (Notion).** This email is the ONLY thing that publishes the week. Send it as soon as the files and review-state (Step 7) are ready — do not do the Notion save first. Once this email is sent, the week is safely published; only then go back and do Step 6 (Notion) as a best-effort extra.
 
 Send the bundle as the **plain-text body of one email**. The publish Action polls
 for it (subject match), parses it, and publishes everything. Use `urllib` only.
