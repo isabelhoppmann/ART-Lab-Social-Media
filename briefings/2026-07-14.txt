@@ -1,0 +1,15 @@
+Morning Briefing July 14, 2026
+
+=== ROBOTICS & AI ===
+- Booster Robotics unveiled its T2 humanoid on July 13 equipped with NVIDIA's Thor chip at 2,070 TFLOPS of onboard compute and an open Booster Studio developer ecosystem, targeting the shift from locomotion demos to real-world task execution. https://www.newsfilecorp.com/release/304940/Booster-Robotics-Unveils-Booster-T2-Its-Flagship-Humanoid-Platform-for-Embodied-AI-Development
+- A July 13 CNBC report documents Chinese humanoid startups rushing to list, with Unitree securing CSRC approval for a $619M Shanghai STAR Market IPO and LimX Dynamics announcing a pre-IPO financing round. https://www.cnbc.com/2026/07/13/chinese-humanoid-startups-ipo-limx-unitree.html
+- Humanoid Global announced on July 14 that MBody AI expanded its U.S. service-robotics footprint to 11 states and entered Canada via Ontario as part of a proposed business combination with Check-Cap. https://www.globenewswire.com/news-release/2026/07/14/3326565/0/en/humanoid-global-announces-mbody-ai-s-advancements-in-commercial-expansion-and-proposed-business-combination-with-check-cap.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Physical Intelligence is in discussions to raise ~$1B at an $11B valuation (announced July 13, 2026), with Founders Fund and Lightspeed Venture Partners in talks, more than doubling its prior $5.6B valuation. https://techfundingnews.com/physical-intelligence-1b-raise-11b-valuation-founders-fund-lightspeed/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
