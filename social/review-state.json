@@ -15,7 +15,7 @@
       "fb_caption": "One 'good morning' text and suddenly I've named our future kids. \ud83d\ude2d The daydream is free and I am SPENDING it. Tag the friend who does this too \u2014 what's the smallest thing that sent you spiraling into a full fantasy?",
       "hashtags": "#Zenie #zenieapp #situationship #datinghumor #relatable #delulu #maincharacter",
       "best_time": "Tuesday 6\u20138 PM PST",
-      "approved": false,
+      "approved": true,
       "slack_posted": true,
       "notion_page_id": "39cc2cdd-459d-81bd-96ba-f31ae30535b3"
     },
@@ -24,8 +24,9 @@
       "post_type": "Meme",
       "meme_slug": "mj_popcorn",
       "skipped": false,
+      "needs_render": true,
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-07-13/meme_2.mp4",
-      "overlay_text": "me reading the group chat while two of my friends fight over the same guy",
+      "overlay_text": "me reading the group chat rn",
       "ig_caption": "pass the popcorn \ud83c\udf7f",
       "fb_caption": "Not my drama but I am fully invested. \ud83c\udf7f The group chat has been ELECTRIC today. Tag your ride-or-die you'd live-text through this. Be honest: are you the popcorn friend or the peacemaker?",
       "hashtags": "#Zenie #zenieapp #besties #friendshipgoals #relatable #groupchat #girllife",
@@ -44,7 +45,7 @@
       "fb_caption": "Whatever storm you're in today \u2014 it's weather, not you. \u2601\ufe0f You are the sky it all moves through. Save this for a hard day. What's one feeling you're letting pass through you right now?",
       "hashtags": "#Zenie #zenieapp #selfreflection #innerpeace #mindfulness #dailyquote #intentionalliving",
       "best_time": "Wednesday 7\u20139 PM PST",
-      "approved": false,
+      "approved": true,
       "slack_posted": true
     },
     {
@@ -57,7 +58,7 @@
       "fb_caption": "Would you speak to your best friend the way you speak to yourself? \ud83d\udc8c Let this be the week the inner voice gets kinder. Share this with someone who needs to hear it today.",
       "hashtags": "#Zenie #zenieapp #selfcare #selflove #affirmations #dailyquote #innergrowth",
       "best_time": "Saturday 12\u20132 PM PST",
-      "approved": false,
+      "approved": true,
       "slack_posted": true
     },
     {
@@ -69,7 +70,7 @@
       "fb_caption": "Five years of journaling and here's what it actually changes. \ud83e\udd0d If you've been meaning to start, let this be your sign. (Credit: original creator \u2014 please confirm before posting.)",
       "hashtags": "#Zenie #zenieapp #journaling #selfgrowth #selfcare #intentionalliving",
       "best_time": "Monday 6\u20138 PM PST",
-      "approved": false,
+      "approved": true,
       "slack_posted": true
     },
     {
@@ -81,7 +82,7 @@
       "fb_caption": "The 'you had your chance' energy we're taking into this week. \ud83d\udc85 Closure can just be you moving on. Tag someone who needs the reminder. (Credit: original creator \u2014 please confirm before posting.)",
       "hashtags": "#Zenie #zenieapp #situationship #dating #relatable #selfworth",
       "best_time": "Friday 6\u20138 PM PST",
-      "approved": false,
+      "approved": true,
       "slack_posted": true
     }
   ]
