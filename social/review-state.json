@@ -24,7 +24,6 @@
       "post_type": "Meme",
       "meme_slug": "mj_popcorn",
       "skipped": false,
-      "needs_render": true,
       "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-07-13/meme_2.mp4",
       "overlay_text": "me reading the group chat rn",
       "ig_caption": "pass the popcorn \ud83c\udf7f",
