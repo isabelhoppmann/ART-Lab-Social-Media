@@ -1,0 +1,19 @@
+Morning Briefing July 15, 2026
+
+=== ROBOTICS & AI ===
+- TSMC set an all-time record for Q2 2026 revenue (NT$1.27 trillion, +36% YoY) with June AI chip sales up 68% year-over-year, confirming surging AI inference demand is accelerating the infrastructure that underpins physical AI and robotics worldwide. https://www.techtimes.com/articles/320348/20260713/tsmc-sets-all-time-revenue-record-ai-demand-has-rewritten-its-calendar.htm
+- China's AI anthropomorphic interaction regulations took effect July 15, 2026, forcing ByteDance's Doubao and Alibaba's Qwen to shut down humanlike companion features and banning persistent emotional AI interactions with minors, creating a sharp regulatory split from Western consumer AI markets. https://thenextweb.com/news/china-humanlike-ai-agent-rules
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- LimX Dynamics confirmed a $200 million pre-IPO round (announced July 14, 2026) at a $2.2 billion valuation, with international investors including UAE-based Stone Venture and Germany-based Redstone VC, ahead of a planned global expansion and public listing for the Chinese autonomous humanoid robotics startup. https://www.caixinglobal.com/2026-07-14/chinese-robotics-startup-raises-200-million-102464155.html
+- PixVerse closed a $439 million Series C extension (announced July 13, 2026) at a $2 billion valuation for its Singapore-based AI video and world model platform, with Alibaba and Mirae Asset among new investors as the company expands into real-time interactive game worlds. https://techcrunch.com/2026/07/13/video-generation-startup-pixverse-raises-439m-valuation-soars-past-2b/
+
+=== COMPETITOR WATCH ===
+- OpenAI launched Codex Micro on July 15, 2026—its first branded hardware product, a programmable developer macro pad co-built with Work Louder targeting its 5 million weekly Codex users—marking OpenAI's entry into physical consumer hardware. https://devops.com/openai-expands-into-developer-hardware-with-codex-micro-keyboard/
+- Google DeepMind delayed Gemini 3.5 Pro to July 17, 2026 after scrapping its base model for a full architectural rebuild following reported failures in recursive tool-calling, per multiple July 13 reports, with implications for the Gemini Robotics model timeline. https://www.techtimes.com/articles/320308/20260713/gemini-35-pro-targets-july-17-after-full-rebuild-every-spec-remains-unconfirmed.htm
+
+=== BAY AREA ===
+- AUTONOMOUS 2026, a one-day conference for the robotics and physical AI industry, takes place July 16 at The Midway in San Francisco with 500+ founders, engineers, and investors across two stages and four content tracks—doors open 8 AM, main program 9 AM to 5 PM, evening reception until 7 PM. https://autonomousfuture.co/
