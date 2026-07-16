@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zenie Weekly Report - 2026-07-16</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root { --purple:#6B3FA0; --lavender:#C9B1E8; --pink:#F0A0C0; --bg:#f0ebf8; --text:#1a1a2e; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--bg); color:var(--text); }
+  .header{ background:linear-gradient(135deg,#6B3FA0 0%,#9b59d0 100%); color:white; padding:36px 40px 28px; }
+  .header h1{ font-size:1.8em; font-weight:700; margin-bottom:4px; }
+  .header .meta{ font-size:.9em; opacity:.8; }
+  .container{ max-width:960px; margin:0 auto; padding:28px 20px 60px; }
+  .card{ background:white; border-radius:14px; padding:24px; box-shadow:0 2px 16px rgba(107,63,160,.09); margin-bottom:22px; }
+  .brief-card{ border-left:5px solid var(--purple); }
+  .brief-card h2,.section-label{ font-size:.72em; text-transform:uppercase; letter-spacing:.12em; color:var(--purple); margin-bottom:12px; font-weight:700; }
+  .brief-card p{ font-size:1.05em; line-height:1.75; color:#333; }
+  .kpi-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:14px; margin-bottom:22px; }
+  .kpi{ background:white; border-radius:14px; padding:20px 16px; text-align:center; box-shadow:0 2px 12px rgba(107,63,160,.08); }
+  .kpi .val{ font-size:2em; font-weight:700; color:var(--purple); line-height:1.1; }
+  .kpi .delta{ font-size:.82em; font-weight:600; margin-top:3px; }
+  .kpi .lbl{ font-size:.7em; color:#999; text-transform:uppercase; letter-spacing:.08em; margin-top:6px; }
+  .chart-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:22px; }
+  .worked-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:22px; }
+  .worked-card h3{ font-size:.75em; text-transform:uppercase; letter-spacing:.1em; margin-bottom:14px; font-weight:700; }
+  .worked-card.good h3{ color:#22c55e; }
+  .worked-card.bad  h3{ color:#ef4444; }
+  .worked-card ul,.patterns-list{ list-style:none; padding:0; }
+  .worked-card ul li,.patterns-list li{ font-size:.88em; line-height:1.55; padding:9px 0; border-bottom:1px solid #f0ebf8; color:#444; }
+  .worked-card ul li:last-child,.patterns-list li:last-child{ border-bottom:none; }
+  .patterns-list li{ padding-left:18px; position:relative; }
+  .patterns-list li::before{ content:"->"; position:absolute; left:0; color:var(--purple); font-weight:700; }
+  @media(max-width:640px){
+    .kpi-grid{ grid-template-columns:1fr 1fr; }
+    .chart-row,.worked-row{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Zenie Weekly Report</h1>
+  <div class="meta">Week of Jul 10 - Jul 16, 2026 &nbsp;&middot;&nbsp; Generated 2026-07-16</div>
+</div>
+<div class="container">
+  <div class="card brief-card">
+    <h2>Boss Brief</h2>
+    <p>Instagram engagement averaged 1.59% this week, +1.59pp versus last week (historical baseline 2.33%). The top post -- "July self-care season is officially here. 🌸 Which of these i" -- drove 4.08% ER, reinforcing that quote images consistently outperform other formats. Over the 8-week window, quote images average 3.07% ER vs 2.22% for the alternative -- a 0.8pp gap that makes format choice the single highest-leverage decision. Recommendation: target quote images for at least 70% of IG output next week and watch saves as the leading organic-reach signal.</p>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="val">14,704</div>
+      <div class="delta" style="color:#999">baseline this week</div>
+      <div class="lbl">IG Followers</div>
+    </div>
+    <div class="kpi">
+      <div class="val">1.59%</div>
+      <div class="delta" style="color:#22c55e">+1.59% vs last week</div>
+      <div class="lbl">IG Avg Engagement</div>
+    </div>
+    <div class="kpi">
+      <div class="val">0.0%</div>
+      <div class="delta" style="color:#22c55e">+0.0% vs last week</div>
+      <div class="lbl">FB Avg Engagement</div>
+    </div>
+    <div class="kpi">
+      <div class="val">1,028</div>
+      <div class="lbl">IG Total Reach</div>
+    </div>
+    <div class="kpi">
+      <div class="val">5</div>
+      <div class="lbl">IG Total Saves</div>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="card">
+      <div class="section-label">8-Week Engagement Trend</div>
+      <canvas id="trendChart"></canvas>
+    </div>
+    <div class="card">
+      <div class="section-label">This Week - Posts by Engagement Rate</div>
+      <canvas id="postsChart"></canvas>
+    </div>
+  </div>
+  <div class="chart-row">
+    <div class="card">
+      <div class="section-label">Content Type - IG Historical Avg ER</div>
+      <canvas id="typeChart"></canvas>
+    </div>
+    <div class="card">
+      <div class="section-label">IG vs FB - This Week vs 8-Week Avg</div>
+      <canvas id="platformChart"></canvas>
+    </div>
+  </div>
+  <div class="worked-row">
+    <div class="card worked-card good">
+      <h3>What Worked This Week</h3>
+      <ul>
+        <li><strong>Best post:</strong> "July self-care season is officially here. 🌸 Which ..." - 4.08% ER</li>
+        <li>Quote images led with 3.07% avg ER across all historical posts.</li>
+<li>IG reach this week: 1,028 impressions, 5 saves.</li>
+<li>IG led platform engagement at 1.59% avg ER.</li>
+<li>IG followers at 14,704 (baseline set this week; growth tracked from next report).</li>
+      </ul>
+    </div>
+    <div class="card worked-card bad">
+      <h3>What Did Not Work</h3>
+      <ul>
+        <li><strong>Lowest post:</strong> "Journaling really said 'let me show you who you ac..." - 0.0% ER</li>
+        <li>Lowest post: "Journaling really said 'let me show you who you actually are" at 0.0% ER.</li>
+<li>FB trailed at 0.0% avg ER.</li>
+<li>Posts lacking strong visual hooks or clear calls-to-action consistently underperform.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="section-label">Running Patterns - What the Data Shows Over Time</div>
+    <ul class="patterns-list">
+      <li>IG engagement is improving over the 8-week window (0% to 1.59%).</li>
+<li>Meme (video) posts average 2.22% ER vs 3.07% for quote images -- -0.8pp gap.</li>
+<li>IG saves totalled 5 this week; rising saves correlate with broader organic distribution.</li>
+<li>FB engagement (baseline 35.71%) consistently lags IG (baseline 2.33%).</li>
+<li>WoW deltas: IG +1.59%, FB +0.0%.</li>
+<li>Top posts across all weeks share strong visual identity and concise, action-oriented captions.</li>
+    </ul>
+  </div>
+</div>
+<script>
+const purple='#6B3FA0', lavender='#C9B1E8', pink='#F0A0C0';
+new Chart(document.getElementById('trendChart'),{
+  type:'line',
+  data:{
+    labels:["Apr 6", "May 4", "May 18", "Jun 8", "Jun 22", "Jun 29", "Jul 6", "This week"],
+    datasets:[
+      {label:'Instagram',data:[0, 0.52, 0.0, 1.07, 0.97, 2.12, 0, 1.59],borderColor:purple,backgroundColor:'rgba(107,63,160,.08)',tension:.35,fill:true,pointRadius:4,pointBackgroundColor:purple},
+      {label:'Facebook', data:[0.0, 0.0, 50.0, 0.0, 25.0, 25.0, 0.0, 0.0],borderColor:pink, backgroundColor:'rgba(240,160,192,.08)',tension:.35,fill:true,pointRadius:4,pointBackgroundColor:pink}
+    ]
+  },
+  options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v+'%'}}}}
+});
+new Chart(document.getElementById('postsChart'),{
+  type:'bar',
+  data:{
+    labels:["IG: July self-care season is officially he...", "IG: delulu is the solulu  #zenie  #zenieap...", "IG: She woke up \u2728  #zenie  #zenieapp  #jou...", "IG: The mixed signals are wild \ud83d\ude2d  #zenie  ...", "IG: These journal prompts hit different \ud83d\udcd3 ...", "IG: Journaling has the power to transform ...", "FB: If you're building a journaling practi...", "FB: One 'good morning' text and suddenly I...", "FB: Reading his texts like it's a final ex...", "FB: Journaling has the power to transform ...", "FB: Rumi had a way of saying in one senten...", "FB: July self-care season is officially he...", "FB: Journaling really said 'let me show yo..."],
+    datasets:[{label:'ER %',data:[4.08, 3.23, 1.76, 0.48, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],backgroundColor:["#6B3FA0", "#6B3FA0", "#6B3FA0", "#6B3FA0", "#6B3FA0", "#6B3FA0", "#F0A0C0", "#F0A0C0", "#F0A0C0", "#F0A0C0", "#F0A0C0", "#F0A0C0", "#F0A0C0"],borderRadius:5}]
+  },
+  options:{indexAxis:'y',responsive:true,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,ticks:{callback:v=>v+'%'}}}}
+});
+new Chart(document.getElementById('typeChart'),{
+  type:'bar',
+  data:{
+    labels:['Memes (Video)','Quote Images'],
+    datasets:[{label:'Avg ER %',data:[2.22,3.07],backgroundColor:[purple,lavender],borderRadius:6}]
+  },
+  options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v+'%'}}}}
+});
+new Chart(document.getElementById('platformChart'),{
+  type:'bar',
+  data:{
+    labels:['Instagram','Facebook'],
+    datasets:[
+      {label:'This Week',  data:[1.59,0.0],backgroundColor:[purple,pink],borderRadius:6},
+      {label:'8-Week Avg', data:[2.33,35.71],backgroundColor:[lavender,'rgba(240,160,192,.5)'],borderRadius:6}
+    ]
+  },
+  options:{responsive:true,plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,ticks:{callback:v=>v+'%'}}}}
+});
+</script>
+</body>
+</html>
