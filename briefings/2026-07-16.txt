@@ -1,0 +1,18 @@
+Morning Briefing July 16, 2026
+
+=== ROBOTICS & AI ===
+- South Korea unveiled a ten-year $880 billion national plan on July 15, 2026 — backed by Samsung and SK Group alongside President Lee Jae Myung — to double domestic memory chip output, expand AI data center capacity to 18.4 gigawatts by 2035, and mass-produce humanoid robots, marking the country's largest ever coordinated AI-and-robotics industrial commitment. https://mlq.ai/news/south-korea-unveils-880-billion-plan-to-double-memory-chip-output-and-mass-produce-humanoid-robots-1/
+- China is deploying thousands of humanoid robots to logistics hubs and battery factories to harvest human behavioral data at scale, with the world's first humanoid robot training school — enrolling over 100 different models — set to open this month in what officials and companies describe as a data-collection arms race for AI brain development, per a Japan Times report published July 16, 2026. https://www.japantimes.co.jp/business/2026/07/16/china-robots-how-to-be-human/
+
+=== RESEARCH ===
+- Thinking Machines Lab, founded by former OpenAI CTO Mira Murati, released Inkling on July 15, 2026 — its first open-weight AI model — arguing that specialized, customizable models beat monolithic frontier systems for real-world enterprise deployment, a design thesis directly relevant to robots that must be fine-tuned per home environment. https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/
+
+=== FUNDING & INVESTMENT ===
+- Walden Robotics emerged from stealth on July 15, 2026 with $300 million in funding at a $1.1 billion valuation, backed by Toyota, NVIDIA, Boeing, Samsung Ventures, and CoreWeave Ventures, with its general-purpose AI robots already running in production at a Toyota plant in North America using Large Behavior Models that improve through real-world use. https://www.businesswire.com/news/home/20260715089377/en/Walden-Robotics-Launches-with-$300-Million-to-Put-General-Purpose-Robots-to-Work-Today
+- Monumental closed a $32 million Series B on July 15, 2026, led by Khosla Ventures, to scale its fleet of electric AI bricklaying robots — coordinated by the Atrium software platform and already deployed on over 100 homes and buildings across Europe — into the US construction market this year. https://fortune.com/2026/07/15/construction-robotics-startup-monumental-raises-32-million-from-khosla-ventures-to-tackle-labor-shortages/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- The SF Bay AI Meetup (SV July Edition) is tonight at 5:30 PM PDT in Silicon Valley, featuring tech talks on securing AI coding agents, sandboxes, and real-world attack vectors — a useful lens on safe agentic AI deployment. https://www.meetup.com/sfbay-ai/events/315625267/
