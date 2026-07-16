@@ -82,9 +82,37 @@ try:
 except Exception as e:
     print(f"FB fetch failed: {e}")
 
+# ── Step 0b: account-level follower count ───────────────────────────────────────
+followers_count = None
+try:
+    acct = api_get(IG_USER_ID, {"fields": "followers_count"})
+    followers_count = acct.get("followers_count")
+    print(f"IG followers_count: {followers_count}")
+except Exception as e:
+    print(f"Followers fetch failed: {e}")
+
 # ── Step 1: split ──────────────────────────────────────────────────────────────
 now      = datetime.now(timezone.utc)
 week_ago = now - timedelta(days=7)
+today_str = now.strftime("%Y-%m-%d")
+
+# ── Follower history & weekly delta ─────────────────────────────────────────────
+# Persist a running log of follower counts (committed via `git add reports/`) so we
+# can compute week-over-week growth without a possibly-deprecated insight metric.
+FOLLOWERS_LOG = "reports/followers.json"
+follower_hist = {}
+if os.path.exists(FOLLOWERS_LOG):
+    try:
+        with open(FOLLOWERS_LOG) as _f:
+            follower_hist = json.load(_f)
+    except Exception:
+        follower_hist = {}
+
+follower_delta = None
+if followers_count is not None:
+    prior_keys = sorted(k for k in follower_hist if k < today_str)
+    if prior_keys:
+        follower_delta = followers_count - follower_hist[prior_keys[-1]]
 
 ig_this_week  = [p for p in ig_posts if parse_ts(p["timestamp"]) >= week_ago]
 ig_historical = [p for p in ig_posts if parse_ts(p["timestamp"]) <  week_ago]
@@ -183,6 +211,12 @@ else:
         f"IG reach this week: {ig_week_reach:,} impressions, {ig_week_saves} saves.",
         f"{'IG' if ig_week_avg_er >= fb_week_avg_er else 'FB'} led platform engagement at {max(ig_week_avg_er, fb_week_avg_er)}% avg ER.",
     ]
+    if followers_count is not None:
+        if follower_delta is None:
+            what_worked.append(f"IG followers at {followers_count:,} (baseline set this week; growth tracked from next report).")
+        else:
+            _fg_sign = "+" if follower_delta >= 0 else ""
+            what_worked.append(f"IG followers {'grew' if follower_delta >= 0 else 'dipped'} to {followers_count:,} ({_fg_sign}{follower_delta:,} this week).")
     what_didnt = [
         f"Lowest post: \"{worst_cap}\" at {worst_er_v}% ER.",
         f"{'FB' if fb_week_avg_er <= ig_week_avg_er else 'IG'} trailed at {min(fb_week_avg_er, ig_week_avg_er)}% avg ER.",
@@ -207,6 +241,15 @@ ig_wow_sign  = "+" if ig_wow_delta >= 0 else ""
 fb_wow_sign  = "+" if fb_wow_delta >= 0 else ""
 ig_wow_color = "#22c55e" if ig_wow_delta >= 0 else "#ef4444"
 fb_wow_color = "#22c55e" if fb_wow_delta >= 0 else "#ef4444"
+
+# Follower KPI display strings
+followers_display = f"{followers_count:,}" if followers_count is not None else "N/A"
+if follower_delta is None:
+    follower_delta_str   = "baseline this week"
+    follower_delta_color = "#999"
+else:
+    follower_delta_str   = f"{'+' if follower_delta >= 0 else ''}{follower_delta:,} this week"
+    follower_delta_color = "#22c55e" if follower_delta >= 0 else "#ef4444"
 best_caption  = (best_post.get("caption")  or best_post.get("message")  or "")[:50].replace("\n"," ") if best_post  else "N/A"
 worst_caption = (worst_post.get("caption") or worst_post.get("message") or "")[:50].replace("\n"," ") if worst_post else "N/A"
 best_er_val   = best_post["eng_rate"]  if best_post  else 0
@@ -233,7 +276,7 @@ html = f"""<!DOCTYPE html>
   .brief-card{{ border-left:5px solid var(--purple); }}
   .brief-card h2,.section-label{{ font-size:.72em; text-transform:uppercase; letter-spacing:.12em; color:var(--purple); margin-bottom:12px; font-weight:700; }}
   .brief-card p{{ font-size:1.05em; line-height:1.75; color:#333; }}
-  .kpi-grid{{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:22px; }}
+  .kpi-grid{{ display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr)); gap:14px; margin-bottom:22px; }}
   .kpi{{ background:white; border-radius:14px; padding:20px 16px; text-align:center; box-shadow:0 2px 12px rgba(107,63,160,.08); }}
   .kpi .val{{ font-size:2em; font-weight:700; color:var(--purple); line-height:1.1; }}
   .kpi .delta{{ font-size:.82em; font-weight:600; margin-top:3px; }}
@@ -265,6 +308,11 @@ html = f"""<!DOCTYPE html>
     <p>{boss_brief}</p>
   </div>
   <div class="kpi-grid">
+    <div class="kpi">
+      <div class="val">{followers_display}</div>
+      <div class="delta" style="color:{follower_delta_color}">{follower_delta_str}</div>
+      <div class="lbl">IG Followers</div>
+    </div>
     <div class="kpi">
       <div class="val">{ig_week_avg_er}%</div>
       <div class="delta" style="color:{ig_wow_color}">{ig_wow_sign}{ig_wow_delta}% vs last week</div>
@@ -389,6 +437,13 @@ os.makedirs("reports", exist_ok=True)
 with open(f"reports/{today_str}.html", "w") as f:
     f.write(html)
 print(f"HTML built: {len(html):,} chars -> reports/{today_str}.html")
+
+# Persist this week's follower count for next week's delta (skip on failed pull).
+if followers_count is not None:
+    follower_hist[today_str] = followers_count
+    with open(FOLLOWERS_LOG, "w") as f:
+        json.dump(follower_hist, f, indent=2, sort_keys=True)
+    print(f"followers.json updated: {today_str} -> {followers_count:,}")
 
 # ── Step 5: update index.html ──────────────────────────────────────────────────
 INDEX_TEMPLATE = """<!DOCTYPE html>
