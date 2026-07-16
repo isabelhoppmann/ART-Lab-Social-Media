@@ -99,6 +99,12 @@ today_str = now.strftime("%Y-%m-%d")
 # ── Follower history & weekly delta ─────────────────────────────────────────────
 # Persist a running log of follower counts (committed via `git add reports/`) so we
 # can compute week-over-week growth without a possibly-deprecated insight metric.
+# Each reading is keyed to the most recent Sunday ("week anchor") so the delta is a
+# clean Sunday-to-Sunday comparison. The report runs on Sundays, so a scheduled run
+# keys to today; a mid-week manual run keys to the same Sunday and just updates that
+# week's slot instead of creating a spurious data point.
+week_anchor_str = (now - timedelta(days=(now.weekday() + 1) % 7)).strftime("%Y-%m-%d")
+
 FOLLOWERS_LOG = "reports/followers.json"
 follower_hist = {}
 if os.path.exists(FOLLOWERS_LOG):
@@ -110,7 +116,7 @@ if os.path.exists(FOLLOWERS_LOG):
 
 follower_delta = None
 if followers_count is not None:
-    prior_keys = sorted(k for k in follower_hist if k < today_str)
+    prior_keys = sorted(k for k in follower_hist if k < week_anchor_str)
     if prior_keys:
         follower_delta = followers_count - follower_hist[prior_keys[-1]]
 
@@ -438,12 +444,13 @@ with open(f"reports/{today_str}.html", "w") as f:
     f.write(html)
 print(f"HTML built: {len(html):,} chars -> reports/{today_str}.html")
 
-# Persist this week's follower count for next week's delta (skip on failed pull).
+# Persist this week's follower count (keyed to the week's Sunday) for next week's
+# delta. Skip on a failed pull so we never write a bogus zero.
 if followers_count is not None:
-    follower_hist[today_str] = followers_count
+    follower_hist[week_anchor_str] = followers_count
     with open(FOLLOWERS_LOG, "w") as f:
         json.dump(follower_hist, f, indent=2, sort_keys=True)
-    print(f"followers.json updated: {today_str} -> {followers_count:,}")
+    print(f"followers.json updated: {week_anchor_str} -> {followers_count:,}")
 
 # ── Step 5: update index.html ──────────────────────────────────────────────────
 INDEX_TEMPLATE = """<!DOCTYPE html>
