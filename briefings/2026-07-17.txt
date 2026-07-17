@@ -1,0 +1,18 @@
+Morning Briefing July 17, 2026
+
+=== ROBOTICS & AI ===
+- WAIC 2026 opened in Shanghai today with over 1,100 companies and 300+ global AI product debuts, anchored by embodied intelligence and humanoid robots, as Chinese officials projected domestic humanoid production will surpass 100,000 units in 2026. http://www.prnewswire.com/news-releases/global-times-300-plus-ai-products-set-to-make-their-global-debuts-at-waic-with-strong-focus-on-practical-applications-302828166.html
+- Pudu Robotics used WAIC 2026 (July 17) to give the PUDU D7 semi-humanoid its first offline public showcase and demonstrate its "One Brain, Multiple Embodiments" physical agent architecture, signaling the service-robot leader's push into multi-embodiment physical AI. https://www.prnewswire.com/news-releases/pudu-robotics-highlights-its-one-brain-multiple-embodiments-physical-agent-at-waic-2026-302828480.html
+
+=== RESEARCH ===
+- Moonshot AI released Kimi K3 on July 16, a natively multimodal open-source model with 2.8 trillion parameters and a 1-million-token context window that rivals top U.S. frontier systems on coding, reasoning, and long-context benchmarks, with full model weights due July 27. https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems
+
+=== FUNDING & INVESTMENT ===
+- Microagi raised $55 million in a seed round led by Hummingbird Ventures (announced July 16, 2026) — Germany's largest-ever seed round — to scale its hardware-agnostic platform that captures real-world factory and home footage to train and fine-tune humanoid robots for site-specific tasks. https://siliconangle.com/2026/07/16/microagi-nabs-55m-teach-factory-robots-work/
+- Wonder raised $650 million Series D at a $9 billion valuation (announced July 16, 2026), backed by Accel, GV, and NEA, to expand its fully automated Infinite Kitchen cooking-robotics system and a new drone-delivery partnership with Zipline set to launch in Texas. https://www.prnewswire.com/news-releases/wonder-announces-650-million-series-d-round-at-a-9-billion-pre-money-valuation-302827208.html
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Best of ICRA virtual meetup (free, July 21, 9-11 AM PST) hosted by the San Francisco AI Meetup Group features researchers presenting accepted ICRA 2026 papers on outdoor robot navigation, terrain traversability, and physical scene understanding. https://www.meetup.com/san-francisco-ai-meetup-group/events/315398845/
