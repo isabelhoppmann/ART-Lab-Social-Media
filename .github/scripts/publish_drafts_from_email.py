@@ -24,10 +24,17 @@ No Claude API call -> no metered cost. Standard library only.
 Required env (already repo secrets): GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET,
 GMAIL_REFRESH_TOKEN.
 
-Exit codes:
-  0  files written, OR this week already published (skip) -> pipeline runs idempotently
-  1  no bundle email found, or bundle failed validation -> nothing written, so the
-     workflow's failure step alerts the error channel.
+This Action is scheduled to run MANY times across Monday morning (GitHub drops or
+delays any single scheduled tick), so it must be safe to run repeatedly and must
+NOT cry wolf when it simply runs before the bundle email has arrived.
+
+Exit codes / GitHub step output `status`:
+  0  status=materialized  -> fresh files written this run; workflow runs render+post
+  0  status=already_done  -> this week already published; workflow skips downstream
+  0  status=waiting       -> bundle email not here yet; skip quietly, a later tick
+                            will get it (NOT an error -- no alert)
+  1  (no status)          -> bundle found but garbled/failed validation; a real
+                            failure, so the workflow's failure step alerts.
 """
 
 import base64
@@ -44,8 +51,19 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fi
 STATE_PATH = os.path.join(REPO_ROOT, "social", "review-state.json")
 REQUIRED_FILE = "social/review-state.json"
 SUBJECT_PREFIX = "ZENIE DRAFTS"
-FETCH_ATTEMPTS = 6
+# Kept short on purpose: the workflow now retries every 30 min all morning, so each
+# tick only needs a couple of quick looks rather than a long in-tick wait.
+FETCH_ATTEMPTS = 3
 FETCH_WAIT_SECONDS = 60
+
+
+def set_output(status):
+    """Expose the run's outcome to the workflow as step output `status` so the
+    render/post/commit steps only run when we actually materialized fresh files."""
+    out = os.environ.get("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a", encoding="utf-8") as f:
+            f.write(f"status={status}\n")
 
 
 def gmail_access_token():
@@ -219,6 +237,7 @@ def main():
             f"Week {today_str} already published (review-state has slack_thread_ts) "
             f"-- skipping write; downstream steps will no-op."
         )
+        set_output("already_done")
         return 0
 
     token = gmail_access_token()
@@ -236,12 +255,15 @@ def main():
             time.sleep(FETCH_WAIT_SECONDS)
 
     if not body:
+        # Not an error: this tick simply ran before the bundle arrived. Skip
+        # quietly and let a later Monday-morning tick pick it up. The watchdog
+        # (mid-morning) is the authoritative alarm if the week never publishes.
         print(
-            f"ERROR: no '{SUBJECT_PREFIX} {today_str}' email found after "
-            f"{FETCH_ATTEMPTS} attempts.",
-            file=sys.stderr,
+            f"No '{SUBJECT_PREFIX} {today_str}' bundle email yet after "
+            f"{FETCH_ATTEMPTS} attempts -- skipping; a later tick will retry."
         )
-        return 1
+        set_output("waiting")
+        return 0
 
     try:
         bundle = parse_bundle(body)
@@ -276,6 +298,7 @@ def main():
     print(f"Materialized {len(written)} file(s) for week {today_str}:")
     for w in sorted(written):
         print("  -", w)
+    set_output("materialized")
     return 0
 
 

@@ -15,7 +15,13 @@ name: Publish Zenie Drafts from Email
 
 on:
   schedule:
-    - cron: '40 3 * * 1'    # Mon 03:40 UTC -- ~40 min after the routine's 03:00 run
+    # GitHub's scheduled Actions are best-effort: any single tick can be delayed by
+    # hours or silently dropped under load (this is why publishes kept "missing").
+    # So we DON'T rely on one tick -- we retry across the whole Monday morning. The
+    # first tick that finds the bundle email publishes; every later tick sees the
+    # week is already published and cleanly no-ops (see publish_drafts_from_email.py).
+    - cron: '40 3 * * 1'      # Mon 03:40 UTC -- ~40 min after the routine's 03:00 run
+    - cron: '0,30 4-9 * * 1'  # then every 30 min through 09:30 UTC as a safety net
   workflow_dispatch:         # run on demand to test or to regenerate a week
 
 permissions:
@@ -40,7 +46,12 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           python3 -m pip install --quiet Pillow
 
+      # Sets output `status`: materialized (fresh files written this run),
+      # already_done (this week already published -> skip), or waiting (bundle
+      # email not here yet -> skip quietly, a later tick will get it). Only a real
+      # crash (bad/garbled bundle) exits non-zero and trips the failure alert.
       - name: Materialize drafts from email bundle
+        id: materialize
         env:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
@@ -48,23 +59,26 @@ jobs:
         run: python3 .github/scripts/publish_drafts_from_email.py
 
       - name: Render library memes (agent ships them skipped)
+        if: steps.materialize.outputs.status == 'materialized'
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
         run: python3 .github/scripts/regenerate_memes.py
 
       - name: Regenerate quote images flagged for re-render (usually a no-op)
+        if: steps.materialize.outputs.status == 'materialized'
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
         run: python3 .github/scripts/regenerate_quotes.py
 
       - name: Post to Slack for review
+        if: steps.materialize.outputs.status == 'materialized'
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         run: python3 .github/scripts/post_social_to_slack.py
 
       - name: Commit drafts + rendered assets
-        if: always()
+        if: steps.materialize.outputs.status == 'materialized'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
