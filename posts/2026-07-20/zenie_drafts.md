@@ -74,14 +74,14 @@
 
 ---
 
-## Quote Image 1 — Rumi / Healing & Light
+## Quote Image 1 — Rupi Kaur / Growth is a Process
 
-**Quote:** "The wound is the place where the Light enters you."
-**Attribution:** Rumi
+**Quote:** "You do not just wake up and become the butterfly. Growth is a process."
+**Attribution:** Rupi Kaur
 
-**fb_caption:** This one hit different today. 💜 Sometimes what we've been through is exactly what opens us up to something more beautiful. Save this for a moment when you need a reminder. ✨
+**fb_caption:** Gentle reminder: you're not behind. 💜 Becoming who you're meant to be takes time — every quiet, in-between season counts. Save this for a day you need the patience. What are you slowly growing into right now? 👇
 
-**hashtags:** #Zenie #ZenieApp #Rumi #QuoteOfTheDay #SelfReflection #HealingJourney #WomenOfIG
+**hashtags:** #Zenie #ZenieApp #GrowthJourney #SelfGrowth #Healing #Patience #WomenWhoGrow
 
 **Best time to post:** Friday 1 PM PST
 

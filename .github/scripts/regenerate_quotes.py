@@ -17,7 +17,33 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 
 REPO = "isabelhoppmann/ART-Lab-Social-Media"
 STATE_PATH = "social/review-state.json"
+USED_QUOTES_PATH = "social/used_quotes.json"      # no-repeat ledger (mirrors meme_library/used.json)
 PEXELS_KEY = os.environ.get("PEXELS_KEY", "")
+
+
+def _norm_quote(q):
+    """Normalized match key: lowercase, punctuation stripped, whitespace collapsed.
+    Must stay identical to the norm used in AGENT_INSTRUCTIONS.md Step 2C and used_quotes.json."""
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", "", (q or "").lower())).strip()
+
+
+def mark_quote_used(quote, attribution, week, label):
+    """Append a rendered quote to the no-repeat ledger so it is never suggested again —
+    enforced at render time even if an agent slips, and independent of the Notion chart."""
+    key = _norm_quote(quote)
+    if not key:
+        return
+    try:
+        data = json.load(open(USED_QUOTES_PATH))
+    except Exception:
+        data = {"used": []}
+    used = data.setdefault("used", [])
+    if not any(_norm_quote(u.get("quote", "")) == key for u in used):
+        used.append({"quote": quote, "attribution": attribution,
+                     "norm": key, "first_week": week})
+        json.dump(data, open(USED_QUOTES_PATH, "w"), indent=2, ensure_ascii=False)
+        open(USED_QUOTES_PATH, "a").write("\n")
+        print(f"  marked quote used (no-repeat): {quote!r}")
 
 FONT_VAR = "/tmp/PlayfairDisplay-VAR.ttf"
 FONT_VAR_ITALIC = "/tmp/PlayfairDisplay-Italic-VAR.ttf"
@@ -193,6 +219,7 @@ def main():
             post.pop("needs_render", None)
             post.pop("needs_new_background", None)
             update_index_html(f"posts/{week}/index.html", n, post)
+            mark_quote_used(quote, attribution, week, label)   # consume it — never suggest again
             changed = True
             print(f"  OK {label} re-rendered")
         except Exception as e:

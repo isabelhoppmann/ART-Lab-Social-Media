@@ -1,0 +1,167 @@
+{
+  "_comment": "NO-REPEAT LEDGER for Zenie quote images. Every quote listed here has already been drafted/posted in a Zenie post and must NEVER be suggested again — not even reworded, re-attributed, or with a different caption. Matching is on the normalized text (`norm`: lowercased, punctuation stripped, whitespace collapsed), so curly quotes, trailing periods, and capitalization do not matter. The drafting agent (Step 2C) and the feedback agent must exclude every quote whose normalized text is in this list, regardless of what the Notion 'Zenie Posts' chart shows — assume anything ever drafted was posted. GitHub Actions (regenerate_quotes.py) appends to this automatically the moment it renders a quote image, so the rule is enforced at render time even if an agent slips. Seeded 2026-07-20 from all prior posts/*/zenie_drafts.md.",
+  "used": [
+    {
+      "quote": "You are not too much. You are just enough for the right person.",
+      "attribution": "Unknown",
+      "norm": "you are not too much you are just enough for the right person",
+      "first_week": "2026-04-03"
+    },
+    {
+      "quote": "Your standards are not the problem. Your patience is the medicine.",
+      "attribution": "Unknown",
+      "norm": "your standards are not the problem your patience is the medicine",
+      "first_week": "2026-04-03"
+    },
+    {
+      "quote": "You don't find yourself by looking for love. You find love by knowing yourself.",
+      "attribution": "Unknown",
+      "norm": "you dont find yourself by looking for love you find love by knowing yourself",
+      "first_week": "2026-04-04"
+    },
+    {
+      "quote": "Healing is not linear. Neither is loving yourself.",
+      "attribution": "Unknown",
+      "norm": "healing is not linear neither is loving yourself",
+      "first_week": "2026-04-04"
+    },
+    {
+      "quote": "Your peace is the prize.",
+      "attribution": "Unknown",
+      "norm": "your peace is the prize",
+      "first_week": "2026-04-09"
+    },
+    {
+      "quote": "She started writing. Everything changed.",
+      "attribution": "Unknown",
+      "norm": "she started writing everything changed",
+      "first_week": "2026-04-09"
+    },
+    {
+      "quote": "Romanticize your life before someone else does.",
+      "attribution": "Unknown",
+      "norm": "romanticize your life before someone else does",
+      "first_week": "2026-04-13"
+    },
+    {
+      "quote": "Your next chapter starts the moment you decide.",
+      "attribution": "Unknown",
+      "norm": "your next chapter starts the moment you decide",
+      "first_week": "2026-04-13"
+    },
+    {
+      "quote": "You yourself, as much as anybody in the entire universe, deserve your love and affection.",
+      "attribution": "Buddha",
+      "norm": "you yourself as much as anybody in the entire universe deserve your love and affection",
+      "first_week": "2026-04-14"
+    },
+    {
+      "quote": "The most powerful relationship you will ever have is the relationship with yourself.",
+      "attribution": "Steve Maraboli",
+      "norm": "the most powerful relationship you will ever have is the relationship with yourself",
+      "first_week": "2026-04-14"
+    },
+    {
+      "quote": "What you seek is seeking you.",
+      "attribution": "Rumi",
+      "norm": "what you seek is seeking you",
+      "first_week": "2026-04-28"
+    },
+    {
+      "quote": "There is no greater agony than bearing an untold story inside you.",
+      "attribution": "Maya Angelou",
+      "norm": "there is no greater agony than bearing an untold story inside you",
+      "first_week": "2026-04-28"
+    },
+    {
+      "quote": "The only journey is the one within.",
+      "attribution": "Rainer Maria Rilke",
+      "norm": "the only journey is the one within",
+      "first_week": "2026-05-01"
+    },
+    {
+      "quote": "Until you make the unconscious conscious, it will direct your life and you will call it fate.",
+      "attribution": "Carl Jung",
+      "norm": "until you make the unconscious conscious it will direct your life and you will call it fate",
+      "first_week": "2026-05-01"
+    },
+    {
+      "quote": "She remembered who she was and the game changed.",
+      "attribution": "Lalah Delia",
+      "norm": "she remembered who she was and the game changed",
+      "first_week": "2026-05-07"
+    },
+    {
+      "quote": "Breathe, darling. This is just a chapter, not your whole story.",
+      "attribution": "S.C. Lourie",
+      "norm": "breathe darling this is just a chapter not your whole story",
+      "first_week": "2026-05-08"
+    },
+    {
+      "quote": "To love oneself is the beginning of a lifelong romance.",
+      "attribution": "Oscar Wilde",
+      "norm": "to love oneself is the beginning of a lifelong romance",
+      "first_week": "2026-05-12"
+    },
+    {
+      "quote": "Tell me, what is it you plan to do with your one wild and precious life?",
+      "attribution": "Mary Oliver",
+      "norm": "tell me what is it you plan to do with your one wild and precious life",
+      "first_week": "2026-05-18"
+    },
+    {
+      "quote": "The wound is the place where the Light enters you.",
+      "attribution": "Rumi",
+      "norm": "the wound is the place where the light enters you",
+      "first_week": "2026-05-18"
+    },
+    {
+      "quote": "You yourself, as much as anybody, deserve your love and affection.",
+      "attribution": "Buddha",
+      "norm": "you yourself as much as anybody deserve your love and affection",
+      "first_week": "2026-05-25"
+    },
+    {
+      "quote": "Turn your wounds into wisdom.",
+      "attribution": "Oprah Winfrey",
+      "norm": "turn your wounds into wisdom",
+      "first_week": "2026-06-08"
+    },
+    {
+      "quote": "The privilege of a lifetime is to become who you truly are.",
+      "attribution": "Carl Gustav Jung",
+      "norm": "the privilege of a lifetime is to become who you truly are",
+      "first_week": "2026-06-22"
+    },
+    {
+      "quote": "Knowing yourself is the beginning of all wisdom.",
+      "attribution": "Aristotle",
+      "norm": "knowing yourself is the beginning of all wisdom",
+      "first_week": "2026-07-06"
+    },
+    {
+      "quote": "Your heart knows the way. Run in that direction.",
+      "attribution": "Rumi",
+      "norm": "your heart knows the way run in that direction",
+      "first_week": "2026-07-06"
+    },
+    {
+      "quote": "You are the sky. Everything else is just the weather.",
+      "attribution": "Pema Chodron",
+      "norm": "you are the sky everything else is just the weather",
+      "first_week": "2026-07-13"
+    },
+    {
+      "quote": "Talk to yourself like you would to someone you love.",
+      "attribution": "Brene Brown",
+      "norm": "talk to yourself like you would to someone you love",
+      "first_week": "2026-07-13"
+    },
+    {
+      "quote": "Start where you are. Use what you have. Do what you can.",
+      "attribution": "Arthur Ashe",
+      "norm": "start where you are use what you have do what you can",
+      "first_week": "2026-07-20"
+    }
+  ]
+}

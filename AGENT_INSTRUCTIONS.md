@@ -485,6 +485,20 @@ Get: direct Instagram reel URL, creator handle (per the caution above), repost c
 The design is: **a beautiful full-bleed photo background with a floating cream card on top**, with decorative watercolor/botanical elements at the card corners. This matches Zenie's existing Instagram aesthetic exactly.
 
 ### Quotes
+
+**NO-REPEAT RULE (critical — do this BEFORE picking any quote):** a quote may be used only ONCE, ever — never repeat one, even reworded, re-attributed, or paired with a different caption. **Assume every quote in the ledger was already posted, no matter what the Notion "Zenie Posts" chart says** (Notion status is not a reliable record of what went live). Fetch the ledger and exclude everything in it:
+```python
+import urllib.request, json, re
+def _raw(p):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(
+        "https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/" + p,
+        headers={"User-Agent": "ZenieAgent/1.0"})).read())
+def _norm(q):   # MUST match regenerate_quotes.py + used_quotes.json exactly
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", "", (q or "").lower())).strip()
+used_quotes = {_norm(u["quote"]) for u in _raw("social/used_quotes.json").get("used", [])}
+```
+For each quote you consider, reject it if `_norm(quote) in used_quotes`. Also reject anything that is essentially the same line as a used quote (a trimmed or paraphrased variant — use judgment, the normalized match only catches exact/punctuation-level repeats). Both of this week's quotes must be new AND different from each other. You do NOT append to the ledger yourself — GitHub Actions (`regenerate_quotes.py`) does that automatically the moment it renders each quote image.
+
 - Source REAL attributed quotes from famous thinkers, writers, philosophers (Buddha, Rumi, Maya Angelou, Brené Brown, Stoics, poets, etc.)
 - Tone: self-reflection, growth, relationships, intentional living, inner peace
 - Length: **10–18 words max** — prefer short, elegant, poetic quotes. Avoid long or analytical quotes that require unpacking. The best quotes land instantly.
@@ -492,7 +506,7 @@ The design is: **a beautiful full-bleed photo background with a floating cream c
 - Format: include the attribution (name of person, or "Unknown")
 - Example: quote="When life gets blurry, adjust your focus, not your vision.", attribution="Unknown"
 - Example: quote="A crack is where the light comes in.", attribution="Rumi"
-- Example (ideal style): quote="The only journey is the one within.", attribution="Rainer Maria Rilke"
+- Example (ideal style — illustrative only; this exact line is already used, so do NOT reuse it — it shows the short, poetic register to aim for): quote="The only journey is the one within.", attribution="Rainer Maria Rilke"
 - **Use the Performance Brief:** if quote images drove higher saves on IG, lean into themes that resonated (e.g. inner peace, relationships). Pick quotes that match those themes.
 
 **Quote images are Facebook-only. Do NOT post quote images to Instagram.**
