@@ -1,0 +1,17 @@
+Morning Briefing July 20, 2026
+
+=== ROBOTICS & AI ===
+- AGIBOT unveiled four new robots at WAIC 2026 in Shanghai on July 18, including the A3 Ultra full-size humanoid (1.74m tall, 51 active degrees of freedom, NVIDIA Thor-powered, 8-hour runtime), alongside the X2 Edu education platform, G2 Max industrial robot, and OmniHand 3 Ultra-M dexterous hand, with over 30 AGIBOT robots operating live across the conference venue. https://www.bignewsnetwork.com/news/279197693/agibot-unveils-four-new-products-at-waic-2026-showcasing-embodied-ai-in-real-world-operations
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Current AI, a nonprofit building open public AI infrastructure to compete with private closed models, secured $400M in committed funding on July 19, 2026, including $100M from the French government plus backing from DeepMind, Salesforce, Ford Foundation, and the MacArthur Foundation. https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/
+
+=== COMPETITOR WATCH ===
+- Boston Dynamics' Atlas humanoid completed its largest public appearance to date at the FIFA World Cup final on July 19, wrapping Hyundai's 15-day global activation campaign and signaling growing consumer-facing visibility for bipedal robots ahead of planned factory deployment at Hyundai's US plant in 2028. https://blog.robozaps.com/b/humanoid-robot-news-week-july-13-20-2026
+
+=== BAY AREA ===
+- A Robotics Founders & VCs Private Dinner is scheduled for July 28 in Palo Alto, offering a networking opportunity for founders and investors in the humanoid and physical AI space. https://agendahero.com/schedule/0f8899a0-3dbc-4d6a-ad05-58225b751316
+- The Agents & APIs SF Developer Meetup is set for July 30 at CANOPY Jackson Square in San Francisco, focused on agentic AI and developer tools. https://agendahero.com/schedule/0f8899a0-3dbc-4d6a-ad05-58225b751316
