@@ -1,0 +1,18 @@
+Morning Briefing July 22, 2026
+
+=== ROBOTICS & AI ===
+- Robots showcased at China's WAIC 2026 are being described as commercial-ready "co-workers" capable of sensing and adapting in factories, stores, and homes, signaling an embodied intelligence inflection point. http://english.scio.gov.cn/chinavoices/2026-07/21/content_118609843.html
+- Virtuix's Omni One platform won the 2026 Auggie Award for Best Interaction Product at the Augmented World Expo on July 21, recognized for its AI-powered humanoid teleoperation system developed with the University of Central Florida. https://www.globenewswire.com/news-release/2026/07/21/3330587/0/en/Omni-One-Wins-XR-Industry-s-Top-Award-as-AI-and-Humanoid-Robotics-Platform-Gains-Momentum.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- UK-based Humanoid raised $152M in a Series A on July 21, 2026 at a $1.35B valuation led by Prime Movers Lab, becoming Europe's first pure-play humanoid robotics unicorn with 34,000 robot pre-orders worth $2.4B. https://siliconangle.com/2026/07/21/humanoid-raises-152m-1-35b-valuation-bring-human-like-robots-factories/
+- Gritt exited stealth on July 21, 2026 with $32.4M in pre-seed and Series A funding (Series A led by Obvious Ventures) to deploy AI robots that attach to existing construction equipment for solar farm installation. https://techcrunch.com/2026/07/21/gritt-exits-stealth-with-34-million-for-robots-to-build-solar-plants-then-everything-else/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- AMD Advancing AI 2026 opens today (July 22-23) at Moscone West in San Francisco, with sessions including a Physical AI robotics workshop where developers run vision-language models for on-device robot control. https://www.amd.com/en/corporate/events/advancing-ai.html
