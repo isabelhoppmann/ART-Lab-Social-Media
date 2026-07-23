@@ -1,0 +1,15 @@
+Morning Briefing July 23, 2026
+
+=== ROBOTICS & AI ===
+- Humanoid Global highlighted Formic's role in launching Robots for America, a national coalition to accelerate U.S. manufacturing automation adoption. https://www.globenewswire.com/news-release/2026/07/22/3331077/0/en/humanoid-global-highlights-formic-s-role-in-launching-robots-for-america-and-announces-leadership-and-membership-updates-for-the-u-s-robotics-coalition.html
+- DEEP Robotics debuted its DR02 all-weather industrial humanoid and Lynx S10 wheeled-legged rescue robot at WAIC 2026 in Shanghai. https://finance.yahoo.com/technology/ai/articles/product-lineup-six-industry-solutions-053600870.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Chinese embodied AI startup PsiBot raised ~$100M in new funding at a $1.48B valuation led by Chery Automobile, announced July 23, 2026. https://www.bloomberg.com/news/articles/2026-07-23/china-s-psibot-becomes-latest-ai-startup-to-hit-1-billion-value
+
+=== COMPETITOR WATCH ===
+- Physical Intelligence's CEO denied reports of an Anthropic acquisition, though the companies reportedly held talks this spring per The Information. https://techcrunch.com/2026/07/21/the-anthropic-physical-intelligence-rumor-roiling-ai-twitter/
+- NVIDIA released Cosmos 3 Edge, a 4B-parameter open world model enabling on-device robot reasoning and action generation for physical AI applications. https://gigazine.net/gsc_news/en/20260721-nvidia-cosmos-3-edge/
