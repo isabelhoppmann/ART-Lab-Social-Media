@@ -1,0 +1,16 @@
+Morning Briefing July 24, 2026
+
+=== ROBOTICS & AI ===
+- MIT engineers developed a solid-state lidar chip using differently shaped antennas to achieve a wider field of view without moving parts, a breakthrough directly applicable to robot and autonomous vehicle sensing. https://www.sciencedaily.com/releases/2026/07/260722032127.htm
+
+=== RESEARCH ===
+- Black Forest Labs released FLUX 3 on July 23, 2026, a multimodal frontier model that jointly learns from images, video, and audio and can predict robot actions within a single unified architecture, extending into embodied AI control. https://www.globenewswire.com/news-release/2026/07/23/3332364/0/en/black-forest-labs-unveils-flux-3-a-new-multimodal-frontier-model-for-visual-intelligence.html
+
+=== FUNDING & INVESTMENT ===
+- Travis Kalanick's industrial AI company Atoms raised $1.7B led by Andreessen Horowitz on July 22, 2026, to scale its combined robotics, sensors, and software platform across food, mining, and transportation industries. https://techcrunch.com/2026/07/22/travis-kalanicks-robotics-company-raises-1-7b-led-by-a16z/
+
+=== COMPETITOR WATCH ===
+- OpenAI launched Presence on July 22, 2026, an enterprise AI agent platform for voice and chat that connects agents to internal company systems with built-in governance, guardrails, and automated behavioral improvement. https://openai.com/index/introducing-openai-presence/
+
+=== BAY AREA ===
+- Silicon Valley Robotics hosts its monthly Bay Area robotics and physical AI networking event on August 5 (6-8:30pm) in San Francisco, open to builders, researchers, and founders. https://www.svrobo.org/robotics-events/
