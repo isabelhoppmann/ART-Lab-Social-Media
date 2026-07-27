@@ -1,0 +1,13 @@
+Morning Briefing July 27, 2026
+
+=== ROBOTICS & AI ===
+- Encord and German neurotech startup Zander Labs are piloting EEG brain-wave-tagged robot training data, attaching brain-activity sensors to human trainers during Jenga manipulation tasks at a San Leandro warehouse to improve physical AI model quality. https://techcrunch.com/2026/07/26/are-brain-waves-the-next-unlock-for-physical-ai/
+
+=== RESEARCH ===
+- Moonshot AI published open-source weights for Kimi K3, a 2.8-trillion-parameter multimodal model with native vision understanding and a 1M-token context window, the largest open-source model ever released and competitive with leading U.S. frontier systems including Anthropic Opus. https://www.bloomberg.com/news/articles/2026-07-27/china-s-moonshot-to-release-breakthrough-ai-model-for-download
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Elon Musk warned Tesla Optimus production will be "extremely slow" with a "long and flat" ramp, citing roughly 10,000 new parts on the robot, as the Fremont Model S/X line conversion proceeds with no unit output disclosed. https://theaiinsider.tech/2026/07/25/musk-updates-progress-of-teslas-optimus-humanoid-robot-warns-of-long-and-flat-production-ramp/
