@@ -1,0 +1,14 @@
+Morning Briefing July 29, 2026
+
+=== ROBOTICS & AI ===
+- The FCC on July 28 banned imports of all new Chinese-made humanoid and quadruped robots citing national security, a move that immediately affects roughly 85% of global humanoid supply and opens potential market space for US home robot makers. https://www.washingtonpost.com/technology/2026/07/28/fcc-bans-foreign-humanoid-robots-expanding-campaign-against-chinese-tech/
+- Humanoid Global opened a 60,000-sq-ft Silicon Valley physical-AI hub in Fremont on July 28 to scale Digit humanoid deployments, disclosing over $300M in multi-year orders and 65,000+ robot operating hours across nine customer sites. https://www.globenewswire.com/news-release/2026/07/28/3333986/0/en/Humanoid-Global-Provides-Update-on-Agility-Robotics-Public-Listing-Opens-Silicon-Valley-AI-Hub-to-Scale-Digit-Deployments.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- NVIDIA launched the Open Secure AI Alliance on July 27 with 52 partners including Microsoft, IBM, and SpaceX to build open-source AI cybersecurity defenses, a direct response to the OpenAI-linked Hugging Face model breach reported last week. https://blogs.nvidia.com/blog/open-secure-ai-alliance/
