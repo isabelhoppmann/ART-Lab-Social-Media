@@ -1,0 +1,16 @@
+Morning Briefing July 30, 2026
+
+=== ROBOTICS & AI ===
+- China condemned the FCC's July 28 ban on foreign humanoid and quadruped robots as protectionism, with Beijing warning the rules—which take immediate effect on models not yet U.S.-authorized—risk derailing September Trump-Xi talks; Unitree, which holds roughly 20% of the global humanoid market, faces the sharpest near-term impact. https://www.npr.org/2026/07/29/g-s1-136153/china-fcc-foreign-made-robots-ban-humanoids
+
+=== RESEARCH ===
+- A multi-institution team (Xspark AI, THU, MMLab@HKU, PKU, HKUST) published a systems framework defining trustworthy embodied intelligence across four interdependent layers—task competence, calibrated uncertainty, safety preferences, and deployment governance—providing a structured path from lab demos to real-world robot accountability. https://arxiv.org/abs/2607.26121
+
+=== FUNDING & INVESTMENT ===
+- UNIT AI raised $12M on July 29, 2026 from Prologis Ventures, Dynamo Ventures, and others to scale its modular AI-powered e-commerce fulfillment and returns platform, which deploys in as little as 1,000 square feet with ROI under 12 months. https://www.prnewswire.com/news-releases/unit-ai-raises-12-million-to-scale-ai-powered-ecommerce-fulfillment-and-returns-as-customer-demand-accelerates-302837792.html
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- No qualifying items in the last 48 hours
