@@ -1,0 +1,16 @@
+Morning Briefing July 31, 2026
+
+=== ROBOTICS & AI ===
+- The FCC announced a ban on imports of all new foreign-made humanoid and quadruped robots, citing cybersecurity and national security risks in a move that primarily targets Chinese manufacturers, which hold roughly 85% of the global humanoid robot market; the rule applies only to newly authorized models and does not affect units already purchased. https://www.nbcnews.com/tech/tech-news/us-bans-foreign-made-humanoid-robots-targeting-china-national-security-rcna589777
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Google DeepMind released Gemini Robotics 2 on July 30, a family of physical AI models enabling whole-body humanoid control from feet to fingertips, dexterous dual-arm manipulation, and multi-robot collaboration—demonstrated on the Apptronik Apollo 2 with a 92% success rate on complex whole-body tasks. https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/
+
+=== BAY AREA ===
+- Robotics Fair 2026, Silicon Valley's premier interactive robotics and AI showcase featuring live robot demos, FTC competition, and exhibits for families, educators, and investors, runs August 8-9 at Fiesta Hall, San Mateo County Event Center. https://www.eventbrite.com/e/robotics-fair-2026-tickets-1988604105411
