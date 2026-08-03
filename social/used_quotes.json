@@ -180,6 +180,18 @@
       "attribution": "Rumi",
       "norm": "let the beauty of what you love be what you do",
       "first_week": "2026-07-27"
+    },
+    {
+      "quote": "I am not what happened to me. I am what I choose to become.",
+      "attribution": "Carl Jung",
+      "norm": "i am not what happened to me i am what i choose to become",
+      "first_week": "2026-08-03"
+    },
+    {
+      "quote": "In the depths of winter, I finally discovered that within me there lay an invincible summer.",
+      "attribution": "Albert Camus",
+      "norm": "in the depths of winter i finally discovered that within me there lay an invincible summer",
+      "first_week": "2026-08-03"
     }
   ]
 }
