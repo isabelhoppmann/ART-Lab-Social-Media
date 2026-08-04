@@ -1,0 +1,17 @@
+Morning Briefing August 4, 2026
+
+=== ROBOTICS & AI ===
+- The EU AI Act's transparency provisions became enforceable on August 2, 2026, requiring AI systems globally to disclose their AI nature and label synthetic content, with fines up to 15 million euros for non-compliance. https://theaiinsider.tech/2026/08/03/eu-begins-enforcing-ai-act-as-transparency-rules-take-effect/
+- OpenAI announced it has surpassed 1 billion active users and 2 million business customers as of August 4, simultaneously cutting GPT-5.6 Luna API prices by 80% amid intensifying global model competition. https://www.ghacks.net/2026/08/04/openai-reaches-one-billion-active-users-and-cuts-gpt-5-6-luna-and-terra-prices-by-up-to-80/
+
+=== RESEARCH ===
+- Alibaba released Qwen3.8-Max on August 2, a 2.4 trillion-parameter multimodal model with a 1 million-token context window capable of processing documents, video, and images at performance levels rivaling frontier models. https://dataconomy.com/2026/08/03/qwen3-8-max-ai-model/
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Fortune reported on August 3 that ElliQ companion robots from Intuition Robotics are being adopted primarily by adults in their 70s and 80s, signaling that senior care is emerging as the first mainstream home robot customer segment. https://fortune.com/2026/08/03/gen-z-elliq-intuition-robotics-ai-companion-robot-older-adults/
+
+=== BAY AREA ===
+- ROS By-The-Bay is hosting its August meetup on August 13 at InOrbit Robot Space in Mountain View, featuring talks on an open-source fleet manager, a new ROS Bazel build system, and the ISO 21423 robot interoperability standard. https://www.meetup.com/ros-by-the-bay/events/315912236/
