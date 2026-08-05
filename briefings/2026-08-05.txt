@@ -1,0 +1,14 @@
+Morning Briefing August 5, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Bloomberg reported August 4, 2026 that family offices for Bernard Arnault, Jeff Bezos, and Azim Premji each recently backed AI humanoid robotics startups, with Arnault's venture arm joining Humanoid's London Series A for industrial robots, Bezos's fund boosting its allocation to US robotics software startup Generalist AI, and Premji Invest in talks to lead a new round for a Paris and Silicon Valley general-purpose robot maker. https://www.bloomberg.com/news/articles/2026-08-04/family-offices-sidestep-ai-fears-in-deal-spree-for-robotics-bets
+- Exclaim Robotics, a Zurich startup building autonomous dexterous robots for AI data center maintenance, emerged from stealth August 4, 2026 with $4.95M in pre-seed funding co-led by Founderful and Playfair Capital to develop robots that can swap drives, clean optics, and reconnect cabling inside live server racks. https://theaiinsider.tech/2026/08/04/swiss-startup-exclaim-robotics-emerges-from-stealth-with-nearly-5m-in-funding-for-ai-data-center-robotics/
+
+=== COMPETITOR WATCH ===
+- An August 3, 2026 analysis argues that Google DeepMind's Gemini Robotics 2 strategy positions it as a hardware-agnostic intelligence layer running across all robot embodiments, a platform play that could give DeepMind structural leverage over full-stack humanoid companies. https://logisticsviewpoints.com/2026/08/03/beyond-humanoid-robots-why-google-deepmind-is-building-the-intelligence-layer-for-physical-ai/
