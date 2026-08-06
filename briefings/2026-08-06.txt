@@ -1,0 +1,14 @@
+Morning Briefing August 6, 2026
+
+=== ROBOTICS & AI ===
+- Avnet and Weston Robot launched a physical AI autonomous inspection platform on August 5, 2026, combining AMD-powered edge compute with quadruped robots for real-time industrial inspection, safety monitoring, and facility management in complex industrial environments. https://aninews.in/news/business/avnet-and-weston-robot-bring-physical-ai-to-industrial-operations-with-autonomous-inspection-robot20260805102344/
+
+=== RESEARCH ===
+- Xiaomi open-sourced Xiaomi-Robotics-1 on August 5, 2026, a vision-language-action foundation model trained on 100,000+ hours of real-world manipulation data across 1,700+ scenarios, topping the RoboDojo and RoboCasa365 benchmarks. https://technode.com/2026/08/05/xiaomi-open-sources-embodied-ai-foundation-model-xiaomi-robotics-1/
+
+=== FUNDING & INVESTMENT ===
+- Avatar Robotics raised $6.5M seed on August 5, 2026, led by AlleyCorp, to scale its industrial humanoid robot fleet that blends remote human operation with AI autonomy; robots have already shipped over 900,000 products in live customer environments. https://theaiinsider.tech/2026/08/05/avatar-robotics-raises-6-5m-in-seed-funding-to-develop-industrial-humanoid-robots/
+- Unitree Robotics opened IPO book-building on August 5, 2026 on Shanghai's STAR Market targeting 4.2B yuan ($620M), with early bids implying a valuation of up to 55B yuan (~$8.1B) for the world's highest-volume humanoid robot maker. https://www.caixinglobal.com/2026-08-06/unitree-ipo-opens-with-bids-implying-up-to-55-billion-yuan-valuation-102471618.html
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
