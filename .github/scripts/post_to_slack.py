@@ -1,8 +1,7 @@
 import os, json, urllib.request, sys, re
-from datetime import datetime
+from datetime import datetime, timezone
 
 webhook = os.environ["SLACK_WEBHOOK_URL"]
-error_webhook = os.environ["SLACK_ERROR_WEBHOOK_URL"]
 file_path = os.environ["BRIEFING_FILE"]
 
 try:
@@ -39,12 +38,17 @@ try:
     print("Posted to Slack successfully")
 
 except Exception as e:
+    # Errors are emailed to Isabel, never posted to Slack.
     msg = "Briefing failed to post to Slack: " + str(e)
     print(msg)
     try:
-        payload = json.dumps({"text": msg}).encode()
-        req = urllib.request.Request(error_webhook, data=payload, headers={"Content-Type": "application/json"})
-        urllib.request.urlopen(req)
+        import notify_error_email
+
+        notify_error_email.send(
+            "⚠️ Briefing failed to post to Slack — "
+            + datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            msg,
+        )
     except Exception:
         pass
     sys.exit(1)

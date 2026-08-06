@@ -64,15 +64,20 @@ jobs:
         if: steps.detect.outputs.created == 'true'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
           BRIEFING_FILE: ${{ steps.detect.outputs.file }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: python .github/scripts/post_to_slack.py
 
-      - name: Notify error channel on failure
+      # Failures go to Isabel by email, never to Slack. Slack carries content only.
+      - name: Email Isabel on failure
         if: failure()
         env:
-          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: |
-          curl -s -X POST -H 'Content-Type: application/json' \
-            -d "{\"text\":\"⚠️ Daily Briefing Action failed for $(date -u +%Y-%m-%d). Check the Actions tab: https://github.com/${GITHUB_REPOSITORY}/actions\"}" \
-            "$SLACK_ERROR_WEBHOOK_URL" || true
+          python .github/scripts/notify_error_email.py \
+            "⚠️ Daily Briefing Action failed — $(date -u +%Y-%m-%d)" \
+            "The Daily Briefing Action failed. Today's briefing was not published."

@@ -18,7 +18,10 @@ jobs:
       - name: Post briefing to Slack
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+          # Failures email Isabel (see notify_error_email.py); nothing goes to Slack.
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: |
           FILE=$(git diff --name-only HEAD~1 HEAD | grep '^briefings/' | head -n 1)
           if [ -z "$FILE" ]; then

@@ -8,10 +8,10 @@ ART Lab is a seed-stage AI consumer robotics startup building physical AI system
 ## ERROR HANDLING (CRITICAL)
 Wrap your ENTIRE execution in a try/except. If ANY step fails for ANY reason:
 1. Do NOT attempt to publish to GitHub (it may produce a partial/corrupt file)
-2. Try to send an alert to SLACK_ERROR_WEBHOOK_URL — but if that also fails, ignore it silently
+2. Try to email an alert to isabel@art-lab.ai using the Gmail credentials — but if that also fails, ignore it silently. NEVER post an error to Slack.
 3. Exit immediately
 
-This ensures the group never sees partial output or error messages.
+Errors NEVER go to Slack. The Slack channel carries published content only — no failure notices, no partial output. All failures go to Isabel by email.
 
 ---
 

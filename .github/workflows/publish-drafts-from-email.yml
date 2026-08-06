@@ -86,11 +86,14 @@ jobs:
           git diff --staged --quiet || git commit -m "Zenie drafts $(date -u +%Y-%m-%d) (email-relay)"
           git push
 
-      - name: Notify error channel on failure
+      # Failures go to Isabel by email, never to Slack. Slack carries content only.
+      - name: Email Isabel on failure
         if: failure()
         env:
-          SLACK_ERROR_WEBHOOK_URL: ${{ secrets.SLACK_ERROR_WEBHOOK_URL }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: |
-          curl -s -X POST -H 'Content-Type: application/json' \
-            -d "{\"text\":\"⚠️ Zenie drafts publish (email-relay) failed for $(date -u +%Y-%m-%d). Actions: https://github.com/${GITHUB_REPOSITORY}/actions\"}" \
-            "$SLACK_ERROR_WEBHOOK_URL" || true
+          python .github/scripts/notify_error_email.py \
+            "⚠️ Zenie drafts publish (email-relay) failed — $(date -u +%Y-%m-%d)" \
+            "The Zenie drafts email-relay publish Action failed."
