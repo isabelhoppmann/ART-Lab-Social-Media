@@ -1,0 +1,13 @@
+Morning Briefing August 7, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- Jeff Dean, Google's chief scientist for 27 years, announced August 5 that he is leaving to co-found Discovery Loop with Google Brain pioneer Quoc Le, Google Fellow Sanjay Ghemawat, and ex-DeepMind VP Oriol Vinyals; the startup, backed by Radical Ventures, Khosla, Lightspeed, Kleiner Perkins, and Alphabet, will deploy AI to run thousands of simultaneous experiments and automate scientific and engineering research. https://techcrunch.com/2026/08/05/jeff-dean-and-other-top-ai-researchers-are-leaving-google-to-launch-their-own-startup/
+
+=== FUNDING & INVESTMENT ===
+- Hadrian raised $1.37B in Series D on August 6, 2026 at a $7.87B valuation, co-led by WCM Investment Management, Washington Harbour Partners, Valor Equity Partners, 137 Ventures, and Baillie Gifford, to expand its network of AI- and robotics-powered automated U.S. factories serving defense and aerospace customers. https://theaiinsider.tech/2026/08/07/hadrian-raises-1-37b-in-series-d-funding-to-build-automated-u-s-factories-with-ai-and-robotics/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
