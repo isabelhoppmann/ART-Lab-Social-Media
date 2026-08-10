@@ -1,0 +1,16 @@
+Morning Briefing August 10, 2026
+
+=== ROBOTICS & AI ===
+- Unitree Robotics opened public IPO subscriptions on Shanghai's STAR Market on August 10, having priced at a $9 billion valuation on August 8, becoming China's first publicly listed humanoid robot maker with trading expected August 17-21. https://finance.biggo.com/news/2ba6926f-0808-4035-8d83-779f4d12aba3
+
+=== RESEARCH ===
+- Meta released Muse Glimmer on August 10, an open-weight 30-billion-parameter agentic AI model under Apache 2.0 that runs on a single consumer GPU, with NVIDIA enabling it on Jetson hardware for edge robotics and industrial automation. https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- Actuate 26, the annual robotics developer conference featuring speakers from Physical Intelligence, Google DeepMind, NVIDIA, Aurora, and Wayve, runs August 18-19 at Fort Mason in San Francisco; tickets are available. https://actuate.foxglove.dev/agenda/
