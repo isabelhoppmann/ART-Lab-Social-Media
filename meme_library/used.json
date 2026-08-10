@@ -75,6 +75,16 @@
       "slug": "table_flip",
       "week": "2026-08-03",
       "label": "Meme 2"
+    },
+    {
+      "slug": "eye_roll",
+      "week": "2026-08-10",
+      "label": "Meme 1"
+    },
+    {
+      "slug": "monkey_puppet",
+      "week": "2026-08-10",
+      "label": "Meme 2"
     }
   ]
 }
