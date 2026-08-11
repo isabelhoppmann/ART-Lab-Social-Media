@@ -1,0 +1,14 @@
+Morning Briefing August 11, 2026
+
+=== ROBOTICS & AI ===
+- China accounted for 97% of global humanoid robot shipments in H1 2026, with total units surging 272% year-over-year to 19,100; AgiBot overtook Unitree for the worldwide #1 position, capturing 44% market share with 8,400 units shipped. https://technode.com/2026/08/11/chinese-makers-accounted-for-more-than-97-of-global-humanoid-robot-shipments-in-h1-2026/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Noin Intelligence (Knowin) closed a $74M Angel++ round announced August 9-10, 2026, led by Matrix Partners China, to advance its GLOW generative world model and Knowin-X1 compact household robot. https://www.globaltimes.cn/page/202608/1367878.shtml
+- Anthropic, Macquarie Asset Management, and GIC announced the formation of Theseus Infrastructure on August 10, 2026, a purpose-built AI data center platform with Macquarie and GIC as equity investors and Anthropic as anchor tenant. https://www.bloomberg.com/news/articles/2026-08-10/anthropic-macquarie-and-gic-form-venture-for-ai-data-centers
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
