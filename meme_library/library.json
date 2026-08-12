@@ -450,6 +450,52 @@
       ],
       "use_when": "Deliberate, earned calm — the self-care punchline. She has done the inner work and is simply not being moved by this. Pairs with journaling and boundary jokes.",
       "example_overlay": "me choosing not to reply to the 11pm 'you up' text"
+    },
+    {
+      "slug": "kicking_feet_giddy",
+      "title": "Giggling and hiding her face, giddy",
+      "file": "meme_library/clips/kicking_feet_giddy.mp4",
+      "vibes": [
+        "giddy",
+        "shy",
+        "kicking feet",
+        "crush energy",
+        "delighted",
+        "trying not to smile",
+        "butterflies"
+      ],
+      "use_when": "Helpless delight — a crush landed, a text came through, something went RIGHT. The joke is being unable to play it cool.",
+      "example_overlay": "when he texts back within four minutes for once"
+    },
+    {
+      "slug": "knowing_smirk",
+      "title": "Knowing, self-satisfied smirk",
+      "file": "meme_library/clips/knowing_smirk.mp4",
+      "vibes": [
+        "knowing",
+        "smug",
+        "i saw this coming",
+        "vindicated",
+        "quietly right",
+        "told you nothing"
+      ],
+      "use_when": "Quiet vindication — you called it, it happened, and you are saying nothing out loud. Use when the joke is being RIGHT, not being loud.",
+      "example_overlay": "watching the pattern i wrote about in my journal play out exactly on schedule"
+    },
+    {
+      "slug": "open_shrug",
+      "title": "Full-body open-handed shrug",
+      "file": "meme_library/clips/open_shrug.mp4",
+      "vibes": [
+        "shrug",
+        "no defence",
+        "what do you want me to say",
+        "caught out",
+        "owning it",
+        "no notes"
+      ],
+      "use_when": "Openly admitting the indefensible — you did the thing, you know it was silly, and you have no argument. The hands ARE the punchline, so keep the overlay short.",
+      "example_overlay": "me explaining why i texted him first again"
     }
   ]
 }
