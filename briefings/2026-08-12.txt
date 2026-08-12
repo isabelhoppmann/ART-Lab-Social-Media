@@ -1,0 +1,17 @@
+Morning Briefing August 12, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- Dyna Robotics unveiled DYNA-2 on August 10, 2026, the first robot foundation model pre-trained on 1M+ hours of egocentric human video, demonstrating the first true human-to-robot scaling law with performance improving predictably with added data and zero robot data required during pre-training. https://www.prnewswire.com/news-releases/dyna-robotics-unveils-dyna-2-world-action-model-demonstrating-first-true-scaling-law-in-robotics-powered-entirely-by-human-data-302847114.html
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Samsung Electronics reportedly formed a CEO-led RX Robotics Division as of August 10, 2026 to develop humanoid robots in-house separate from subsidiary Rainbow Robotics, signaling a full-stack push into consumer and commercial robotics. https://www.trendforce.com/news/2026/08/10/news-samsung-reportedly-developing-in-house-humanoid-robots-forms-ceo-led-rx-robotics-division/
+- NVIDIA announced on August 10-11, 2026 a $500B AI infrastructure financing alliance with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs, and KKR to create dedicated capital pools accelerating AI compute deployment for robotics labs, AI developers, and cloud providers. https://www.axios.com/2026/08/10/nvidia-financing-ai-goldman-sachs-blackrock
+
+=== BAY AREA ===
+- Ruggedize, a deep-tech conference on agricultural robotics and physical AI for harsh-environment applications, runs August 26-27 at Reservoir Farms in Salinas, CA. https://ruggedize.ai/
