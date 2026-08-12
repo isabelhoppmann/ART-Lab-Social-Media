@@ -156,6 +156,8 @@ Identify 2-3 specific meme formats or viral moments that are trending. Must feel
 
 Worked examples from the 2026-08-10 rework: *"No, no, no! I thought we were having a nice date!"* (Nikki, from the film *Obsession*; viral late May 2026) and *"low cortisol maxxing"* (the Aug 2026 wellness wave). Both are specific, nameable, and datable. **These two are now spent — find new ones.**
 
+**Current TRENDS, not current CLIPS (Isabel's ruling, 2026-08-11).** Do not try to make the clip itself current, and do not treat an old clip as a problem to fix. The library is deliberately evergreen reaction formats — Disaster Girl, Kombucha Girl, a forced smile — and those stay funny for years. Currency comes from the *writing*: you point a timeless reaction at something happening this month. A 2010s clip carrying a joke about a three-week-old trend is exactly right. A brand-new clip carrying a generic "when he says X" observation is exactly wrong. If you ever feel stuck because no clip "looks current," you have misread this rule — pick the clip whose expression best depicts your joke, and put the currency in the words.
+
 **Use the Performance Brief from Step 0 to weight your choices:** if memes outperformed quote images on IG last month, lean into meme themes; if certain topics (e.g. journaling, dating) drove higher saves, prioritize those themes. If FB data shows certain content drove more shares, note that for FB caption writing in Step 2.
 
 ---
