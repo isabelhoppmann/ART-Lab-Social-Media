@@ -375,6 +375,81 @@
       ],
       "use_when": "Serene, petty detachment — you're out of the drama and quietly enjoying it. Sipping INSTEAD of reacting; use when the joke is restraint, not confrontation.",
       "example_overlay": "watching him repeat the exact pattern i wrote about in january"
+    },
+    {
+      "slug": "phone_exasperated",
+      "title": "On the phone, visibly exasperated",
+      "file": "meme_library/clips/phone_exasperated.mp4",
+      "vibes": [
+        "on the phone",
+        "exasperated",
+        "explaining it again",
+        "over this conversation",
+        "venting to the bestie"
+      ],
+      "use_when": "The joke is a CONVERSATION — calling the bestie to debrief, explaining yourself for the tenth time, or taking nonsense down the phone. She is mid-call and unimpressed.",
+      "example_overlay": "calling my bestie to explain why i'm giving him one more chance"
+    },
+    {
+      "slug": "wry_grimace",
+      "title": "Wry, unimpressed grimace",
+      "file": "meme_library/clips/wry_grimace.mp4",
+      "vibes": [
+        "unimpressed",
+        "wry",
+        "cringing politely",
+        "not buying it",
+        "yikes",
+        "contained reaction"
+      ],
+      "use_when": "A small contained cringe — hearing something questionable and reacting with a tight knowing grimace rather than an outburst. Use when the joke is restraint, not drama.",
+      "example_overlay": "when she asks if i think he's actually changed"
+    },
+    {
+      "slug": "blank_stare",
+      "title": "Blank hollow stare into the middle distance",
+      "file": "meme_library/clips/blank_stare.mp4",
+      "vibes": [
+        "no thoughts",
+        "dissociating",
+        "running on empty",
+        "checked out",
+        "staring into the void",
+        "flatline"
+      ],
+      "use_when": "Total flatline — the joke is the ABSENCE of a reaction. Burnout, one text too many, or hearing the same excuse for the third time.",
+      "example_overlay": "me hearing 'i've just been really busy' for the third week running"
+    },
+    {
+      "slug": "hands_up_relief",
+      "title": "Arms up, eyes closed, pure relief",
+      "file": "meme_library/clips/hands_up_relief.mp4",
+      "vibes": [
+        "relief",
+        "gratitude",
+        "finally",
+        "weight lifted",
+        "thank god",
+        "quiet celebration"
+      ],
+      "use_when": "The exhale AFTER something resolves — a decision finally made, a text finally sent, a boundary that actually held. Not shock, not hype: release.",
+      "example_overlay": "me after finally leaving him on read for a whole 24 hours"
+    },
+    {
+      "slug": "centered_calm",
+      "title": "Eyes closed, hands centred, completely calm",
+      "file": "meme_library/clips/centered_calm.mp4",
+      "vibes": [
+        "zen",
+        "centered",
+        "at peace",
+        "regulated",
+        "unbothered",
+        "soft life",
+        "did the work"
+      ],
+      "use_when": "Deliberate, earned calm — the self-care punchline. She has done the inner work and is simply not being moved by this. Pairs with journaling and boundary jokes.",
+      "example_overlay": "me choosing not to reply to the 11pm 'you up' text"
     }
   ]
 }

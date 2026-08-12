@@ -42,24 +42,70 @@ CLIPS = "meme_library/clips"
 WORKDIR = os.environ.get("MEME_WORKDIR", ".meme_candidates")
 UA = {"User-Agent": "ZenieLibrarian/1.0"}
 
-# A clip is crop-filled to 1080x1080, so very wide footage loses its edges. Not a
-# hard reject — two of the three clips added on 2026-08-11 were ~1.9:1 and
-# survived because the subject sat dead centre — but it drives the sort order so
-# the safest candidates surface first.
-IDEAL_RATIO = 1.0
+# A clip is crop-filled to 1080x1080, so very wide footage loses its edges. This
+# is reported on the review sheet but is NOT a filter — two of the three clips
+# added on 2026-08-11 were ~1.9:1 and worked because the subject sat dead centre.
 MIN_W, MIN_H = 240, 220
 
+# QUERY ADVICE (learned the hard way on 2026-08-11): search the EXPRESSION, not
+# the caption. Phrase queries like "i told you so" or "delulu" return GIFs with
+# that phrase burned into them, which fails the watermark bar every time — two
+# sheets scored 0/8 that way. "smirking woman", "raised eyebrow", "rubbing eyes
+# tired" return clean footage instead. Adding "woman" also helps, since Zenie's
+# audience is women 20-35 and male-led clips get rejected downstream anyway.
 
-def _key():
-    k = os.environ.get("GIPHY_KEY", "").strip()
-    if not k:
-        sys.exit("GIPHY_KEY not set. Get a beta key at developers.giphy.com (choose API, not SDK).")
-    return k
+
+BROWSER_UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"}
 
 
 def _get(url):
     with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as r:
         return json.load(r)
+
+
+def _search_api(q, limit, key):
+    url = f"{API}?" + urllib.parse.urlencode(
+        {"api_key": key, "q": q, "limit": limit, "rating": "pg",
+         "bundle": "messaging_non_clips"})
+    rows = []
+    for g in _get(url).get("data", []):
+        orig = (g.get("images") or {}).get("original") or {}
+        if not orig.get("mp4") or g.get("is_sticker"):
+            continue
+        rows.append({"id": g["id"], "mp4": orig["mp4"], "page": g.get("url", ""),
+                     "title": g.get("title", ""),
+                     "uploader": ((g.get("user") or {}).get("username") or "")})
+    return rows
+
+
+def _search_scrape(q, limit):
+    """No-key fallback. Giphy's /search/ pages ship ~25 ids in the server HTML
+    (their /explore/ pages ship one, which is why hand-sourcing used to crawl).
+    Only ids come back — dimensions get probed after download."""
+    url = "https://giphy.com/search/" + urllib.parse.quote(q.replace(" ", "-"))
+    with urllib.request.urlopen(urllib.request.Request(url, headers=BROWSER_UA), timeout=30) as r:
+        html = r.read().decode("utf-8", "replace")
+    ids, seen = [], set()
+    for m in re.finditer(r"media\d?\.giphy\.com/media/(?:v1\.[A-Za-z0-9]+/)?([A-Za-z0-9]{8,})/", html):
+        gid = m.group(1)
+        if gid not in seen:
+            seen.add(gid)
+            ids.append(gid)
+    return [{"id": i, "mp4": f"https://media.giphy.com/media/{i}/giphy.mp4",
+             "page": f"https://giphy.com/gifs/{i}", "title": "", "uploader": ""}
+            for i in ids[:limit]]
+
+
+def _probe(path):
+    out = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "stream=width,height",
+         "-of", "csv=p=0", path], capture_output=True, text=True).stdout.strip().split("\n")[0]
+    try:
+        w, h = (int(x) for x in out.split(",")[:2])
+        return w, h
+    except Exception:
+        return 0, 0
 
 
 def _slugify(s):
@@ -71,34 +117,18 @@ def harvest(queries, limit):
     manifest_path = os.path.join(WORKDIR, "candidates.json")
     manifest = json.load(open(manifest_path)) if os.path.exists(manifest_path) else {}
 
+    key = os.environ.get("GIPHY_KEY", "").strip()
+    print(f"source: {'Giphy API' if key else 'scraped /search/ pages (no GIPHY_KEY)'}\n")
+
     for q in queries:
-        url = f"{API}?" + urllib.parse.urlencode(
-            {"api_key": _key(), "q": q, "limit": limit, "rating": "pg",
-             "bundle": "messaging_non_clips"})
         try:
-            data = _get(url).get("data", [])
+            rows = _search_api(q, limit * 2, key) if key else _search_scrape(q, limit * 2)
         except Exception as e:
             print(f"  search {q!r} failed: {e}")
             continue
 
-        rows = []
-        for g in data:
-            orig = (g.get("images") or {}).get("original") or {}
-            mp4, w, h = orig.get("mp4"), int(orig.get("width") or 0), int(orig.get("height") or 0)
-            if not mp4 or w < MIN_W or h < MIN_H or g.get("is_sticker"):
-                continue
-            rows.append({
-                "id": g["id"], "query": q, "title": g.get("title", ""),
-                "w": w, "h": h, "ratio": round(w / h, 2), "mp4": mp4,
-                "page": g.get("url", ""),
-                # Branded/verified channel uploads carry logos far more often than
-                # anonymous ones — surface it so review can weight accordingly.
-                "uploader": ((g.get("user") or {}).get("username") or ""),
-            })
-        # safest shapes first: closest to square
-        rows.sort(key=lambda r: abs(r["ratio"] - IDEAL_RATIO))
-        rows = rows[:limit]
-
+        # Download first, then judge: the scrape path has no dimensions until the
+        # file is on disk, so both paths filter and sort after the fetch.
         got = []
         for r in rows:
             dest = os.path.join(WORKDIR, f"{r['id']}.mp4")
@@ -107,14 +137,29 @@ def harvest(queries, limit):
                     with urllib.request.urlopen(urllib.request.Request(r["mp4"], headers=UA), timeout=45) as resp, \
                          open(dest, "wb") as f:
                         f.write(resp.read())
-                except Exception as e:
-                    print(f"  download {r['id']} failed: {e}")
+                except Exception:
                     continue
-            r["file"] = dest
-            manifest[r["id"]] = r
+            w, h = _probe(dest)
+            if w < MIN_W or h < MIN_H:
+                os.remove(dest)
+                continue
+            r.update({"query": q, "w": w, "h": h, "ratio": round(w / h, 2), "file": dest})
             got.append(r)
-            _frames_sheet(r, dest)
 
+        # Keep the source's own relevance order. Sorting by closeness-to-square
+        # was tried on 2026-08-11 and actively backfired: perfectly square clips
+        # on Giphy are overwhelmingly stickers, cartoons and text cards, so the
+        # "safest shape" sort buried the real footage and two whole sheets came
+        # back with zero usable candidates. Relevance order surfaces the widely
+        # used meme formats, which is what the library wants; the crop risk on a
+        # wide clip is a judgement call for the review sheet, not a sort key.
+        for r in got[limit:]:
+            os.remove(r["file"])
+        got = got[:limit]
+
+        for r in got:
+            manifest[r["id"]] = r
+            _frames_sheet(r, r["file"])
         if got:
             _contact_sheet(got, os.path.join(WORKDIR, f"_sheet_{_slugify(q)}.jpg"))
         print(f"{q!r}: {len(got)} candidates -> {WORKDIR}/_sheet_{_slugify(q)}.jpg")
