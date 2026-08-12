@@ -6,35 +6,39 @@
 
 ---
 
-## Meme 1 — Dating double standards
+## Meme 1 — "I thought we were having a nice date"
 
-**overlay_text:** when he says you're too sensitive but soft-launches his next situationship the same week
+**Trend it rides:** "No, no, no! Don't do that! I thought we were having a nice date!" — Nikki, from the 2026 film *Obsession*. Blew up on Reels/TikTok in late May 2026 and is still in heavy rotation as a green-screen and audio template. Its visual signature is the eerie forced smile, which is what the clip shows.
 
-**ig_caption:** No, YOU are. 🙄
+**overlay_text:** when he brings up his ex 20 minutes in and i thought we were having a nice date
 
-**fb_caption:** The audacity. 😂 We've all been there — drop a 🙄 if you've heard this one before. Tag the friend you always call to debrief!
+**ig_caption:** no no no don't do that 🙂
 
-**hashtags:** #Zenie #zenieapp #datinghumor #redflags #relationshipmemes #datinglife #girlstalk
+**fb_caption:** That smile is doing SO much heavy lifting. 😅 We've all sat through a date that took a turn — the trick is noticing how it made you feel instead of talking yourself out of it. Tag the friend you text under the table. 👀
+
+**hashtags:** #Zenie #zenieapp #datinghumor #situationship #datinglife #relatable #girlstalk
 
 **Best time to post:** Tuesday 6–8 PM PST
 
-**Asset:** meme_1.mp4 — rendered automatically from library clip `eye_roll` (Rihanna dramatic eye-roll) with white-card overlay
+**Asset:** meme_1.mp4 — rendered automatically from library clip `fake_smile` (forced uncomfortable smile) with the `outline` overlay style (white text + black stroke, no box)
 
 ---
 
-## Meme 2 — Journaling guilt
+## Meme 2 — Low cortisol era
 
-**overlay_text:** me every time someone asks how my journaling habit is going
+**Trend it rides:** "low cortisol maxxing" — the August 2026 wellness wave that frames stress reduction as the flex; interest in "maxxing" culture is up ~5× year over year. The clip shows walking away from the fire unbothered, which is the joke.
 
-**ig_caption:** …every day, obviously 👀
+**overlay_text:** me walking away from the group chat that was single-handedly spiking my cortisol
 
-**fb_caption:** Be honest — when did you last actually open your journal? 😂 No judgment, we're all in the same boat. Share this with the friend who also 'started journaling' in January! 📒
+**ig_caption:** low cortisol era 💅
 
-**hashtags:** #Zenie #zenieapp #journaling #journalinglife #selfcare #journalingmeme #relatablelife
+**fb_caption:** Protecting your peace is a legitimate form of self-care. 🌿 If you're not sure what's draining you, start writing it down — the pattern shows up fast. What's one thing you've muted, left, or let go of lately? 💜
+
+**hashtags:** #Zenie #zenieapp #lowcortisol #protectyourpeace #boundaries #selfcare #journaling
 
 **Best time to post:** Wednesday 7–9 PM PST
 
-**Asset:** meme_2.mp4 — rendered automatically from library clip `monkey_puppet` (Awkward Look Monkey Puppet) with white-card overlay
+**Asset:** meme_2.mp4 — rendered automatically from library clip `disaster_girl` (smirking in front of a house fire) with the `highlight` overlay style (per-line black blocks, white text)
 
 ---
 

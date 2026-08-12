@@ -6,7 +6,7 @@ The only credential you need is the Gmail account (to email the finished bundle 
 Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: Do NOT source from Giphy/Tenor/Pexels and do NOT render meme MP4s yourself. Pick TWO distinct meme formats from the vetted library (Step 2A), obeying the no-repeat rule (never reuse a slug in `meme_library/used.json`). Write each meme's `overlay_text` + captions, set its `meme_slug`, and ship it with `skipped=true` + `media_url=null` in review-state (Step 7). The `post-social-to-slack` GitHub Action renders `meme_library/clips/<meme_slug>.mp4` with your overlay (white-card style), fills `media_url`, marks the slug used, creates the Notion row, and posts it. You MUST NOT generate static PNGs or placeholder memes.
+- MEMES: Do NOT source from Giphy/Tenor/Pexels and do NOT render meme MP4s yourself. Pick TWO distinct meme formats from the vetted library (Step 2A), obeying the no-repeat rule (never reuse a slug in `meme_library/used.json`). Write each meme's `overlay_text` + captions, set its `meme_slug`, and ship it with `skipped=true` + `media_url=null` in review-state (Step 7). The `post-social-to-slack` GitHub Action renders `meme_library/clips/<meme_slug>.mp4` with your overlay (one of four text styles — see `text_style` in Step 2A), fills `media_url`, marks the slug used, creates the Notion row, and posts it. You MUST NOT generate static PNGs or placeholder memes.
   - SAFETY NET (do not fight it): rendering happens on the Action's open-internet runner (`.github/scripts/regenerate_memes.py`), not here. Just ship each meme cleanly with a real `meme_slug` + `overlay_text`. Only mark a meme genuinely SKIPPED if the library has fewer than 2 available (unused) clips — then note in the Slack handoff that the library needs new clips.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
@@ -144,12 +144,17 @@ print("=========================\n")
 
 ## Step 1: Research trending memes (WebSearch)
 
-Find what's trending culturally RIGHT NOW relevant to Zenie's audience (women 20-35, relationships, self-growth, dating, wellness):
-1. WebSearch("trending memes relationships dating 2026 tiktok")
-2. WebSearch("viral memes self care journaling april 2026")
+Find what's trending culturally RIGHT NOW relevant to Zenie's audience (women 20-35, relationships, self-growth, dating, wellness). Use the CURRENT month and year in these queries — never a hardcoded past month:
+1. WebSearch("trending memes relationships dating <current month year> tiktok")
+2. WebSearch("viral memes self care journaling <current month year>")
 3. WebSearch("funniest memes this week women relatable")
+4. WebSearch("trending audio instagram reels <current month year>")
 
 Identify 2-3 specific meme formats or viral moments that are trending. Must feel current.
+
+**REQUIRED — name the trend (Catie's 2026-08-10 feedback).** She rejected a week of memes for being generic and asked that they "pull some inspiration from" what has actually gone viral recently. So each meme must be traceable to a *named, currently-circulating* format, audio, or phrase — not a timeless "when he says X" observation. Record which trend each meme rides in `zenie_drafts.md` under the meme's heading, with a one-line note on what the trend is and roughly when it took off. If you can't name the trend, the meme isn't current enough — go back and find one.
+
+Worked examples from the 2026-08-10 rework: *"No, no, no! I thought we were having a nice date!"* (Nikki, from the film *Obsession*; viral late May 2026) and *"low cortisol maxxing"* (the Aug 2026 wellness wave). Both are specific, nameable, and datable. **These two are now spent — find new ones.**
 
 **Use the Performance Brief from Step 0 to weight your choices:** if memes outperformed quote images on IG last month, lean into meme themes; if certain topics (e.g. journaling, dating) drove higher saves, prioritize those themes. If FB data shows certain content drove more shares, note that for FB caption writing in Step 2.
 
@@ -204,6 +209,19 @@ For each meme produce FOUR pieces of text (write these for BOTH memes — they a
 - **`ig_caption`** — short reaction/wink for the Instagram caption field. 2–8 words + optional emoji. Do NOT repeat overlay_text — riff on it. Examples: *"She knows…"*, *"He couldn't do anything to make me happier!"*
 - **`fb_caption`** — Facebook caption. More conversational, 1–3 sentences. Drive a reaction or question to spark comments/shares (FB algorithm rewards both). Example: *"Okay but why does this describe my entire Tuesday? 😅 Tag a friend who gets it."*
 - **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp. Same set used on both platforms.
+
+### Optional fifth field: `text_style` (overlay look)
+
+Catie's 2026-08-10 note: the white card is fine, it just can't be the *only* look — a feed of identical white boxes reads as one template. The renderer now supports four treatments:
+
+| `text_style` | Look |
+|---|---|
+| `white_card` | Solid white box, black bold text (the original) |
+| `dark_bar` | Rounded translucent black slab, white text |
+| `outline` | No box at all — white text with a heavy black stroke straight over the footage (most native to Reels/TikTok) |
+| `highlight` | Per-line rounded black blocks behind white text (the karaoke-caption look) |
+
+**You usually do not need to set this.** If you omit `text_style`, the renderer picks one deterministically from the week + meme label, so variety happens on its own and a re-render of the same post keeps the same look. Set it explicitly only when a specific clip calls for it — e.g. a very busy or high-contrast clip is safest with `white_card` or `dark_bar`, while a clean, dark, or evenly-lit clip can carry `outline`. Whatever is used gets written back into review-state so the choice is visible in the Slack handoff.
 
 ---
 

@@ -10,7 +10,7 @@ post_social_to_slack.py step post them. No-op when no meme is skipped/missing.
 Reads PEXELS_KEY from env. Idempotent and defensive: a meme that can't be
 generated is left skipped (the Slack gate then holds the post — safe by design).
 """
-import json, os, re, subprocess, textwrap, urllib.request, urllib.parse, traceback
+import json, os, re, subprocess, textwrap, urllib.request, urllib.parse, traceback, zlib
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 REPO = "isabelhoppmann/ART-Lab-Social-Media"
@@ -97,8 +97,33 @@ def strip_unrenderable(text):
     return re.sub(r"\s+", " ", _EMOJI_RE.sub("", text or "")).strip()
 
 
-def render_text_card(text, path):
+# Overlay text treatments. Catie's 2026-08-10 note: the white card is fine, it
+# just shouldn't be the ONLY look — a feed of identical white boxes reads as one
+# template. A post can pin a treatment with `text_style` in review-state.json;
+# otherwise one is chosen deterministically from (week, label) so variety happens
+# on its own AND a re-render of the same post keeps the same look.
+TEXT_STYLES = ("white_card", "dark_bar", "outline", "highlight")
+
+
+def resolve_text_style(post, week):
+    explicit = (post.get("text_style") or "").strip().lower()
+    if explicit in TEXT_STYLES:
+        return explicit
+    seed = f"{week}|{post.get('label', '')}".encode()
+    return TEXT_STYLES[zlib.crc32(seed) % len(TEXT_STYLES)]
+
+
+def render_text_card(text, path, style=None):
+    """Render the burned-in overlay as a transparent PNG one video-width wide.
+
+    Styles: `white_card` (original — solid white box, black text), `dark_bar`
+    (rounded translucent black slab, white text), `outline` (no box at all —
+    white text with a heavy black stroke straight over the footage, the native
+    Reels/TikTok look), `highlight` (per-line rounded black blocks, white text).
+    Anything unknown falls back to `white_card`, so old callers are unchanged.
+    """
     text = strip_unrenderable(text)
+    style = style if style in TEXT_STYLES else "white_card"
     font_path = next((p for p in FONT_CANDIDATES if os.path.exists(p)), None)
     if not font_path:
         raise RuntimeError("no bold sans-serif font found")
@@ -106,27 +131,48 @@ def render_text_card(text, path):
     side_margin, h_padding, v_padding, line_h = 40, 35, 28, 78
     card_w = VIDEO_W - 2 * side_margin
     cpl = max(15, int((card_w - 2 * h_padding) / (font.getlength("M") * 0.55)))
-    wrapped = textwrap.wrap(text, width=cpl)
+    wrapped = textwrap.wrap(text, width=cpl) or [""]
     card_h = 2 * v_padding + len(wrapped) * line_h
     canvas_h = card_h + 2 * side_margin
-    shadow = Image.new("RGBA", (VIDEO_W, canvas_h), (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).rectangle(
-        [(side_margin + 4, side_margin + 4), (side_margin + card_w + 4, side_margin + card_h + 4)], fill=(0, 0, 0, 50))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(radius=8))
-    canvas = Image.alpha_composite(Image.new("RGBA", (VIDEO_W, canvas_h), (0, 0, 0, 0)), shadow)
+    canvas = Image.new("RGBA", (VIDEO_W, canvas_h), (0, 0, 0, 0))
+
+    # Drop shadow lifts a solid slab off the footage; the boxless styles carry
+    # their own contrast (stroke / per-line blocks) and don't need it.
+    if style in ("white_card", "dark_bar"):
+        shadow = Image.new("RGBA", (VIDEO_W, canvas_h), (0, 0, 0, 0))
+        ImageDraw.Draw(shadow).rectangle(
+            [(side_margin + 4, side_margin + 4),
+             (side_margin + card_w + 4, side_margin + card_h + 4)], fill=(0, 0, 0, 50))
+        canvas = Image.alpha_composite(canvas, shadow.filter(ImageFilter.GaussianBlur(radius=8)))
+
     draw = ImageDraw.Draw(canvas)
-    draw.rectangle([(side_margin, side_margin), (side_margin + card_w, side_margin + card_h)], fill=(255, 255, 255, 250))
+    box = [(side_margin, side_margin), (side_margin + card_w, side_margin + card_h)]
+    if style == "white_card":
+        draw.rectangle(box, fill=(255, 255, 255, 250))
+    elif style == "dark_bar":
+        draw.rounded_rectangle(box, radius=28, fill=(0, 0, 0, 200))
+
     y = side_margin + v_padding
     for line in wrapped:
-        bbox = draw.textbbox((0, 0), line, font=font)
-        draw.text(((VIDEO_W - (bbox[2] - bbox[0])) // 2, y), line, font=font, fill=(0, 0, 0, 255))
+        w = draw.textlength(line, font=font)
+        x = int((VIDEO_W - w) // 2)
+        if style == "highlight":
+            draw.rounded_rectangle([(x - 18, y - 8), (x + w + 18, y + line_h - 8)],
+                                   radius=14, fill=(0, 0, 0, 205))
+        if style == "white_card":
+            draw.text((x, y), line, font=font, fill=(0, 0, 0, 255))
+        elif style == "outline":
+            draw.text((x, y), line, font=font, fill=(255, 255, 255, 255),
+                      stroke_width=6, stroke_fill=(0, 0, 0, 255))
+        else:                                     # dark_bar, highlight
+            draw.text((x, y), line, font=font, fill=(255, 255, 255, 255))
         y += line_h
     canvas.save(path, "PNG")
 
 
-def make_mp4(src, overlay_text, out_path):
+def make_mp4(src, overlay_text, out_path, style=None):
     card = "/tmp/zenie_card.png"
-    render_text_card(overlay_text, card)
+    render_text_card(overlay_text, card, style)
     cmd = ["ffmpeg", "-y", "-stream_loop", "-1", "-t", "6", "-i", src, "-i", card,
            "-filter_complex",
            "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1[base];[base][1:v]overlay=0:H-h-60",
@@ -134,7 +180,7 @@ def make_mp4(src, overlay_text, out_path):
     subprocess.run(cmd, check=True, capture_output=True)
 
 
-def make_mp4_square(src, overlay_text, out_path):
+def make_mp4_square(src, overlay_text, out_path, style=None):
     """Render a meme clip into a 1080x1080 SQUARE (a native Instagram feed size) by
     crop-filling: scale up until the clip covers the square, then center-crop. NO
     background/letterbox of any kind (Isabel's rule: memes must natively fit IG
@@ -142,7 +188,7 @@ def make_mp4_square(src, overlay_text, out_path):
     landscape clips get a gentle side-crop that keeps the full height and the
     centered subject — recognizable, with no blurred/padded bars."""
     card = "/tmp/zenie_card.png"
-    render_text_card(overlay_text, card)
+    render_text_card(overlay_text, card, style)
     fc = ("[0:v]scale=1080:1080:force_original_aspect_ratio=increase,crop=1080:1080,setsar=1[base];"
           "[base][1:v]overlay=0:H-h-40[v]")
     cmd = ["ffmpeg", "-y", "-stream_loop", "-1", "-t", "6", "-i", src, "-i", card,
@@ -164,7 +210,7 @@ def verify(path):
         raise RuntimeError(f"bad dims {s['width']}x{s['height']} (expected 1080x1080 or 1080x1920)")
 
 
-def pick_and_render(overlay_text, out_path, source_url=None):
+def pick_and_render(overlay_text, out_path, source_url=None, style=None):
     """Render a meme. If source_url is given (an edit that wants to keep the exact
     clip Catie already saw), re-download that clip and just re-overlay the new text.
     Otherwise search Pexels fresh for an on-theme clip."""
@@ -172,7 +218,7 @@ def pick_and_render(overlay_text, out_path, source_url=None):
     if source_url:
         try:
             pexels_download(source_url, src)
-            make_mp4(src, overlay_text, out_path)
+            make_mp4(src, overlay_text, out_path, style)
             verify(out_path)
             return {"id": "reused", "duration": 0, "query": "(kept original clip)",
                     "page": source_url, "url": source_url}
@@ -192,9 +238,26 @@ def pick_and_render(overlay_text, out_path, source_url=None):
         raise RuntimeError("no Pexels candidates from any query")
     pick = sorted(cands, key=lambda c: abs(c["duration"] - 6))[0]
     pexels_download(pick["url"], src)
-    make_mp4(src, overlay_text, out_path)
+    make_mp4(src, overlay_text, out_path, style)
     verify(out_path)
     return pick
+
+
+def _post_block_span(html, meme_num):
+    """Span of Meme N's entire section: from its `<div class="post">` up to the
+    next sibling post block (or </body>).
+
+    Deliberately NOT div-depth matching. The old non-greedy `.*?</div>` stopped at
+    the nested `meme-wrap` close and left the previous caption/tags/time lines
+    orphaned below the new ones — so committed preview pages already contain
+    duplicated captions and unbalanced divs. Since post blocks are top-level
+    siblings, consuming to the next sibling both replaces the block and cleans up
+    any leftover debris a previous run wedged in there."""
+    m = re.search(r'<div class="post[^"]*">\s*<h2>Meme ' + str(meme_num) + r'\b', html)
+    if not m:
+        return None
+    nxt = re.compile(r'<div class="post[^"]*">|</body>').search(html, m.end())
+    return m.start(), (nxt.start() if nxt else len(html))
 
 
 def update_index_html(path, meme_num, post):
@@ -208,13 +271,12 @@ def update_index_html(path, meme_num, post):
         f'  <p class="caption">{post.get("ig_caption", "")}</p>\n'
         f'  <p class="tags">{post.get("hashtags", "")}</p>\n'
         f'  <p class="time">Best time: {post.get("best_time", "")}</p>\n'
-        '</div>'
+        '</div>\n\n'
     )
-    # Replace the existing (skipped) Meme N post block, whatever its inner content.
-    pattern = re.compile(r'<div class="post[^"]*">\s*<h2>Meme ' + str(meme_num) + r'\b.*?</div>', re.DOTALL)
-    new_html, n = pattern.subn(block, html, count=1)
-    if n:
-        open(path, "w", encoding="utf-8").write(new_html)
+    # Replace the existing Meme N post block, whatever its inner content.
+    span = _post_block_span(html, meme_num)
+    if span:
+        open(path, "w", encoding="utf-8").write(html[:span[0]] + block + html[span[1]:])
 
 
 def clear_md_skip(path, meme_num):
@@ -344,10 +406,11 @@ def main():
         slug = post.get("meme_slug")
         lib_clip = os.path.join(LIBRARY_DIR, f"{slug}.mp4") if slug else None
         why = "feedback re-render" if needs_feedback_render else "skipped/missing"
+        style = resolve_text_style(post, week)
         try:
             if lib_clip and os.path.exists(lib_clip):
-                print(f"Regenerating {label} ({why}) from library '{slug}' (overlay: {overlay!r})")
-                make_mp4_square(lib_clip, overlay, out_path)
+                print(f"Regenerating {label} ({why}) from library '{slug}' (style: {style}; overlay: {overlay!r})")
+                make_mp4_square(lib_clip, overlay, out_path, style)
                 verify(out_path)
                 mark_meme_used(slug, week, label)   # consume it — never reuse
                 source_desc = f"library:{slug}"
@@ -356,11 +419,12 @@ def main():
                     print(f"  WARNING: meme_slug '{slug}' not found in {LIBRARY_DIR}; falling back to Pexels")
                 # keep_clip: a text-only tweak that should reuse the exact Pexels clip.
                 source_url = post.get("source_url") if post.get("keep_clip") else None
-                print(f"Regenerating {label} ({why}) from Pexels (overlay: {overlay!r}; keep_clip={bool(source_url)})")
-                pick = pick_and_render(overlay, out_path, source_url=source_url)
+                print(f"Regenerating {label} ({why}) from Pexels (style: {style}; overlay: {overlay!r}; keep_clip={bool(source_url)})")
+                pick = pick_and_render(overlay, out_path, source_url=source_url, style=style)
                 post["source_url"] = pick.get("url", post.get("source_url"))
                 source_desc = f"Pexels {pick['id']} q='{pick['query']}'"
             post["skipped"] = False
+            post["text_style"] = style       # pin it so a later re-render matches
             post.pop("skip_reason", None)
             post["media_url"] = f"https://cdn.jsdelivr.net/gh/{REPO}@main/posts/{week}/meme_{n}.mp4"
             post["slack_posted"] = False           # so it re-posts into the thread
