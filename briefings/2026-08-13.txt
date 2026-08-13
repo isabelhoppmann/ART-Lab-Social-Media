@@ -1,0 +1,17 @@
+Morning Briefing August 13, 2026
+
+=== ROBOTICS & AI ===
+- San Mateo County's Board of Supervisors unanimously approved one of the first US regulations for commercial humanoid robots on August 11, requiring permits, emergency kill switches, on-site human supervisors, and job displacement tracking. https://abc7news.com/post/san-mateo-county-california-1st-places-us-pass-resolution-regulate-humanoid-robots/19665144/
+- Honor launched the world's first Robot Phone on August 12, featuring a 4-degree-of-freedom motorized camera gimbal arm with AI tracking, 200MP main camera, and Snapdragon Elite Gen 5, starting at $1,483 with China pre-orders open. https://9to5google.com/2026/08/12/honor-finally-launches-robot-phone-starting-at-around-1500/
+
+=== RESEARCH ===
+- University of Hong Kong researchers released RoboDojo on August 12, the first unified sim-and-real benchmark for generalist robot manipulation, covering 42 simulation tasks, 18 real-world tasks, and 30 policies, with top AI achieving only 12.8% of human expert performance in physical settings. https://techxplore.com/news/2026-08-scientists-robodojo-platform-embodied-ai.html
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Actuate 26 annual robotics developer conference takes place August 18-19 at Fort Mason in San Francisco, featuring speakers from Physical Intelligence, Google DeepMind, NVIDIA, Aurora, and Wayve. https://actuate.foxglove.dev/
