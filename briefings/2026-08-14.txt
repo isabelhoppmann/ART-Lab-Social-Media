@@ -1,0 +1,16 @@
+Morning Briefing August 14, 2026
+
+=== ROBOTICS & AI ===
+- Pony.ai and Uber announced plans to deploy over 2,000 Level-4 robotaxis across five European cities, expanding from Zagreb in the largest commercial autonomous vehicle rollout to date. https://techcrunch.com/2026/08/14/uber-and-pony-ai-plan-to-bring-2000-robotaxis-to-europe/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Alloy Robotics raised $8M in seed funding at an $80M valuation on August 13, 2026, led by Square Peg, to build AI agents that analyze robot fleet data and diagnose root causes of failures across drones, humanoids, and agriculture robotics. http://www.prnewswire.com/news-releases/alloy-robotics-raises-8m-to-help-engineers-debug-robot-fleets-with-ai-agents-302849699.html
+
+=== COMPETITOR WATCH ===
+- LG signed an MOU with NVIDIA on August 13 at NVIDIA's Santa Clara headquarters to develop a next-gen bipedal humanoid robot powered by NVIDIA Isaac GR00T, with a public unveiling planned for Q1 2027, also expanding CLOiD wheel-based robots into LG's Tennessee washing machine factory. https://www.prnewswire.com/news-releases/lg-to-unveil-its-next-gen-humanoid-robot-built-on-nvidia-isaac-gr00t-302851583.html
+
+=== BAY AREA ===
+- Actuate 26, the robotics developer conference featuring speakers from Physical Intelligence, Google DeepMind, NVIDIA, and Aurora, opens in four days on August 18-19 at Fort Mason in San Francisco. https://www.nvidia.com/en-us/events/actuate/
