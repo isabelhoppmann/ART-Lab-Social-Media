@@ -1,0 +1,17 @@
+Morning Briefing August 17, 2026
+
+=== ROBOTICS & AI ===
+- Unitree Robotics (688836.SH) debuts on Shanghai's STAR Market this week as China's first publicly listed humanoid robot maker after a $900M IPO at a $9B valuation drew 8,000x oversubscription. https://www.crowdfundinsider.com/2026/08/297722-unitree-robotics-eyes-shanghai-ipo-as-hyperliquid-traders-price-in-considerable-potential-upside/
+- Business Insider canvassed investors at Sequoia, Felicis, and Bessemer for the 25 most-watched robotics startups; highlights include Generalist ($540M raised for robot-agnostic home-and-factory control AI) and Foxglove (ROS tooling used by Wayve, Anduril, and Shield AI). https://dnyuz.com/2026/08/17/the-25-most-promising-robotics-startups-in-2026-according-to-investors/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- China's Infiforce closed ~$150M (nearly RMB 1 billion) in Series A and A+ rounds announced August 15, led by Dunhong Asset and state-owned platforms, to develop its AtomBrain embodied-intelligence system and Ego Native World Model for generalizable robots. https://theaiinsider.tech/2026/08/15/chinas-infiforce-raises-nearly-150m-in-funding-to-develop-ego-native-world-model-for-robots/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Actuate 26, Foxglove's annual robotics developer conference, runs tomorrow August 18-19 at Fort Mason in San Francisco with speakers from Physical Intelligence, Google DeepMind, NVIDIA, Wayve, and Shield AI. https://startupevents.org/startup-events-calendar/actuate-26
