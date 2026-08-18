@@ -1,0 +1,15 @@
+Morning Briefing August 18, 2026
+
+=== ROBOTICS & AI ===
+- The International Federation of Robotics released data on August 17 showing global industrial robot installations hit record highs amid intensifying labor shortages, with market value topping $16.7 billion. https://www.globenewswire.com/news-release/2026/08/17/3346097/0/en/industrial-robot-installations-hit-record-highs-amid-labor-shortage-crisis.html
+- OpenAI launched ChatGPT for Teens on August 18, a tailored experience for ages 13-17 with stronger content filters blocking self-harm, romantic, and explicit content, plus new parental quiet hours and safety notifications. https://us.cnn.com/2026/08/18/tech/openai-chatgpt-for-teens
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- NVIDIA released new physical AI models at the Actuate 26 conference on August 18, with Boston Dynamics, LG Electronics, and NEURA Robotics among partners debuting next-generation robots built on NVIDIA technologies. https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots
+- LG Electronics announced on August 18 an accelerated robotics collaboration with NVIDIA, following an MOU signed August 13, with plans to jointly launch a bipedal humanoid robot powered by NVIDIA chips in Q1 2027. https://www.prnewswire.com/news-releases/lg-electronics-accelerates-robotics-collaboration-with-nvidia-302853855.html
