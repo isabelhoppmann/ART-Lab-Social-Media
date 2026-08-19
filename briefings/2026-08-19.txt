@@ -1,0 +1,18 @@
+Morning Briefing August 19, 2026
+
+=== ROBOTICS & AI ===
+- The 2026 World Robot Conference opened in Beijing on August 19, with 300+ companies showcasing 2,000+ exhibits and launching 150+ robot products targeting home assistance, manufacturing, logistics, and eldercare. https://abcnews.com/Technology/wireStory/robot-dogs-helpers-china-puts-robotics-ambitions-display-135767418
+- Foxglove launched its Agentic Data Platform for Physical AI at Actuate 26 on August 18, integrating NVIDIA-powered semantic search to help robotics teams retrieve and manage unstructured training data at scale. https://theaiinsider.tech/2026/08/18/foxglove-launches-agentic-data-platform-for-physical-ai-collaborates-with-nvidia-on-semantic-search/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Xiaomi's full-size humanoid robot made its global public debut at the World Robot Conference in Beijing on August 19, targeting smart factory deployments after achieving 98% nut-tightening accuracy during a four-month factory internship. https://technode.com/2026/08/19/xiaomi-robot-set-for-public-debut-at-2026-world-robot-conference/
+
+=== BAY AREA ===
+- Robotics & AI Global Showcase 2026, hosted by SVH Capital, takes place today (August 19) at Circuit Launch in Mountain View, bringing together robotics founders, deep tech investors, and global trade partners. https://www.wboc.com/online_features/press_releases/robotics-ai-global-showcase-2026-brings-robotics-ai-investment-leaders-to-silicon-valley/article_73ab981f-b864-5004-932b-f3acf03efe9d.html
+- Ruggedize, a deep-tech conference on agricultural robotics and physical AI in field conditions, runs August 26-27 at Reservoir Farms in Salinas. https://ruggedize.ai/
