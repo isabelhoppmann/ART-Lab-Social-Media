@@ -1,0 +1,16 @@
+Morning Briefing August 20, 2026
+
+=== ROBOTICS & AI ===
+- China's World Robot Conference 2026 opened in Beijing on August 19 with 300+ exhibitors and 150+ first-time product launches under the theme "Human-Robot Symbiosis," with proceedings running through August 23. https://news.cgtn.com/news/2026-08-20/Robots-move-closer-to-real-world-partners-at-World-Robot-Conference-1PL5LLAu6XK/p.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Unitree Robotics shares surged 460% on their August 19 Shanghai STAR Market trading debut, capping a $904M IPO at a $9B valuation and cementing the company as China's first publicly listed humanoid robot maker. https://www.cnbc.com/2026/08/19/china-backflipping-robot-maker-unitree-jumps-shanghai-ipo.html
+
+=== BAY AREA ===
+- Ruggedize, a two-day technical conference for engineers building robotics and physical AI for agricultural environments, takes place August 26-27 at Reservoir Farms in Salinas, CA. https://ruggedize.ai/
