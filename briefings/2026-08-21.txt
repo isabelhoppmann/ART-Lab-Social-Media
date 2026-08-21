@@ -1,0 +1,18 @@
+Morning Briefing August 21, 2026
+
+=== ROBOTICS & AI ===
+- Unitree Robotics debuted on Shanghai's STAR Market on August 19 with a 629% intraday surge and closed August 21 up 460%, setting a ~$50 billion public valuation and giving the humanoid robot sector its first real liquid price signal. https://www.forbes.com/sites/johnkoetsier/2026/08/19/unitree-ipos-massive-629-pop-makes-agility-robotics-look-super-cheap/
+- At the World Robot Conference in Beijing on August 20, Unitree CEO Wang Xingxing said the industry is approaching a "ChatGPT moment" for embodied AI — robots completing most tasks via simple voice or text commands in unfamiliar environments. http://www.jpost.com/international/article-906057
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- Ruggedize, a deep-tech conference on agricultural robotics and physical AI, takes place August 26–27 at Reservoir Farms in Salinas, CA. https://ruggedize.ai/
+- Silicon Valley Robotics hosts a Robotics and Physical AI Networking Event on September 2, 6–8:30 pm in San Francisco, with open slots for short talks and demos. https://www.svrobo.org/robotics-events/
