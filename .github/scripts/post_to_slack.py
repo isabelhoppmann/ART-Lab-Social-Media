@@ -8,6 +8,16 @@ try:
     with open(file_path) as f:
         content = f.read()
 
+    # The briefing's last line is a machine-readable dedup ledger, e.g.
+    # "#KEYS: unitree-ipo, ruggedize-2026". Tomorrow's run reads it so it can
+    # spot a story it already covered even when the URL and outlet have changed.
+    # It is internal bookkeeping and must never reach the channel — and because
+    # the section parser below reads to end-of-file, an unstripped ledger line
+    # gets absorbed into the last section's body and posted verbatim.
+    content = "\n".join(
+        l for l in content.splitlines() if not l.lstrip().startswith("#KEYS:")
+    )
+
     blocks = []
 
     date_match = re.search(r"(\d{4}-\d{2}-\d{2})", file_path)
