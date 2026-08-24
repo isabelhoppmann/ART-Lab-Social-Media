@@ -1,0 +1,19 @@
+Morning Briefing August 24, 2026
+
+=== ROBOTICS & AI ===
+- The 2nd World Humanoid Robot Games opened August 22 in Beijing at the National Speed Skating Oval, drawing 666 teams and 2,056 robots from 16 countries across 51 events including track and field, soccer, and real-world scenario challenges, with robots setting new performance records through August 26. https://www.bloomberg.com/news/videos/2026-08-24/robots-set-new-records-at-world-humanoid-robot-games-video
+- DEEP Robotics debuted its six-product industrial lineup at WRC 2026 on August 24, headlined by the DR02, billed as the world's first all-weather industrial-grade humanoid robot with IP66 waterproofing and operation rated from -20 degrees C to 55 degrees C. https://www.globenewswire.com/news-release/2026/08/24/3349553/0/en/practice-is-the-sole-criterion-for-testing-robots-deep-robotics-six-industry-product-lines-make-their-first-complete-debut-at-wrc-2026.html
+
+=== RESEARCH ===
+- Researchers published the first PRISMA-compliant systematic review of vision-language-action models for generalist robots on August 17, covering 140+ papers from 2020-2025 and structuring findings on architectures, robotic policies, and inference optimization. https://doi.org/10.3390/robotics15080160
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Silicon Valley Robotics hosts its monthly Bay Area robotics and physical AI networking event September 2, 6-8:30pm in San Francisco, open to founders, engineers, and investors for demos and short talks. https://www.svrobo.org/robotics-events/
+
+#KEYS: world-humanoid-games-2026, deep-robotics-dr02, vla-review-robotics-2026, svrobo-sf-physical-ai-sept2
