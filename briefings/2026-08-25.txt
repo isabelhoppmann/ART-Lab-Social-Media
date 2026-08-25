@@ -1,0 +1,15 @@
+Morning Briefing August 25, 2026
+
+=== ROBOTICS & AI ===
+- MIT Technology Review published a first-person dispatch on August 25 from a Shanghai humanoid robot public showcase where Chinese robots performed drunken boxing and aerial flips for families, noting that Chinese manufacturers now supply roughly 90% of the 13,000+ humanoid units delivered globally in 2025. https://www.technologyreview.com/2026/08/25/1141907/dispatch-shanghai-humanoid-robot-carnival/
+
+=== RESEARCH ===
+- Researchers posted SafeBranch to arXiv on August 20, a framework that aligns VLM-based embodied agents on safety by rolling back each unsafe trajectory to the exact decision point that caused the violation, generating a safe-versus-unsafe branch pair so the model learns the causal structure of safety rather than imitating surface behavior. https://arxiv.org/abs/2608.19729v1
+
+=== FUNDING & INVESTMENT ===
+- XPENG's robotics unit raised over $900 million at a $6.3 billion valuation announced August 24, the largest single private financing round in China's embodied AI sector to date, led by IDG Capital with Tencent and Alibaba as strategic investors, to fund production of its IRON humanoid robot targeting mass production by end of 2026. https://technode.com/2026/08/25/xpengs-robotics-unit-raises-over-900m-at-a-6-3bn-valuation/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+#KEYS: china-humanoid-public-showcase, safebranch-embodied-safety, xpeng-iron-funding
