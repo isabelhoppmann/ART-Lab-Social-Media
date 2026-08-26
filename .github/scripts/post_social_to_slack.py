@@ -207,6 +207,14 @@ else:
     save_state()
     print(f"Posted main message. Thread ts: {thread_ts}")
 
+def hypothesis_line(post):
+    """The post's drafting-time prediction, shown in the review thread so approval
+    is a judgement on the bet, not just on the visuals. Silent when absent so older
+    review-state files (written before hypotheses existed) still render cleanly."""
+    h = (post.get("hypothesis") or "").strip()
+    return f"\n\n🎯 _Testing:_ {h}" if h else ""
+
+
 any_posted = False
 for post in posts:
     if post.get("slack_posted"):
@@ -220,6 +228,7 @@ for post in posts:
         comment = (
             f"{rev}*{label} — Meme*\n_{post.get('overlay_text', '')}_\n\n"
             f"*IG:* {post.get('ig_caption', '')}\n`{post.get('hashtags', '')}`"
+            f"{hypothesis_line(post)}"
         )
         filename = f"{label.replace(' ', '_').lower()}.mp4"
         # New schema uses media_url for all post types; older runs used mp4_url for memes.
@@ -228,7 +237,10 @@ for post in posts:
     elif post_type == "repost":
         hashtags = post.get('hashtags', '')
         hashtags_line = f"\n`{hashtags}`" if hashtags else ""
-        text = f"*{label} — Repost*\nFrom @{post.get('creator', '')} — {post.get('url', '')}\n*Caption:* {post.get('ig_caption', '')}{hashtags_line}"
+        text = (
+            f"*{label} — Repost*\nFrom @{post.get('creator', '')} — {post.get('url', '')}\n"
+            f"*Caption:* {post.get('ig_caption', '')}{hashtags_line}{hypothesis_line(post)}"
+        )
         reply = slack_post(
             SLACK_CHANNEL_ID,
             [{"type": "section", "text": {"type": "mrkdwn", "text": text[:3000]}}],
@@ -239,6 +251,7 @@ for post in posts:
         comment = (
             f"{rev}*{label} — Quote (FB only)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n"
             f"*FB caption:* {post.get('fb_caption', '')}\n`{post.get('hashtags', '')}`"
+            f"{hypothesis_line(post)}"
         )
         filename = f"{label.replace(' ', '_').lower()}.jpg"
         reply = post_media_or_fallback(label, comment, post.get("media_url", ""), filename, thread_ts)

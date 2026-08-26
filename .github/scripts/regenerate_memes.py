@@ -358,6 +358,11 @@ def notion_create_meme_row(post, n, week):
         "Hashtags": {"rich_text": [{"text": {"content": post.get("hashtags", "")}}]},
         "Media URL": {"url": post.get("media_url") or None},
         "Status": {"select": {"name": "Draft"}},
+        # Tracking pair: the agent's drafting-time prediction, and the slot the
+        # weekly scorer fills in later. Outcome is set explicitly rather than left
+        # blank so "not scored yet" is never confused with "scored as nothing".
+        "Hypothesis": {"rich_text": [{"text": {"content": (post.get("hypothesis") or "")[:2000]}}]},
+        "Outcome": {"select": {"name": "Not evaluated"}},
         "Best Time": {"rich_text": [{"text": {"content": post.get("best_time", "")}}]},
     }
     if week:
