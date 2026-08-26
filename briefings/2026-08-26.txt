@@ -1,0 +1,15 @@
+Morning Briefing August 26, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- Researchers posted DECOWAM to arXiv this week, introducing a decoupled whole-body world-action model for legged mobile manipulation that separates locomotion and arm control into dedicated model heads while sharing a unified world representation, enabling quadruped robots with arms to perform dexterous manipulation during locomotion. https://arxiv.org/abs/2608.20114
+
+=== FUNDING & INVESTMENT ===
+- Valor Equity Partners and Point72 Ventures backed General Intuition at a $6 billion valuation, announced August 24, to fund the AI foundation model startup's push into robotic embodiments using hundreds of millions of hours of gameplay video as training data, just weeks after a prior $320 million raise at a $2.3 billion valuation. https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/
+
+=== COMPETITOR WATCH ===
+- NVIDIA announced Jetson Orin Nano 2 on August 25, delivering 78 TOPS of AI compute and twice the inference performance of its predecessor in the same compact form factor, targeting entry-level edge robotics, delivery drones, and vision AI systems, with Cognex, Doosan Bobcat, and Matic among the first adopters. https://nvidianews.nvidia.com/news/nvidia-announces-jetson-orin-nano-2-robotics-computer-to-redefine-entry-level-edge-ai
+
+#KEYS: decowam-legged-manipulation, general-intuition-6b-valuation, nvidia-jetson-orin-nano-2
