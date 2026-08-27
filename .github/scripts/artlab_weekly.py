@@ -17,7 +17,7 @@ Env: NOTION_TOKEN (already a repo secret), ARTLAB_POSTS_DB.
 DRY_RUN=1 prints without writing back.
 """
 
-import json, os, statistics, urllib.request
+import importlib.util, json, os, statistics, sys, urllib.request
 from datetime import datetime, timezone
 
 NOTION_TOKEN = os.environ.get("NOTION_TOKEN", "")
@@ -28,6 +28,28 @@ MIN_PRIORS = 6    # below this there is no baseline worth dividing by
 WINDOW     = 12   # trailing posts forming the median
 MIN_FORMAT = 6    # posts of one format before a read is allowed
 BANDS = [(2.0, "Winner"), (1.3, "Interesting"), (0.7, "Neutral"), (0.0, "Underperformed")]
+
+
+def load_formats():
+    """The format library doubles as the source of each format's EXPECTED effect, so
+    a hypothesis can be filled in automatically from the format tag alone. Isabel
+    should not have to hand-write a prediction every week to keep the record intact —
+    tagging the format already says what the post was betting on."""
+    path = os.path.join(os.path.dirname(__file__), "..", "..", "formats", "artlab.json")
+    try:
+        with open(os.path.abspath(path)) as f:
+            return {x["slug"]: x for x in json.load(f)["formats"]}
+    except Exception as e:
+        print(f"(couldn't read formats/artlab.json: {e})")
+        return {}
+
+
+def auto_hypothesis(fmt, formats):
+    f = formats.get(fmt)
+    if not f:
+        return ""
+    return (f"[auto] {f['name']}: {f['why_it_works']} "
+            f"Expected to perform at or above the recent median for this account.")[:1900]
 
 
 def band_for(ratio):
@@ -75,6 +97,8 @@ def fetch_rows():
             posted = prop(p, "Posted At", "date")
             if not posted:
                 continue
+            hypo = "".join(t.get("plain_text", "")
+                           for t in (p.get("Hypothesis") or {}).get("rich_text", []))
             reach = prop(p, "Reach", "number")
             eng = (likes or 0) + (comments or 0)
             rows.append({
@@ -84,6 +108,7 @@ def fetch_rows():
                 "format": prop(p, "Format", "select") or "Unassigned",
                 "outcome": prop(p, "Outcome", "select"),
                 "posted": posted[:10],
+                "hypothesis": hypo,
                 # Rate when reach is known, raw engagement otherwise. Kept separate
                 # below so a rate is never compared against a raw count.
                 "metric": (eng / reach * 100) if reach else eng,
@@ -107,9 +132,36 @@ def write_outcome(row, outcome):
         return False
 
 
+def write_hypothesis(row, text):
+    if DRY_RUN:
+        print(f"    [dry-run] would backfill Hypothesis for {row['name']}")
+        return
+    try:
+        notion(f"pages/{row['id']}",
+               {"properties": {"Hypothesis": {"rich_text": [{"text": {"content": text}}]}}},
+               "PATCH")
+    except Exception as e:
+        print(f"    hypothesis backfill failed for {row['name']}: {e}")
+
+
+def email(subject, body):
+    """Deliver the digest instead of leaving it in a JSON file nobody opens.
+    Reuses the Gmail sender already in the repo. Email, never Slack — Slack
+    carries published content only."""
+    try:
+        spec = importlib.util.spec_from_file_location(
+            "notify", os.path.join(os.path.dirname(__file__), "notify_error_email.py"))
+        mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+        mod.send(subject, body)
+        print("Digest emailed.")
+    except Exception as e:
+        print(f"(couldn't email digest: {e})")
+
+
 def main():
     if not NOTION_TOKEN:
         print("artlab_weekly: NOTION_TOKEN not set — skipping"); return
+    formats = load_formats()
     rows = fetch_rows()
     if not rows:
         print("artlab_weekly: no posts with numbers filled in yet — nothing to score.")
@@ -117,6 +169,16 @@ def main():
         return
     rows.sort(key=lambda r: r["posted"])
     print(f"Posts with numbers filled in: {len(rows)}\n")
+
+    # Backfill any missing hypothesis from the format tag, so the record stays
+    # complete without Isabel writing one by hand each week.
+    for row in rows:
+        if not row["hypothesis"] and row["format"] != "Unassigned":
+            text = auto_hypothesis(row["format"], formats)
+            if text:
+                write_hypothesis(row, text)
+                row["hypothesis"] = text
+                print(f"  + filled in hypothesis for {row['name']} from its format")
 
     scored, no_baseline = [], []
     for i, row in enumerate(rows):
@@ -174,6 +236,23 @@ def main():
         json.dump({"scored": scored, "reads": reads, "suggestions": suggestions,
                    "unscored": [r["name"] for r in no_baseline]}, f, indent=2, ensure_ascii=False)
     print(f"\nWrote {out}")
+
+    lines = [f"ART Lab weekly review — {datetime.now(timezone.utc):%d %B %Y}", ""]
+    lines.append(f"Scored {len(scored)} post(s) this run.")
+    if no_baseline:
+        lines.append(f"{len(no_baseline)} not scored yet — fewer than {MIN_PRIORS} comparable "
+                     "earlier posts to compare against. Normal early on.")
+    lines += ["", "WHAT THE FORMATS ARE DOING", ""]
+    for fmt, r in sorted(reads.items()):
+        if "median_ratio" in r:
+            lines.append(f"  {fmt}: {r['n']} posts, median {r['median_ratio']}x — {r['verdict']}")
+        else:
+            lines.append(f"  {fmt}: {r['n']} of {MIN_FORMAT} posts — no read yet")
+    lines += ["", "SUGGESTIONS FOR NEXT WEEK", ""]
+    lines += [f"  - {s}" for s in suggestions]
+    lines += ["", "Nothing here needs a reply. Outcomes are already written back to the",
+              "ART Lab — Posts table in Notion."]
+    email(f"ART Lab weekly review — {datetime.now(timezone.utc):%Y-%m-%d}", "\n".join(lines))
 
 
 if __name__ == "__main__":
