@@ -72,7 +72,9 @@ Two rules that come with the library, quoted from its own `hard_rules` — read 
 - **Borrow structure, never aesthetic.** Shot order, clip length, first frame, caption placement and sequencing are fair to copy. Colour, typography, styling, music and phrasing are not.
 - **No AI-generated imagery.** Using a model to find a pattern across posts is research; using one to make the picture is not allowed.
 
-Zenie's cohort has **not** been researched yet — `cohort.status` in that file says so plainly. So if the format you picked has `evidence` marked UNVERIFIED, it is a hypothesis rather than a proven pattern — say so in the post's `hypothesis` sentence so nobody reads the eventual Outcome as stronger evidence than it is.
+Zenie's cohort is 22 verified accounts in the journaling and self-reflection niche, listed in `cohort.accounts` with follower counts. Read `cohort.evidence_level` before you lean on any of it: the handles and follower counts are verified, but per-post engagement is NOT — those numbers are not obtainable for accounts we don't own. The formats are strong priors, not measurements. Say so in the `hypothesis` sentence when a format is being used for the first time, so nobody reads the eventual Outcome as stronger evidence than it is.
+
+**The prompt rule is not a format.** Every post delivers a complete journaling prompt before any CTA (§2) regardless of which format it uses. The formats describe the post's SHAPE. The one exception is `catalogue_plate`, which deliberately carries no CTA at all — cap it at one a fortnight.
 
 ### 6. Every post carries a `hypothesis`
 

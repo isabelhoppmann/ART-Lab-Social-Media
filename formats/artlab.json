@@ -1,8 +1,8 @@
 {
-  "version": 1,
-  "updated": "2026-08-26",
+  "version": 2,
+  "updated": "2026-08-27",
   "account": "artlab",
-  "what_this_is": "Proven post formats for artlab ONLY. Each account has its own cohort, its own formats and its own weekly review — nothing is shared between accounts, because the niches do not transfer. The agent fetches this file every run and assigns one format_slug per post; that slug flows into review-state, into the post's Notion row, and into the weekly scorer, which rolls outcomes up BY FORMAT. The format-level roll-up is the only level anyone should act on.",
+  "what_this_is": "Proven post formats for ART Lab ONLY, used for ANALYSIS AND SUGGESTIONS -- not for choosing content. Isabel decides what ART Lab posts. The weekly job's job is to look at what actually went out, tag each post with the format it most resembles, score it against the trailing median, roll the outcomes up BY FORMAT, and suggest which formats to lean on next week. Nothing here selects or produces an asset.",
   "hard_rules": [
     "Borrow STRUCTURE, never AESTHETIC. Shot order, cut points, clip length, first frame, caption placement and sequencing are all fair to copy. Colour, grade, typography, styling, music and phrasing are not -- copying those produces another account in a category that already has plenty.",
     "No shoots and no original photography. Every format below must be satisfiable from assets that already exist in the brand's asset bank. A format that needs new footage is not usable and must not be selected.",
@@ -19,8 +19,8 @@
     "note": "Core peers carry the most weight despite being the smallest accounts -- they are the only ones doing what ART Lab does."
   },
   "asset_banks": {
-    "status": "UNRESOLVED — see asset_source_open_question",
-    "note": "The 'ART Lab — Media Library' Notion database was ruled out by Isabel on 2026-08-26 because its assets are lamp renders that are not being used. The real source of ART Lab post assets is not yet known."
+    "status": "NOT APPLICABLE",
+    "note": "Isabel sources and posts ART Lab content herself. The agent never selects assets, so no asset bank is wired in. The 'ART Lab -- Media Library' Notion database was ruled out on 2026-08-26 and must not be used."
   },
   "formats": [
     {
@@ -34,23 +34,8 @@
         "@anthonymccallstudio"
       ],
       "evidence": "Studio DRIFT's Shylight opens and closes on the nyctinastic rhythm of a real flower and has been on permanent display at the Rijksmuseum for years.",
-      "needs": {
-        "type": [
-          "Clip",
-          "Video"
-        ],
-        "facet": [
-          "Light",
-          "Technology",
-          "Category"
-        ],
-        "orientation": [
-          "Square",
-          "Portrait 9:16"
-        ]
-      },
-      "copy_length": "Micro",
-      "notes": "Satisfied by any single-motion clip in the Media Library. Do not cut it; do not add an intro card."
+      "notes": "Classification is a PROPOSAL. The weekly job tags the closest match and flags it as proposed; Isabel overrides it if wrong. Satisfied by any single-motion clip in the Media Library. Do not cut it; do not add an intro card.",
+      "classify_by": "Video or Reel, no visible cuts, loops. Duration under ~12s."
     },
     {
       "slug": "two_agents_one_task",
@@ -63,23 +48,8 @@
         "@madeline.gannon"
       ],
       "evidence": "Sougwen Chung paints alongside her D.O.U.G. arms; coverage describes it as 'part team effort, part improvised dance'. Madeline Gannon's Mimus has no pre-planned path and follows visitors it finds interesting.",
-      "needs": {
-        "type": [
-          "Clip",
-          "Video"
-        ],
-        "facet": [
-          "Experience",
-          "Category"
-        ],
-        "orientation": [
-          "Square",
-          "Portrait 9:16",
-          "Landscape"
-        ]
-      },
-      "copy_length": "Short",
-      "notes": "The strongest format in the set for ART Lab. Satisfied by the noticing/reacting assets, where the object and a person are both present and both acting."
+      "notes": "Classification is a PROPOSAL. The weekly job tags the closest match and flags it as proposed; Isabel overrides it if wrong. The strongest format in the set for ART Lab. Satisfied by the noticing/reacting assets, where the object and a person are both present and both acting.",
+      "classify_by": "Video showing a person and a machine both acting in the same frame."
     },
     {
       "slug": "mechanism_reveal",
@@ -93,23 +63,8 @@
         "@lindseyadelman"
       ],
       "evidence": "Mimus documentation pairs the creature-like behaviour with the ceiling depth-sensor array that produces it. The watchmaking caseback shot is the same move.",
-      "needs": {
-        "type": [
-          "Clip",
-          "Video",
-          "Render"
-        ],
-        "facet": [
-          "Technology",
-          "Object"
-        ],
-        "orientation": [
-          "Square",
-          "Portrait 9:16"
-        ]
-      },
-      "copy_length": "Short",
-      "notes": "Pair a finished-state asset with a close-up asset of the same subject. Both already exist in the bank -- this format is pure recombination."
+      "notes": "Classification is a PROPOSAL. The weekly job tags the closest match and flags it as proposed; Isabel overrides it if wrong. Pair a finished-state asset with a close-up asset of the same subject. Both already exist in the bank -- this format is pure recombination.",
+      "classify_by": "Two-part video or carousel: a finished result followed by the workings behind it."
     },
     {
       "slug": "scale_betrayal",
@@ -123,24 +78,8 @@
         "@studioolafureliasson"
       ],
       "evidence": "Landscape-scale fibre-optic fields and architectural light installations depend on this reveal for almost all their circulation.",
-      "needs": {
-        "type": [
-          "Render",
-          "Clip",
-          "Video"
-        ],
-        "facet": [
-          "Object",
-          "Category",
-          "Commercial"
-        ],
-        "orientation": [
-          "Portrait 9:16",
-          "Square"
-        ]
-      },
-      "copy_length": "Micro",
-      "notes": "Pair a close-up asset with a room-context asset of the same subject."
+      "notes": "Classification is a PROPOSAL. The weekly job tags the closest match and flags it as proposed; Isabel overrides it if wrong. Pair a close-up asset with a room-context asset of the same subject.",
+      "classify_by": "Video or carousel where a size reference appears partway through and changes the read."
     },
     {
       "slug": "state_change",
@@ -153,22 +92,8 @@
         "@sabine_marcelis"
       ],
       "evidence": "Shylight's open/close cycle; Marcelis's lit-versus-unlit resin work.",
-      "needs": {
-        "type": [
-          "Clip",
-          "Video"
-        ],
-        "facet": [
-          "Light",
-          "Experience"
-        ],
-        "orientation": [
-          "Square",
-          "Portrait 9:16"
-        ]
-      },
-      "copy_length": "Micro",
-      "notes": "Also satisfiable by pairing a day-state render with an evening-state render of the same subject."
+      "notes": "Classification is a PROPOSAL. The weekly job tags the closest match and flags it as proposed; Isabel overrides it if wrong. Also satisfiable by pairing a day-state render with an evening-state render of the same subject.",
+      "classify_by": "Short video, or a two-frame carousel, showing the same subject at rest and active."
     },
     {
       "slug": "catalogue_plate",
@@ -182,22 +107,9 @@
         "@annveronicajanssens"
       ],
       "evidence": "The smallest accounts in the light lane run this most -- which tells you exactly what it costs and what it buys.",
-      "needs": {
-        "type": [
-          "Render",
-          "Image"
-        ],
-        "facet": [
-          "Object"
-        ],
-        "orientation": [
-          "Square",
-          "Portrait 9:16"
-        ]
-      },
-      "copy_length": "Micro",
-      "notes": "Cap at one per fortnight. This format is a deliberate loss on engagement in exchange for register."
+      "notes": "Classification is a PROPOSAL. The weekly job tags the closest match and flags it as proposed; Isabel overrides it if wrong. Cap at one per fortnight. This format is a deliberate loss on engagement in exchange for register.",
+      "classify_by": "Single still, one subject, lots of negative space, short factual caption with no CTA."
     }
   ],
-  "asset_source_open_question": "BLOCKING: every `needs` block below names a Facet/Type from the Media Library, which is now out of scope. These specs must be re-pointed at whatever bank ART Lab actually posts from before any of them can be selected. The format STRUCTURES are still valid — they came from the cohort, not from the asset bank — but the selection criteria are not."
+  "unclassified_policy": "A post that matches no format is tagged Unassigned rather than forced into the nearest one. If Unassigned becomes the largest group, that is a signal the format list needs revisiting -- not that the posts were wrong."
 }
