@@ -140,6 +140,18 @@ jobs:
           FB_PAGE_ID: "227999857070404"
         run: python3 .github/scripts/zenie_diagnostics.py
 
+      # Closes the loop on the hypotheses: matches Notion rows to live posts by
+      # caption, scores each against the trailing median, and writes Outcome back.
+      # Never fails the run -- a scoring miss must not cost us the weekly report.
+      - name: Score post outcomes into Notion
+        continue-on-error: true
+        env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: "17841465217874624"
+          FB_PAGE_ID: "227999857070404"
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python3 .github/scripts/score_outcomes.py
+
       - name: Commit and push report
         run: |
           git config user.name  "Zenie Agent"

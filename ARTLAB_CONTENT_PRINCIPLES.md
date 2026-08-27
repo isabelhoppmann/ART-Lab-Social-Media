@@ -59,14 +59,17 @@ This is why the rule is absolute rather than a matter of taste or quality. A *go
 
 ---
 
-## 4. Never hide the lamp moving
+## 4. Lead with movement, and never gate it
 
-**The rule:** the lamp in motion is the hook, and it goes first, unconditionally. It never sits behind a price reveal, an email capture, a waitlist signup, a "link in bio to see more", or a form of any kind.
+**The rule:** whatever is moving in a given piece of content goes first, and it is never placed behind a price, a form, a waitlist, a signup, or a "link in bio to see more."
 
-**Why:** movement is the entire surprise. Someone scrolling past a still image sees a nice lamp — a category they already understand and have already decided how they feel about. The moment it moves, the category breaks, and *that* is the only thing that stops a scroll. Gating it means spending the one asset that works to protect a conversion step that doesn't work without it. Nobody fills out a form to find out whether they're interested; they fill it out because they already are.
+This is not specifically about the lamp — ART Lab is not showing the product yet. It is about the fact that **movement is the thing that separates this from everything else in the feed**, whatever form it currently takes: a mechanism under test, a prototype arm, a rig running, a rehearsal, a robot being taught a gesture, Catie working with a machine. The subject changes; the rule doesn't.
+
+**Why:** a still image of a robotics company is a category the viewer already understands and has already decided how they feel about. Motion is the only thing that breaks the category, and breaking the category is the only thing that stops a scroll. Gating it means spending the one asset that reliably works in order to protect a conversion step that does not work without it. Nobody fills in a form to find out whether they're interested — they fill it in because they already are.
 
 **In practice:**
 - Motion appears in the first frame or the first second. Not after a title card, not after a logo animation, not after a slow reveal.
-- Price, preorder, and signup come *after* the motion has landed — in the caption, later in the video, in a follow-up. Never before, never as the gate.
-- A post that shows the lamp only as a still needs a reason. "We didn't have new footage" is a production problem to solve, not an acceptable reason.
-- This applies to outreach too. If a note to a gallery, press contact, or partner is going to include one asset, it is the lamp moving.
+- Price, preorder, signup and "learn more" come *after* the motion has landed — later in the video, further down the caption, in a follow-up post. Never before it, never as the gate.
+- A post carrying no movement at all needs a reason. "We didn't have new footage" is a production problem to solve, not a reason.
+- This applies to outreach too. If a note to a gallery, a press contact, or a partner includes one asset, it is the one where something moves.
+- **Corollary — movement is also the strongest thing you own strategically.** Catie's background is robot choreography; the company's differentiator is how the machine *moves*, not what it looks like standing still. Content that treats motion as the subject rather than the demo is playing to the actual strength.
