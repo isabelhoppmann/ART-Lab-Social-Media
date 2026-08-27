@@ -4,6 +4,15 @@ Working rules for ART Lab's social and outreach content (@artlabfuture). Read th
 
 **This is not Zenie's voice.** Zenie is a warm best friend talking to millennial women about their inner life. ART Lab is a company introducing an object nobody has seen before. The registers are different and should stay different — do not carry Zenie's captions, cadence, or humor over here. `AGENT_INSTRUCTIONS.md` governs Zenie; this file governs ART Lab.
 
+**ART Lab does not shoot.** There is no photography, no set, no shoot day. Every post is assembled from two banks that already exist in Notion:
+
+- **Media Library** — approved assets (Image, Video, Clip, Render, GIF), tagged by Facet, Orientation and audience Weighting.
+- **Information Pipelines** — copy modules, tagged with the same Facet and Weighting vocabulary, and joined to the media by a two-way relation.
+
+A post is one copy module plus one paired asset. That makes content selection and sequencing — not production — the whole job, and it is why the format work below is expressed as *which asset, in which order* rather than as shot lists.
+
+**The proven formats live in `formats/library.json`** in this repo, with the structure spec for each, which cohort account proves it, and the Facet/Type each one needs from the Media Library. That file is the operational half of this document; read it before selecting anything. Every format in it is satisfiable from assets that already exist — a format needing new footage is not usable and is not in there.
+
 Four rules. They are ordered by how often they get broken, not by importance.
 
 ---
@@ -43,6 +52,19 @@ Four rules. They are ordered by how often they get broken, not by importance.
 
 **In practice:** when a reference gets pulled, note which category it came from. If a week's references are all from lighting or robotics, that week's research failed and should be redone.
 
+**The line that makes this compatible with studying top performers.** Analysing the best-performing posts in your own niche is a legitimate and useful exercise — it is how you learn craft. The rule is *what* you take from them: **borrow structure, never aesthetic.**
+
+| Borrow freely | Build your own |
+|---|---|
+| Shot order and where the cut lands | Colour and grade |
+| Clip length and loop points | Typography and on-screen text |
+| What occupies the first frame | Set dressing and styling |
+| Caption length and where the ask sits | Music and sound identity |
+| Carousel sequencing | Voice and phrasing |
+| Posting rhythm | Which references you look at at all |
+
+Copy how a post is *built* and you learn craft. Copy how it *looks* and you produce another account in a category that already has plenty. This split is encoded in `formats/library.json` under `hard_rules`, so the agents enforce it rather than relying on memory.
+
 ---
 
 ## 3. No AI-generated imagery — and this is the reason
@@ -57,16 +79,24 @@ This is why the rule is absolute rather than a matter of taste or quality. A *go
 
 **Corollary:** the same logic applies to copy. Do not reach for the phrasing that sounds like every other launch. If a line could appear verbatim in a competitor's post, it is the average of existing work and it should be rewritten.
 
+**Reading is not generating.** Using a model to find the pattern across thirty competitor posts is research, and it is fine. Using one to make the image is not. The distinction is whether the model's output reaches the feed.
+
 ---
 
-## 4. Never hide the lamp moving
+## 4. Lead with movement, and never gate it
 
-**The rule:** the lamp in motion is the hook, and it goes first, unconditionally. It never sits behind a price reveal, an email capture, a waitlist signup, a "link in bio to see more", or a form of any kind.
+**The rule:** whatever is moving in a given piece of content goes first, and it is never placed behind a price, a form, a waitlist, a signup, or a "link in bio to see more."
 
-**Why:** movement is the entire surprise. Someone scrolling past a still image sees a nice lamp — a category they already understand and have already decided how they feel about. The moment it moves, the category breaks, and *that* is the only thing that stops a scroll. Gating it means spending the one asset that works to protect a conversion step that doesn't work without it. Nobody fills out a form to find out whether they're interested; they fill it out because they already are.
+This is not a rule about one particular subject. It is about the fact that **movement is the thing that separates this from everything else in the feed**, whatever form the moving asset takes. The subject changes; the rule doesn't.
+
+In practice that means the Media Library's motion assets — anything catalogued as Clip or Video, and any pair of renders that captures two states of the same subject — outrank the stills. A still can support a post. It should rarely open one.
+
+**Why:** a still image of a robotics company is a category the viewer already understands and has already decided how they feel about. Motion is the only thing that breaks the category, and breaking the category is the only thing that stops a scroll. Gating it means spending the one asset that reliably works in order to protect a conversion step that does not work without it. Nobody fills in a form to find out whether they're interested — they fill it in because they already are.
 
 **In practice:**
 - Motion appears in the first frame or the first second. Not after a title card, not after a logo animation, not after a slow reveal.
-- Price, preorder, and signup come *after* the motion has landed — in the caption, later in the video, in a follow-up. Never before, never as the gate.
-- A post that shows the lamp only as a still needs a reason. "We didn't have new footage" is a production problem to solve, not an acceptable reason.
-- This applies to outreach too. If a note to a gallery, press contact, or partner is going to include one asset, it is the lamp moving.
+- Price, preorder, signup and "learn more" come *after* the motion has landed — later in the video, further down the caption, in a follow-up post. Never before it, never as the gate.
+- A post carrying no movement at all needs a reason. The `catalogue_plate` format is the sanctioned exception, and it is capped deliberately — a feed with no quiet frames reads as a brand rather than a practice, but a feed of nothing but quiet frames doesn't get seen at all.
+- Since there are no shoots, "we had no footage" is never the explanation. If the motion assets in the Media Library are exhausted or stale, that is a restocking problem to raise, the same way the Zenie meme library gets topped up when it runs low.
+- This applies to outreach too. If a note to a gallery, a press contact, or a partner includes one asset, it is the one where something moves.
+- **Corollary — movement is also the strongest thing you own strategically.** Catie's background is robot choreography; the company's differentiator is how the machine *moves*, not what it looks like standing still. Content that treats motion as the subject rather than the demo is playing to the actual strength.

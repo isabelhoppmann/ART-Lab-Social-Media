@@ -1,0 +1,122 @@
+{
+  "scored": [
+    {
+      "id": "r7",
+      "name": "post 7",
+      "platform": "Instagram",
+      "format": "catalogue_plate",
+      "outcome": "Neutral",
+      "posted": "2026-06-07",
+      "metric": 4.0,
+      "basis": "raw",
+      "hypothesis": "[auto] The catalogue plate: It will underperform on engagement every time, and it is still worth running occasionally, because a feed with no quiet frames reads as a brand rather than a practice. Expected to perform at or above the recent median for this account.",
+      "ratio": 1.0
+    },
+    {
+      "id": "r8",
+      "name": "post 8",
+      "platform": "Instagram",
+      "format": "catalogue_plate",
+      "outcome": "Neutral",
+      "posted": "2026-06-08",
+      "metric": 4.0,
+      "basis": "raw",
+      "hypothesis": "[auto] The catalogue plate: It will underperform on engagement every time, and it is still worth running occasionally, because a feed with no quiet frames reads as a brand rather than a practice. Expected to perform at or above the recent median for this account.",
+      "ratio": 1.0
+    },
+    {
+      "id": "r9",
+      "name": "post 9",
+      "platform": "Instagram",
+      "format": "two_agents_one_task",
+      "outcome": "Winner",
+      "posted": "2026-06-09",
+      "metric": 8.0,
+      "basis": "raw",
+      "hypothesis": "[auto] Human and machine, same frame, same task: Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received. Expected to perform at or above the recent median for this account.",
+      "ratio": 2.0
+    },
+    {
+      "id": "r10",
+      "name": "post 10",
+      "platform": "Instagram",
+      "format": "two_agents_one_task",
+      "outcome": "Winner",
+      "posted": "2026-06-10",
+      "metric": 8.0,
+      "basis": "raw",
+      "hypothesis": "[auto] Human and machine, same frame, same task: Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received. Expected to perform at or above the recent median for this account.",
+      "ratio": 2.0
+    },
+    {
+      "id": "r11",
+      "name": "post 11",
+      "platform": "Instagram",
+      "format": "two_agents_one_task",
+      "outcome": "Winner",
+      "posted": "2026-06-11",
+      "metric": 8.0,
+      "basis": "raw",
+      "hypothesis": "[auto] Human and machine, same frame, same task: Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received. Expected to perform at or above the recent median for this account.",
+      "ratio": 2.0
+    },
+    {
+      "id": "r12",
+      "name": "post 12",
+      "platform": "Instagram",
+      "format": "two_agents_one_task",
+      "outcome": "Winner",
+      "posted": "2026-06-12",
+      "metric": 8.0,
+      "basis": "raw",
+      "hypothesis": "[auto] Human and machine, same frame, same task: Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received. Expected to perform at or above the recent median for this account.",
+      "ratio": 2.0
+    },
+    {
+      "id": "r13",
+      "name": "post 13",
+      "platform": "Instagram",
+      "format": "two_agents_one_task",
+      "outcome": "Winner",
+      "posted": "2026-06-13",
+      "metric": 8.0,
+      "basis": "raw",
+      "hypothesis": "[auto] Human and machine, same frame, same task: Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received. Expected to perform at or above the recent median for this account.",
+      "ratio": 2.0
+    },
+    {
+      "id": "r14",
+      "name": "post 14",
+      "platform": "Instagram",
+      "format": "two_agents_one_task",
+      "outcome": "Winner",
+      "posted": "2026-06-14",
+      "metric": 8.0,
+      "basis": "raw",
+      "hypothesis": "[auto] Human and machine, same frame, same task: Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received. Expected to perform at or above the recent median for this account.",
+      "ratio": 2.0
+    }
+  ],
+  "reads": {
+    "catalogue_plate": {
+      "n": 2,
+      "verdict": "no read yet"
+    },
+    "two_agents_one_task": {
+      "n": 6,
+      "median_ratio": 2.0,
+      "verdict": "outperforming"
+    }
+  },
+  "suggestions": [
+    "Lean on two_agents_one_task — 6 posts, median 2.0x."
+  ],
+  "unscored": [
+    "post 1",
+    "post 2",
+    "post 3",
+    "post 4",
+    "post 5",
+    "post 6"
+  ]
+}

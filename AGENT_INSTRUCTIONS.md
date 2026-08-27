@@ -22,7 +22,7 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
 
 ## CONTENT SCOPE, STRUCTURE & FORMAT DISCIPLINE — applies to every post
 
-These five rules govern Steps 1, 2A, 2B and 2C. A post that breaks any of them is not shippable — rewrite it before moving on.
+These six rules govern Steps 1, 2A, 2B and 2C. A post that breaks any of them is not shippable — rewrite it before moving on.
 
 ### 1. Scope: journaling and reflection only
 
@@ -57,7 +57,26 @@ Before you finalize `best_time` for the six posts, sort them by scheduled dateti
 
 `Meme`, `Quote Image`, and `Repost` are the only three. Do not invent a fourth — no carousels, no text-only posts, no Stories, no polls. Variation happens *within* the three: a different meme format, a different quote register, a different kind of repost. If an idea needs a new Post Type to work, it is not this week's idea.
 
-### 5. Every post carries a `hypothesis`
+### 5. Every post is an instance of a proven format
+
+Posts are not invented from nothing each week. They are instances of formats held in `formats/zenie.json` in this repo. **Each account has its own format library and its own weekly review — `formats/artlab.json` is ART Lab's and is none of your business.** Fetch Zenie's at the start of every run, alongside the meme library:
+
+```python
+fmts = _raw("formats/zenie.json")                         # _raw() is defined in Step 2A
+formats = fmts["formats"]
+```
+
+For each of the six posts, pick the format whose `post_types` includes that post's Post Type, and record its `slug` as the post's `format_slug`. Write it into review-state (Step 7) and into the `Format` property on the Notion row (Step 6).
+
+Two rules that come with the library, quoted from its own `hard_rules` — read them there, they are authoritative:
+- **Borrow structure, never aesthetic.** Shot order, clip length, first frame, caption placement and sequencing are fair to copy. Colour, typography, styling, music and phrasing are not.
+- **No AI-generated imagery.** Using a model to find a pattern across posts is research; using one to make the picture is not allowed.
+
+Zenie's cohort is 22 verified accounts in the journaling and self-reflection niche, listed in `cohort.accounts` with follower counts. Read `cohort.evidence_level` before you lean on any of it: the handles and follower counts are verified, but per-post engagement is NOT — those numbers are not obtainable for accounts we don't own. The formats are strong priors, not measurements. Say so in the `hypothesis` sentence when a format is being used for the first time, so nobody reads the eventual Outcome as stronger evidence than it is.
+
+**The prompt rule is not a format.** Every post delivers a complete journaling prompt before any CTA (§2) regardless of which format it uses. The formats describe the post's SHAPE. The one exception is `catalogue_plate`, which deliberately carries no CTA at all — cap it at one a fortnight.
+
+### 6. Every post carries a `hypothesis`
 
 One sentence, written at drafting time, saying **why this post is shaped this way and what you expect it to do**. It is a prediction, not a description — it has to be the kind of thing that can turn out wrong.
 
@@ -269,7 +288,7 @@ For each meme produce FIVE pieces of text (write these for BOTH memes — they a
 - **`ig_caption`** — a short reaction/riff, then the journaling prompt, then any CTA. Do NOT repeat overlay_text — riff on it. Open with 2–8 words + optional emoji, then the **complete prompt** on its own line (CONTENT SCOPE §2). Example: *"She knows… 👀\n\nTonight's prompt: what's the thing you keep telling everyone you're 'fine' about?"*
 - **`fb_caption`** — Facebook caption, more conversational. Same order: riff (1–2 sentences) → **complete journaling prompt** → CTA last. Asking the prompt directly is what earns comments, so let it carry the engagement job (FB rewards comments and shares). Example: *"Okay but why does this describe my entire Tuesday? 😅 Here's tonight's prompt: what's the thing you keep telling everyone you're fine about? Tag a friend who needs to answer it too."*
 - **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp. Same set used on both platforms.
-- **`hypothesis`** — one sentence: why this post is shaped this way and what you expect it to do. See CONTENT SCOPE §5 for the standard and worked examples.
+- **`hypothesis`** — one sentence: why this post is shaped this way and what you expect it to do. See CONTENT SCOPE §6 for the standard and worked examples.
 
 ### Optional fifth field: `text_style` (overlay look)
 
@@ -553,7 +572,7 @@ Before including each repost, write out loud: "This URL is: [URL]. It is from: [
 
 **Creator handle — TREAT AS UNVERIFIED.** WebSearch cannot reliably tell you who actually *made* a reel. Self-care and wellness reels are constantly re-shared by aggregator/repost accounts, so the handle that appears in search results is very often the aggregator, not the original creator. Do NOT trust a handle that came only from a search snippet. **Do NOT WebFetch instagram.com to confirm the creator.** Instagram blocks/stalls automated fetches from this sandbox, and a hanging fetch here silently killed two entire drafting runs (2026-07-13 incident) before they could email their output. Instead, always fill your best-guess handle from the search result and **flag it as unverified**: append ` ⚠️ UNVERIFIED — confirm creator against the reel before posting` to the Creator line in the review bundle so the human confirms it during Slack review. Never present a repost credit as confirmed when it came only from a search result.
 
-Get: direct Instagram reel URL, creator handle (per the caution above), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §5). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
+Get: direct Instagram reel URL, creator handle (per the caution above), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
 **Caption order (CONTENT SCOPE §2):** credit first, then the **complete journaling prompt**, then any CTA. A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Pick reels you can write a real reflection prompt against; if a reel gives you nothing to ask, it is the wrong reel.
 
@@ -594,7 +613,7 @@ For each quote you consider, reject it if `_norm(quote) in used_quotes`. Also re
 
 For each quote image, produce a caption and a hypothesis:
 - **`fb_caption`** — 2–3 sentences, more reflective, in this order: a line of context → the **complete journaling prompt** → the CTA last (CONTENT SCOPE §2). Example: *"Sometimes a single line reframes your whole day. ✨ Tonight's prompt: where in your life are you adjusting your vision when you only needed to adjust your focus? Save this one, and send it to whoever came to mind."*
-- **`hypothesis`** — one sentence: why this quote and this shape, and what you expect it to do. See CONTENT SCOPE §5.
+- **`hypothesis`** — one sentence: why this quote and this shape, and what you expect it to do. See CONTENT SCOPE §6.
 
 ### Step A — Download Playfair Display fonts
 
@@ -888,7 +907,7 @@ Render the normal Quote section if `is_real` (with `**Asset:** quote_N.jpg ...`)
 ---
 ```
 
-**`**Testing:**` is the post's one-sentence `hypothesis` (CONTENT SCOPE §5), verbatim.** It appears on every post section — meme, quote, and repost, skipped ones included. This is what makes the weekly review a review of the *bet* and not just of the artwork: Catie should be able to read what each post was trying to do before she approves it. Render the line even for a SKIPPED post, since the thinking behind it is still worth keeping.
+**`**Testing:**` is the post's one-sentence `hypothesis` (CONTENT SCOPE §6), verbatim.** It appears on every post section — meme, quote, and repost, skipped ones included. This is what makes the weekly review a review of the *bet* and not just of the artwork: Catie should be able to read what each post was trying to do before she approves it. Render the line even for a SKIPPED post, since the thinking behind it is still worth keeping.
 
 ### Week-at-a-glance (after the last post section, before the footer)
 
@@ -1081,8 +1100,9 @@ After building the files AND after emailing the bundle (Step 8), save the **two 
 ### Hypothesis and Outcome (added 2026-08-26)
 
 The Zenie Posts database has three tracking properties. Two of them you set at creation; the third you never touch:
-- **`Hypothesis`** (text) — the post's one-sentence `hypothesis` from CONTENT SCOPE §5. Write it on every row you create or update.
+- **`Hypothesis`** (text) — the post's one-sentence `hypothesis` from CONTENT SCOPE §6. Write it on every row you create or update.
 - **`Outcome`** (select) — **always set this to `Not evaluated` on creation.** It is scored later from performance data; a blank Outcome is indistinguishable from a post nobody got round to scoring, which is exactly the ambiguity this column exists to remove.
+- **`Format`** (select) — the `format_slug` you picked from `formats/library.json`. This is what lets the Sunday scorer roll outcomes up by format instead of by individual post, which is the only level anyone should act on.
 - **`Permalink`** (url) — leave blank. It is filled in after the post actually goes live, not by you.
 
 ### Idempotency — check BEFORE creating (prevents retry duplicates)
@@ -1112,6 +1132,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.mp4`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
+- Format: the post's `format_slug` (CONTENT SCOPE §5)
 - Outcome: `Not evaluated`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -1126,6 +1147,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.mp4`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
+- Format: the post's `format_slug` (CONTENT SCOPE §5)
 - Outcome: `Not evaluated`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -1140,6 +1162,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.jpg`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
+- Format: the post's `format_slug` (CONTENT SCOPE §5)
 - Outcome: `Not evaluated`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -1154,6 +1177,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.jpg`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
+- Format: the post's `format_slug` (CONTENT SCOPE §5)
 - Outcome: `Not evaluated`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -1168,6 +1192,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Media URL: the **direct Instagram reel URL** being reposted (this is the link, not a file we host)
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
+- Format: the post's `format_slug` (CONTENT SCOPE §5)
 - Outcome: `Not evaluated`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -1182,6 +1207,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Media URL: the direct Instagram reel URL being reposted
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
+- Format: the post's `format_slug` (CONTENT SCOPE §5)
 - Outcome: `Not evaluated`
 - Best Time: the recommended posting time text
 - Scheduled Date: calculated ISO-8601 datetime
@@ -1197,16 +1223,16 @@ Make sure every post (both memes, both quotes, and both reposts) has a distinct 
 
 ## Step 7: Build review state (added to the bundle; Slack posting is handled automatically)
 
-Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution (quotes), `hypothesis`, approved=false.
+Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution (quotes), `hypothesis`, `format_slug`, approved=false.
 
-**`hypothesis` is REQUIRED on every one of the six posts** (CONTENT SCOPE §5) — memes included. The meme render step reads it out of review-state and writes it to the meme's Notion row, so a meme shipped without a `hypothesis` loses it permanently. Do not ship an empty string.
+**`hypothesis` is REQUIRED on every one of the six posts** (CONTENT SCOPE §6) — memes included. The meme render step reads it out of review-state and writes it to the meme's Notion row, so a meme shipped without a `hypothesis` loses it permanently. Do not ship an empty string.
 
 **Memes (library-rendered — IMPORTANT):** you did NOT render the meme MP4s; GitHub Actions does. For each of the two meme posts set:
 - `meme_slug` = the library slug you chose in Step 2A
 - `overlay_text` = your meme overlay line
 - `skipped` = true  and  `media_url` = null  (this is the signal that tells the render step to build it)
 - `notion_page_id` = null (the render step creates the meme's Notion row automatically — do NOT create meme rows yourself in Step 6)
-- plus `ig_caption`, `fb_caption`, `hashtags`, `best_time`, `hypothesis`
+- plus `ig_caption`, `fb_caption`, `hashtags`, `best_time`, `hypothesis`, `format_slug`
 The `post-social-to-slack` Action will render `meme_library/clips/<meme_slug>.mp4` with your overlay, fill `media_url`, set `skipped=false`, mark the slug used (no-repeat), create the Notion row, and post it to Slack. **Quote images keep `media_url`** = the jsdelivr URL of the .jpg (you rendered those). Reposts carry url/creator.
 
 **`preview_url` MUST be the GitHub Pages URL, not jsDelivr.** Use exactly this format:

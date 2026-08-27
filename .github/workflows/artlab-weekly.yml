@@ -1,0 +1,49 @@
+name: ART Lab Weekly Review
+
+# No Meta API and no new credentials. Isabel logs Likes/Comments on each post in the
+# "ART Lab — Posts" Notion table; this scores them against the trailing median, rolls
+# the results up by Format, and commits the summary. Uses the NOTION_TOKEN secret that
+# already exists for the meme pipeline.
+
+on:
+  schedule:
+    - cron: '0 15 * * 0'      # Sundays, an hour after the Zenie report
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Score posts and roll up by format
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python3 .github/scripts/artlab_weekly.py
+
+      - name: Commit the summary
+        run: |
+          git config user.name  "ART Lab Agent"
+          git config user.email "artlab-agent@users.noreply.github.com"
+          git add reports/
+          git diff --cached --quiet || git commit -m "ART Lab weekly review $(date -u +%Y-%m-%d)"
+          git push
+
+      # Failures email Isabel. Slack carries published content only, never errors.
+      - name: Email on failure
+        if: failure()
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: |
+          python .github/scripts/notify_error_email.py \
+            "⚠️ ART Lab weekly review failed — $(date -u +%Y-%m-%d)" \
+            "The ART Lab weekly review Action failed."

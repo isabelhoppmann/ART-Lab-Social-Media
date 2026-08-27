@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "updated": "2026-08-27",
+  "account": "zenie",
+  "what_this_is": "Proven post formats for Zenie ONLY. Each account has its own cohort, its own formats and its own weekly review — nothing is shared with ART Lab, because the niches do not transfer. The agent fetches this file every run and assigns one format_slug per post; that slug flows into review-state, into the post's Notion row, and into the Sunday scorer, which rolls outcomes up BY FORMAT. The format-level roll-up is the only level anyone should act on.",
+  "hard_rules": [
+    "Borrow STRUCTURE, never AESTHETIC. Post shape, caption order, line length, what occupies the first line and how the ask is placed are all fair to copy. Voice, phrasing, colour, typography and visual identity are not — copying those produces another account in a category that already has plenty.",
+    "No AI-generated imagery. Using a model to find a pattern across posts is research; using one to make the picture is not allowed.",
+    "The prompt rule is universal, not a format. EVERY Zenie post delivers one complete journaling prompt before any CTA (CONTENT SCOPE §2). The formats below describe the SHAPE a post takes; the prompt requirement applies to all of them."
+  ],
+  "cohort": {
+    "source": "Researched 2026-08-27. 22 accounts in the journaling / self-reflection / relatable-women niche.",
+    "method": "Handles and follower counts verified individually against the live public profile. Accounts that could not be verified were dropped rather than guessed.",
+    "evidence_level": "PARTIAL. Follower counts are verified. Per-post engagement is NOT — Instagram exposes follower counts publicly but not per-post likes, saves or captions, and Meta's API only returns post metrics for accounts we own. Format claims below are grounded in what these accounts visibly do at scale and sustain over time, not in measured post performance. Treat them as strong priors, not as measurements.",
+    "upgrade_path": "Roughly $30 of Apify credit would get real per-post numbers for the five or six closest accounts and turn these priors into measurements.",
+    "accounts": [
+      { "handle": "@thegoodquote",              "followers": "22.6M", "lane": "Quote card",     "note": "The largest account in the niche and it does one thing: a single line on a plain ground." },
+      { "handle": "@the.holistic.psychologist", "followers": "8.9M",  "lane": "Therapist",      "note": "Nicole LePera. Pattern-naming at enormous scale." },
+      { "handle": "@betches",                   "followers": "8.7M",  "lane": "Humor",          "note": "The register Zenie's memes sit closest to." },
+      { "handle": "@mytherapistsays",           "followers": "8.3M",  "lane": "Humor",          "note": "Relatable-spiral memes; the closest direct comparison for Zenie meme posts." },
+      { "handle": "@wetheurban",                "followers": "6.9M",  "lane": "Affirmation",    "note": "Daily affirmation cards, extremely high share rate." },
+      { "handle": "@rupikaur_",                 "followers": "4.1M",  "lane": "Poet / prompts", "note": "Bio explicitly offers weekly poetry AND journaling prompts — the nearest thing to Zenie's actual product in the cohort." },
+      { "handle": "@yung_pueblo",               "followers": "3.4M",  "lane": "Aphorism",       "note": "Short reflective lines on growth and relationships." },
+      { "handle": "@girlwithnojob",             "followers": "3.0M",  "lane": "Humor",          "note": "Millennial-women humor at scale." },
+      { "handle": "@thebirdspapaya",            "followers": "2.5M",  "lane": "Personal essay", "note": "Long confessional captions; bio literally reads 'stories eat first'." },
+      { "handle": "@drjulie",                   "followers": "2.2M",  "lane": "Therapist",      "note": "Clinical psychologist, short-form video explainers." },
+      { "handle": "@nedratawwab",               "followers": "1.8M",  "lane": "Therapist",      "note": "Boundaries. Heavy user of the numbered list card." },
+      { "handle": "@morganharpernichols",       "followers": "1.8M",  "lane": "Art + reflection","note": "Reflection delivered through original artwork." },
+      { "handle": "@alex_elle",                 "followers": "1.8M",  "lane": "Writer / prompts","note": "Built a following largely on written prompts and self-reflection practice." },
+      { "handle": "@millennial.therapist",      "followers": "1.7M",  "lane": "Therapist",      "note": "Sara Kuburic. Existential framing, identity questions." },
+      { "handle": "@bymariandrew",              "followers": "804K",  "lane": "Art + reflection","note": "Illustration paired with a reflective observation." },
+      { "handle": "@cleowade",                  "followers": "744K",  "lane": "Poet",           "note": "Short poems and affirmations, book-driven." },
+      { "handle": "@_lisaolivera",              "followers": "397K",  "lane": "Therapist / writer","note": "Gentle register; 'here for the tending of our hearts'." },
+      { "handle": "@recipesforselflove",        "followers": "356K",  "lane": "Illustrated",    "note": "Illustrated self-love cards." },
+      { "handle": "@heyamberrae",               "followers": "276K",  "lane": "Emotions",       "note": "Naming and working with feelings." },
+      { "handle": "@sitwithsharon",             "followers": "147K",  "lane": "Therapist",      "note": "Codependency and attachment. Closest in size to a realistic Zenie target." },
+      { "handle": "@stillbloomingme",           "followers": "22.2K", "lane": "Journaling",     "note": "Journaling as an explicit healing practice." },
+      { "handle": "@dayoneapp",                 "followers": "19.1K", "lane": "Journaling app", "note": "Direct competitor. Highlight reels include Prompts, Streaks and Quotes — a map of what a journaling app posts." }
+    ]
+  },
+  "asset_banks": {
+    "media": "repo :: meme_library/clips (vetted, no-repeat via meme_library/used.json)",
+    "copy": "written fresh each week by the drafting agent",
+    "how": "Quote images render on the runner; memes render from a library clip plus an overlay; reposts carry someone else's reel."
+  },
+
+  "formats": [
+    {
+      "slug": "prompt_card",
+      "name": "The prompt card",
+      "post_types": ["Quote Image"],
+      "structure": "The journaling prompt IS the whole post. One question on a plain ground, nothing else competing with it. The caption repeats or extends it; it never introduces a second idea.",
+      "first_line": "The question itself.",
+      "why_it_works": "It is the only format where the artefact and the product are the same thing — a saved prompt card is a saved journaling session. Highest save rate available to Zenie.",
+      "proven_by": ["@rupikaur_", "@alex_elle", "@dayoneapp"],
+      "evidence": "Rupi Kaur's bio sells journaling prompts directly to 4.1M followers; Alex Elle built 1.8M largely on written prompts; Day One maintains a dedicated Prompts highlight.",
+      "notes": "Zenie's most on-strategy format. If the format read ever says this one underperforms, that is a finding worth acting on immediately, because it would mean the core product framing is not landing."
+    },
+    {
+      "slug": "aphorism_plate",
+      "name": "The aphorism plate",
+      "post_types": ["Quote Image"],
+      "structure": "One short declarative line, no explanation, generous space. Under about fifteen words. The line does not argue; it lands.",
+      "first_line": "The line.",
+      "why_it_works": "The most shared shape in the entire niche — it costs the reader nothing to pass on and says something about them when they do.",
+      "proven_by": ["@thegoodquote", "@yung_pueblo", "@wetheurban", "@cleowade"],
+      "evidence": "@thegoodquote is the largest account in the cohort at 22.6M and does essentially nothing else. @wetheurban at 6.9M is built on the same shape.",
+      "notes": "This is what Zenie's quote images already are. The prompt still has to arrive in the caption underneath — the plate carries the line, the caption carries the prompt."
+    },
+    {
+      "slug": "name_the_feeling",
+      "name": "Name the feeling",
+      "post_types": ["Meme", "Quote Image"],
+      "structure": "Name a pattern the reader has lived but never labelled. Often 'you're not X, you're Y', or a precise description of a behaviour they thought was only theirs.",
+      "first_line": "The naming.",
+      "why_it_works": "Drives saves and comments through identification rather than agreement. The reader comments to say 'this is me', which is a stronger signal than a like.",
+      "proven_by": ["@the.holistic.psychologist", "@nedratawwab", "@millennial.therapist", "@heyamberrae"],
+      "evidence": "Four accounts totalling over 12M followers built primarily on this move.",
+      "notes": "Pairs naturally with Zenie's meme clips — the overlay names the pattern, the caption turns it into the prompt."
+    },
+    {
+      "slug": "relatable_spiral",
+      "name": "The relatable spiral",
+      "post_types": ["Meme"],
+      "structure": "The joke is the overthinking itself. Very specific, slightly unflattering, escalating. Precision is what makes it funny — a generic version of the same joke does not work.",
+      "first_line": "The situation, stated flatly.",
+      "why_it_works": "The dominant humor shape for this audience, and the one that travels furthest beyond existing followers.",
+      "proven_by": ["@mytherapistsays", "@betches", "@girlwithnojob"],
+      "evidence": "The three humor accounts in the cohort total 20M followers on this register.",
+      "notes": "Zenie's native meme voice. The scope rule still applies: dating and friendship are allowed as the situation, but the caption has to land on the reflection."
+    },
+    {
+      "slug": "list_card",
+      "name": "The numbered list card",
+      "post_types": ["Quote Image"],
+      "structure": "Three to five numbered items under one heading. Each item is one line. No item needs the others to make sense.",
+      "first_line": "The heading, which states what the list is for.",
+      "why_it_works": "Saves well because it reads as a reference the reader will want again. Numbering is doing real work here — it tells the reader how much there is before they commit.",
+      "proven_by": ["@nedratawwab", "@drjulie"],
+      "evidence": "Both accounts, 4M combined, use the numbered card as a staple.",
+      "notes": "Use sparingly. A feed of list cards reads as advice content rather than a journaling app. The list should be prompts, not tips."
+    },
+    {
+      "slug": "confession_then_turn",
+      "name": "Confession, then the turn",
+      "post_types": ["Repost", "Meme"],
+      "structure": "A first-person admission of something slightly embarrassing or unresolved, then the reframe. Long caption. The turn arrives late and is never triumphant.",
+      "first_line": "The admission.",
+      "why_it_works": "Earns comments rather than likes, because readers reply with their own version. The strongest comment-driver in the cohort.",
+      "proven_by": ["@thebirdspapaya", "@_lisaolivera", "@stillbloomingme"],
+      "evidence": "@thebirdspapaya at 2.5M is built almost entirely on this; its bio reads 'stories eat first'.",
+      "notes": "The natural home for reposts — credit the creator, tell the honest version underneath, then the prompt."
+    },
+    {
+      "slug": "catalogue_plate",
+      "name": "The quiet frame",
+      "post_types": ["Quote Image"],
+      "structure": "One line, enormous negative space, caption states the thing and stops. No question mark, no CTA.",
+      "first_line": "The line.",
+      "why_it_works": "It will underperform on engagement and it is still worth running occasionally, because a feed with no quiet frames reads as a brand rather than a practice.",
+      "proven_by": ["@bymariandrew", "@morganharpernichols"],
+      "evidence": "Both sustain large followings while regularly posting work that asks nothing of the viewer.",
+      "notes": "The one sanctioned exception to the prompt-before-CTA rule, because it carries no CTA at all. Cap at one a fortnight."
+    }
+  ]
+}
