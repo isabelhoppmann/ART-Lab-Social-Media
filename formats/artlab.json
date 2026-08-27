@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "updated": "2026-08-26",
+  "account": "artlab",
+  "what_this_is": "Proven post formats for artlab ONLY. Each account has its own cohort, its own formats and its own weekly review — nothing is shared between accounts, because the niches do not transfer. The agent fetches this file every run and assigns one format_slug per post; that slug flows into review-state, into the post's Notion row, and into the weekly scorer, which rolls outcomes up BY FORMAT. The format-level roll-up is the only level anyone should act on.",
+  "hard_rules": [
+    "Borrow STRUCTURE, never AESTHETIC. Shot order, cut points, clip length, first frame, caption placement and sequencing are all fair to copy. Colour, grade, typography, styling, music and phrasing are not -- copying those produces another account in a category that already has plenty.",
+    "No shoots and no original photography. Every format below must be satisfiable from assets that already exist in the brand's asset bank. A format that needs new footage is not usable and must not be selected.",
+    "No AI-generated imagery. Using a model to find a pattern is research; using one to make the picture is not allowed."
+  ],
+  "cohort": {
+    "source": "ART Lab -- IG Engagement Targets (Notion, 28 accounts)",
+    "lanes": "3 core peers (robotics x art), 11 light, 14 interiors & spatial",
+    "core_peers": [
+      "@sougwen",
+      "@madeline.gannon",
+      "@studiowaynemcgregor"
+    ],
+    "note": "Core peers carry the most weight despite being the smallest accounts -- they are the only ones doing what ART Lab does."
+  },
+  "asset_banks": {
+    "status": "UNRESOLVED — see asset_source_open_question",
+    "note": "The 'ART Lab — Media Library' Notion database was ruled out by Isabel on 2026-08-26 because its assets are lamp renders that are not being used. The real source of ART Lab post assets is not yet known."
+  },
+  "formats": [
+    {
+      "slug": "uninterrupted_loop",
+      "name": "The uninterrupted loop",
+      "structure": "One continuous motion. No cuts, no title card, no logo. 4-10 seconds, looping seamlessly.",
+      "first_frame": "Already in motion.",
+      "why_it_works": "The viewer cannot immediately tell whether they are watching something alive or something driven, so they re-watch to decide. Highest completion rate available without a gimmick.",
+      "proven_by": [
+        "@studio.drift",
+        "@anthonymccallstudio"
+      ],
+      "evidence": "Studio DRIFT's Shylight opens and closes on the nyctinastic rhythm of a real flower and has been on permanent display at the Rijksmuseum for years.",
+      "needs": {
+        "type": [
+          "Clip",
+          "Video"
+        ],
+        "facet": [
+          "Light",
+          "Technology",
+          "Category"
+        ],
+        "orientation": [
+          "Square",
+          "Portrait 9:16"
+        ]
+      },
+      "copy_length": "Micro",
+      "notes": "Satisfied by any single-motion clip in the Media Library. Do not cut it; do not add an intro card."
+    },
+    {
+      "slug": "two_agents_one_task",
+      "name": "Human and machine, same frame, same task",
+      "structure": "A person and a machine doing the SAME activity at the same time, both fully in shot. Not a person operating a device -- two agents doing one thing.",
+      "first_frame": "Both already engaged in the activity.",
+      "why_it_works": "Reads as a relationship rather than a product demo. This is the entire difference between how a robotics company is received and how an art practice is received.",
+      "proven_by": [
+        "@sougwen",
+        "@madeline.gannon"
+      ],
+      "evidence": "Sougwen Chung paints alongside her D.O.U.G. arms; coverage describes it as 'part team effort, part improvised dance'. Madeline Gannon's Mimus has no pre-planned path and follows visitors it finds interesting.",
+      "needs": {
+        "type": [
+          "Clip",
+          "Video"
+        ],
+        "facet": [
+          "Experience",
+          "Category"
+        ],
+        "orientation": [
+          "Square",
+          "Portrait 9:16",
+          "Landscape"
+        ]
+      },
+      "copy_length": "Short",
+      "notes": "The strongest format in the set for ART Lab. Satisfied by the noticing/reacting assets, where the object and a person are both present and both acting."
+    },
+    {
+      "slug": "mechanism_reveal",
+      "name": "The mechanism reveal",
+      "structure": "Finished result first, then cut to the thing that produced it. Same subject, two angles. Result-then-mechanism, never the reverse.",
+      "first_frame": "The finished result, clean.",
+      "why_it_works": "Converts spectacle into comprehension, and comprehension is what gets saved and sent rather than merely liked. Reversing the order turns a magic trick into an engineering post.",
+      "proven_by": [
+        "@madeline.gannon",
+        "@bocci",
+        "@lindseyadelman"
+      ],
+      "evidence": "Mimus documentation pairs the creature-like behaviour with the ceiling depth-sensor array that produces it. The watchmaking caseback shot is the same move.",
+      "needs": {
+        "type": [
+          "Clip",
+          "Video",
+          "Render"
+        ],
+        "facet": [
+          "Technology",
+          "Object"
+        ],
+        "orientation": [
+          "Square",
+          "Portrait 9:16"
+        ]
+      },
+      "copy_length": "Short",
+      "notes": "Pair a finished-state asset with a close-up asset of the same subject. Both already exist in the bank -- this format is pure recombination."
+    },
+    {
+      "slug": "scale_betrayal",
+      "name": "Scale betrayal",
+      "structure": "Open with no size reference -- no floor, no furniture, no hand. Hold. Then a human or a known object enters and the true scale lands in one beat.",
+      "first_frame": "The subject, filling the frame, size ambiguous.",
+      "why_it_works": "One cut, no caption needed, reliably re-watched. The cheapest format here to assemble and the most legible to an audience outside the art world.",
+      "proven_by": [
+        "@brucemunrostudio",
+        "@unitedvisualartists",
+        "@studioolafureliasson"
+      ],
+      "evidence": "Landscape-scale fibre-optic fields and architectural light installations depend on this reveal for almost all their circulation.",
+      "needs": {
+        "type": [
+          "Render",
+          "Clip",
+          "Video"
+        ],
+        "facet": [
+          "Object",
+          "Category",
+          "Commercial"
+        ],
+        "orientation": [
+          "Portrait 9:16",
+          "Square"
+        ]
+      },
+      "copy_length": "Micro",
+      "notes": "Pair a close-up asset with a room-context asset of the same subject."
+    },
+    {
+      "slug": "state_change",
+      "name": "State change as the whole post",
+      "structure": "At rest, then alive. 2-3 seconds, with the transition kept in -- never cut around it.",
+      "first_frame": "The resting state, held just long enough to register.",
+      "why_it_works": "Structurally identical to a fashion transition reel, so the grammar is already familiar to a general feed. That is why it travels beyond the art audience.",
+      "proven_by": [
+        "@studio.drift",
+        "@sabine_marcelis"
+      ],
+      "evidence": "Shylight's open/close cycle; Marcelis's lit-versus-unlit resin work.",
+      "needs": {
+        "type": [
+          "Clip",
+          "Video"
+        ],
+        "facet": [
+          "Light",
+          "Experience"
+        ],
+        "orientation": [
+          "Square",
+          "Portrait 9:16"
+        ]
+      },
+      "copy_length": "Micro",
+      "notes": "Also satisfiable by pairing a day-state render with an evening-state render of the same subject."
+    },
+    {
+      "slug": "catalogue_plate",
+      "name": "The catalogue plate",
+      "structure": "One subject, centred, generous negative space. Caption states the facts and stops. No question, no CTA.",
+      "first_frame": "The subject, still.",
+      "why_it_works": "It will underperform on engagement every time, and it is still worth running occasionally, because a feed with no quiet frames reads as a brand rather than a practice.",
+      "proven_by": [
+        "@michaelanastassiades",
+        "@anthonymccallstudio",
+        "@annveronicajanssens"
+      ],
+      "evidence": "The smallest accounts in the light lane run this most -- which tells you exactly what it costs and what it buys.",
+      "needs": {
+        "type": [
+          "Render",
+          "Image"
+        ],
+        "facet": [
+          "Object"
+        ],
+        "orientation": [
+          "Square",
+          "Portrait 9:16"
+        ]
+      },
+      "copy_length": "Micro",
+      "notes": "Cap at one per fortnight. This format is a deliberate loss on engagement in exchange for register."
+    }
+  ],
+  "asset_source_open_question": "BLOCKING: every `needs` block below names a Facet/Type from the Media Library, which is now out of scope. These specs must be re-pointed at whatever bank ART Lab actually posts from before any of them can be selected. The format STRUCTURES are still valid — they came from the cohort, not from the asset bank — but the selection criteria are not."
+}

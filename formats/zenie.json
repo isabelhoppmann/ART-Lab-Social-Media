@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "updated": "2026-08-26",
+  "account": "zenie",
+  "what_this_is": "Proven post formats for zenie ONLY. Each account has its own cohort, its own formats and its own weekly review — nothing is shared between accounts, because the niches do not transfer. The agent fetches this file every run and assigns one format_slug per post; that slug flows into review-state, into the post's Notion row, and into the weekly scorer, which rolls outcomes up BY FORMAT. The format-level roll-up is the only level anyone should act on.",
+  "hard_rules": [
+    "Borrow STRUCTURE, never AESTHETIC. Shot order, cut points, clip length, first frame, caption placement and sequencing are all fair to copy. Colour, grade, typography, styling, music and phrasing are not -- copying those produces another account in a category that already has plenty.",
+    "No shoots and no original photography. Every format below must be satisfiable from assets that already exist in the brand's asset bank. A format that needs new footage is not usable and must not be selected.",
+    "No AI-generated imagery. Using a model to find a pattern is research; using one to make the picture is not allowed."
+  ],
+  "cohort": {
+    "source": null,
+    "status": "NOT YET RESEARCHED",
+    "note": "Zenie's niche is journaling and reflection. No peer cohort has been built yet, so the formats below are derived from Zenie's own rules and history rather than from proven outside performers. Until a 20-30 account journaling cohort is researched, treat every format here as a hypothesis under test."
+  },
+  "asset_banks": {
+    "media": "repo :: meme_library/clips (vetted, no-repeat via meme_library/used.json)",
+    "copy": "written fresh each week by the drafting agent",
+    "how": "Quote images render on the runner; memes render from a library clip plus an overlay; reposts carry someone else's reel."
+  },
+  "formats": [
+    {
+      "slug": "catalogue_plate",
+      "name": "The catalogue plate",
+      "structure": "One subject, centred, generous negative space. Caption states the facts and stops. No question, no CTA.",
+      "first_frame": "The subject, still.",
+      "why_it_works": "It will underperform on engagement every time, and it is still worth running occasionally, because a feed with no quiet frames reads as a brand rather than a practice.",
+      "proven_by": [
+        "@michaelanastassiades",
+        "@anthonymccallstudio",
+        "@annveronicajanssens"
+      ],
+      "evidence": "The smallest accounts in the light lane run this most -- which tells you exactly what it costs and what it buys.",
+      "post_types": [
+        "Quote Image"
+      ],
+      "notes": "Zenie's quote image already IS this format -- one line, generous space, no hard sell. Recording it as such lets the scorer compare it against Zenie's louder formats."
+    },
+    {
+      "slug": "zenie_prompt_led",
+      "name": "Prompt-led",
+      "structure": "Hook or joke first, then the complete journaling prompt, then any CTA. The prompt is answerable immediately without opening the app.",
+      "first_frame": "The hook.",
+      "why_it_works": "Derived from Zenie's own rule set rather than a peer cohort. The prompt is the thing that makes the post worth saving; burying it behind a CTA spends the asset.",
+      "proven_by": [],
+      "evidence": "UNVERIFIED -- no peer cohort has been researched for Zenie's niche yet. Treat this as a hypothesis to be tested, not a proven format.",
+      "post_types": [
+        "Meme",
+        "Quote Image",
+        "Repost"
+      ],
+      "notes": "Default format for every Zenie post until a real Zenie cohort exists."
+    }
+  ]
+}

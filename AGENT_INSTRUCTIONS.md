@@ -59,20 +59,20 @@ Before you finalize `best_time` for the six posts, sort them by scheduled dateti
 
 ### 5. Every post is an instance of a proven format
 
-Posts are not invented from nothing each week. They are instances of formats that have been shown to travel in the niche, held in `formats/library.json` in this repo. Fetch it at the start of every run, alongside the meme library:
+Posts are not invented from nothing each week. They are instances of formats held in `formats/zenie.json` in this repo. **Each account has its own format library and its own weekly review — `formats/artlab.json` is ART Lab's and is none of your business.** Fetch Zenie's at the start of every run, alongside the meme library:
 
 ```python
-fmts = _raw("formats/library.json")                       # _raw() is defined in Step 2A
-usable = [f for f in fmts["formats"] if f["zenie"].get("usable")]
+fmts = _raw("formats/zenie.json")                         # _raw() is defined in Step 2A
+formats = fmts["formats"]
 ```
 
-For each of the six posts, pick the format whose `zenie.post_types` includes that post's Post Type, and record its `slug` as the post's `format_slug`. Write it into review-state (Step 7) and into the `Format` property on the Notion row (Step 6).
+For each of the six posts, pick the format whose `post_types` includes that post's Post Type, and record its `slug` as the post's `format_slug`. Write it into review-state (Step 7) and into the `Format` property on the Notion row (Step 6).
 
 Two rules that come with the library, quoted from its own `hard_rules` — read them there, they are authoritative:
 - **Borrow structure, never aesthetic.** Shot order, clip length, first frame, caption placement and sequencing are fair to copy. Colour, typography, styling, music and phrasing are not.
 - **No AI-generated imagery.** Using a model to find a pattern across posts is research; using one to make the picture is not allowed.
 
-If `zenie.evidence` on the format you picked says UNVERIFIED, that format is a hypothesis rather than a proven pattern — say so in the post's `hypothesis` sentence so nobody reads the eventual Outcome as stronger evidence than it is.
+Zenie's cohort has **not** been researched yet — `cohort.status` in that file says so plainly. So if the format you picked has `evidence` marked UNVERIFIED, it is a hypothesis rather than a proven pattern — say so in the post's `hypothesis` sentence so nobody reads the eventual Outcome as stronger evidence than it is.
 
 ### 6. Every post carries a `hypothesis`
 
