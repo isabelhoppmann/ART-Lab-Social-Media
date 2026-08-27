@@ -9,9 +9,22 @@ name: Daily Briefing
 # failed"). A GitHub Action has native GitHub access, so it handles the publish
 # the sandbox can't.
 
+# GitHub runs free scheduled workflows on a best-effort queue and DROPS them
+# outright under load — on 2026-08-27 this workflow never fired at all, and the
+# week before it had been drifting later each day (14:53 -> 15:58). So we take
+# four standby seats instead of one, on odd minutes (:00 and :30 are the most
+# congested). publish_from_email.py exits 0 when today's file already exists, so
+# every rung after the one that wins is a ~15s no-op: no second commit, no second
+# Slack post. Earliest rung is 14:23 UTC because the routine fires at 14:00 and
+# its email has landed as late as 14:25; the script itself then waits up to 4 min.
 on:
   schedule:
-    - cron: '30 14 * * 1-5'   # 14:30 UTC Mon–Fri — ~30 min after the routine's 14:00 run
+    - cron: '23 14 * * 1-5'   # 14:23 UTC Mon–Fri — primary
+    - cron: '52 14 * * 1-5'   # 14:52 UTC — retry
+    - cron: '26 15 * * 1-5'   # 15:26 UTC — retry
+    - cron: '11 16 * * 1-5'   # 16:11 UTC — last chance (9:11am PT); only this
+                              # rung emails on failure, so a genuinely broken day
+                              # alerts once instead of four times
   workflow_dispatch:           # lets you run it on demand to test
 
 permissions:
@@ -71,8 +84,12 @@ jobs:
         run: python .github/scripts/post_to_slack.py
 
       # Failures go to Isabel by email, never to Slack. Slack carries content only.
+      # Only the final rung (and a manual run) alerts — an earlier rung failing
+      # just means the routine's email hasn't landed yet, which a later rung fixes.
       - name: Email Isabel on failure
-        if: failure()
+        if: >-
+          failure() && (github.event_name == 'workflow_dispatch'
+          || github.event.schedule == '11 16 * * 1-5')
         env:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
