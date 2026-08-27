@@ -1,0 +1,15 @@
+Morning Briefing August 27, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- Google DeepMind researchers posted EXIMO to arXiv on August 20, presenting a three-stage algorithm that uses a vision-language model as a planner to guide exploration and data collection for finetuning VLA robot manipulation policies on new tasks without additional human teleoperation. https://arxiv.org/abs/2608.19891
+
+=== FUNDING & INVESTMENT ===
+- Generalist, a robotics foundation-model startup founded by ex-DeepMind researchers Pete Florence and Andy Zeng, raised roughly $200 million in a Series B extension led by 8VC at a $3 billion valuation, announced August 25. https://www.citybiz.co/article/894346/robotics-startup-generalist-reaches-3b-valuation-with-new-200m-funding/
+
+=== COMPETITOR WATCH ===
+- Unitree shares fell roughly 45% from their 1,100-yuan IPO debut peak by August 25, wiping approximately $30 billion in market value and prompting analysts to warn of a bubble in Chinese humanoid robotics. https://invezz.com/news/2026/08/25/unitree-stock-crashes-45-after-460-debut-as-chinas-robot-frenzy-meets-reality/
+
+#KEYS: eximo-vlm-vla-exploration, generalist-series-b-extension, unitree-stock-slump
