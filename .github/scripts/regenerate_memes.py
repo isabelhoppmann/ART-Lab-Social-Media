@@ -363,6 +363,7 @@ def notion_create_meme_row(post, n, week):
         # blank so "not scored yet" is never confused with "scored as nothing".
         "Hypothesis": {"rich_text": [{"text": {"content": (post.get("hypothesis") or "")[:2000]}}]},
         "Outcome": {"select": {"name": "Not evaluated"}},
+        **({"Format": {"select": {"name": post["format_slug"]}}} if post.get("format_slug") else {}),
         "Best Time": {"rich_text": [{"text": {"content": post.get("best_time", "")}}]},
     }
     if week:

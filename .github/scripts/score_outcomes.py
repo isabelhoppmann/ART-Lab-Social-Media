@@ -177,6 +177,7 @@ def fetch_unscored_rows():
                 "id": pg["id"],
                 "name": plain(props.get("Name")),
                 "post_type": plain(props.get("Post Type")),
+                "format": plain(props.get("Format")),
                 "ig": plain(props.get("IG Caption")),
                 "fb": plain(props.get("FB Caption")),
             })
@@ -262,6 +263,7 @@ def main():
               f"{match['eng_rate']}% vs median of {n} -> {ratio}x -> {outcome}")
         if write_back(row, outcome, match.get("permalink", "")):
             scored.append({"name": row["name"], "post_type": row["post_type"],
+                           "format": row["format"],
                            "platform": match["platform"], "eng_rate": match["eng_rate"],
                            "ratio": ratio, "outcome": outcome})
 
@@ -269,22 +271,30 @@ def main():
     # Per-post outcomes are bookkeeping. The only conclusion anyone should ACT on
     # is a format holding up across enough posts to outrun the noise, so anything
     # thinner than MIN_FORMAT is reported as "no read" rather than as a trend.
-    by_format = {}
-    for s in scored:
-        by_format.setdefault(s["post_type"] or "Unknown", []).append(s["ratio"])
+    # Grouped by Format first (the proven-format the post was an instance of) and
+    # by Post Type second, because "did the mechanism-reveal format work" is a more
+    # actionable question than "did memes work".
+    def rollup(key):
+        groups = {}
+        for s in scored:
+            groups.setdefault(s.get(key) or "Unassigned", []).append(s["ratio"])
+        return groups
 
-    print("\n=== FORMAT READ ===")
     reads = {}
-    for fmt, ratios in sorted(by_format.items()):
-        if len(ratios) < MIN_FORMAT:
-            reads[fmt] = {"n": len(ratios), "verdict": "no read yet"}
-            print(f"  {fmt}: {len(ratios)}/{MIN_FORMAT} posts — no read yet, change nothing")
-        else:
-            med = round(statistics.median(ratios), 2)
-            verdict = ("outperforming" if med >= 1.3 else
-                       "underperforming" if med <= 0.7 else "holding steady")
-            reads[fmt] = {"n": len(ratios), "median_ratio": med, "verdict": verdict}
-            print(f"  {fmt}: {len(ratios)} posts, median {med}x — {verdict}")
+    for dimension, key in (("format", "format"), ("post_type", "post_type")):
+        print(f"\n=== READ BY {dimension.upper().replace('_', ' ')} ===")
+        dim_reads = {}
+        for fmt, ratios in sorted(rollup(key).items()):
+            if len(ratios) < MIN_FORMAT:
+                dim_reads[fmt] = {"n": len(ratios), "verdict": "no read yet"}
+                print(f"  {fmt}: {len(ratios)}/{MIN_FORMAT} posts — no read yet, change nothing")
+            else:
+                med = round(statistics.median(ratios), 2)
+                verdict = ("outperforming" if med >= 1.3 else
+                           "underperforming" if med <= 0.7 else "holding steady")
+                dim_reads[fmt] = {"n": len(ratios), "median_ratio": med, "verdict": verdict}
+                print(f"  {fmt}: {len(ratios)} posts, median {med}x — {verdict}")
+        reads[dimension] = dim_reads
 
     print(f"\nScored {len(scored)} | unmatched {len(unmatched)} | "
           f"no baseline yet {len(no_baseline)}")
@@ -294,7 +304,7 @@ def main():
     os.makedirs("reports", exist_ok=True)
     out = f"reports/{datetime.now(timezone.utc):%Y-%m-%d}-outcomes.json"
     with open(out, "w") as f:
-        json.dump({"scored": scored, "format_read": reads,
+        json.dump({"scored": scored, "reads": reads,
                    "unmatched": [r["name"] for r in unmatched],
                    "no_baseline": [r["name"] for r in no_baseline]},
                   f, indent=2, ensure_ascii=False)
