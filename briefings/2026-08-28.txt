@@ -1,0 +1,15 @@
+Morning Briefing August 28, 2026
+
+=== ROBOTICS & AI ===
+- TianGong Ultra set a final 100-meter world record of 8.64 seconds as the second World Humanoid Robot Games in Beijing concluded on August 26, with Shandian winning the half-marathon in 50:26 among 2,056 robots competing across 51 disciplines. https://www.opb.org/article/2026/08/27/a-robot-sprinter-shatters-a-100-meter-record-again-as-sparks-fly-at-chinas-robot-competition/
+
+=== RESEARCH ===
+- FlashVLA (arXiv:2608.27384, submitted August 27) introduces streaming action decoding for vision-language-action models, achieving faster and asynchronous inference that lets home robots respond in real time without waiting for full sequence generation. https://arxiv.org/abs/2608.27384
+
+=== FUNDING & INVESTMENT ===
+- SoftBank is in talks to acquire a majority stake in OpenAI-backed home-robot startup 1X Technologies at a $6 billion valuation, per The Information report on August 27, in a deal that would mark the firm's first direct bet on a consumer humanoid. https://techfundingnews.com/softbank-in-talks-to-buy-majority-stake-in-1x-at-6b-valuation/
+
+=== COMPETITOR WATCH ===
+- NVIDIA reportedly agreed to acquire open-source model hub Hugging Face for approximately $12.9 billion (reported August 26-27), giving the robotics-chip leader direct control over the primary platform where embodied AI models are shared and fine-tuned globally. https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html
+
+#KEYS: world-humanoid-games-2026, flashvla-streaming-vla, softbank-1x-deal, nvidia-hugging-face-acquisition
