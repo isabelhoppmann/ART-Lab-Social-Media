@@ -16,7 +16,8 @@ Required env (already repo secrets): GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET,
 GMAIL_REFRESH_TOKEN.
 
 Exit codes:
-  0  briefing written (new file), OR today's file already exists (skip)
+  0  briefing written (new file), OR today's file already exists (skip),
+     OR today's briefing is not due yet (see briefing_is_due)
   1  no briefing email found, or body failed validation -> nothing written,
      so nothing reaches Slack (the workflow's failure step alerts the error
      channel).
@@ -38,6 +39,10 @@ BRIEFINGS_DIR = os.path.join(REPO_ROOT, "briefings")
 SUBJECT_PREFIX = "ART LAB BRIEFING"
 FETCH_ATTEMPTS = 5
 FETCH_WAIT_SECONDS = 60
+
+# The composing routine fires at 14:00 UTC Mon-Fri and its email has landed as
+# late as 14:25. Before this time-of-day there is simply nothing to publish yet.
+BRIEFING_DUE_UTC = (14, 20)
 
 
 def gmail_access_token():
@@ -110,12 +115,46 @@ def validate(text):
     return None
 
 
+def briefing_is_due(now):
+    """Is today's briefing supposed to exist yet?
+
+    Two ways the answer is no, and in both a missing briefing is normal rather
+    than a failure worth alerting on:
+
+      1. It isn't a weekday — the composing routine only runs Mon-Fri.
+      2. It is a weekday, but earlier than the routine's daily run, so nothing
+         has been written yet and there is nothing to publish.
+
+    This guard exists because GitHub delivers these scheduled runs HOURS late:
+    on 2026-08-28 all four cron rungs arrived 8-9h behind schedule. A straggler
+    that lands after 00:00 UTC computes the NEXT day's date, goes looking for a
+    briefing that isn't due for another 14 hours, fails, and emails an alert.
+
+    That false alarm is worse than useless — it trains the reader to ignore the
+    one email that matters on a morning the pipeline genuinely breaks. A run
+    inside the real publish window still alerts exactly as before.
+    """
+    if now.weekday() > 4:  # Saturday or Sunday
+        return False
+    return (now.hour, now.minute) >= BRIEFING_DUE_UTC
+
+
 def main():
-    today_str = datetime.now(timezone.utc).date().strftime("%Y-%m-%d")
+    now = datetime.now(timezone.utc)
+    today_str = now.date().strftime("%Y-%m-%d")
     out_path = os.path.join(BRIEFINGS_DIR, f"{today_str}.txt")
 
     if os.path.exists(out_path):
         print(f"Briefing for {today_str} already exists — skipping.")
+        return 0
+
+    if not briefing_is_due(now):
+        print(
+            f"No briefing is due for {today_str} yet "
+            f"(now {now:%a %H:%M} UTC; due from "
+            f"{BRIEFING_DUE_UTC[0]:02d}:{BRIEFING_DUE_UTC[1]:02d} UTC on weekdays). "
+            "Nothing to publish — exiting quietly rather than alerting."
+        )
         return 0
 
     token = gmail_access_token()
