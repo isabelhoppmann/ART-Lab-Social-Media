@@ -115,6 +115,16 @@
       "slug": "centered_calm",
       "week": "2026-08-24",
       "label": "Meme 2"
+    },
+    {
+      "slug": "wry_grimace",
+      "week": "2026-08-31",
+      "label": "Meme 1"
+    },
+    {
+      "slug": "ugly_cry",
+      "week": "2026-08-31",
+      "label": "Meme 2"
     }
   ]
 }

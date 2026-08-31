@@ -228,6 +228,18 @@
       "attribution": "Louisa May Alcott",
       "norm": "i am not afraid of storms for i am learning how to sail my ship",
       "first_week": "2026-08-24"
+    },
+    {
+      "quote": "You must do the thing you think you cannot do.",
+      "attribution": "Eleanor Roosevelt",
+      "norm": "you must do the thing you think you cannot do",
+      "first_week": "2026-08-31"
+    },
+    {
+      "quote": "My mission in life is not merely to survive, but to thrive.",
+      "attribution": "Maya Angelou",
+      "norm": "my mission in life is not merely to survive but to thrive",
+      "first_week": "2026-08-31"
     }
   ]
 }
