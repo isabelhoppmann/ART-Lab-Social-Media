@@ -1,0 +1,18 @@
+Morning Briefing August 31, 2026
+
+=== ROBOTICS & AI ===
+- Anthropic released a research preview of the Model Hardware Standard (MHS) on August 27, a device-agnostic specification that lets AI agents discover and operate physical hardware — robotic arms, liquid handlers, and microscopes — via standardized drivers, cutting integration time from months to hours; early partners include Genentech and Carnegie Mellon University. https://techstartups.com/2026/08/27/anthropic-launches-model-hardware-standard-to-let-ai-agents-control-physical-machines/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Andreessen Horowitz closed its $1.1 billion Machine Age Fund on August 28, targeting the physical buildout of AI across chips, networking hardware, data centers, robotics, and connected home devices. https://techcrunch.com/2026/08/28/a16z-creates-a-1-1b-machine-age-fund-to-accelerate-the-physical-buildout-of-ai/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Silicon Valley Robotics hosts its monthly physical AI networking event tomorrow, September 2, 6–8:30 pm in San Francisco, with slots open for short talks and demos. https://www.svrobo.org/robotics-events/
+
+#KEYS: anthropic-model-hardware-standard, a16z-machine-age-fund, svrobo-sf-physical-ai-sept2
