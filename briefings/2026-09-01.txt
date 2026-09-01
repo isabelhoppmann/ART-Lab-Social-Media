@@ -1,0 +1,19 @@
+Morning Briefing September 1, 2026
+
+=== ROBOTICS & AI ===
+- The U.S. imposed tariffs of 25% to 100% on foreign-made drones and advanced robotic systems, effective September 3, as Washington tightens national-security barriers against Chinese hardware despite China's commanding scale advantage in global manufacturing. https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/
+- Caterpillar pledged $100 million over five years to train its 118,000 employees in AI, robotics, autonomy, and digital twins, citing lessons from its autonomous mining operations as a blueprint for deploying physical AI across its broader industrial business. https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Meta is testing robots from Watney Robotics, Kinova, and ABB at its U.S. data centers for cable swapping and server maintenance, with one internal estimate that a successful cable-swapping robot could automate up to 80% of certain technician roles. https://www.techtimes.com/articles/325984/20260831/meta-data-center-robots-expose-two-stage-automation-squeeze-skilled-technicians.htm
+
+=== BAY AREA ===
+- AI Tinkerers San Francisco hosts an "Agents, Everywhere" global hackathon on September 12 for builders working on AI agents, bots, and channels, with live demos and networking. https://sf.aitinkerers.org/
+
+#KEYS: us-drone-robot-tariffs-sept3, caterpillar-100m-ai-training, meta-datacenter-robots, ai-tinkerers-sf-sept12
