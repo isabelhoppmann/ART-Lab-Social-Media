@@ -1,0 +1,15 @@
+Morning Briefing September 2, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- Lucida (arXiv:2608.30821, posted August 31) introduces a real-to-sim pipeline that takes a video of a cluttered indoor room and returns a simulation-ready scene where each object is a fully editable 3D asset placed as observed, giving home-robot developers a scalable way to build realistic household simulators without manual scene authoring. https://arxiv.org/abs/2608.30821
+
+=== FUNDING & INVESTMENT ===
+- Reframe Systems raised $40 million led by Energy Impact Partners, announced August 31, to scale its robotics-powered modular-homebuilding microfactories, with a new Billerica, Massachusetts facility designed for up to 500 multifamily units per year set to open October 5. https://roboticsandautomationnews.com/2026/09/01/reframe-systems-raises-40-million-to-industrialize-homebuilding-and-expand-microfactory-network/104595/
+
+=== COMPETITOR WATCH ===
+- OpenAI designated its upcoming Astra model as the first to reach the "Critical" cybersecurity capability threshold under its Preparedness Framework, announced September 1, meaning it can autonomously find and exploit unknown vulnerabilities across hardened systems with minimal human guidance; access to the advanced cyber features will be restricted to its Daybreak coalition. https://www.cnbc.com/2026/09/01/open-ai-astra-cyber-model.html
+
+#KEYS: lucida-real-to-sim-scene, reframe-systems-40m, openai-astra-critical-cyber
