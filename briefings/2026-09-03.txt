@@ -1,0 +1,18 @@
+Morning Briefing September 3, 2026
+
+=== ROBOTICS & AI ===
+- Xiaomi made its IFA 2026 debut in Berlin (the show opens September 4), displaying the CyberOne humanoid robot overseas for the first time and reporting that its factory nut-tightening success rate rose from 90% to 98% over the past four months. https://en.sedaily.com/finance/2026/09/03/xiaomi-makes-ifa-debut-with-humanoid-robot-and-in-house-ai
+
+=== RESEARCH ===
+- Calvert, Penco, et al. posted arXiv:2609.01518 in September 2026, presenting a system for fast, resilient, and adaptable loco-manipulation behaviors on humanoid robots using a combination of motion generation and reactive recovery controllers. https://arxiv.org/abs/2609.01518
+
+=== FUNDING & INVESTMENT ===
+- Locus Robotics raised $41.6 million in Series G funding, announced September 2, 2026, led by Tiger Global Management with participation from Goldman Sachs Asset Management, G2 Venture Partners, and Scale Venture Partners, to expand its multi-robot orchestration software and global logistics deployments. https://www.finsmes.com/2026/09/locus-robotics-raises-41-6m-in-series-g-funding.html
+
+=== COMPETITOR WATCH ===
+- LG Electronics announced September 3 its expanded AI Home ecosystem at IFA 2026 in Berlin, with the CLOiD home robot conducting a 16-meter kinetic LED installation that connects appliances, TVs, and HVAC products to demonstrate the company's Zero Labor Home vision. https://www.prnewswire.com/news-releases/lg-electronics-showcases-expanded-ai-home-ecosystem-for-european-lifestyles-at-ifa-2026-302868307.html
+
+=== BAY AREA ===
+- No qualifying items in the last 48 hours
+
+#KEYS: xiaomi-cyberone-ifa-2026, calvert-penco-loco-manipulation, locus-robotics-series-g, lg-ifa-2026-ai-home
