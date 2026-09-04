@@ -38,7 +38,19 @@ jobs:
   briefing:
     runs-on: ubuntu-latest
     steps:
+      # ref: main is load-bearing. A workflow_dispatch run pins its commit SHA
+      # when it is QUEUED, not when it runs -- so a run waiting its turn in the
+      # concurrency group would otherwise check out main as it looked BEFORE the
+      # run ahead of it pushed. publish_from_email.py's "today's file already
+      # exists -> skip" guard then sees no file, rewrites the briefing, and the
+      # push is rejected as non-fast-forward. That is exactly what happened on
+      # 2026-09-04: two dispatchers fired five seconds apart and the second run
+      # emailed a failure alert for a briefing that had already published fine.
+      # Checking out the branch by name resolves the tip at checkout time, so
+      # every run after the winner is the real no-op it was always meant to be.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
