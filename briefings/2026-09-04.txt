@@ -1,0 +1,20 @@
+Morning Briefing September 4, 2026
+
+=== ROBOTICS & AI ===
+- iRobot unveiled the Roomba Duo at IFA 2026 in Berlin today, a paired two-robot system that combines a main vacuum-and-steam-mop unit with a compact companion robot for whole-home coverage. https://www.prnewswire.com/news-releases/irobot-unveils-roomba-duo-at-ifa-2026-proving-the-future-of-floor-care-has-a-familiar-name-302866825.html
+- Dyson debuted three Nurovi robot vacuums at IFA 2026, with the flagship R3 Spot+Scrub UV using onboard AI vision to detect nearly 200 types of household stains and scrub them with heated water, shipping September 15. https://www.dyson.com/discover/news/latest/dyson-unveiled-2026
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Samsung opened its Samsung Connect showcase in Berlin on September 2, presenting its "AI Living" strategy — arguing the first wave of AI home will come through connected Bespoke AI appliances rather than humanoid robots. https://en.sedaily.com/finance/2026/09/02/samsung-extends-ai-beyond-the-home-with-ai-living-at-ifa
+- TCL debuted hey AiMe at IFA 2026, billed as the world's first family companion-education robot, combining guided-play learning, 10-DoF autonomous movement, and over 20 sensors. https://www.prnewswire.com/news-releases/inspired-by-life-powered-by-ai-tcl-redefines-everyday-experiences-at-ifa-2026-302869243.html
+
+=== BAY AREA ===
+- Dasein Creative Circle hosts its AI Film Festival "DASEIN: EMERGENCE" on September 17 at Upcider, 1160 Polk Street, San Francisco, screening short international works exploring AI, consciousness, and identity. https://www.meetup.com/dasein-creative-circle/events/315984292/
+
+#KEYS: irobot-roomba-duo-ifa2026, dyson-nurovi-ifa2026, samsung-ifa2026-ai-living, tcl-heyaime-ifa2026, dasein-emergence-sept17-sf
