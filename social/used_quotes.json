@@ -240,6 +240,18 @@
       "attribution": "Maya Angelou",
       "norm": "my mission in life is not merely to survive but to thrive",
       "first_week": "2026-08-31"
+    },
+    {
+      "quote": "Not until we are lost do we begin to find ourselves.",
+      "attribution": "Henry David Thoreau",
+      "norm": "not until we are lost do we begin to find ourselves",
+      "first_week": "2026-09-07"
+    },
+    {
+      "quote": "Follow your inner moonlight; don't hide the madness.",
+      "attribution": "Allen Ginsberg",
+      "norm": "follow your inner moonlight dont hide the madness",
+      "first_week": "2026-09-07"
     }
   ]
 }
