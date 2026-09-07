@@ -1,0 +1,15 @@
+Morning Briefing September 7, 2026
+
+=== ROBOTICS & AI ===
+- Eleven robotics companies including Unitree and AgiBot headlined IFA Berlin's first-ever "Robots on the Runway" catwalk on September 5, with humanoid and quadruped machines walking, dancing, and performing backflips before a live audience in Messe Berlin's Creator Stage — the most concentrated commercial humanoid hardware demonstration in the show's 102-year history. https://www.ifa-berlin.com/press-releases/ifa2026-humanoid-robots
+
+=== RESEARCH ===
+- Researchers from PrimeBot Research Institute, Peking University, and Crobotia released arXiv:2609.03591 on September 3, presenting XR-2, a vision-language-action model trained on 1,500 hours of diverse bimanual household manipulation demonstrations; the study finds task success rates scale consistently with both expert demo volume and DAgger on-policy correction data, offering a concrete scaling roadmap for household manipulation. https://arxiv.org/abs/2609.03591
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- OpenAI completed the rollout of GPT-6 Astra to all Pro, Enterprise, and Business Premium ChatGPT users and the API by September 5–6, with Plus and Business users phased in across the same period, closing out the full deployment of the model first flagged on September 1 as the first to reach the Critical cybersecurity capability threshold. https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html
+
+#KEYS: ifa-2026-robots-runway, xr2-bimanual-household, openai-astra-critical-cyber
