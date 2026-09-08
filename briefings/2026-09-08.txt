@@ -1,0 +1,15 @@
+Morning Briefing September 8, 2026
+
+=== ROBOTICS & AI ===
+- A Forbes feature published September 7 goes inside Agile Robots' Munich production facility, where robots now handle more than 80% of manufacturing processes for its Diana 7 and Agile ONE humanoids, making it one of the first factories where robots build robots at meaningful scale. https://www.forbes.com/sites/johnkoetsier/2026/09/07/inside-the-european-factory-where-robots-are-building-robots/
+
+=== RESEARCH ===
+- Apple researchers introduced REFACTOR-VLA (submitted arXiv September 1), a wake/sleep system that uses a Behavioral-Equivalence Kernel to cluster robot motor programs into reusable typed skills without labels, outperforming monolithic VLA models like OpenVLA and π₀ on long-horizon manipulation benchmarks. https://arxiv.org/abs/2609.01215
+
+=== FUNDING & INVESTMENT ===
+- Mistral AI closed a €3 billion ($3.5B) Series D on September 8, 2026, led by Samsung Electronics with co-participation from Nvidia, ASML, Scaleup Europe/EQT, a16z, and General Catalyst, valuing the French AI model company at €21 billion ($24B). https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html
+
+=== COMPETITOR WATCH ===
+- XPENG's IRON humanoid robot autonomously walked off the company's newly commissioned Guangzhou production line on September 8, with more than 80% of manufacturing automated and mass production targeting year-end, ahead of commercial deliveries in 2027. https://cnevpost.com/2026/09/08/xpeng-opens-iron-humanoid-robot-production-line/
+
+#KEYS: agile-robots-factory-bots, apple-refactor-vla, mistral-series-d-2026, xpeng-iron-production-launch
