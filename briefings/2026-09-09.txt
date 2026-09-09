@@ -1,0 +1,19 @@
+Morning Briefing September 9, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- Mehta et al. (arXiv:2609.03927, September 3) survey the robot learning landscape across three complementary axes — representation learning, vision-language-action models, and world models — arguing all three must be developed in concert for general-purpose robots, with a taxonomy of 200-plus methods and a structured mapping of open challenges. https://arxiv.org/abs/2609.03927
+
+=== FUNDING & INVESTMENT ===
+- Cognition AI closed a $2 billion Series E on September 8, 2026, led by Andreessen Horowitz and Accel with Founders Fund, General Catalyst, and NVIDIA participating, valuing the AI software-agent company behind the Devin coding assistant at $48 billion on approximately $900 million run-rate ARR. https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value
+- Algomatic Dynamics announced September 9, 2026 a ¥5 billion (~$33 million) seed round from DMM.com to develop physical AI systems including AI-powered multi-finger robotic hands and bipedal control, with a multi-finger hand platform targeting Japan release before year-end 2026. https://prtimes.jp/main/html/rd/p/000000001.000186966.html
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- AI Tinkerers SF runs its monthly global hackathon on September 12 in San Francisco, centered on AI agents, multimodal and voice interfaces, and production AI infrastructure, with live builder demos and technical Q&A; open to all. https://sf.aitinkerers.org/
+
+#KEYS: cognition-ai-series-e-2026, algomatic-dynamics-seed-dmm, robot-learning-unified-survey, ai-tinkerers-sf-sept12
