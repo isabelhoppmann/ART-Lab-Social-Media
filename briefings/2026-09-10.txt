@@ -1,0 +1,15 @@
+Morning Briefing September 10, 2026
+
+=== ROBOTICS & AI ===
+- Vbot SuperDog secured over 5,000 new orders from 16 international partners at IFA 2026 on September 8, with cumulative global sales exceeding 13,000 units across 15 countries, including purchase agreements covering Germany, France, and the UK. https://www.globenewswire.com/news-release/2026/09/08/3357959/0/en/vbot-secures-orders-for-more-than-5-000-quadruped-robots-at-ifa-2026-global-sales-surpass-13-000-units.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Metacognition AI (Adelaide) raised A$10 million in pre-seed funding from Main Sequence on September 10, 2026, to develop a natural-language operating layer that lets workers instruct industrial robots and mining systems by voice while constraining unsafe actions. https://www.startupdaily.net/topic/funding/ai-startup-raises-10-million-to-build-robotics-operating-system/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: vbot-superdog-ifa-orders, metacognition-ai-preseed
