@@ -1,0 +1,19 @@
+Morning Briefing September 11, 2026
+
+=== ROBOTICS & AI ===
+- Skild AI reached $100 million in annual recurring revenue run rate by September 10, 2026, ten months after beginning commercial shipments, with its hardware-agnostic robot-brain software running on hundreds of machines at more than 60 companies across manufacturing, logistics, and industrial automation. https://www.bloomberg.com/news/articles/2026-09-10/robotics-startup-skild-ai-hits-100-million-in-revenue-run-rate
+
+=== RESEARCH ===
+- OpenAI announced on September 9 that an unreleased AI model solved the Navier-Stokes existence and smoothness Millennium Prize Problem by deploying roughly 10,000 concurrent agents for 88 hours, with the proof formally verified in Lean -- the first AI-derived solution to any Clay Mathematics Institute $1 million prize problem. https://openai.com/index/navier-stokes-solution/
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Apple announced the A20 Pro on September 9, the first 2nm smartphone chip, powering iPhone 18 Pro and iPhone Duo with a 32-core Neural Engine, 40% faster GPU, and twice the FP8 AI throughput of the A19 Pro, enabling on-device large-model inference that marks Apple's next escalation in consumer AI hardware. https://9to5mac.com/2026/09/09/apple-announces-a20-pro-chip-with-2nm-design-and-major-performance-gains/
+
+=== BAY AREA ===
+- AI Tinkerers SF hosts "Agents, Everywhere: Bots, Channels, & More -- Global Hackathon" tomorrow, September 12, in San Francisco, covering AI agents, multimodal and voice interfaces, and production AI infrastructure, with live builder demos open to all. https://sf.aitinkerers.org/
+- The AI Conference 2026 runs September 29-October 1 at Pier 48, San Francisco, with 5,500+ attendees and 120+ speakers across tracks on AGI, LLMs, agentic AI, infrastructure, and applied AI; registration starts at $199. https://aiconference.com/
+
+#KEYS: skild-ai-100m-arr, openai-navier-stokes-2026, apple-iphone18-a20pro, ai-tinkerers-sf-sept12, ai-conference-sf-2026
