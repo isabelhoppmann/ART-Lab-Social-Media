@@ -1,0 +1,16 @@
+Morning Briefing September 14, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- Weiwei Gu et al. introduced RoboReel in "Monkey See, Can Monkey Do? A Benchmark for Evaluating Robot Skill Learning by Observation" (arXiv:2609.08209, submitted September 10), pairing 3,000 real human demonstration videos with 2,000 simulated robot trajectories across ten tabletop manipulation tasks to create a unified benchmark for evaluating policies that learn by watching people. https://arxiv.org/abs/2609.08209
+- A 31-page preprint "No Free Checker: A Survey of Verifiers for Robot Policies" (arXiv:2609.09250, submitted September 8) surveys roughly 150 verifiers—from reward models and success detectors to temporal-logic monitors—and concludes that credibility inevitably falls as availability rises, so no single verification approach provides both qualities at once. https://arxiv.org/abs/2609.09250
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- AgiBot co-founder Yao Maoqing told Fortune in an article published September 14 that humanoid robots will reach a "GPT-3.5 moment"—meaning an 80-to-90 percent everyday-task success rate—within three to five years; AgiBot shipped 9,700 units in H1 2026, the most of any humanoid maker globally. https://fortune.com/2026/09/14/humanoids-gpt-3-5-moment-agibot/
+
+#KEYS: roboreel-observation-benchmark, no-free-checker-survey, agibot-gpt35-moment
