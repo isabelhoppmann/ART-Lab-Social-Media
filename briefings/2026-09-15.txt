@@ -1,0 +1,16 @@
+Morning Briefing September 15, 2026
+
+=== ROBOTICS & AI ===
+- UBTech (UWORLD) begins mass delivery of its U1 companion humanoid robots in China on September 16, fulfilling 13,361 pre-orders across Lite, Pro, and Ultra variants priced from 119,800 to 990,000 yuan ($17,600-$145,000), making it the first large-scale consumer humanoid deployment with all data stored locally by default. https://humanoid.guide/ubtech-lines-up-september-deliveries-for-u1-home-humanoids/
+- Agility Robotics unveiled Digit 5 on September 15, the first humanoid designed to work alongside people without cage-style physical barriers, with AI collision-avoidance software, new sensors, and a 23 kg payload capacity, targeting December customer shipments and a planned $2.5B SPAC listing. https://interestingengineering.com/ai-robotics/us-digit-robot-maker-agility
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- RobotPlusPlus (ROBOT++) announced a Series C round on September 15, 2026, co-led by Qianggang Capital Fund with GIG Capital Group, Sealand Innovation, and Juntong Capital, raising hundreds of millions of RMB to scale its industrial working-at-height robotics platform across 18 countries on 2 million-plus hours of field data. https://www.globenewswire.com/news-release/2026/09/15/3361721/0/en/robotplusplus-raises-series-c-to-scale-working-at-height-robots.html
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: ubtech-u1-home-delivery, agility-digit-5-launch, robotplusplus-series-c
