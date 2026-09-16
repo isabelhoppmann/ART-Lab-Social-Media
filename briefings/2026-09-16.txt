@@ -1,0 +1,21 @@
+Morning Briefing September 16, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- A September 10 Frontiers in Robotics and AI editorial surveys how foundation models are shifting robot design toward systems where architecture, evaluation, and embodiment are co-designed around the model interface, marking a new era for generalist robot development. https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1927761/full
+
+=== FUNDING & INVESTMENT ===
+- ENCOS, a Nanjing-based maker of robot joints and dexterous hands, closed a Series B of over RMB 300 million (~$41M) announced September 15, backed by CITIC Goldstone, Fosun RZ Capital, and Shenzhen Capital Group, to expand its embodied-AI hardware stack. https://autonews.gasgoo.com/articles/news/seeds-encos-completes-over-300-million-yuan-series-b-financing-2100179363541975041
+- Shanghai picking-robot startup Yincheng Intelligence raised approximately RMB 100 million (~$14M) in a Series A announced September 15, led by Huamintou, for its Starborn robot rated at 1,800 items per hour. https://jianshiapp.com/positioning-general-purpose-picking-robots-yincheng-intelligence-raises-tens-of-millions-of-us-dollars-in-financing/
+- Chinese AI company Z.ai (Zhipu AI) is raising approximately $5 billion through a Hong Kong share placement and zero-coupon convertible bonds, announced September 14 with the share placement expected to close September 16. https://technode.global/2026/09/14/zai-plans-5-billion-share-bond-financing/
+
+=== COMPETITOR WATCH ===
+- Google launched Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking on September 15, production-ready voice-reasoning models with real-time simultaneous speech and thought processing now powering Gemini Live and Google AI consumer products. https://siliconangle.com/2026/09/15/googles-new-speech-model-gemini-3-8-live-supports-real-time-reasoning/
+- OpenAI is exploring a new funding round at a $1.2–$1.5 trillion valuation with CEO Sam Altman ruling out a 2026 IPO, according to reports published September 15–16. https://fortune.com/2026/09/16/openai-ipo-sam-altman-vc-funding-valuation-1-2-trillion/
+
+=== BAY AREA ===
+- Maker Faire Bay Area runs September 25–27 on Mare Island, California, with humanoid robots, drone builds, and AI demos on the schedule; registration is open. https://makerfaire.com/bay-area/
+
+#KEYS: frontiers-foundation-robot-design, encos-series-b, yincheng-series-a, zai-5b-raise, google-gemini-3-8-live, openai-1t-valuation, maker-faire-bay-area-2026
