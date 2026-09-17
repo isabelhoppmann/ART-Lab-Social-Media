@@ -1,0 +1,18 @@
+Morning Briefing September 17, 2026
+
+=== ROBOTICS & AI ===
+- Faraday Future (FFAI) announced it will unveil nine AI-powered robots at its 919 launch event on September 19, spanning humanoid, quadruped, and mobile manipulator forms across three sizes, with solutions targeting K-12 education, research, security, and inspection markets. https://www.businesswire.com/news/home/20260916196720/en/Faraday-Future-to-Unveil-Nine-New-AI-Powered-Robots-and-Four-Industry-Solutions-at-Its-Annual-919-Launch-Event-Completing-Its-One-Brain-Multi-Form-Multi-Capability-Robot-World-2.0
+
+=== RESEARCH ===
+- Researchers proposed rMuscle (arXiv:2609.19104, September 16, accepted ECCV 2026), a "robotic muscle memory" method that accelerates inference in Vision-Language-Action models by caching intermediate computations, reducing on-device compute for physical robot policies. https://arxiv.org/abs/2609.19104
+
+=== FUNDING & INVESTMENT ===
+- D-Robotics, maker of the Sunrise AI chips powering home robots from TCL, Vbot, and others, closed a $400 million Series C on September 17, 2026 — the largest Chinese robotics chip funding round in four years — to expand its chip lineup and full-stack robot software platform. https://en.prnasia.com/releases/apac/d-robotics-completes-400-million-in-series-c-funding-driving-the-robotics-industry-into-a-boom-in-product-categories-548285.shtml
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- INSEAD AI Forum Americas 2026 runs September 18-19 at the INSEAD San Francisco Hub, bringing together faculty and industry leaders for practical AI workshops and discussions; registration is still open. https://www.eventbrite.com/e/insead-ai-forum-americas-2026-inst-tickets-1992176185599
+
+#KEYS: faraday-future-919-robot-launch, rmuscle-vla-inference, d-robotics-series-c, insead-ai-forum-sf-2026
