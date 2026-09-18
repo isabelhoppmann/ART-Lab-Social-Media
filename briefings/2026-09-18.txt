@@ -1,0 +1,15 @@
+Morning Briefing September 18, 2026
+
+=== ROBOTICS & AI ===
+- Japan's ugo Inc. unveiled ugo Nova on September 16, 2026, a wheeled dual-arm semi-humanoid robot built to collect physical-AI training data through teleoperation, developed as part of a NEDO-commissioned national project for a domestically produced general-purpose robot, with mass production targeted for 2027. https://www.euronews.com/video/2026/09/16/from-nail-hammering-to-drilling-japans-new-robots-push-physical-ai-forward
+
+=== RESEARCH ===
+- TEMPO (arXiv 2609.16864, accepted at CoRL 2026, submitted September 15) shows that augmenting a pretrained VLA with a frozen video model's motion summary plus a proprioceptive-history token resolves both motion ambiguity and state aliasing, substantially improving success rates on dynamic manipulation tasks where single-frame policies fail. https://arxiv.org/abs/2609.16864
+
+=== FUNDING & INVESTMENT ===
+- Autonomous outdoor-cleaning robotics startup Viabot raised a $24 million Series A announced September 17, 2026, led by Walden International with CDIB Capital Group and Stalwart Ventures, to scale its commercial property-management robot fleet and meet growing enterprise demand. https://roboticsandautomationnews.com/2026/09/17/robotic-outdoor-cleaning-startup-viabot-raises-24-million-in-series-a-funding/104892/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+#KEYS: ugo-nova-launch, tempo-corl-2026, viabot-series-a
