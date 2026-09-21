@@ -1,0 +1,18 @@
+Morning Briefing September 21, 2026
+
+=== ROBOTICS & AI ===
+- PrimeBOT (AgiBot's consumer brand) opened Chinese presales of the foldable Q1 (88 cm, ~$3,000) and transformable T1 (humanoid-to-quadruped, Pro ~$4,400) personal robots on September 20, with October 1 delivery — the broadest price-accessible consumer humanoid launch in China to date. https://pandaily.com/primebot-q1-t1-260g-egg-joint-personal-robots
+
+=== RESEARCH ===
+- Researchers introduced VLA-ULAP (arXiv:2609.18663, submitted September 16), a system that interleaves cloud-based VLA calls with a 7.4M-parameter edge predictor, cutting 49–77% of server roundtrips while retaining 95–97.5% of success rate and reducing per-inference energy from 50.5 J (cloud GR00T on RTX A6000) to 0.18 J on a Jetson Orin Nano. https://arxiv.org/abs/2609.18663
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- The AI Conference 2026 runs September 29–October 1 at Pier 48, San Francisco, anchoring AI Week SF (September 27–October 3), with 5,500+ builders, researchers, and leaders across AGI, LLM, agentic AI, and infrastructure tracks; registration is open. https://aiconference.com/
+
+#KEYS: primebot-q1-t1-launch, vla-ulap-edge-inference, ai-conference-sf-2026
