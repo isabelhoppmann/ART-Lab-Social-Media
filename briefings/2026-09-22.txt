@@ -1,0 +1,17 @@
+Morning Briefing September 22, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- MIT published on September 21 a new AI controller for an aerial microrobot that boosts speed by 450 percent and acceleration by 250 percent via an imitation-learned two-part control scheme, enabling the 60-milligram robot to complete 10 somersaults in 11 seconds and navigate tight, debris-filled spaces. https://www.sciencedaily.com/releases/2026/09/260921081114.htm
+- Uranus, an open-source embodied-AI simulation framework trained on single-arm, dual-arm, and humanoid robot datasets, was posted to arXiv on September 21 and generates streaming multi-view video at 24 FPS without a fixed planning horizon, releasing weights, SDK, and inference code publicly. https://arxiv.org/abs/2609.24815
+- Researchers posted an arXiv paper on September 21 showing that OpenAI's GPT-6 Astra, used as a zero-shot manipulation policy without task-specific fine-tuning, outranked all 40 previously published policies on the 2,100-trial RoboDojo benchmark with a 22.48 percent average success rate. https://arxiv.org/abs/2609.24170
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+#KEYS: mit-aerial-microrobot-ai-controller, uranus-embodied-ai-sim, gpt6-astra-robot-policy
