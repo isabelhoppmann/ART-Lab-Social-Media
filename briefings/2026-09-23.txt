@@ -1,0 +1,19 @@
+Morning Briefing September 23, 2026
+
+=== ROBOTICS & AI ===
+- Hello Robot CEO Aaron Edsinger announced Stretch 4's first production run has sold out and will bring the home-assistance robot to the Real World AI Stage at TechCrunch Disrupt 2026 (October 13-15, San Francisco) for a live demo focused on real-life home use and accessibility. https://techcrunch.com/2026/09/22/techcrunch-disrupt-2026-aaron-edsinger-brings-hello-robots-stretch-4-to-life-onstage/
+
+=== RESEARCH ===
+- Touch2Robot (arXiv:2609.24660, submitted September 21) shows that integrating tactile-glove contact feedback from human demonstrations into robot learning policies lifts real-robot replay success from 37.9% to 72.1% and cuts demonstration-collection time by 70% across four manipulation tasks. https://arxiv.org/abs/2609.24660
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- NVIDIA released Isaac ROS 5.0 on September 22 at ROSCon 2026, adding agentic workflow support, ROS 2 Lyrical Luth on Ubuntu 24.04, and FoundationPose inference running 5.5x faster — available free and open-source on GitHub. https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/
+- Alphabet's Intrinsic open-sourced Intrinsic Core on September 22 at ROSCon 2026, releasing ROS-compatible real-time control, FoundationPose-based pose estimation, motion and grasp planning, and simulation tools under Apache 2.0. https://www.intrinsic.ai/blog/posts/introducing-intrinsic-core
+
+=== BAY AREA ===
+- Silicon Valley Robotics monthly physical AI networking event, October 7, 6-8:30 pm, SF Bay Area (venue TBD); short talks and demos welcome. https://www.svrobo.org/robotics-events/
+
+#KEYS: hello-robot-stretch4-sold-out, touch2robot-tactile-demos, nvidia-isaac-ros-5, alphabet-intrinsic-core, svrobo-oct7-networking
