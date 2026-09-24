@@ -1,0 +1,16 @@
+Morning Briefing September 24, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- "Think Like a World Model, Act Like a VLA" (arXiv:2609.24682, submitted September 21) adds a feature-alignment loss to standard VLA training using a frozen world model's cached representations, giving the deployed policy implicit world-state awareness without running the world model at inference — the resulting policy runs at 32 ms and 1.86 GB on a consumer device and substantially outperforms the undistilled baseline on manipulation benchmarks. https://arxiv.org/abs/2609.24682
+- DexTacWAM (arXiv:2609.24976, submitted September 21) fuses visual and tactile signals into a world-action model for dexterous manipulation, reaching a 70.6% average success rate on six contact-rich tasks on a 22-DoF bimanual platform versus 38.0% for the strongest baseline. https://dextacwam.github.io/
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- At Meta Connect 2026 on September 23, Meta launched Ray-Ban Meta Audio, its first camera-free AI glasses ($349, preorder October 13), alongside Ray-Ban Meta Gen 3 camera glasses and the Muse Charm, a 5G-connected keychain AI companion with a 2-inch LED display and fingerprint sensor. https://techcrunch.com/2026/09/23/meta-introduces-camera-free-ai-glasses/
+
+#KEYS: wam-vla-distillation, dextacwam-tactile-manipulation, meta-connect-2026
