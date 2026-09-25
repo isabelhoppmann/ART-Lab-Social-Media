@@ -1,0 +1,16 @@
+Morning Briefing September 25, 2026
+
+=== ROBOTICS & AI ===
+- OlloBot's AI companion robot OlloNi SS1 was named an Honoree in the Best in Home Entertainment category of the IFA Innovation Awards 2026, capping the company's first European showing and highlighting growing industry investment in non-humanoid, companionship-focused home robots. https://www.globenewswire.com/news-release/2026/09/25/3369130/0/en/ollobot-concludes-ifa-2026-with-new-recognition-for-its-ai-companion-olloni-ss1.html
+
+=== RESEARCH ===
+- EgoSpeedUp (arXiv:2609.29310, accepted at IROS 2026, submitted September 24) aligns robot and human manipulation phases to infer phase-wise tempo ratios from human demonstrations, resets robot demos to that tempo, and lifts real-task success by 25 percentage points while cutting execution time by 36.5% across two manipulation tasks. https://arxiv.org/abs/2609.29310
+- Self-Adaptive VLA (arXiv:2609.30092, submitted September 24) introduces a post-training recipe that lets a VLA policy iteratively adapt to deployment-time hardware shifts — actuation bias, joint encoder offsets — using its own rollouts as context, recovering over 80% of baseline performance across four dexterous bi-manual tasks without on-site recalibration. https://arxiv.org/abs/2609.30092
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+#KEYS: ollobot-olloni-ifa-award, egospeedup-iros-2026, self-adaptive-vla-deployment
