@@ -1,0 +1,19 @@
+Morning Briefing September 28, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours.
+
+=== RESEARCH ===
+- "See to Reach, Feel to Grasp: Learning A Blind Grasp Reflex for Anthropomorphic Robotic Hands" (arXiv:2609.31323, submitted September 25, 2026) presents a modular dexterous-grasping architecture that separates arm motion from a reinforcement-learned proprioceptive grasp reflex — no vision, no object pose — enabling an anthropomorphic hand to grasp and stabilize diverse objects and compose seamlessly with upstream arm controllers in both simulation and hardware. https://arxiv.org/abs/2609.31323
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- The AI Conference 2026 opens tomorrow at Pier 48, San Francisco (September 29–October 1), with 5,500+ attendees and speakers from Anthropic, NVIDIA, OpenAI, and Google across AGI, LLM, agentic AI, infrastructure, and robotics tracks; Day ZERØ includes live AI hack sessions. https://aiconference.com/
+- OpenAI DevDay 2026 is tomorrow, September 29, at Fort Mason, San Francisco — a single-day developer conference featuring Sam Altman's platform roadmap keynote at 10 a.m. PT, technical API sessions, hands-on model demos, and a free livestream. https://devday.openai.com/
+
+#KEYS: blind-grasp-reflex-dexterous, ai-conference-sf-2026, openai-devday-2026
