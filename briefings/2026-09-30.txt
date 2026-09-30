@@ -1,0 +1,18 @@
+Morning Briefing September 30, 2026
+
+=== ROBOTICS & AI ===
+- The U.S. Army announced five winners of the xTechHumanoid competition on September 28, selecting teams to develop ballistic-protected humanoid robots for high-risk battlefield experiments from 103 submissions. https://www.armyrecognition.com/news/aerospace-news/2026/u-s-army-selects-ballistic-protected-humanoid-robot-for-high-risk-battlefield-mission-experiments
+
+=== RESEARCH ===
+- RAPID, a preprint from MIT CSAIL posted September 24, introduces an agentic loop that automatically generates, verifies, and refines robot programs from a single human video demonstration with no manual task annotation. https://arxiv.org/abs/2609.30249
+
+=== FUNDING & INVESTMENT ===
+- Agility Robotics announced three new board directors on September 29 ahead of its planned SPAC merger with Churchill Capital Corp XI, targeting a Nasdaq listing as AGLT in Q4 2026. https://www.businesswire.com/news/home/20260929718472/en/Agility-Robotics-Announces-New-Directors-for-Planned-Public-Company-Board
+
+=== COMPETITOR WATCH ===
+- Tesla reported on September 29 that Optimus production remains stuck below 1,000 units per week due to unsolved hand precision and AI generalization problems, blocking Musk's stated goal of 20,000 units per week. https://www.sciencetimes.com/articles/62663/20260929/tesla-optimus-production-falls-short-long-term-goals-hand-assembly-ai-challenges-grow.htm
+
+=== BAY AREA ===
+- No qualifying items in the last 48 hours
+
+#KEYS: army-xtechhumanoid-2026, rapid-robot-agentic-programming, agility-robotics-ipo-2026, tesla-optimus-hand-challenges
