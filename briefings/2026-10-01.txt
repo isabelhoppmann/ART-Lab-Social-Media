@@ -1,0 +1,19 @@
+Morning Briefing October 1, 2026
+
+=== ROBOTICS & AI ===
+- Global humanoid robot shipments reached nearly 25,000 units in H1 2026, a 432% year-over-year surge driven by expanded deployments in manufacturing and logistics. https://newstodayworld.org/breaking-news/2026/09/30/humanoid-robot-shipments-surge-432-in-six-months
+- XPENG announced it will debut its IRON humanoid robot at the Paris Motor Show (Oct 12-18) and confirmed IRON entered mass production after its new assembly line launched in September 2026. https://cleantechnica.com/2026/10/01/xpeng-to-launch-its-next-gen-ai-flagship-g9l-suv-showcase-its-physical-ai-lineup-at-the-2026-paris-motor-show/
+
+=== RESEARCH ===
+- Runway released Praxis-1, an open-weight world-action model that uses large-scale video pretraining to control robots across bimanual rigs, 6-DoF arms, and mobile bases without per-embodiment retraining, with public weights promised soon. https://runway.com/research/introducing-praxis-1
+
+=== FUNDING & INVESTMENT ===
+- General Intuition closed a $220M round at a $6.2B valuation (announced September 29, 2026) to scale its world models that generate synthetic training video, enabling simulation-driven robot policy development. https://siliconangle.com/2026/09/29/world-model-startup-general-intuition-closes-220m-investment/
+
+=== COMPETITOR WATCH ===
+- Figure AI decommissioned its entire F.02 fleet on September 30, 2026 in a staged event where the robots autonomously jumped into a 75-ton vat of molten steel at a foundry in Finland, signaling the company's transition to its next robot generation. https://www.figure.ai/news/f-02-decommission
+
+=== BAY AREA ===
+- Bots, Bevs & Devs, Silicon Valley Robotics' robotics and physical AI networking event, is scheduled for October 7, 6-8:30pm (location TBD); sign-ups open for short demos and talks. https://www.svrobo.org/robotics-events/
+
+#KEYS: humanoid-shipments-h1-2026, xpeng-iron-paris-2026, runway-praxis1-world-action, general-intuition-220m, figure-f02-decommission, bots-bevs-devs-oct7-2026
