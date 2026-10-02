@@ -1,0 +1,19 @@
+Morning Briefing October 2, 2026
+
+=== ROBOTICS & AI ===
+- ANYbotics launched Shift on October 1, an operational platform that connects robot fleets, plant models, and inspection data into a single maintenance workflow, targeting energy, metals, and chemical processing facilities. https://www.roboticstomorrow.com/news/2026/10/01/anybotics-launches-shift-to-streamline-robot-fleet-operations-and-power-autonomous-industrial-inspection-at-scale-/27188
+- Micron's Q4 earnings call on October 1 revealed each humanoid robot will require over 200 GB of DRAM and multiple terabytes of NAND storage, with CEO Sanjay Mehrotra predicting physical AI will keep memory prices elevated through 2028. https://borecraft.com/2026/10/01/dont-expect-cheaper-memory-even-if-the-ai-bubble-pops-micron-says-each-humanoid-robot-would-need-over-200-gb-of-dram-and-multiple-terabytes-of-nand-2/
+
+=== RESEARCH ===
+- WB-WAM (arXiv, September 28) introduces a world-action model that jointly pre-trains on body, root, and dexterous-hand annotations across 1,880 hours of heterogeneous video, reaching 84% mean success on five real-world humanoid loco-manipulation tasks. https://arxiv.org/abs/2609.34199
+
+=== FUNDING & INVESTMENT ===
+- RobotPlusPlus (ROBOT++) announced a Series C on October 1, 2026, raising tens of millions of USD led by Qianggang Capital Fund to scale its working-at-height inspection robots globally. https://roboticsandautomationnews.com/2026/10/01/robotplusplus-raises-tens-of-millions-of-dollars-to-scale-working-at-height-robots/105412
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Open Source AI Week runs October 16-25 across the Bay Area with 60+ events, including the PyTorch Conference (Oct 20-21, San Jose) and AGNTCon + MCPCon North America (Oct 22-23, San Jose). https://opensourceaiweek.com/
+
+#KEYS: anybotics-shift-launch, micron-humanoid-memory-demand, wb-wam-humanoid-pretrain, robotplusplus-series-c, open-source-ai-week-2026
