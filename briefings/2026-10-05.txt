@@ -1,0 +1,18 @@
+Morning Briefing October 5, 2026
+
+=== ROBOTICS & AI ===
+- Teradyne made a strategic investment in Bright Machines on October 5, 2026 to combine its robotics and test hardware with Bright Machines' software-defined manufacturing platform for building AI data center infrastructure. https://www.manilatimes.net/2026/10/05/tmt-newswire/globenewswire/teradyne-makes-strategic-investment-in-bright-machines-to-advance-ai-infrastructure-manufacturing/2439112
+
+=== RESEARCH ===
+- SkeleWAM (arXiv:2610.02120, submitted October 1, 2026) proposes a compact world-action model that encodes manipulation scenes as sparse 3D skeletons—robot joints, object centers, and interaction points—achieving 85.9% task success on LIBERO-Plus with 57M parameters, outperforming Cosmos-Policy by 3.7 points. https://arxiv.org/abs/2610.02120
+
+=== FUNDING & INVESTMENT ===
+- RobCo, a Munich-based industrial robotics startup, reached a $1 billion valuation on October 5, 2026 through a $40 million employee secondary share sale backed by Sequoia, Lightspeed, Leitmotif, Cherry Ventures, and European Tech Collective, doubling its valuation in nine months. https://www.unite.ai/robco-raises-new-investment-at-1b-valuation-with-employee-share-sale/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- SF Tech Week (October 5–11, San Francisco) opened today with 163+ events, including a Physical AI Demo Day and the Robotics, Off the Record builder gathering both on October 7. https://www.tech-week.com/deep-tech
+
+#KEYS: teradyne-bright-machines-2026, skelewam-manipulation-2026, robco-unicorn-2026, sf-tech-week-2026
