@@ -1,0 +1,19 @@
+Morning Briefing October 6, 2026
+
+=== ROBOTICS & AI ===
+- Matic became the first American home robot company and floor-cleaning robot to receive FCC Conditional Approval and exemption from the Covered List on October 6, 2026, clearing the regulatory path for domestic robot sales under the new FCC framework. https://www.financialcontent.com/article/bizwire-2026-10-6-matic-becomes-the-first-american-home-robot-company-and-floor-cleaning-robot-granted-conditional-approval-and-exempted-from-the-fcc-covered-list
+
+=== RESEARCH ===
+- InterEvolve (arXiv, October 1, 2026) from UIUC improves Unitree G1 loco-manipulation task success from 8% to 86.5% by evolving reward programs at test time using an LLM agent, requiring no robot retraining. https://deeplearn.org/arxiv/836712/interevolve:-test-time-evolution-of-reward-programs-for-humanoid-loco-manipulation
+
+=== FUNDING & INVESTMENT ===
+- Minerva Humanoids emerged from stealth on October 6, 2026 with a $10M pre-seed round led by General Catalyst, building teleoperated humanoid robots for hazardous environments including explosive-ordnance disposal and oil-and-gas operations. https://www.globenewswire.com/news-release/2026/10/06/3375277/0/en/minerva-humanoids-emerges-from-stealth-with-10m-pre-seed-round-led-by-general-catalyst-to-build-humanoid-robots-for-the-worlds-most-dangerous-jobs.html
+- O-ID raised $1.2M in seed funding on October 5, 2026, led by Tawani Ventures with participation from Hustle Fund and Techstars, to develop fully modular humanoid robots for industrial manufacturing and logistics. https://engineerlive.com/o-id-raises-1-2m-to-build-fully-modular-humanoid-robots
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Bots, Bevs & Devs, Silicon Valley Robotics' robotics and physical AI networking event, is tomorrow (October 7, 6-8:30pm); sign-ups remain open for attendees, demos, and short talks. https://www.svrobo.org/robotics-events/
+
+#KEYS: matic-fcc-conditional-approval, interevolve-humanoid-loco, minerva-humanoids-preseed, o-id-seed, bots-bevs-devs-oct7-2026
