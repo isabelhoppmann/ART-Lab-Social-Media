@@ -1,0 +1,18 @@
+Morning Briefing October 7, 2026
+
+=== ROBOTICS & AI ===
+- Boston Dynamics named Rohit Prasad, former Amazon SVP for Alexa and AGI, as its new CEO on October 6, 2026, as the company scales Atlas humanoid production toward its stated 30,000-unit target by 2028. https://thedailystar.net/news/technology/news/boston-dynamics-names-amazons-rohit-prasad-chief-executive-4292826
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- XPENG Robotics raised more than $900 million in its first standalone funding round on October 6, 2026, at a $6.3 billion post-money valuation led by IDG Capital with Tencent and Alibaba participating, to fund IRON humanoid mass production targeting 1,000 units per month by year-end and Physical AI model development. https://www.unite.ai/xpeng-robotics-raises-900m-first-round-at-6-3b-valuation/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- RoboBusiness 2026, the primary commercial robotics conference in North America, runs October 19-21 at the Santa Clara Convention Center with 150+ exhibitors and tracks on Physical AI, Humanoids, Field Robotics, and Business and Deployment. https://www.therobotreport.com/registration-is-open-for-robobusiness-2026/
+
+#KEYS: boston-dynamics-prasad-ceo, xpeng-robotics-900m, robobusiness-2026
