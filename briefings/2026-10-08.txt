@@ -1,0 +1,19 @@
+Morning Briefing October 8, 2026
+
+=== ROBOTICS & AI ===
+- iRobot relaunched in Taiwan with five new Roomba-series models on October 7 after completing its bankruptcy restructuring under new owner Shenzhen Picea Robotics, aiming to recapture share from dominant Chinese rivals. https://digitimes.com/news/a20261007PD201/market-taiwan-market-robot-taiwan-smart-home.html
+- TwelveLabs released Pegasus 1.6 on October 6, a video-understanding model that converts egocentric first-person footage into step-by-step labeled data for robot training pipelines, adding a 261K-token context window and improved hand-and-object tracking. https://cryptobriefing.com/twelvelabs-pegasus-1-6-robotics-training-data/
+
+=== RESEARCH ===
+- DepthWorld (arXiv 2610.08780), accepted to CoRL 2026, presents a 3D world model for robot manipulation that forecasts scene states from visual input and robot actions to improve policy learning. https://arxiv.org/abs/2610.08780
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- The Robotics & World Models Reading Club holds its next San Francisco session on Saturday October 10; tickets range from $20 to $33 and sign-up requires approval from the organizers. https://www.svrobo.org/robotics-events/
+
+#KEYS: irobot-taiwan-reentry, twelvelabs-pegasus-1-6, depthworld-corl-2026, robotics-world-models-reading-club
