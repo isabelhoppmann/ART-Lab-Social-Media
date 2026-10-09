@@ -1,0 +1,18 @@
+Morning Briefing October 9, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- Dex-One2Many (arXiv:2610.12470, submitted October 8) proposes a framework that generalizes dexterous robot hand grasping to new objects from a single human demonstration, cutting the data collection burden for consumer robot manipulation tasks. https://arxiv.org/abs/2610.12470
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Physical Intelligence deepened a commercial partnership with Ultra, a Brooklyn-based robots-as-a-service startup that disclosed $62 million in new funding on October 9, 2026; Ultra leases warehouse robots by the month, providing Physical Intelligence a growing deployment channel for its robot AI. https://fortune.com/2026/10/09/ultra-raises-62-million-fast-growing-robots-service-tie-up-ai-research-firm-physical-intelligence
+
+=== BAY AREA ===
+- TechCrunch Disrupt 2026 runs October 13-15 at Moscone West in San Francisco, with AI as a main track and roughly 10,000 founders and investors expected; registration is open. https://founderpath.com/events/saas/techcrunch-disrupt/2026-sf
+
+#KEYS: dex-one2many-2026, ultra-pi-deployment, techcrunch-disrupt-oct13-2026
