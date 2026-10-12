@@ -1,0 +1,18 @@
+Morning Briefing October 12, 2026
+
+=== ROBOTICS & AI ===
+- China's National Intellectual Property Administration published BYD's design patent for its first self-developed humanoid robot on October 9, 2026, depicting a bipedal form with articulated fingers intended for service, educational, and industrial settings. https://carnewschina.com/2026/10/10/byd-humanoid-robot-design-emerges/
+
+=== RESEARCH ===
+- ROMA (arXiv:2610.06955, October 7, 2026) introduces an LLM-based framework for robot active perception that uses a reasoning-interaction-feedback loop to identify missing sensory data and take targeted actions to collect it, validated on the authors' new ROMI-2K dataset. https://arxiv.org/abs/2610.06955
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- TechCrunch Disrupt 2026 opens tomorrow at Moscone West in San Francisco (October 13-15) with a new Real World AI Stage covering robotics and physical AI; NVIDIA physical AI head Les Karpas is among the featured speakers. https://www.newsbytesapp.com/news/science/techcrunch-disrupt-2026-reveals-real-world-ai-stage-october-13-15/tldr
+
+#KEYS: byd-humanoid-design-2026, roma-multisensory-perception-2026, techcrunch-disrupt-oct13-2026
