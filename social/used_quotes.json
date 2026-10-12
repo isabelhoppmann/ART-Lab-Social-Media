@@ -300,6 +300,18 @@
       "attribution": "Ernest Hemingway",
       "norm": "in order to write about life first you must live it",
       "first_week": "2026-10-05"
+    },
+    {
+      "quote": "I took a deep breath and listened to the old brag of my heart.",
+      "attribution": "Sylvia Plath",
+      "norm": "i took a deep breath and listened to the old brag of my heart",
+      "first_week": "2026-10-12"
+    },
+    {
+      "quote": "To the mind that is still, the whole universe surrenders.",
+      "attribution": "Lao Tzu",
+      "norm": "to the mind that is still the whole universe surrenders",
+      "first_week": "2026-10-12"
     }
   ]
 }
