@@ -1,0 +1,19 @@
+Morning Briefing October 13, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- EmbodiedRSI (arXiv 2610.10498, submitted October 7, 2026) from Python Song et al. proposes a self-evolving agentic harness for robot foundation models that selects where to explore next and converts physical experience into better code and skills, achieving 77.0% success on RoboCasa365 versus 40.1% for the best baseline and 86.8% on LIBERO-Pro. https://deeplearn.org/arxiv/842563/embodiedrsi:-active-continual-robot-learning-through-hypothesis-guided-co-evolution
+
+=== FUNDING & INVESTMENT ===
+- Ola Dimensions, a Shenzhen-based home-robot startup founded by Zhou Shunbo, Huawei's former embodied-intelligence team lead, raised hundreds of millions of RMB in a fourth funding round announced October 13, 2026, with the company targeting makers and developers before pursuing mainstream consumers. https://technode.com/2026/10/13/home-robot-startup-ola-dimensions-raises-hundreds-of-millions-of-rmb-in-fourth-funding-round
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- Women in Robotics Bay Area hosts Robotics over Coffee on Saturday October 17 at 4:00 PM, a casual networking session themed Connect, Celebrate & Share for women in the robotics and adjacent fields. https://womeninrobotics.org/events/
+- Long Horizon Physical AI Summit runs October 20-21 at Fort Mason in San Francisco, with day one focused on robotics and embodied AI and speakers from Physical Intelligence, Boston Dynamics, and Google DeepMind; attendance is by application. https://encord.com/long-horizon/
+
+#KEYS: embodiedrsi-continual-robot-learning, ola-dimensions-round4-2026, wir-robotics-coffee-oct2026, long-horizon-summit-oct2026
