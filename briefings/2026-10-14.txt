@@ -1,0 +1,20 @@
+Morning Briefing October 14, 2026
+
+=== ROBOTICS & AI ===
+- America's largest homebuilder D.R. Horton signed a multi-year deal with Promise Robotics to deploy its AI-directed robotic factory platform for home construction, announced October 14, 2026. https://techtimes.com/articles/328994/20261014/americas-largest-homebuilder-gets-robot-factories-without-owning-them.htm
+- Bloomberg published a feature arguing China's lead in advanced robotic hands positions it to dominate a projected $5 trillion humanoid market, with estimates of only a few thousand fully working humanoid robots deployed globally so far. https://bloomberg.com/news/features/2026-10-13/china-s-robotic-hands-key-to-5-trillion-ai-humanoid-development-race
+- Faraday Future's FF EAI Robotics unit launched the FF Nova humanoid robot for developers and education at an invitation-only event on October 14, with a companion merger deal valuing FFAI's robotics business at roughly $200 million. https://en.prnasia.com/releases/global/ff-eai-robotics-ecosystem-signs-definitive-agreements-to-combine-ffai-s-full-robotics-business-at-about-200-million-and-2-246-per-share-an-approximate-50-percent-premium-becoming-the-first-u-s-listed-humanoid-and-bionic-eai-robotics-pure-play-551680.shtml
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- DeepSeek led a seed round valuing robotics AI startup Winverse AI at approximately $400 million post-investment, announced October 12, 2026; founder Hu Han previously led Tencent's robotics AI teams and the deal is not yet final. https://bloomberg.com/news/articles/2026-10-12/deepseek-backs-ex-tencent-ai-scientist-s-400-million-robot-lab
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- The Humanoid Hub Conference runs October 15-16 at AWS Builder Loft in San Francisco, with live robot demos, technical talks, and panels on embodied AI, hardware, and commercialization. https://www.humanoidsdaily.com/news/humanoid-hub-conference-2026-devang-adhyaru
+
+#KEYS: drhorton-promise-robotics-2026, china-robotic-hands-humanoid, ffai-nova-humanoid-launch, winverse-deepseek-seed-400m, humanoid-hub-conf-oct2026
