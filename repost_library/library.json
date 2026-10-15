@@ -1,4 +1,447 @@
 {
   "_comment": "Reels Zenie can repost, refreshed automatically every Sunday by .github/scripts/find_reposts.py (workflow: find-reposts.yml). It uses Meta's Instagram Business Discovery API through Zenie's account to list recent reels from the verified cohort in formats/zenie.json, so every url is a real reel and every creator is the account that published it. The drafting agent picks 2 per week in AGENT_INSTRUCTIONS.md Step 2B. Used reels are recorded in repost_library/used.json and never picked again. Do not edit `reels` by hand; it is overwritten each refresh.",
-  "reels": []
+  "reels": [
+    {
+      "url": "https://www.instagram.com/reel/DaS5na7M4ZM/",
+      "creator": "drjulie",
+      "theme": "🤫 A little secret about your brain 🧠 Do all your relationships follow the same destructive pattern? So many of us find ourselves repeating the same painful relationship patterns, even when we desperately want something different. From a Cognitive Analytic Therapy (CAT) perspectiv",
+      "likes": 107910,
+      "comments": 589,
+      "engagement_rate": 0.04927,
+      "posted": "2026-07-02",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdciMuNohzz/",
+      "creator": "thebirdspapaya",
+      "theme": "And she never did stop ✨ celinedion #shotoniphone18promax",
+      "likes": 111219,
+      "comments": 527,
+      "engagement_rate": 0.04458,
+      "posted": "2026-09-18",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdHO0V6R4qV/",
+      "creator": "thebirdspapaya",
+      "theme": "✍️Prolly little tummy under there Outfit: https://shopmy.us/collections/7543741",
+      "likes": 99437,
+      "comments": 1582,
+      "engagement_rate": 0.04118,
+      "posted": "2026-09-10",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Ddpt38fsM6x/",
+      "creator": "morganharpernichols",
+      "theme": "you have now arrived at a rain station ☔️🍁🚉",
+      "likes": 59580,
+      "comments": 115,
+      "engagement_rate": 0.03185,
+      "posted": "2026-09-24",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdceybQhBlB/",
+      "creator": "thebirdspapaya",
+      "theme": "“If I can’t run, I’ll walk. If I can’t walk, I’ll crawl. But I won’t stop.” - celinedion #shotoniphone18promax apple",
+      "likes": 66186,
+      "comments": 429,
+      "engagement_rate": 0.02667,
+      "posted": "2026-09-18",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeZmVOboN2I/",
+      "creator": "betches",
+      "theme": "Just a couple of “wh*res” on their way to get their steps in.",
+      "likes": 153051,
+      "comments": 3041,
+      "engagement_rate": 0.01863,
+      "posted": "2026-10-12",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Ddq6KJztucX/",
+      "creator": "girlwithnojob",
+      "theme": "Was it the breakfast potatoes? 🥔",
+      "likes": 51330,
+      "comments": 396,
+      "engagement_rate": 0.01748,
+      "posted": "2026-09-24",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DatXGHDNSUV/",
+      "creator": "girlwithnojob",
+      "theme": "I fear I may have peaked ohmymahjong",
+      "likes": 44835,
+      "comments": 498,
+      "engagement_rate": 0.01542,
+      "posted": "2026-07-12",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdubckMPzmQ/",
+      "creator": "alex_elle",
+      "theme": "The older I get, the more I understand that curiosity is one of my love languages. I want to know what’s changing in folks’ lives. What they’re learning about themselves. What’s bringing them joy. What’s been hard. What people have changed their mind about. Who they’re becoming. ",
+      "likes": 25958,
+      "comments": 330,
+      "engagement_rate": 0.01497,
+      "posted": "2026-09-25",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DaA9qw9MTr8/",
+      "creator": "drjulie",
+      "theme": "👉 Last one is the most important of all! ❓Which tip resonates most with you? Sometimes you hear a line at just the right time and it sends a shock wave through you. A moment of insight, seeing things in a new way. A few words can be the torch that shines a light on the way ahead ",
+      "likes": 27733,
+      "comments": 300,
+      "engagement_rate": 0.01286,
+      "posted": "2026-06-25",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DbTHaNePdAY/",
+      "creator": "alex_elle",
+      "theme": "Healthy, loving, & supportive friendships will change your life. Fina & I have been friends for almost 10 years—me in MD, her in FL. Every year, she finds a way to celebrate me from afar. From donuts delivered to the house to handmade cards. But for the last two years, she’s writ",
+      "likes": 20077,
+      "comments": 811,
+      "engagement_rate": 0.01251,
+      "posted": "2026-07-27",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdpS8xehHUF/",
+      "creator": "girlwithnojob",
+      "theme": "Will baby #2 be a secondi or seconda? Head to Patreon for gender reveal 🩵💗",
+      "likes": 35717,
+      "comments": 425,
+      "engagement_rate": 0.01232,
+      "posted": "2026-09-23",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DZ0FtyCMtet/",
+      "creator": "drjulie",
+      "theme": "⚫️ What nobody tells you about grief & loss 🖤 👉 If your loss still feels as painful as the day it happened, I want you to read this: However you might have judged yourself along the way, you are not grieving too much or too little or too long. And you most certainly are not expec",
+      "likes": 21430,
+      "comments": 280,
+      "engagement_rate": 0.01,
+      "posted": "2026-06-20",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdpEYK-hZfF/",
+      "creator": "yung_pueblo",
+      "theme": "My new book Journey: The Year That Changes Everything is temporarily 30% off on Amazon, click the link at the bottom of this caption to get your copy. This is special preorder sale. #inspiration #habits #growth 👇🏽",
+      "likes": 28684,
+      "comments": 160,
+      "engagement_rate": 0.00838,
+      "posted": "2026-09-23",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Db_uDwdRAHf/",
+      "creator": "rupikaur_",
+      "theme": "This doc follows 3 American doctors who serve on the front lines in Gaza during the genocide. They spend most of their working hours operating on pre-teen kids who are disproportionately impacted. Their testimony makes clear how children are intentionally target by Israel. It’s s",
+      "likes": 31932,
+      "comments": 437,
+      "engagement_rate": 0.00809,
+      "posted": "2026-08-13",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dd_Igl_xweO/",
+      "creator": "morganharpernichols",
+      "theme": "crossing little bridges of time, over a watercolor river. about 30 seconds or so…",
+      "likes": 8757,
+      "comments": 23,
+      "engagement_rate": 0.00469,
+      "posted": "2026-10-02",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dd-Wmi5srLt/",
+      "creator": "morganharpernichols",
+      "theme": "you have entered a rain station 🚉🏞️☔️",
+      "likes": 8695,
+      "comments": 23,
+      "engagement_rate": 0.00466,
+      "posted": "2026-10-02",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeGGnU9iZB8/",
+      "creator": "cleowade",
+      "theme": "In a World of Sunrises, the sun will always set. But the sun will always rise again. 🌅",
+      "likes": 2809,
+      "comments": 23,
+      "engagement_rate": 0.00387,
+      "posted": "2026-10-05",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dad9Xzei8rt/",
+      "creator": "rupikaur_",
+      "theme": "♥️",
+      "likes": 15333,
+      "comments": 92,
+      "engagement_rate": 0.0038,
+      "posted": "2026-07-06",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeKgN-uB3kI/",
+      "creator": "rupikaur_",
+      "theme": "from the cornell seven to the streets of delhi, women across borders are demanding accountability. sexual assault is not a non-issue👏🏽 there must be justice for survivors✊🏽 and institutions must protect students and citizens, not abusers✊🏽",
+      "likes": 13722,
+      "comments": 116,
+      "engagement_rate": 0.00342,
+      "posted": "2026-10-06",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DZ2ZPnbRV0x/",
+      "creator": "heyamberrae",
+      "theme": "Happy Father’s Day to the man who was born to be a father, who awes me daily with his presence, attunement, and devotion. Watching you love our son has been one of the great privileges of my life. The way you delight in him, listen for exactly who he is becoming, and make him fee",
+      "likes": 839,
+      "comments": 25,
+      "engagement_rate": 0.00333,
+      "posted": "2026-06-21",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdXZHcYvzad/",
+      "creator": "yung_pueblo",
+      "theme": "True happiness starts with a calm and grateful mindset. You can preorder my new book Journey: The Year That Changes Everything through the link at the bottom of this caption.",
+      "likes": 9946,
+      "comments": 106,
+      "engagement_rate": 0.00295,
+      "posted": "2026-09-16",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeAElQFAYy0/",
+      "creator": "yung_pueblo",
+      "theme": "My new book Journey: The Year That Changes Everything is temporarily 30% off on Amazon. This is a special preorder sale. You can click the link at the bottom of this caption or comment “Journey” and I’ll send you a link to order from there or the many other retailers. Sending lov",
+      "likes": 8483,
+      "comments": 223,
+      "engagement_rate": 0.00263,
+      "posted": "2026-10-02",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Ddt7Qr7JXRi/",
+      "creator": "dayoneapp",
+      "theme": "Your life’s moments just got easier to organize. Day One now includes Journal Collections! Group your journals into named folders—Personal, Work, Travel, Grocery List No. 57—think of it as a table of contents for your innermost thoughts. Learn more about Collections at the link i",
+      "likes": 40,
+      "comments": 1,
+      "engagement_rate": 0.00225,
+      "posted": "2026-09-25",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeH4EbRPFu6/",
+      "creator": "nedratawwab",
+      "theme": "Being “high-functioning” can mask internal suffering. Because an individual may still appear productive and capable, those around them may not realize they are struggling. Since people cannot see the internal struggle through actions, they may not be able to guess how someone is ",
+      "likes": 3847,
+      "comments": 73,
+      "engagement_rate": 0.00224,
+      "posted": "2026-10-05",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdOzJmTIZjo/",
+      "creator": "millennial.therapist",
+      "theme": "A healthy relationship will never make you choose between authenticity and connection 🫶 #millennialtherapist",
+      "likes": 3597,
+      "comments": 21,
+      "engagement_rate": 0.00209,
+      "posted": "2026-09-13",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dc8rwAPB6at/",
+      "creator": "millennial.therapist",
+      "theme": "Stop being your own biggest obstacle. Your beliefs will dictate your actions #millennialtherapist",
+      "likes": 3457,
+      "comments": 41,
+      "engagement_rate": 0.00205,
+      "posted": "2026-09-06",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeSka7ASdy9/",
+      "creator": "cleowade",
+      "theme": "A nice feeling for the weekend. 🌻 This poem is on page 264 of In a World of Sunrises☀️",
+      "likes": 1393,
+      "comments": 9,
+      "engagement_rate": 0.00191,
+      "posted": "2026-10-09",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdR4JAfPLkt/",
+      "creator": "nedratawwab",
+      "theme": "People may want community, but it requires being present for others. #nedran",
+      "likes": 3211,
+      "comments": 60,
+      "engagement_rate": 0.00187,
+      "posted": "2026-09-14",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DcTuwqTuV4H/",
+      "creator": "nedratawwab",
+      "theme": "Are you approachable? #nedranuggets",
+      "likes": 2885,
+      "comments": 137,
+      "engagement_rate": 0.00181,
+      "posted": "2026-08-21",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dc2cyZuPht9/",
+      "creator": "the.holistic.psychologist",
+      "theme": "This month inside SelfHealers Circle we’re bringing you a full month of learning how to cope with emotionally immature parents and partners. You’ll learn: how to not say things you regret and how to feel less resentful. Dr. Lindsay Gibson author of “Adult Children of Emotionally ",
+      "likes": 14029,
+      "comments": 374,
+      "engagement_rate": 0.0017,
+      "posted": "2026-09-04",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DdkvpmQTPGL/",
+      "creator": "the.holistic.psychologist",
+      "theme": "How do YOU feel when you experience this?",
+      "likes": 13170,
+      "comments": 375,
+      "engagement_rate": 0.0016,
+      "posted": "2026-09-22",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dd23GWyPNcO/",
+      "creator": "the.holistic.psychologist",
+      "theme": "Comment section is open to share experiences. Keep in mind this community is about being honest and actually talking about the attachment patterns we all live with. If we’re willing to do the work, healing is always possible. People with avoidant attachment feel distance as safet",
+      "likes": 11645,
+      "comments": 812,
+      "engagement_rate": 0.00158,
+      "posted": "2026-09-29",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeSDDMeoEq_/",
+      "creator": "betches",
+      "theme": "Finally, a love triangle where neither girl is his type. #betchesstudiospresents",
+      "likes": 13378,
+      "comments": 114,
+      "engagement_rate": 0.00158,
+      "posted": "2026-10-09",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeNkuYcvF5y/",
+      "creator": "alex_elle",
+      "theme": "Small wins are still wins…celebrate them. Celebrate yourself.",
+      "likes": 0,
+      "comments": 749,
+      "engagement_rate": 0.00125,
+      "posted": "2026-10-07",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dd8wNdsoN2H/",
+      "creator": "millennial.therapist",
+      "theme": "Two sentences that can help when things get hard ☝️🫶 #millennialtherapist",
+      "likes": 1903,
+      "comments": 44,
+      "engagement_rate": 0.00116,
+      "posted": "2026-10-01",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeU5FkjhW_x/",
+      "creator": "betches",
+      "theme": "She had health insurance. He had a tractor. #betchlist phatcarriebradshaw",
+      "likes": 8329,
+      "comments": 110,
+      "engagement_rate": 0.00099,
+      "posted": "2026-10-10",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DcYZgpcIkXI/",
+      "creator": "recipesforselflove",
+      "theme": "Use your dissatisfaction to guide you to your desires and your desires to guide you to yo it purpose. #selflove #selfhelp #spirituality #MentalHealth",
+      "likes": 254,
+      "comments": 8,
+      "engagement_rate": 0.00078,
+      "posted": "2026-08-23",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DZ5C5yso_Wi/",
+      "creator": "recipesforselflove",
+      "theme": "It was actually never your job to control anything! Life is living through you, and you have far less control than you think you do so why not try enjoy what’s unfolding 🥰",
+      "likes": 196,
+      "comments": 4,
+      "engagement_rate": 0.00059,
+      "posted": "2026-06-22",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeLJE02pyGx/",
+      "creator": "cleowade",
+      "theme": "The idea of writers block didn’t exist before 1947. Writing is a process. It’s wacky and weird and different for everyone. The most important thing is that you show up. ♥️📝",
+      "likes": 328,
+      "comments": 19,
+      "engagement_rate": 0.00052,
+      "posted": "2026-10-07",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DbYVN9IobmE/",
+      "creator": "recipesforselflove",
+      "theme": "Can you open your heart a little wider? Feel a little more? Allow for paradox and contradiction? Not try control outcomes? Surrender to what is? Enjoy watching it all unfold?",
+      "likes": 167,
+      "comments": 2,
+      "engagement_rate": 0.00049,
+      "posted": "2026-07-29",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Dd6gDlClOUH/",
+      "creator": "thegoodquote",
+      "theme": "Setting a boundary is often easier than dealing with how people react to it.⁠ ⁠ Some people will respect it immediately, some will need time and some will walk away, and that last group can hurt the most.⁠ ⁠ But if someone could only stay close while you had no limits, what were ",
+      "likes": 5973,
+      "comments": 2,
+      "engagement_rate": 0.00026,
+      "posted": "2026-09-30",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DefjBgosAC6/",
+      "creator": "thegoodquote",
+      "theme": "For those grieving, Love is still very much rooted in the fibres of your being. You are still loved. 🌻 Inspired by my new book ‘You Deserve To Live Again’ which is currently available to Pre-Order via the link in my bio. 🌻 Written by earthtoroxanne",
+      "likes": 528,
+      "comments": 7,
+      "engagement_rate": 2e-05,
+      "posted": "2026-10-14",
+      "source": "business_discovery"
+    },
+    {
+      "url": "https://www.instagram.com/reel/Def6C1jiIUO/",
+      "creator": "thegoodquote",
+      "theme": "Grief isn’t only emotional. It can show up as exhaustion, a tight chest, no appetite, or sleep that never feels like enough. Your body is adjusting to the loss too, so go easy on it. Rest, drink water, eat something, and don’t judge yourself for moving slower right now. 🌻",
+      "likes": 307,
+      "comments": 0,
+      "engagement_rate": 1e-05,
+      "posted": "2026-10-15",
+      "source": "business_discovery"
+    }
+  ],
+  "refreshed": "2026-10-15T03:07:17+00:00",
+  "skipped_accounts": []
 }
