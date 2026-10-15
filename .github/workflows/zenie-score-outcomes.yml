@@ -1,0 +1,39 @@
+name: Zenie Score Outcomes (on demand)
+
+# Runs the same outcome scorer as Sunday's Zenie Weekly Diagnostics, on demand.
+# dry_run=true prints what it would write without touching Notion.
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (don't write to Notion)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Score post outcomes
+        env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: "17841465217874624"
+          FB_PAGE_ID: "227999857070404"
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+        run: python3 .github/scripts/score_outcomes.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/*-outcomes.json
+          git diff --staged --quiet || git commit -m "Zenie outcomes $(date -u +%Y-%m-%d)${{ inputs.dry_run && ' (dry run)' || '' }}"
+          git pull --rebase && git push

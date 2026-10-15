@@ -23,6 +23,21 @@ stripped; only the first PREFIX_LEN characters are compared) because a caption
 that got lightly edited at posting time should still match. A caption that was
 rewritten wholesale will not, and is reported as unmatched rather than guessed at.
 
+FIXED 2026-10-15 (every row had come back "unmatched" or "no baseline"):
+- Rows are now joined on the Permalink column first (it's filled in for every
+  post that has gone live), then on caption. Caption matching strips the
+  "Credit: ... UNVERIFIED" line first, because that line is removed by hand at
+  posting time and used to break the prefix match on every repost.
+- Engagement can't be the yardstick: most Zenie posts get 0-2 likes, so the
+  trailing median was 0 and nothing could be scored. Posts are now scored on
+  views (Instagram) against the median views of the posts before them. Facebook's
+  old reach metric (post_impressions_unique) was retired by Meta and errors, so
+  Facebook posts are scored on interactions with +1 smoothing.
+- Posts under MIN_AGE_DAYS old are left for next week; their numbers are still
+  climbing.
+- A matched row is also marked Status = Posted with its Posted At date, so the
+  table stays current on its own.
+
 Env: PAGE_ACCESS_TOKEN, IG_USER_ID, FB_PAGE_ID, NOTION_TOKEN.
 Set DRY_RUN=1 to print what it would do without writing to Notion.
 """
@@ -42,6 +57,8 @@ PREFIX_LEN = 60      # chars of normalized caption compared
 MIN_PRIORS = 6       # below this there is no baseline worth dividing by
 WINDOW     = 12      # trailing posts that form the median
 MIN_FORMAT = 6       # posts of one Post Type before a format-level read is allowed
+MIN_AGE_DAYS = 3     # too fresh to judge before this
+FETCH_PAGES = 4      # pages of 50 live posts per platform
 
 # Ratio of a post's engagement rate to the trailing median, in descending order.
 BANDS = [(2.0, "Winner"), (1.3, "Interesting"), (0.7, "Neutral"), (0.0, "Underperformed")]
@@ -58,6 +75,10 @@ def norm(text):
     """Normalize a caption down to comparable prose: no hashtags, links, emoji or
     punctuation. Must behave the same on the Notion side and the live-post side."""
     t = (text or "").lower()
+    # Drop the repost credit (with or without its UNVERIFIED flag); it is usually
+    # edited or removed by hand before posting.
+    t = re.sub(r"credit:[^\n|]*?(?:posting\]?|unverified\b(?![^\n|]*posting))\s*[|—-]?", " ", t)
+    t = re.sub(r"^\s*credit:[^\n]*(\n|$)", " ", t)
     t = re.sub(r"https?://\S+", " ", t)
     t = re.sub(r"#\w+", " ", t)
     t = re.sub(r"[^a-z0-9 ]", " ", t)
@@ -83,53 +104,60 @@ def api_get(path, params):
         return json.load(r)
 
 
+def api_pages(path, params):
+    """Follow paging.next up to FETCH_PAGES pages."""
+    out, data = [], api_get(path, params)
+    for _ in range(FETCH_PAGES):
+        out.extend(data.get("data", []))
+        nxt = data.get("paging", {}).get("next")
+        if not nxt:
+            break
+        with urllib.request.urlopen(urllib.request.Request(nxt, headers={"User-Agent": "ZenieAgent/1.0"}),
+                                    timeout=30) as r:
+            data = json.load(r)
+    return out
+
+
+def norm_link(u):
+    u = (u or "").strip().lower()
+    u = re.sub(r"^https?://", "", u)
+    u = re.sub(r"^(www|m)\.", "", u)
+    return u.split("?")[0].rstrip("/")
+
+
 def fetch_live_posts():
-    """Every recent post on both platforms, with engagement rate and permalink."""
+    """Recent posts on both platforms. `value` is what a post is scored on:
+    Instagram views, Facebook interactions (see module docstring)."""
     posts = []
     try:
-        media = api_get(f"{IG_USER_ID}/media", {
-            "fields": "id,caption,media_type,timestamp,like_count,comments_count,permalink",
-            "limit": "50"})
-        for p in media.get("data", []):
-            reach = saved = 0
+        for p in api_pages(f"{IG_USER_ID}/media", {
+                "fields": "id,caption,media_type,timestamp,like_count,comments_count,permalink",
+                "limit": "50"}):
+            views = 0
             try:
-                for m in api_get(f"{p['id']}/insights", {"metric": "reach,saved"}).get("data", []):
-                    if m["name"] == "reach":
-                        reach = m["values"][0]["value"]
-                    elif m["name"] == "saved":
-                        saved = m["values"][0]["value"]
+                for m in api_get(f"{p['id']}/insights", {"metric": "views"}).get("data", []):
+                    if m["name"] == "views":
+                        views = m["values"][0]["value"]
             except Exception:
                 pass
-            posts.append({
-                "platform": "IG", "text": p.get("caption", ""),
-                "ts": parse_ts(p["timestamp"]), "permalink": p.get("permalink", ""),
-                "eng_rate": round((p.get("like_count", 0) + p.get("comments_count", 0) + saved)
-                                  / max(reach, 1) * 100, 2)})
+            posts.append({"platform": "IG", "text": p.get("caption", ""),
+                          "ts": parse_ts(p["timestamp"]), "permalink": p.get("permalink", ""),
+                          "value": views})
         print(f"IG posts fetched: {sum(1 for p in posts if p['platform']=='IG')}")
     except Exception as e:
         print(f"IG fetch failed: {e}")
 
     try:
-        data = api_get(f"{FB_PAGE_ID}/posts", {
-            "fields": "id,message,created_time,permalink_url,"
-                      "likes.summary(true),comments.summary(true),shares",
-            "limit": "50"})
-        for p in data.get("data", []):
+        for p in api_pages(f"{FB_PAGE_ID}/posts", {
+                "fields": "id,message,created_time,permalink_url,"
+                          "likes.summary(true),comments.summary(true),shares",
+                "limit": "50"}):
             likes    = p.get("likes", {}).get("summary", {}).get("total_count", 0)
             comments = p.get("comments", {}).get("summary", {}).get("total_count", 0)
             shares   = p.get("shares", {}).get("count", 0)
-            reach    = 0
-            try:
-                for m in api_get(f"{p['id']}/insights",
-                                 {"metric": "post_impressions_unique"}).get("data", []):
-                    if m["name"] == "post_impressions_unique":
-                        reach = m["values"][0]["value"]
-            except Exception:
-                pass
-            posts.append({
-                "platform": "FB", "text": p.get("message", ""),
-                "ts": parse_ts(p["created_time"]), "permalink": p.get("permalink_url", ""),
-                "eng_rate": round((likes + comments + shares * 2) / max(reach, 1) * 100, 2)})
+            posts.append({"platform": "FB", "text": p.get("message", ""),
+                          "ts": parse_ts(p["created_time"]), "permalink": p.get("permalink_url", ""),
+                          "value": likes + comments + 2 * shares})
         print(f"FB posts fetched: {sum(1 for p in posts if p['platform']=='FB')}")
     except Exception as e:
         print(f"FB fetch failed: {e}")
@@ -180,6 +208,7 @@ def fetch_unscored_rows():
                 "format": plain(props.get("Format")),
                 "ig": plain(props.get("IG Caption")),
                 "fb": plain(props.get("FB Caption")),
+                "permalink": (props.get("Permalink") or {}).get("url") or "",
             })
         if not data.get("has_more"):
             break
@@ -187,9 +216,14 @@ def fetch_unscored_rows():
     return rows
 
 
-def write_back(row, outcome, permalink):
-    props = {"Outcome": {"select": {"name": outcome}}}
-    if permalink:
+def write_back(row, outcome, live):
+    """outcome None = matched but not scored yet: still record that it's posted."""
+    permalink = live.get("permalink", "")
+    props = {"Status": {"select": {"name": "Posted"}},
+             "Posted At": {"date": {"start": live["ts"].date().isoformat()}}}
+    if outcome:
+        props["Outcome"] = {"select": {"name": outcome}}
+    if permalink and not row.get("permalink"):
         props["Permalink"] = {"url": permalink}
     if DRY_RUN:
         print(f"    [dry-run] would set Outcome={outcome}"
@@ -205,16 +239,14 @@ def write_back(row, outcome, permalink):
 
 # ── Scoring ───────────────────────────────────────────────────────────────────
 def score(live, all_by_platform):
-    """Engagement rate against the median of the WINDOW posts that preceded it on
-    the same platform. Returns (outcome, ratio, n_priors) or None when there is no
-    honest baseline — too few priors, or a median of zero to divide by."""
-    priors = [p["eng_rate"] for p in all_by_platform[live["platform"]] if p["ts"] < live["ts"]]
+    """A post's value against the median of the WINDOW posts that preceded it on
+    the same platform, +1 smoothed so a zero median still gives a ratio. Returns
+    (outcome, ratio, n_priors), or None when there are too few priors."""
+    priors = [p["value"] for p in all_by_platform[live["platform"]] if p["ts"] < live["ts"]]
     if len(priors) < MIN_PRIORS:
         return None
     med = statistics.median(priors[:WINDOW])
-    if med <= 0:
-        return None
-    ratio = live["eng_rate"] / med
+    ratio = (live["value"] + 1) / (med + 1)
     return band_for(ratio), round(ratio, 2), min(len(priors), WINDOW)
 
 
@@ -234,19 +266,22 @@ def main():
         v.sort(key=lambda p: p["ts"], reverse=True)
 
     # Caption prefix -> live post. Later (older) posts must not clobber newer ones.
-    index = {}
+    index, by_link = {}, {}
     for p in sorted(live, key=lambda p: p["ts"]):
         k = key_of(p["text"])
         if k:
             index[(p["platform"], k)] = p
+        if p["permalink"]:
+            by_link[norm_link(p["permalink"])] = p
 
     rows = fetch_unscored_rows()
     print(f"Notion rows awaiting a verdict: {len(rows)}\n")
 
-    scored, unmatched, no_baseline = [], [], []
+    now = datetime.now(timezone.utc)
+    scored, unmatched, no_baseline, too_fresh = [], [], [], []
     for row in rows:
-        match = None
-        for platform, text in (("IG", row["ig"]), ("FB", row["fb"])):
+        match = by_link.get(norm_link(row["permalink"])) if row["permalink"] else None
+        for platform, text in (() if match else (("IG", row["ig"]), ("FB", row["fb"]))):
             k = key_of(text)
             if k and (platform, k) in index:
                 match = index[(platform, k)]
@@ -254,17 +289,22 @@ def main():
         if not match:
             unmatched.append(row)
             continue
+        if (now - match["ts"]).days < MIN_AGE_DAYS:
+            write_back(row, None, match)
+            too_fresh.append(row)
+            continue
         result = score(match, by_platform)
         if not result:
+            write_back(row, None, match)
             no_baseline.append(row)
             continue
         outcome, ratio, n = result
         print(f"  {row['name']} [{match['platform']}] "
-              f"{match['eng_rate']}% vs median of {n} -> {ratio}x -> {outcome}")
-        if write_back(row, outcome, match.get("permalink", "")):
+              f"{match['value']} vs median of {n} -> {ratio}x -> {outcome}")
+        if write_back(row, outcome, match):
             scored.append({"name": row["name"], "post_type": row["post_type"],
                            "format": row["format"],
-                           "platform": match["platform"], "eng_rate": match["eng_rate"],
+                           "platform": match["platform"], "value": match["value"],
                            "ratio": ratio, "outcome": outcome})
 
     # ── Format-level read ────────────────────────────────────────────────────
@@ -297,7 +337,7 @@ def main():
         reads[dimension] = dim_reads
 
     print(f"\nScored {len(scored)} | unmatched {len(unmatched)} | "
-          f"no baseline yet {len(no_baseline)}")
+          f"no baseline yet {len(no_baseline)} | too fresh {len(too_fresh)}")
     for r in unmatched:
         print(f"  unmatched: {r['name']}")
 
@@ -306,7 +346,8 @@ def main():
     with open(out, "w") as f:
         json.dump({"scored": scored, "reads": reads,
                    "unmatched": [r["name"] for r in unmatched],
-                   "no_baseline": [r["name"] for r in no_baseline]},
+                   "no_baseline": [r["name"] for r in no_baseline],
+                   "too_fresh": [r["name"] for r in too_fresh]},
                   f, indent=2, ensure_ascii=False)
     print(f"Wrote {out}")
 
