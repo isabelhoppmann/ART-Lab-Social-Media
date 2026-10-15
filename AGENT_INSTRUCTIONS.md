@@ -45,6 +45,7 @@ Wellness and productivity are seductive because they trend constantly. They are 
 - The prompt must be **specific enough to answer in one sitting**. "Reflect on your relationships" is not a prompt. "What's something you've forgiven someone for that you never told them about?" is.
 - **The prompt comes first. Any CTA comes after it — never before.** The order is: hook/riff → complete prompt → CTA. A caption that opens with "Download Zenie" has buried the thing that makes the post worth saving.
 - **One prompt per post.** Two prompts split the reader's attention and neither gets answered.
+- **Hashtags go at the END of every caption** (Isabel's rule, 2026-10-15): every `ig_caption` and `fb_caption`, on every post type, ends with a blank line and then the post's hashtags, so each caption can be pasted straight into Business Suite. Keep the same set in the separate `hashtags` field too. Order: hook/riff → prompt → CTA → blank line → hashtags.
 - This applies to all three Post Types. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, both `ig_caption` and `fb_caption` carry the prompt. For a **Repost**, the caption carries the prompt after the credit.
 
 ### 3. Format variation across the week
@@ -287,7 +288,7 @@ For each meme produce FIVE pieces of text (write these for BOTH memes — they a
 - **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Must describe the actual scene in THIS clip — someone looking at it should recognize the situation in the footage (see the alignment rule in Step 2A). Not interchangeable with any other clip. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
 - **`ig_caption`** — a short reaction/riff, then the journaling prompt, then any CTA. Do NOT repeat overlay_text — riff on it. Open with 2–8 words + optional emoji, then the **complete prompt** on its own line (CONTENT SCOPE §2). Example: *"She knows… 👀\n\nTonight's prompt: what's the thing you keep telling everyone you're 'fine' about?"*
 - **`fb_caption`** — Facebook caption, more conversational. Same order: riff (1–2 sentences) → **complete journaling prompt** → CTA last. Asking the prompt directly is what earns comments, so let it carry the engagement job (FB rewards comments and shares). Example: *"Okay but why does this describe my entire Tuesday? 😅 Here's tonight's prompt: what's the thing you keep telling everyone you're fine about? Tag a friend who needs to answer it too."*
-- **`hashtags`** — 5–8 hashtags including #Zenie or #zenieapp. Same set used on both platforms.
+- **`hashtags`** — exactly 5 hashtags (Instagram's cap), including #Zenie or #zenieapp. Same set used on both platforms, and appended to the end of both captions (CONTENT SCOPE §2).
 - **`hypothesis`** — one sentence: why this post is shaped this way and what you expect it to do. See CONTENT SCOPE §6 for the standard and worked examples.
 
 ### Optional fifth field: `text_style` (overlay look)
