@@ -1,4 +1,17 @@
 {
   "_comment": "NO-REPEAT LEDGER for reposts. Every reel url listed here has already been used in a Zenie post and must never be used again. GitHub Actions (mark_reposts_used.py) appends to this automatically when a week publishes. When library.json reels minus this list has fewer than 2, the library needs restocking.",
-  "used": []
+  "used": [
+    {
+      "url": "https://www.instagram.com/reel/DaS5na7M4ZM/",
+      "creator": "drjulie",
+      "week": "2026-10-12",
+      "label": "Repost 1"
+    },
+    {
+      "url": "https://www.instagram.com/reel/DeH4EbRPFu6/",
+      "creator": "nedratawwab",
+      "week": "2026-10-12",
+      "label": "Repost 2"
+    }
+  ]
 }
