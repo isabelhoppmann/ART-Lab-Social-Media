@@ -1,0 +1,18 @@
+name: Zenie Live Posts Check
+
+# On-demand diagnostic: lists what is actually live on Zenie's Instagram and the
+# connected Facebook page, so the Zenie Posts table in Notion can be reconciled.
+# Prints to the run log only; commits nothing.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: List live posts
+        env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+        run: python3 .github/scripts/list_live_posts.py
