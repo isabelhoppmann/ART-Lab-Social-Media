@@ -557,7 +557,7 @@ If either verification raises, DROP that meme from this week's batch and either 
 
 ## Step 2B: Pick 2 Repost Reels from the Repost Library
 
-> **⚠️ CHANGED 2026-10-14 — DO NOT WebSearch for reels.** Search engines don't index individual Instagram reels, so this step returned no usable links two weeks running (weeks of 2026-10-05 and 2026-10-12) and both reposts shipped with no link. Isabel now hand-picks reels into `repost_library/library.json`. Pick only from there. **TikTok is absolutely not allowed.** Do not WebFetch instagram.com (it hangs this sandbox — 2026-07-13 incident).
+> **⚠️ CHANGED 2026-10-14 — DO NOT WebSearch for reels.** Search engines don't index individual Instagram reels, so this step returned no usable links two weeks running (weeks of 2026-10-05 and 2026-10-12). Real reels are now found every Sunday by a GitHub Action (`find_reposts.py`) that uses Meta's Business Discovery API to list recent reels from Zenie's verified cohort, and saves them to `repost_library/library.json`. Pick only from there. **TikTok is absolutely not allowed.** Do not WebFetch instagram.com (it hangs this sandbox — 2026-07-13 incident).
 
 Fetch the library and the no-repeat ledger, and keep only unused reels:
 ```python
@@ -569,15 +569,15 @@ reels = _raw("repost_library/library.json").get("reels", [])          # _raw() i
 used_reels = {_norm_url(u["url"]) for u in _raw("repost_library/used.json").get("used", [])}
 available = [r for r in reels if _norm_url(r.get("url")) not in used_reels]
 ```
-**Pick 2 different reels from `available`** — the two that best fit this week's trending themes and give you a real journaling prompt to write against (use each reel's `theme`). Prefer two different creators. For each pick, copy `url` and `creator` exactly as they appear in the library — do not edit, shorten or "fix" the url, or the no-repeat ledger won't match it.
+**Pick 2 different reels from `available`** — the two that best fit this week's trending themes and give you a real journaling prompt to write against. Each reel's `theme` is the opening of its own caption, so you know what it's about; `engagement_rate` is how well it did relative to the creator's following (higher is better, but fit comes first). Use two different creators. For each pick, copy `url` and `creator` exactly as they appear in the library — do not edit, shorten or "fix" the url, or the no-repeat ledger won't match it.
 
-**Creator credits from the library are VERIFIED** (Isabel confirmed them when she added the reel). Do NOT add the ⚠️ UNVERIFIED flag to them.
+**Creator credits from the library are VERIFIED** — the API returns the account that published the reel. Do NOT add the ⚠️ UNVERIFIED flag to them.
 
-**If `available` has fewer than 2 reels:** fill what you can, and for each missing slot still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — add reels to repost_library/library.json` and `**Creator:** ⚠️ add credit once a reel is chosen`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST LIBRARY LOW:** {n} unused reels left. Add reels to repost_library/library.json.` Add that same warning whenever `len(available) - 2 < 2` (i.e. next week would run short), even if this week was filled. Do NOT fall back to WebSearch.
+**If `available` has fewer than 2 reels:** fill what you can, and for each missing slot still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — the Sunday repost finder (find-reposts.yml) found nothing; check its run log` and `**Creator:** ⚠️ add credit once a reel is chosen`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST FINDER RETURNED TOO FEW REELS:** {n} available. Check the find-reposts.yml run log.` Do NOT fall back to WebSearch.
 
 Get for each repost: `url`, `creator` (both from the library), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
-**Caption order (CONTENT SCOPE §2):** credit first, then the **complete journaling prompt**, then any CTA. A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Write the prompt against what the reel is actually about (its `theme`), not a generic one.
+**Caption order (CONTENT SCOPE §2):** credit first, then the **complete journaling prompt**, then any CTA. A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Write the prompt against what the reel is actually about (its `theme`), not a generic one. Do not quote the creator's caption in ours — paraphrase.
 
 You do NOT append to `repost_library/used.json` yourself — GitHub Actions (`mark_reposts_used.py`) does that when the week publishes.
 

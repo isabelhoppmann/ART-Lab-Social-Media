@@ -1,0 +1,50 @@
+name: Find Zenie Repost Reels
+
+# Refreshes repost_library/library.json with real reels from Zenie's verified
+# creator cohort, so the Monday drafting run has reposts to pick from.
+# Runs after Zenie Weekly Diagnostics (Sun 14:00 UTC) has refreshed the Meta token,
+# and well before the drafting routine (Mon 03:00 UTC).
+
+on:
+  schedule:
+    - cron: '0 20 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  find:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Find reels via Instagram Business Discovery
+        env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+        run: python3 .github/scripts/find_reposts.py
+
+      - name: Commit refreshed library
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add repost_library/library.json
+          git diff --staged --quiet || git commit -m "Zenie repost library refresh $(date -u +%Y-%m-%d)"
+          git pull --rebase
+          git push
+
+      # Failures go to Isabel by email, never to Slack.
+      - name: Email Isabel on failure
+        if: failure()
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: |
+          python .github/scripts/notify_error_email.py \
+            "⚠️ Zenie repost finder failed — $(date -u +%Y-%m-%d)" \
+            "The Find Zenie Repost Reels Action found no reels. Check the run log; the Meta token may be missing a permission for Business Discovery."
