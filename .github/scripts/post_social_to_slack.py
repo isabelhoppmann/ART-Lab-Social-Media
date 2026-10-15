@@ -249,7 +249,8 @@ for post in posts:
         )
     elif post_type in ("quote", "quote image"):
         comment = (
-            f"{rev}*{label} — Quote (FB only)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n"
+            f"{rev}*{label} — Quote (IG + FB)*\n\"{post.get('quote', '')}\" — {post.get('attribution', '')}\n"
+            f"*IG caption:* {post.get('ig_caption', '') or '_(none — old draft)_'}\n"
             f"*FB caption:* {post.get('fb_caption', '')}\n`{post.get('hashtags', '')}`"
             f"{hypothesis_line(post)}"
         )

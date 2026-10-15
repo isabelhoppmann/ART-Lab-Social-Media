@@ -45,7 +45,7 @@ Wellness and productivity are seductive because they trend constantly. They are 
 - The prompt must be **specific enough to answer in one sitting**. "Reflect on your relationships" is not a prompt. "What's something you've forgiven someone for that you never told them about?" is.
 - **The prompt comes first. Any CTA comes after it — never before.** The order is: hook/riff → complete prompt → CTA. A caption that opens with "Download Zenie" has buried the thing that makes the post worth saving.
 - **One prompt per post.** Two prompts split the reader's attention and neither gets answered.
-- This applies to all three Post Types. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, `fb_caption` carries the prompt. For a **Repost**, the caption carries the prompt after the credit.
+- This applies to all three Post Types. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, both `ig_caption` and `fb_caption` carry the prompt. For a **Repost**, the caption carries the prompt after the credit.
 
 ### 3. Format variation across the week
 
@@ -571,9 +571,9 @@ available = [r for r in reels if _norm_url(r.get("url")) not in used_reels]
 ```
 **Pick 2 different reels from `available`** — the two that best fit this week's trending themes and give you a real journaling prompt to write against. Each reel's `theme` is the opening of its own caption, so you know what it's about; `engagement_rate` is how well it did relative to the creator's following (higher is better, but fit comes first). Use two different creators. **Skip anything that isn't a fit for Zenie as a brand, even if it performed well:** product or book promos and ads, sponsored or affiliate posts, news and political content, and personal life updates (pregnancy, family, outfits). The reel itself has to be about inner life, relationships, healing, journaling or self-reflection. For each pick, copy `url` and `creator` exactly as they appear in the library — do not edit, shorten or "fix" the url, or the no-repeat ledger won't match it.
 
-**Creator credits from the library are VERIFIED** — the API returns the account that published the reel. Do NOT add the ⚠️ UNVERIFIED flag to them.
+**Never put a verification flag in a caption** — no "⚠️ UNVERIFIED", "confirm before posting" or similar, in any caption, on any post type (Isabel's rule, 2026-10-15: she checks every credit herself before posting). The credit line is just `Credit: @handle`.
 
-**If `available` has fewer than 2 reels:** fill what you can, and for each missing slot still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — the Sunday repost finder (find-reposts.yml) found nothing; check its run log` and `**Creator:** ⚠️ add credit once a reel is chosen`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST FINDER RETURNED TOO FEW REELS:** {n} available. Check the find-reposts.yml run log.` Do NOT fall back to WebSearch.
+**If `available` has fewer than 2 reels:** fill what you can, and for each missing slot still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — the Sunday repost finder (find-reposts.yml) found nothing; check its run log` and `**Creator:** (add credit once a reel is chosen)`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST FINDER RETURNED TOO FEW REELS:** {n} available. Check the find-reposts.yml run log.` Do NOT fall back to WebSearch.
 
 Get for each repost: `url`, `creator` (both from the library), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
@@ -614,9 +614,10 @@ For each quote you consider, reject it if `_norm(quote) in used_quotes`. Also re
 - Example (ideal style — illustrative only; this exact line is already used, so do NOT reuse it — it shows the short, poetic register to aim for): quote="The only journey is the one within.", attribution="Rainer Maria Rilke"
 - **Use the Performance Brief:** if quote images drove higher saves on IG, lean into themes that resonated (e.g. inner peace, relationships). Pick quotes that match those themes.
 
-**Quote images are Facebook-only. Do NOT post quote images to Instagram.**
+**Quote images go to BOTH Instagram and Facebook** (changed 2026-10-15 — they used to be Facebook-only). Write a caption for each.
 
-For each quote image, produce a caption and a hypothesis:
+For each quote image, produce two captions and a hypothesis:
+- **`ig_caption`** — Instagram caption, shorter than the Facebook one: one short line that sits with the quote (don't restate the quote, it's already on the image) → the **complete journaling prompt** on its own line → a save/share CTA last (CONTENT SCOPE §2). Example: *"Read it twice. 🌿\n\nTonight's prompt: where in your life are you adjusting your vision when you only needed to adjust your focus?\n\nSave this for the next time things feel blurry."*
 - **`fb_caption`** — 2–3 sentences, more reflective, in this order: a line of context → the **complete journaling prompt** → the CTA last (CONTENT SCOPE §2). Example: *"Sometimes a single line reframes your whole day. ✨ Tonight's prompt: where in your life are you adjusting your vision when you only needed to adjust your focus? Save this one, and send it to whoever came to mind."*
 - **`hypothesis`** — one sentence: why this quote and this shape, and what you expect it to do. See CONTENT SCOPE §6.
 
@@ -892,7 +893,7 @@ jpg = f"/tmp/quote_{N}.jpg"
 is_real = os.path.exists(jpg) and os.path.getsize(jpg) >= 20_000
 ```
 
-Render the normal Quote section if `is_real` (with `**Asset:** quote_N.jpg ...`), otherwise a SKIPPED Quote section using the same shape as the meme SKIPPED block.
+Render the normal Quote section if `is_real` (with `**Asset:** quote_N.jpg ...`), otherwise a SKIPPED Quote section using the same shape as the meme SKIPPED block. Either way the section includes `**ig_caption:** {ig_caption}` and `**fb_caption:** {fb_caption}`, like the meme sections.
 
 ### Per-repost section (always rendered — no asset generation)
 
@@ -1161,7 +1162,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Quote Image 1:**
 - Name: `Quote 1 — [DATE]`
 - Post Type: `Quote Image`
-- Caption: *(leave blank — quote images are Facebook only)*
+- Caption: `ig_caption` (Instagram caption)
 - FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.jpg`
@@ -1176,7 +1177,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Quote Image 2:**
 - Name: `Quote 2 — [DATE]`
 - Post Type: `Quote Image`
-- Caption: *(leave blank — quote images are Facebook only)*
+- Caption: `ig_caption` (Instagram caption)
 - FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
 - Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.jpg`
@@ -1228,7 +1229,7 @@ Make sure every post (both memes, both quotes, and both reposts) has a distinct 
 
 ## Step 7: Build review state (added to the bundle; Slack posting is handled automatically)
 
-Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution (quotes), `hypothesis`, `format_slug`, approved=false.
+Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution and `ig_caption` + `fb_caption` (quotes), `hypothesis`, `format_slug`, approved=false.
 
 **`hypothesis` is REQUIRED on every one of the six posts** (CONTENT SCOPE §6) — memes included. The meme render step reads it out of review-state and writes it to the meme's Notion row, so a meme shipped without a `hypothesis` loses it permanently. Do not ship an empty string.
 

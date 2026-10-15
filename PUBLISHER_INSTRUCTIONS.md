@@ -30,7 +30,7 @@ Read these fields:
 
 Build captions:
 - **Meme posts:** use `Caption` for IG, `FB Caption` for FB. Both platforms.
-- **Quote Image posts:** Facebook only — skip Instagram entirely. Use `FB Caption` for FB.
+- **Quote Image posts:** both platforms (changed 2026-10-15). Use `Caption` for IG, `FB Caption` for FB.
 
 Combined caption format (append hashtags to whichever caption is used):
 ```
@@ -113,7 +113,7 @@ def ig_publish_now(ig_user_id, page_token, container_id):
         return json.load(r)["permalink"]
 ```
 
-**Skip Instagram entirely for all posts.** Meme posts go to Facebook only via the publisher — Instagram Reels must be posted manually (Meta API requires whitelist access for Reels scheduling). Quote Image posts are Facebook-only by design.
+**Skip Instagram entirely for all posts.** Meme posts go to Facebook only via the publisher — Instagram Reels must be posted manually (Meta API requires whitelist access for Reels scheduling). Quote Image posts go to Instagram too, but the IG API can't schedule them, so they're posted to Instagram by hand through Business Suite like the Reels.
 
 ### 2B. Schedule on Facebook
 
