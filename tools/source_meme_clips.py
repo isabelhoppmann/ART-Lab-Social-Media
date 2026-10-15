@@ -46,6 +46,11 @@ UA = {"User-Agent": "ZenieLibrarian/1.0"}
 # is reported on the review sheet but is NOT a filter — two of the three clips
 # added on 2026-08-11 were ~1.9:1 and worked because the subject sat dead centre.
 MIN_W, MIN_H = 240, 220
+# QUALITY BAR (2026-10-15): clips are cropped to a square and scaled up to 1080,
+# so the SHORT side is what decides sharpness. ugly_cry (480x370 -> 370px square,
+# ~3x upscale) shipped visibly soft on 2026-09-01. New clips need a short side of
+# at least MIN_SHORT; the review sheet still gets the final say.
+MIN_SHORT = 400
 
 # QUERY ADVICE (learned the hard way on 2026-08-11): search the EXPRESSION, not
 # the caption. Phrase queries like "i told you so" or "delulu" return GIFs with
@@ -140,7 +145,7 @@ def harvest(queries, limit):
                 except Exception:
                     continue
             w, h = _probe(dest)
-            if w < MIN_W or h < MIN_H:
+            if w < MIN_W or h < MIN_H or min(w, h) < MIN_SHORT:
                 os.remove(dest)
                 continue
             r.update({"query": q, "w": w, "h": h, "ratio": round(w / h, 2), "file": dest})

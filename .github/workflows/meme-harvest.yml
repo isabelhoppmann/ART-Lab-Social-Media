@@ -1,0 +1,47 @@
+name: Zenie Meme Clip Harvest
+
+# Pulls meme clip candidates from Giphy and pushes them, with review sheets, to the
+# `meme-candidates` branch (never main, so nothing else is triggered). Clips are
+# reviewed and promoted into meme_library/ separately. Does not post anywhere.
+
+on:
+  workflow_dispatch:
+    inputs:
+      queries:
+        description: "Searches, separated by |"
+        required: true
+      limit:
+        description: "Candidates per search"
+        default: "8"
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && python3 -m pip install --quiet Pillow
+      - name: Harvest
+        env:
+          GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
+          QUERIES: ${{ inputs.queries }}
+          LIMIT: ${{ inputs.limit }}
+        run: |
+          python3 - <<'PY'
+          import os, subprocess
+          qs = [q.strip() for q in os.environ["QUERIES"].split("|") if q.strip()]
+          subprocess.run(["python3", "tools/source_meme_clips.py", "harvest", *qs, "--limit", os.environ["LIMIT"]], check=True)
+          PY
+      - name: Push candidates to the meme-candidates branch
+        run: |
+          mkdir -p /tmp/out && cp -r .meme_candidates /tmp/out/
+          git config user.name "github-actions[bot]"; git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan meme-candidates
+          git rm -rfq . && rm -rf .meme_candidates && cp -r /tmp/out/.meme_candidates candidates
+          git add candidates && git commit -qm "Meme clip candidates $(date -u +%Y-%m-%d)"
+          git push -f origin meme-candidates
