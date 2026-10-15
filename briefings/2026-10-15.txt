@@ -1,0 +1,19 @@
+Morning Briefing October 15, 2026
+
+=== ROBOTICS & AI ===
+- Yaskawa Electric said on October 14, 2026 that it plans to launch a humanoid robot within one to two years and expects AI-powered humanoids to see widespread adoption around 2030, while also raising its revenue and net-profit forecasts for fiscal 2026, citing AI-driven equipment demand. https://www.digitimes.com/news/a20261014PD202/yaskawa-forecast-2030-launch-demand.html
+
+=== RESEARCH ===
+- DreamTrue (arXiv:2610.12468, October 8, 2026) presents a multi-view cross-embodiment robot world model that applies counterfactual post-training and a human-annotated defect reward model to make predicted video match commanded robot actions, cutting the interaction defect rate from 48% to 6% on AgiBot and winning the world-model track of the AgiBot World Challenge 2026. https://deeplearn.org/arxiv/843560/dreamtrue:-action-faithful-robot-world-model-with-counterfactual-post-training
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- LG showcased its CLOiD home robot alongside new MoMa autonomous factory robots at the Korea Electronics Show (KES 2026) in Seoul, which opened October 13, 2026, framing its AI strategy around home-appliance subscription services and industrial physical AI rather than a standalone home-robot product. https://www.digitaltoday.co.kr/en/view/113810/samsung-lg-face-off-over-ai-appliances-subscriptions-at-kes-2026
+
+=== BAY AREA ===
+- San Francisco Fall Show runs October 15–18 at Festival Pavilion, Fort Mason, featuring 40-plus international dealers in fine art, antiques, furniture, ceramics, jewelry, and rugs under this year's Métallique Chic theme; tickets and hours at sffallshow.org. https://sffallshow.org/
+- Antique Rug & Textile Show (ARTS 2026) runs October 23–25 at 2015 Greenwich Street in San Francisco, with a ticketed opening preview on Friday and free public entry on Sunday; the world's leading annual show for antique rugs, carpets, and textiles. https://www.artsrugandtextileshow.com/
+
+#KEYS: yaskawa-humanoid-2030, dreamtrue-world-model-2026, lg-cloid-kes-2026, sf-fall-show-2026, arts-rug-textile-show-oct2026
