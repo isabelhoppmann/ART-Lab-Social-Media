@@ -32,7 +32,8 @@ FIXED 2026-10-15 (every row had come back "unmatched" or "no baseline"):
   trailing median was 0 and nothing could be scored. Posts are now scored on
   views (Instagram) against the median views of the posts before them. Facebook's
   old reach metric (post_impressions_unique) was retired by Meta and errors, so
-  Facebook posts are scored on interactions with +1 smoothing.
+  Facebook posts are scored on interactions with +1 smoothing, and only once
+  there are at least FB_MIN_SIGNAL of them on one side (1 like vs 0 is noise).
 - Posts under MIN_AGE_DAYS old are left for next week; their numbers are still
   climbing.
 - A matched row is also marked Status = Posted with its Posted At date, so the
@@ -59,6 +60,7 @@ WINDOW     = 12      # trailing posts that form the median
 MIN_FORMAT = 6       # posts of one Post Type before a format-level read is allowed
 MIN_AGE_DAYS = 3     # too fresh to judge before this
 FETCH_PAGES = 4      # pages of 50 live posts per platform
+FB_MIN_SIGNAL = 5    # below this many interactions on both sides, a FB ratio is noise
 
 # Ratio of a post's engagement rate to the trailing median, in descending order.
 BANDS = [(2.0, "Winner"), (1.3, "Interesting"), (0.7, "Neutral"), (0.0, "Underperformed")]
@@ -246,6 +248,8 @@ def score(live, all_by_platform):
     if len(priors) < MIN_PRIORS:
         return None
     med = statistics.median(priors[:WINDOW])
+    if live["platform"] == "FB" and max(live["value"], med) < FB_MIN_SIGNAL:
+        return None   # 0 vs 1 like isn't a verdict; leave it Not evaluated
     ratio = (live["value"] + 1) / (med + 1)
     return band_for(ratio), round(ratio, 2), min(len(priors), WINDOW)
 
