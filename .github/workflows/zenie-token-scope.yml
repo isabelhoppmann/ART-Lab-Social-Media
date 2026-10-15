@@ -1,0 +1,28 @@
+name: Zenie Token Scope Check
+# One-off: records WHAT the Meta token can do (permissions, type, expiry). Never writes the token itself.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          META_APP_ID: ${{ secrets.META_APP_ID }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.parse, urllib.request
+          t = os.environ["PAGE_ACCESS_TOKEN"]; app = f"{os.environ['META_APP_ID']}|{os.environ['META_APP_SECRET']}"
+          u = "https://graph.facebook.com/v21.0/debug_token?" + urllib.parse.urlencode({"input_token": t, "access_token": app})
+          d = json.load(urllib.request.urlopen(u))["data"]
+          keep = {k: d.get(k) for k in ("type", "application", "is_valid", "expires_at", "data_access_expires_at", "scopes")}
+          keep["granular_scopes"] = [g.get("scope") for g in d.get("granular_scopes", [])]
+          json.dump(keep, open("reports/token-scope.json", "w"), indent=1)
+          PY
+      - run: |
+          git config user.name "github-actions[bot]"; git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/token-scope.json; git commit -m "Zenie token scope check" && git pull --rebase && git push
