@@ -408,27 +408,33 @@ def main():
         out_path = f"posts/{week}/meme_{n}.mp4"
         # Preferred source: a vetted library clip the agent picked (meme_slug).
         # These are real, recognizable, watermark-free memes — rendered square 1:1
-        # (crop-fill, no background). Falls back to Pexels stock if no slug.
+        # (crop-fill, no background). No slug -> skipped (see below).
         slug = post.get("meme_slug")
         lib_clip = os.path.join(LIBRARY_DIR, f"{slug}.mp4") if slug else None
         why = "feedback re-render" if needs_feedback_render else "skipped/missing"
         style = resolve_text_style(post, week)
+        # Isabel's rule: the clip has to DEPICT the joke, and the two memes in a week
+        # must never share footage. Stock footage can't promise either (week of
+        # 2026-10-12: both memes fell back to the same Pexels "woman journaling"
+        # clip), so there is no Pexels fallback any more. No library clip -> the
+        # meme stays skipped and the drafts file says the library needs restocking.
+        other_slugs = {p.get("meme_slug") for p in state.get("posts", [])
+                       if p is not post and p.get("meme_slug")}
+        if not (lib_clip and os.path.exists(lib_clip)) or slug in other_slugs:
+            reason = ("same clip as another meme this week" if slug in other_slugs
+                      else "no library clip (meme library is out of unused clips)")
+            print(f"  SKIP {label}: {reason}")
+            post["skipped"] = True
+            post["skip_reason"] = reason
+            post.pop("needs_render", None)
+            changed = True
+            continue
         try:
-            if lib_clip and os.path.exists(lib_clip):
-                print(f"Regenerating {label} ({why}) from library '{slug}' (style: {style}; overlay: {overlay!r})")
-                make_mp4_square(lib_clip, overlay, out_path, style)
-                verify(out_path)
-                mark_meme_used(slug, week, label)   # consume it — never reuse
-                source_desc = f"library:{slug}"
-            else:
-                if slug:
-                    print(f"  WARNING: meme_slug '{slug}' not found in {LIBRARY_DIR}; falling back to Pexels")
-                # keep_clip: a text-only tweak that should reuse the exact Pexels clip.
-                source_url = post.get("source_url") if post.get("keep_clip") else None
-                print(f"Regenerating {label} ({why}) from Pexels (style: {style}; overlay: {overlay!r}; keep_clip={bool(source_url)})")
-                pick = pick_and_render(overlay, out_path, source_url=source_url, style=style)
-                post["source_url"] = pick.get("url", post.get("source_url"))
-                source_desc = f"Pexels {pick['id']} q='{pick['query']}'"
+            print(f"Regenerating {label} ({why}) from library '{slug}' (style: {style}; overlay: {overlay!r})")
+            make_mp4_square(lib_clip, overlay, out_path, style)
+            verify(out_path)
+            mark_meme_used(slug, week, label)   # consume it — never reuse
+            source_desc = f"library:{slug}"
             post["skipped"] = False
             post["text_style"] = style       # pin it so a later re-render matches
             post.pop("skip_reason", None)
