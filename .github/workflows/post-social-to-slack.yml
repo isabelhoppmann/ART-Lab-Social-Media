@@ -33,6 +33,10 @@ jobs:
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
         run: python3 .github/scripts/regenerate_quotes.py
+
+      - name: Mark reposts used (no-repeat)
+        run: python3 .github/scripts/mark_reposts_used.py
+
       - name: Post to Slack
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -42,6 +46,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add social/review-state.json posts/ meme_library/used.json social/used_quotes.json
+          git add social/review-state.json posts/ meme_library/used.json social/used_quotes.json repost_library/used.json
           git diff --staged --quiet || git commit -m "chore: regenerate memes + update review-state"
           git push

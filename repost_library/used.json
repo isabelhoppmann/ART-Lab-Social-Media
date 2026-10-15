@@ -1,0 +1,4 @@
+{
+  "_comment": "NO-REPEAT LEDGER for reposts. Every reel url listed here has already been used in a Zenie post and must never be used again. GitHub Actions (mark_reposts_used.py) appends to this automatically when a week publishes. When library.json reels minus this list has fewer than 2, the library needs restocking.",
+  "used": []
+}

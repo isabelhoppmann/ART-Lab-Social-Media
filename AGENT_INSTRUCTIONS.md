@@ -555,26 +555,31 @@ If either verification raises, DROP that meme from this week's batch and either 
 
 ---
 
-## Step 2B: Find 2 Repost Videos (WebSearch)
-Find 2 Instagram Reels. **TikTok is absolutely not allowed — do not use TikTok under any circumstances.**
+## Step 2B: Pick 2 Repost Reels from the Repost Library
 
-Search strategies (try all until you find 2 valid Instagram reel URLs):
-- WebSearch("instagram reel self-care 2026 site:instagram.com")
-- WebSearch("instagram.com/reel journaling women relationships")
-- WebSearch("instagram reel viral wellness women 2026")
+> **⚠️ CHANGED 2026-10-14 — DO NOT WebSearch for reels.** Search engines don't index individual Instagram reels, so this step returned no usable links two weeks running (weeks of 2026-10-05 and 2026-10-12) and both reposts shipped with no link. Isabel now hand-picks reels into `repost_library/library.json`. Pick only from there. **TikTok is absolutely not allowed.** Do not WebFetch instagram.com (it hangs this sandbox — 2026-07-13 incident).
 
-A valid URL must:
-1. Contain "instagram.com" — not "tiktok.com", not any other domain
-2. Link directly to a specific reel or post — format: instagram.com/reel/[ID]/ or instagram.com/p/[ID]/
-3. NOT be a profile page (instagram.com/username/ with no post ID is invalid)
+Fetch the library and the no-repeat ledger, and keep only unused reels:
+```python
+import re
+def _norm_url(u):   # MUST match .github/scripts/mark_reposts_used.py exactly
+    u = re.sub(r"^www\.", "", re.sub(r"^https?://", "", (u or "").strip().lower()))
+    return u.split("?")[0].split("#")[0].rstrip("/")
+reels = _raw("repost_library/library.json").get("reels", [])          # _raw() is defined in Step 2A
+used_reels = {_norm_url(u["url"]) for u in _raw("repost_library/used.json").get("used", [])}
+available = [r for r in reels if _norm_url(r.get("url")) not in used_reels]
+```
+**Pick 2 different reels from `available`** — the two that best fit this week's trending themes and give you a real journaling prompt to write against (use each reel's `theme`). Prefer two different creators. For each pick, copy `url` and `creator` exactly as they appear in the library — do not edit, shorten or "fix" the url, or the no-repeat ledger won't match it.
 
-Before including each repost, write out loud: "This URL is: [URL]. It is from: [platform]. It links to: [specific post or profile page]." If it is not Instagram or not a direct post link, reject it and search again.
+**Creator credits from the library are VERIFIED** (Isabel confirmed them when she added the reel). Do NOT add the ⚠️ UNVERIFIED flag to them.
 
-**Creator handle — TREAT AS UNVERIFIED.** WebSearch cannot reliably tell you who actually *made* a reel. Self-care and wellness reels are constantly re-shared by aggregator/repost accounts, so the handle that appears in search results is very often the aggregator, not the original creator. Do NOT trust a handle that came only from a search snippet. **Do NOT WebFetch instagram.com to confirm the creator.** Instagram blocks/stalls automated fetches from this sandbox, and a hanging fetch here silently killed two entire drafting runs (2026-07-13 incident) before they could email their output. Instead, always fill your best-guess handle from the search result and **flag it as unverified**: append ` ⚠️ UNVERIFIED — confirm creator against the reel before posting` to the Creator line in the review bundle so the human confirms it during Slack review. Never present a repost credit as confirmed when it came only from a search result.
+**If `available` has fewer than 2 reels:** fill what you can, and for each missing slot still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — add reels to repost_library/library.json` and `**Creator:** ⚠️ add credit once a reel is chosen`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST LIBRARY LOW:** {n} unused reels left. Add reels to repost_library/library.json.` Add that same warning whenever `len(available) - 2 < 2` (i.e. next week would run short), even if this week was filled. Do NOT fall back to WebSearch.
 
-Get: direct Instagram reel URL, creator handle (per the caution above), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
+Get for each repost: `url`, `creator` (both from the library), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
-**Caption order (CONTENT SCOPE §2):** credit first, then the **complete journaling prompt**, then any CTA. A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Pick reels you can write a real reflection prompt against; if a reel gives you nothing to ask, it is the wrong reel.
+**Caption order (CONTENT SCOPE §2):** credit first, then the **complete journaling prompt**, then any CTA. A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Write the prompt against what the reel is actually about (its `theme`), not a generic one.
+
+You do NOT append to `repost_library/used.json` yourself — GitHub Actions (`mark_reposts_used.py`) does that when the week publishes.
 
 ---
 
