@@ -1,5 +1,5 @@
 {
-  "_comment": "Vetted, watermark-free meme clips for Zenie. Each was frame-checked clean. The drafting agent and the feedback agent pick the best-matching slug for a meme concept and write it to review-state.json as `meme_slug`; GitHub Actions renders meme_library/clips/<slug>.mp4 with the overlay text (fit-with-blur). NO-REPEAT RULE: a slug listed in meme_library/used.json has already been used and must NEVER be reused, even with a different caption — always pick from library minus used. When that set is empty, the library is exhausted; add new clips. To add a clip: source a clean HD GIF, frame-check every corner for watermarks/handles/network bugs, normalize to meme_library/clips/<slug>.mp4, and add an entry here. All clips render centered over a blurred background so the whole meme stays visible. SOURCING GOAL (Isabel's ruling, 2026-08-11): 'current trends, not current clips.' Clips are evergreen reaction formats and are NOT meant to track what is viral — currency comes from the overlay writing, which names a live trend. So when restocking, do not chase trendy footage; fill gaps in EMOTIONAL RANGE so every joke has a face that depicts it. Range currently covered: manic, overthinking, conflicted, awkward, chaotic, supportive, shocked, confident-exit, forced-smile, eye-roll, crying, scandalized, unbothered. Under-covered and worth sourcing next: exhausted/burnt out, suspicious/detective mode, delusional daydreaming, smug vindication, panicking. Target roughly 20 available (unused) clips; top up when it drops below ~6, which is about three weeks of runway at two memes per week. Use tools/source_meme_clips.py to harvest and register candidates.",
+  "_comment": "Vetted, watermark-free meme clips for Zenie. Each was frame-checked clean. The drafting agent and the feedback agent pick the best-matching slug for a meme concept and write it to review-state.json as `meme_slug`; GitHub Actions renders meme_library/clips/<slug>.mp4 with the overlay text (fit-with-blur). NO-REPEAT RULE: a slug listed in meme_library/used.json has already been used and must NEVER be reused, even with a different caption — always pick from library minus used. When that set is empty, the library is exhausted; add new clips. To add a clip: source a clean HD GIF, frame-check every corner for watermarks/handles/network bugs, normalize to meme_library/clips/<slug>.mp4, and add an entry here. All clips render centered over a blurred background so the whole meme stays visible. SOURCING GOAL (Isabel's ruling, 2026-08-11): 'current trends, not current clips.' Clips are evergreen reaction formats and are NOT meant to track what is viral — currency comes from the overlay writing, which names a live trend. So when restocking, do not chase trendy footage; fill gaps in EMOTIONAL RANGE so every joke has a face that depicts it. Range currently covered (2026-10-15 restock added: happy tears, holding back tears, celebrating, shy/flattered, stunned, confident, giddy, bittersweet, awkward, unbothered, skeptical, exhausted, hype, cringe, laughing, heart hands, absorbed reading, double-take, blowing a kiss): manic, overthinking, conflicted, awkward, chaotic, supportive, shocked, confident-exit, forced-smile, eye-roll, crying, scandalized, unbothered. Under-covered and worth sourcing next: exhausted/burnt out, suspicious/detective mode, delusional daydreaming, smug vindication, panicking. Target roughly 20 available (unused) clips; top up when it drops below ~6, which is about three weeks of runway at two memes per week. Use tools/source_meme_clips.py to harvest and register candidates. QUALITY BAR (2026-10-15): the clip's SHORT side must be at least 400px — clips are square-cropped and scaled to 1080, and ugly_cry (370px short side) shipped soft on 2026-09-01.",
   "clips": [
     {
       "slug": "kermit_typing",
@@ -496,6 +496,271 @@
       ],
       "use_when": "Openly admitting the indefensible — you did the thing, you know it was silly, and you have no argument. The hands ARE the punchline, so keep the overlay short.",
       "example_overlay": "me explaining why i texted him first again"
+    },
+    {
+      "slug": "happy_tears_clasp",
+      "title": "Woman tearing up with hands clasped, happy-crying",
+      "file": "meme_library/clips/happy_tears_clasp.mp4",
+      "vibes": [
+        "touched",
+        "moved",
+        "happy tears",
+        "overwhelmed with joy",
+        "grateful"
+      ],
+      "use_when": "Being genuinely moved by something good — a sweet text, a friend showing up, rereading a kind entry. Soft, sincere, happy tears.",
+      "example_overlay": "when your best friend remembers the thing you told her three months ago"
+    },
+    {
+      "slug": "hand_over_mouth_tears",
+      "title": "Woman fighting back tears, hand over her mouth",
+      "file": "meme_library/clips/hand_over_mouth_tears.mp4",
+      "vibes": [
+        "emotional",
+        "holding it together",
+        "overwhelmed",
+        "tender",
+        "about to cry"
+      ],
+      "use_when": "Something hit harder than expected and she's trying to hold it together — a song, a memory, an old journal entry.",
+      "example_overlay": "me reading my journal from last year and realizing how far i've come"
+    },
+    {
+      "slug": "confetti_dance",
+      "title": "Woman in a red jumpsuit dancing joyfully against confetti",
+      "file": "meme_library/clips/confetti_dance.mp4",
+      "vibes": [
+        "celebrating",
+        "joy",
+        "victory",
+        "carefree",
+        "main character"
+      ],
+      "use_when": "Pure, unselfconscious celebration of a small win — finishing something, a boundary held, a good day.",
+      "example_overlay": "me after journaling three days in a row"
+    },
+    {
+      "slug": "shy_flattered",
+      "title": "Woman shyly hiding then giggling behind her hands",
+      "file": "meme_library/clips/shy_flattered.mp4",
+      "vibes": [
+        "flattered",
+        "shy",
+        "blushing",
+        "giddy",
+        "crush"
+      ],
+      "use_when": "Bashful, flattered, can't-handle-the-compliment energy — a crush texts back, someone notices the effort.",
+      "example_overlay": "when he remembers your coffee order"
+    },
+    {
+      "slug": "stunned_stare",
+      "title": "Woman frozen in a stunned, wide-eyed stare",
+      "file": "meme_library/clips/stunned_stare.mp4",
+      "vibes": [
+        "stunned",
+        "disbelief",
+        "speechless",
+        "processing",
+        "shook"
+      ],
+      "use_when": "Quietly stunned — the moment the realization lands and she can't believe what she just heard or read.",
+      "example_overlay": "rereading the text he sent at 2am"
+    },
+    {
+      "slug": "wiping_a_tear",
+      "title": "Woman gently wipes away a single tear and smiles",
+      "file": "meme_library/clips/wiping_a_tear.mp4",
+      "vibes": [
+        "moved",
+        "tender",
+        "bittersweet",
+        "touched",
+        "quietly emotional"
+      ],
+      "use_when": "Bittersweet, quiet emotion — nostalgic, proud of yourself, touched by a small kindness.",
+      "example_overlay": "rereading the letter i wrote to my future self"
+    },
+    {
+      "slug": "awkward_side_glance",
+      "title": "Woman glances sideways with an awkward half-smile",
+      "file": "meme_library/clips/awkward_side_glance.mp4",
+      "vibes": [
+        "awkward",
+        "uncomfortable",
+        "secondhand embarrassment",
+        "trying to stay polite"
+      ],
+      "use_when": "Polite discomfort — the awkward moment, the overshare, the question you don't want to answer.",
+      "example_overlay": "when someone asks if you've journaled lately"
+    },
+    {
+      "slug": "unbothered_gaze",
+      "title": "Woman gives a cool, unimpressed look over her shoulder",
+      "file": "meme_library/clips/unbothered_gaze.mp4",
+      "vibes": [
+        "unbothered",
+        "unimpressed",
+        "over it",
+        "detached",
+        "calm"
+      ],
+      "use_when": "Calm, cool detachment — she's moved on and doesn't need to explain herself.",
+      "example_overlay": "me when my ex watches my story"
+    },
+    {
+      "slug": "skeptical_stare",
+      "title": "Woman holds a skeptical, suspicious stare",
+      "file": "meme_library/clips/skeptical_stare.mp4",
+      "vibes": [
+        "suspicious",
+        "skeptical",
+        "not buying it",
+        "detective mode",
+        "side eye"
+      ],
+      "use_when": "She's not buying it — mixed signals, a too-good excuse, her own excuses to herself.",
+      "example_overlay": "me reading his 'i've just been busy' text"
+    },
+    {
+      "slug": "tired_yawn",
+      "title": "Woman yawns behind her hand",
+      "file": "meme_library/clips/tired_yawn.mp4",
+      "vibes": [
+        "exhausted",
+        "tired",
+        "burnt out",
+        "drained",
+        "sleepy"
+      ],
+      "use_when": "Bone-deep tiredness — burnout, a long week, social battery at zero.",
+      "example_overlay": "my social battery at 8:01pm"
+    },
+    {
+      "slug": "wincing_cringe",
+      "title": "Woman winces in a full-face cringe",
+      "file": "meme_library/clips/wincing_cringe.mp4",
+      "vibes": [
+        "cringe",
+        "secondhand embarrassment",
+        "yikes",
+        "regret",
+        "can't watch"
+      ],
+      "use_when": "A full-body cringe at a memory, an old text, or a choice you'd rather forget.",
+      "example_overlay": "rereading my journal entries from 2019"
+    },
+    {
+      "slug": "laughing_behind_fan",
+      "title": "Woman laughing so hard she hides behind a fan",
+      "file": "meme_library/clips/laughing_behind_fan.mp4",
+      "vibes": [
+        "laughing",
+        "can't breathe",
+        "hysterical",
+        "amused",
+        "delighted"
+      ],
+      "use_when": "Can't-stop-laughing energy — something is too funny or too true to handle.",
+      "example_overlay": "when the horoscope is a little too accurate"
+    },
+    {
+      "slug": "heart_hands",
+      "title": "Woman smiling and making heart hands",
+      "file": "meme_library/clips/heart_hands.mp4",
+      "vibes": [
+        "love",
+        "self-love",
+        "affection",
+        "grateful",
+        "wholesome"
+      ],
+      "use_when": "Warm, wholesome affection — self-love, gratitude, a sweet moment with a friend.",
+      "example_overlay": "me to myself after a really good journaling session"
+    },
+    {
+      "slug": "absorbed_reading",
+      "title": "Woman reading intently, absorbed and thoughtful",
+      "file": "meme_library/clips/absorbed_reading.mp4",
+      "vibes": [
+        "absorbed",
+        "reflective",
+        "lost in thought",
+        "reading",
+        "quietly processing"
+      ],
+      "use_when": "Deep in her own pages — reading, rereading, processing something important in quiet.",
+      "example_overlay": "me rereading my journal looking for the exact moment it went wrong"
+    },
+    {
+      "slug": "glasses_lower",
+      "title": "Woman lowers her glasses for a closer look",
+      "file": "meme_library/clips/glasses_lower.mp4",
+      "vibes": [
+        "excuse me",
+        "intrigued",
+        "taking a closer look",
+        "surprised",
+        "hold on"
+      ],
+      "use_when": "A 'hold on, excuse me?' double-take — something caught her attention and she needs a closer look.",
+      "example_overlay": "when he suddenly wants to 'talk'"
+    },
+    {
+      "slug": "confident_hair_flip",
+      "title": "Woman flips her hair and gives a knowing look",
+      "file": "meme_library/clips/confident_hair_flip.mp4",
+      "vibes": [
+        "confident",
+        "unbothered",
+        "glow up",
+        "self-assured",
+        "that girl"
+      ],
+      "use_when": "Quiet confidence after doing the inner work — walking away, choosing herself, the glow-up nobody saw coming.",
+      "example_overlay": "me after setting one (1) boundary"
+    },
+    {
+      "slug": "giddy_grin",
+      "title": "Woman scrunches her face into a huge giddy grin",
+      "file": "meme_library/clips/giddy_grin.mp4",
+      "vibes": [
+        "giddy",
+        "delighted",
+        "can't stop smiling",
+        "excited",
+        "cringe-happy"
+      ],
+      "use_when": "Over-the-top delight at something small — good news, a plan working out, a crush, a cute coincidence.",
+      "example_overlay": "when the playlist hits exactly right on the drive home"
+    },
+    {
+      "slug": "hype_clapping",
+      "title": "Woman clapping and cheering with an open-mouthed smile",
+      "file": "meme_library/clips/hype_clapping.mp4",
+      "vibes": [
+        "hype",
+        "supportive",
+        "cheering",
+        "proud of you",
+        "excited"
+      ],
+      "use_when": "Hype-woman energy — cheering someone (or yourself) on for showing up.",
+      "example_overlay": "me cheering myself on for drinking water today"
+    },
+    {
+      "slug": "blowing_kiss",
+      "title": "Woman winks and blows a kiss with hands on her heart",
+      "file": "meme_library/clips/blowing_kiss.mp4",
+      "vibes": [
+        "flirty",
+        "self-love",
+        "cheeky",
+        "playful",
+        "confident"
+      ],
+      "use_when": "Playful, cheeky self-love — loving yourself out loud, a flirty goodbye, a confident send-off.",
+      "example_overlay": "me to myself in the mirror after a really good week"
     }
   ]
 }
