@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Diagnostic: show which accounts the Meta token is connected to, and list what's
 actually live on Zenie's Instagram (via Business Discovery on the public handle)
-and on the connected Facebook page. Prints JSON to the run log; writes nothing.
+and on the connected Facebook page. Writes reports/zenie-live-posts.json.
 
 Env: PAGE_ACCESS_TOKEN, IG_USER_ID, FB_PAGE_ID, ZENIE_HANDLE."""
 import json, os, urllib.parse, urllib.request
@@ -30,6 +30,5 @@ out = {
                          "media.limit(100){permalink,media_type,media_product_type,caption,timestamp,like_count,comments_count}}"),
     "fb_page_posts": get(f"{FB_PAGE_ID}/published_posts", fields="message,created_time,permalink_url", limit=50),
 }
-print("LIVE_POSTS_JSON_START")
-print(json.dumps(out, ensure_ascii=False))
-print("LIVE_POSTS_JSON_END")
+json.dump(out, open("reports/zenie-live-posts.json", "w"), indent=1, ensure_ascii=False)
+print("wrote reports/zenie-live-posts.json")
