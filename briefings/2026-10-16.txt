@@ -1,0 +1,20 @@
+Morning Briefing October 16, 2026
+
+=== ROBOTICS & AI ===
+- Shanghai-based RoboParty released the full open-source stack for its RP1 humanoid on October 16, publishing motion-control systems, simulation environments, SDKs, and its PartyOS reinforcement-learning framework for research and commercial use. https://www.roboticstomorrow.com/news/2026/10/16/born-to-be-open-roboparty-launches-rp1-a-full-stack-open-source-humanoid/27253
+- The Hong Kong Productivity Council and FLAIR opened the city's first embodied AI hub on October 16, providing real-world testing, validation, and commercial-deployment infrastructure for humanoid robotics teams. https://technode.global/2026/10/16/hong-kong-launches-embodied-ai-hub-real-world-robot-testing/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Physical Intelligence opened its Pi API beta on October 14, giving developers waitlisted access to upload robot data, fine-tune its π0 and π0.5 foundation models on managed compute, and deploy cloud-hosted inference, with early partners Actor and Almond already onboard. https://aiweekly.co/alerts/physical-intelligence-opens-pi-api-beta-for-0-05-fine-tuning
+
+=== BAY AREA ===
+- Women in Robotics Bay Area Robotics over Coffee is tomorrow, Saturday October 17 at 4:00 PM — a casual drop-in for Bay Area robotics practitioners, free to attend. https://www.womeninrobotics.org/events/
+- RoboBusiness 2026 runs October 20–21 at the Santa Clara Convention Center, marking its 20th year with six conference tracks, 150-plus exhibitors, and keynotes from Rodney Brooks and Ken Goldberg; registration is open. https://lp.robot.com/events/santa-clara/robotics/robobusiness-2026/
+
+#KEYS: roboparty-rp1-open-source, hk-embodied-ai-hub, physical-intelligence-pi-api, wir-robotics-coffee-oct2026, robobusiness-oct2026
