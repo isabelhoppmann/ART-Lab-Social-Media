@@ -594,6 +594,174 @@
       ],
       "use_when": "Over-the-top delight at something small — good news, a plan working out, a crush, a cute coincidence.",
       "example_overlay": "when the playlist hits exactly right on the drive home"
+    },
+    {
+      "slug": "carefree_laugh_sunglasses",
+      "title": "Woman in sunglasses throws her head back laughing, hair flying",
+      "file": "meme_library/clips/carefree_laugh_sunglasses.mp4",
+      "vibes": [
+        "carefree",
+        "main character",
+        "unbothered joy",
+        "living my best life",
+        "free"
+      ],
+      "use_when": "Pure carefree joy after letting something go — the 'I'm so over it' laugh, main-character energy.",
+      "example_overlay": "me after finally deleting his number"
+    },
+    {
+      "slug": "besties_dancing",
+      "title": "Two friends dancing together in matching jumpsuits",
+      "file": "meme_library/clips/besties_dancing.mp4",
+      "vibes": [
+        "besties",
+        "celebrating together",
+        "hype",
+        "friendship",
+        "joy"
+      ],
+      "use_when": "Celebrating with your person — friend wins, shared inside jokes, the group chat when good news drops.",
+      "example_overlay": "me and my best friend when one of us finally sets a boundary"
+    },
+    {
+      "slug": "gasp_then_ew",
+      "title": "Woman gasps in shock, then scrunches into disgust",
+      "file": "meme_library/clips/gasp_then_ew.mp4",
+      "vibes": [
+        "shocked",
+        "scandalized",
+        "ew",
+        "can't believe it",
+        "cringe"
+      ],
+      "use_when": "Shock that turns into disgust — reading something you wrote, an ex's text, a cringe memory resurfacing.",
+      "example_overlay": "finding the poem i wrote about him in 2019"
+    },
+    {
+      "slug": "dramatic_pout",
+      "title": "Woman sulks with a dramatic pout and limp arms",
+      "file": "meme_library/clips/dramatic_pout.mp4",
+      "vibes": [
+        "sulking",
+        "dramatic",
+        "pouty",
+        "over it",
+        "petty"
+      ],
+      "use_when": "Dramatic, petty sulking over something small — when plans change, when he doesn't text back fast enough.",
+      "example_overlay": "me when my 'just five minutes' of journaling gets interrupted"
+    },
+    {
+      "slug": "pout_to_finger_hearts",
+      "title": "Woman pouts, then softens into a smile with finger hearts",
+      "file": "meme_library/clips/pout_to_finger_hearts.mp4",
+      "vibes": [
+        "mood shift",
+        "pout to happy",
+        "self-soothing",
+        "cute",
+        "turned around"
+      ],
+      "use_when": "A mood turning around — grumpy to soft once she gets it out, the before-and-after of a good journal session.",
+      "example_overlay": "me before vs after writing it all down"
+    },
+    {
+      "slug": "happy_shimmy",
+      "title": "Woman shimmies and dances with a big smile",
+      "file": "meme_library/clips/happy_shimmy.mp4",
+      "vibes": [
+        "happy dance",
+        "celebrating",
+        "small win",
+        "giddy",
+        "proud"
+      ],
+      "use_when": "A spontaneous happy dance for a small personal win.",
+      "example_overlay": "me when the habit tracker hits 7 days"
+    },
+    {
+      "slug": "overwhelmed_head_rub",
+      "title": "Woman rubs her temple, overwhelmed, then stares off",
+      "file": "meme_library/clips/overwhelmed_head_rub.mp4",
+      "vibes": [
+        "overwhelmed",
+        "stressed",
+        "too much",
+        "overthinking",
+        "mental load"
+      ],
+      "use_when": "Mentally overloaded — too many thoughts, too many tabs open in the brain, decision fatigue.",
+      "example_overlay": "my brain at 11pm before i write anything down"
+    },
+    {
+      "slug": "victory_flex",
+      "title": "Woman flexes both arms in a triumphant victory pose",
+      "file": "meme_library/clips/victory_flex.mp4",
+      "vibes": [
+        "victory",
+        "proud",
+        "i did it",
+        "strong",
+        "celebrating myself"
+      ],
+      "use_when": "Celebrating a personal win you're proud of — showing up, keeping a promise to yourself.",
+      "example_overlay": "me after one (1) honest journal entry"
+    },
+    {
+      "slug": "skeptical_side_glance",
+      "title": "Woman glances sideways, skeptical, then gives a flat look",
+      "file": "meme_library/clips/skeptical_side_glance.mp4",
+      "vibes": [
+        "skeptical",
+        "not convinced",
+        "hmm",
+        "suspicious",
+        "judging"
+      ],
+      "use_when": "Not buying it — a suspicious excuse, a too-good-to-be-true promise, your own excuses.",
+      "example_overlay": "me reading 'sorry i fell asleep' at 2am"
+    },
+    {
+      "slug": "sarcastic_slow_clap",
+      "title": "Woman gives a sarcastic slow clap with a knowing smile",
+      "file": "meme_library/clips/sarcastic_slow_clap.mp4",
+      "vibes": [
+        "sarcastic",
+        "wow congrats",
+        "unimpressed",
+        "ironic applause",
+        "sure jan"
+      ],
+      "use_when": "Ironic applause for something that really doesn't deserve it.",
+      "example_overlay": "when he finally texts back after 4 days"
+    },
+    {
+      "slug": "tissue_cry",
+      "title": "Woman cries and dabs her eyes with a tissue",
+      "file": "meme_library/clips/tissue_cry.mp4",
+      "vibes": [
+        "crying",
+        "emotional",
+        "heartbroken",
+        "overwhelmed",
+        "cathartic"
+      ],
+      "use_when": "A real cry — release, catharsis, the moment it finally hits.",
+      "example_overlay": "me three paragraphs into a journal entry i swore would be short"
+    },
+    {
+      "slug": "finger_wag_no",
+      "title": "Woman wags her finger: absolutely not",
+      "file": "meme_library/clips/finger_wag_no.mp4",
+      "vibes": [
+        "absolutely not",
+        "boundary",
+        "no thank you",
+        "firm",
+        "not today"
+      ],
+      "use_when": "A firm, unbothered no — setting a boundary, refusing to spiral, not going back.",
+      "example_overlay": "me when the ex's name pops up on my screen"
     }
   ]
 }
