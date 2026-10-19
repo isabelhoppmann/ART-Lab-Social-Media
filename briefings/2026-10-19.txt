@@ -1,0 +1,18 @@
+Morning Briefing October 19, 2026
+
+=== ROBOTICS & AI ===
+- Chery Group's robotics brand AiMOGA is set to unveil Mobo, its first family companion humanoid robot, and open global pre-orders on October 21 at the EXEED International User Summit in Wuhu, China; the 0.9-meter-tall robot targets in-home companionship and long-horizon task planning. https://www.globenewswire.com/news-release/2026/10/17/3382868/0/en/aimoga-to-unveil-mobo-its-first-family-companion-robot-on-october-21.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Hangzhou robot-AI startup Gewu Tongzhi closed an angel round of nearly RMB 100 million (announced October 18, 2026), backed by Hongfu Asset Management, Peak Investment, Hangzhou Capital, and Hangzhou Talent Group; founded by a former Huawei ADS engineer, the company builds AI for dexterous robotic manipulation. https://technode.com/2026/10/19/former-huawei-engineers-robot-ai-startup-gewu-tongzhi-raises-nearly-rmb-100-million/
+
+=== COMPETITOR WATCH ===
+- Sam Altman confirmed on October 18 that OpenAI will build a humanoid robot, saying "We will," and expects a demo in 2027, with 27 robotics roles now listed on the company's careers page. https://aiweekly.co/alerts/altman-confirms-openai-will-build-humanoid-demo-in-2027
+
+=== BAY AREA ===
+- PyTorch Conference North America opens tomorrow, October 20-21, in San Jose as the flagship event of Open Source AI Week (Oct 16-25), with sessions on AI and machine learning for researchers and practitioners. https://pytorch.org/event/open-source-ai-week/
+
+#KEYS: aimoga-mobo-launch, gewu-tongzhi-angel-2026, openai-humanoid-confirmed-2027, pytorch-conf-san-jose-oct2026
