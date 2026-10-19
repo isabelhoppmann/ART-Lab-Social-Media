@@ -1,0 +1,22 @@
+name: Sync Zenie Notion Rows
+
+# Copies the exact quote and repost captions from social/review-state.json into
+# the Zenie Posts table in Notion, whenever review-state changes (Monday drafts,
+# Slack feedback edits). Writes to Notion only: posts nothing to Slack and
+# commits nothing.
+
+on:
+  push:
+    paths:
+      - 'social/review-state.json'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync quote and repost rows
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python3 .github/scripts/sync_notion_rows.py

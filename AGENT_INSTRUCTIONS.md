@@ -1099,6 +1099,8 @@ New entry: `<a class="week latest" href="posts/[DATE]/"><span class="week-date">
 
 > **⚠️ ORDER CHANGED 2026-07-13 — DO STEPS 7 AND 8 (build review-state + EMAIL THE BUNDLE) BEFORE THIS STEP.** Publishing must NEVER depend on Notion. A hanging Notion MCP call here silently killed four drafting runs (2026-07-13) before they could email anything — and an MCP call is NOT covered by the socket timeout, so it can hang indefinitely. Therefore: finish the files, build review-state (Step 7), and **email the bundle (Step 8) FIRST**. Only AFTER the bundle email is sent do you come back and do this Notion save.
 >
+> **⚠️ CHANGED 2026-10-19 — do NOT create or edit the quote and repost Notion rows yourself.** When you did, the captions got paraphrased (week of 2026-10-19: no prompt, no hashtags). The `Sync Zenie Notion Rows` Action now copies them verbatim from review-state whenever it changes. Skip the rest of Step 6 entirely; what follows is kept for reference only.
+
 > **This Notion save is BEST-EFFORT and fully skippable.** Give the Notion MCP calls at most ~30 seconds of total effort. If `notion-search`/`notion-create-pages`/`notion-update-page` is slow, errors, or seems to hang, STOP immediately and just finish — do not retry, do not wait. Skipping Notion only means the quote/repost rows are missing from the database (a human can add them later); the week is already published via the emailed bundle, which is all that matters.
 
 After building the files AND after emailing the bundle (Step 8), save the **two quote images and the two reposts** to the **Zenie Posts** Notion database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) using the Notion MCP tool `notion-create-pages`.
