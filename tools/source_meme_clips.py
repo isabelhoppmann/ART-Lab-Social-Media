@@ -51,6 +51,10 @@ MIN_W, MIN_H = 240, 220
 # ~3x upscale) shipped visibly soft on 2026-09-01. New clips need a short side of
 # at least MIN_SHORT; the review sheet still gets the final say.
 MIN_SHORT = 400
+# MOTION BAR (2026-10-19): a clip must visibly DO something. absorbed_reading and
+# blank_stare were effectively still images and posted as "nothing happens".
+MIN_MOTION = 3.0     # mean abs frame-to-frame change, 64x64 gray at 6fps
+MIN_SECONDS = 1.0
 
 # QUERY ADVICE (learned the hard way on 2026-08-11): search the EXPRESSION, not
 # the caption. Phrase queries like "i told you so" or "delulu" return GIFs with
@@ -113,6 +117,17 @@ def _probe(path):
         return 0, 0
 
 
+def _motion(path):
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-vf", "fps=6,scale=64:64,format=gray",
+                          "-f", "rawvideo", "-"], capture_output=True).stdout
+    n = len(raw) // 4096
+    if n < 2:
+        return 0.0
+    frames = [raw[i * 4096:(i + 1) * 4096] for i in range(n)]
+    diffs = [sum(abs(a - b) for a, b in zip(frames[i], frames[i + 1])) / 4096 for i in range(n - 1)]
+    return sum(diffs) / len(diffs)
+
+
 def _slugify(s):
     return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 
@@ -145,7 +160,8 @@ def harvest(queries, limit):
                 except Exception:
                     continue
             w, h = _probe(dest)
-            if w < MIN_W or h < MIN_H or min(w, h) < MIN_SHORT:
+            if (w < MIN_W or h < MIN_H or min(w, h) < MIN_SHORT
+                    or _duration(dest) < MIN_SECONDS or _motion(dest) < MIN_MOTION):
                 os.remove(dest)
                 continue
             r.update({"query": q, "w": w, "h": h, "ratio": round(w / h, 2), "file": dest})
@@ -256,6 +272,9 @@ def add(args):
     used = {u["slug"] for u in json.load(open(USED)).get("used", [])}
     if args.slug in used:
         sys.exit(f"slug {args.slug!r} is in the no-repeat ledger — pick another name")
+
+    if _duration(row["file"]) < MIN_SECONDS or _motion(row["file"]) < MIN_MOTION:
+        sys.exit(f"{args.id}: too short or too still to post (needs {MIN_SECONDS}s+ and motion {MIN_MOTION}+)")
 
     os.makedirs(CLIPS, exist_ok=True)
     dest = f"{CLIPS}/{args.slug}.mp4"
