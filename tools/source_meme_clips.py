@@ -55,6 +55,11 @@ MIN_SHORT = 400
 # blank_stare were effectively still images and posted as "nothing happens".
 MIN_MOTION = 3.0     # mean abs frame-to-frame change, 64x64 gray at 6fps
 MIN_SECONDS = 1.0
+# SHARPNESS BAR (2026-10-19): median Laplacian variance of the 480px square crop.
+# Isabel's benchmark clip scores ~460; soft clips she'd reject score under ~40.
+# Content affects it (smooth skin and plain backgrounds score low), so this only
+# catches the obviously soft ones; the full-size by-eye check is still required.
+MIN_SHARPNESS = 40.0
 
 # QUERY ADVICE (learned the hard way on 2026-08-11): search the EXPRESSION, not
 # the caption. Phrase queries like "i told you so" or "delulu" return GIFs with
@@ -128,6 +133,23 @@ def _motion(path):
     return sum(diffs) / len(diffs)
 
 
+def _sharpness(path):
+    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-vf",
+                          "fps=3,scale=480:480:force_original_aspect_ratio=increase,crop=480:480,format=gray",
+                          "-f", "rawvideo", "-"], capture_output=True).stdout
+    W = 480
+    n = len(raw) // (W * W)
+    vals = []
+    for k in range(n):
+        f = raw[k * W * W:(k + 1) * W * W]
+        lap = [4 * f[y * W + x] - f[(y - 1) * W + x] - f[(y + 1) * W + x] - f[y * W + x - 1] - f[y * W + x + 1]
+               for y in range(1, W - 1, 4) for x in range(1, W - 1, 4)]
+        m = sum(lap) / len(lap)
+        vals.append(sum((v - m) ** 2 for v in lap) / len(lap))
+    vals.sort()
+    return vals[len(vals) // 2] if vals else 0.0
+
+
 def _slugify(s):
     return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 
@@ -161,7 +183,8 @@ def harvest(queries, limit):
                     continue
             w, h = _probe(dest)
             if (w < MIN_W or h < MIN_H or min(w, h) < MIN_SHORT
-                    or _duration(dest) < MIN_SECONDS or _motion(dest) < MIN_MOTION):
+                    or _duration(dest) < MIN_SECONDS or _motion(dest) < MIN_MOTION
+                    or _sharpness(dest) < MIN_SHARPNESS):
                 os.remove(dest)
                 continue
             r.update({"query": q, "w": w, "h": h, "ratio": round(w / h, 2), "file": dest})
@@ -273,8 +296,9 @@ def add(args):
     if args.slug in used:
         sys.exit(f"slug {args.slug!r} is in the no-repeat ledger — pick another name")
 
-    if _duration(row["file"]) < MIN_SECONDS or _motion(row["file"]) < MIN_MOTION:
-        sys.exit(f"{args.id}: too short or too still to post (needs {MIN_SECONDS}s+ and motion {MIN_MOTION}+)")
+    if (_duration(row["file"]) < MIN_SECONDS or _motion(row["file"]) < MIN_MOTION
+            or _sharpness(row["file"]) < MIN_SHARPNESS):
+        sys.exit(f"{args.id}: too short, too still or too soft to post")
 
     os.makedirs(CLIPS, exist_ok=True)
     dest = f"{CLIPS}/{args.slug}.mp4"
