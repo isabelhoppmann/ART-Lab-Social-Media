@@ -1,0 +1,35 @@
+FIELD NOTES 01 — CYSP 1 (carousel, 7 slides, 1080x1350)
+
+CAPTION
+In 1956, Nicolas Schöffer and a team of Philips engineers built CYSP 1: sixteen motorized plates on a rolling base, with photoelectric cells and a microphone that registered light, color and sound. That summer Maurice Béjart set his dancers beside it on the roof of Le Corbusier’s Cité Radieuse in Marseille, to music by Pierre Henry. The dancers followed choreography, while the sculpture moved whenever the light and sound around it changed.
+
+CYSP 1 (1956), Nicolas Schöffer. Choreography by Maurice Béjart. Music by Pierre Henry.
+
+#ARTLab #kineticart #retrofuturism #cybernetics #designhistory
+
+ALT TEXT (slide 1)
+Cream background with a single orange circle. Serif text reads: In 1956, a sculpture danced with a ballet company on Le Corbusier’s roof.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Field Notes 01 earns more sends per reach than the median of the last nine sourced-image posts, because slide 1 is a surprising true fact that works on its own as a DM preview and slide 7 names two people to send it to (someone who dances, someone who builds robots). If it doesn't beat that median within 7 days, the recipient close isn't doing the work and Field Notes 02 should test a different share trigger. Angle: retro-futurism.
+Share trigger: recognition + specific recipient.
+
+FORMATS
+- Carousel: slide_01.png → slide_07.png (1080x1350)
+- Reel: fieldnotes01_reel.mp4 (1080x1920, 31.5s, silent; motion in the first frame). Add audio in Instagram. Use the same caption.
+Post one now and hold the other, or post the reel first and the carousel a few weeks later as a "save it" version.
+
+ORIGINALITY
+Fully original: ART Lab typography and layout, no sourced imagery. Counts toward the original share of the 30-day window.
+
+SUGGESTED COLLAB / TAG (⚠ VERIFY handles before posting)
+Espace Nicolas Schöffer / the Schöffer estate, Fondation Le Corbusier, Béjart Ballet Lausanne
+
+SOURCES (two or more per claim)
+- cyberneticzoo.com — CYSP-1 entry: 1956; Philips engineers; 16 plates each with a motor; photoelectric cells + microphone; Béjart ballet, music by Pierre Henry, rooftop terrace of the Cité Radieuse, first Festival of Avant-Garde Art, Marseille, August 1956; period magazines (Tout Savoir, Science et Vie) called it the first cybernetic sculpture in the world
+- artelectronicmedia.com — CYSP 1: 1956; Philips engineers; four rollers; sixteen polychrome plates; sensors for sound, light intensity and color; Béjart company on the roof of the Cité Radieuse; Pierre Henry; name from cybernetic + spatiodynamic
+- katevassgalerie.com — Schöffer and the birth of cybernetic art: Philips collaboration; 16 plates, each with its own motor; phototubes and microphone; Béjart dancers at the Cité Radieuse in Marseille, Avant-garde Art Festival 1956
+- centrepompidou.fr — Lux 1 entry: confirms the 1956 Béjart ballet at Le Corbusier’s Unité d’Habitation in Marseille
+
+PLANABLE
+Upload slide_01.png → slide_07.png in order, paste the caption above, schedule for a Tuesday or Thursday slot.
