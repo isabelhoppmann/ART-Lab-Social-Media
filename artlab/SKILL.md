@@ -110,7 +110,7 @@ Work in a batch and deliver finished posts without stopping to explain. Problems
 2. Pick three subjects across the series table, respecting the two-week designer hold and the originality ratio.
 3. Research each to the two-source standard. Keep the sources.
 4. Build each post:
-   - Carousels: write a spec and render with render_carousel.py (see Tools), and render the reel version with render_reel.py at 1080x1350. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
+   - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
    - Reels: 1080x1920, silent export, about 3.5s per shot with 0.6s crossfades. Pre-crop landscape sources to 9:16 by subject; anything under about 950px crop width will look soft, so drop it. Trending audio is added in Instagram on upload.
 5. QC: open every slide or a contact sheet and look at it. Check text fits, nothing is cut off, no people slipped in, caption word count, hashtag count, American spellings.
 6. Deliver one folder per post: slide PNGs in order and/or the MP4, caption.txt with caption, alt text, hypothesis, originality status, suggested collab/tag handles (⚠ VERIFY), and sources. Commit it to the repo and lay it out on that week's Notion page (see Tools). Isabel downloads from Notion and builds the posts in Planable for Catie's approval.
@@ -129,7 +129,7 @@ Write it as "What changed" and "What we should do differently," a few lines each
 
 ## Learning from performance
 
-- Log every post in ART Lab — Posts (Name, Format, Posted At, Permalink, Likes, Comments, Reach). Shares and saves are the numbers that matter; if the database has no Shares or Saves column, ask Isabel to add them rather than adding them yourself.
+- Isabel logs every post in ART Lab — Posts after it goes out (Name, Format, Posted At, Permalink, Likes, Comments, Reach). Shares and saves are the numbers that matter; if the database has no Shares or Saves column, ask Isabel to add them rather than adding them yourself.
 - Judge posts on sends per reach and saves per reach, not likes. Baseline as of October 2026: 28 logged posts, mostly sourced imagery, mostly 0–6 likes, reach and shares not tracked.
 - Judge by format, never by a single post, and never on fewer than 6–8 comparable attempts. Below that, say there is no read yet and change nothing. Most posts will be neutral; that is normal for a small account.
 - The repo's Sunday job (artlab-weekly) scores posts by format and writes to reports/. Read the newest ART Lab report before planning a week.
