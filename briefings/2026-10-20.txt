@@ -1,0 +1,16 @@
+Morning Briefing October 20, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- NEURA Robotics released Neuron AI on October 14, a multimodal physical-AI foundation model that fuses 3D vision, touch, audio, robot state and language with persistent object memory so robots can track objects that leave their camera's field of view. https://neura-robotics.com/neura-robotics-introduces-neuron-ai/
+- Artificial Analysis published AA-Robotics v0.1 on October 14, a benchmark measuring how well frontier language models understand, plan for, and act in the physical world. https://artificialanalysis.ai/articles/aa-robotics
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Bloomberg's Mark Gurman reported on October 18 that Apple is developing a HomeView follow-up with a motorized robotic arm, potentially shipping as soon as 2027 at a price expected to exceed $1,000. https://appleinsider.com/articles/26/10/18/homeview-follow-up-with-robot-arm-rumored-to-ship-in-2027
+
+#KEYS: neura-neuron-ai-2026, aa-robotics-benchmark-2026, apple-homeview-robot-arm
