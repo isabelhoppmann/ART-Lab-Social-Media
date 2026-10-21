@@ -5,7 +5,7 @@ Modeled on Kelly Wearstler's posts: her slides carry no text; the "text" is the 
 
 CAPTION
 ONE SOURCE
-We don’t trust a room that is lit evenly. The rooms we remember have one source: a slot in a concrete ceiling, a round skylight, late sun across a sunken floor, a single globe left on at dusk. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit. Shadow isn’t what’s left over. It’s half the design.
+We don’t trust a room that is lit evenly. The rooms we remember have one source: a slot in a concrete ceiling, a round skylight, late sun across a sunken floor, a single globe left on at dusk. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit, and the shadow it leaves is as much a part of the design as the light.
 
 Images imagined with AI.
 
@@ -15,7 +15,7 @@ SLIDE ORDER
 1 cover (slide_01.png) · 2 ceiling slot (morning) · 3 skylight · 4 sunken room · 5 globe — the AI images from Light Studies 01 (Figma file YG3xn6OSYJHWHi9hD4zhuo).
 
 ALT TEXT (slide 1)
-Near-black background. Large cream serif capitals read ONE SOURCE, above a short paragraph: We don’t trust a room that is lit evenly. Light from one side gives a room a direction: somewhere to walk toward, somewhere to sit. Shadow isn’t what’s left over. It’s half the design.
+Near-black background. Large cream serif capitals read ONE SOURCE, above a short paragraph: We don’t trust a room that is lit evenly. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit, and the shadow it leaves is as much a part of the design as the light.
 
 HYPOTHESIS
 Prediction: Point of View earns more saves and sends per reach than Light Studies 01 with the same four images, because a stated opinion gives people a reason to forward it ("this is why I hate our office lights"). If it doesn't, the images carry these posts and the cover slide should be dropped.
