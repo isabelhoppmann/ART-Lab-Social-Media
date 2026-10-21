@@ -1,0 +1,37 @@
+{
+  "series": "Field Notes",
+  "issue": "02",
+  "footer": "The Senster · Edward Ihnatowicz · 1970",
+  "slides": [
+    {
+      "kind": "hook",
+      "text": "In 1970, Philips installed a robot that leaned toward quiet voices and drew back from shouting.",
+      "kicker": "The Senster · Eindhoven"
+    },
+    {
+      "kind": "body",
+      "text": "Edward Ihnatowicz built it for the Evoluon, Philips’ exhibition hall in Eindhoven: a hydraulic steel skeleton taller than anyone who came to see it."
+    },
+    {
+      "kind": "body",
+      "text": "Four microphones and two Doppler radar units in its head picked up sound and movement in the room."
+    },
+    {
+      "kind": "body",
+      "text": "A Philips computer read them, and the neck turned the head toward gentle sounds and pulled it back from loud ones."
+    },
+    {
+      "kind": "body",
+      "text": "Philips took it down in 1974. Its steel skeleton then stood outdoors in Zeeland for more than 40 years."
+    },
+    {
+      "kind": "body",
+      "text": "In 2017, a university in Kraków acquired the skeleton and took it to Poland to bring it back to life."
+    },
+    {
+      "kind": "close",
+      "text": "For the friend who lowers their voice around animals.",
+      "sub": "Field Notes — kinetic history, from ART Lab"
+    }
+  ]
+}

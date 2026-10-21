@@ -1,0 +1,31 @@
+FRI OCT 23 — FIELD NOTES 02 — The Senster (7 slides + reel)
+
+CAPTION
+In 1970, Philips commissioned Edward Ihnatowicz to build the Senster for the Evoluon in Eindhoven: a hydraulic steel skeleton with four microphones and two Doppler radar units in its head. A computer read the room, and the head turned toward gentle sounds and drew back from loud ones, so the way to bring it closer was to lower your voice.
+
+The Senster (1970), Edward Ihnatowicz. Commissioned by Philips for the Evoluon.
+
+#ARTLab #kineticart #cybernetics #robotart #retrofuturism
+
+ALT TEXT (slide 1)
+Cream background with a single orange circle. Serif text reads: In 1970, Philips installed a robot that leaned toward quiet voices and drew back from shouting.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: the reel version holds attention longer than the Monsanto and Arco reels, because slide 1 describes a behavior people want to see rather than a date. If its watch time is no better, Field Notes hooks should lead with the story instead of the behavior. Share trigger: specific recipient (the friend who lowers their voice around animals) + recognition.
+
+ORIGINALITY
+Original: ART Lab typography and layout, no sourced imagery.
+
+COLLAB / TAG IDEAS (⚠ VERIFY handles before using; you send any invites)
+AGH University of Kraków / the Re:SENSTER project, Het Nieuwe Instituut (showed it in REBOOT, 2023–24)
+
+SOURCES (two or more per claim)
+- Wikipedia — Senster: https://en.wikipedia.org/wiki/Senster — Ihnatowicz; Philips; Evoluon 1970–1974; welded steel, hydraulic; four microphones and two Doppler radar sensors; toward quiet sounds, away from loud; skeleton outdoors in Zeeland; bought by AGH Kraków in 2017 and reactivated
+- Kate Vass Galerie — The Senster: https://www.katevassgalerie.com/blog/the-senster-by-edward-ihnatowicz — 1970; Philips commission for the Evoluon; hydraulic; microphones and Doppler radar; Philips P9201 computer; reprogrammed to retreat when too loud; skeleton outdoors in Zeeland for 40+ years; shipped to Poland in 2017
+- Digital Canon of the Netherlands — Edward Ihnatowicz: https://www.digitalcanon.nl/artworks/edward-ihnatowicz — Evoluon 1970–1974; four microphones, two Doppler radar units; gentle sounds drew the head in, loud sounds pushed it back; Philips P9201; dismantled 1974; skeleton in Zeeland 40+ years; AGH Kraków acquired it in April 2017
+
+EDITORIAL NOTE
+Sources give different heights (2.5 m at the shoulder vs. about 4 m), so slide 2 says it was taller than anyone who came to see it.
+
+FILES
+Carousel: slide_01.png onward, 1080x1350, in order. Reel: reel.mp4, 1080x1920, silent; add audio in Instagram. Same caption for either.

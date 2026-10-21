@@ -1,0 +1,42 @@
+{
+  "series": "The Future, Then",
+  "issue": "01",
+  "accent": "#2F6F8F",
+  "footer": "Monsanto House of the Future · 1957–1967",
+  "slides": [
+    {
+      "kind": "hook",
+      "text": "The house of the future opened in 1957, and in 1967 the wrecking ball bounced off it.",
+      "kicker": "Disneyland · Tomorrowland"
+    },
+    {
+      "kind": "body",
+      "text": "Monsanto paid for it and two MIT architects, Marvin Goody and Richard Hamilton, designed it: four plastic wings cantilevered off a concrete core."
+    },
+    {
+      "kind": "body",
+      "text": "Inside, it was set in 1986, with a microwave oven in the kitchen."
+    },
+    {
+      "kind": "body",
+      "text": "More than 20 million people walked through the house in its ten years."
+    },
+    {
+      "kind": "body",
+      "text": "When Tomorrowland was redone in 1967, the wrecking ball could not break the glass-reinforced plastic."
+    },
+    {
+      "kind": "body",
+      "text": "Crews tried torches, chainsaws and jackhammers, then crushed it with choker chains. The steel bolts holding it down broke before the house did."
+    },
+    {
+      "kind": "body",
+      "text": "The concrete foundation is still there, painted green and used as a planter."
+    },
+    {
+      "kind": "close",
+      "text": "For the friend who grew up going to Disneyland.",
+      "sub": "The Future, Then — tomorrow as it used to look"
+    }
+  ]
+}

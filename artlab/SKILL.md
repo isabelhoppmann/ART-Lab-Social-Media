@@ -51,12 +51,12 @@ Verified October 20, 2026. Re-check weekly (see Trend and algorithm watch) and u
 
 ## Content system
 
-Three posts a week: Tuesday, Thursday, Saturday. Hold two weeks between posts featuring the same architect or designer. Vary tone and color across the weekly row.
+Five posts a week, Monday through Friday. Hold two weeks between posts featuring the same architect or designer. Vary tone and color across the weekly row.
 
 | Series | Format | Original? | What it is |
 |---|---|---|---|
 | **Field Notes** | Typographic carousel, 6–9 slides | Yes | Kinetic, cybernetic and retro-futurist history told as a sequence of verified facts. Sample: Field Notes 01, CYSP 1. |
-| **Why It Works** (Saturday) | Typographic or annotated carousel | Yes if the imagery is ours or permissioned | A design opinion about one object, Wearstler-style: what the designer chose and why it still works (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
+| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours or permissioned | A design opinion about one object, Wearstler-style: what the designer chose and why it still works (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
 | **The Future, Then** | Carousel or reel | Original text; images permissioned | Nostalgia: how the future looked from a given year (the 1964 World's Fair, a 1969 home-of-the-future, a space-age hotel). |
 | **Field Notes, in motion** | Reel, silent, 25–40s | Yes | The same spec as a Field Notes carousel rendered by render_reel.py: the disc is already moving in the first frame, text holds per beat. This is how the account leads with movement without a shoot. |
 | **Rooms** | Carousel or reel | Exception only | Architecture where light is structural, from sourced photography. Only under the originality exception above. |
@@ -80,7 +80,7 @@ ART Lab does not shoot, and the Notion Media Library was ruled out for the agent
 - Images must always be beautiful. The thinking lives in captions and slide text, never as clutter in the picture.
 - No people in images, nothing religious or political, no product-focused posts, no AI-generated imagery, no AI sharpening. Religious and product subjects are case by case only when Isabel approves.
 - Art installations are allowed (relaxed October 2026), especially kinetic, light and cybernetic art. The no-people rule still holds for them.
-- Typographic carousels use the house template (see Tools): cream paper #EEE8DC, ink #1C1A16, one vermilion disc #D2471C that moves a step every slide so the swipe reads as motion; Instrument Serif for text, DM Mono for labels.
+- Typographic carousels use the house template (see Tools): cream paper #EEE8DC, ink #1C1A16, one colored disc that moves a step every slide so the swipe reads as motion (vermilion #D2471C for Field Notes, blue #2F6F8F for The Future, Then, warm gray #9A958A for Why It Works; set with "accent" in the spec); Instrument Serif for text, DM Mono for labels.
 
 ## House principles from the repo
 
@@ -111,7 +111,7 @@ Before a post goes to Isabel, write down (this is also its logged hypothesis, wr
 Work in a batch and deliver finished posts without stopping to explain. Problems go in an "Editorial flags" section at the end, not inline.
 
 1. Read the ART Lab — Posts database in Notion (collection://e2b5e402-3c80-42ee-aff2-1a798d4fd53c) for what ran in the last 30 days and how it did. Count originals vs sourced for the ledger.
-2. Pick three subjects across the series table, respecting the two-week designer hold and the originality ratio.
+2. Pick five subjects across the series table, respecting the two-week designer hold and the originality ratio.
 3. Research each to the two-source standard. Keep the sources.
 4. Build each post:
    - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
@@ -156,7 +156,7 @@ Write it as "What changed" and "What we should do differently," a few lines each
 
 - Repo: isabelhoppmann/ART-Lab-Social-Media (public). Attach it with push access, then `git clone --depth 1`.
 - Renderers: `artlab/tools/render_carousel.py spec.json out_dir` (1080x1350 PNGs) and `artlab/tools/render_reel.py spec.json out.mp4 [seconds_per_beat]` (1080x1920 silent reel, default 4.5s per beat). Fonts are in `artlab/tools/fonts`; they are embedded as data URIs because Chromium falls back to Times otherwise. Needs playwright + chromium and ffmpeg; install if missing.
-- Spec format: `{"series": "Field Notes", "issue": "02", "footer": "WORK · MAKER · YEAR", "slides": [{"kind": "hook"|"body"|"close", "text": "...", "kicker": "...", "sub": "..."}]}`; `<em>` gives italics. Keep body slides to about 25 words.
+- Spec format: `{"series": "Field Notes", "issue": "02", "accent": "#D2471C", "footer": "WORK · MAKER · YEAR", "slides": [{"kind": "hook"|"body"|"close", "text": "...", "kicker": "...", "sub": "..."}]}`; `<em>` gives italics. Keep body slides to about 25 words.
 - Drafts: commit each week to `artlab/drafts/<YYYY-MM-DD>/<post-slug>/` (files, caption.txt, spec.json). Never touch `briefings/` or `social/review-state.json`: pushes there post to Slack. Never add a workflow or script that posts to Slack.
 - Notion: weekly pages go under **ART Lab — IG Drafts** (page 3ffc2cdd459d8183bdb8e525ab22b9a6). Attach files with notion-create-attachment using the raw.githubusercontent.com URL of the committed file, then place them on the page in slide order. The sample page "Sample — Field Notes 01 (CYSP 1)" shows the layout.
 - Performance log: ART Lab — Posts (collection://e2b5e402-3c80-42ee-aff2-1a798d4fd53c). Read it; Isabel fills it after posting.

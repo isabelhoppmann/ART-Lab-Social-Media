@@ -71,7 +71,8 @@ def build_page(spec):
     for i, s in enumerate(spec["slides"]):
         extra = "".join(f'<span class="k">{s[k]}</span>' for k in ("kicker", "sub") if s.get(k))
         texts.append(f'<div class="t {s.get("kind","body")}" id="t{i}">{s["text"]}{extra}</div>')
-    return PAGE % dict(sr=_font("InstrumentSerif-Regular.ttf"), si=_font("InstrumentSerif-Italic.ttf"),
+    page = PAGE.replace("#D2471C", spec.get("accent", "#D2471C"))
+    return page % dict(sr=_font("InstrumentSerif-Regular.ttf"), si=_font("InstrumentSerif-Italic.ttf"),
                        mr=_font("DMMono-Regular.ttf"), W=W, H=H, series=spec["series"], issue=spec["issue"],
                        texts="\n".join(texts), footer=spec["footer"], n=len(spec["slides"]))
 
