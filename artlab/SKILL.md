@@ -139,7 +139,7 @@ Before a post goes to Isabel, write down (this is also its logged hypothesis, wr
 Work in a batch and deliver finished posts without stopping to explain. Problems go in an "Editorial flags" section at the end, not inline.
 
 1. Read the ART Lab — Posts database in Notion (collection://e2b5e402-3c80-42ee-aff2-1a798d4fd53c) for what ran in the last 30 days and how it did. Count originals vs sourced for the ledger.
-2. Pick five subjects across the series table, respecting the two-week designer hold and the originality ratio.
+2. Pick five subjects across the series table, following the weekly mix, the two-week designer hold and the originality ratio.
 3. Research each to the two-source standard. Keep the sources.
 4. Build each post:
    - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
