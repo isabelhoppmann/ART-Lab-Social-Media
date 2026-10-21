@@ -6,37 +6,40 @@
   "slides": [
     {
       "kind": "hook",
-      "text": "The house of the future opened in 1957, and in 1967 the wrecking ball bounced off it.",
-      "kicker": "Disneyland · Tomorrowland"
+      "text": "In 1957, Disneyland’s Tomorrowland opened a house of the future, made almost entirely of plastic.",
+      "kicker": "Monsanto House of the Future · Anaheim"
     },
     {
       "kind": "body",
-      "text": "Monsanto paid for it and two MIT architects, Marvin Goody and Richard Hamilton, designed it: four plastic wings cantilevered off a concrete core."
+      "text": "Monsanto, a chemical company, paid for it to show what plastic could do. Two architects from MIT designed it."
     },
     {
       "kind": "body",
-      "text": "Inside, it was set in 1986, with a microwave oven in the kitchen."
+      "text": "Four plastic wings stretched sixteen feet out from a concrete core, with nothing underneath them."
     },
     {
       "kind": "body",
-      "text": "More than 20 million people walked through the house in its ten years."
+      "text": "Inside, it was set thirty years ahead, in 1986, with a microwave oven in the kitchen."
     },
     {
       "kind": "body",
-      "text": "When Tomorrowland was redone in 1967, the wrecking ball could not break the glass-reinforced plastic."
+      "text": "More than 20 million people walked through it in ten years."
     },
     {
       "kind": "body",
-      "text": "Crews tried torches, chainsaws and jackhammers, then crushed it with choker chains. The steel bolts holding it down broke before the house did."
+      "text": "In 1967, Tomorrowland was being redone, and the house had to come down."
     },
     {
       "kind": "body",
-      "text": "The concrete foundation is still there, painted green and used as a planter."
+      "text": "The wrecking ball bounced off. Crews tried torches, chainsaws and jackhammers, then crushed it with chains."
     },
     {
-      "kind": "close",
-      "text": "For the friend who grew up going to Disneyland.",
-      "sub": "The Future, Then — tomorrow as it used to look"
+      "kind": "body",
+      "text": "The steel bolts holding it to the ground broke before the house did."
+    },
+    {
+      "kind": "body",
+      "text": "Its concrete foundation is still there, painted green and used as a planter."
     }
   ]
 }

@@ -1,17 +1,17 @@
 FRI OCT 23 — FIELD NOTES 02 — The Senster (7 slides + reel)
 
 CAPTION
-In 1970, Philips commissioned Edward Ihnatowicz to build the Senster for the Evoluon in Eindhoven: a hydraulic steel skeleton with four microphones and two Doppler radar units in its head. A computer read the room, and the head turned toward gentle sounds and drew back from loud ones, so the way to bring it closer was to lower your voice.
+In 1970, Philips commissioned the sculptor Edward Ihnatowicz to build the Senster for the Evoluon in Eindhoven, a steel robot whose head turned toward gentle sounds and pulled away from loud ones. It came down in 1974 and was long thought destroyed, while its skeleton stood outdoors in Zeeland for four decades. In 2017, a university in Kraków bought it and restored it to working order.
 
 The Senster (1970), Edward Ihnatowicz. Commissioned by Philips for the Evoluon.
 
 #ARTLab #kineticart #cybernetics #robotart #retrofuturism
 
 ALT TEXT (slide 1)
-Cream background with a single orange circle. Serif text reads: In 1970, Philips installed a robot that leaned toward quiet voices and drew back from shouting.
+Cream background with a single orange circle. Serif text reads: In 1970, a robot in Eindhoven leaned toward quiet voices and drew back from shouting.
 
 HYPOTHESIS (a prediction, so it can turn out wrong)
-Prediction: the reel version holds attention longer than the Monsanto and Arco reels, because slide 1 describes a behavior people want to see rather than a date. If its watch time is no better, Field Notes hooks should lead with the story instead of the behavior. Share trigger: specific recipient (the friend who lowers their voice around animals) + recognition.
+Prediction: this gets the highest reel watch time of the three, because the story turns (lost, then found) and people stay for the ending. If its completion rate is no better than the others, Field Notes should shorten the middle of the arc. Share trigger: recognition (a lost-and-found story worth retelling).
 
 ORIGINALITY
 Original: ART Lab typography and layout, no sourced imagery.
@@ -23,6 +23,8 @@ SOURCES (two or more per claim)
 - Wikipedia — Senster: https://en.wikipedia.org/wiki/Senster — Ihnatowicz; Philips; Evoluon 1970–1974; welded steel, hydraulic; four microphones and two Doppler radar sensors; toward quiet sounds, away from loud; skeleton outdoors in Zeeland; bought by AGH Kraków in 2017 and reactivated
 - Kate Vass Galerie — The Senster: https://www.katevassgalerie.com/blog/the-senster-by-edward-ihnatowicz — 1970; Philips commission for the Evoluon; hydraulic; microphones and Doppler radar; Philips P9201 computer; reprogrammed to retreat when too loud; skeleton outdoors in Zeeland for 40+ years; shipped to Poland in 2017
 - Digital Canon of the Netherlands — Edward Ihnatowicz: https://www.digitalcanon.nl/artworks/edward-ihnatowicz — Evoluon 1970–1974; four microphones, two Doppler radar units; gentle sounds drew the head in, loud sounds pushed it back; Philips P9201; dismantled 1974; skeleton in Zeeland 40+ years; AGH Kraków acquired it in April 2017
+- Evoluon history site — Senster: https://evoluon.dse.nl/senster-e.htm — near the entrance 1970–1974; toward sounds, away from loud ones; Eindhoven long believed it destroyed; restored to working condition by a team in Kraków
+- Speculum Artium — Senster: https://speculumartium.si/wp21/senster/?lang=en — listed as a lost media art project after the mid-1970s; bought and reactivated by AGH Kraków in 2017–2018
 
 EDITORIAL NOTE
 Sources give different heights (2.5 m at the shoulder vs. about 4 m), so slide 2 says it was taller than anyone who came to see it.

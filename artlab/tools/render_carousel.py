@@ -18,7 +18,7 @@ html,body {{ width:{W}px; height:{H}px; background:var(--paper); overflow:hidden
 .top {{ display:flex; justify-content:space-between; font-family:'Mono'; font-size:21px; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; }}
 .rule {{ position:absolute; left:88px; right:88px; top:140px; height:1px; background:var(--rule); }}
 .disc {{ position:absolute; border-radius:50%; background:var(--accent); }}
-.text {{ position:absolute; left:88px; right:120px; font-family:'Serif'; color:var(--ink); }}
+.text {{ position:absolute; left:88px; right:120px; font-family:'Serif'; color:var(--ink); text-wrap:pretty; }}
 .hook {{ font-size:96px; line-height:1.0; letter-spacing:-.01em; bottom:300px; }}
 .body {{ font-size:64px; line-height:1.12; bottom:250px; }}
 .close {{ font-size:72px; line-height:1.08; bottom:330px; }}
@@ -39,11 +39,11 @@ def slide_html(spec, s, i, n):
     x, y, size = disc_pos(i, n)
     extra = "".join(f'<div class="{k}">{s[k]}</div>' for k in ("kicker", "sub") if s.get(k))
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="slide">
-<div class="top"><span>ART Lab — {spec['series']} {spec['issue']}</span><span>{i+1:02d} / {n:02d}</span></div>
+<div class="top"><span>{spec['series']} {spec['issue']}</span><span>{i+1:02d} / {n:02d}</span></div>
 <div class="rule"></div>
 <div class="disc" style="left:{x}px; top:{y}px; width:{size}px; height:{size}px; background:{spec.get('accent', '#D2471C')}"></div>
 <div class="text {s.get('kind','body')}">{s['text']}</div>{extra}
-<div class="foot"><span>{spec['footer']}</span><span>{'Swipe' if i < n-1 else ''}</span></div>
+<div class="foot"><span>{spec['footer']}</span><span></span></div>
 </div></body></html>"""
 
 def main(spec_path, out_dir):

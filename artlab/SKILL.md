@@ -51,12 +51,12 @@ Verified October 20, 2026. Re-check weekly (see Trend and algorithm watch) and u
 
 ## Content system
 
-Five posts a week, Monday through Friday. Hold two weeks between posts featuring the same architect or designer. Vary tone and color across the weekly row.
+Five posts a week, Monday through Friday. **Field Notes at most once a week.** Hold two weeks between posts featuring the same architect or designer. Vary tone and color across the weekly row.
 
 | Series | Format | Original? | What it is |
 |---|---|---|---|
 | **Field Notes** | Typographic carousel, 6–9 slides | Yes | Kinetic, cybernetic and retro-futurist history told as a sequence of verified facts. Sample: Field Notes 01, CYSP 1. |
-| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours or permissioned | A design opinion about one object, Wearstler-style: what the designer chose and why it still works (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
+| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours or permissioned | One object, Wearstler-style, but shown rather than told: the opinion lives in which details are chosen and the order they come in, never in a slide that states it (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
 | **The Future, Then** | Carousel or reel | Original text; images permissioned | Nostalgia: how the future looked from a given year (the 1964 World's Fair, a 1969 home-of-the-future, a space-age hotel). |
 | **Field Notes, in motion** | Reel, silent, 25–40s | Yes | The same spec as a Field Notes carousel rendered by render_reel.py: the disc is already moving in the first frame, text holds per beat. This is how the account leads with movement without a shoot. |
 | **Rooms** | Carousel or reel | Exception only | Architecture where light is structural, from sourced photography. Only under the originality exception above. |
@@ -71,7 +71,15 @@ ART Lab does not shoot, and the Notion Media Library was ruled out for the agent
 - American English everywhere, hashtags included.
 - Cut AI tells: no long sentence followed by a short punchline fragment; no clever pivot clause tacked onto a stated fact; no explaining an image after landing it; never "I keep coming back to".
 - When ART Lab's own work is referred to at all, it is a piece or a presence object, never a product.
-- Share prompts name a recipient ("For the friend who dances, and the one who builds robots"). Never "tag a friend", "share this" or "link in bio".
+- No share prompts anywhere: no "for the friend who…" slide, no "tag a friend", "share this" or "link in bio". The content itself is what gets sent.
+
+## How a carousel is written (Isabel's notes, Oct 20, 2026)
+
+- **Story arc.** Every carousel is a story: setup, a turn, and a resolution. The last slide resolves it (what happened in the end, where it is now). Never end on a slogan, a summary, a share prompt or an opinion. A story that just stops is not finished.
+- **Bite-size.** One fact per slide, short sentences. Isabel likes this rhythm.
+- **Context first.** The where and the what go in slide 1 or 2 (say "Disneyland's Tomorrowland" up front, not on slide 6). A reader who sees only the first few slides should know what the post is about.
+- **No unexplained names.** The first time a person or company appears, say who they are ("the sculptor Edward Ihnatowicz", "Monsanto, a chemical company") or anonymize them ("two architects from MIT"). Full names and credits belong in the caption's credit line.
+- **Show, don't tell.** No slide that tells the reader what to think of a design ("nothing on it is hidden"). Choose the details that make the point and let them sit.
 
 ## Visual rules
 
@@ -80,11 +88,12 @@ ART Lab does not shoot, and the Notion Media Library was ruled out for the agent
 - Images must always be beautiful. The thinking lives in captions and slide text, never as clutter in the picture.
 - No people in images, nothing religious or political, no product-focused posts, no AI-generated imagery, no AI sharpening. Religious and product subjects are case by case only when Isabel approves.
 - Art installations are allowed (relaxed October 2026), especially kinetic, light and cybernetic art. The no-people rule still holds for them.
+- No "ART Lab" on slides and no "Swipe". The top label is the series and issue only. The renderer balances line breaks so no word sits alone on a line; check anyway.
 - Typographic carousels use the house template (see Tools): cream paper #EEE8DC, ink #1C1A16, one colored disc that moves a step every slide so the swipe reads as motion (vermilion #D2471C for Field Notes, blue #2F6F8F for The Future, Then, warm gray #9A958A for Why It Works; set with "accent" in the spec); Instrument Serif for text, DM Mono for labels.
 
 ## House principles from the repo
 
-- **Lead with movement.** Whatever moves goes first; nothing is gated behind a price, signup or "link in bio". A post with no movement needs a reason (the static Field Notes carousel is the sanctioned quiet format; pair it with its reel).
+- **Lead with movement.** Whatever moves goes first; nothing is gated behind a price, signup or "link in bio". A post with no movement needs a reason (a static carousel is the sanctioned quiet format; pair it with its reel).
 - **References from unrelated categories:** watchmaking (mechanism as the subject), gallery publishing (one object large, captions that inform), hi-fi (materials and engineering taken seriously). Not other lighting brands or robotics companies. Note where each reference came from.
 - **Borrow structure, never aesthetic.** Shot order, clip length, first frame, caption placement and sequencing can be copied from top performers; color, type, styling, music and phrasing cannot.
 - Core peers to watch (robotics x art): @sougwen, @madeline.gannon, @studiowaynemcgregor.
@@ -94,7 +103,7 @@ ART Lab does not shoot, and the Notion Media Library was ruled out for the agent
 Before a post goes to Isabel, write down (this is also its logged hypothesis, written before it goes out, as a prediction that can turn out wrong):
 1. **Share trigger** — one of: recognition (nostalgia), taste signal (sending it says something about the sender), a specific recipient, reference value (worth keeping), or a design opinion worth arguing about.
 2. **Slide 1 or the first second works alone** as a DM preview. A stranger who sees only that frame should want to send it.
-3. **Who receives it** — name the person it gets sent to. If you can't, the post isn't ready.
+3. **Who receives it** — know who it gets sent to (for your planning; never printed on a slide). If you can't say, the post isn't ready.
 4. **Originality** — original, permissioned, or Collab. Update the 30-day ledger.
 
 ## Sourcing and facts

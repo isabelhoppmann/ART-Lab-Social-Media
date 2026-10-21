@@ -28,7 +28,7 @@ html,body { width:%(W)dpx; height:%(H)dpx; background:#EEE8DC; overflow:hidden; 
   font-family:'Mono'; font-size:24px; letter-spacing:.14em; color:#6F685C; text-transform:uppercase;
   border-bottom:1px solid #CFC6B5; padding-bottom:26px; }
 #disc { position:absolute; border-radius:50%%; background:#D2471C; }
-.t { position:absolute; left:88px; right:110px; bottom:520px; font-family:'Serif'; opacity:0; }
+.t { position:absolute; left:88px; right:110px; bottom:520px; font-family:'Serif'; opacity:0; text-wrap:pretty; }
 .hook { font-size:104px; line-height:1.0; letter-spacing:-.01em; }
 .body { font-size:72px; line-height:1.12; }
 .close { font-size:80px; line-height:1.08; }
@@ -37,7 +37,7 @@ em { font-style:italic; }
 .foot { position:absolute; left:88px; right:88px; bottom:300px; font-family:'Mono'; font-size:22px;
   letter-spacing:.14em; color:#6F685C; text-transform:uppercase; border-top:1px solid #CFC6B5; padding-top:24px; }
 </style></head><body>
-<div class="top"><span>ART Lab — %(series)s %(issue)s</span><span id="count"></span></div>
+<div class="top"><span>%(series)s %(issue)s</span><span id="count"></span></div>
 <div id="disc"></div>
 %(texts)s
 <div class="foot">%(footer)s</div>

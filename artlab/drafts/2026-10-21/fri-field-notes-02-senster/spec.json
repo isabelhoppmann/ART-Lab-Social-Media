@@ -5,33 +5,32 @@
   "slides": [
     {
       "kind": "hook",
-      "text": "In 1970, Philips installed a robot that leaned toward quiet voices and drew back from shouting.",
-      "kicker": "The Senster · Eindhoven"
+      "text": "In 1970, a robot in Eindhoven leaned toward quiet voices and drew back from shouting.",
+      "kicker": "The Senster · Evoluon"
     },
     {
       "kind": "body",
-      "text": "Edward Ihnatowicz built it for the Evoluon, Philips’ exhibition hall in Eindhoven: a hydraulic steel skeleton taller than anyone who came to see it."
+      "text": "The sculptor Edward Ihnatowicz built it for Philips’ exhibition hall: a steel skeleton on hydraulics, taller than anyone who came to see it."
     },
     {
       "kind": "body",
-      "text": "Four microphones and two Doppler radar units in its head picked up sound and movement in the room."
+      "text": "Four microphones and two radar units in its head picked up sound and movement in the room."
     },
     {
       "kind": "body",
-      "text": "A Philips computer read them, and the neck turned the head toward gentle sounds and pulled it back from loud ones."
+      "text": "Gentle sounds drew its head toward a visitor. Loud ones made it pull back."
     },
     {
       "kind": "body",
-      "text": "Philips took it down in 1974. Its steel skeleton then stood outdoors in Zeeland for more than 40 years."
+      "text": "In 1974 it was taken down, and for years people in Eindhoven believed it had been destroyed."
     },
     {
       "kind": "body",
-      "text": "In 2017, a university in Kraków acquired the skeleton and took it to Poland to bring it back to life."
+      "text": "In fact, its steel skeleton spent more than forty years standing outdoors in Zeeland, in the Netherlands."
     },
     {
-      "kind": "close",
-      "text": "For the friend who lowers their voice around animals.",
-      "sub": "Field Notes — kinetic history, from ART Lab"
+      "kind": "body",
+      "text": "In 2017, a university in Kraków bought it and restored it to working order."
     }
   ]
 }

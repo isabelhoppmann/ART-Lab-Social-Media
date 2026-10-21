@@ -3,12 +3,30 @@
   "issue": "01",
   "footer": "CYSP 1 · Nicolas Schöffer · 1956",
   "slides": [
-    {"kind": "hook", "text": "In 1956, a sculpture danced with a ballet company on Le Corbusier’s roof.", "kicker": "CYSP 1 · Marseille"},
-    {"kind": "body", "text": "Nicolas Schöffer built it with engineers from Philips and named it CYSP 1, for <em>cybernetic</em> and <em>spatiodynamic</em>."},
-    {"kind": "body", "text": "Sixteen painted plates stood on a base with four rollers, and each plate turned on its own small motor."},
-    {"kind": "body", "text": "Photoelectric cells and a microphone read the light, color and sound around it, and the plates and rollers moved in response."},
-    {"kind": "body", "text": "That summer, Maurice Béjart set his dancers beside it on the rooftop terrace of the Cité Radieuse in Marseille, to music by Pierre Henry."},
-    {"kind": "body", "text": "Magazines at the time called it the first cybernetic sculpture in the world."},
-    {"kind": "close", "text": "For the friend who dances, and the one who builds robots.", "sub": "Field Notes — kinetic history, from ART Lab"}
+    {
+      "kind": "hook",
+      "text": "In 1956, a sculpture danced with a ballet company on Le Corbusier’s roof.",
+      "kicker": "CYSP 1 · Marseille"
+    },
+    {
+      "kind": "body",
+      "text": "The sculptor Nicolas Schöffer built it with engineers from Philips and named it CYSP 1, for <em>cybernetic</em> and <em>spatiodynamic</em>."
+    },
+    {
+      "kind": "body",
+      "text": "Sixteen painted plates stood on a base with four rollers, and each plate turned on its own small motor."
+    },
+    {
+      "kind": "body",
+      "text": "Photoelectric cells and a microphone read the light, color and sound around it, and the plates and rollers moved in response."
+    },
+    {
+      "kind": "body",
+      "text": "That summer, the choreographer Maurice Béjart set his dancers beside it on the rooftop terrace of the Cité Radieuse in Marseille, to music by the composer Pierre Henry."
+    },
+    {
+      "kind": "body",
+      "text": "Magazines at the time called it the first cybernetic sculpture in the world."
+    }
   ]
 }
