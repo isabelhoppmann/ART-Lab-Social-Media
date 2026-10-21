@@ -1,0 +1,16 @@
+Morning Briefing October 21, 2026
+
+=== ROBOTICS & AI ===
+- Tuesday Labs opened $200 refundable reservations for its Voxel Series-1 home-tidying robot on October 21, priced at $20,000 and trained using Pixar animation data; U.S. deliveries are expected to begin in 2028. https://www.techtimes.com/articles/329297/20261021/tuesday-labs-opens-reservations-voxel-20000-home-tidying-robot-trained-pixar-animation.htm
+- China's Ministry of Industry and Information Technology reported on October 20 that the country has developed more than 400 humanoid robot models with output exceeding 40,000 units through end-June 2026, and the agency projects annual production will top 100,000 units this year while planning a 2026 update to national humanoid standards and a new open-source community. http://www.china.org.cn/2026-10/20/content_118741588.shtml
+
+=== RESEARCH ===
+- EmbodyHOI (arXiv:2610.27242, submitted October 19) proposes an embodiment-aware pipeline for generating hand-object interaction trajectories for humanoid dexterous manipulation and reports task success rising from 68% to 79% on 50 randomized Unitree G1 tasks. https://arxiv.org/abs/2610.27242
+
+=== FUNDING & INVESTMENT ===
+- Cambridge-based Eka Robotics raised a $150 million Series A led by Andreessen Horowitz and F-Prime on October 20, 2026, at a $1.45 billion valuation, to scale its Vision-Force-Action foundation model for dexterous robotic manipulation. https://techfundingnews.com/eka-robotics-raises-150m-at-1-45b-valuation-led-by-a16z-and-f-prime-for-dexterous-robots/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: tuesday-labs-voxel-reservations, china-humanoid-100k-production, embody-hoi-dexterous-manipulation, eka-robotics-series-a
