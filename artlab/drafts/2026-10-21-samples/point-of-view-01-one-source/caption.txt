@@ -1,0 +1,27 @@
+POINT OF VIEW 01 — ONE SOURCE (carousel: 1 type slide + 4 AI images, 1080x1350 cover; images 928x1152)
+
+FORMAT
+Modeled on Kelly Wearstler's posts: her slides carry no text; the "text" is the caption, which opens with an ALL-CAPS title of two or three words, states a first-person opinion, names something specific, and closes on a short line that sticks. Point of View puts that opinion on one dark cover slide, then lets images do the rest. No disc, no slide counter, never more than one text slide.
+
+CAPTION
+ONE SOURCE
+We don’t trust a room that is lit evenly. The rooms we remember have one source: a window at the end of a hall, a skylight over a sunken floor, a single globe left on at the end of the day. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit. Shadow isn’t what’s left over. It’s half the design.
+
+Images imagined with AI.
+
+#ARTLab #lightingdesign #interiordesign #retrofuturism #designthinking
+
+SLIDE ORDER
+1 cover (slide_01.png) · 2 corridor · 3 skylight · 4 sunken room (pit) · 5 globe — the AI images from Light Studies 01 (Figma file YG3xn6OSYJHWHi9hD4zhuo).
+
+ALT TEXT (slide 1)
+Near-black background. Large cream serif capitals read ONE SOURCE, above a short paragraph: We don’t trust a room that is lit evenly. Light from one side gives a room a direction: somewhere to walk toward, somewhere to sit. Shadow isn’t what’s left over. It’s half the design.
+
+HYPOTHESIS
+Prediction: Point of View earns more saves and sends per reach than Light Studies 01 with the same four images, because a stated opinion gives people a reason to forward it ("this is why I hate our office lights"). If it doesn't, the images carry these posts and the cover slide should be dropped.
+
+ORIGINALITY
+Original: ART Lab typography plus AI images generated for ART Lab. Turn on Instagram's AI label when posting.
+
+SOURCES
+None needed: an opinion, no factual claims.
