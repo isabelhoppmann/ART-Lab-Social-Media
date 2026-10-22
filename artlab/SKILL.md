@@ -146,7 +146,7 @@ Work in a batch and deliver finished posts without stopping to explain. Problems
 4. Build each post:
    - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
    - Point of View: write the title and opinion (under about 45 words on the slide), render the cover with render_pov.py, and pair it with 3–6 images (AI or permissioned).
-   - Statement: write one opinion of 12 words or fewer and render it with render_statement.py. It posts alone (or opens a carousel).
+   - Statement: write one opinion of 12 words or fewer and render it with render_statement.py. It posts alone (or opens a carousel). Use a different opinion from that week's Point of View.
    - Captions for both follow Wearstler's shape: an ALL-CAPS title on its own line, the opinion in first person plural ("we"), one specific thing named, a closing line that is not a clipped punchline, then a credit line if anything real is pictured, and 5 hashtags.
    - AI images: generate in Figma (see Tools), look at each one, and place the chosen ones on the Notion page straight from their asset URLs.
    - Reels: 1080x1920, silent export, about 3.5s per shot with 0.6s crossfades. Pre-crop landscape sources to 9:16 by subject; anything under about 950px crop width will look soft, so drop it. Trending audio is added in Instagram on upload.
