@@ -1,0 +1,21 @@
+LIGHT STUDIES 01 — one day, four rooms (carousel: 4 AI images, 928x1152)
+
+IMAGES (Figma file "ART Lab IG — AI image tests", file key YG3xn6OSYJHWHi9hD4zhuo), in order:
+1 morning, light through a slot in a concrete ceiling — node 3:2
+2 midday, round skylight — node 1:2
+3 late afternoon, sunken living room — node 2:2
+4 dusk, single glowing globe — node 4:2
+Made with gemini-3.1-flash-image. Point of View 01 reuses these same four images, so only one of the two can be posted.
+
+CAPTION
+One day, four rooms. Morning comes through a slot in a concrete ceiling, midday through a round skylight, late afternoon across a sunken living room, and the day ends with a single glowing globe, in the spirit of houses from the 1960s and 70s that were planned around the path of the sun.
+
+Light Studies 01, ART Lab.
+
+#ARTLab #lightstudies #retrofuturism #minimalinteriors #architecture
+
+HYPOTHESIS
+Prediction: this gets more saves per reach than the text posts, because it is a mood people keep, but fewer sends than a story post, because there is no story to retell. If it beats the text posts on sends too, AI-photo posts should take more of the week.
+
+ORIGINALITY
+Original (AI images generated for ART Lab).
