@@ -69,7 +69,7 @@ Copy how a post is *built* and you learn craft. Copy how it *looks* and you prod
 
 ## 3. AI-generated imagery is allowed, for atmosphere (changed Oct 21, 2026)
 
-**The rule:** AI-generated images may be used in ART Lab content for atmosphere: imagined rooms, light, materials, and objects that don't exist. They never depict a real object, building, artwork, person or historical event, never show people, and never show or hint at the ART Lamp. Real things are shown in real photographs (our own, permissioned, or shared as a Collab) or told in type.
+**The rule:** AI-generated images may be used in ART Lab content for atmosphere: imagined rooms, light, materials, and objects that don't exist. They never depict a real object, building, artwork, person or historical event, never show people, and never show or hint at the ART Lamp. Real things are shown in real photographs (our own, or public photographs from museums, archives and other public collections, never the brand's) or told in type.
 
 **Why it changed:** since April 30, 2026, Instagram stops recommending accounts whose recent posts are mostly other people's photographs. ART Lab doesn't shoot, and the feed needs to be photographic, so images made for ART Lab are how it stays original. This replaces the earlier rule of no AI imagery at all.
 

@@ -17,7 +17,7 @@ Also binding: `ARTLAB_CONTENT_PRINCIPLES.md` and `formats/artlab.json` in the re
 
 - Establish ART Lab's voice and aesthetic online.
 - Gather the right audience (design-literate collectors, designers, curators, hospitality and architecture people, the robotics/creative-tech crowd). A tight account with the right 2K reads as more legitimate than 30K random. No giveaways, no follow-loops.
-- Build toward increasingly prestigious earned media: features, reshares and collabs from design press, galleries, archives and designers.
+- Build toward increasingly prestigious earned media: features and reshares from design press, galleries, archives and designers.
 - We sell the presence and the world around it, never an object. The ART Lamp will not be shown for roughly nine months (until about mid-2027). Until Isabel says otherwise: no product posts, no renders from the Media Library, no hints at the form.
 
 **North-star metric: sends per reach** (DM shares ÷ accounts reached). Secondary: saves, non-follower reach, follows per post, and watch time on reels. Likes are a weak signal; don't optimize for them.
@@ -42,7 +42,7 @@ Verified October 20, 2026. Re-check weekly (see Trend and algorithm watch) and u
 
 - **Sends per reach** is one of the three signals Adam Mosseri names (with watch time and likes per reach) and the strongest one for reaching people who don't follow you yet. Design every post to be forwarded to one specific person.
 - **Originality rule, April 30, 2026.** Instagram no longer recommends photos and carousels from accounts where most posts in a rolling 30-day window are reposts of other people's work. Followers still see them; nobody new does. A watermark, a light crop or a caption on someone else's photo does not count as original. Accounts become eligible again once most of their recent posts are original. Instagram suggests collabs or remixes for sharing another creator's work.
-  - **Consequence for ART Lab:** the old feed (sourced architect photography, film stills, designer reels) is the pattern this rule targets. Isabel's rule: **every post is original by default.** Use sourced imagery only when no original version can reach the image-quality bar or the metrics (sends and saves per reach). When you do, flag it as the exception in Editorial flags, get the photographer's or archive's permission, prefer a Collab invite, and never let sourced posts reach half of any rolling 30-day window, because that is where Instagram stops recommending the account. Keep a running 30-day ledger.
+  - **Consequence for ART Lab:** the old feed (sourced architect photography, film stills, designer reels) is the pattern this rule targets. Isabel's rule: **every post is original by default.** Use sourced imagery only when no original version can reach the image-quality bar or the metrics (sends and saves per reach). When you do, flag it as the exception in Editorial flags, follow the photo-sourcing rule below, and never let sourced posts reach half of any rolling 30-day window, because that is where Instagram stops recommending the account. Keep a running 30-day ledger.
 - **Your Algorithm** (Feed, Reels and Explore since June 2026) lets viewers pick topics. A clear, consistent theme makes the account easy to categorize; drifting across unrelated topics costs reach.
 - **Reels** up to 3 minutes are eligible for recommendation; longer ones are not. Hold attention in the first seconds; completion and rewatches count.
 - **Hashtags:** the Help Center allows up to 5 per post. House rule is exactly 5, opening with #ARTLab.
@@ -56,14 +56,14 @@ Five posts a week, Monday through Friday. Hold two weeks between posts featuring
 **The weekly mix (Isabel, Oct 21, 2026):** Isabel wants the feed photographic, with more text posts that don't all look like Field Notes. A normal week:
 - **Point of View** — one.
 - **Statement** — one (added Oct 21 on top of the existing formats, not replacing any).
-- **Photo-led** — two: Light Studies (AI images made for ART Lab) or a photo version of Why It Works / The Future, Then using permissioned photographs.
+- **Photo-led** — two: Light Studies (AI images made for ART Lab) or a photo version of Why It Works / The Future, Then using public photographs (see the photo-sourcing rule).
 - **One more** — Field Notes, Why It Works or The Future, Then. Field Notes never more than once a week.
 
 | Series | Format | Original? | What it is |
 |---|---|---|---|
 | **Field Notes** | Typographic carousel, 6–9 slides | Yes | Kinetic, cybernetic and retro-futurist history told as a sequence of verified facts. Sample: Field Notes 01, CYSP 1. |
-| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours or permissioned | One object, Wearstler-style, but shown rather than told: the opinion lives in which details are chosen and the order they come in, never in a slide that states it (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
-| **The Future, Then** | Carousel or reel | Original text; images permissioned | Nostalgia: how the future looked from a given year (the 1964 World's Fair, a 1969 home-of-the-future, a space-age hotel). |
+| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours; sourced if it uses public photos | One object, Wearstler-style, but shown rather than told: the opinion lives in which details are chosen and the order they come in, never in a slide that states it (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
+| **The Future, Then** | Carousel or reel | Original text; images sourced from public collections | Nostalgia: how the future looked from a given year (the 1964 World's Fair, a 1969 home-of-the-future, a space-age hotel). |
 | **Field Notes, in motion** | Reel, silent, 25–40s | Yes | The same spec as a Field Notes carousel rendered by render_reel.py: the disc is already moving in the first frame, text holds per beat. This is how the account leads with movement without a shoot. |
 | **Point of View** | One dark type slide, then 3–6 images | Yes | A design opinion, Wearstler-style. Slide 1 is an ALL-CAPS title and a short first-person opinion (rendered by render_pov.py); the images make the case. Never more than one text slide, no disc, no slide counter. Sample: Point of View 01, ONE SOURCE. |
 | **Statement** | One image: a statement slide (or slide 1 of a carousel) | Yes | One opinion of 12 words or fewer in stacked capitals on a solid color, after Wearstler's Substack slides (rendered by render_statement.py). The caption carries the rest. Sample: Statement 01, "We don't trust a room that is lit evenly." |
@@ -74,7 +74,7 @@ ART Lab does not shoot, and the Notion Media Library was ruled out for the agent
 
 ### AI images (rules since Oct 21, 2026)
 
-- Use them for atmosphere: imagined rooms, light, materials, objects that don't exist. Never to depict a real object, building, artwork, person or historical event. A real thing (the Arco, the Monsanto house, the Senster) is shown with real photographs used with permission or as a Collab, or told in type.
+- Use them for atmosphere: imagined rooms, light, materials, objects that don't exist. Never to depict a real object, building, artwork, person or historical event. A real thing (the Arco, the Monsanto house, the Senster) is shown with public photographs (see the photo-sourcing rule) or told in type.
 - Same visual rules as everything else: no people, no product, no hints at the ART Lamp's form, architectural minimalism, one gesture per frame.
 - No AI label and no caption line about AI (Isabel, Oct 21, 2026). Never write a caption that presents an imagined room as a real place: no invented addresses, architects or dates.
 - Look at every image before delivering: warped geometry, melted text, impossible fixtures and extra lamps are rejects.
@@ -125,16 +125,17 @@ Before a post goes to Isabel, write down (this is also its logged hypothesis, wr
 1. **Share trigger** — one of: recognition (nostalgia), taste signal (sending it says something about the sender), a specific recipient, reference value (worth keeping), or a design opinion worth arguing about.
 2. **Slide 1 or the first second works alone** as a DM preview. A stranger who sees only that frame should want to send it.
 3. **Who receives it** — know who it gets sent to (for your planning; never printed on a slide). If you can't say, the post isn't ready.
-4. **Originality** — original, AI, permissioned, or Collab. Update the 30-day ledger.
+4. **Originality** — original, AI, or sourced (public photos). Update the 30-day ledger.
 
 ## Sourcing and facts
 
 - Every factual claim needs two independent sources; single sources often conflict. When they disagree, use the narrower claim (for example "1956", not a contested exact date) or leave it out.
-- Prefer primary sources: architect, designer, museum and archive sites; period publications; foundation pages.
-- Images: survey every source first, then assemble the best set. Architect portfolios over stock and Wikimedia documentation shots. ArchDaily's CDN caps around 900–1280px, so never use it as a primary source. Reliable full-resolution paths: campobaeza.com wp-content originals (about 2200px), johnpawson.com /assets/Works/ (2000px), Flos with ?sw=2000, Es Devlin via cdn.sanity.io, ArchEyes wp-content.
+- Prefer primary sources for facts: architect, designer, museum and archive sites; period publications; foundation pages.
+- **Photo-sourcing rule (Isabel, Oct 22, 2026):** real photographs come only from public institutions: museums, archives, foundations, libraries, universities and open-access collections (MoMA, the Met, Cooper Hewitt, Vitra Design Museum, the V&A, Wikimedia Commons and the like). Never from the brand, manufacturer or maker's own site or marketing photography (no Flos, no designer studio sites). Never ask anyone for permission and never propose a Collab to use a photo. Credit the institution in the caption's credit line ("Photograph: The Museum of Modern Art"). Prefer open-access or public-domain images where the collection offers them.
+- Images: survey every public source first, then assemble the best set. ArchDaily's CDN caps around 900–1280px, so never use it as a primary source.
 - Screen each image: pixel dimensions, and a NumPy unique-color count (fewer than about 50,000 suggests heavy compression; exclude). Exclude frames with people, duplicates, drawings, packshots and Flickr-user shots. Build a contact sheet with Pillow and look at it before delivering.
 - Flag every social handle "⚠ VERIFY" for Isabel. Never misattribute a building name in a credit line.
-- Anything sourced needs a permission note: who owns it, whether we asked, whether it goes out as a Collab.
+- Anything sourced needs a source note: which institution, the page it came from, and its license if the collection states one.
 
 ## Producing a week of posts
 
@@ -145,13 +146,13 @@ Work in a batch and deliver finished posts without stopping to explain. Problems
 3. Research each to the two-source standard. Keep the sources.
 4. Build each post:
    - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
-   - Point of View: write the title and opinion (under about 45 words on the slide), render the cover with render_pov.py, and pair it with 3–6 images (AI or permissioned).
+   - Point of View: write the title and opinion (under about 45 words on the slide), render the cover with render_pov.py, and pair it with 3–6 images (AI or public photos).
    - Statement: write one opinion of 12 words or fewer and render it with render_statement.py. It posts alone (or opens a carousel). Use a different opinion from that week's Point of View.
    - Captions for both follow Wearstler's shape: an ALL-CAPS title on its own line, the opinion in first person plural ("we"), one specific thing named, a closing line that is not a clipped punchline, then a credit line if anything real is pictured, and 5 hashtags.
    - AI images: generate in Figma (see Tools), look at each one, and place the chosen ones on the Notion page straight from their asset URLs.
    - Reels: 1080x1920, silent export, about 3.5s per shot with 0.6s crossfades. Pre-crop landscape sources to 9:16 by subject; anything under about 950px crop width will look soft, so drop it. Trending audio is added in Instagram on upload.
 5. QC: open every slide or a contact sheet and look at it. Check text fits, nothing is cut off, no people slipped in, caption word count, hashtag count, American spellings.
-6. Deliver one folder per post: slide PNGs in order and/or the MP4, caption.txt with caption, alt text, hypothesis, originality status, suggested collab/tag handles (⚠ VERIFY), and sources. Commit it to the repo and lay it out on that week's Notion page (see Tools). Isabel downloads from Notion and builds the posts in Planable for Catie's approval.
+6. Deliver one folder per post: slide PNGs in order and/or the MP4, caption.txt with caption, alt text, hypothesis, originality status, suggested tag handles (⚠ VERIFY), and sources. Commit it to the repo and lay it out on that week's Notion page (see Tools). Isabel downloads from Notion and builds the posts in Planable for Catie's approval.
 
 ## Strategy and brainstorming with Isabel
 
@@ -174,7 +175,7 @@ Write it as "What changed" and "What we should do differently," a few lines each
 
 ## Earned media
 
-- Every Field Notes or Rooms post names who could reshare or collab: the archive, foundation, museum, estate, gallery or designer whose work it covers. Collab invites put the post on both profiles and are the cleanest way to share someone else's material. Isabel sends them; you only suggest.
+- Every Field Notes or Rooms post names who could reshare it: the archive, foundation, museum, estate or gallery whose work it covers, as tag ideas. No Collab invites and no outreach (Isabel, Oct 22, 2026).
 - Keep series consistent and numbered so press and curators can point to them ("ART Lab's Field Notes").
 - Engagement-out targets live in Social Growth — Weekly Playbook in Notion; rotate them.
 
