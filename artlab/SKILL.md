@@ -53,7 +53,9 @@ Verified October 20, 2026. Re-check weekly (see Trend and algorithm watch) and u
 
 Five posts a week, Monday through Friday. Hold two weeks between posts featuring the same architect or designer. Vary tone and color across the weekly row.
 
-**Post length (Isabel, Oct 22, 2026):** a carousel of at least 3 slides, ideally 4–5. A single image only rarely (no more than one a week, and not every week). Never 2 slides.
+**Post length (Isabel, Oct 22, 2026):** a single text slide is fine (a Statement on its own). Photo posts are carousels of at least 3 photos, ideally 4–5; a single photo only rarely. Never exactly 2 photos.
+
+**No competitors (Isabel, Oct 22, 2026):** never spotlight lighting brands or lamps that a company still sells (Flos and the Arco, Artemide, Louis Poulsen, Vitra and Noguchi's Akari, and the like). ART Lab is in that market. Kinetic and light art by artists, historical exhibitions, architecture and non-lighting design objects are fine.
 
 **The weekly mix (Isabel, Oct 21, 2026):** Isabel wants the feed photographic, with more text posts that don't all look like Field Notes. A normal week:
 - **Point of View** — one.
@@ -64,11 +66,11 @@ Five posts a week, Monday through Friday. Hold two weeks between posts featuring
 | Series | Format | Original? | What it is |
 |---|---|---|---|
 | **Field Notes** | Typographic carousel, 6–9 slides | Yes | Kinetic, cybernetic and retro-futurist history told as a sequence of verified facts. Sample: Field Notes 01, CYSP 1. |
-| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours; sourced if it uses public photos | One object, Wearstler-style, but shown rather than told: the opinion lives in which details are chosen and the order they come in, never in a slide that states it (Arco, Akari, Eclisse, Atollo, Panthella, Tizio, a Braun radio). |
+| **Why It Works** | Typographic or annotated carousel | Yes if the imagery is ours; sourced if it uses public photos | One object, Wearstler-style, but shown rather than told: the opinion lives in which details are chosen and the order they come in, never in a slide that states it (a Braun radio, an Olivetti typewriter, a Brionvega TV, a Sacco chair; never a lamp sold by another company). |
 | **The Future, Then** | Carousel or reel | Original text; images sourced from public collections | Nostalgia: how the future looked from a given year (the 1964 World's Fair, a 1969 home-of-the-future, a space-age hotel). |
 | **Field Notes, in motion** | Reel, silent, 25–40s | Yes | The same spec as a Field Notes carousel rendered by render_reel.py: the disc is already moving in the first frame, text holds per beat. This is how the account leads with movement without a shoot. |
 | **Point of View** | One dark type slide, then 3–6 images | Yes | A design opinion, Wearstler-style. Slide 1 is an ALL-CAPS title and a short first-person opinion (rendered by render_pov.py); the images make the case. Never more than one text slide, no disc, no slide counter. Sample: Point of View 01, ONE SOURCE. |
-| **Statement** | Statement slide, then 3–4 images (single image only occasionally) | Yes | One opinion of 12 words or fewer in stacked capitals on a solid color, after Wearstler's Substack slides (rendered by render_statement.py), followed by images that make the case. The caption carries the rest. Sample: Statement 01, "We don't trust a room that is lit evenly." |
+| **Statement** | A single statement slide, or the statement followed by 3–4 images | Yes | One opinion of 12 words or fewer in stacked capitals on a solid color, after Wearstler's Substack slides (rendered by render_statement.py). The caption carries the rest. Sample: Statement 01, "We don't trust a room that is lit evenly." |
 | **Light Studies** | Image carousel, 4–5 AI images, no text on slides | Yes (AI) | Imagined rooms and objects in the house aesthetic, sequenced as a story (one day, one material, one gesture). Sample: Light Studies 01, one day, four rooms. |
 | **Rooms** | Carousel or reel | Exception only | Architecture where light is structural, from sourced photography. Only under the originality exception above. |
 
@@ -76,7 +78,7 @@ ART Lab does not shoot, and the Notion Media Library was ruled out for the agent
 
 ### AI images (rules since Oct 21, 2026)
 
-- Use them for atmosphere: imagined rooms, light, materials, objects that don't exist. Never to depict a real object, building, artwork, person or historical event. A real thing (the Arco, the Monsanto house, the Senster) is shown with public photographs (see the photo-sourcing rule) or told in type.
+- Use them for atmosphere: imagined rooms, light, materials, objects that don't exist. Never to depict a real object, building, artwork, person or historical event. A real thing (the Monsanto house, the Senster) is shown with public photographs (see the photo-sourcing rule) or told in type.
 - Same visual rules as everything else: no people, no product, no hints at the ART Lamp's form, architectural minimalism, one gesture per frame.
 - No AI label and no caption line about AI (Isabel, Oct 21, 2026). Never write a caption that presents an imagined room as a real place: no invented addresses, architects or dates.
 - Look at every image before delivering: warped geometry, melted text, impossible fixtures and extra lamps are rejects.
@@ -149,7 +151,7 @@ Work in a batch and deliver finished posts without stopping to explain. Problems
 4. Build each post:
    - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
    - Point of View: write the title and opinion (under about 45 words on the slide), render the cover with render_pov.py, and pair it with 3–6 images (AI or public photos).
-   - Statement: write one opinion of 12 words or fewer and render it with render_statement.py, then follow it with 3–4 images (AI, reused AI, or public photos). Post it alone only occasionally. Use a different opinion from that week's Point of View.
+   - Statement: write one opinion of 12 words or fewer and render it with render_statement.py. It can post as a single slide, or be followed by 3–4 images (AI, reused AI, or public photos). Use a different opinion from that week's Point of View.
    - Captions for both follow Wearstler's shape: an ALL-CAPS title on its own line, the opinion in first person plural ("we"), one specific thing named, a closing line that is not a clipped punchline, then a credit line if anything real is pictured, and 5 hashtags.
    - AI images: generate in Figma (see Tools), look at each one, and place the chosen ones on the Notion page straight from their asset URLs.
    - Reels: 1080x1920, silent export, about 3.5s per shot with 0.6s crossfades. Pre-crop landscape sources to 9:16 by subject; anything under about 950px crop width will look soft, so drop it. Trending audio is added in Instagram on upload.
