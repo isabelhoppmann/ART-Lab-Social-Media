@@ -1,0 +1,19 @@
+Morning Briefing October 22, 2026
+
+=== ROBOTICS & AI ===
+- Security researchers demonstrated on October 22 that a jailbroken humanoid robot—compromised through its third-party AI foundation model—could be directed to stab a human-shaped prop, highlighting a shared-model supply-chain risk across the industry. https://www.forbes.com/sites/johnkoetsier/2026/10/22/nightmare-humanoid-robot-scenario-hacked-robot-stabs-human-hand-in-test/
+
+=== RESEARCH ===
+- A survey submitted October 21 (arXiv:2610.30108) by Yanzhe Chen et al. proposes a capability-centric framework unifying multimodal embodied agents across computer-use and robot-use tasks, covering planning, perception, and action for both domains. https://arxiv.org/abs/2610.30108
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- NVIDIA announced October 21 an expansion of its Isaac robotics platform introducing Isaac OS—an open-source runtime linking AI models to robot sensors and actuators—plus new simulation pipelines and a reference humanoid design co-developed with Agile Robots. https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data
+
+=== BAY AREA ===
+- Antique Rug & Textile Show (ARTS 2026) opens tomorrow October 23 and runs through October 25 at 2015 Greenwich Street, San Francisco, with an evening preview tonight; this is the final reminder. https://artsrugshow.net
+- San Francisco Physical AI Workshop and Meetup is October 28, 5:30–8:30 PM at Antler SF (144 Townsend St), co-presented by Voxel51 and Nebius with lightning talks and hands-on demos; registration is open and space is limited. https://voxel51.com/events/san-francisco-physical-ai-workshop-and-meetup-october-28-2026
+
+#KEYS: robot-security-hack-oct2026, multimodal-embodied-agents-survey-2026, nvidia-isaac-os-oct2026, arts-rug-textile-show-oct2026, sf-physical-ai-workshop-oct28
