@@ -1,0 +1,32 @@
+POINT OF VIEW 02 — OBJECTS WITH FACES (carousel: dark cover + 4 public MoMA photographs)
+Extra post, prepped for the week of Oct 26.
+
+SLIDES (in order)
+1 cover: slide_01.png
+2 Algol 11 television (1823x2000): https://www.moma.org/media/W1siZiIsIjIzMDM0MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4112
+3 TS 502 radio, open (2000x1765): https://www.moma.org/media/W1siZiIsIjIyOTg0NSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4034
+4 Black 201 television (2000x1951): https://www.moma.org/media/W1siZiIsIjIxMjIxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4031
+5 Videosphere television (1600x2000): https://www.moma.org/media/W1siZiIsIjU0MjIyNCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/292710
+
+CAPTION
+OBJECTS WITH FACES
+We like machines that look back at you. The designer Marco Zanuso said his Algol television was a little dog looking up at its master. His TS 502 radio stays a plain box until it opens in half, his Black 201 hides its screen behind black plastic until it is switched on, and JVC's Videosphere put the picture inside an astronaut's helmet.
+
+Algol (1964), TS 502 and Black 201, Marco Zanuso and Richard Sapper for Brionvega; Videosphere (1970), JVC. Photographs: The Museum of Modern Art, New York.
+
+#ARTLab #spaceage #italiandesign #retrofuturism #industrialdesign
+
+ALT TEXT (slide 1)
+Near-black background. Large cream serif capitals read OBJECTS WITH FACES, above a short paragraph: We like machines that look back at you: a television that tilts its screen up at you, a radio that stays shut until you open it, a screen that hides until it's switched on.
+
+HYPOTHESIS
+Prediction: this earns more sends per reach than the photo posts this week, because "objects with faces" is an idea people recognize in their own things and forward with a photo of theirs. If it doesn't, Point of View covers need a more surprising opinion than a shared taste. Share trigger: taste signal + recognition.
+
+ORIGINALITY
+Cover original; photos sourced (public MoMA collection photographs).
+
+SOURCES
+- Algol, "a little dog that looks up at its master" (Zanuso): Core77 https://www.core77.com/posts/136933/An-Industrial-Design-Classic-The-Brionvega-Algol-TV ; Design Museum Brussels https://collection.designmuseum.brussels/en/algol-11 (1964, Zanuso and Sapper, Brionvega)
+- TS 502 only reveals it is a radio when opened: V&A https://collections.vam.ac.uk/item/O322043 ; Museo Omero https://museoomero.it/en/opere/radio-ts502/
+- Black 201 hides its screen until switched on: V&A https://collections.vam.ac.uk/item/O168300 ; MoMA https://www.moma.org/calendar/exhibitions/402
+- Videosphere shaped like an astronaut's helmet, designed 1970: V&A https://collections.vam.ac.uk/item/O62328 ; MoMA https://www.moma.org/collection/works/292710 ; Science Museum https://collection.sciencemuseum.org.uk/objects/co416941/jvc-3241uk-videosphere-television-receiver-television-receiver

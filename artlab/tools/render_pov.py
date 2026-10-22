@@ -29,7 +29,7 @@ def html(spec):
 html,body{{margin:0;width:{W}px;height:{H}px;background:{ground};color:{ink}}}
 .wrap{{position:absolute;inset:0;padding:96px 96px 104px;display:flex;flex-direction:column}}
 .label{{font-family:'DM';font-size:22px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}}
-.title{{font-family:'IS';font-size:168px;line-height:.9;letter-spacing:.01em;margin-top:auto;
+.title{{font-family:'IS';font-size:168px;line-height:1.0;letter-spacing:.01em;margin-top:auto;
         text-wrap:balance}}
 .rule{{height:1px;background:{ink};opacity:.35;margin:56px 0 48px}}
 .body{{font-family:'IS';font-size:46px;line-height:1.22;max-width:820px;text-wrap:pretty}}
