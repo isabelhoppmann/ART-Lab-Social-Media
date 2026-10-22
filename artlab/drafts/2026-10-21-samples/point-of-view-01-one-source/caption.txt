@@ -1,27 +1,25 @@
-POINT OF VIEW 01 — ONE SOURCE (carousel: 1 type slide + 4 AI images, 1080x1350 cover; images 928x1152)
+POINT OF VIEW 01 — ONE SOURCE (carousel: statement slide + 4 AI images; slide 1 is 1080x1350, images 928x1152)
 
 FORMAT
-Modeled on Kelly Wearstler's posts: her slides carry no text; the "text" is the caption, which opens with an ALL-CAPS title of two or three words, states a first-person opinion, names something specific, and closes on a short line that sticks. Point of View puts that opinion on one dark cover slide, then lets images do the rest. No disc, no slide counter, never more than one text slide.
+Modeled on Kelly Wearstler's Substack statement slides (WEARSTLERworld): one sentence in stacked capitals on a solid color, alternating a serif and a wide sans. The caption follows the shape of her Instagram captions: an ALL-CAPS title, the opinion in first person, one specific thing named, a closing line.
 
 CAPTION
 ONE SOURCE
-We don’t trust a room that is lit evenly. The rooms we remember have one source: a slot in a concrete ceiling, a round skylight, late sun across a sunken floor, a single globe left on at dusk. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit, and the shadow it leaves is as much a part of the design as the light.
-
-Images imagined with AI.
+The rooms we remember have one source: a slot in a concrete ceiling, a round skylight, late sun across a sunken floor, a single globe left on at dusk. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit, and the shadow it leaves is as much a part of the design as the light.
 
 #ARTLab #lightingdesign #interiordesign #retrofuturism #designthinking
 
 SLIDE ORDER
-1 cover (slide_01.png) · 2 ceiling slot (morning) · 3 skylight · 4 sunken room · 5 globe — the AI images from Light Studies 01 (Figma file YG3xn6OSYJHWHi9hD4zhuo).
+1 statement (slide_01.png) · 2 ceiling slot (morning) · 3 skylight · 4 sunken room · 5 globe — the AI images from Light Studies 01 (Figma file YG3xn6OSYJHWHi9hD4zhuo, nodes 3:2, 1:2, 2:2, 4:2).
 
 ALT TEXT (slide 1)
-Near-black background. Large cream serif capitals read ONE SOURCE, above a short paragraph: We don’t trust a room that is lit evenly. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit, and the shadow it leaves is as much a part of the design as the light.
+Cream capitals on a vermilion background, in alternating serif and wide sans lines, read: We don't trust a room that is lit evenly.
 
 HYPOTHESIS
-Prediction: Point of View earns more saves and sends per reach than Light Studies 01 with the same four images, because a stated opinion gives people a reason to forward it ("this is why I hate our office lights"). If it doesn't, the images carry these posts and the cover slide should be dropped.
+Prediction: with the same four images, this earns more sends per reach than Light Studies 01, because a one-line opinion on slide 1 works as a DM preview on its own. If it doesn't, the images carry these posts and the statement slide isn't adding anything.
 
 ORIGINALITY
-Original: ART Lab typography plus AI images generated for ART Lab. Turn on Instagram's AI label when posting.
+Original: ART Lab typography plus AI images generated for ART Lab.
 
 SOURCES
 None needed: an opinion, no factual claims.

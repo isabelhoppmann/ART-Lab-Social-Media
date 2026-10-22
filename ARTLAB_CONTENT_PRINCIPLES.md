@@ -67,19 +67,15 @@ Copy how a post is *built* and you learn craft. Copy how it *looks* and you prod
 
 ---
 
-## 3. No AI-generated imagery — and this is the reason
+## 3. AI-generated imagery is allowed, for atmosphere (changed Oct 21, 2026)
 
-**The rule:** no AI-generated or AI-composited imagery in ART Lab content. Photography, renders of the actual product, and real footage only.
+**The rule:** AI-generated images may be used in ART Lab content for atmosphere: imagined rooms, light, materials, and objects that don't exist. They never depict a real object, building, artwork, person or historical event, never show people, and never show or hint at the ART Lamp. Real things are shown in real photographs (our own, permissioned, or shared as a Collab) or told in type.
 
-**Why — the part that matters more than the rule:** **AI copies proven work; humans invent new work.** A generative model can only recombine what already exists, so whatever it produces is a weighted average of work that has already been made and already been seen. That is a genuinely useful property when the goal is to produce a competent version of a known thing. It is precisely the wrong property here.
+**Why it changed:** since April 30, 2026, Instagram stops recommending accounts whose recent posts are mostly other people's photographs. ART Lab doesn't shoot, and the feed needs to be photographic, so images made for ART Lab are how it stays original. This replaces the earlier rule of no AI imagery at all.
 
-ART Lab's entire proposition is that this object does not have a category yet. Imagery that reads as a remix of existing product photography quietly makes the opposite argument — it says *this is another one of those*, which is the one thing the work cannot afford to say. The medium contradicts the message.
-
-This is why the rule is absolute rather than a matter of taste or quality. A *good* AI image is worse for ART Lab than a mediocre one, because it's more convincingly ordinary.
+**What still holds:** the bar is beauty and specificity. An image that reads as the average of everything already out there gets rejected, however polished it is.
 
 **Corollary:** the same logic applies to copy. Do not reach for the phrasing that sounds like every other launch. If a line could appear verbatim in a competitor's post, it is the average of existing work and it should be rewritten.
-
-**Reading is not generating.** Using a model to find the pattern across thirty competitor posts is research, and it is fine. Using one to make the image is not. The distinction is whether the model's output reaches the feed.
 
 ---
 
