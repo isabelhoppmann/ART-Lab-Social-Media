@@ -53,6 +53,8 @@ Verified October 20, 2026. Re-check weekly (see Trend and algorithm watch) and u
 
 Five posts a week, Monday through Friday. Hold two weeks between posts featuring the same architect or designer. Vary tone and color across the weekly row.
 
+**Post length (Isabel, Oct 22, 2026):** a carousel of at least 3 slides, ideally 4–5. A single image only rarely (no more than one a week, and not every week). Never 2 slides.
+
 **The weekly mix (Isabel, Oct 21, 2026):** Isabel wants the feed photographic, with more text posts that don't all look like Field Notes. A normal week:
 - **Point of View** — one.
 - **Statement** — one (added Oct 21 on top of the existing formats, not replacing any).
@@ -66,8 +68,8 @@ Five posts a week, Monday through Friday. Hold two weeks between posts featuring
 | **The Future, Then** | Carousel or reel | Original text; images sourced from public collections | Nostalgia: how the future looked from a given year (the 1964 World's Fair, a 1969 home-of-the-future, a space-age hotel). |
 | **Field Notes, in motion** | Reel, silent, 25–40s | Yes | The same spec as a Field Notes carousel rendered by render_reel.py: the disc is already moving in the first frame, text holds per beat. This is how the account leads with movement without a shoot. |
 | **Point of View** | One dark type slide, then 3–6 images | Yes | A design opinion, Wearstler-style. Slide 1 is an ALL-CAPS title and a short first-person opinion (rendered by render_pov.py); the images make the case. Never more than one text slide, no disc, no slide counter. Sample: Point of View 01, ONE SOURCE. |
-| **Statement** | One image: a statement slide (or slide 1 of a carousel) | Yes | One opinion of 12 words or fewer in stacked capitals on a solid color, after Wearstler's Substack slides (rendered by render_statement.py). The caption carries the rest. Sample: Statement 01, "We don't trust a room that is lit evenly." |
-| **Light Studies** | Image carousel, 4–6 AI images, no text on slides | Yes (AI) | Imagined rooms and objects in the house aesthetic, sequenced as a story (one day, one material, one gesture). Sample: Light Studies 01, one day, four rooms. |
+| **Statement** | Statement slide, then 3–4 images (single image only occasionally) | Yes | One opinion of 12 words or fewer in stacked capitals on a solid color, after Wearstler's Substack slides (rendered by render_statement.py), followed by images that make the case. The caption carries the rest. Sample: Statement 01, "We don't trust a room that is lit evenly." |
+| **Light Studies** | Image carousel, 4–5 AI images, no text on slides | Yes (AI) | Imagined rooms and objects in the house aesthetic, sequenced as a story (one day, one material, one gesture). Sample: Light Studies 01, one day, four rooms. |
 | **Rooms** | Carousel or reel | Exception only | Architecture where light is structural, from sourced photography. Only under the originality exception above. |
 
 ART Lab does not shoot, and the Notion Media Library was ruled out for the agent on 2026-08-26, so "original" means ART Lab's own typography, layout, sequencing and motion design, plus AI images generated for ART Lab (allowed since Isabel lifted the no-AI rule on Oct 21, 2026). If Isabel decides to commission or shoot, add a series for it.
@@ -147,7 +149,7 @@ Work in a batch and deliver finished posts without stopping to explain. Problems
 4. Build each post:
    - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
    - Point of View: write the title and opinion (under about 45 words on the slide), render the cover with render_pov.py, and pair it with 3–6 images (AI or public photos).
-   - Statement: write one opinion of 12 words or fewer and render it with render_statement.py. It posts alone (or opens a carousel). Use a different opinion from that week's Point of View.
+   - Statement: write one opinion of 12 words or fewer and render it with render_statement.py, then follow it with 3–4 images (AI, reused AI, or public photos). Post it alone only occasionally. Use a different opinion from that week's Point of View.
    - Captions for both follow Wearstler's shape: an ALL-CAPS title on its own line, the opinion in first person plural ("we"), one specific thing named, a closing line that is not a clipped punchline, then a credit line if anything real is pictured, and 5 hashtags.
    - AI images: generate in Figma (see Tools), look at each one, and place the chosen ones on the Notion page straight from their asset URLs.
    - Reels: 1080x1920, silent export, about 3.5s per shot with 0.6s crossfades. Pre-crop landscape sources to 9:16 by subject; anything under about 950px crop width will look soft, so drop it. Trending audio is added in Instagram on upload.
