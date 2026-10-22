@@ -1,0 +1,25 @@
+STATEMENT 01 — "We don't trust a room that is lit evenly." (single image, 1080x1350; or slide 1 of a carousel)
+
+FORMAT
+Modeled on Kelly Wearstler's Substack slides (WEARSTLERworld): one opinion in stacked capitals on a solid color, alternating a serif and a wide sans, each line nudged left or right. Posts alone; the caption carries the rest. Added alongside Point of View, not instead of it. (For this sample it uses the same opinion as Point of View 01 so the two formats can be compared; in a real week they'd say different things.)
+
+COLOR
+slide_01.png is vermilion. Alternates: slide_01_alt_blue.png, slide_01_alt_ink.png.
+
+CAPTION
+ONE SOURCE
+The rooms we remember have one source: a slot in a concrete ceiling, a round skylight, late sun across a sunken floor, a single globe left on at dusk. Light from one side gives a room a direction, somewhere to walk toward and somewhere to sit, and the shadow it leaves is as much a part of the design as the light.
+
+#ARTLab #lightingdesign #interiordesign #retrofuturism #designthinking
+
+ALT TEXT
+Cream capitals on a vermilion background, in alternating serif and wide sans lines, read: We don't trust a room that is lit evenly.
+
+HYPOTHESIS
+Prediction: as a single image, this earns a higher sends-per-reach than the Point of View carousel with the same opinion, because the whole post fits in a DM preview. If it doesn't, statements work better as the opening slide of a carousel than on their own.
+
+ORIGINALITY
+Original: ART Lab typography.
+
+SOURCES
+None needed: an opinion, no factual claims.
