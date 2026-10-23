@@ -6,7 +6,10 @@ Distinct from Field Notes: no disc, no slide counter, the whole opinion on one s
 
 Usage: python3 render_pov.py spec.json out.png
 spec: {"series": "Point of View", "issue": "01", "title": "ONE SOURCE",
-       "body": "...", "ground": "#1C1A16", "ink": "#EEE8DC"}
+       "body": "...", "ground": "#1C1A16", "ink": "#EEE8DC",
+       "box": {"h": 560}}   # optional: reserve a photo box under the label (Catie, Oct 22:
+                             # the cover should show one of the objects). The box is left
+                             # as a placeholder at x=96, y=170, w=888; the photo is composited in.
 """
 import json, sys, pathlib, base64
 from playwright.sync_api import sync_playwright
@@ -22,6 +25,10 @@ def _font(name):
 def html(spec):
     ground = spec.get("ground", "#1C1A16")
     ink = spec.get("ink", "#EEE8DC")
+    box = spec.get("box")
+    tsize, bsize, rmargin = (128, 40, "36px 0 32px") if box else (168, 46, "56px 0 48px")
+    boxh = box["h"] if box else 0
+    boxdiv = '<div class="box"></div>' if box else ''
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{{font-family:'IS';src:url({_font('InstrumentSerif-Regular.ttf')})}}
 @font-face{{font-family:'ISI';src:url({_font('InstrumentSerif-Italic.ttf')})}}
@@ -29,12 +36,14 @@ def html(spec):
 html,body{{margin:0;width:{W}px;height:{H}px;background:{ground};color:{ink}}}
 .wrap{{position:absolute;inset:0;padding:96px 96px 104px;display:flex;flex-direction:column}}
 .label{{font-family:'DM';font-size:22px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}}
-.title{{font-family:'IS';font-size:168px;line-height:1.0;letter-spacing:.01em;margin-top:auto;
+.title{{font-family:'IS';font-size:{tsize}px;line-height:1.0;letter-spacing:.01em;margin-top:auto;
         text-wrap:balance}}
-.rule{{height:1px;background:{ink};opacity:.35;margin:56px 0 48px}}
-.body{{font-family:'IS';font-size:46px;line-height:1.22;max-width:820px;text-wrap:pretty}}
+.rule{{height:1px;background:{ink};opacity:.35;margin:{rmargin}}}
+.box{{position:absolute;left:96px;top:170px;width:888px;height:{boxh}px;background:#808080}}
+.body{{font-family:'IS';font-size:{bsize}px;line-height:1.22;max-width:820px;text-wrap:pretty}}
 </style></head><body><div class="wrap">
 <div class="label">{spec['series']} {spec['issue']}</div>
+{boxdiv}
 <div class="title">{spec['title']}</div>
 <div class="rule"></div>
 <div class="body">{spec['body']}</div>
