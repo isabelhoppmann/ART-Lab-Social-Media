@@ -1,0 +1,15 @@
+Morning Briefing October 23, 2026
+
+=== ROBOTICS & AI ===
+- OKA introduced Mori, a new AI home companion robot it calls "The Nature Companion," designed to help people feel better at home, announced October 22, 2026. https://prnewswire.com/news-releases/oka-introduces-mori-the-nature-companion-a-new-kind-of-ai-home-robot-302916439.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- Enact Intelligence, an AI robotics startup, raised a $30 million pre-seed round announced October 22, 2026, backed by Yann LeCun, Mistral CEO Arthur Mensch, and Hugging Face co-founder Thomas Wolf. https://siliconangle.com/2026/10/22/robotics-startup-enact-intelligence-nabs-30m-funding-round/
+
+=== COMPETITOR WATCH ===
+- Google DeepMind used its Gemini 4 Argon model to teach Apptronik's Apollo humanoid new physical skills from human video demonstrations, reported October 22, 2026. https://roboticsandautomationnews.com/2026/10/22/google-deepmind-uses-gemini-4-argon-to-teach-apptroniks-apollo-humanoid-new-skills-from-video/106227/
+
+#KEYS: oka-mori-launch, enact-intelligence-pre-seed, deepmind-gemini4-apptronik-video
