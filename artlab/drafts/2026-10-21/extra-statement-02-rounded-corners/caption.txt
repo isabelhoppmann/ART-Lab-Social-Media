@@ -1,9 +1,26 @@
-STATEMENT 02 — "The future used to have rounded corners." (single text slide, 1080x1350)
+STATEMENT 02 — "The future used to have rounded corners." (carousel: statement slide + 4 public MoMA photographs, 1080x1350)
 Extra post for the week of Oct 19, not Field Notes.
+Revised Oct 22 per Catie (Planable): add photos of rounded objects; caption follows Isabel's Planable edit (list with line breaks, "made to be lived in", no title line).
+
+SLIDES (in order)
+1 statement: slide_01.png
+2 Panton Chair, Verner Panton — https://www.moma.org/collection/works/93458
+3 Boby trolley, Joe Colombo — https://www.moma.org/collection/works/2281
+4 Tube Chair, Joe Colombo — https://www.moma.org/collection/works/1413
+5 Valentine typewriter, Ettore Sottsass and Perry King — https://www.moma.org/collection/works/4576
+Photos 2–5 are MoMA collection photographs, fit to 1080x1350 on their own grey backdrop (edges extended, nothing cropped off the object).
 
 CAPTION
-ROUNDED CORNERS
-The future we were promised in the 1960s and 70s came with soft edges: a plastic house curving out of a concrete core at Disneyland, capsule rooms with porthole windows, a television shaped like an astronaut's helmet. Somewhere along the way the future turned flat, square and glass-fronted, and we miss the version that looked like it was made to be touched.
+The future we were promised in the 1960s and 70s came with soft edges:
+
+a chair made in one continuous curve,
+a trolley of rounded drawers on wheels,
+a chair of nesting tubes,
+a red typewriter with a handle.
+
+Somewhere along the way the future turned flat, square and glass-fronted, and we miss the version that looked like it was made to be lived in.
+
+Panton Chair, Verner Panton; Boby and Tube Chair, Joe Colombo; Valentine, Ettore Sottsass and Perry King. Photographs: MoMA.
 
 #ARTLab #retrofuturism #spaceage #designhistory #midcenturymodern
 
@@ -14,9 +31,9 @@ HYPOTHESIS
 Prediction: this earns the most sends per reach of the week, because it's a one-line opinion people forward with "this" and it ties back to the Monsanto and MoMA posts. If it doesn't beat them on sends, single text slides work better as the opening of a photo carousel. Share trigger: recognition (nostalgia) + a design opinion worth arguing about.
 
 ORIGINALITY
-Original (ART Lab typography).
+Slide 1 original (ART Lab typography); photos 2–5 sourced (public MoMA collection photographs).
 
-SOURCES (for the examples in the caption)
-- Monsanto House of the Future, fiberglass wings cantilevered off a concrete core: Yesterland https://www.yesterland.com/futurehouse.html ; Docomomo US https://docomomo-us.org/register/monsanto-house-of-the-future
-- Capsule rooms with porthole windows: MoMA installation photographs, Italy: The New Domestic Landscape (1972) https://www.moma.org/calendar/exhibitions/1783
-- JVC Videosphere, the space-helmet television: V&A https://collections.vam.ac.uk/item/O62328 ; Science Museum https://collection.sciencemuseum.org.uk/objects/co416941/jvc-3241uk-videosphere-television-receiver-television-receiver
+SOURCES
+- Photos and object details: MoMA collection pages above (Panton Chair 93458, Boby 2281, Tube Chair 1413, Valentine 4576).
+- Tube Chair, nesting tubes: MoMA https://www.moma.org/collection/works/1413
+- Valentine portable typewriter, red ABS case with handle: MoMA https://www.moma.org/collection/works/4576

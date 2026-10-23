@@ -1,12 +1,14 @@
-POINT OF VIEW 02 — OBJECTS WITH FACES (carousel: dark cover + 4 public MoMA photographs)
+POINT OF VIEW 02 — OBJECTS WITH FACES (carousel: dark cover with the Algol photo + 3 full-frame MoMA photographs)
 Extra post, prepped for the week of Oct 26.
 
+Revised Oct 22 per Catie (Planable): the cover shows one of the objects (Algol in the photo box; cover_base.png is the cover with the empty box), and the other photos fill the whole 1080x1350 frame. Algol is no longer a separate slide, so the post is 4 slides.
+
 SLIDES (in order)
-1 cover: slide_01.png
-2 Algol 11 television (1823x2000): https://www.moma.org/media/W1siZiIsIjIzMDM0MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4112
-3 TS 502 radio, open (2000x1765): https://www.moma.org/media/W1siZiIsIjIyOTg0NSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4034
-4 Black 201 television (2000x1951): https://www.moma.org/media/W1siZiIsIjIxMjIxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4031
-5 Videosphere television (1600x2000): https://www.moma.org/media/W1siZiIsIjU0MjIyNCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/292710
+1 cover: cover_base.png with the Algol photo in the box (final composite is in Notion and Figma node 8:7)
+- Algol 11 television, used in the cover box (1823x2000): https://www.moma.org/media/W1siZiIsIjIzMDM0MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4112
+2 TS 502 radio, open (2000x1765): https://www.moma.org/media/W1siZiIsIjIyOTg0NSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4034
+3 Black 201 television (2000x1951): https://www.moma.org/media/W1siZiIsIjIxMjIxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4031
+4 Videosphere television (1600x2000): https://www.moma.org/media/W1siZiIsIjU0MjIyNCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/292710
 
 CAPTION
 OBJECTS WITH FACES
@@ -17,7 +19,7 @@ Algol (1964), TS 502 and Black 201, Marco Zanuso and Richard Sapper for Brionveg
 #ARTLab #spaceage #italiandesign #retrofuturism #industrialdesign
 
 ALT TEXT (slide 1)
-Near-black background. Large cream serif capitals read OBJECTS WITH FACES, above a short paragraph: We like machines that look back at you: a television that tilts its screen up at you, a radio that stays shut until you open it, a screen that hides until it's switched on.
+Near-black background with a photograph of a small white television with a round antenna at the top. Below it, cream serif capitals read OBJECTS WITH FACES, above a short paragraph: We like machines that look back at you: a television that tilts its screen up at you, a radio that stays shut until you open it, a screen that hides until it's switched on.
 
 HYPOTHESIS
 Prediction: this earns more sends per reach than the photo posts this week, because "objects with faces" is an idea people recognize in their own things and forward with a photo of theirs. If it doesn't, Point of View covers need a more surprising opinion than a shared taste. Share trigger: taste signal + recognition.

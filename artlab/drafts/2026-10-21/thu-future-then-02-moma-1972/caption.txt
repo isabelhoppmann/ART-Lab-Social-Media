@@ -1,5 +1,6 @@
 THE FUTURE, THEN 02 — THE HOME OF THE FUTURE, MoMA 1972 (photo carousel, 5 public MoMA archive photographs)
 Replaces Thursday's Arco post (dropped Oct 22: Flos is a competitor).
+Revised Oct 22 per Catie (Planable): all five are now exact 1080x1350 crops, so nothing needs cropping in Instagram. Photos 1 and 4 are anchored to the bottom so the platforms stay in frame; 2, 3 and 5 are centered on the main object. Final crops are in Notion and Figma nodes 8:2–8:6.
 
 IMAGES (in order; MoMA installation photographs by Leonardo LeGrand, The Museum of Modern Art Archives)
 1 kitchen built into a white unit (1369x2000) — installation image 26458: https://www.moma.org/d/c/installation_images/W1siZiIsIjM2NTYyMiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg
