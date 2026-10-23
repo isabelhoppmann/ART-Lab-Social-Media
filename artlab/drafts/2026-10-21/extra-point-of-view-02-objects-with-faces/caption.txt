@@ -1,20 +1,22 @@
-POINT OF VIEW 02 — OBJECTS WITH FACES (carousel: dark cover with the Algol photo + 3 full-frame MoMA photographs)
+POINT OF VIEW 02 — OBJECTS WITH FACES (carousel: dark cover with the Algol photo + 5 full-frame MoMA photographs, 6 slides)
 Extra post, prepped for the week of Oct 26.
 
-Revised Oct 22 per Catie (Planable): the cover shows one of the objects (Algol in the photo box; cover_base.png is the cover with the empty box), and the other photos fill the whole 1080x1350 frame. Algol is no longer a separate slide, so the post is 4 slides.
+Revised Oct 22 per Catie (Planable): the cover shows one of the objects (Algol in the photo box; cover_base.png is the cover with the empty box), and the other photos fill the whole 1080x1350 frame. Algol is no longer a separate slide. Oct 23 (Isabel): added the Grillo phone and the Sony television so the post keeps 5 photos after the cover.
 
 SLIDES (in order)
 1 cover: cover_base.png with the Algol photo in the box (final composite is in Notion and Figma node 8:7)
 - Algol 11 television, used in the cover box (1823x2000): https://www.moma.org/media/W1siZiIsIjIzMDM0MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4112
 2 TS 502 radio, open (2000x1765): https://www.moma.org/media/W1siZiIsIjIyOTg0NSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4034
-3 Black 201 television (2000x1951): https://www.moma.org/media/W1siZiIsIjIxMjIxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4031
-4 Videosphere television (1600x2000): https://www.moma.org/media/W1siZiIsIjU0MjIyNCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/292710
+3 Grillo folding telephone (2000x1026, whole photo kept, backdrop extended top and bottom): https://www.moma.org/media/W1siZiIsIjIxMjAwMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4621
+4 Black 201 television (2000x1951): https://www.moma.org/media/W1siZiIsIjIxMjIxMCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/4031
+5 Sony portable television, 1959 (2000x1951, cropped to 4:5 around the set): https://www.moma.org/media/W1siZiIsIjIxMTQ3MiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/3941
+6 Videosphere television (1600x2000): https://www.moma.org/media/W1siZiIsIjU0MjIyNCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg — https://www.moma.org/collection/works/292710
 
 CAPTION
 OBJECTS WITH FACES
-We like machines that look back at you. The designer Marco Zanuso said his Algol television was a little dog looking up at its master. His TS 502 radio stays a plain box until it opens, the Black 201 hides its screen until it is switched on, and JVC's Videosphere put the picture inside an astronaut's helmet.
+We like machines that look back at you. Marco Zanuso said his Algol television was a little dog looking up at its master. His TS 502 radio stays a plain box until it opens, his Grillo phone folds in half, and the Black 201 hides its screen until it's switched on. Sony's 1959 set wears a visor and JVC's Videosphere a space helmet.
 
-Algol (1964), TS 502 and Black 201, Marco Zanuso and Richard Sapper for Brionvega; Videosphere (1970), JVC. Photographs: MoMA.
+Algol, TS 502, Grillo and Black 201, Marco Zanuso and Richard Sapper; Videosphere, JVC; Portable television, Sony. Photographs: MoMA.
 
 #ARTLab #spaceage #italiandesign #retrofuturism #industrialdesign
 
@@ -31,4 +33,5 @@ SOURCES
 - Algol, "a little dog that looks up at its master" (Zanuso): Core77 https://www.core77.com/posts/136933/An-Industrial-Design-Classic-The-Brionvega-Algol-TV ; Design Museum Brussels https://collection.designmuseum.brussels/en/algol-11 (1964, Zanuso and Sapper, Brionvega)
 - TS 502 only reveals it is a radio when opened: V&A https://collections.vam.ac.uk/item/O322043 ; Museo Omero https://museoomero.it/en/opere/radio-ts502/
 - Black 201 hides its screen until switched on: V&A https://collections.vam.ac.uk/item/O168300 ; MoMA https://www.moma.org/calendar/exhibitions/402
+- Grillo folding telephone (1966) and Sony television (1959): MoMA https://www.moma.org/collection/works/4621 ; https://www.moma.org/collection/works/3941
 - Videosphere shaped like an astronaut's helmet, designed 1970: V&A https://collections.vam.ac.uk/item/O62328 ; MoMA https://www.moma.org/collection/works/292710 ; Science Museum https://collection.sciencemuseum.org.uk/objects/co416941/jvc-3241uk-videosphere-television-receiver-television-receiver

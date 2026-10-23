@@ -55,6 +55,14 @@ Five posts a week, Monday through Friday. Hold two weeks between posts featuring
 
 **Post length (Isabel, Oct 22, 2026):** a single text slide is fine (a Statement on its own). Photo posts are carousels of at least 3 photos, ideally 4–5; a single photo only rarely. Never exactly 2 photos.
 
+**Every image arrives fitted (Isabel, Oct 23, 2026):** every image Isabel gets is exactly 1080x1350 (reels 1080x1920), ready to upload, so Catie never has to comment on spacing or crops in Planable. No black or white bars, no letterboxing, and nothing important cut off. To fit a photo:
+- If the subject survives a 4:5 crop, crop to 4:5 around the subject. Anchor to the bottom when the object stands on a platform or floor, so its base stays in frame.
+- If a 4:5 crop would cut the object off (a wide shot of one object, two pieces side by side), keep the whole photo and extend its own plain backdrop to fill the frame: stretch the row or column about 14px inside each edge outward, so the studio background continues without a seam. Only on plain backdrops; for a busy scene, pick another photo.
+- The object should fill the frame comfortably (roughly 70–85% of the width), not sit small in a big empty field.
+- Drop any source that ends up under about 950px on its short side after cropping; it looks soft. Find another photo.
+- Never place a museum's raw image URL on the Notion page; it arrives in its original shape. If the session can't download a photo to fit it (museum image hosts are blocked unless Isabel allows them), leave it out, use another format, and say so in Editorial flags.
+- AI images from Figma come out 928x1152. Resize them to 1080x1350 when the session can download them; if it can't, deliver them as they are (within 1% of 4:5, so no visible bars) and note it in Editorial flags.
+
 **No competitors (Isabel, Oct 22, 2026):** never spotlight lighting brands or lamps that a company still sells (Flos and the Arco, Artemide, Louis Poulsen, Vitra and Noguchi's Akari, and the like). ART Lab is in that market. Kinetic and light art by artists, historical exhibitions, architecture and non-lighting design objects are fine.
 
 **The weekly mix (Isabel, Oct 21, 2026):** Isabel wants the feed photographic, with more text posts that don't all look like Field Notes. A normal week:
@@ -149,13 +157,13 @@ Work in a batch and deliver finished posts without stopping to explain. Problems
 2. Pick five subjects across the series table, following the weekly mix, the two-week designer hold and the originality ratio.
 3. Research each to the two-source standard. Keep the sources.
 4. Build each post:
-   - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, pre-crop with Pillow to 4:5 and choose the crop center by subject.
+   - Carousels: write a spec and render it at 1080x1350 with render_carousel.py (see Tools), then render its motion version with render_reel.py. For image carousels, fit every image to exactly 1080x1350 with Pillow, following "Every image arrives fitted" above.
    - Point of View: write the title and opinion (under about 45 words on the slide), render the cover with render_pov.py, and pair it with 3–6 images (AI or public photos).
    - Statement: write one opinion of 12 words or fewer and render it with render_statement.py. It can post as a single slide, or be followed by 3–4 images (AI, reused AI, or public photos). Use a different opinion from that week's Point of View.
    - Captions for both follow Wearstler's shape: an ALL-CAPS title on its own line, the opinion in first person plural ("we"), one specific thing named, a closing line that is not a clipped punchline, then a credit line if anything real is pictured, and 5 hashtags.
    - AI images: generate in Figma (see Tools), look at each one, and place the chosen ones on the Notion page straight from their asset URLs.
    - Reels: 1080x1920, silent export, about 3.5s per shot with 0.6s crossfades. Pre-crop landscape sources to 9:16 by subject; anything under about 950px crop width will look soft, so drop it. Trending audio is added in Instagram on upload.
-5. QC: open every slide or a contact sheet and look at it. Check text fits, nothing is cut off, no people slipped in, caption word count, hashtag count, American spellings.
+5. QC: open every slide or a contact sheet and look at it. Check every image is exactly 1080x1350 (reels 1080x1920) with no bars and the whole object in frame, text fits, nothing is cut off, no people slipped in, caption word count, hashtag count, American spellings.
 6. Deliver one folder per post: slide PNGs in order and/or the MP4, caption.txt with caption, alt text, hypothesis, originality status, suggested tag handles (⚠ VERIFY), and sources. Commit it to the repo and lay it out on that week's Notion page (see Tools). Isabel downloads from Notion and builds the posts in Planable for Catie's approval.
 
 ## Strategy and brainstorming with Isabel
