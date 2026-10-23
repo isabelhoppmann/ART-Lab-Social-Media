@@ -1,0 +1,33 @@
+TUE OCT 27 — FIELD NOTES 03 — Colloquy of Mobiles (9 slides + reel)
+
+CAPTION
+In 1968, at Cybernetic Serendipity in London, Gordon Pask hung five mobiles that courted each other with light. Two males sent out flashing beams, three females learned to aim mirrors to send the light back, and visitors could walk in and interrupt. Fifty years later, a design school in Detroit rebuilt all five, and the work now belongs to ZKM in Karlsruhe.
+
+Colloquy of Mobiles (1968), Gordon Pask, ICA London. Reconstruction (2018), Paul Pangaro and TJ McLeish.
+
+#ARTLab #kineticart #cybernetics #mediaarthistory #retrofuturism
+
+ALT TEXT (slide 1)
+Cream background with a single orange circle. Serif text reads: In 1968, five machines hung from a gallery ceiling in London and tried to court each other with light.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: the reel version gets the longest average watch time of the week, because "machines courting with light" makes people stay to see how it ends, and the carousel earns more saves than sends. If the carousel's saves per reach are below the Senster's, Field Notes need a sharper turn in slides 2–4. Share trigger: reference value + taste signal (sent to the friend in robotics or media art).
+
+ORIGINALITY
+Original: ART Lab typography and motion, no sourced imagery.
+
+TAG IDEAS (⚠ VERIFY every handle)
+ZKM Karlsruhe @zkmkarlsruhe (⚠ VERIFY), Paul Pangaro @pangaro (⚠ VERIFY), ICA London @icalondon (⚠ VERIFY), College for Creative Studies @ccsdetroit (⚠ VERIFY)
+
+SOURCES (two per claim)
+- Five mobiles, two male and three female, built for Cybernetic Serendipity at the ICA, London, 1968: Colloquy 2018 project, https://www.colloquyofmobiles.com/replicate-1968 ; Futility Closet quoting Paul Brown et al., White Heat Cold Logic (2008), https://www.futilitycloset.com/2023/10/30/some-enchanted-evening-5/ ; Joost Rekveld quoting Pask, https://www.joostrekveld.net/?p=624
+- Males send light beams; females reflect them back with mirrors and answer with sound; male satisfied when the light returns to his receptor; females learn where to aim: Pangaro and McLeish, AISB 2018 paper, https://www.pangaro.com/published/Pangaro-McLeish_Colloquy-2018_AISB-2018_distro.pdf ; Futility Closet / White Heat Cold Logic (above)
+- Visitors could join in and interrupt: Pangaro, https://pangaro.com/designconversation/2018/01/remaking-pasks-colloquy-of-mobiles/ ; Joost Rekveld quoting Pask (above)
+- Rebuilt in 2018 by the College for Creative Studies, Detroit, from the historical record: Colloquy 2018 project, https://www.colloquyofmobiles.com/ ; GoFundMe project page, https://gofundme.com/f/reanimating-colloquy
+- Now in ZKM's collection (gift of Paul Pangaro), shown in BioMedia, 2021: ZKM, https://zkm.de/en/node/42230 ; Colloquy 2018 project (above)
+
+EDITORIAL NOTE
+The sources don't say what happened to the 1968 original, so the post doesn't claim it was lost; it says only that it was rebuilt fifty years later. The flashlights visitors used are documented for the 2018 version only, so they're left out.
+
+FILES
+Carousel: slide_01.png to slide_09.png, 1080x1350, in order. Reel: reel.mp4, 1080x1920, 40.5s, silent; add audio in Instagram. Same caption for either.

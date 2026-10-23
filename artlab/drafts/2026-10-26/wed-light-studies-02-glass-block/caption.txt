@@ -1,0 +1,37 @@
+WED OCT 28 — LIGHT STUDIES 02 — Glass block (carousel: 4 AI images, 928x1152, no text on slides)
+
+IMAGES (Figma file "ART Lab IG — AI image tests", file key YG3xn6OSYJHWHi9hD4zhuo), in order. Made with gemini-3.1-flash-image on Oct 23, 2026.
+1 dawn, curved glass-block wall — node 9:2 — https://www.figma.com/api/mcp/asset/43f38fcc-f661-403b-a635-b8afc3bf488c.png
+   Prompt: Architectural interior photograph, early morning. A single tall curved wall made of clear glass blocks in an otherwise empty room with pale lime-plaster walls and a polished pale concrete floor. Low cold blue dawn light passes through the glass blocks and breaks into a soft grid of light and shadow across the floor. No furniture, no people, no lamps or light fixtures. Minimalist 1970s modernist house, calm, monolithic, quiet. Shot on medium format film, natural light only, muted palette, fine grain, straight verticals.
+2 noon, glass-block ceiling over a travertine passage — node 10:2 — https://www.figma.com/api/mcp/asset/4eb62607-97f7-4302-b13f-8c7d37107586.png
+   Prompt: Architectural interior photograph, midday. A narrow passage in a minimalist house: overhead, a ceiling made entirely of square glass blocks lets hard white noon sun fall straight down, casting a sharp grid of light squares on a warm travertine floor and up one rough plaster wall. Empty space, no furniture, no people, no lamps or fixtures. 1970s modernist, monolithic, quiet. Medium format film, natural light only, muted warm palette, fine grain, straight verticals.
+3 late afternoon, sunken stone bath — node 11:2 — https://www.figma.com/api/mcp/asset/eb5ba570-7a71-471f-b67d-c50526980910.png
+   Prompt: Architectural interior photograph, late afternoon. A bathroom in a minimalist 1970s house: a deep sunken bath carved from pale stone, filled with still water, beside a wall of glass blocks. Low amber sun comes through the glass blocks and its soft blurred grid reflects on the water surface and the stone. Empty and calm, no towels, no objects, no people, no lamps or fixtures. Monolithic, material. Medium format film, natural light, muted amber palette, fine grain, straight verticals.
+4 night, glass-block wall lit from inside, doubled in a pool — node 12:2 — https://www.figma.com/api/mcp/asset/b8d44c02-38f5-4d3e-8621-22add0ed0042.png
+   Prompt: Architectural photograph at night, seen from a dark garden: the exterior of a minimalist 1970s house with one wall built of glass blocks, glowing a warm soft amber from the rooms inside, the only light in the frame. Smooth concrete walls to either side fade into darkness; a still shallow pool in front reflects the glowing grid. No people, no visible lamps or fixtures, no furniture. Quiet, monolithic. Medium format film, long exposure, deep blue night, fine grain, straight verticals.
+Asset URLs expire Oct 30, 2026; the full-resolution copies are on the Notion page. contact_sheet_preview.jpg is a low-res preview only.
+
+CAPTION
+Glass block, from first light to dark. Cold dawn through a curved wall, noon falling through a glass ceiling onto travertine, late sun on the water of a stone bath, and at night a whole wall lit from inside and doubled in a pool. Glass block lets light through and keeps the view out, so a room built with it ends up being about the light.
+
+Light Studies 02, ART Lab.
+
+#ARTLab #lightstudies #glassblock #minimalinteriors #architecture
+
+ALT TEXT (slide 1)
+An empty pale room at dawn. A tall curved wall of clear glass blocks lets in cold blue light, which falls in a soft grid across a polished concrete floor.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: this earns the most saves per reach of the week, because glass block is a material people half-remember from 1980s bathrooms and are now pinning again, and the four frames read as one day. If it gets fewer saves than Field Notes 03, Light Studies need a recognizable object or place in frame 1, not just a material. Share trigger: taste signal + reference value.
+
+ORIGINALITY
+Original (AI images generated for ART Lab). Nothing real depicted.
+
+TAG IDEAS (⚠ VERIFY every handle)
+None (imagined rooms; nothing to credit).
+
+SOURCES
+None needed: no factual claims.
+
+QC
+All four checked in Figma: no people, no lamps or fixtures, straight verticals. Frame 4 has a soft, blurred shape behind the glass at the lower center that reads as furniture; frame 2's shadow grid on the wall is slightly off-angle from the floor grid. Both judged acceptable for atmosphere; swap frame 4 out if it bothers you.
