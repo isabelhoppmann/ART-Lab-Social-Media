@@ -1,0 +1,18 @@
+Morning Briefing October 26, 2026
+
+=== ROBOTICS & AI ===
+- AiMOGA opened global pre-orders for Mobo, its home companion robot, through a new partnership with automotive brand OMODA & JAECOO, marking the product's first availability for international customers, announced October 26, 2026. https://globenewswire.com/news-release/2026/10/26/3387800/0/en/omoda-jaecoo-advances-its-global-intelligent-ecosystem-partner-aimoga-robotics-opens-global-pre-orders-for-mobo.html
+
+=== RESEARCH ===
+- Researchers posted a study showing current vision-language-action (VLA) models cannot reliably predict when they will fail at manipulation tasks, a gap with direct implications for safe home robot deployment, posted October 23, 2026. https://arxiv.org/abs/2610.32208
+
+=== FUNDING & INVESTMENT ===
+- Bedrock Robotics raised $600 million in a Series C round at a $4.1 billion post-money valuation, co-led by CapitalG and Emergence Capital with Temasek and Bessemer joining, to scale its autonomous construction equipment platform across U.S. job sites, announced October 26, 2026. https://www.financialcontent.com/article/gnwcq-2026-10-26-bedrock-robotics-raises-600-million-series-c-to-scale-autonomous-construction-equipment-across-us-sites
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- No qualifying items in the last 48 hours.
+
+#KEYS: aimoga-mobo-launch, vla-failure-prediction-oct2026, bedrock-robotics-series-c
