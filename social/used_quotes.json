@@ -324,6 +324,18 @@
       "attribution": "Warsan Shire",
       "norm": "you are a collection of every single person you have ever loved",
       "first_week": "2026-10-19"
+    },
+    {
+      "quote": "We write to taste life twice, in the moment and in retrospect.",
+      "attribution": "Anaïs Nin",
+      "norm": "we write to taste life twice in the moment and in retrospect",
+      "first_week": "2026-10-26"
+    },
+    {
+      "quote": "Keep a diary, and someday it’ll keep you.",
+      "attribution": "Mae West",
+      "norm": "keep a diary and someday itll keep you",
+      "first_week": "2026-10-26"
     }
   ]
 }
