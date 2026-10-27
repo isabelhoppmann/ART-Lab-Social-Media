@@ -47,6 +47,9 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from caption_tags import ensure_caption_tags  # noqa: E402
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 STATE_PATH = os.path.join(REPO_ROOT, "social", "review-state.json")
 REQUIRED_FILE = "social/review-state.json"
@@ -201,7 +204,9 @@ def normalize_review_state():
         return
     state = json.load(open(STATE_PATH))
     fixed = 0
+    tagged = 0
     for post in state.get("posts", []):
+        tagged += ensure_caption_tags(post)
         if post.get("post_type"):
             continue
         label = (post.get("label") or "").strip().lower()
@@ -210,10 +215,13 @@ def normalize_review_state():
                 post["post_type"] = ptype
                 fixed += 1
                 break
-    if fixed:
+    if fixed or tagged:
         with open(STATE_PATH, "w", encoding="utf-8") as f:
             json.dump(state, f, indent=2, ensure_ascii=False)
+    if fixed:
         print(f"normalize: filled missing post_type on {fixed} post(s) from labels.")
+    if tagged:
+        print(f"normalize: appended hashtags to {tagged} caption(s) that were missing them.")
 
 
 def already_published(today_str):

@@ -22,6 +22,8 @@ Save this. You already know why.
 
 **fb_caption:** You know that moment when you reread something you wrote and realize… oh. It was you. 😬 Tonight's prompt: write about a situation you've been hurt by — then describe it entirely from the other person's perspective. What do you notice that you couldn't see before? Tag a friend who needs this gentle reminder today.
 
+#journaling #selfreflection #Zenie #journalingprompts #growthjourney
+
 **hashtags:** #journaling #selfreflection #Zenie #journalingprompts #growthjourney
 
 **Best time to post:** Monday 6–8 PM PST
@@ -47,6 +49,8 @@ Open Zenie and write it out tonight.
 #journaling #Zenie #selfawareness #journalingprompts #innerwork
 
 **fb_caption:** Okay but why does October hit different every single year? You look up and suddenly it’s Q4 and you're staring at months of entries about the exact same situation. Tonight's prompt: scroll back through your notes from the past few months — what theme keeps showing up that you haven’t actually addressed yet? Write it tonight. 🍂
+
+#journaling #Zenie #selfawareness #journalingprompts #innerwork
 
 **hashtags:** #journaling #Zenie #selfawareness #journalingprompts #innerwork
 
@@ -74,6 +78,8 @@ Save this quote.
 
 **fb_caption:** Anaïs Nin understood something about writing that most people don’t — you don’t journal to record what happened, you journal to actually *live it*. Tonight’s prompt: describe a moment from the last month in as much sensory detail as you can remember. What did it feel like to be you in that moment? Save this and come back to it. ✨
 
+#journaling #zenieapp #anaisnin #reflectivewriting #selfwriting
+
 **hashtags:** #journaling #zenieapp #anaisnin #reflectivewriting #selfwriting
 
 **Best time to post:** Tuesday 7–9 PM PST
@@ -99,6 +105,8 @@ Download Zenie and write it tonight.
 #journaling #zenieapp #maewest #dailyjournaling #intentionalliving
 
 **fb_caption:** Honestly, Mae West said it best. A diary is both a record and a lifeline. Tonight’s prompt: what’s one thing that happened this week — small or big — that you’d be glad you wrote down ten years from now? Start tonight. Your future self will thank you. 📓
+
+#journaling #zenieapp #maewest #dailyjournaling #intentionalliving
 
 **hashtags:** #journaling #zenieapp #maewest #dailyjournaling #intentionalliving
 
