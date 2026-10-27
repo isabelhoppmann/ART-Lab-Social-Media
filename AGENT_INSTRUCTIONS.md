@@ -46,7 +46,8 @@ Wellness and productivity are seductive because they trend constantly. They are 
 - **The prompt comes first. Any CTA comes after it — never before.** The order is: hook/riff → complete prompt → CTA. A caption that opens with "Download Zenie" has buried the thing that makes the post worth saving.
 - **One prompt per post.** Two prompts split the reader's attention and neither gets answered.
 - **Hashtags go at the END of every caption** (Isabel's rule, 2026-10-15): every `ig_caption` and `fb_caption`, on every post type, ends with a blank line and then the post's hashtags, so each caption can be pasted straight into Business Suite. Keep the same set in the separate `hashtags` field too. Order: hook/riff → prompt → CTA → blank line → hashtags.
-- This applies to all three Post Types. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, both `ig_caption` and `fb_caption` carry the prompt. For a **Repost**, the caption carries the prompt after the credit.
+- This applies to all three Post Types. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, both `ig_caption` and `fb_caption` carry the prompt. For a **Repost**, the caption carries the prompt, and the credit sits between the copy and the hashtags.
+- **Repost credit goes AFTER the copy, BEFORE the hashtags — never first** (Isabel's rule, 2026-10-26). Repost caption order: hook/riff → prompt → CTA → blank line → `Credit: @handle` → blank line → hashtags. Same in both `ig_caption` and `fb_caption`.
 
 ### 3. Format variation across the week
 
@@ -215,6 +216,17 @@ print("=========================\n")
 **How to READ the brief — the two rules that stop you overreacting:**
 - **Expect most posts to be neutral.** Roughly two posts in twenty are real winners. The rest sitting in the middle is the normal, healthy shape of organic reach — it is not a problem to solve, and it is not evidence that last week's approach failed. Do not rewrite the strategy because a week looked flat.
 - **Judge by FORMAT across 6–8 posts, not one post at a time.** A single post's engagement is mostly noise — timing, the algorithm's mood, who happened to be online. Only draw a conclusion when at least 6 posts of the same Post Type point the same way. Never let one strong or one weak post change what you make next week. If you have fewer than 6 posts of a format, you do not yet have a read on it — say so in the drafts file and change nothing.
+
+---
+
+## Step 0.5: Check the calendar — what time of year is this week? (REQUIRED, added 2026-10-26)
+
+Before researching trends, work out the dates of this week's six posts (Mon–Sun of `week_date`) and write out loud every holiday or big seasonal moment that falls in that window or within 3 days after it. Cover at least: New Year, Valentine's Day, International Women's Day, spring/Easter, Mother's Day, summer start, back-to-school, first day of fall, Halloween, Thanksgiving, Black Friday, the December holidays, New Year's Eve, plus season changes and year-end/"Q4" moments.
+
+- **If one falls in the window, both memes are themed to it** (Isabel's rule, 2026-10-26 — e.g. the week of Oct 26 must have Halloween memes). The seasonal moment counts as the named trend for Step 1, or ride a trend that is circulating around that holiday. The joke still has to land on journaling/reflection (CONTENT SCOPE §1): a Halloween meme is about the scariest thing in your journal, not about costumes.
+- Quotes and reposts should nod to it in the caption riff or prompt when it fits naturally; they don't have to be themed.
+- If nothing falls in the window, still write the current season and let it shape tone and prompts (no summer energy in November).
+- Record the result in `zenie_drafts.md` right under the Trending Themes line: `**This week on the calendar:** <holiday/season, or "nothing major — <season>">`.
 
 ---
 
@@ -579,7 +591,7 @@ available = [r for r in reels if _norm_url(r.get("url")) not in used_reels]
 
 Get for each repost: `url`, `creator` (both from the library), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
-**Caption order (CONTENT SCOPE §2):** credit first, then the **complete journaling prompt**, then any CTA. A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Write the prompt against what the reel is actually about (its `theme`), not a generic one. Do not quote the creator's caption in ours — paraphrase.
+**Caption order (CONTENT SCOPE §2):** the **complete journaling prompt** and any CTA first, then a blank line and `Credit: @handle`, then a blank line and the hashtags. Never open the caption with the credit (Isabel's rule, 2026-10-26). A repost still has to give the reader something to answer — riding someone else's reel does not exempt it from the prompt rule. Write the prompt against what the reel is actually about (its `theme`), not a generic one. Do not quote the creator's caption in ours — paraphrase.
 
 You do NOT append to `repost_library/used.json` yourself — GitHub Actions (`mark_reposts_used.py`) does that when the week publishes.
 
@@ -1196,8 +1208,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Repost 1:** *(the Zenie Posts DB has no Creator field, so put the credit in the caption and the reel link in Media URL)*
 - Name: `Repost 1 — [DATE]`
 - Post Type: `Repost`
-- Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]` (Instagram caption — now carries the credit too)
-- FB Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]`
+- Caption: the repost caption, with the credit after the copy and before the hashtags, e.g. `[repost caption]\n\nCredit: @[creator]\n\n[hashtags]` (Instagram caption — now carries the credit too)
+- FB Caption: the repost caption, with the credit after the copy and before the hashtags, e.g. `[repost caption]\n\nCredit: @[creator]\n\n[hashtags]`
 - Hashtags: the repost hashtags (if any)
 - Media URL: the **direct Instagram reel URL** being reposted (this is the link, not a file we host)
 - Status: `Draft`
@@ -1211,8 +1223,8 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 **Repost 2:**
 - Name: `Repost 2 — [DATE]`
 - Post Type: `Repost`
-- Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]` (Instagram caption — now carries the credit too)
-- FB Caption: the repost caption, prefixed with the credit, e.g. `Credit: @[creator] — [repost caption]`
+- Caption: the repost caption, with the credit after the copy and before the hashtags, e.g. `[repost caption]\n\nCredit: @[creator]\n\n[hashtags]` (Instagram caption — now carries the credit too)
+- FB Caption: the repost caption, with the credit after the copy and before the hashtags, e.g. `[repost caption]\n\nCredit: @[creator]\n\n[hashtags]`
 - Hashtags: the repost hashtags (if any)
 - Media URL: the direct Instagram reel URL being reposted
 - Status: `Draft`
