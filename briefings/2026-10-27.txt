@@ -1,0 +1,19 @@
+Morning Briefing October 27, 2026
+
+=== ROBOTICS & AI ===
+- Realbotix launched Echo, a humanoid robot line for companionship, education, and wellness, with reservations open at a $199 deposit for an $11,950 Tabletop model and a Full Body version, first-run production limited to 250 units, and deliveries targeted for the second half of 2027, announced October 26, 2026. https://www.morningstar.com/news/business-wire/20261026986313/realbotix-launches-echo-humanoid-robot-line
+- Quant Group (02685.HK) signed a framework procurement agreement on October 25 to deliver up to 2,000 embodied-AI robot solutions to an automaker's showroom network by end-2027, marking the company's first large-scale commercial order for its physical AI business. https://www.tradingview.com/news/reuters.com,2026-10-27:newsml_ACN111117:0-quant-group-02685-hk-enters-into-framework-procurement-agreement-for-up-to-2-000-embodied-ai-robots-solutions-physical-ai-business-poised-for-re-rating/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours.
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- The San Francisco Physical AI Workshop and Meetup is tomorrow, October 28, 5:30–8:30 PM at Antler SF (144 Townsend St), co-presented by Voxel51 and Nebius, with lightning talks and a hands-on session on curating robotics datasets and evaluating vision models; seats are limited and registration is open. https://voxel51.com/events/san-francisco-physical-ai-workshop-and-meetup-october-28-2026
+
+#KEYS: realbotix-echo-launch, quant-group-robot-procurement, sf-physical-ai-workshop-oct28
