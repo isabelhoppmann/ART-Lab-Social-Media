@@ -34,31 +34,31 @@ Save this. You already know why.
 
 ---
 
-## Meme 2 — realizing in October you've been journaling about the same 3 things since January
+## Meme 2 — the scariest thing this Halloween is last October's journal
 
-**Trend:** 'Whimsymaxxing' fall aesthetic trend (late Sept–Oct 2026, Y2K romanticization wave) subverted: instead of romanticizing your autumn arc, you're hit by the Q4 journaling spiral — noticing the year's recurring pattern all at once. The overwhelmed-head-rub clip depicts exactly the mental overload of this realization.
+**Trend:** Halloween week (Oct 31) — horror-movie-night season, redone after Isabel's 2026-10-26 note that this week's memes should be Halloween themed.
 
-**overlay_text:** me in October realizing I've been writing about the same 3 situations since January
+**overlay_text:** my friends: horror movie night? me, who just reread my journal from last october:
 
-**ig_caption:** The year went fast. The patterns didn't 👁️
+**ig_caption:** Last October's journal is scarier than anything streaming this week 👻
 
-Tonight's prompt: scroll back through your notes from the past few months. What theme keeps showing up that you haven't actually addressed yet?
+Tonight's prompt: open an entry from a year ago and read it like a stranger wrote it. What would you tell her now that you know how it turned out?
 
-Open Zenie and write it out tonight.
+Open Zenie and write it tonight.
 
-#journaling #Zenie #selfawareness #journalingprompts #innerwork
+#journaling #Zenie #halloween #journalingprompts #selfreflection
 
-**fb_caption:** Okay but why does October hit different every single year? You look up and suddenly it’s Q4 and you're staring at months of entries about the exact same situation. Tonight's prompt: scroll back through your notes from the past few months — what theme keeps showing up that you haven’t actually addressed yet? Write it tonight. 🍂
+**fb_caption:** Who needs a haunted house when your old journal entries exist? 🎃 Tonight's prompt: open an entry from a year ago and read it like a stranger wrote it. What would you tell her now that you know how it turned out? Happy Halloween week.
 
-#journaling #Zenie #selfawareness #journalingprompts #innerwork
+#journaling #Zenie #halloween #journalingprompts #selfreflection
 
-**hashtags:** #journaling #Zenie #selfawareness #journalingprompts #innerwork
+**hashtags:** #journaling #Zenie #halloween #journalingprompts #selfreflection
 
 **Best time to post:** Thursday 7–9 PM PST
 
-**Testing:** Riding the 'whimsymaxxing autumn arc' trend subverted into a Q4 journaling spiral — the October seasonality plus the year-pattern joke should earn above-average saves because it hits the exact moment when people are already thinking about this.
+**Testing:** Halloween week (Oct 31): framing a year-old journal entry as scarier than a horror movie tests whether a holiday-pegged meme earns more shares and saves than our non-seasonal memes, and the read-it-like-a-stranger prompt gives people a concrete reason to save it.
 
-**Asset:** meme_2.mp4 — rendered automatically from library clip `overwhelmed_head_rub` (overwhelmed head rub) with white-card overlay
+**Asset:** meme_2.mp4 — rendered automatically from library clip `finger_wag_no` (finger wag: absolutely not) with white-card overlay
 
 ---
 
