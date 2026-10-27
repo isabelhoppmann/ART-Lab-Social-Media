@@ -90,6 +90,16 @@ jobs:
           git diff --staged --quiet || git commit -m "Zenie drafts $(date -u +%Y-%m-%d) (email-relay)"
           git push
 
+      # The commit above uses the default GITHUB_TOKEN, which does NOT trigger the
+      # push-based sync-zenie-notion.yml. Without this step the quote + repost rows
+      # never reach Zenie Posts (week of 2026-10-26: only the 2 meme rows existed).
+      # Notion only; posts nothing to Slack.
+      - name: Sync quote + repost rows to Notion
+        if: steps.materialize.outputs.status == 'materialized'
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python3 .github/scripts/sync_notion_rows.py
+
       # Failures go to Isabel by email, never to Slack. Slack carries content only.
       - name: Email Isabel on failure
         if: failure()
