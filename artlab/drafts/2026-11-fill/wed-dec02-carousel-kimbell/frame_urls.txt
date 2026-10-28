@@ -1,0 +1,4 @@
+https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13100:13137/1910,0,5765,7206/1080,1350/0/default.jpg
+https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13200:13209/1282,0,3738,4672/1080,1350/0/default.jpg
+https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13400:13438/234,0,4370,5462/1080,1350/0/default.jpg
+https://tile.loc.gov/image-services/iiif/service:pnp:highsm:14800:14806/1983,0,4094,5117/1080,1350/0/default.jpg
