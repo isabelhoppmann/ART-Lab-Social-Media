@@ -1,0 +1,16 @@
+Morning Briefing October 28, 2026
+
+=== ROBOTICS & AI ===
+- XPENG's IRON humanoid debuted a VLA 2.0 gesture-interaction demo on October 27, smoothly switching between handshake, fist-bump, and high-five moves by reading visual cues alone, re-evaluating its perception every 0.2 seconds with no spoken commands. https://www.humanoidsdaily.com/news/xpeng-iron-vla-2-gesture-interaction-demo
+- Narwal marked its 10th anniversary on October 28 with a press release noting that its smart floor-care robots now serve more than 6 million households in over 30 countries. https://en.prnasia.com/releases/global/narwal-celebrates-10-years-of-innovation-bringing-smart-floor-care-to-over-6-million-households-worldwide-553625.shtml
+
+=== RESEARCH ===
+- A paper submitted to arXiv on October 26 (2610.35626) proposes Robot-Aligned 3D Gaussian Splatting paired with wrist-camera VLA policies to improve the spatial accuracy of robot reaching, addressing a known failure mode where standard VLA models misplace the end-effector at grasp time. https://arxiv.org/abs/2610.35626
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- Bloomberg reported on October 27 that Physical Intelligence is in funding talks that could nearly double its valuation to approximately $20 billion, with at least $1 billion under discussion and existing backers Avenir and Lux Capital expected to lead. https://bloomberg.com/news/articles/2026-10-27/robotics-lab-physical-intelligence-in-talks-for-a-20-billion-valuation
+
+#KEYS: xpeng-iron-vla2-demo, narwal-10th-anniversary, robot-aligned-3dgs-vla-reaching, physical-intelligence-20b-talks
