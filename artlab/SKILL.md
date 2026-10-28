@@ -71,6 +71,8 @@ Five posts a week, Monday through Friday. Hold two weeks between posts featuring
 - **Photo-led** — two: Light Studies (AI images made for ART Lab) or a photo version of Why It Works / The Future, Then using public photographs (see the photo-sourcing rule).
 - **One more** — Field Notes, Why It Works or The Future, Then. Field Notes never more than once a week.
 
+**Text-to-photo balance (Isabel, Oct 28, 2026):** at most two text-only posts a week (Statement on its own, Field Notes, a typographic Why It Works or The Future, Then). A third post may be text plus photos (a Point of View, or a Statement followed by images). Ideally three of the five are photo posts. A Point of View never ships as the cover alone: if its images can't be made, hold it rather than posting a single text slide. If a planned photo post can't get its images, replace it with another photo post, not a text one.
+
 | Series | Format | Original? | What it is |
 |---|---|---|---|
 | **Field Notes** | Typographic carousel, 6–9 slides | Yes | Kinetic, cybernetic and retro-futurist history told as a sequence of verified facts. Sample: Field Notes 01, CYSP 1. |
