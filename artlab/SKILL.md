@@ -71,6 +71,8 @@ Five posts a week, Monday through Friday. Hold two weeks between posts featuring
 - **Photo-led** — two: Light Studies (AI images made for ART Lab) or a photo version of Why It Works / The Future, Then using public photographs (see the photo-sourcing rule).
 - **One more** — Field Notes, Why It Works or The Future, Then. Field Notes never more than once a week.
 
+**Text series through mid-December (Isabel, Oct 28, 2026):** Field Notes are already scheduled in Planable through mid-December, so until then the only text posts to make are Statement and Point of View. No Field Notes and no typographic Why It Works or The Future, Then; everything else is photo posts (AI Light Studies, public-photo carousels, and reels built from photographs, about half of the photo posts as reels with 6–7 photos). Before planning a week, check Planable (read only) for what's already scheduled and fill the gaps.
+
 **Text-to-photo balance (Isabel, Oct 28, 2026):** at most two text-only posts a week (Statement on its own, Field Notes, a typographic Why It Works or The Future, Then). A third post may be text plus photos (a Point of View, or a Statement followed by images). Ideally three of the five are photo posts. A Point of View never ships as the cover alone: if its images can't be made, hold it rather than posting a single text slide. If a planned photo post can't get its images, replace it with another photo post, not a text one.
 
 | Series | Format | Original? | What it is |
