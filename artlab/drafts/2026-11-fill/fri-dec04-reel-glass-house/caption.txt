@@ -1,0 +1,31 @@
+FRI DEC 4 (suggested) — REEL — Philip Johnson's Glass House (7 frames, 1080x1920; frame URLs in ../frames.json under "glasshouse")
+
+CAPTION
+Philip Johnson finished his Glass House in New Canaan, Connecticut, in 1949, before Mies van der Rohe's Farnsworth House, the design he said gave him the idea. A brick cylinder holds the bathroom on one side and the fireplace on the other, and Johnson called the landscape outside his wallpaper. He added buildings across the 49 acres for decades, among them a pavilion in a pond, and lived there until 2005.
+
+The Glass House (1949), Philip Johnson. Photographs: Carol M. Highsmith, Library of Congress.
+
+#ARTLab #philipjohnson #glasshouse #midcenturymodern #architecture
+
+ALT TEXT (first frame)
+Philip Johnson's Glass House in winter: a low glass box among bare trees, the ground covered in snow.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: this earns more sends per reach than the Farnsworth reel, because "he called the view his wallpaper" is a line people repeat, and it pays off the Farnsworth post from two weeks earlier. If Farnsworth wins on sends, the first glass house shown takes the attention and the second reads as a repeat. Share trigger: taste signal + a line worth repeating.
+
+ORIGINALITY
+Sourced: public-domain photographs (Carol M. Highsmith Archive, Library of Congress). Cropped to 9:16 by the Library's image server; no other edits.
+
+TAG IDEAS (⚠ VERIFY every handle)
+The Glass House @theglasshouse (⚠ VERIFY), National Trust for Historic Preservation @savingplaces (⚠ VERIFY), Library of Congress @librarycongress (⚠ VERIFY)
+
+SOURCES (two per claim)
+- Completed 1949; Johnson lived there until his death in 2005: National Trust, https://savingplaces.org/places/glass-house ; Docomomo US, https://docomomo-us.org/register/glass-house ; Washington Times, https://m.washingtontimes.com/news/2007/jun/16/philip-johnsons-glass-house-to-open-to-public/ ; UPI, https://www.upi.com/Top_News/2005/01/26/Noted-architect-Philip-Johnson-dies-at-98/UPI-41161106774249/
+- Johnson said the idea came from Mies; he had seen the Farnsworth design (1947 MoMA show); the Glass House was finished first: Architakes, https://www.architakes.com/the-farnsworth-house-part-1-whose-less-is-more/ ; Redalyc paper, https://www.redalyc.org/pdf/1936/193645331002.pdf ; Architect Magazine, https://www.architectmagazine.com/?p=80259
+- Brick cylinder with bathroom on one side and fireplace on the other: SAH Archipedia, https://sah-archipedia.org/node/83380 ; Docomomo (above); Washington Times (above)
+- Called the landscape his wallpaper: The Glass House, https://theglasshouse.org/media/i-have-expensive-wallpaper ; Washington Times (above); SAH Archipedia (above)
+- 49 acres, 14 structures built 1949–1995, Pavilion in the Pond 1962: The Glass House, https://theglasshouse.org/explore/pavilion-in-the-pond/ ; National Trust (above and https://savingplaces.org/stories/5-must-see-buildings-around-glass-house)
+- Photographs public domain: LoC item records ("No known restrictions on publication"), e.g. https://www.loc.gov/item/2010630351/ ; Highsmith rights page (archived), https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
+
+EDITORIAL NOTE
+Farnsworth's completion year varies by source (1950 or 1951), so the caption says only that the Glass House came first. Acreage: the owner's 49 acres (Docomomo says 40). Two-week hold: Mies is in the Farnsworth reel (Nov 17); Dec 4 is 17 days later.

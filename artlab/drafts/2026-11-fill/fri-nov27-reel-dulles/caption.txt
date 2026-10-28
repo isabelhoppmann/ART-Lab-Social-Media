@@ -1,0 +1,31 @@
+FRI NOV 27 (suggested) — REEL — Dulles Airport at dusk (7 frames, 1080x1920; frame URLs in ../frames.json under "dulles")
+
+CAPTION
+Eero Saarinen wanted Dulles to sit between earth and sky: a concrete roof hung on cables between two rows of outward-leaning piers. He died in 1961, and his office finished the terminal for its dedication in November 1962. Passengers never walked out to their planes; mobile lounges built by Chrysler and the Budd Company drove them across the field.
+
+Washington Dulles International Airport, main terminal (1962), Eero Saarinen. Photographs: Carol M. Highsmith, Library of Congress.
+
+#ARTLab #eerosaarinen #dullesairport #midcenturymodern #retrofuturism
+
+ALT TEXT (first frame)
+The upswept concrete eave of the Dulles terminal at dusk, lit warm against a deep blue sky.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: this gets the highest watch time of the three reels, because the glowing roof at dusk holds the eye and the mobile lounges at the end are a surprise people rewatch. If the Farnsworth reel beats it on watch time, quiet rooms hold attention better than spectacle for this audience. Share trigger: recognition (anyone who has flown through Dulles) + taste signal.
+
+ORIGINALITY
+Sourced: public-domain photographs (Carol M. Highsmith Archive, Library of Congress). Cropped to 9:16 by the Library's image server; no other edits.
+
+TAG IDEAS (⚠ VERIFY every handle)
+Library of Congress @librarycongress (⚠ VERIFY), Washington Dulles @dulles_airport (⚠ VERIFY), Docomomo US @docomomo_us (⚠ VERIFY)
+
+SOURCES (two per claim)
+- Dedicated November 17, 1962: Docomomo US, https://www.docomomo-us.org/register/washington-dulles-international-airport-main-terminal ; FAA, https://www.faa.gov/sites/faa.gov/files/about/history/milestones/Dulles_Celebrates_50_Years.pdf ; MWAA, https://www.flydulles.com/airport-overview
+- Saarinen died in 1961; Roche and Dinkeloo completed it: Britannica, https://www.britannica.com/biography/Kevin-Roche ; Pritzker Prize, https://pritzkerprize.com/laureates/1982 ; SAH Archipedia, https://sah-archipedia.org/node/20513
+- Roof hung on catenary cables between two rows of outward-leaning concrete piers: Docomomo (above); University of Maryland lecture, https://terpconnect.umd.edu/~austin/ence353.d/lecture-material2021/Dulles-Airport-Cable-Structure-Eero-Saarinen.pdf ; Architecture Lab, https://www.architecturelab.net/dulles-international-airport-eero-saarinen/
+- "Between earth and sky" (paraphrase of Saarinen): SAH Archipedia (above); Docomomo (above)
+- Mobile lounges designed by Chrysler with the Budd Company, carrying passengers from terminal to plane: MWAA, https://www.flydulles.com/sites/mwaa.com/files/legacyfiles/archive/mwaa.com/file/at6_dulles_evolution.pdf ; FAA (above); Docomomo (above)
+- Photographs public domain: LoC item records ("No known restrictions on publication"), e.g. https://www.loc.gov/item/2011634381/ ; Highsmith rights page (archived), https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
+
+EDITORIAL NOTE
+Left out: the number of piers (one source), and lounges rising to the plane door (weak sources). Two-week hold: Saarinen appears in LOW LIGHT's caption (Miller House, Nov 15); Nov 27 is 12 days later.
