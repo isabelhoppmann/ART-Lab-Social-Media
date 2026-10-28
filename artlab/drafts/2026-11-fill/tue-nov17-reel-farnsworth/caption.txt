@@ -1,0 +1,22 @@
+TUE NOV 17 (suggested) — REEL — Farnsworth House through the year (7 frames, 1080x1920; reel.mp4 20.9s silent; frame URLs in ../frames.json under "farnsworth")
+
+CAPTION
+Mies van der Rohe finished the Farnsworth House in 1951 for Edith Farnsworth, a Chicago physician: a single glass room on steel columns, raised about five feet because the Fox River beside it floods. A wood-paneled core holds the kitchen, two bathrooms and a fireplace. Everything else is glass, so the walls change with the season outside.
+
+Farnsworth House (1951), Ludwig Mies van der Rohe. Photographs: Carol M. Highsmith, Library of Congress.
+
+#ARTLab #miesvanderrohe #farnsworthhouse #midcenturymodern #architecture
+
+ALT TEXT (first frame)
+The Farnsworth House in winter: a long, low glass pavilion behind a bare tree, the ground covered in snow.
+
+HYPOTHESIS
+Prediction: this earns the most saves per reach of the three reels, because the same house in snow, summer and fall reads as a reference people keep. If Dulles beats it on saves, a single striking image matters more than a sequence. Share trigger: taste signal + reference value.
+
+ORIGINALITY
+Sourced: public-domain photographs (Carol M. Highsmith Archive, Library of Congress), cropped to 9:16 by the Library's image server.
+
+SOURCES
+- National Trust, https://savingplaces.org/stories/the-past-present-future-of-farnsworth-house (1951; Edith Farnsworth, physician; raised about 5 ft to keep it out of the Fox River's floods; core with two bathrooms, kitchen, fireplace; four seasons through the glass)
+- Britannica, https://www.britannica.com/print/article/1771537 (1951; Chicago medical doctor; about 5 ft above ground, more than 8 ft above the river, designed to withstand flooding; core with two bathrooms, kitchen, fireplace)
+- Photographs public domain: https://www.loc.gov/item/2010630115/ ; https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
