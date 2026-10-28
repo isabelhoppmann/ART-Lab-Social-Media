@@ -1,0 +1,36 @@
+WED NOV 4 — LIGHT STUDIES 03 — Light off water (carousel: 4 AI images, 928x1152, no text on slides)
+
+IMAGES (Figma file "ART Lab IG — AI image tests", file key YG3xn6OSYJHWHi9hD4zhuo), in order. Made with gemini-3.1-flash-image on Oct 28, 2026. Asset URLs expire Nov 4, 2026; the copies on the Notion page are the ones to keep.
+1 morning, indoor pool, ripples on a board-formed concrete ceiling — node 13:2 — https://www.figma.com/api/mcp/asset/a17e544b-605f-4fc4-9efc-663978048e4a.png
+   Prompt: Architectural interior photograph, early morning. An empty indoor swimming pool in a minimalist house, board-formed concrete walls and a low flat concrete ceiling. Low sun enters through a long horizontal opening at water level and strikes the still dark-green water, which throws bright rippling bands of reflected light across the whole concrete ceiling. The ceiling light is the subject. No people, no furniture, no ladders, no lamps or light fixtures. Monolithic, quiet, austere. Shot on medium format film, natural light only, muted palette, fine grain, straight verticals.
+2 noon, courtyard passage, reflections on a shaded lime-plaster wall — node 14:2 — https://www.figma.com/api/mcp/asset/79ea8d60-1769-4911-bf05-ff122f261074.png
+   Prompt: Architectural interior photograph, midday. A narrow covered passage in a minimalist courtyard house in a hot climate: on one side a long shallow reflecting pool of still water in hard sun; on the other a tall rough white lime-plaster wall in shade. Sunlight bouncing off the water paints wavering bright ripples of light across the shaded white wall and the underside of a deep stone lintel. Pale limestone floor. Empty: no people, no furniture, no plants in pots, no lamps or light fixtures. Monolithic, calm, austere. Medium format film, natural light only, warm muted palette, fine grain, straight verticals.
+3 late afternoon, travertine room, gold band thrown up from a floor channel — node 15:2 — https://www.figma.com/api/mcp/asset/aa4b9046-0b5f-4b04-b0d3-628f55ae3bd7.png
+   Prompt: Architectural interior photograph, late afternoon. A long, low, empty room built entirely of honey-colored travertine. A narrow straight channel of water is cut into the floor along the foot of one wall. Low amber sun enters through a single tall vertical slot at the far end, hits the water in the channel, and throws a trembling band of gold reflected light up the travertine wall. Deep shadow elsewhere. No people, no furniture, no objects, no lamps or light fixtures. Monolithic, material, silent. Medium format film, natural light only, muted warm palette, fine grain, straight verticals.
+4 night, lit pool reflected on the underside of a concrete roof — node 16:2 — https://www.figma.com/api/mcp/asset/a8142b27-af46-4ee0-a807-983f3b187a30.png
+   Prompt: Architectural photograph at night. A deep cantilevered concrete roof over a still rectangular pool in a minimalist house. The pool glows a soft pale aqua from within, and its rippling reflection spreads across the smooth underside of the dark concrete roof; this reflected light is the only light in the frame. Dark board-formed concrete walls to either side fade into blackness. No people, no furniture, no visible lamps or light fixtures, no windows lit. Quiet, monolithic, austere. Medium format film, long exposure, deep blue-black night, fine grain, straight verticals.
+
+CAPTION
+Light off water, four rooms. Morning sun on an indoor pool throws its ripples across a concrete ceiling, noon light off a shallow pool moves over a shaded plaster wall, late sun in a floor channel sends a band of gold up a travertine wall, and at night a lit pool throws its reflection onto the roof above it. In each room the light starts from one fixed source and never holds still.
+
+Light Studies 03, ART Lab.
+
+#ARTLab #lightstudies #minimalinteriors #architecture #waterandlight
+
+ALT TEXT (slide 1)
+An empty indoor pool lined in board-formed concrete. Low sun strikes the dark green water and throws bright rippling bands of light across the concrete ceiling.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: this beats Light Studies 02 (glass block) on saves per reach, because the light in frame 1 is visibly moving rather than sitting still, and the reel-like ripple reads in a single frame of the feed. If it doesn't beat it, the material (glass block) mattered more than the motion of the light. Share trigger: taste signal + reference value.
+
+ORIGINALITY
+Original (AI images generated for ART Lab). Nothing real depicted.
+
+TAG IDEAS
+None. The rooms are imagined, so there's nothing to credit.
+
+SOURCES
+None needed: no factual claims.
+
+QC
+Frames 1 and 2 checked at full size in Figma: no people, no fixtures, straight verticals, clean ripple patterns. Frames 3 and 4 were checked only as thumbnails (Figma's tool limit was reached before the full-size check): no people or fixtures visible; frame 4 has a bright patch at the near end of the pool where the underwater light would be. Look at both full size before posting.

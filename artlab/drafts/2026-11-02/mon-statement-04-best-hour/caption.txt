@@ -1,0 +1,31 @@
+MON NOV 2 — STATEMENT 04 — "A great room has one hour it was built for." (single slide, 1080x1350, blue)
+
+SLIDES
+1 statement: slide_01.png (posts alone)
+
+CAPTION
+BEST HOUR
+We think a great room has one hour it was built for. At the Salk Institute in La Jolla, which opened in 1965, Louis Kahn left the courtyard between the labs as bare travertine, on the advice of the architect Luis Barragán. A thin channel of water runs down the middle toward the Pacific, and around the spring and fall equinoxes, the sun sets in line with it.
+
+#ARTLab #louiskahn #salkinstitute #architecture #designhistory
+
+ALT TEXT (slide 1)
+Cream capitals on a blue background, in alternating serif and wide sans lines, read: A great room has one hour it was built for.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: this earns more sends per reach than Statement 03, because "one hour it was built for" invites people to name their own room's hour and send it to whoever they share that room with, and the Salk sunset is a picture people already know. If it does worse than Statement 03 on sends, statements about light read as abstract next to statements about the future. Share trigger: a design opinion worth arguing about + specific recipient.
+
+ORIGINALITY
+Original: ART Lab typography. No imagery.
+
+TAG IDEAS (⚠ VERIFY every handle)
+Salk Institute @salkinstitute (⚠ VERIFY)
+
+SOURCES (two per claim)
+- Opened in 1965: ArchDaily, https://www.archdaily.com/61288/ad-classics-salk-institute-louis-kahn ; The Cultural Landscape Foundation, https://tclf.org/salk-institute-biological-studies (Salk's own history page says construction was complete in 1967, so the caption says "opened," not "completed")
+- Travertine courtyard, open and free of planting, with a thin channel of water running toward the Pacific: ArchDaily (above); SAH Archipedia, https://sah-archipedia.org/node/49156 ; TCLF (above)
+- Left open on Luis Barragán's advice: Salk Institute architecture guide, https://www.salk.edu/explore-salk-architecture-guide/ ; TCLF (above); ArchDaily (above)
+- The sun sets along the channel's axis around the spring and fall equinoxes: Salk architecture guide (above); FOX 5 San Diego, https://digital-release.fox5sandiego.com/news/local-news/stunning-photo-salkhenge-sunset-aligns-on-spring-equinox/amp/
+
+EDITORIAL NOTE
+No source gives an exact alignment date, so the caption says "around" the equinoxes. Sources don't agree on who added the water channel, so it isn't credited to anyone.

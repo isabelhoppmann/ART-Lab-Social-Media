@@ -1,0 +1,39 @@
+THU NOV 5 — POINT OF VIEW 04 — WHAT IT'S MADE OF (carousel: dark cover 1080x1350 + 3 AI images 928x1152)
+
+SLIDES (in order)
+1 cover: slide_01.png
+2 stone — layered grey-green stone slabs, one blade of daylight from a ceiling slot — node 17:2 — https://www.figma.com/api/mcp/asset/5ab0a2d0-4bb2-49ff-b33a-706929733c25.png
+   Prompt: Architectural interior photograph. A tall, empty room whose walls are built from thin horizontal layers of grey-green stone slabs stacked like strata, the edges slightly uneven. A single narrow glazed slot in the ceiling lets one hard blade of daylight fall down the stone wall, picking out every layer. Stone floor of the same material. No people, no furniture, no objects, no lamps or light fixtures. Monolithic, material, silent. Medium format film, natural light only, muted cool palette, fine grain, straight verticals.
+3 plaster — hand-troweled ochre lime plaster under raking morning sun — node 18:2 — https://www.figma.com/api/mcp/asset/bf283e28-7a02-4659-a06e-26a417afd7bf.png
+   Prompt: Architectural interior photograph, morning. A corner of an empty room finished in hand-troweled warm ochre lime plaster, with visible sweeps and burnished marks of the trowel. Low morning sun from a deep window just out of frame rakes across the wall at a sharp angle, so every ridge of the plaster casts a tiny shadow, and a clean diagonal shadow edge crosses the wall. Wide oak floorboards. No people, no furniture, no objects, no lamps or light fixtures. Material, calm, austere. Medium format film, natural light only, muted warm palette, fine grain, straight verticals.
+4 earth — rammed-earth wall, late sun grazing its bands — node 19:2 — https://www.figma.com/api/mcp/asset/0edc260a-f2b4-45a3-9e56-fda202e94b2c.png
+   Prompt: Architectural interior photograph, late afternoon. An empty room with one long wall of rammed earth, its compacted horizontal bands of red, ochre and pale sand clearly visible. A low, deep opening at floor level lets warm late sun slide along the base of the wall, grazing the earth so its texture and layers glow, while the top of the wall falls into shadow. Polished dark concrete floor. No people, no furniture, no objects, no lamps or light fixtures. Monolithic, material, silent. Medium format film, natural light only, muted warm earth palette, fine grain, straight verticals.
+Made with gemini-3.1-flash-image on Oct 28, 2026. Asset URLs expire Nov 4, 2026; the copies on the Notion page are the ones to keep.
+
+CAPTION
+WHAT IT'S MADE OF
+We think a wall should show what it's made of. Paint makes every room the same age, while stone, earth and lime plaster catch the light differently at every hour. We think of Therme Vals in Switzerland, which Peter Zumthor built from some 60,000 slabs of quartzite quarried in the village, lit through narrow strips of glass between the roof slabs.
+
+Images: ART Lab.
+
+#ARTLab #materiality #interiordesign #peterzumthor #architecture
+
+ALT TEXT (slide 1)
+Near-black background. Large cream serif capitals read WHAT IT'S MADE OF, above a short paragraph: We think a wall should show what it's made of. Paint makes every room the same age. Stone, earth and lime plaster catch the light differently at every hour, and no two afternoons look the same on them.
+
+HYPOTHESIS (a prediction, so it can turn out wrong)
+Prediction: with three images behind the cover, this earns more sends per reach than Point of View 03 (cover only), because people forward it to whoever is choosing finishes for a renovation. If it doesn't beat Point of View 03 on sends, the images aren't what carries a Point of View; the opinion is. Share trigger: a design opinion worth arguing about + specific recipient.
+
+ORIGINALITY
+Cover original (ART Lab typography); images original (AI, generated for ART Lab). The images are imagined rooms, not Therme Vals.
+
+TAG IDEAS (⚠ VERIFY every handle)
+None needed. Optional: 7132 Therme @7132therme (⚠ VERIFY)
+
+SOURCES (two per claim)
+- Therme Vals by Peter Zumthor, opened 1996: ArchDaily, https://www.archdaily.com/13358/therme-vals-peter-zumthor ; swissinfo, https://www.swissinfo.ch/eng/science/stone-and-water-temple-delights-the-senses/1021464
+- Some 60,000 slabs of Vals quartzite, quarried locally: 7132 (operator), https://7132.com/en/therme ; Blick, https://www.blick.ch/life/reisen/ch/ausflug/unterwegs-in-graubuenden-baden-in-der-schoensten-therme-der-welt-id4360502.html ; Michelin Guide, https://guide.michelin.com/de/de/article/travel/vals---weit-mehr-als-die-7132-therme-guide-michelin (swissinfo gives 40,000; three sources give 60,000, so "some 60,000")
+- Narrow glazed gaps between the roof slabs let in daylight: Architectuul, https://architectuul.com/architecture/thermal-baths-vals ; Metalocus, https://www.metalocus.es/en/news/a-place-leave-time-suspension-thermal-baths-vals-peter-zumthor
+
+QC
+All three images checked as thumbnails (Figma's tool limit was reached before full-size checks): no people, no fixtures, no furniture. The stone room resembles Vals in spirit but is not a copy of any real interior. Look at all three full size before posting.
