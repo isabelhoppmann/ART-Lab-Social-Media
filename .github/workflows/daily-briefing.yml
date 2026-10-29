@@ -106,7 +106,18 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        # Before alerting, check whether another run has already published
+        # today's briefing (e.g. two manual dispatches a few minutes apart, where
+        # the first gives up before the routine's email lands and the second
+        # publishes it). Checks origin/main, not the local checkout, so a run
+        # that wrote the file but failed to push still alerts.
         run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          if git fetch --depth=1 origin main \
+             && git cat-file -e "origin/main:briefings/${TODAY}.txt" 2>/dev/null; then
+            echo "Today's briefing (briefings/${TODAY}.txt) is already published on main — skipping failure email."
+            exit 0
+          fi
           python .github/scripts/notify_error_email.py \
-            "⚠️ Daily Briefing Action failed — $(date -u +%Y-%m-%d)" \
+            "⚠️ Daily Briefing Action failed — ${TODAY}" \
             "The Daily Briefing Action failed. Today's briefing was not published."
