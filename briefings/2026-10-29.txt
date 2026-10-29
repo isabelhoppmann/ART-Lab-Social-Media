@@ -1,0 +1,19 @@
+Morning Briefing October 29, 2026
+
+=== ROBOTICS & AI ===
+- At its Innovation Day 2026 in Shanghai today, AGIBOT debuted the Worken productivity framework (measuring active robots x autonomous hours x output efficiency), the GO-3 Preview foundation model, the AHA3 third-generation humanoid platform, and Link-U OS 1.0. https://www.prnewswire.com/news-releases/agibot-introduces-worken-to-measure-productive-robot-work-at-agibot-innovation-day-2026-302923486.html
+- Shenzhen announced a push to deploy embodied-intelligence robots across manufacturing and everyday environments, and opened a robot school to train machines on practical skills for real-world production. http://en.people.cn/n3/2026/1029/c90000-20513580.html
+
+=== RESEARCH ===
+- A NeurIPS 2026 mechanistic study of six VLA models across 420,000+ rollouts found visual inputs dominate action generation — injecting one task's activations into another scene drove the correct trajectory 99.6% of the time — with language mattering mainly when scene context alone is ambiguous. https://arxiv.org/abs/2603.19233
+
+=== FUNDING & INVESTMENT ===
+- Fort Robotics announced approximately $20 million in additional funding from existing investors on October 28, bringing total committed capital tied to its proposed business combination to over $50 million. https://roboticsandautomationnews.com/2026/10/28/fort-robotics-secures-approximately-20-million-in-additional-funding/106419
+
+=== COMPETITOR WATCH ===
+- No qualifying items in the last 48 hours
+
+=== BAY AREA ===
+- Renegade Craft Fair returns to Fort Mason Center Festival Pavilion on November 14-15, 2026, with more than 250 independent makers presenting ceramics, jewelry, textiles, and prints; free admission. https://www.renegadecraft.com/city/san-francisco/
+
+#KEYS: agibot-worken-innovation-day, shenzhen-robot-school-oct2026, vla-mechanistic-neurips2026, fort-robotics-extension-oct2026, renegade-craft-sf-nov2026
