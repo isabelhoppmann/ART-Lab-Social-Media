@@ -39,7 +39,7 @@ def slide_html(spec, s, i, n):
     x, y, size = disc_pos(i, n)
     extra = "".join(f'<div class="{k}">{s[k]}</div>' for k in ("kicker", "sub") if s.get(k))
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="slide">
-<div class="top"><span>{spec['series']} {spec['issue']}</span><span>{i+1:02d} / {n:02d}</span></div>
+<div class="top"><span></span><span>{i+1:02d} / {n:02d}</span></div>
 <div class="rule"></div>
 <div class="disc" style="left:{x}px; top:{y}px; width:{size}px; height:{size}px; background:{spec.get('accent', '#D2471C')}"></div>
 <div class="text {s.get('kind','body')}">{s['text']}</div>{extra}

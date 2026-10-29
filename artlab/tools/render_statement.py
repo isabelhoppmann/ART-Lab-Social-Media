@@ -3,7 +3,7 @@
 Modeled on the typographic slides in Kelly Wearstler's Substack (WEARSTLERworld):
 one short opinion broken into lines, alternating a serif and a wide sans, each line
 nudged left or right so the block reads as a composition. ART Lab's own type and
-colors; small series label at the foot instead of a wordmark.
+colors. No series name or number on the slide (Isabel, Oct 28, 2026).
 
 Usage: python3 render_statement.py spec.json out.png
 spec: {"series": "Statement", "issue": "01",
@@ -45,7 +45,6 @@ html,body{{margin:0;width:{W}px;height:{H}px;background:{ground};color:{ink};ove
         font-size:22px;letter-spacing:.16em;text-transform:uppercase;opacity:.75}}
 </style></head><body>
 <div class="block" id="b">{rows}</div>
-<div class="label">{spec['series']} {spec['issue']}</div>
 <script>
 const b=document.getElementById('b');
 function fit(){{

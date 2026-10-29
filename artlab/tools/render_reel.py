@@ -37,7 +37,7 @@ em { font-style:italic; }
 .foot { position:absolute; left:88px; right:88px; bottom:300px; font-family:'Mono'; font-size:22px;
   letter-spacing:.14em; color:#6F685C; text-transform:uppercase; border-top:1px solid #CFC6B5; padding-top:24px; }
 </style></head><body>
-<div class="top"><span>%(series)s %(issue)s</span><span id="count"></span></div>
+<div class="top"><span></span><span id="count"></span></div>
 <div id="disc"></div>
 %(texts)s
 <div class="foot">%(footer)s</div>

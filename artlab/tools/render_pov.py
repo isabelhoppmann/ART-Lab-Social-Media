@@ -3,6 +3,7 @@
 Modeled on how Kelly Wearstler writes: an ALL-CAPS title of two or three words,
 then a short first-person opinion. The rest of the carousel is images.
 Distinct from Field Notes: no disc, no slide counter, the whole opinion on one slide.
+No series name or number on the slide (Isabel, Oct 28, 2026).
 
 Usage: python3 render_pov.py spec.json out.png
 spec: {"series": "Point of View", "issue": "01", "title": "ONE SOURCE",
@@ -42,7 +43,6 @@ html,body{{margin:0;width:{W}px;height:{H}px;background:{ground};color:{ink}}}
 .box{{position:absolute;left:96px;top:170px;width:888px;height:{boxh}px;background:#808080}}
 .body{{font-family:'IS';font-size:{bsize}px;line-height:1.22;max-width:820px;text-wrap:pretty}}
 </style></head><body><div class="wrap">
-<div class="label">{spec['series']} {spec['issue']}</div>
 {boxdiv}
 <div class="title">{spec['title']}</div>
 <div class="rule"></div>
