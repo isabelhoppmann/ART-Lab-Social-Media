@@ -1,0 +1,30 @@
+LIGHT STUDIES 05 — colored light (fill-in, Sat Nov 21; carousel: 4 AI images, 1080x1350)
+
+IMAGES (Figma file "ART Lab IG — AI image tests", YG3xn6OSYJHWHi9hD4zhuo; gemini-3.1-flash-image), in order:
+1 white corridor ending in a tall amber glass window — node 27:2
+2 courtyard with a rose wall and a magenta wall, sunlight cutting across — node 28:2 (white border trimmed)
+3 white room, square blue window throwing a blue patch on the wall and floor — node 29:2
+4 stone room, low red slot casting red light across the floor — node 30:2
+
+CAPTION
+Colored glass works by absorbing part of the light that hits it. A blue pane holds back most of the long, warm wavelengths and passes the short ones, so the patch it throws on a white wall is the color of the glass. Paint does the same in reverse, reflecting its own color and absorbing the rest. Each of these four rooms takes its color from one window or one wall.
+
+Light Studies 05, ART Lab.
+
+#ARTLab #lightstudies #coloredlight #minimalinteriors #architecture
+
+ALT TEXT
+1 A narrow white corridor ending in a tall window of amber glass that tints the floor gold.
+2 A courtyard between a rose-pink wall and a magenta wall, with a band of sunlight crossing a white wall and a dark doorway.
+3 A white room with a square blue window high on one wall and a patch of blue light on the opposite wall and floor.
+4 A rough stone room with a low slot of red glass casting a band of red light across the floor.
+
+HYPOTHESIS
+Prediction: this gets more shares than Light Studies 04 because one strong color reads at thumbnail size and the physics line gives people something to send. If it doesn't, color alone isn't enough of a hook and the next set should lead with the explanation on the cover.
+
+SOURCES
+- Colored filters absorb some wavelengths and transmit others: Cyberphysics, AQA GCSE Physics 4.6.2 — https://cyberphysics.co.uk/key_stage/GCSE_2018/AQA_8463/gcse_unit4.62.html ; Colour Literacy Project, "How filters work" — https://colourliteracy.org/how-filters-work (a red filter "only transmits a range of long wavelengths")
+- Opaque surfaces get their color from the wavelengths they reflect, absorbing the rest: Cyberphysics (above); Ackerman & Knox, Meteorology, "Mixing paint" (Univ. of Wisconsin) — https://profhorn.aos.wisc.edu/wxwise/AckermanKnox/chap5/mixpaint.html
+
+ORIGINALITY
+Original (AI images generated for ART Lab). No AI label, per Isabel (Oct 21, 2026).

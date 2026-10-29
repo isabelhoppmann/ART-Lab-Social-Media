@@ -1,0 +1,30 @@
+LIGHT STUDIES 04 — snow light (fill-in, Fri Nov 13; carousel: 4 AI images, 1080x1350)
+
+IMAGES (Figma file "ART Lab IG — AI image tests", YG3xn6OSYJHWHi9hD4zhuo; gemini-3.1-flash-image), in order:
+1 white room, one wide window onto a snowfield and mountains — node 23:2
+2 board-formed concrete corridor ending in a tall slot onto snowy trees — node 24:2 (white border trimmed)
+3 cantilevered concrete stair beside a full-height window onto snow — node 25:2
+4 concrete room at night, long window onto moonlit snow — node 26:2
+
+CAPTION
+Fresh snow reflects 80 to 90 percent of the sunlight that reaches it, so a window onto a snowfield lights a room from below as well as from above. The light reaches ceilings and the undersides of stairs, which daylight usually leaves in shade. In these four rooms, winter light comes in low and stays soft from morning until the moon is up.
+
+Light Studies 04, ART Lab.
+
+#ARTLab #lightstudies #winterlight #minimalinteriors #architecture
+
+ALT TEXT
+1 A white room with a pale wood floor and one wide window framing a snowfield and mountains.
+2 A narrow concrete corridor ending in a tall slot window onto snow-covered trees.
+3 A concrete stair with floating treads beside a full-height window onto a snowy forest at sunrise.
+4 A dark concrete room at night with a long window onto snow under a full moon.
+
+HYPOTHESIS
+Prediction: a seasonal mood post earns more saves per reach than the photo carousels of real buildings, because people save winter rooms as reference, but fewer shares, because there's no story to pass on. If saves don't beat the Getty carousel, seasonal AI sets aren't worth the credits.
+
+SOURCES
+- Fresh snow reflects 80–90% of sunlight: The Open University, "Understanding atmospheric and ocean flows," 2.1 (albedo table) — https://www.open.edu/openlearn/nature-environment/environment-understanding-atmospheric-and-ocean-flows/content-section-2.1
+- Same figure: MPR News, "Chilly blanket" (Dec 3, 2008) — https://www.mprnews.org/story/2008/12/03/chilly-blanket
+
+ORIGINALITY
+Original (AI images generated for ART Lab). No AI label, per Isabel (Oct 21, 2026).
