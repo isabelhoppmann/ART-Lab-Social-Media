@@ -37,7 +37,10 @@ from datetime import datetime, timezone
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 BRIEFINGS_DIR = os.path.join(REPO_ROOT, "briefings")
 SUBJECT_PREFIX = "ART LAB BRIEFING"
-FETCH_ATTEMPTS = 5
+# Wait up to ~15 min (16 checks, 60s apart) for the routine's email. Was 4 min,
+# but on 2026-10-29 the email landed just after a 7:35am PT run gave up, so that
+# run emailed a failure alert even though a run 10 min later published fine.
+FETCH_ATTEMPTS = 16
 FETCH_WAIT_SECONDS = 60
 
 # The composing routine fires at 14:00 UTC Mon-Fri and its email has landed as

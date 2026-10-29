@@ -16,7 +16,7 @@ name: Daily Briefing
 # congested). publish_from_email.py exits 0 when today's file already exists, so
 # every rung after the one that wins is a ~15s no-op: no second commit, no second
 # Slack post. Earliest rung is 14:23 UTC because the routine fires at 14:00 and
-# its email has landed as late as 14:25; the script itself then waits up to 4 min.
+# its email has landed as late as 14:25; the script itself then waits up to 15 min.
 on:
   schedule:
     - cron: '23 14 * * 1-5'   # 14:23 UTC Mon–Fri — primary
