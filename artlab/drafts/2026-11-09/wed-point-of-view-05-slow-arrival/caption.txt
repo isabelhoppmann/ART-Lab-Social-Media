@@ -1,0 +1,38 @@
+WED NOV 11 — POINT OF VIEW 05: SLOW ARRIVAL (carousel: dark cover + 4 AI images, all 1080x1350)
+
+SLIDE ORDER
+1 slide_01.png — cover
+2 slide_02.jpg — low, dark concrete passage, light far at the end (Figma node 31:2)
+3 slide_03.jpg — plaster passage turning toward warm light (node 31:3)
+4 slide_04.jpg — threshold from a dark stone passage into a tall limestone room with a shaft of sun (node 31:4)
+5 slide_05.jpg — tall white room, one square roof opening, daylight on the floor (node 31:5)
+
+CAPTION
+SLOW ARRIVAL
+We like a building that makes you wait for the big room. Frank Lloyd Wright did it at the Guggenheim in New York, which opened in 1959: you come in under a low, hovering ceiling, and then the rotunda opens above you up to the skylight. Our four rooms follow the same order, from a dark passage to a column of daylight. We would rather walk toward a room than see all of it from the door.
+
+Images: ART Lab.
+
+#ARTLab #architecture #interiordesign #franklloydwright #designthinking
+
+ALT TEXT (slide 1)
+Near-black background. Large cream serif capitals read SLOW ARRIVAL, above a short paragraph: We like a building that makes you wait for the big room: a low, dim passage, a turn, and then the ceiling lifts and the light comes in. A room you walk toward stays with you longer than one you see from the door.
+
+HYPOTHESIS
+Prediction: read in order, the four images make the opinion felt, so this earns more saves per reach than Point of View 04 (WHAT IT'S MADE OF). If it doesn't, a sequence of rooms adds less than a single striking material. Share trigger: a design opinion worth arguing about + taste signal (sent to whoever is planning a house or a renovation).
+
+ORIGINALITY
+Original: ART Lab typography plus AI images generated for ART Lab (no AI label, per Isabel, Oct 21). The rooms are imagined; the caption names the Guggenheim only as the example of the idea, and "Images: ART Lab." makes clear they are not photos of it.
+
+AI IMAGES (Figma file "ART Lab IG — AI image tests", YG3xn6OSYJHWHi9hD4zhuo; gemini-3.1-flash-image; 928x1152 resized to 1080x1350)
+31:2 — "A long, low, narrow passage of dark board-formed concrete, ceiling only just above head height, almost no light inside. At the far end, a bright opening where daylight spills in onto the floor. Minimalist, monolithic, empty, no people, no furniture, no lamps…"
+31:3 — "Inside a dim, low passage of smooth pale plaster, the passage turns a corner; around the corner, warm late-afternoon sunlight falls on the wall and floor, the source unseen…"
+31:4 — "A threshold: standing at the end of a low dark stone passage, looking out into a very tall, bright, empty room of pale limestone… sunlight falls in a long shaft down one wall…"
+31:5 — "A very tall empty room of white plaster and pale stone, about five stories high, with a single square opening in the roof; a column of daylight falls through it onto the floor far below…"
+
+TAG IDEAS (⚠ VERIFY handles)
+Guggenheim @guggenheim ⚠ VERIFY (optional; the images are not of the museum)
+
+SOURCES
+- Guggenheim opened in 1959: Guggenheim family guide — https://www.guggenheim.org/wp-content/uploads/2015/11/guggenheim-education-familyguide_architecture-20151116.pdf ; Wikipedia, Solomon R. Guggenheim Museum
+- Low ceiling at the entrance, then the rotunda opens and draws the eye to the skylight: Guggenheim on Google Arts & Culture — https://artsandculture.google.com/story/wAUxLGZeShvfKw ; USC Scalar, Guggenheim interior — https://scalar.usc.edu/works/frank-lloyd-wright/guggenheim-interior
