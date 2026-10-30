@@ -1,0 +1,15 @@
+Morning Briefing October 30, 2026
+
+=== ROBOTICS & AI ===
+- President Trump signed a Section 232 proclamation on October 28 finding that U.S. imports of robotics and industrial machinery threaten national security and directing 180-day trade negotiations with all major trading partners; no tariffs were imposed but future quotas or levies are possible if talks fail. https://www.whitehouse.gov/presidential-actions/2026/10/adjusting-imports-of-robotics-industrial-machinery-and-their-parts-and-components-into-the-united-states/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Foundry Robotics raised a $100 million Series A led by Marlinspike Partners on October 28, 2026, with Khosla Ventures, SE Ventures, and others participating, to build out a 130,000-square-foot AI-powered autonomous assembly factory in Emeryville, California targeting defense, satellite, and drone manufacturing. https://www.siliconreport.com/foundry-robotics-plans-expansion-after-raising-100-million
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: trump-section-232-robotics-oct2026, foundry-robotics-series-a
