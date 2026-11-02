@@ -336,6 +336,18 @@
       "attribution": "Mae West",
       "norm": "keep a diary and someday itll keep you",
       "first_week": "2026-10-26"
+    },
+    {
+      "quote": "In the depth of winter, I found there was, within me, an invincible summer.",
+      "attribution": "Albert Camus",
+      "norm": "in the depth of winter i found there was within me an invincible summer",
+      "first_week": "2026-11-02"
+    },
+    {
+      "quote": "Almost everything will work again if you unplug it for a while, including you.",
+      "attribution": "Anne Lamott",
+      "norm": "almost everything will work again if you unplug it for a while including you",
+      "first_week": "2026-11-02"
     }
   ]
 }
