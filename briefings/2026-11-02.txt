@@ -1,0 +1,15 @@
+Morning Briefing November 2, 2026
+
+=== ROBOTICS & AI ===
+- Bloomberg reports Chinese robotics makers are pivoting from factory automation toward home use, citing CATL Spirit AI robots hitting 99%+ wire-insertion success in production and Robbyant deploying units in Shanghai pharmacies. https://www.japantimes.co.jp/business/2026/11/02/tech/next-generation-home-help-robots/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Agility Robotics shareholders vote today (November 2, 2026) on the company's $2.5 billion SPAC merger with Churchill Capital Corp XI; Foxconn leads the PIPE and the company targets a Nasdaq debut as AGLT by November 5. https://fourweekmba.com/ai-nvidia-backed-agilitys-2-5b-spac-clears-sec-vote-nov-2/
+
+=== COMPETITOR WATCH ===
+- Meta is developing a second-generation humanoid called Max 2 with Fourier; the first prototype, Max, was built in three months for internal research and the company says it has no plans to sell the units. https://digitaltrends.com/computing/meta-is-already-working-on-its-second-gen-humanoid-robot-but-dont-expect-it-to-land-in-homes-anytime-soon
+
+#KEYS: china-home-robots-nov2026, agility-robotics-spac, meta-max2-humanoid
