@@ -1,0 +1,16 @@
+Morning Briefing November 3, 2026
+
+=== ROBOTICS & AI ===
+- Chery's embodied AI brand AiMOGA made its global debut with MOBO, a 0.9-meter home companion robot featuring voice interaction, long-term memory, and full-body motion control, and announced tighter integration with LUXEED vehicles to build a connected human-vehicle-home ecosystem; global pre-orders opened at the Chery International User Summit. https://www.globenewswire.com/news-release/2026/11/03/3394214/0/en/aimoga-launches-mobo-home-companion-robot-highlighting-deeper-integration-between-robotics-and-luxeed-vehicles.html
+- Krafton subsidiary Ludo Robotics unveiled Ludi 0.2, a socially intelligent robot AI system that interprets human intent through nonverbal cues and adapts cooperation in real time, debuted at the Bay Area Robotics Symposium at UC Berkeley on October 30, though the company describes it as a research demonstration not yet reliable for everyday use. https://en.sedaily.com/technology/2026/11/02/krafton-unveils-robot-ai-that-reads-human-intent
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: aimoga-mobo-launch, krafton-ludi-0.2
