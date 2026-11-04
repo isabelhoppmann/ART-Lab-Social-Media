@@ -1,0 +1,16 @@
+Morning Briefing November 4, 2026
+
+=== ROBOTICS & AI ===
+- North American robot orders rose 24.8 percent year over year in Q3 2026, the fourth consecutive quarter of double-digit gains, driven by automotive and electronics sectors, according to data from the Association for Advancing Automation. https://roboticsandautomationnews.com/2026/11/02/north-american-robot-orders-increase-25-percent-in-third-quarter-of-2026/106606
+- StarBot Robotics launched its Spark humanoid robot at $7,999, a 90 cm, 22-degree-of-freedom platform assembled in the United States and aimed at youth education, programming practice, and research. https://globenewswire.com/news-release/2026/11/04/3395568/0/en/made-in-america-and-priced-at-7-999-starbot-launches-spark-humanoid-robot.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: north-america-robot-orders-q3-2026, starbot-spark-launch
