@@ -68,18 +68,19 @@ Each week ships **six feed posts on six different days, plus one Story set**:
 
 | Day (PST) | Post | Label | Why it's there |
 |---|---|---|---|
-| Mon | Meme (library clip) | `Meme 1` | Zenie's native humor; keeps the familiar feel |
+| Mon | Reel — **Quarter-Life Check-In** series | `Reel 1` | Reach to people who don't follow Zenie yet |
 | Tue | Carousel | `Carousel 1` | Saves and swipes (engagement per person reached) |
-| Wed | Reel — **Quarter-Life Check-In** series | `Reel 1` | Reach to people who don't follow Zenie yet |
+| Wed | Meme (library clip) | `Meme 1` | Zenie's native humor; keeps the familiar feel |
 | Thu | Text Card built to be sent | `Text Card 1` | Sends (shares to DMs), the strongest reach signal |
 | Fri | Repost | `Repost 1` | Community and credit to creators in the niche |
 | Sun | **Sunday Scaries** series: a finish-the-sentence Text Card, a quote Reel, or a Quote Image | `Text Card 2`, `Reel 2` or `Quote 1` | Comments from existing followers; a recognizable weekly ritual |
 | Wed or Thu | Story set (2–3 frames: poll + question box) | `Story 1` | Talking with current followers; answers feed next week's carousel |
 
+- **At least one Reel every week is scheduled on Monday** (Isabel's rule, 2026-11-05): she adds the trending audio by hand while scheduling the week on Monday, so `Reel 1` always gets a Monday `best_time` (e.g. "Monday 7–9 PM PST"). A second Reel (the Sunday Scaries quote Reel) is fine on its own day.
 - Rotate the Sunday Scaries slot: if last week's was a finish-the-sentence card, use a quote (as a Reel on moving footage, or a Quote Image) this week, and vice versa. Read last week's drafts (`posts/<last Monday's date>/zenie_drafts.md`, via the same raw.githubusercontent.com URL pattern as `_raw`) to see which it was, and which Reel style and Carousel format ran.
 - Rotate the Reel style: a POV Reel one week, a quote Reel the next (the Sunday quote Reel counts). Never two quote Reels in one week.
 - Rotate the Carousel format across weeks: `things_no_one_told_you`, `unsent_story`, and `you_told_us` (only when there are unused Story answers — Step 2H).
-- Use the day plan above for `best_time` unless a seasonal moment (Step 0.5) is a reason to move a post. Before finalizing, sort the six feed posts by scheduled datetime and write the sequence out loud, e.g. "Mon Meme, Tue Carousel, Wed Reel, Thu Text Card, Fri Repost, Sun Text Card".
+- Use the day plan above for `best_time` unless a seasonal moment (Step 0.5) is a reason to move a post. Before finalizing, sort the six feed posts by scheduled datetime and write the sequence out loud, e.g. "Mon Reel, Tue Carousel, Wed Meme, Thu Text Card, Fri Repost, Sun Text Card".
 
 ### 4. The Post Types (changed 2026-11-05)
 
@@ -133,7 +134,7 @@ Every caption, overlay, card and slide is read by people who scroll past anythin
 
 Two named series run every week so the feed has something to come back for. Put the series name in the post's `series` field (the renderer prints it as a small kicker on the card, slide or Reel) and mention it naturally in the caption.
 - **Sunday Scaries** (Sunday evening): the feeling of the week ahead — work dread, the inbox, the friend you owe a text, the plans you're avoiding.
-- **Quarter-Life Check-In** (Wednesday Reel, and the Story set): where am I, is this the life I want, am I behind.
+- **Quarter-Life Check-In** (Monday Reel, and the Story set): where am I, is this the life I want, am I behind.
 Other posts may carry `series: "Things no one told you"` (that carousel format) — no other series names.
 
 ---
@@ -825,7 +826,7 @@ Rules:
 
 ## Step 2G: Reels (added 2026-11-05)
 
-`Reel 1`, Wednesday, **Quarter-Life Check-In** series. On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
+`Reel 1`, **always Monday** (Isabel adds the audio while scheduling the week), **Quarter-Life Check-In** series. On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
 
 Fields:
 - `reel_style` — `"pov"` or `"quote"`.
@@ -992,7 +993,7 @@ Use the same shape for `## Text Card N — {theme}` (with `**Card ({card_style})
 ```
 ## This week's sequence
 
-{Mon Meme · Tue Carousel · Wed Reel (Quarter-Life Check-In) · Thu Text Card · Fri Repost · Sun Text Card or Quote (Sunday Scaries) · Story on Wed/Thu}
+{Mon Reel (Quarter-Life Check-In) · Tue Carousel · Wed Meme · Thu Text Card · Fri Repost · Sun Text Card or Quote (Sunday Scaries) · Story on Wed/Thu}
 
 {one line confirming every feed post is on its own day — CONTENT SCOPE §3}
 ```
