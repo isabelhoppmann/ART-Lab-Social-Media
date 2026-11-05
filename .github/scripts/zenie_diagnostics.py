@@ -17,7 +17,25 @@ def api_get(path, params):
         return json.load(r)
 
 def avg(lst):
+    """Average that ignores missing values. A post whose reach could not be read
+    has eng_rate None; dividing its likes by 1 used to report 33% or 100% ER."""
+    lst = [x for x in lst if x is not None]
     return round(sum(lst) / len(lst), 2) if lst else 0
+
+
+def ig_insights(media_id):
+    """Per-post insights. Meta rejects the WHOLE call if one metric isn't valid for
+    that media type, so fall back to smaller sets rather than losing everything.
+    `shares` is sends (Instagram's strongest signal for reaching non-followers)."""
+    for metrics in ("reach,saved,shares,views", "reach,saved,shares", "reach,saved", "reach"):
+        try:
+            got = {}
+            for m in api_get(f"{media_id}/insights", {"metric": metrics}).get("data", []):
+                got[m["name"]] = m["values"][0]["value"]
+            return got
+        except Exception:
+            continue
+    return {}
 
 def parse_ts(ts_str):
     return datetime.fromisoformat(ts_str.replace("+0000", "+00:00"))
@@ -26,24 +44,21 @@ def parse_ts(ts_str):
 ig_posts = []
 try:
     media = api_get(f"{IG_USER_ID}/media", {
-        "fields": "id,media_type,timestamp,like_count,comments_count,caption",
+        "fields": "id,media_type,media_product_type,timestamp,like_count,comments_count,caption,permalink",
         "limit": "50"
     })
     for post in media.get("data", []):
-        saved = reach = 0
-        try:
-            ins = api_get(f"{post['id']}/insights", {"metric": "reach,saved"})
-            for m in ins.get("data", []):
-                if m["name"] == "reach":   reach = m["values"][0]["value"]
-                elif m["name"] == "saved": saved = m["values"][0]["value"]
-        except Exception:
-            pass
+        ins   = ig_insights(post["id"])
+        reach = ins.get("reach") or 0
+        saved = ins.get("saved") or 0
         post["reach"]    = reach
         post["saved"]    = saved
+        post["shares"]   = ins.get("shares") or 0
+        post["views"]    = ins.get("views")
+        # Engagement per account reached. No reach -> no rate (excluded from averages).
         post["eng_rate"] = round(
-            (post.get("like_count", 0) + post.get("comments_count", 0) + saved)
-            / max(reach, 1) * 100, 2
-        )
+            (post.get("like_count", 0) + post.get("comments_count", 0) + saved + post["shares"])
+            / reach * 100, 2) if reach else None
         post["platform"] = "IG"
         ig_posts.append(post)
     print(f"IG posts fetched: {len(ig_posts)}")
@@ -60,21 +75,24 @@ try:
         likes    = post.get("likes",    {}).get("summary", {}).get("total_count", 0)
         comments = post.get("comments", {}).get("summary", {}).get("total_count", 0)
         shares   = post.get("shares",   {}).get("count", 0)
-        reach    = 0
-        try:
-            ins = api_get(f"{post['id']}/insights", {"metric": "post_impressions_unique"})
-            for m in ins.get("data", []):
-                if m["name"] == "post_impressions_unique":
-                    reach = m["values"][0]["value"]
-        except Exception:
-            pass
+        # Meta retired post_impressions_unique, which is why FB "engagement" read
+        # 33-100%. Try its replacement; with no reach we report raw interactions
+        # and leave the rate empty instead of dividing by 1.
+        reach = 0
+        for metric in ("post_total_media_view_unique", "post_impressions_unique"):
+            try:
+                for m in api_get(f"{post['id']}/insights", {"metric": metric}).get("data", []):
+                    reach = m["values"][0]["value"] or 0
+                if reach:
+                    break
+            except Exception:
+                continue
         post["likes_count"]    = likes
         post["comments_count"] = comments
         post["shares_count"]   = shares
+        post["interactions"]   = likes + comments + shares
         post["reach"]          = reach
-        post["eng_rate"]       = round(
-            (likes + comments + shares * 2) / max(reach, 1) * 100, 2
-        )
+        post["eng_rate"]       = round((likes + comments + shares * 2) / reach * 100, 2) if reach else None
         post["platform"]  = "FB"
         post["timestamp"] = post["created_time"]
         fb_posts.append(post)
@@ -161,8 +179,13 @@ fb_wow_delta = round(fb_week_avg_er - fb_prior_avg, 2)
 
 ig_meme_avg  = avg([p["eng_rate"] for p in ig_posts if p.get("media_type") == "VIDEO"])
 ig_quote_avg = avg([p["eng_rate"] for p in ig_posts if p.get("media_type") == "IMAGE"])
+ig_carousel_avg = avg([p["eng_rate"] for p in ig_posts if p.get("media_type") == "CAROUSEL_ALBUM"])
+ig_week_shares  = sum(p.get("shares", 0) for p in ig_this_week)
+ig_type_counts  = {t: sum(1 for p in ig_posts if p.get("media_type") == t and p.get("eng_rate") is not None)
+                   for t in ("VIDEO", "IMAGE", "CAROUSEL_ALBUM")}
 
-all_this_week = sorted(ig_this_week + fb_this_week, key=lambda p: p["eng_rate"], reverse=True)
+all_this_week = sorted([p for p in ig_this_week + fb_this_week if p.get("eng_rate") is not None],
+                       key=lambda p: p["eng_rate"], reverse=True)
 best_post     = all_this_week[0]  if all_this_week          else None
 worst_post    = all_this_week[-1] if len(all_this_week) > 1 else None
 
@@ -194,9 +217,12 @@ if no_data:
         "All reporting infrastructure is healthy and will populate on next successful data pull.",
     ]
 else:
-    dominant    = "memes (video)" if ig_meme_avg >= ig_quote_avg else "quote images"
+    dominant    = "video posts" if ig_meme_avg >= ig_quote_avg else "single images"
     dominant_er = max(ig_meme_avg, ig_quote_avg)
     other_er    = min(ig_meme_avg, ig_quote_avg)
+    # Only call a winner when the gap is real: enough posts of each, and more than noise.
+    clear_lead  = (min(ig_type_counts["VIDEO"], ig_type_counts["IMAGE"]) >= 6
+                   and dominant_er - other_er >= 0.3)
     best_cap    = (best_post.get("caption")  or best_post.get("message")  or "")[:60].replace("\n"," ") if best_post  else "N/A"
     worst_cap   = (worst_post.get("caption") or worst_post.get("message") or "")[:60].replace("\n"," ") if worst_post else "N/A"
     best_er_v   = best_post["eng_rate"]  if best_post  else 0
@@ -206,15 +232,17 @@ else:
     boss_brief = (
         f"Instagram engagement averaged {ig_week_avg_er}% this week, "
         f"{ig_wow_sign}{ig_wow_delta}pp versus last week (historical baseline {ig_hist_avg_er}%). "
-        f"The top post -- \"{best_cap}\" -- drove {best_er_v}% ER, "
-        f"reinforcing that {dominant} consistently outperform other formats. "
-        f"Over the 8-week window, {dominant} average {dominant_er}% ER vs {other_er}% for the alternative -- "
-        f"a {round(dominant_er - other_er, 1)}pp gap that makes format choice the single highest-leverage decision. "
-        f"Recommendation: target {dominant} for at least 70% of IG output next week and watch saves as the leading organic-reach signal."
+        f"The top post -- \"{best_cap}\" -- drove {best_er_v}% ER. "
+        + (f"Over the 8-week window, {dominant} average {dominant_er}% ER vs {other_er}% -- a gap large enough to act on. "
+           if clear_lead else
+           f"Video ({ig_meme_avg}%) and single images ({ig_quote_avg}%) are within noise of each other, so no format has a clear lead yet. ")
+        + f"Posts were sent to friends {ig_week_shares} time(s) this week; sends are what carry a post to people who don't follow Zenie yet, "
+        f"so they are the number to grow."
     )
     what_worked = [
-        f"{dominant.capitalize()} led with {dominant_er}% avg ER across all historical posts.",
-        f"IG reach this week: {ig_week_reach:,} impressions, {ig_week_saves} saves.",
+        (f"{dominant.capitalize()} led with {dominant_er}% avg ER across all historical posts." if clear_lead
+         else "No format has a clear lead yet; judge new formats after 6+ posts each."),
+        f"IG reach this week: {ig_week_reach:,} accounts, {ig_week_saves} saves, {ig_week_shares} sends.",
         f"{'IG' if ig_week_avg_er >= fb_week_avg_er else 'FB'} led platform engagement at {max(ig_week_avg_er, fb_week_avg_er)}% avg ER.",
     ]
     if followers_count is not None:
@@ -226,16 +254,14 @@ else:
     what_didnt = [
         f"Lowest post: \"{worst_cap}\" at {worst_er_v}% ER.",
         f"{'FB' if fb_week_avg_er <= ig_week_avg_er else 'IG'} trailed at {min(fb_week_avg_er, ig_week_avg_er)}% avg ER.",
-        "Posts lacking strong visual hooks or clear calls-to-action consistently underperform.",
     ]
     ig_8w_dir = "improving" if (ig_weekly_avgs[-1] or 0) > (ig_weekly_avgs[0] or 0) else "declining" if (ig_weekly_avgs[-1] or 0) < (ig_weekly_avgs[0] or 0) else "flat"
     patterns = [
         f"IG engagement is {ig_8w_dir} over the 8-week window ({ig_weekly_avgs[0]}% to {ig_week_avg_er}%).",
-        f"Meme (video) posts average {ig_meme_avg}% ER vs {ig_quote_avg}% for quote images -- {round(ig_meme_avg - ig_quote_avg, 1)}pp gap.",
+        f"By format (posts with reach data): video {ig_meme_avg}% ER (n={ig_type_counts['VIDEO']}), single image {ig_quote_avg}% (n={ig_type_counts['IMAGE']}), carousel {ig_carousel_avg}% (n={ig_type_counts['CAROUSEL_ALBUM']}). Fewer than 6 posts of a format is not a read yet.",
         f"IG saves totalled {ig_week_saves} this week; rising saves correlate with broader organic distribution.",
-        f"FB engagement (baseline {fb_hist_avg_er}%) consistently lags IG (baseline {ig_hist_avg_er}%).",
+        f"Facebook: {sum(p.get('interactions', 0) for p in fb_this_week)} interactions this week across {len(fb_this_week)} posts (Meta no longer reports FB reach reliably, so FB is tracked by raw interactions).",
         f"WoW deltas: IG {'+' if ig_wow_delta >= 0 else ''}{ig_wow_delta}%, FB {'+' if fb_wow_delta >= 0 else ''}{fb_wow_delta}%.",
-        "Top posts across all weeks share strong visual identity and concise, action-oriented captions.",
     ]
 
 # ── Step 4: build HTML ─────────────────────────────────────────────────────────
@@ -325,9 +351,8 @@ html = f"""<!DOCTYPE html>
       <div class="lbl">IG Avg Engagement</div>
     </div>
     <div class="kpi">
-      <div class="val">{fb_week_avg_er}%</div>
-      <div class="delta" style="color:{fb_wow_color}">{fb_wow_sign}{fb_wow_delta}% vs last week</div>
-      <div class="lbl">FB Avg Engagement</div>
+      <div class="val">{ig_week_shares}</div>
+      <div class="lbl">IG Sends (shares)</div>
     </div>
     <div class="kpi">
       <div class="val">{ig_week_reach:,}</div>
@@ -336,6 +361,10 @@ html = f"""<!DOCTYPE html>
     <div class="kpi">
       <div class="val">{ig_week_saves}</div>
       <div class="lbl">IG Total Saves</div>
+    </div>
+    <div class="kpi">
+      <div class="val">{sum(p.get('interactions', 0) for p in fb_this_week)}</div>
+      <div class="lbl">FB Interactions</div>
     </div>
   </div>
   <div class="chart-row">
@@ -405,8 +434,8 @@ new Chart(document.getElementById('postsChart'),{{
 new Chart(document.getElementById('typeChart'),{{
   type:'bar',
   data:{{
-    labels:['Memes (Video)','Quote Images'],
-    datasets:[{{label:'Avg ER %',data:[IG_MEME_AVG,IG_QUOTE_AVG],backgroundColor:[purple,lavender],borderRadius:6}}]
+    labels:['Video (memes, reels)','Single image','Carousel'],
+    datasets:[{{label:'Avg ER %',data:[IG_MEME_AVG,IG_QUOTE_AVG,IG_CAROUSEL_AVG],backgroundColor:[purple,lavender,pink],borderRadius:6}}]
   }},
   options:{{responsive:true,plugins:{{legend:{{display:false}}}},scales:{{y:{{beginAtZero:true,ticks:{{callback:v=>v+'%'}}}}}}}}
 }});
@@ -434,6 +463,7 @@ html = html.replace("JSON_POST_ERS",     _json.dumps(post_ers))
 html = html.replace("JSON_POST_COLORS",  _json.dumps(post_colors))
 html = html.replace("IG_MEME_AVG",       str(ig_meme_avg))
 html = html.replace("IG_QUOTE_AVG",      str(ig_quote_avg))
+html = html.replace("IG_CAROUSEL_AVG",   str(ig_carousel_avg))
 html = html.replace("IG_WEEK_ER",        str(ig_week_avg_er))
 html = html.replace("FB_WEEK_ER",        str(fb_week_avg_er))
 html = html.replace("IG_HIST_ER",        str(ig_hist_avg_er))
@@ -491,6 +521,33 @@ index_html = index_html.replace("<!-- ENTRIES -->", f"<!-- ENTRIES -->\n{new_ent
 with open(index_path, "w") as f:
     f.write(index_html)
 print("index.html updated")
+
+# ── Machine-readable summary for the Monday drafting agent ──────────────────────
+# The drafting routine has no Meta token (it ran blind on 2026-11-02), so it reads
+# this file instead of calling the Graph API itself. Never put a token in here.
+def _slim(p):
+    return {k: p.get(k) for k in ("timestamp", "media_type", "media_product_type", "permalink",
+                                  "reach", "views", "saved", "shares", "like_count",
+                                  "comments_count", "eng_rate")} | {
+        "caption": (p.get("caption") or "")[:160]}
+latest = {
+    "generated": today_str,
+    "followers": followers_count,
+    "follower_change_this_week": follower_delta,
+    "follower_history": dict(sorted(follower_hist.items())[-10:]),
+    "ig_this_week": {"posts": len(ig_this_week), "reach": ig_week_reach, "saves": ig_week_saves,
+                     "sends": ig_week_shares, "avg_eng_rate": ig_week_avg_er},
+    "ig_avg_eng_rate_by_media_type": {"VIDEO": ig_meme_avg, "IMAGE": ig_quote_avg, "CAROUSEL_ALBUM": ig_carousel_avg},
+    "ig_posts_with_reach_by_media_type": ig_type_counts,
+    "ig_recent_posts": [_slim(p) for p in sorted(ig_posts, key=lambda p: p["timestamp"], reverse=True)[:30]],
+    "fb_interactions_this_week": sum(p.get("interactions", 0) for p in fb_this_week),
+}
+try:
+    with open("reports/latest.json", "w") as _f:
+        json.dump(latest, _f, indent=2, default=str)
+    print("reports/latest.json written")
+except Exception as _e:
+    print(f"latest.json not written: {_e}")
 
 # ── Summary ────────────────────────────────────────────────────────────────────
 ig_wow_sign = "+" if ig_wow_delta >= 0 else ""

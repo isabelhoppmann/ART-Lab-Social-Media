@@ -3,11 +3,14 @@
 The only credential you need is the Gmail account (to email the finished bundle in Step 8) — it is in the message that invoked you. Notion is handled through the connected Notion MCP tool (no token needed). You do NOT need a GitHub token (you only read the public repo) or a Pexels key (quote images render on the GitHub runner — see Step 2C).
 
 ## ABOUT ZENIE
-Zenie is a journaling app for women focused on self-reflection, personal growth, relationships, and living intentionally. The brand is warm, aspirational, and empowering — not clinical or heavy. Think: romanticizing your life, main character energy, soft life, glow-up mindset. The tone is like a wise, fun best friend. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
+Zenie is a journaling app. Its audience is **Gen Z and millennial women (roughly 20–35)**, and the things they bring to the page are **work** (first jobs, burnout, wanting to quit, not knowing what they want to do), **relationships** (dating, situationships, friendships changing or fading, family) and **uncertainty about the future** (where they'll live, whether they're "behind", the five-year plan nobody actually has). The brand is warm and honest — not clinical, not heavy, never preachy. The tone is a wise, funny best friend who says the specific thing out loud.
+
+**Why the mix changed (2026-11-05, Catie and Isabel).** From July to November 2026 Zenie lost followers every single week (14,735 → 14,388), posts reached only about 6% of followers, and engagement roughly halved. Every post was a library-clip meme, a quote-on-photo card or a repost, all with the same caption template. Instagram shows posts to people who don't follow an account mainly when they are **sent to friends (shares)** or when they are **Reels**, and carousels earn the most engagement per person reached. So the week now leads with Reels, carousels and text posts built to be sent, plus Stories to talk with the people who already follow. Every week is still an experiment: write hypotheses that say which of these effects you expect. Color identity: **purple-forward** (primary: deep violet #6B3FA0, accent: soft lavender #C9B1E8, highlight: blush pink #F0A0C0).
 
 ## CRITICAL RULES — DO NOT VIOLATE
-- MEMES: Do NOT source from Giphy/Tenor/Pexels and do NOT render meme MP4s yourself. Pick TWO distinct meme formats from the vetted library (Step 2A), obeying the no-repeat rule (never reuse a slug in `meme_library/used.json`). Write each meme's `overlay_text` + captions, set its `meme_slug`, and ship it with `skipped=true` + `media_url=null` in review-state (Step 7). The `post-social-to-slack` GitHub Action renders `meme_library/clips/<meme_slug>.mp4` with your overlay (one of four text styles — see `text_style` in Step 2A), fills `media_url`, marks the slug used, creates the Notion row, and posts it. You MUST NOT generate static PNGs or placeholder memes.
-  - SAFETY NET (do not fight it): rendering happens on the Action's open-internet runner (`.github/scripts/regenerate_memes.py`), not here. Just ship each meme cleanly with a real `meme_slug` + `overlay_text`. Only mark a meme genuinely SKIPPED if the library has fewer than 2 available (unused) clips — then note in the Slack handoff that the library needs new clips.
+- MEMES: Do NOT source from Giphy/Tenor/Pexels and do NOT render meme MP4s yourself. Pick ONE meme format from the vetted library (Step 2A), obeying the no-repeat rule (never reuse a slug in `meme_library/used.json`). Write each meme's `overlay_text` + captions, set its `meme_slug`, and ship it with `skipped=true` + `media_url=null` in review-state (Step 7). The `post-social-to-slack` GitHub Action renders `meme_library/clips/<meme_slug>.mp4` with your overlay (one of four text styles — see `text_style` in Step 2A), fills `media_url`, marks the slug used, creates the Notion row, and posts it. You MUST NOT generate static PNGs or placeholder memes.
+  - SAFETY NET (do not fight it): rendering happens on the Action's open-internet runner (`.github/scripts/regenerate_memes.py`), not here. Just ship the meme cleanly with a real `meme_slug` + `overlay_text`. Only mark it genuinely SKIPPED if the library has no available (unused) clip — then note in the Slack handoff that the library needs new clips.
+- TEXT CARDS, CAROUSELS, REELS AND STORY FRAMES (added 2026-11-05): you write the TEXT only. The `render_zenie_formats.py` Action renders every image and video on its runner from the fields you put in review-state (Steps 2E–2H). Never render, download footage, or set `media_url` for these; ship them with `media_url: null`.
 - QUOTE IMAGES: Follow the exact design spec in Step 2C. The card-on-photo format is non-negotiable.
 - EXPLICIT CONTENT: All GIFs, images, and content must be 100% family-friendly. Absolutely NO nudity, sexual activity, sexual references, expletives, or adult content. Reject and replace immediately. Zero exceptions.
 - PUBLISHING: You do NOT push to GitHub (your sandbox can't — api.github.com returns `502 builtin injection failed`). You collect every output file into one BUNDLE and EMAIL it in Step 8; a GitHub Action publishes it. Never call api.github.com.
@@ -15,24 +18,30 @@ Zenie is a journaling app for women focused on self-reflection, personal growth,
   - **At the very start of your Python, run `import socket; socket.setdefaulttimeout(25)` so no network call can ever hang the run.** This is mandatory.
   - **Every step before Step 8 is BEST-EFFORT.** Wrap each step in `try/except`. If a step fails, times out, or its data is unavailable: log one line, skip that piece, and CONTINUE. Never let any pre-Step-8 step abort the run.
   - **Never retry a network call more than once.** No loops that keep hitting an API/search until success — one retry max, then move on with what you have.
-  - **Step 0 (Instagram/Facebook performance data) is optional context only.** If the Graph API errors or times out (e.g. an expired Meta token), skip it entirely and proceed — do NOT retry or block on it.
-  - **Partial output is a SUCCESS.** If you produced e.g. the quotes but had to skip a meme, still go to Step 8 and email the BUNDLE with what you have (mark the missing piece SKIPPED). Only if you produced literally zero usable files, send the error alert instead of the bundle.
+  - **Step 0 (performance data from `reports/latest.json`) is optional context only.** If it can't be read, skip it and proceed — do NOT retry or block on it.
+  - **Partial output is a SUCCESS.** If you produced e.g. the carousel and text card but had to skip the meme, still go to Step 8 and email the BUNDLE with what you have (mark the missing piece SKIPPED). Only if you produced literally zero usable files, send the error alert instead of the bundle.
 
 ---
 
 ## CONTENT SCOPE, STRUCTURE & FORMAT DISCIPLINE — applies to every post
 
-These six rules govern Steps 1, 2A, 2B and 2C. A post that breaks any of them is not shippable — rewrite it before moving on.
+These eight rules govern Steps 1 and 2A–2H. A post that breaks any of them is not shippable — rewrite it before moving on.
 
 ### 1. Scope: journaling and reflection only
 
 Zenie is a journaling app. Every post must be about journaling, self-reflection, or the inner life that journaling surfaces.
 
-**In scope:** journaling itself, self-reflection, noticing your own patterns, processing a feeling, the things you only admit on paper. Dating, situationships, and female friendship are still allowed *as the situation being reflected on* — that is Zenie's native humor and it works. The post just has to land on the reflection, not stop at the joke.
+**In scope:** journaling itself, self-reflection, noticing your own patterns, processing a feeling, the things you only admit on paper. These situations are all welcome *as the thing being reflected on* — they are what the audience actually lives with, and they are where Zenie's humor comes from:
+- **Work:** the job you're not sure about, Sunday dread, a boss who drains you, wanting to quit, imposter feelings, comparing your career to people from school.
+- **Relationships:** dating, situationships, breakups, friendships that change or fade quietly, family, living with roommates or partners.
+- **The future:** not knowing what you want, feeling behind, moving cities, the five-year plan, money worries in general terms.
+The post just has to land on the reflection (a prompt), not stop at the joke.
+
+**"Things no one told you in your twenties" tips are allowed** (Isabel's rule, 2026-11-05) — small, friend-to-friend fixes for adult life, like clear nail polish stopping a run in your tights, putting your own name in your phone as "In case of emergency", or that you can just ask HR what your benefits cover. They belong in the `things_no_one_told_you` carousel, mixed with emotional truths, and the post still ends on a journaling prompt. The line: a tip is a one-off small fix shared like a friend would. A system, routine, schedule or optimization is productivity, and stays out.
 
 **Out of scope — do NOT drift here:**
 - General wellness (sleep, hydration, gut health, "low cortisol", cold plunges, supplements)
-- Productivity, time management, discipline, "that girl" optimization
+- Productivity, time management, discipline, "that girl" optimization (small life tips are fine — see above — systems and routines are not)
 - Morning routines / night routines as a topic
 - Habit tracking, streaks, checklists, planners-as-systems
 
@@ -45,20 +54,36 @@ Wellness and productivity are seductive because they trend constantly. They are 
 - The prompt must be **specific enough to answer in one sitting**. "Reflect on your relationships" is not a prompt. "What's something you've forgiven someone for that you never told them about?" is.
 - **The prompt comes first. Any CTA comes after it — never before.** The order is: hook/riff → complete prompt → CTA. A caption that opens with "Download Zenie" has buried the thing that makes the post worth saving.
 - **One prompt per post.** Two prompts split the reader's attention and neither gets answered.
+- **Vary how the prompt is introduced** (2026-11-05). Every caption used to say "Tonight's prompt:" and the feed read as one template. Use any one lead-in (e.g. "Tonight's prompt:", "Journal on this:", "Write it down:") on at most ONE post per week; on most posts just ask the question as its own line, with no label at all.
 - **Hashtags go at the END of every caption** (Isabel's rule, 2026-10-15): every `ig_caption` and `fb_caption`, on every post type, ends with a blank line and then the post's hashtags, so each caption can be pasted straight into Business Suite. Keep the same set in the separate `hashtags` field too. Order: hook/riff → prompt → CTA → blank line → hashtags.
-- This applies to all three Post Types. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, both `ig_caption` and `fb_caption` carry the prompt. For a **Repost**, the caption carries the prompt, and the credit sits between the copy and the hashtags.
+- **3 to 5 hashtags, descriptive** (2026-11-05). Instagram says hashtags don't add reach and caps a post at five, so they only help search. Use words people search for that describe the post (#careeranxiety, #quarterlifecrisis, #situationship, #journalingprompts), plus #zenieapp. Put a searchable phrase in the caption's first line too, written naturally ("Career anxiety at 26 hits different when…").
+- **Carousels** carry the prompt twice: as the last slide, and in the caption. **Stories** have no caption and no hashtags; the poll or question box IS the prompt.
+- This applies to every feed Post Type. For a **Meme**, `overlay_text` carries the joke and the captions carry the prompt. For a **Quote Image**, both `ig_caption` and `fb_caption` carry the prompt. For a **Repost**, the caption carries the prompt, and the credit sits between the copy and the hashtags.
 - **Captions use normal sentence capitalization — never all-lowercase** (Isabel's rule, 2026-11-03: the lowercase look reads as cringey). Capitalize the first word of every sentence and line, proper nouns and "I", in every `ig_caption`, `fb_caption` and repost caption. Example: *"Read it back and felt very smart… and very annoyed 📓"*, not *"read it back and felt very smart…"*. Hashtags and `@handles` keep their own casing. Meme `overlay_text` is burned into the video and is not a caption, so this rule does not change it.
 - **Repost credit goes AFTER the copy, BEFORE the hashtags — never first** (Isabel's rule, 2026-10-26). Repost caption order: hook/riff → prompt → CTA → blank line → `Credit: @handle` → blank line → hashtags. Same in both `ig_caption` and `fb_caption`.
 
-### 3. Format variation across the week
+### 3. The weekly mix (changed 2026-11-05)
 
-The week's batch is six posts — 2 Meme, 2 Quote Image, 2 Repost — placed on distinct days. **Order them by `Scheduled Date` so no Post Type appears more than twice in a row.** Rotate across Meme → Quote Image → Repost.
+Each week ships **six feed posts on six different days, plus one Story set**:
 
-Before you finalize `best_time` for the six posts, sort them by scheduled datetime and write the sequence out loud, e.g. "Mon Meme, Tue Quote, Wed Repost, Thu Meme, Fri Quote, Sat Repost — no type runs more than twice." If the sequence clumps (Meme, Meme, Quote, Quote, Repost, Repost), reshuffle the days until it doesn't.
+| Day (PST) | Post | Label | Why it's there |
+|---|---|---|---|
+| Mon | Meme (library clip) | `Meme 1` | Zenie's native humor; keeps the familiar feel |
+| Tue | Carousel | `Carousel 1` | Saves and swipes (engagement per person reached) |
+| Wed | Reel — **Quarter-Life Check-In** series | `Reel 1` | Reach to people who don't follow Zenie yet |
+| Thu | Text Card built to be sent | `Text Card 1` | Sends (shares to DMs), the strongest reach signal |
+| Fri | Repost | `Repost 1` | Community and credit to creators in the niche |
+| Sun | **Sunday Scaries** series: a finish-the-sentence Text Card, a quote Reel, or a Quote Image | `Text Card 2`, `Reel 2` or `Quote 1` | Comments from existing followers; a recognizable weekly ritual |
+| Wed or Thu | Story set (2–3 frames: poll + question box) | `Story 1` | Talking with current followers; answers feed next week's carousel |
 
-### 4. No new Post Types
+- Rotate the Sunday Scaries slot: if last week's was a finish-the-sentence card, use a quote (as a Reel on moving footage, or a Quote Image) this week, and vice versa. Read last week's drafts (`posts/<last Monday's date>/zenie_drafts.md`, via the same raw.githubusercontent.com URL pattern as `_raw`) to see which it was, and which Reel style and Carousel format ran.
+- Rotate the Reel style: a POV Reel one week, a quote Reel the next (the Sunday quote Reel counts). Never two quote Reels in one week.
+- Rotate the Carousel format across weeks: `things_no_one_told_you`, `unsent_story`, and `you_told_us` (only when there are unused Story answers — Step 2H).
+- Use the day plan above for `best_time` unless a seasonal moment (Step 0.5) is a reason to move a post. Before finalizing, sort the six feed posts by scheduled datetime and write the sequence out loud, e.g. "Mon Meme, Tue Carousel, Wed Reel, Thu Text Card, Fri Repost, Sun Text Card".
 
-`Meme`, `Quote Image`, and `Repost` are the only three. Do not invent a fourth — no carousels, no text-only posts, no Stories, no polls. Variation happens *within* the three: a different meme format, a different quote register, a different kind of repost. If an idea needs a new Post Type to work, it is not this week's idea.
+### 4. The Post Types (changed 2026-11-05)
+
+`Meme`, `Carousel`, `Reel`, `Text Card`, `Repost`, `Quote Image`, and `Story` are the only types. Do not invent another (no Lives, no Notes, no feed polls, no Collab posts — collaborations are on hold). Variation happens *within* the types: a different format, card style, series or story.
 
 ### 5. Every post is an instance of a proven format
 
@@ -69,7 +94,7 @@ fmts = _raw("formats/zenie.json")                         # _raw() is defined in
 formats = fmts["formats"]
 ```
 
-For each of the six posts, pick the format whose `post_types` includes that post's Post Type, and record its `slug` as the post's `format_slug`. Write it into review-state (Step 7) and into the `Format` property on the Notion row (Step 6).
+For each post (the Story included), pick the format whose `post_types` includes that post's Post Type, and record its `slug` as the post's `format_slug`. Write it into review-state (Step 7) and into the `Format` property on the Notion row (Step 6).
 
 Two rules that come with the library, quoted from its own `hard_rules` — read them there, they are authoritative:
 - **Borrow structure, never aesthetic.** Shot order, clip length, first frame, caption placement and sequencing are fair to copy. Colour, typography, styling, music and phrasing are not.
@@ -90,129 +115,54 @@ One sentence, written at drafting time, saying **why this post is shaped this wa
 
 Name the format choice and the expected effect, in one sentence. It goes into review-state as `hypothesis` (Step 7) and into the `Hypothesis` property on the post's Notion row (Step 6).
 
-**Why this exists:** Zenie ships ~6 posts a week, which is not enough volume to rediscover what works from results alone. The hypothesis is the record of what you were testing, so that the `Outcome` column means something a month from now.
+**Why this exists:** Zenie ships ~7 posts a week, which is not enough volume to rediscover what works from results alone. The hypothesis is the record of what you were testing, so that the `Outcome` column means something a month from now.
 
 ---
 
-## Step 0: Pull performance data from Instagram and Facebook
+### 7. Copy rules — write like a person (Isabel's rules)
 
-Before drafting anything, pull the last 8 weeks of post performance from both platforms. This shapes every content decision in Steps 1–2.
+Every caption, overlay, card and slide is read by people who scroll past anything that sounds like a brand or a bot.
+- **Normal capitalization** on captions (already in §2). Burned-in text on cards and slides may be lowercase when it is a "notes app" or a text message, because that is how people type.
+- **No AI tells.** No clipped two-sentence punchline (a long sentence followed by a short fragment, like "It's not about the job. It's about you."). No clever pivot clause tacked onto a fact. No explaining an image or metaphor after landing it — let it sit. Never write "I keep coming back to", "Read it twice", "read this slowly", "let that sink in", "here's the thing", "and that's okay", or "you deserve".
+- **Specific beats general.** "the cons column just says 'I cried in the parking garage' three times" works; "when work is hard" does not. Exact numbers, places and moments make a post sendable.
+- **One exclamation point per caption at most.** Emoji: zero or one per caption, never in place of words.
+- **Never invent quotes from real people.** Quotes are real and attributed (Step 2C). Text Cards are written in Zenie's own voice, never styled as a real person's tweet, DM or post, and never use a real app's name or logo.
+- Read every caption out loud before shipping it. If a line exists only to sound polished, cut it.
 
-Read `.env` (or accept token from the invoking message) for `PAGE_ACCESS_TOKEN`, `IG_USER_ID`, `FB_PAGE_ID`.
+### 8. Series
+
+Two named series run every week so the feed has something to come back for. Put the series name in the post's `series` field (the renderer prints it as a small kicker on the card, slide or Reel) and mention it naturally in the caption.
+- **Sunday Scaries** (Sunday evening): the feeling of the week ahead — work dread, the inbox, the friend you owe a text, the plans you're avoiding.
+- **Quarter-Life Check-In** (Wednesday Reel, and the Story set): where am I, is this the life I want, am I behind.
+Other posts may carry `series: "Things no one told you"` (that carousel format) — no other series names.
+
+---
+
+## Step 0: Read last week's performance (from the repo, not from Meta)
+
+This routine has no Meta token (it drafted blind on 2026-11-02). The Sunday diagnostics Action, which does have one, writes a summary to the repo. Read that instead of calling the Graph API — do NOT call graph.facebook.com from here.
 
 ```python
-import urllib.request, urllib.parse, json, os
-from datetime import datetime, timezone
-
-PAGE_ACCESS_TOKEN = os.environ.get("PAGE_ACCESS_TOKEN", "")
-IG_USER_ID = "17841465217874624"
-FB_PAGE_ID = "227999857070404"
-API_BASE = "https://graph.facebook.com/v21.0"
-
-def api_get(path, params):
-    params["access_token"] = PAGE_ACCESS_TOKEN
-    qs = "&".join(f"{k}={urllib.parse.quote(str(v))}" for k, v in params.items())
-    req = urllib.request.Request(
-        f"{API_BASE}/{path}?{qs}",
-        headers={"User-Agent": "ZenieAgent/1.0"}
-    )
-    with urllib.request.urlopen(req) as r:
-        return json.load(r)
-
-# --- Instagram: recent media + engagement ---
-ig_posts = []
+import json, urllib.request
+def _raw_json(p):
+    return json.loads(urllib.request.urlopen(urllib.request.Request(
+        "https://raw.githubusercontent.com/isabelhoppmann/ART-Lab-Social-Media/main/" + p,
+        headers={"User-Agent": "ZenieAgent/1.0"}), timeout=25).read())
 try:
-    media = api_get(f"{IG_USER_ID}/media", {
-        "fields": "id,media_type,timestamp,like_count,comments_count,caption",
-        "limit": "30"
-    })
-    for post in media.get("data", []):
-        saved = reach = 0
-        try:
-            ins = api_get(f"{post['id']}/insights", {"metric": "reach,saved"})
-            for m in ins.get("data", []):
-                if m["name"] == "reach":
-                    reach = m["values"][0]["value"]
-                elif m["name"] == "saved":
-                    saved = m["values"][0]["value"]
-        except Exception:
-            pass
-        post["reach"] = reach
-        post["saved"] = saved
-        post["eng_rate"] = round(
-            (post.get("like_count", 0) + post.get("comments_count", 0) + saved) / max(reach, 1) * 100, 2
-        )
-        ig_posts.append(post)
+    perf = _raw_json("reports/latest.json")
 except Exception as e:
-    print(f"IG fetch failed: {e}")
-
-# --- Facebook: recent posts + engagement ---
-fb_posts = []
-try:
-    posts = api_get(f"{FB_PAGE_ID}/posts", {
-        "fields": "id,message,created_time,likes.summary(true),comments.summary(true),shares",
-        "limit": "30"
-    })
-    for post in posts.get("data", []):
-        likes = post.get("likes", {}).get("summary", {}).get("total_count", 0)
-        comments = post.get("comments", {}).get("summary", {}).get("total_count", 0)
-        shares = post.get("shares", {}).get("count", 0)
-        reach = 0
-        try:
-            ins = api_get(f"{post['id']}/insights", {"metric": "post_impressions_unique"})
-            for m in ins.get("data", []):
-                if m["name"] == "post_impressions_unique":
-                    reach = m["values"][0]["value"]
-        except Exception:
-            pass
-        post["likes_count"] = likes
-        post["comments_count"] = comments
-        post["shares_count"] = shares
-        post["reach"] = reach
-        post["eng_rate"] = round(
-            (likes + comments + shares * 2) / max(reach, 1) * 100, 2
-        )
-        fb_posts.append(post)
-except Exception as e:
-    print(f"FB fetch failed: {e}")
-
-# --- Summarize into a Performance Brief ---
-print("\n=== PERFORMANCE BRIEF ===")
-
-if ig_posts:
-    ig_sorted = sorted(ig_posts, key=lambda p: p["eng_rate"], reverse=True)
-    print("\nTop 5 IG posts by engagement rate:")
-    for p in ig_sorted[:5]:
-        caption_preview = (p.get("caption") or "")[:80].replace("\n", " ")
-        print(f"  [{p['media_type']}] {p['timestamp'][:10]} | eng_rate={p['eng_rate']}% | saves={p['saved']} | \"{caption_preview}\"")
-    # Aggregate by type
-    by_type = {}
-    for p in ig_posts:
-        t = p["media_type"]
-        by_type.setdefault(t, []).append(p["eng_rate"])
-    for t, rates in by_type.items():
-        print(f"  Avg eng_rate {t}: {round(sum(rates)/len(rates),2)}%")
-else:
-    print("IG: no data retrieved (check token permissions)")
-
-if fb_posts:
-    fb_sorted = sorted(fb_posts, key=lambda p: p["eng_rate"], reverse=True)
-    print("\nTop 5 FB posts by engagement rate:")
-    for p in fb_sorted[:5]:
-        msg_preview = (p.get("message") or "")[:80].replace("\n", " ")
-        print(f"  {p['created_time'][:10]} | eng_rate={p['eng_rate']}% | shares={p['shares_count']} | \"{msg_preview}\"")
-else:
-    print("FB: no data retrieved (check token permissions)")
-
-print("\nUse this brief to guide content selection in Steps 1–2.")
-print("=========================\n")
+    perf = None
+    print(f"latest.json unavailable: {e}")
 ```
 
+`perf` holds: `generated` (date), `followers` and `follower_change_this_week` and `follower_history`, `ig_this_week` (posts, reach, saves, **sends**, avg_eng_rate), average engagement by `media_type` (VIDEO = memes and Reels, IMAGE = quotes and text cards, CAROUSEL_ALBUM = carousels) with how many posts each average rests on, and `ig_recent_posts` (the last 30 posts, each with caption start, reach, views, saves, sends, likes, comments, eng_rate). An `eng_rate` of null means Meta returned no reach for that post; ignore it rather than treating it as zero.
+
+Write a 2–4 line **Performance Brief** for `zenie_drafts.md`: the follower trend (up or down, by how much), which recent posts were sent or saved most and what they had in common, and whether any new format (carousel, Reel, text card) has run at least 6 times yet. If `perf` is missing or `generated` is more than 9 days old, say "Performance data unavailable this week" and rely on the mix in CONTENT SCOPE §3.
+
 **What to do with the brief:**
-- Identify which content types (Reels/memes vs quote images) get higher engagement on each platform
-- Note which themes/topics appeared in high-performing captions (journaling? relationships? dating humor?)
-- Note which post types get more saves on IG (saves = algorithm signal) vs more shares on FB (shares = reach signal)
-- If data is sparse (< 5 posts), skip analysis and rely on best practices: IG rewards saves + Reels plays, FB rewards shares + longer conversational copy
+- Note which themes (work, love, friendship, the future) appeared in the posts that were sent or saved most, and lean this week's topics toward them.
+- Sends matter most for growth; saves second; likes least. A post with few likes but several sends is a winner.
+- Do not change the weekly mix because of one week. The mix in §3 holds until a format has 6+ posts of evidence.
 
 **How to READ the brief — the two rules that stop you overreacting:**
 - **Expect most posts to be neutral.** Roughly two posts in twenty are real winners. The rest sitting in the middle is the normal, healthy shape of organic reach — it is not a problem to solve, and it is not evidence that last week's approach failed. Do not rewrite the strategy because a week looked flat.
@@ -224,24 +174,30 @@ print("=========================\n")
 
 Before researching trends, work out the dates of this week's six posts (Mon–Sun of `week_date`) and write out loud every holiday or big seasonal moment that falls in that window or within 3 days after it. Cover at least: New Year, Valentine's Day, International Women's Day, spring/Easter, Mother's Day, summer start, back-to-school, first day of fall, Halloween, Thanksgiving, Black Friday, the December holidays, New Year's Eve, plus season changes and year-end/"Q4" moments.
 
-- **If one falls in the window, both memes are themed to it** (Isabel's rule, 2026-10-26 — e.g. the week of Oct 26 must have Halloween memes). The seasonal moment counts as the named trend for Step 1, or ride a trend that is circulating around that holiday. The joke still has to land on journaling/reflection (CONTENT SCOPE §1): a Halloween meme is about the scariest thing in your journal, not about costumes.
+- **If one falls in the window, the meme is themed to it, and so is at least one of the Reel, the Carousel or the Text Card** (Isabel's rule, 2026-10-26 — e.g. the week of Oct 26 must have Halloween memes). The seasonal moment counts as the named trend for Step 1, or ride a trend that is circulating around that holiday. The joke still has to land on journaling/reflection (CONTENT SCOPE §1): a Halloween meme is about the scariest thing in your journal, not about costumes.
 - Quotes and reposts should nod to it in the caption riff or prompt when it fits naturally; they don't have to be themed.
 - If nothing falls in the window, still write the current season and let it shape tone and prompts (no summer energy in November).
+- **Tentpoles to plan for** (added 2026-11-05):
+  - **Thanksgiving week:** going home and becoming 16 again, the relative who asks about your job or your love life, gratitude that's honest rather than performed.
+  - **The week Spotify Wrapped comes out** (usually the first week of December; confirm the date with a search): the Carousel is "2026 Wrapped, but for your feelings" — slides like "Top emotion", "Most replayed thought", "The person you texted most", "Genre of the year", ending on a prompt to write your own year in review.
+  - **Last week of December / first week of January:** intentions that aren't resolutions, what you're leaving in 2026, the January "new year, new me" pressure.
+  - **Valentine's week, Galentine's, International Women's Day, graduation season, and back-to-school/back-to-work after summer** as they come up.
 - Record the result in `zenie_drafts.md` right under the Trending Themes line: `**This week on the calendar:** <holiday/season, or "nothing major — <season>">`.
 
 ---
 
 ## Step 1: Research trending memes (WebSearch)
 
-Find what's trending culturally RIGHT NOW relevant to Zenie's audience (women 20-35 — dating, situationships, friendship, self-growth). Use the CURRENT month and year in these queries — never a hardcoded past month:
+Find what's trending culturally RIGHT NOW relevant to Zenie's audience (Gen Z and millennial women — work, relationships, friendship, the future). Use the CURRENT month and year in these queries — never a hardcoded past month:
 1. WebSearch("trending memes relationships dating <current month year> tiktok")
 2. WebSearch("viral memes overthinking self reflection <current month year>")
-3. WebSearch("funniest memes this week women relatable")
-4. WebSearch("trending audio instagram reels <current month year>")
+3. WebSearch("gen z work corporate memes <current month year>") — for the work angle
+4. WebSearch("quarter life crisis trend tiktok <current month year>") — for the future angle
+5. WebSearch("trending audio instagram reels <current month year>") — pick ONE current, widely used sound that fits the Reel's mood and name it in the Reel's `audio_suggestion` (Isabel adds it in the app)
 
 **Whatever you find, the post must land on journaling/reflection — see CONTENT SCOPE §1 above.** A trend is a vehicle, not the subject. Wellness and productivity trends surface constantly in these searches; borrow their phrasing, never their substance.
 
-Identify 2-3 specific meme formats or viral moments that are trending. Must feel current.
+Identify 2-3 specific formats, phrases or viral moments that are trending. Must feel current. Use them across the meme, the POV Reel and the text card, not only the meme.
 
 **REQUIRED — name the trend (Catie's 2026-08-10 feedback).** She rejected a week of memes for being generic and asked that they "pull some inspiration from" what has actually gone viral recently. So each meme must be traceable to a *named, currently-circulating* format, audio, or phrase — not a timeless "when he says X" observation. Record which trend each meme rides in `zenie_drafts.md` under the meme's heading, with a one-line note on what the trend is and roughly when it took off. If you can't name the trend, the meme isn't current enough — go back and find one.
 
@@ -253,7 +209,7 @@ Worked examples from the 2026-08-10 rework: *"No, no, no! I thought we were havi
 
 ---
 
-## Step 2A: Choose 2 meme formats from the vetted library
+## Step 2A: Choose 1 meme format from the vetted library
 
 **THIS REPLACES ALL GIF SOURCING.** Do NOT search Giphy/Tenor, do NOT download or render memes, and IGNORE everything below in this section as well as Step 2A-PEXELS and Step 2A.5 — those are legacy and no longer apply. Memes now come from a curated, pre-vetted, watermark-free clip library committed in the repo, and GitHub Actions renders them automatically after you publish (you can't reach the media CDNs from here anyway).
 
@@ -270,11 +226,11 @@ lib  = _raw("meme_library/library.json")["clips"]   # each: slug, title, vibes[]
 used = {u["slug"] for u in _raw("meme_library/used.json").get("used", [])}
 available = [c for c in lib if c["slug"] not in used]
 ```
-2. From `available` ONLY, pick the TWO clips whose `vibes`/`use_when` best fit your two trending meme ideas this week. The two MUST be different slugs. Read each chosen clip's `example_overlay` for tone.
+2. From `available` ONLY, pick the ONE clip whose `vibes`/`use_when` best fits this week's trending meme idea. Read the chosen clip's `example_overlay` for tone.
    - **Benchmark Isabel called GREAT (week of 2026-10-19, Meme 2):** clip `laughing_behind_fan` (a woman laughing so hard she hides behind a fan) with the overlay *"rereading 6 journal entries I wrote about someone I texted twice"*. Why it works: the footage is crisp, high-quality video (Isabel called this out specifically) with big, readable motion that IS the reaction, and the overlay is hyper-specific and self-roasting (exact numbers, a real situation everyone recognizes). Aim every meme at this bar, and when two clips fit the joke, pick the sharper one. The opposite, which she called weak: a near-still clip where nothing happens (`absorbed_reading`, `blank_stare`).
    - **THE CLIP AND THE JOKE MUST ALIGN — the clip has to DEPICT the joke's scenario, not just match its "energy" (REQUIRED, Isabel's rule).** A viewer should look at the footage and see the situation the caption describes. Correct: a journaling joke → a journaling/notebook clip; an "I'm fine but not fine" joke → a clip of someone visibly cracking/sweating (e.g. `fake_smile`, `this_is_fine`, `dead_inside_stare`); a texting joke → a clip of someone on their phone (e.g. `kermit_typing`). WRONG: pairing a sweating or shifty-eyes clip with a texting joke just because the anxious energy matches. If no available clip depicts your meme idea, change the joke/topic to fit a clip that does — alignment beats any pre-decided caption.
-3. **NO-REPEAT RULE (critical):** never pick a slug listed in `used` — a format may be used only ONCE, ever, even with a different caption. If `available` has fewer than 2 clips, cover only the meme(s) you can and note in the Slack handoff that the meme library is running low and needs new clips added. Never reuse a used clip. **There is no stock-footage fallback** (removed 2026-10-15 after both memes in the week of 2026-10-12 rendered on the same Pexels clip that matched neither joke): a meme without a library slug is not posted that week.
-4. Record each meme's chosen slug (you'll write it to review-state as `meme_slug` in Step 7). Then write the FOUR pieces of copy described just below, making the joke fit BOTH the chosen clip's energy and this week's topic. After that, go straight to Step 2B — skip Step 2A-PEXELS and Step 2A.5 entirely.
+3. **NO-REPEAT RULE (critical):** never pick a slug listed in `used` — a format may be used only ONCE, ever, even with a different caption. If `available` is empty, skip the meme and note in the Slack handoff that the meme library is running low and needs new clips added. Never reuse a used clip. **There is no stock-footage fallback** (removed 2026-10-15 after both memes in the week of 2026-10-12 rendered on the same Pexels clip that matched neither joke): a meme without a library slug is not posted that week.
+4. Record the meme's chosen slug (you'll write it to review-state as `meme_slug` in Step 7). Then write the FOUR pieces of copy described just below, making the joke fit BOTH the chosen clip's energy and this week's topic. After that, go straight to Step 2B — skip Step 2A-PEXELS and Step 2A.5 entirely.
 
 ---
 
@@ -297,12 +253,12 @@ For each meme, search for the specific trending format:
 
 </details>
 
-For each meme produce FIVE pieces of text (write these for BOTH memes — they apply whether the clip came from the library or legacy sourcing):
+For the meme produce FIVE pieces of text:
 
 - **`overlay_text`** — the joke/setup rendered ONTO the video. 6–14 words, punchy. Must describe the actual scene in THIS clip — someone looking at it should recognize the situation in the footage (see the alignment rule in Step 2A). Not interchangeable with any other clip. Examples: *"Me and my bestie talking about our coworkers we don't like"*, *"When you finally start journaling and your whole vibe upgrades"*.
-- **`ig_caption`** — a short reaction/riff, then the journaling prompt, then any CTA. Do NOT repeat overlay_text — riff on it. Open with 2–8 words + optional emoji, then the **complete prompt** on its own line (CONTENT SCOPE §2). Example: *"She knows… 👀\n\nTonight's prompt: what's the thing you keep telling everyone you're 'fine' about?"*
+- **`ig_caption`** — a short reaction/riff, then the journaling prompt, then any CTA. Do NOT repeat overlay_text — riff on it. Open with 2–8 words + optional emoji, then the **complete prompt** on its own line (CONTENT SCOPE §2). Example: *"She knows… 👀\n\nWhat's the thing you keep telling everyone you're 'fine' about?"*
 - **`fb_caption`** — Facebook caption, more conversational. Same order: riff (1–2 sentences) → **complete journaling prompt** → CTA last. Asking the prompt directly is what earns comments, so let it carry the engagement job (FB rewards comments and shares). Example: *"Okay but why does this describe my entire Tuesday? 😅 Here's tonight's prompt: what's the thing you keep telling everyone you're fine about? Tag a friend who needs to answer it too."*
-- **`hashtags`** — exactly 5 hashtags (Instagram's cap), including #Zenie or #zenieapp. Same set used on both platforms, and appended to the end of both captions (CONTENT SCOPE §2).
+- **`hashtags`** — 3 to 5 descriptive hashtags, including #zenieapp (CONTENT SCOPE §2). Same set used on both platforms, and appended to the end of both captions.
 - **`hypothesis`** — one sentence: why this post is shaped this way and what you expect it to do. See CONTENT SCOPE §6 for the standard and worked examples.
 
 ### Optional fifth field: `text_style` (overlay look)
@@ -570,7 +526,7 @@ If either verification raises, DROP that meme from this week's batch and either 
 
 ---
 
-## Step 2B: Pick 2 Repost Reels from the Repost Library
+## Step 2B: Pick 1 Repost Reel from the Repost Library
 
 > **⚠️ CHANGED 2026-10-14 — DO NOT WebSearch for reels.** Search engines don't index individual Instagram reels, so this step returned no usable links two weeks running (weeks of 2026-10-05 and 2026-10-12). Real reels are now found every Sunday by a GitHub Action (`find_reposts.py`) that uses Meta's Business Discovery API to list recent reels from Zenie's verified cohort, and saves them to `repost_library/library.json`. Pick only from there. **TikTok is absolutely not allowed.** Do not WebFetch instagram.com (it hangs this sandbox — 2026-07-13 incident).
 
@@ -584,11 +540,11 @@ reels = _raw("repost_library/library.json").get("reels", [])          # _raw() i
 used_reels = {_norm_url(u["url"]) for u in _raw("repost_library/used.json").get("used", [])}
 available = [r for r in reels if _norm_url(r.get("url")) not in used_reels]
 ```
-**Pick 2 different reels from `available`** — the two that best fit this week's trending themes and give you a real journaling prompt to write against. Each reel's `theme` is the opening of its own caption, so you know what it's about; `engagement_rate` is how well it did relative to the creator's following (higher is better, but fit comes first). Use two different creators. **Skip anything that isn't a fit for Zenie as a brand, even if it performed well:** product or book promos and ads, sponsored or affiliate posts, news and political content, and personal life updates (pregnancy, family, outfits). The reel itself has to be about inner life, relationships, healing, journaling or self-reflection. For each pick, copy `url` and `creator` exactly as they appear in the library — do not edit, shorten or "fix" the url, or the no-repeat ledger won't match it.
+**Pick 1 reel from `available`** — the one that best fits this week's themes (work, relationships, the future) and gives you a real journaling prompt to write against. Each reel's `theme` is the opening of its own caption, so you know what it's about; `engagement_rate` is how well it did relative to the creator's following (higher is better, but fit comes first). **Skip anything that isn't a fit for Zenie as a brand, even if it performed well:** product or book promos and ads, sponsored or affiliate posts, news and political content, and personal life updates (pregnancy, family, outfits). The reel itself has to be about inner life, relationships, healing, journaling or self-reflection. For each pick, copy `url` and `creator` exactly as they appear in the library — do not edit, shorten or "fix" the url, or the no-repeat ledger won't match it.
 
 **Never put a verification flag in a caption** — no "⚠️ UNVERIFIED", "confirm before posting" or similar, in any caption, on any post type (Isabel's rule, 2026-10-15: she checks every credit herself before posting). The credit line is just `Credit: @handle`.
 
-**If `available` has fewer than 2 reels:** fill what you can, and for each missing slot still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — the Sunday repost finder (find-reposts.yml) found nothing; check its run log` and `**Creator:** (add credit once a reel is chosen)`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST FINDER RETURNED TOO FEW REELS:** {n} available. Check the find-reposts.yml run log.` Do NOT fall back to WebSearch.
+**If `available` is empty:** still write the full caption + prompt + hypothesis, but set `url` to `null` and `creator` to `null`, and in `zenie_drafts.md` write `**URL:** ⚠️ REPOST LIBRARY EMPTY — the Sunday repost finder (find-reposts.yml) found nothing; check its run log` and `**Creator:** (add credit once a reel is chosen)`. Also add this line to the drafts file's action-required block at the bottom: `⚠️ **ACTION REQUIRED — REPOST FINDER RETURNED TOO FEW REELS:** {n} available. Check the find-reposts.yml run log.` Do NOT fall back to WebSearch.
 
 Get for each repost: `url`, `creator` (both from the library), repost caption, best time to post, and a one-sentence `hypothesis` (CONTENT SCOPE §6). **The credit goes in BOTH the Instagram caption and the Facebook caption** — see the Notion schema below.
 
@@ -598,9 +554,11 @@ You do NOT append to `repost_library/used.json` yourself — GitHub Actions (`ma
 
 ---
 
-## Step 2C: Create 2 Quote Images — EXACT DESIGN SPEC
+## Step 2C: Quotes — for the Sunday Scaries slot when it's a quote (at most 1 a week)
 
-> **⚠️ RENDERING MOVED TO THE RUNNER (2026-07-13) — DO NOT render the quote images yourself, and do NOT use Pexels or PIL here.** For each of the 2 quotes, only DECIDE the quote text + attribution + the caption(s), and write them into review-state (Step 7) as a `Quote Image` post with `needs_render: true` and `media_url: null`. The GitHub Action's `regenerate_quotes.py` renders the actual `quote_{n}.jpg` on its open-internet runner (it sources its own Pexels background), fills `media_url`, and updates the preview page. The design spec below still governs the FINISHED image, so pick quotes that suit it — but you produce only the TEXT, not the image. Skip every Pexels/PIL/font/rendering instruction in this section; you do not need a Pexels key.
+> **2026-11-05:** a quote now appears only on weeks the Sunday Scaries slot is a quote (CONTENT SCOPE §3), and it can ship two ways: as a static `Quote Image` (`Quote 1`, design spec below) or as a quote **Reel on moving footage** (`Reel 2`, `reel_style: "quote"`, Step 2G). Prefer the Reel; it reaches far more people. The quote rules and the no-repeat ledger below apply to both.
+
+> **⚠️ RENDERING MOVED TO THE RUNNER (2026-07-13) — DO NOT render the quote images yourself, and do NOT use Pexels or PIL here.** For the quote, only DECIDE the quote text + attribution + the caption(s), and write them into review-state (Step 7) as a `Quote Image` post with `needs_render: true` and `media_url: null`. The GitHub Action's `regenerate_quotes.py` renders the actual `quote_{n}.jpg` on its open-internet runner (it sources its own Pexels background), fills `media_url`, and updates the preview page. The design spec below still governs the FINISHED image, so pick quotes that suit it — but you produce only the TEXT, not the image. Skip every Pexels/PIL/font/rendering instruction in this section; you do not need a Pexels key.
 
 The design is: **a beautiful full-bleed photo background with a floating cream card on top**, with decorative watercolor/botanical elements at the card corners. This matches Zenie's existing Instagram aesthetic exactly.
 
@@ -617,7 +575,7 @@ def _norm(q):   # MUST match regenerate_quotes.py + used_quotes.json exactly
     return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]", "", (q or "").lower())).strip()
 used_quotes = {_norm(u["quote"]) for u in _raw("social/used_quotes.json").get("used", [])}
 ```
-For each quote you consider, reject it if `_norm(quote) in used_quotes`. Also reject anything that is essentially the same line as a used quote (a trimmed or paraphrased variant — use judgment, the normalized match only catches exact/punctuation-level repeats). Both of this week's quotes must be new AND different from each other. You do NOT append to the ledger yourself — GitHub Actions (`regenerate_quotes.py`) does that automatically the moment it renders each quote image.
+For each quote you consider, reject it if `_norm(quote) in used_quotes`. Also reject anything that is essentially the same line as a used quote (a trimmed or paraphrased variant — use judgment, the normalized match only catches exact/punctuation-level repeats). This week's quote must be new. You do NOT append to the ledger yourself — GitHub Actions (`regenerate_quotes.py`) does that automatically the moment it renders each quote image.
 
 - Source REAL attributed quotes from famous thinkers, writers, philosophers (Buddha, Rumi, Maya Angelou, Brené Brown, Stoics, poets, etc.)
 - Tone: self-reflection, growth, relationships, intentional living, inner peace
@@ -632,8 +590,8 @@ For each quote you consider, reject it if `_norm(quote) in used_quotes`. Also re
 **Quote images go to BOTH Instagram and Facebook** (changed 2026-10-15 — they used to be Facebook-only). Write a caption for each.
 
 For each quote image, produce two captions and a hypothesis:
-- **`ig_caption`** — Instagram caption, shorter than the Facebook one: one short line that sits with the quote (don't restate the quote, it's already on the image) → the **complete journaling prompt** on its own line → a save/share CTA last (CONTENT SCOPE §2). Example: *"Read it twice. 🌿\n\nTonight's prompt: where in your life are you adjusting your vision when you only needed to adjust your focus?\n\nSave this for the next time things feel blurry."*
-- **`fb_caption`** — 2–3 sentences, more reflective, in this order: a line of context → the **complete journaling prompt** → the CTA last (CONTENT SCOPE §2). Example: *"Sometimes a single line reframes your whole day. ✨ Tonight's prompt: where in your life are you adjusting your vision when you only needed to adjust your focus? Save this one, and send it to whoever came to mind."*
+- **`ig_caption`** — Instagram caption, shorter than the Facebook one: one short line that sits with the quote (don't restate the quote, it's already on the image) → the **complete journaling prompt** on its own line → a save/share CTA last (CONTENT SCOPE §2). Example: *"For the Sunday night version of you 🌿\n\nWhere in your life are you adjusting your vision when you only needed to adjust your focus?\n\nSave this for the next time things feel blurry."*
+- **`fb_caption`** — 2–3 sentences, more reflective, in this order: a line of context → the **complete journaling prompt** → the CTA last (CONTENT SCOPE §2). Example: *"Sometimes a single line reframes your whole day. ✨ Journal on this tonight: where in your life are you adjusting your vision when you only needed to adjust your focus? Save this one, and send it to whoever came to mind."*
 - **`hypothesis`** — one sentence: why this quote and this shape, and what you expect it to do. See CONTENT SCOPE §6.
 
 ### Step A — Download Playfair Display fonts
@@ -824,6 +782,77 @@ make_quote_image("QUOTE TEXT HERE", "Attribution Here", "quote_2.jpg", bg_2)
 
 ---
 
+## Step 2E: Text Cards (added 2026-11-05)
+
+`Text Card 1` (Thursday) is always a **send-this** card (`format_slug: "send_this_text"`). `Text Card 2` exists only on weeks the Sunday Scaries slot is a finish-the-sentence card (`format_slug: "finish_the_sentence"`, `card_style: "fill_blank"`, `series: "Sunday Scaries"`).
+
+Fields (the renderer reads exactly these):
+- `card_style` — one of:
+  - `text_thread`: a text conversation. `thread_name` (who it's with, e.g. "bestie", "mom", "me" for a note-to-self), `messages`: a list of `{"from": "me"|"them", "text": "..."}`, 2–5 messages, the punchline last. Optional `thread_status` (e.g. "Read 11:48 PM").
+  - `notes_app`: a list someone typed at midnight. `card_title`, `card_text` (lines separated by `\n`, 3–6 lines), optional `card_date` (e.g. "Sunday 11:52 PM").
+  - `big_type`: one bold statement. `card_text` under 20 words. Optional `card_color`: violet, blush or cream.
+  - `fill_blank`: `card_text` is the sentence stem without the blank (the renderer draws it), optional `card_hint` (a short aside, e.g. "(be honest, no one's grading this)").
+- `series` — optional (CONTENT SCOPE §8).
+- `ig_caption`, `fb_caption`, `hashtags`, `best_time`, `hypothesis`, `format_slug` as for every post.
+
+What makes a send-this card work: it names a very specific moment the reader has lived (work, love, friends, the future), slightly unflattering, so that she sends it to the friend it's about or the friend who'd get it. The caption opens with a one-line reaction, then the journaling prompt, then (optionally) a send CTA: "Send this to the friend who…". Rotate `card_style` week to week.
+
+Example (`text_thread`, `thread_name: "bestie"`):
+- them: "so are you staying or leaving the job"
+- me: "I made a pros and cons list"
+- me: "the cons column just says "I cried in the parking garage" three times"
+
+Example (`fill_blank`, Sunday Scaries): "The part of Monday I'm already dreading is" — hint "(be honest, no one's grading this)".
+
+---
+
+## Step 2F: Carousel (added 2026-11-05)
+
+`Carousel 1`, Tuesday. Rotate the format week to week (CONTENT SCOPE §3): `things_no_one_told_you`, `unsent_story`, `you_told_us`.
+
+Fields:
+- `slides` — a list of 5 to 8 slides, each `{"title": "...", "body": "..."}`. Slide 1 is the cover (big title, optional one-line body). The middle slides are the content, one idea each: `title` is a bold headline under 12 words, `body` is one or two plain sentences under 35 words. The LAST slide is the prompt: `title` is the complete journaling question, `body` is an optional short line (e.g. "Save this for tonight."). The renderer numbers the middle slides and styles the cover and the prompt slide on its own.
+- `series` — "Things no one told you" for that format, otherwise usually empty.
+- `ig_caption` — first line restates the cover in different words with a searchable phrase, then the prompt again, then a save or send CTA, then hashtags. `fb_caption` the same, a little more conversational.
+- `best_time`, `hypothesis`, `format_slug`, `hashtags`.
+
+Rules:
+- `things_no_one_told_you`: mix practical twenties fixes with inner-life truths; at least half the middle slides are about work, love, friendship or the future (CONTENT SCOPE §1). Every practical tip must be true and safe — no medical, legal or money advice beyond common-sense basics.
+- `unsent_story`: one composite story told a beat per slide (an unsent text, a journal entry from the night she almost quit). Written in Zenie's voice, never presented as a real named person.
+- `you_told_us`: only when `social/story_answers.md` (fetch it with `_raw`-style raw URL) has a dated section whose answers have not been used in an earlier week's drafts. Cover = the question that was asked. One real answer per middle slide, trimmed but never reworded in meaning. Drop anything that names or could identify someone. Never invent an answer. If there are no unused answers, use another carousel format.
+
+---
+
+## Step 2G: Reels (added 2026-11-05)
+
+`Reel 1`, Wednesday, **Quarter-Life Check-In** series. On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
+
+Fields:
+- `reel_style` — `"pov"` or `"quote"`.
+- For `pov`: `overlay_text`, one line, 8–22 words, usually starting "POV:" or describing an exact moment ("me at 11pm rewriting my five-year plan for the third time this month"). It sits over calm footage, so the words carry the whole joke.
+- For `quote`: `quote` (real, attributed, under 18 words, not in `social/used_quotes.json` — Step 2C rules) and `attribution`.
+- `broll_query` — 2–5 words describing calm, moving stock footage that suits the mood, e.g. "rain on window night", "woman walking city sunset", "coffee steam morning light", "notebook pen writing desk". Optional `broll_alternates`: a list of 1–2 backup queries. Footage comes from Pexels automatically; you don't pick a clip.
+- `audio_suggestion` — the name of one trending Reels sound from Step 1 that fits, and why in five words. Isabel adds the sound in the app.
+- `series`, `ig_caption`, `fb_caption`, `hashtags`, `best_time`, `hypothesis`, `format_slug` (`pov_reel` or `quote_reel`).
+
+---
+
+## Step 2H: Story set (added 2026-11-05)
+
+`Story 1`, posted Wednesday or Thursday. Two or three frames on the week's theme (`format_slug: "story_check_in"`, `series: "Quarter-Life Check-In"` unless the theme is clearly something else).
+
+Fields:
+- `frames` — a list of 2–3 frames, each `{"text": "...", "sticker": "poll"|"question"|"slider", "sticker_options": [...]}`:
+  - Frame 1: a poll. `text` is the question (under 16 words), `sticker: "poll"`, `sticker_options`: two short options (under 4 words each, e.g. ["Yes, mostly", "Not even close"]).
+  - Frame 2: a question box. `text` invites an anonymous answer (e.g. "What's one thing about your future you're scared to say out loud?"), `sticker: "question"`, optional `kicker: "Anonymous, always"`.
+  - Optional frame 3: an emoji slider (`sticker: "slider"`) on how the week feels.
+- `best_time`, `hypothesis`. No `ig_caption`, `fb_caption` or `hashtags` — Stories don't have them.
+- Never ask for anything identifying (names, workplaces, cities, photos).
+
+Isabel adds the stickers by hand in the Instagram app, so the frame leaves space for them. She pastes the question-box answers into the Notion page "Zenie Story Answers"; a Sunday Action copies them to `social/story_answers.md` for the `you_told_us` carousel.
+
+---
+
 ## Step 2D: Build `zenie_drafts.md` from FINAL STATE (do NOT write earlier)
 
 `zenie_drafts.md` is Catie's plain-English briefing for the week. It MUST be written exactly once, at this step, deterministically from the FINAL on-disk state of each asset. NEVER accumulate notes into this file during Steps 1–2C. If you wrote a SKIPPED warning into the briefing earlier and a Pexels (or other) fallback later succeeded, the briefing ships stale and Catie discards real, postable memes. (Concrete incident: 2026-06-15 — both memes were generated successfully via Pexels fallback, but `zenie_drafts.md` still said "Giphy/Tenor/Pexels all blocked ⚠️ SKIPPED" for both. The watchdog can't fully unwind this — fix the source by writing this file ONCE here.)
@@ -930,14 +959,42 @@ Render the normal Quote section if `is_real` (with `**Asset:** quote_N.jpg ...`)
 
 **`**Testing:**` is the post's one-sentence `hypothesis` (CONTENT SCOPE §6), verbatim.** It appears on every post section — meme, quote, and repost, skipped ones included. This is what makes the weekly review a review of the *bet* and not just of the artwork: Catie should be able to read what each post was trying to do before she approves it. Render the line even for a SKIPPED post, since the thinking behind it is still worth keeping.
 
+### Per-section format for the newer types (added 2026-11-05)
+
+These are rendered after you publish, so describe them from the text you wrote:
+
+```
+## Carousel 1 — {theme} ({format_slug})
+
+**Slides:**
+1. {cover title} — {cover body}
+2. {title} — {body}
+...
+N. {prompt}
+
+**ig_caption:** {ig_caption}
+
+**fb_caption:** {fb_caption}
+
+**Best time to post:** {day, time}
+
+**Testing:** {hypothesis}
+
+**Asset:** carousel_1_01.jpg … carousel_1_NN.jpg — rendered automatically
+
+---
+```
+
+Use the same shape for `## Text Card N — {theme}` (with `**Card ({card_style}):**` and the card's text or messages), `## Reel N — {theme}` (with `**Style:**`, the overlay text or quote, `**Footage search:**` broll_query and `**Add this sound in the app:**` audio_suggestion), and `## Story 1 — {theme}` (with each frame's text and the sticker to add, no captions).
+
 ### Week-at-a-glance (after the last post section, before the footer)
 
 ```
 ## This week's sequence
 
-{Mon Meme · Tue Quote · Wed Repost · Thu Meme · Fri Quote · Sat Repost}
+{Mon Meme · Tue Carousel · Wed Reel (Quarter-Life Check-In) · Thu Text Card · Fri Repost · Sun Text Card or Quote (Sunday Scaries) · Story on Wed/Thu}
 
-{one line confirming no Post Type runs more than twice in a row — CONTENT SCOPE §3}
+{one line confirming every feed post is on its own day — CONTENT SCOPE §3}
 ```
 
 ### Footer
@@ -974,14 +1031,7 @@ def add_binary(path, content_bytes):
     BUNDLE["binary_files"][path] = base64.b64encode(content_bytes).decode()
 ```
 
-Add the two quote images you rendered in Step 2C (saved as `quote_1.jpg` and
-`quote_2.jpg` in the working directory):
-
-```python
-for n in (1, 2):
-    with open(f"quote_{n}.jpg", "rb") as f:
-        add_binary(f"posts/{DATE}/quote_{n}.jpg", f.read())
-```
+You do not add any images or videos: quote images, memes, text cards, carousels, Reels and Story frames are all rendered by the Action after it reads your `review-state.json`.
 
 Add the `zenie_drafts.md` you built in Step 2D (saved at `/tmp/zenie_drafts.md`):
 
@@ -990,14 +1040,15 @@ with open("/tmp/zenie_drafts.md", encoding="utf-8") as f:
     add_text(f"posts/{DATE}/zenie_drafts.md", f.read())
 ```
 
-Do NOT add meme MP4s — you don't render memes; the Action renders them from the
-library after it reads your `review-state.json` (Step 7). The remaining files
+Do NOT add any media files. The remaining files
 (this week's `index.html`, the root `index.html`, and `review-state.json`) get
 added to the bundle in Steps 4, 5, and 7 below.
 
 ---
 
 ## Step 4: Build this week's preview index.html
+
+> **2026-11-05:** the Action now rebuilds this page from the final `review-state.json` after rendering (`build_preview_page.py`), so it always shows every post type correctly. You still add a simple page to the bundle (the watchdog checks it exists), but don't spend effort on it: a page that lists each post's label, type and IG caption is enough. The template below is the old one and is optional.
 
 For memes: use a `<video>` tag pointing to the local MP4 (`meme_1.mp4` / `meme_2.mp4`) — this is the same file that ships to Meta, with the white-card overlay burned in. Do NOT embed Giphy/Tenor iframes — third-party iframes are blocked by many browsers and by Slack's link unfurler, which is what reviewers see.
 For quote images: add a subtle CSS Ken Burns animation (slow zoom).
@@ -1112,7 +1163,7 @@ New entry: `<a class="week latest" href="posts/[DATE]/"><span class="week-date">
 
 > **⚠️ ORDER CHANGED 2026-07-13 — DO STEPS 7 AND 8 (build review-state + EMAIL THE BUNDLE) BEFORE THIS STEP.** Publishing must NEVER depend on Notion. A hanging Notion MCP call here silently killed four drafting runs (2026-07-13) before they could email anything — and an MCP call is NOT covered by the socket timeout, so it can hang indefinitely. Therefore: finish the files, build review-state (Step 7), and **email the bundle (Step 8) FIRST**. Only AFTER the bundle email is sent do you come back and do this Notion save.
 >
-> **⚠️ CHANGED 2026-10-19 — do NOT create or edit the quote and repost Notion rows yourself.** When you did, the captions got paraphrased (week of 2026-10-19: no prompt, no hashtags). The `Sync Zenie Notion Rows` Action now copies them verbatim from review-state whenever it changes. Skip the rest of Step 6 entirely; what follows is kept for reference only.
+> **⚠️ CHANGED 2026-10-19 (and 2026-11-05: the same now covers Text Cards, Carousels, Reels and Stories) — do NOT create or edit any Notion rows yourself.** When you did, the captions got paraphrased (week of 2026-10-19: no prompt, no hashtags). The `Sync Zenie Notion Rows` Action now copies them verbatim from review-state whenever it changes. Skip the rest of Step 6 entirely; what follows is kept for reference only.
 
 > **This Notion save is BEST-EFFORT and fully skippable.** Give the Notion MCP calls at most ~30 seconds of total effort. If `notion-search`/`notion-create-pages`/`notion-update-page` is slow, errors, or seems to hang, STOP immediately and just finish — do not retry, do not wait. Skipping Notion only means the quote/repost rows are missing from the database (a human can add them later); the week is already published via the emailed bundle, which is all that matters.
 
@@ -1238,7 +1289,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 
 After creating the rows, print: "Saved 2 quote + 2 repost posts to Notion (memes are added automatically by the render step)."
 
-Make sure every post (both memes, both quotes, and both reposts) has a distinct `best_time` on a different day — the render step computes the memes' Notion Scheduled Date from their `best_time`, so distinct days still matter.
+Make sure every feed post has a distinct `best_time` on a different day — the render step computes the memes' Notion Scheduled Date from their `best_time`, so distinct days still matter.
 
 
 
@@ -1248,15 +1299,19 @@ Make sure every post (both memes, both quotes, and both reposts) has a distinct 
 
 Build `social/review-state.json` with the full post state: week_date, preview_url, slack_thread_ts set to null, slack_error set to null, and for each post: label, notion_page_id, all captions, hashtags, `media_url`, url/creator (reposts), quote/attribution and `ig_caption` + `fb_caption` (quotes), `hypothesis`, `format_slug`, approved=false.
 
-**`hypothesis` is REQUIRED on every one of the six posts** (CONTENT SCOPE §6) — memes included. The meme render step reads it out of review-state and writes it to the meme's Notion row, so a meme shipped without a `hypothesis` loses it permanently. Do not ship an empty string.
+**`hypothesis` is REQUIRED on every post** (CONTENT SCOPE §6) — memes and the Story included. The meme render step reads it out of review-state and writes it to the meme's Notion row, so a meme shipped without a `hypothesis` loses it permanently. Do not ship an empty string.
 
-**Memes (library-rendered — IMPORTANT):** you did NOT render the meme MP4s; GitHub Actions does. For each of the two meme posts set:
+**Every post carries `post_type`** — exactly one of `Meme`, `Carousel`, `Reel`, `Text Card`, `Repost`, `Quote Image`, `Story` — and a `label` from CONTENT SCOPE §3 (`Meme 1`, `Carousel 1`, `Reel 1`, `Text Card 1`, `Repost 1`, then `Text Card 2` / `Reel 2` / `Quote 1` for Sunday, and `Story 1`), plus `best_time` and `series` when it has one.
+
+**Text Cards, Carousels, Reels and Stories (rendered by the Action — 2026-11-05):** set `media_url: null` and `notion_page_id: null`, and include exactly the fields from Steps 2E–2H (`card_style` + its text fields; `slides`; `reel_style` + `overlay_text` or `quote`/`attribution` + `broll_query` + `audio_suggestion`; `frames`). The Action renders them, fills `media_url` and `media_urls`, creates the Notion rows, and posts them to Slack.
+
+**Memes (library-rendered — IMPORTANT):** you did NOT render the meme MP4; GitHub Actions does. For the meme post set:
 - `meme_slug` = the library slug you chose in Step 2A
 - `overlay_text` = your meme overlay line
 - `skipped` = true  and  `media_url` = null  (this is the signal that tells the render step to build it)
 - `notion_page_id` = null (the render step creates the meme's Notion row automatically — do NOT create meme rows yourself in Step 6)
 - plus `ig_caption`, `fb_caption`, `hashtags`, `best_time`, `hypothesis`, `format_slug`
-The `post-social-to-slack` Action will render `meme_library/clips/<meme_slug>.mp4` with your overlay, fill `media_url`, set `skipped=false`, mark the slug used (no-repeat), create the Notion row, and post it to Slack. **Quote images keep `media_url`** = the jsdelivr URL of the .jpg (you rendered those). Reposts carry url/creator.
+The `post-social-to-slack` Action will render `meme_library/clips/<meme_slug>.mp4` with your overlay, fill `media_url`, set `skipped=false`, mark the slug used (no-repeat), create the Notion row, and post it to Slack. A Quote Image ships with `needs_render: true` and `media_url: null` (Step 2C). Reposts carry url/creator.
 
 **`preview_url` MUST be the GitHub Pages URL, not jsDelivr.** Use exactly this format:
 `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/`

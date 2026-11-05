@@ -17,7 +17,7 @@ Query the **Zenie Posts** database (ID: `468afa8e-3a1a-49dd-8852-c130077221d5`) 
 For each row, include only those where ALL of these are true:
 - `Status` = `"Approved"` (NOT `Scheduled` or `Posted` — those are already done)
 - `Scheduled Date` is set
-- `Post Type` is `"Meme"` or `"Quote Image"` (skip `"Repost"` — those are manual)
+- `Post Type` is `"Meme"`, `"Quote Image"`, `"Text Card"` or `"Reel"` (skip `"Repost"`, `"Carousel"` and `"Story"` — those are posted by hand: reposts need the creator's reel, carousels need every slide uploaded in order, and Story stickers can only be added in the app)
 - `Media URL` is set
 
 If zero matches, exit early: print `No approved posts to schedule. Nothing to do.`
@@ -31,6 +31,8 @@ Read these fields:
 Build captions:
 - **Meme posts:** use `Caption` for IG, `FB Caption` for FB. Both platforms.
 - **Quote Image posts:** both platforms (changed 2026-10-15). Use `Caption` for IG, `FB Caption` for FB.
+- **Text Card posts** (added 2026-11-05): handled exactly like Quote Image posts (a single image).
+- **Reel posts** (added 2026-11-05): handled exactly like Meme posts (a video). They have no sound baked in; Isabel adds a trending audio when she posts the Instagram version by hand.
 
 Combined caption format (append hashtags to whichever caption is used):
 ```
@@ -150,7 +152,7 @@ def fb_schedule_video(page_id, page_token, video_url, caption, scheduled_unix):
     return f"https://www.facebook.com/{page_id}/videos/{video_id}"
 ```
 
-Use `fb_schedule_photo` for Quote Image, `fb_schedule_video` for Meme.
+Use `fb_schedule_photo` for Quote Image and Text Card, `fb_schedule_video` for Meme and Reel.
 
 ### 2C. Update the Notion row
 

@@ -28,11 +28,21 @@ jobs:
           PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
         run: python3 .github/scripts/find_reposts.py
 
+      # Copies Isabel's pasted Story answers from Notion so Monday's agent can
+      # turn them into a "You told us" carousel. Never fails the run.
+      - name: Copy Story answers from Notion
+        if: always()
+        continue-on-error: true
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: python3 .github/scripts/sync_story_answers.py
+
       - name: Commit refreshed library
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add repost_library/library.json
+          git add repost_library/library.json social/story_answers.md
           git diff --staged --quiet || git commit -m "Zenie repost library refresh $(date -u +%Y-%m-%d)"
           git pull --rebase
           git push

@@ -61,6 +61,7 @@ def local_path_for(url):
 # Minimum sane file sizes — anything smaller is a broken/placeholder asset.
 # Mirrors the watchdog's SIZE_FLOOR so the gate and the alarm agree.
 SIZE_FLOOR = {".mp4": 100_000, ".jpg": 20_000, ".jpeg": 20_000, ".html": 1_500}
+NEW_TYPES = ("text card", "carousel", "reel", "story")
 
 
 def _check_asset(label, path, problems):
@@ -95,6 +96,14 @@ def preflight(preview_url, posts):
                 problems.append(f"{label}: no media_url in review-state.json — nothing to attach.")
                 continue
             _check_asset(label, local_path_for(url), problems)
+        elif ptype in NEW_TYPES and not post.get("skipped"):
+            # Newer formats (2026-11-05). A post that failed to render is marked
+            # skipped and posted as a text note instead of blocking the week; one
+            # that claims media must have every file present and sane.
+            label = post.get("label", "?")
+            for url in post.get("media_urls") or [post.get("media_url")]:
+                if url:
+                    _check_asset(label, local_path_for(url), problems)
     return problems
 
 def slack_api(path, payload, content_type="application/json"):
@@ -150,6 +159,35 @@ def slack_upload_to_thread(channel, thread_ts, media_url, filename, comment):
         "initial_comment": comment,
     }
     return slack_api("files.completeUploadExternal", payload)
+
+def _read_bytes(media_url):
+    local = local_path_for(media_url)
+    if local and os.path.isfile(local):
+        with open(local, "rb") as f:
+            return f.read()
+    req = urllib.request.Request(media_url, headers={"User-Agent": "ZenieSlackBot/1.0"})
+    with urllib.request.urlopen(req) as r:
+        return r.read()
+
+
+def slack_upload_many_to_thread(channel, thread_ts, media_urls, comment):
+    """Upload several files (carousel slides, story frames) as ONE thread reply,
+    in order, so Catie sees the set together. Slack takes up to 10 per message."""
+    ids = []
+    for url in media_urls[:10]:
+        content = _read_bytes(url)
+        name = url.rsplit("/", 1)[-1]
+        step1 = slack_api("files.getUploadURLExternal", {"filename": name, "length": str(len(content))},
+                          content_type="application/x-www-form-urlencoded")
+        if not step1.get("ok"):
+            raise RuntimeError(f"getUploadURLExternal failed: {step1}")
+        put_req = urllib.request.Request(step1["upload_url"], data=content, method="POST")
+        with urllib.request.urlopen(put_req) as resp:
+            resp.read()
+        ids.append({"id": step1["file_id"], "title": name})
+    return slack_api("files.completeUploadExternal",
+                     {"files": ids, "channel_id": channel, "thread_ts": thread_ts, "initial_comment": comment})
+
 
 def post_media_or_fallback(label, comment, media_url, filename, thread_ts):
     """Try to upload media inline; if upload fails, post text + URL as a fallback message."""
@@ -256,6 +294,35 @@ for post in posts:
         )
         filename = f"{label.replace(' ', '_').lower()}.jpg"
         reply = post_media_or_fallback(label, comment, post.get("media_url", ""), filename, thread_ts)
+    elif post_type in NEW_TYPES:
+        kind = post.get("post_type")
+        series = f" · _{post['series']}_" if post.get("series") else ""
+        head = f"{rev}*{label} — {kind}*{series}\n"
+        if post_type == "reel":
+            body = post.get("overlay_text") or (f"\"{post.get('quote', '')}\" — {post.get('attribution', '')}" if post.get("quote") else "")
+            head += f"_{body}_\n_No sound baked in: add a trending audio in the app._\n"
+        elif post_type == "story":
+            for i, fr in enumerate(post.get("frames") or [], 1):
+                st = f" → add *{fr.get('sticker')}* sticker" if fr.get("sticker") else ""
+                head += f"{i}. {fr.get('text', '')}{st}\n"
+        comment = (f"{head}\n*IG:* {post.get('ig_caption', '') or '_(Story: no caption)_'}"
+                   f"\n`{post.get('hashtags', '')}`{hypothesis_line(post)}")
+        urls = post.get("media_urls") or ([post["media_url"]] if post.get("media_url") else [])
+        if post.get("skipped") or not urls:
+            comment += f"\n\n⚠️ Couldn't render this one: {post.get('skip_reason') or 'unknown error'}. The copy above is ready if you want to build it by hand."
+            reply = slack_post(SLACK_CHANNEL_ID, [{"type": "section", "text": {"type": "mrkdwn", "text": comment[:3000]}}],
+                               thread_ts=thread_ts, text_fallback=label)
+        elif len(urls) == 1:
+            reply = post_media_or_fallback(label, comment, urls[0], urls[0].rsplit("/", 1)[-1], thread_ts)
+        else:
+            try:
+                reply = slack_upload_many_to_thread(SLACK_CHANNEL_ID, thread_ts, urls, comment)
+                if not reply.get("ok"):
+                    raise RuntimeError(reply)
+            except Exception as e:
+                print(f"  Multi-upload failed for {label}: {e}")
+                reply = slack_post(SLACK_CHANNEL_ID, [{"type": "section", "text": {"type": "mrkdwn",
+                                   "text": (comment + "\n" + "\n".join(urls))[:3000]}}], thread_ts=thread_ts, text_fallback=label)
     else:
         print(f"Skipping {label}: unknown post_type {post.get('post_type')!r}")
         continue

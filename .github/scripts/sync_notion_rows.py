@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Make the Zenie Posts rows for quotes and reposts match social/review-state.json.
+"""Make the Zenie Posts rows for quotes, reposts and the newer formats match social/review-state.json.
 
 The drafting agent used to write these rows itself through the Notion MCP, and it
 paraphrased: the week of 2026-10-19 landed in Notion with shorter captions, no
@@ -15,7 +15,9 @@ import json, os, urllib.request
 TOKEN = os.environ.get("NOTION_TOKEN", "")
 DB = "24e014f9-d62c-43b2-b474-44072b7eff95"   # Zenie Posts
 STATE = "social/review-state.json"
-TYPES = {"quote": "Quote Image", "quote image": "Quote Image", "repost": "Repost"}
+TYPES = {"quote": "Quote Image", "quote image": "Quote Image", "repost": "Repost",
+         # newer formats (2026-11-05); memes are still handled by regenerate_memes.py
+         "text card": "Text Card", "carousel": "Carousel", "reel": "Reel", "story": "Story"}
 
 
 def notion(path, payload=None, method="GET"):
@@ -43,7 +45,7 @@ def main():
         if not ptype:
             continue
         name = f"{post.get('label', '')} — {week}"
-        link = post.get("media_url") if ptype == "Quote Image" else post.get("url")
+        link = post.get("url") if ptype == "Repost" else post.get("media_url")
         props = {
             "IG Caption": text(post.get("ig_caption")),
             "FB Caption": text(post.get("fb_caption")),

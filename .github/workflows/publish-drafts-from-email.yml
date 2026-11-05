@@ -71,6 +71,21 @@ jobs:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
         run: python3 .github/scripts/regenerate_quotes.py
 
+      # Text cards, carousels, moving-background Reels and Story frames
+      # (added 2026-11-05). A post that can't render is marked skipped and still
+      # goes to Slack as copy, so this step must never stop the week.
+      - name: Render text cards, carousels, reels and story frames
+        if: steps.materialize.outputs.status == 'materialized'
+        continue-on-error: true
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+        run: python3 .github/scripts/render_zenie_formats.py
+
+      - name: Rebuild the preview page from the final review-state
+        if: steps.materialize.outputs.status == 'materialized'
+        continue-on-error: true
+        run: python3 .github/scripts/build_preview_page.py
+
       - name: Mark reposts used (no-repeat)
         if: steps.materialize.outputs.status == 'materialized'
         run: python3 .github/scripts/mark_reposts_used.py
@@ -86,7 +101,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add posts/ social/review-state.json meme_library/used.json social/used_quotes.json repost_library/used.json index.html
+          git add posts/ social/review-state.json meme_library/used.json social/used_quotes.json repost_library/used.json index.html social/used_broll.json
           git diff --staged --quiet || git commit -m "Zenie drafts $(date -u +%Y-%m-%d) (email-relay)"
           git push
 

@@ -191,7 +191,9 @@ def safe_join(root, rel):
     return dest
 
 
-LABEL_TO_POST_TYPE = (("meme", "Meme"), ("repost", "Repost"), ("quote", "Quote Image"))
+LABEL_TO_POST_TYPE = (("meme", "Meme"), ("repost", "Repost"), ("quote", "Quote Image"),
+                      ("text card", "Text Card"), ("carousel", "Carousel"), ("reel", "Reel"),
+                      ("story", "Story"))
 
 
 def normalize_review_state():

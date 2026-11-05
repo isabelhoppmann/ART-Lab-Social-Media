@@ -1,12 +1,13 @@
 {
-  "version": 2,
-  "updated": "2026-08-27",
+  "version": 3,
+  "updated": "2026-11-05",
   "account": "zenie",
   "what_this_is": "Proven post formats for Zenie ONLY. Each account has its own cohort, its own formats and its own weekly review — nothing is shared with ART Lab, because the niches do not transfer. The agent fetches this file every run and assigns one format_slug per post; that slug flows into review-state, into the post's Notion row, and into the Sunday scorer, which rolls outcomes up BY FORMAT. The format-level roll-up is the only level anyone should act on.",
   "hard_rules": [
     "Borrow STRUCTURE, never AESTHETIC. Post shape, caption order, line length, what occupies the first line and how the ask is placed are all fair to copy. Voice, phrasing, colour, typography and visual identity are not — copying those produces another account in a category that already has plenty.",
     "No AI-generated imagery. Using a model to find a pattern across posts is research; using one to make the picture is not allowed.",
-    "The prompt rule is universal, not a format. EVERY Zenie post delivers one complete journaling prompt before any CTA (CONTENT SCOPE §2). The formats below describe the SHAPE a post takes; the prompt requirement applies to all of them."
+    "The prompt rule is universal, not a format. EVERY Zenie feed post delivers one complete journaling prompt before any CTA (CONTENT SCOPE §2): in the caption for every type, and also as the last slide of a Carousel. A Story's poll or question IS its prompt.",
+    "Formats added 2026-11-05 are marked \"new_2026_11\": true. They are priors from what the cohort and the wider niche visibly do, not measurements. Say so in the hypothesis the first few times each one runs."
   ],
   "cohort": {
     "source": "Researched 2026-08-27. 22 accounts in the journaling / self-reflection / relatable-women niche.",
@@ -14,28 +15,138 @@
     "evidence_level": "PARTIAL. Follower counts are verified. Per-post engagement is NOT — Instagram exposes follower counts publicly but not per-post likes, saves or captions, and Meta's API only returns post metrics for accounts we own. Format claims below are grounded in what these accounts visibly do at scale and sustain over time, not in measured post performance. Treat them as strong priors, not as measurements.",
     "upgrade_path": "Roughly $30 of Apify credit would get real per-post numbers for the five or six closest accounts and turn these priors into measurements.",
     "accounts": [
-      { "handle": "@thegoodquote",              "followers": "22.6M", "lane": "Quote card",     "note": "The largest account in the niche and it does one thing: a single line on a plain ground." },
-      { "handle": "@the.holistic.psychologist", "followers": "8.9M",  "lane": "Therapist",      "note": "Nicole LePera. Pattern-naming at enormous scale." },
-      { "handle": "@betches",                   "followers": "8.7M",  "lane": "Humor",          "note": "The register Zenie's memes sit closest to." },
-      { "handle": "@mytherapistsays",           "followers": "8.3M",  "lane": "Humor",          "note": "Relatable-spiral memes; the closest direct comparison for Zenie meme posts." },
-      { "handle": "@wetheurban",                "followers": "6.9M",  "lane": "Affirmation",    "note": "Daily affirmation cards, extremely high share rate." },
-      { "handle": "@rupikaur_",                 "followers": "4.1M",  "lane": "Poet / prompts", "note": "Bio explicitly offers weekly poetry AND journaling prompts — the nearest thing to Zenie's actual product in the cohort." },
-      { "handle": "@yung_pueblo",               "followers": "3.4M",  "lane": "Aphorism",       "note": "Short reflective lines on growth and relationships." },
-      { "handle": "@girlwithnojob",             "followers": "3.0M",  "lane": "Humor",          "note": "Millennial-women humor at scale." },
-      { "handle": "@thebirdspapaya",            "followers": "2.5M",  "lane": "Personal essay", "note": "Long confessional captions; bio literally reads 'stories eat first'." },
-      { "handle": "@drjulie",                   "followers": "2.2M",  "lane": "Therapist",      "note": "Clinical psychologist, short-form video explainers." },
-      { "handle": "@nedratawwab",               "followers": "1.8M",  "lane": "Therapist",      "note": "Boundaries. Heavy user of the numbered list card." },
-      { "handle": "@morganharpernichols",       "followers": "1.8M",  "lane": "Art + reflection","note": "Reflection delivered through original artwork." },
-      { "handle": "@alex_elle",                 "followers": "1.8M",  "lane": "Writer / prompts","note": "Built a following largely on written prompts and self-reflection practice." },
-      { "handle": "@millennial.therapist",      "followers": "1.7M",  "lane": "Therapist",      "note": "Sara Kuburic. Existential framing, identity questions." },
-      { "handle": "@bymariandrew",              "followers": "804K",  "lane": "Art + reflection","note": "Illustration paired with a reflective observation." },
-      { "handle": "@cleowade",                  "followers": "744K",  "lane": "Poet",           "note": "Short poems and affirmations, book-driven." },
-      { "handle": "@_lisaolivera",              "followers": "397K",  "lane": "Therapist / writer","note": "Gentle register; 'here for the tending of our hearts'." },
-      { "handle": "@recipesforselflove",        "followers": "356K",  "lane": "Illustrated",    "note": "Illustrated self-love cards." },
-      { "handle": "@heyamberrae",               "followers": "276K",  "lane": "Emotions",       "note": "Naming and working with feelings." },
-      { "handle": "@sitwithsharon",             "followers": "147K",  "lane": "Therapist",      "note": "Codependency and attachment. Closest in size to a realistic Zenie target." },
-      { "handle": "@stillbloomingme",           "followers": "22.2K", "lane": "Journaling",     "note": "Journaling as an explicit healing practice." },
-      { "handle": "@dayoneapp",                 "followers": "19.1K", "lane": "Journaling app", "note": "Direct competitor. Highlight reels include Prompts, Streaks and Quotes — a map of what a journaling app posts." }
+      {
+        "handle": "@thegoodquote",
+        "followers": "22.6M",
+        "lane": "Quote card",
+        "note": "The largest account in the niche and it does one thing: a single line on a plain ground."
+      },
+      {
+        "handle": "@the.holistic.psychologist",
+        "followers": "8.9M",
+        "lane": "Therapist",
+        "note": "Nicole LePera. Pattern-naming at enormous scale."
+      },
+      {
+        "handle": "@betches",
+        "followers": "8.7M",
+        "lane": "Humor",
+        "note": "The register Zenie's memes sit closest to."
+      },
+      {
+        "handle": "@mytherapistsays",
+        "followers": "8.3M",
+        "lane": "Humor",
+        "note": "Relatable-spiral memes; the closest direct comparison for Zenie meme posts."
+      },
+      {
+        "handle": "@wetheurban",
+        "followers": "6.9M",
+        "lane": "Affirmation",
+        "note": "Daily affirmation cards, extremely high share rate."
+      },
+      {
+        "handle": "@rupikaur_",
+        "followers": "4.1M",
+        "lane": "Poet / prompts",
+        "note": "Bio explicitly offers weekly poetry AND journaling prompts — the nearest thing to Zenie's actual product in the cohort."
+      },
+      {
+        "handle": "@yung_pueblo",
+        "followers": "3.4M",
+        "lane": "Aphorism",
+        "note": "Short reflective lines on growth and relationships."
+      },
+      {
+        "handle": "@girlwithnojob",
+        "followers": "3.0M",
+        "lane": "Humor",
+        "note": "Millennial-women humor at scale."
+      },
+      {
+        "handle": "@thebirdspapaya",
+        "followers": "2.5M",
+        "lane": "Personal essay",
+        "note": "Long confessional captions; bio literally reads 'stories eat first'."
+      },
+      {
+        "handle": "@drjulie",
+        "followers": "2.2M",
+        "lane": "Therapist",
+        "note": "Clinical psychologist, short-form video explainers."
+      },
+      {
+        "handle": "@nedratawwab",
+        "followers": "1.8M",
+        "lane": "Therapist",
+        "note": "Boundaries. Heavy user of the numbered list card."
+      },
+      {
+        "handle": "@morganharpernichols",
+        "followers": "1.8M",
+        "lane": "Art + reflection",
+        "note": "Reflection delivered through original artwork."
+      },
+      {
+        "handle": "@alex_elle",
+        "followers": "1.8M",
+        "lane": "Writer / prompts",
+        "note": "Built a following largely on written prompts and self-reflection practice."
+      },
+      {
+        "handle": "@millennial.therapist",
+        "followers": "1.7M",
+        "lane": "Therapist",
+        "note": "Sara Kuburic. Existential framing, identity questions."
+      },
+      {
+        "handle": "@bymariandrew",
+        "followers": "804K",
+        "lane": "Art + reflection",
+        "note": "Illustration paired with a reflective observation."
+      },
+      {
+        "handle": "@cleowade",
+        "followers": "744K",
+        "lane": "Poet",
+        "note": "Short poems and affirmations, book-driven."
+      },
+      {
+        "handle": "@_lisaolivera",
+        "followers": "397K",
+        "lane": "Therapist / writer",
+        "note": "Gentle register; 'here for the tending of our hearts'."
+      },
+      {
+        "handle": "@recipesforselflove",
+        "followers": "356K",
+        "lane": "Illustrated",
+        "note": "Illustrated self-love cards."
+      },
+      {
+        "handle": "@heyamberrae",
+        "followers": "276K",
+        "lane": "Emotions",
+        "note": "Naming and working with feelings."
+      },
+      {
+        "handle": "@sitwithsharon",
+        "followers": "147K",
+        "lane": "Therapist",
+        "note": "Codependency and attachment. Closest in size to a realistic Zenie target."
+      },
+      {
+        "handle": "@stillbloomingme",
+        "followers": "22.2K",
+        "lane": "Journaling",
+        "note": "Journaling as an explicit healing practice."
+      },
+      {
+        "handle": "@dayoneapp",
+        "followers": "19.1K",
+        "lane": "Journaling app",
+        "note": "Direct competitor. Highlight reels include Prompts, Streaks and Quotes — a map of what a journaling app posts."
+      }
     ]
   },
   "asset_banks": {
@@ -43,84 +154,253 @@
     "copy": "written fresh each week by the drafting agent",
     "how": "Quote images render on the runner; memes render from a library clip plus an overlay; reposts carry someone else's reel."
   },
-
   "formats": [
     {
       "slug": "prompt_card",
       "name": "The prompt card",
-      "post_types": ["Quote Image"],
+      "post_types": [
+        "Quote Image",
+        "Text Card"
+      ],
       "structure": "The journaling prompt IS the whole post. One question on a plain ground, nothing else competing with it. The caption repeats or extends it; it never introduces a second idea.",
       "first_line": "The question itself.",
       "why_it_works": "It is the only format where the artefact and the product are the same thing — a saved prompt card is a saved journaling session. Highest save rate available to Zenie.",
-      "proven_by": ["@rupikaur_", "@alex_elle", "@dayoneapp"],
+      "proven_by": [
+        "@rupikaur_",
+        "@alex_elle",
+        "@dayoneapp"
+      ],
       "evidence": "Rupi Kaur's bio sells journaling prompts directly to 4.1M followers; Alex Elle built 1.8M largely on written prompts; Day One maintains a dedicated Prompts highlight.",
       "notes": "Zenie's most on-strategy format. If the format read ever says this one underperforms, that is a finding worth acting on immediately, because it would mean the core product framing is not landing."
     },
     {
       "slug": "aphorism_plate",
       "name": "The aphorism plate",
-      "post_types": ["Quote Image"],
+      "post_types": [
+        "Quote Image",
+        "Reel"
+      ],
       "structure": "One short declarative line, no explanation, generous space. Under about fifteen words. The line does not argue; it lands.",
       "first_line": "The line.",
       "why_it_works": "The most shared shape in the entire niche — it costs the reader nothing to pass on and says something about them when they do.",
-      "proven_by": ["@thegoodquote", "@yung_pueblo", "@wetheurban", "@cleowade"],
+      "proven_by": [
+        "@thegoodquote",
+        "@yung_pueblo",
+        "@wetheurban",
+        "@cleowade"
+      ],
       "evidence": "@thegoodquote is the largest account in the cohort at 22.6M and does essentially nothing else. @wetheurban at 6.9M is built on the same shape.",
       "notes": "This is what Zenie's quote images already are. The prompt still has to arrive in the caption underneath — the plate carries the line, the caption carries the prompt."
     },
     {
       "slug": "name_the_feeling",
       "name": "Name the feeling",
-      "post_types": ["Meme", "Quote Image"],
+      "post_types": [
+        "Meme",
+        "Quote Image",
+        "Text Card",
+        "Reel"
+      ],
       "structure": "Name a pattern the reader has lived but never labelled. Often 'you're not X, you're Y', or a precise description of a behaviour they thought was only theirs.",
       "first_line": "The naming.",
       "why_it_works": "Drives saves and comments through identification rather than agreement. The reader comments to say 'this is me', which is a stronger signal than a like.",
-      "proven_by": ["@the.holistic.psychologist", "@nedratawwab", "@millennial.therapist", "@heyamberrae"],
+      "proven_by": [
+        "@the.holistic.psychologist",
+        "@nedratawwab",
+        "@millennial.therapist",
+        "@heyamberrae"
+      ],
       "evidence": "Four accounts totalling over 12M followers built primarily on this move.",
       "notes": "Pairs naturally with Zenie's meme clips — the overlay names the pattern, the caption turns it into the prompt."
     },
     {
       "slug": "relatable_spiral",
       "name": "The relatable spiral",
-      "post_types": ["Meme"],
+      "post_types": [
+        "Meme",
+        "Text Card",
+        "Reel"
+      ],
       "structure": "The joke is the overthinking itself. Very specific, slightly unflattering, escalating. Precision is what makes it funny — a generic version of the same joke does not work.",
       "first_line": "The situation, stated flatly.",
       "why_it_works": "The dominant humor shape for this audience, and the one that travels furthest beyond existing followers.",
-      "proven_by": ["@mytherapistsays", "@betches", "@girlwithnojob"],
+      "proven_by": [
+        "@mytherapistsays",
+        "@betches",
+        "@girlwithnojob"
+      ],
       "evidence": "The three humor accounts in the cohort total 20M followers on this register.",
       "notes": "Zenie's native meme voice. The scope rule still applies: dating and friendship are allowed as the situation, but the caption has to land on the reflection."
     },
     {
       "slug": "list_card",
       "name": "The numbered list card",
-      "post_types": ["Quote Image"],
+      "post_types": [
+        "Quote Image",
+        "Carousel"
+      ],
       "structure": "Three to five numbered items under one heading. Each item is one line. No item needs the others to make sense.",
       "first_line": "The heading, which states what the list is for.",
       "why_it_works": "Saves well because it reads as a reference the reader will want again. Numbering is doing real work here — it tells the reader how much there is before they commit.",
-      "proven_by": ["@nedratawwab", "@drjulie"],
+      "proven_by": [
+        "@nedratawwab",
+        "@drjulie"
+      ],
       "evidence": "Both accounts, 4M combined, use the numbered card as a staple.",
       "notes": "Use sparingly. A feed of list cards reads as advice content rather than a journaling app. The list should be prompts, not tips."
     },
     {
       "slug": "confession_then_turn",
       "name": "Confession, then the turn",
-      "post_types": ["Repost", "Meme"],
+      "post_types": [
+        "Repost",
+        "Meme"
+      ],
       "structure": "A first-person admission of something slightly embarrassing or unresolved, then the reframe. Long caption. The turn arrives late and is never triumphant.",
       "first_line": "The admission.",
       "why_it_works": "Earns comments rather than likes, because readers reply with their own version. The strongest comment-driver in the cohort.",
-      "proven_by": ["@thebirdspapaya", "@_lisaolivera", "@stillbloomingme"],
+      "proven_by": [
+        "@thebirdspapaya",
+        "@_lisaolivera",
+        "@stillbloomingme"
+      ],
       "evidence": "@thebirdspapaya at 2.5M is built almost entirely on this; its bio reads 'stories eat first'.",
       "notes": "The natural home for reposts — credit the creator, tell the honest version underneath, then the prompt."
     },
     {
       "slug": "catalogue_plate",
       "name": "The quiet frame",
-      "post_types": ["Quote Image"],
+      "post_types": [
+        "Quote Image"
+      ],
       "structure": "One line, enormous negative space, caption states the thing and stops. No question mark, no CTA.",
       "first_line": "The line.",
       "why_it_works": "It will underperform on engagement and it is still worth running occasionally, because a feed with no quiet frames reads as a brand rather than a practice.",
-      "proven_by": ["@bymariandrew", "@morganharpernichols"],
+      "proven_by": [
+        "@bymariandrew",
+        "@morganharpernichols"
+      ],
       "evidence": "Both sustain large followings while regularly posting work that asks nothing of the viewer.",
       "notes": "The one sanctioned exception to the prompt-before-CTA rule, because it carries no CTA at all. Cap at one a fortnight."
+    },
+    {
+      "slug": "send_this_text",
+      "name": "Send-this text card",
+      "post_types": [
+        "Text Card"
+      ],
+      "new_2026_11": true,
+      "structure": "A text-message thread, a notes-app page or one bold line that says the specific, slightly unflattering thing the reader has thought and never said. Written to be forwarded: the reader sees a friend in it, or sees themselves and wants the friend to know.",
+      "first_line": "The text itself is the hook; the caption opens with a short reaction, then the prompt.",
+      "why_it_works": "Sends (shares to DMs) are Instagram's strongest signal for showing a post to people who don't follow the account yet. Text-on-card relatable posts are the most-forwarded shape in this audience.",
+      "proven_by": [
+        "@betches",
+        "@girlwithnojob",
+        "@mytherapistsays"
+      ],
+      "evidence": "The cohort's humor accounts (20M combined) are text-and-reaction accounts; exact share counts are not visible to us.",
+      "notes": "card_style: text_thread (a conversation), notes_app (a list someone wrote at midnight), big_type (one statement). Never imitate a real person's tweet or DM, never invent a celebrity quote, and never use a real app's logo or name on the card. The thread is between 'me' and a friend, or 'me' and myself."
+    },
+    {
+      "slug": "finish_the_sentence",
+      "name": "Finish the sentence",
+      "post_types": [
+        "Text Card"
+      ],
+      "new_2026_11": true,
+      "structure": "A sentence stem on the card with a drawn blank. The stem is the whole journaling prompt and is answerable in a comment in under ten words.",
+      "first_line": "The stem.",
+      "why_it_works": "Low-effort to answer, so it earns comments; every comment is a reader journaling in public. Comments from followers are what tell Instagram to show the post more widely.",
+      "proven_by": [],
+      "evidence": "Not verified against specific cohort posts (Instagram doesn't expose that data). A common shape across the niche; treat as a prior and let the Sunday scorer decide.",
+      "notes": "Default shape for the Sunday Scaries slot. Specific beats general: 'The part of Monday I'm already dreading is ___' works; 'This week I want to ___' does not."
+    },
+    {
+      "slug": "things_no_one_told_you",
+      "name": "Things no one told you (carousel)",
+      "post_types": [
+        "Carousel"
+      ],
+      "new_2026_11": true,
+      "structure": "Cover slide names the list. Four to six item slides, one per slide: a bold one-line headline and one or two plain sentences. Mix small practical fixes (clear nail polish stops a run in your tights) with emotional truths (most friendships end quietly). The last slide is the journaling prompt.",
+      "first_line": "The cover title, repeated as the caption's first line in different words.",
+      "why_it_works": "Carousels earn the most engagement per account reached of any format, and a list of useful things gets saved and sent. Each swipe is a signal of time spent.",
+      "proven_by": [
+        "@nedratawwab",
+        "@drjulie"
+      ],
+      "evidence": "Builds on the list_card format (@nedratawwab, @drjulie); carousel engagement figures are from Buffer's 2026 analysis of 4M+ posts, not from these accounts.",
+      "notes": "Practical tips are allowed here (Isabel's rule, 2026-11-05) as long as they are small, friend-to-friend fixes for life in your twenties. Productivity systems, routines, habit tracking and wellness regimes are still out. At least half the items must be about the inner life (work, love, friendship, the future), never all hacks."
+    },
+    {
+      "slug": "you_told_us",
+      "name": "You told us",
+      "post_types": [
+        "Carousel"
+      ],
+      "new_2026_11": true,
+      "structure": "Cover: the question we asked in Stories. Item slides: real anonymous answers from social/story_answers.md, one per slide, lightly trimmed for length but never reworded in meaning. Last slide: the prompt, turned back to the reader.",
+      "first_line": "\"We asked, you answered.\" in the caption, in different words each time.",
+      "why_it_works": "People share posts that feature people like them, and readers who answered come back to look for their answer. It closes the loop on the Stories and gives the account a community feel.",
+      "proven_by": [],
+      "evidence": "Not verified against specific cohort posts (Instagram doesn't expose that data). A common shape across the niche; treat as a prior and let the Sunday scorer decide.",
+      "notes": "Only when social/story_answers.md has a week of answers not used before (check earlier drafts). Never include names, handles, places or details that could identify someone. Never invent an answer."
+    },
+    {
+      "slug": "unsent_story",
+      "name": "The unsent story (carousel)",
+      "post_types": [
+        "Carousel"
+      ],
+      "new_2026_11": true,
+      "structure": "A short first-person story told one beat per slide: an unsent text, a journal entry from the night they almost quit, the drafts of a message to an ex. Setup, turn, quiet resolution. Last slide is the prompt.",
+      "first_line": "The situation, stated flatly.",
+      "why_it_works": "Story carousels hold attention across slides and earn comments from readers telling their own version.",
+      "proven_by": [],
+      "evidence": "Not verified against specific cohort posts (Instagram doesn't expose that data). A common shape across the niche; treat as a prior and let the Sunday scorer decide.",
+      "notes": "The story is clearly written in Zenie's voice as a composite, not presented as a real named person's life."
+    },
+    {
+      "slug": "pov_reel",
+      "name": "POV reel",
+      "post_types": [
+        "Reel"
+      ],
+      "new_2026_11": true,
+      "structure": "7 to 12 seconds of calm stock footage with one line of text: 'POV: ...' or a short scenario. The text is specific enough that the viewer recognizes the exact night it describes. Trending audio is added in the app.",
+      "first_line": "The overlay text is the hook; the caption riffs once, then the prompt.",
+      "why_it_works": "Reels get the most reach of any format and are the main way new people find an account. A short text reel is watched to the end, and watch time is the top Reels signal.",
+      "proven_by": [],
+      "evidence": "Not verified against specific cohort posts (Instagram doesn't expose that data). A common shape across the niche; treat as a prior and let the Sunday scorer decide.",
+      "notes": "Footage is sourced automatically from Pexels by `broll_query` (calm, no faces needed). Name the trending sound to add in `audio_suggestion`."
+    },
+    {
+      "slug": "quote_reel",
+      "name": "Quote on moving footage",
+      "post_types": [
+        "Reel"
+      ],
+      "new_2026_11": true,
+      "structure": "A short real quote (under 18 words) over slow, moving footage, attribution underneath. The same quote rules and no-repeat ledger as Quote Images.",
+      "first_line": "The quote is on screen; the caption opens with one line that sits with it, then the prompt.",
+      "why_it_works": "Turns Zenie's best-performing static format into a reel, which is distributed to non-followers far more than a single image.",
+      "proven_by": [],
+      "evidence": "Not verified against specific cohort posts (Instagram doesn't expose that data). A common shape across the niche; treat as a prior and let the Sunday scorer decide.",
+      "notes": "Isabel asked for moving backgrounds on quotes (2026-11-05). Use for the Sunday Scaries slot on weeks it isn't a finish-the-sentence card."
+    },
+    {
+      "slug": "story_check_in",
+      "name": "Story check-in",
+      "post_types": [
+        "Story"
+      ],
+      "new_2026_11": true,
+      "structure": "Two or three Story frames: a poll (two short options), then a question box asking for an anonymous answer. Both about the week's theme.",
+      "first_line": "The frame text.",
+      "why_it_works": "Stories are seen by existing followers; poll and question taps are interactions that keep Zenie high in their feeds, and the answers become next week's You told us carousel.",
+      "proven_by": [],
+      "evidence": "Not verified against specific cohort posts (Instagram doesn't expose that data). A common shape across the niche; treat as a prior and let the Sunday scorer decide.",
+      "notes": "Stickers are added by hand in the app, so put the options in `sticker_options`. The question must be answerable anonymously and never ask for anything identifying."
     }
   ]
 }

@@ -92,6 +92,20 @@ def key_of(text):
     return n[:PREFIX_LEN] if len(n) >= 20 else ""   # too short to be distinctive
 
 
+def prompt_key(text):
+    """The journaling question is the part of a caption most likely to survive
+    hand edits at posting time (Isabel rewrites hooks, trims CTAs). Second join key."""
+    for q in re.findall(r"[^.!?\n]*\?", (text or "")):
+        n = norm(q.split(":")[-1])          # drop a "Tonight's prompt:" style label
+        if len(n) >= 20:
+            return n[:PREFIX_LEN]
+    return ""
+
+
+def words(text):
+    return {w for w in norm(text).split() if len(w) > 2}
+
+
 def parse_ts(s):
     return datetime.fromisoformat(s.replace("+0000", "+00:00"))
 
@@ -275,6 +289,9 @@ def main():
         k = key_of(p["text"])
         if k:
             index[(p["platform"], k)] = p
+        pk = prompt_key(p["text"])
+        if pk:
+            index[(p["platform"], "q:" + pk)] = p
         if p["permalink"]:
             by_link[norm_link(p["permalink"])] = p
 
@@ -285,11 +302,30 @@ def main():
     scored, unmatched, no_baseline, too_fresh = [], [], [], []
     for row in rows:
         match = by_link.get(norm_link(row["permalink"])) if row["permalink"] else None
+        if (row["post_type"] or "").lower() == "story":
+            continue   # Stories aren't in the media feed and expire in 24h; nothing to score
         for platform, text in (() if match else (("IG", row["ig"]), ("FB", row["fb"]))):
-            k = key_of(text)
-            if k and (platform, k) in index:
-                match = index[(platform, k)]
+            for k in (key_of(text), "q:" + prompt_key(text) if prompt_key(text) else ""):
+                if k and (platform, k) in index:
+                    match = index[(platform, k)]
+                    break
+            if match:
                 break
+        if not match:
+            # Last resort: mostly the same words (a lightly reworded caption).
+            best, best_j = None, 0.0
+            for platform, text in (("IG", row["ig"]), ("FB", row["fb"])):
+                rw = words(text)
+                if len(rw) < 6:
+                    continue
+                for p in by_platform[platform]:
+                    pw = words(p["text"])
+                    if pw:
+                        j = len(rw & pw) / len(rw | pw)
+                        if j > best_j:
+                            best, best_j = p, j
+            if best_j >= 0.55:
+                match = best
         if not match:
             unmatched.append(row)
             continue
