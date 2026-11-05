@@ -1,0 +1,28 @@
+LIGHT STUDIES — north light (fill-in, Thu Dec 3; carousel: 4 AI images, 1080x1350)
+
+IMAGES (Figma file YG3xn6OSYJHWHi9hD4zhuo, gemini-3.1-flash-image), in order:
+1 painter's studio under a sawtooth roof of north lights — node 32:6
+2 double-height townhouse studio with one huge north window — node 32:7
+3 concrete gallery under curved north-facing roof scoops — node 32:8
+4 stone reading room, one deep north window — node 32:9
+
+CAPTION
+Painters have long asked for a studio facing north. In the northern hemisphere, a north window doesn't take direct sun, so its light comes from the open sky, cool and soft, at nearly the same angle and color all day. A color mixed in the morning still looks right by late afternoon. These four rooms are built around that one steady source.
+
+Light Studies, ART Lab.
+
+#ARTLab #lightstudies #northlight #artiststudio #architecture
+
+ALT TEXT
+1 An empty whitewashed studio under a sawtooth roof of tall glazed panels, lit evenly by grey sky.
+2 A double-height studio with one enormous multi-pane window onto grey rooftops, and a single wooden table.
+3 A long white gallery with a ceiling of curved light scoops spreading soft daylight down the walls.
+4 A whitewashed stone room with one deep window, a wooden chair and a small stool with a book in the soft light.
+
+HYPOTHESIS
+Prediction: this earns more saves than Light Studies firelight, because "why studios face north" is a fact people keep, and it gets sent to the painter friend. If it doesn't, the cool palette reads as cold next to the firelight set. Share trigger: reference value + specific recipient.
+
+SOURCES
+- North light comes from the sky, not direct sun, and stays at a consistent angle and color through the day: Wikipedia, North light (architecture) — https://en.wikipedia.org/wiki/North_light_(architecture) ; Chris Chalk, "Why is northern light best for artists?" — https://www.chrischalkart.com/painting_blog/?p=1241
+- Colors mixed in the morning still look right later: Chris Chalk (above); Wikipedia (north light "does not change colour (warmth) throughout the day")
+- Southern hemisphere uses south light instead: Wikipedia (above). The caption says "in the northern hemisphere" for this reason.

@@ -1,0 +1,30 @@
+LIGHT STUDIES — firelight (fill-in, Thu Nov 26 / Thanksgiving; carousel: 4 AI images, 1080x1350)
+
+IMAGES (Figma file YG3xn6OSYJHWHi9hD4zhuo, gemini-3.1-flash-image), in order:
+1 sunken conversation pit lit by a stone hearth — node 32:2
+2 long candlelit oak table in a limewashed dining room — node 32:3
+3 freestanding fire on a concrete hearth, blue dusk through glass — node 32:4
+4 kiva-style plaster corner fireplace, embers only — node 32:5
+
+CAPTION
+A candle flame measures around 1,850 kelvin on the color temperature scale, against roughly 5,500 for daylight, and the lower the number, the warmer the light. Fire also sits low in a room, so it lights the table and the people around it and leaves the ceiling in shadow. Four rooms lit only by fire, for the evenings when everyone stays late.
+
+Light Studies, ART Lab.
+
+#ARTLab #lightstudies #firelight #minimalinteriors #architecture
+
+ALT TEXT
+1 A sunken conversation pit with cream built-in benches, lit only by a wood fire in a low stone hearth.
+2 A long oak dining table in a limewashed room, set with stoneware and lit only by a row of candles.
+3 A wood fire on a raised concrete hearth under a black steel hood, with blue winter dusk through the glass wall behind.
+4 A rounded white plaster fireplace in the corner of a stone room, glowing with embers in the dark.
+
+HYPOTHESIS
+Prediction: this earns the most sends of the week, because it lands on Thanksgiving and people send warm rooms to whoever they're spending the evening with. If it gets fewer sends than the Point of View, holiday timing doesn't move this audience. Share trigger: taste signal + specific recipient.
+
+SOURCES
+- Candle flame about 1,850 K; daylight about 5,500 K: Stage Lighting Primer — https://stagelightingprimer.com/slfs-color_temp.html (candle 1850 K; typical daylight 5500–6000 K); CAMEO, Museum of Fine Arts Boston — https://cameo.mfa.org/wiki/Color_temperature (candle flame 1800–2900 K); Wikipedia, North light — https://en.wikipedia.org/wiki/North_light_(architecture) (diffused daylight about 5500–6500 K)
+- Lower color temperature reads warmer: Stage Lighting Primer; CAMEO (above)
+
+FLAGS
+Image 3 shows a faint reflection of the fire in the glass at the right edge. It reads as a reflection, not a second fire.

@@ -1,0 +1,34 @@
+POINT OF VIEW — LOOK UP (fill-in, Tue Nov 24; carousel: cover + 3 AI images, 1080x1350)
+
+SLIDES, in order:
+1 cover (render_pov.py, no series label)
+2 wave ceiling of pale pine battens over a lecture hall — Figma node 32:10
+3 coffered concrete ceiling, some coffers open as skylights — Figma node 32:11
+4 barrel-vaulted plaster ceiling lit by low sun — Figma node (generated after credit reset)
+
+CAPTION
+The ceiling is the one surface in a room that nothing covers, and it's usually the last one anyone designs. The best argument otherwise is Alvar Aalto's library in Viipuri, finished in 1935. In its long, narrow lecture hall he hung a ceiling of Karelian red pine in slow waves, shaped to carry sound evenly through the room.
+
+Images: ART Lab.
+
+#ARTLab #alvaraalto #ceilingdesign #interiordesign #architecture
+
+ALT TEXT
+1 Near-black background. Large cream serif capitals read LOOK UP, above a short paragraph: The ceiling is the one surface in a room that nothing covers, and it's usually the last one anyone designs. It deserves as much thought as the floor.
+2 A ceiling of pale wooden battens flowing in a long wave over a white lecture hall lit by high windows.
+3 Looking straight up at a grid of deep square concrete coffers, a few open to the sky as small skylights.
+4 A low barrel-vaulted plaster ceiling glowing apricot where low sun skims along it from a small window.
+
+HYPOTHESIS
+Prediction: this earns more saves per reach than the last Point of View, because "look up" sends people to their own ceilings and the three images are easy to keep as reference. If it doesn't, ceilings are too quiet a subject to carry an opinion. Share trigger: a design opinion worth arguing about + reference value.
+
+TAG IDEAS (⚠ VERIFY handles)
+Alvar Aalto Foundation @alvaraaltofoundation ⚠ VERIFY
+
+SOURCES
+- Viipuri Library completed 1935: Alvar Aalto Foundation — https://www.alvaraalto.fi/?p=18917 ; Architecture Lab — https://www.architecturelab.net/viipuri-library-alvar-aalto/
+- Undulating ceiling of Karelian red pine in the long, narrow lecture hall: Alvar Aalto Foundation (above); Studio International — https://studiointernational.com/alvar-aalto-library-in-vyborg-saving-a-modern-masterpiece
+- Shaped for acoustics, spreading sound evenly: Alvar Aalto Foundation ("to improve the acoustic properties"); Architecture Lab ("disperses sound evenly"); Studio International ("modulated according to acoustic calculation")
+
+FLAGS
+The images are imagined rooms, not Viipuri. The "Images: ART Lab." line is there so no one reads slide 2 as a photo of Aalto's hall.
