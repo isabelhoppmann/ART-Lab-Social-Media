@@ -1,0 +1,20 @@
+Morning Briefing November 5, 2026
+
+=== ROBOTICS & AI ===
+- Xiaomi released footage of two full-size humanoid robots completing a continuous 8-hour car-parts sorting shift at its Beijing EV plant on November 4, extending a March 2026 three-hour trial and demonstrating autonomous anomaly detection mid-shift. https://interestingengineering.com/ai-robotics/xiaomi-humanoids-sort-car-parts
+- Pudu Robotics unveiled its "One Brain, Multiple Embodiments" AI strategy at a European launch event in Amsterdam on November 5, debuting the TOMO S Series, its first consumer product, targeted at intelligent home lawn care. https://roboticsandautomationnews.com/2026/11/05/pudu-robotics-unveils-one-brain-multiple-embodiments-strategy-and-showcases-full-portfolio-in-european-first/106725
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- Agility Robotics began trading on Nasdaq as AGLT on November 5, 2026, completing its SPAC merger with Churchill Capital Corp XI and becoming the first U.S. publicly listed pure-play humanoid robotics company, with a $2.5 billion pre-money valuation and roughly $465 million raised through the transaction. https://www.bloomberg.com/news/articles/2026-11-05/nvidia-backed-humanoid-maker-agility-goes-public-in-first-for-the-us
+- A November 5 report by KR Asia on a 36Kr story says Chinese embodied AI fundraising has grown markedly harder since fall 2026, with three leading investment firms tightening spending after a first-half surge to $13 billion across 322 deals. https://kr-asia.com/chinas-embodied-intelligence-funding-boom-loses-steam
+
+=== COMPETITOR WATCH ===
+- 1X Technologies has placed disembodied NEO heads in at least one home as a smart home hub ahead of full humanoid rollout, an unconventional product deployment mode reported by Forbes on November 3, 2026. https://www.forbes.com/sites/johnkoetsier/2026/11/03/your-humanoid-robot-might-also-be-your-smart-home-hub-disembodied-neo-head-from-1x/
+
+=== BAY AREA ===
+- The AI Engineer Code Summit runs November 10–12 in San Francisco at Hilton Union Square, with three days of technical talks and demos for builders of AI applications; tickets from $299. https://ai.engineer/code
+
+#KEYS: xiaomi-humanoid-factory-shift, pudu-tomo-s-consumer-launch, agility-robotics-spac, china-embodied-ai-cooling-2026, 1x-neo-head-deployment, ai-engineer-code-summit-sf-2026
