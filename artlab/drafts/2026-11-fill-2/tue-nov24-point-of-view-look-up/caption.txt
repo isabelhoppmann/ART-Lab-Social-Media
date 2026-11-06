@@ -4,7 +4,7 @@ SLIDES, in order:
 1 cover (render_pov.py, no series label)
 2 wave ceiling of pale pine battens over a lecture hall — Figma node 32:10
 3 coffered concrete ceiling, some coffers open as skylights — Figma node 32:11
-4 barrel-vaulted plaster ceiling lit by low sun — Figma node (generated after credit reset)
+4 barrel-vaulted plaster ceiling lit by low sun — Figma node 33:2
 
 CAPTION
 The ceiling is the one surface in a room that nothing covers, and it's usually the last one anyone designs. The best argument otherwise is Alvar Aalto's library in Viipuri, finished in 1935. In its long, narrow lecture hall he hung a ceiling of Karelian red pine in slow waves, shaped to carry sound evenly through the room.
