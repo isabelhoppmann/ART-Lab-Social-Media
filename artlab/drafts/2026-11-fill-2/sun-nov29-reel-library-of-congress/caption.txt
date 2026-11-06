@@ -1,0 +1,34 @@
+REEL — Library of Congress, Thomas Jefferson Building (fill-in, Sun Nov 29; 6 photos, 1080x1920, 18.0s, silent: add audio in Instagram)
+
+FRAMES (Carol M. Highsmith, Library of Congress, public domain), in order: see frames/ and ../frames.json ("loc")
+1 Copper dome and lantern against blue sky (highsm 14296)
+2 Great Hall from above, marble stair and brass sunburst floor (highsm 01965)
+3 Great Hall columns and painted vaults (highsm 13970)
+4 Great Hall arch with the builders' inscription (highsm 01971)
+5 Main Reading Room from above, empty desks (highsm 03187)
+6 Main Reading Room dome, looking straight up (highsm 02069)
+
+CAPTION
+The Library of Congress began inside the Capitol. When it ran out of room, it moved across the street into the Thomas Jefferson Building, which opened in 1897. Members of Congress didn't have to walk over: they sent requests by pneumatic tube, and books came back through a tunnel under First Street on an electric chain conveyor.
+
+Thomas Jefferson Building, Library of Congress (1897). Photographs: Carol M. Highsmith, Library of Congress.
+
+#ARTLab #libraryofcongress #beauxarts #designhistory #architecture
+
+ALT TEXT (first frame)
+The green copper dome and gilded lantern of the Library of Congress against a clear blue sky.
+
+HYPOTHESIS
+Prediction: this gets the most sends of the three reels, because a book conveyor under the street is a detail people pass on, and the dome shot is one of the most recognizable ceilings in America. If Johnson Wax beats it on sends, engineering stories travel further than famous rooms. Share trigger: a story worth retelling + recognition.
+
+TAG IDEAS (⚠ VERIFY handles)
+Library of Congress @librarycongress ⚠ VERIFY
+
+SOURCES
+- Library first housed in the Capitol; Jefferson Building opened 1897: Wikipedia, Thomas Jefferson Building — https://en.wikipedia.org/wiki/Thomas_Jefferson_Building ; World History Edu — https://worldhistoryedu.com/the-thomas-jefferson-building/
+- Requests by pneumatic tube; books carried through a tunnel under First Street on an electric chain conveyor: Library of Congress blog, "The Book Delivery System at the Library of Congress" (2022) — https://blogs.loc.gov/manuscripts/2022/04/the-book-delivery-system-at-the-library-of-congress/ ; The Hill Is Home, "Lost Capitol Hill: The Book Tunnel" (2016) — https://thehillishome.com/2016/09/lost-capitol-hill-the-book-tunnel-of-capitol-hill/ ; Wikipedia (electric "book conveying apparatus")
+- Photographs public domain: Highsmith rights page (archived) — https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
+
+FLAGS
+- Frame 2 includes the bronze torch-bearer on the stair newel, part of the building.
+- Political murals and religious statues in the building were left out on purpose.

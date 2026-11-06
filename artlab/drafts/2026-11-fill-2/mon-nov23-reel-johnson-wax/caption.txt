@@ -1,0 +1,35 @@
+REEL — Johnson Wax Administration Building (fill-in, Mon Nov 23; 6 photos, 1080x1920, 18.0s, silent: add audio in Instagram)
+
+FRAMES (Carol M. Highsmith, Library of Congress, public domain), in order: see frames/ and ../frames.json ("jw")
+1 Research Tower and globe (highsm 16712)
+2 Administration Building exterior, brick bands and curved corners (highsm 13111)
+3 Carport under the lily-pad columns (highsm 13103)
+4 Great Workroom ceiling, color, cropped above the desks (highsm 15571)
+5 Great Workroom ceiling, black and white, cropped above the desks (highsm 16899)
+6 Corridor under glass-tube arches, black and white (highsm 17024)
+
+CAPTION
+Frank Lloyd Wright finished the Johnson Wax Administration Building in Racine, Wisconsin, in 1939. Its Great Workroom stands on columns nine inches across at the base that open into lily pads about 18 feet wide. Wisconsin's inspectors doubted they would hold, so a test column was loaded until it carried 60 tons, five times the requirement. Daylight comes in through Pyrex glass tubing instead of windows.
+
+S.C. Johnson Administration Building (1936–1939), Frank Lloyd Wright. Photographs: Carol M. Highsmith, Library of Congress.
+
+#ARTLab #franklloydwright #scjohnson #retrofuturism #architecture
+
+ALT TEXT (first frame)
+A banded brick tower against a deep blue sky beside a large dark globe on a pedestal, at the S.C. Johnson headquarters.
+
+HYPOTHESIS
+Prediction: this gets the most saves of the three reels, because the lily-pad ceiling is a picture people keep and the 60-ton test is a detail they repeat. If the Library of Congress reel beats it, ornament beats engineering for this audience. Share trigger: a story worth retelling + reference value.
+
+TAG IDEAS (⚠ VERIFY handles)
+SC Johnson @scjohnson ⚠ VERIFY, Frank Lloyd Wright Foundation @franklloydwrightfoundation ⚠ VERIFY, Library of Congress @librarycongress ⚠ VERIFY
+
+SOURCES
+- 1939, Racine; columns 9 in at the base widening to about 18 ft; test load 60 tons, five times the requirement; Pyrex tubing: SC Johnson — https://scjohnson.com/news-stories/blog/administration-building ; Architectuul — https://architectuul.com/architecture/johnson-wax-headquarters (1936–39; 9 in / 18 ft; required 12 tons, held 60; skylights and clerestory of Pyrex tubing)
+- Inspectors doubted the columns: SC Johnson (Wisconsin Industrial Commission refused to approve the design); Architectuul (inspectors required the test column)
+- Photographs public domain: Highsmith rights page (archived) — https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
+
+FLAGS
+- Frames 4 and 5 are cropped to the ceiling because the Great Workroom photos show people at their desks below.
+- Two black-and-white frames sit among four color frames; Highsmith shot those two in black and white.
+- Wright appears twice in this batch (here and the Rosenbaum House on Dec 1, eight days apart).

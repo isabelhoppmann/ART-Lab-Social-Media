@@ -1,0 +1,122 @@
+{
+ "jw": [
+  {
+   "id": "16712",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:16700:16712/837,0,4315,7672/1080,1920/0/default.jpg",
+   "src_w": 4315,
+   "item": "https://www.loc.gov/item/2011634905/"
+  },
+  {
+   "id": "13111",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13100:13111/2305,0,3283,5838/1080,1920/0/default.jpg",
+   "src_w": 3283,
+   "item": "https://www.loc.gov/item/2011631305/"
+  },
+  {
+   "id": "13103",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13100:13103/1442,0,3283,5838/1080,1920/0/default.jpg",
+   "src_w": 3283,
+   "item": "https://www.loc.gov/item/2011631297/"
+  },
+  {
+   "id": "15571",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:15500:15571/2432,0,1081,1922/1080,1920/0/default.jpg",
+   "src_w": 1081,
+   "item": "https://www.loc.gov/item/2011633764/"
+  },
+  {
+   "id": "16899",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:16800:16899/2946,0,1299,2310/1080,1920/0/default.jpg",
+   "src_w": 1299,
+   "item": "https://www.loc.gov/item/2011635092/"
+  },
+  {
+   "id": "17024",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:17000:17024/1061,0,5213,9269/1080,1920/0/default.jpg",
+   "src_w": 5213,
+   "item": "https://www.loc.gov/item/2011635217/"
+  }
+ ],
+ "loc": [
+  {
+   "id": "14296",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:14200:14296/1015,0,2659,4728/1080,1920/0/default.jpg",
+   "src_w": 2659,
+   "item": "https://www.loc.gov/item/2011632490/"
+  },
+  {
+   "id": "01965",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:01900:01965/851,0,5083,9038/1080,1920/0/default.jpg",
+   "src_w": 5083,
+   "item": "https://www.loc.gov/item/2007684265/"
+  },
+  {
+   "id": "13970",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:13900:13970/756,0,3852,6849/1080,1920/0/default.jpg",
+   "src_w": 3852,
+   "item": "https://www.loc.gov/item/2011632164/"
+  },
+  {
+   "id": "01971",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:01900:01971/2453,0,2326,4136/1080,1920/0/default.jpg",
+   "src_w": 2326,
+   "item": "https://www.loc.gov/item/2007684271/"
+  },
+  {
+   "id": "03187",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:03100:03187/1903,0,2925,5201/1080,1920/0/default.jpg",
+   "src_w": 2925,
+   "item": "https://www.loc.gov/item/2007687187/"
+  },
+  {
+   "id": "02069",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:02000:02069/2092,0,3056,5433/1080,1920/0/default.jpg",
+   "src_w": 3056,
+   "item": "https://www.loc.gov/item/2007684369/"
+  }
+ ],
+ "ros": [
+  {
+   "id": "08906",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08900:08906/2380,0,2304,4096/1080,1920/0/default.jpg",
+   "src_w": 2304,
+   "item": "https://www.loc.gov/item/2010640719/"
+  },
+  {
+   "id": "08927",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08900:08927/1536,0,2304,4096/1080,1920/0/default.jpg",
+   "src_w": 2304,
+   "item": "https://www.loc.gov/item/2010640740/"
+  },
+  {
+   "id": "08924",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08900:08924/1728,0,2304,4096/1080,1920/0/default.jpg",
+   "src_w": 2304,
+   "item": "https://www.loc.gov/item/2010640737/"
+  },
+  {
+   "id": "08920",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08900:08920/1536,0,2304,4096/1080,1920/0/default.jpg",
+   "src_w": 2304,
+   "item": "https://www.loc.gov/item/2010640733/"
+  },
+  {
+   "id": "08925",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08900:08925/2112,0,2304,4096/1080,1920/0/default.jpg",
+   "src_w": 2304,
+   "item": "https://www.loc.gov/item/2010640738/"
+  },
+  {
+   "id": "08928",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:08900:08928/2880,0,2304,4096/1080,1920/0/default.jpg",
+   "src_w": 2304,
+   "item": "https://www.loc.gov/item/2010640741/"
+  },
+  {
+   "id": "15770",
+   "url": "https://tile.loc.gov/image-services/iiif/service:pnp:highsm:15700:15770/1116,0,2853,5072/1080,1920/0/default.jpg",
+   "src_w": 2853,
+   "item": "https://www.loc.gov/item/2011633963/"
+  }
+ ]
+}
