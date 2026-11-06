@@ -1,0 +1,18 @@
+Morning Briefing November 6, 2026
+
+=== ROBOTICS & AI ===
+- Swiss startup Embodied AI unveiled AIR, a wheeled humanoid designed to learn factory manipulation tasks from human demonstrations, at the Humanoid Europe conference in Munich on November 6, 2026, with CE marking targeted for 2027. https://www.rutlandherald.com/news/business/embodied-ai-unveils-air-a-physically-safe-humanoid-robot-that-learns-on-the-job/article_45b13c9b-990b-5ddc-adbe-ecf0d2ea3f94.html
+
+=== RESEARCH ===
+- La-JEPA (arXiv:2611.08156), submitted November 5, 2026, proposes training compact robot manipulation policies in the latent space of a frozen V-JEPA 2.1 vision encoder, achieving success rates comparable to pi0.5 on four real-robot tasks with a substantially smaller model. https://arxiv.org/abs/2611.08156
+
+=== FUNDING & INVESTMENT ===
+- Physicl, which builds 3D simulation environments for robot training on rare failure cases, raised a $10M seed round led by Inovia Capital, announced November 6, 2026. https://fourweekmba.com/ai-physicl-raises-10m-to-build-robots-rare-failure-cases/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- FUSE SF, a single-track physical AI and localization engineering conference produced by Silicon Valley Robotics, takes place November 19 at Foundry SF, 1425 Folsom Street, San Francisco; registration at the official site. https://fuse.pointonenav.com/sf
+
+#KEYS: embodied-ai-air-launch, la-jepa-robot-policy, physicl-seed-round, fuse-sf-2026
