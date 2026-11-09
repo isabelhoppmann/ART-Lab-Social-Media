@@ -39,10 +39,24 @@ def fix_caption(cap, tags):
     return "\n\n".join(parts)
 
 
+def hashtags_text(value):
+    """The drafting agent sometimes emits hashtags as a list (week of 2026-11-09
+    crashed the publish on it). Accept a list or a string; return one line."""
+    if isinstance(value, (list, tuple)):
+        value = " ".join(str(t).strip() for t in value if str(t).strip())
+    return (value or "").strip()
+
+
 def ensure_caption_tags(post):
-    """Fix ig_caption / fb_caption in place. Returns the number changed."""
-    tags = (post.get("hashtags") or "").strip()
+    """Fix ig_caption / fb_caption in place. Returns the number changed.
+    Also rewrites a list-valued "hashtags" as one string so the render, Slack
+    and Notion steps downstream all see text."""
+    raw = post.get("hashtags")
+    tags = hashtags_text(raw)
     changed = 0
+    if raw is not None and raw != tags:
+        post["hashtags"] = tags
+        changed += 1  # so normalize_review_state saves the string form
     for key in ("ig_caption", "fb_caption"):
         cap = post.get(key)
         if not cap:
