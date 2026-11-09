@@ -1,0 +1,18 @@
+Morning Briefing November 9, 2026
+
+=== ROBOTICS & AI ===
+- Amazon has organized a Personal Robotics Group around its March 2026 Fauna Robotics acquisition and published job postings for a "new-to-world robot product," signaling a renewed consumer home-robot push five years after Astro never scaled beyond invite-only sales, per CNBC reporting November 8. https://www.cnbc.com/2026/11/08/amazon-home-robot-fauna-sprout.html
+
+=== RESEARCH ===
+- RoboColosseum (arXiv:2611.02497, submitted November 2, 2026) is a distributed framework for benchmarking robot policies across many physical sites; in tests on four embodiments with five VLA policies and three AI agents, frontier models roughly match specialized policies on structured tasks but all systems fail on open-world scenarios. https://arxiv.org/abs/2611.02497
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours.
+
+=== COMPETITOR WATCH ===
+- NVIDIA AI Day Seoul opened today at COEX with sessions on physical AI, agentic AI, and AI infrastructure; Jensen Huang visited Hyundai Motor, LG, and Naver headquarters November 8 ahead of the two-day conference as NVIDIA expands its South Korea physical AI ecosystem. https://blogs.nvidia.com/blog/ai-day-seoul
+
+=== BAY AREA ===
+- The AI Engineer Code Summit opens tomorrow, November 10, at the Hilton Union Square in San Francisco for a three-day program of technical talks and demos for AI application builders; tickets from $299. https://ai.engineer/code
+
+#KEYS: amazon-personal-robotics-group, robocolosseum-vla-benchmark, nvidia-ai-day-seoul-2026, ai-engineer-code-summit-sf-2026
