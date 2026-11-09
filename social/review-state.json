@@ -1,113 +1,228 @@
 {
-  "week_date": "2026-11-02",
-  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-02/",
-  "slack_thread_ts": "1793619561.684629",
+  "week_date": "2026-11-09",
+  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-09/",
+  "slack_thread_ts": "1794260694.863719",
   "slack_error": null,
   "posts": [
     {
-      "label": "Meme 1",
-      "post_type": "Meme",
-      "meme_slug": "skeptical_side_glance",
-      "overlay_text": "me going back through my journal and finding the entry where I CALLED IT",
-      "ig_caption": "read it back and felt very smart\u2026 and very annoyed \ud83d\udcd3\n\nTonight's prompt: what's something you saw coming that you tried to talk yourself out of?\n\nSave this if you've ever been your own warning sign.\n\n#journaling #selfawareness #zeniejournaling #journalingprompts #zenieapp",
-      "fb_caption": "There's a special kind of frustration that hits when you flip back through your old journal entries and find the paragraph where you basically told yourself exactly how this was going to go.\n\nTonight's prompt: what's something you saw coming that you tried to talk yourself out of? Write it out \u2014 not to beat yourself up, but to start trusting that voice a little more.\n\nTag a friend who needs to finally write this one down.\n\n#journaling #selfawareness #zeniejournaling #journalingprompts #zenieapp",
-      "hashtags": "#journaling #selfawareness #zeniejournaling #journalingprompts #zenieapp",
+      "label": "Reel 1",
+      "post_type": "Reel",
+      "series": "Quarter-Life Check-In",
+      "format_slug": "pov_reel",
+      "reel_style": "pov",
+      "overlay_text": "POV: it's November and you're suddenly doing the math on your whole year",
+      "broll_query": "rain window night city lights",
+      "broll_alternates": [
+        "coffee mug hands autumn light",
+        "journal notebook desk lamp evening"
+      ],
+      "audio_suggestion": "'Dracula (JENNIE Remix)' by Tame Impala x JENNIE \u2014 moody, anthemic, trending Reels audio 2026; fits the late-November reflection mood",
+      "ig_caption": "November hits different. \ud83c\udf42\n\nWhat's one thing that felt like a failure this year that actually just changed direction?\n\nWrite it down before December rewrites the memory.\n\n#quarterlifecrisis #journalingprompts #zenieapp #selfreflection #twentysomething",
+      "fb_caption": "Something about November makes you stop and do the math \u2014 the job, the relationships, the plans from January that look nothing like how the year went.\n\nWhat's one thing that felt like a failure this year that actually just changed direction? Give it a full page. The story isn't over yet.\n\n#quarterlifecrisis #journalingprompts #zenieapp #selfreflection #twentysomething",
+      "hashtags": "#quarterlifecrisis #journalingprompts #zenieapp #selfreflection #twentysomething",
       "best_time": "Monday 7\u20139 PM PST",
-      "scheduled_date": "2026-11-03T04:00:00.000+00:00",
-      "hypothesis": "Pairing the skeptical-side-glance clip (someone who just realized they predicted the outcome) with a hindsight/self-trust prompt because relatable dating-hindsight posts have driven strong saves on IG; expecting above-median saves from journalers who recognize the 'I knew it' pattern.",
-      "format_slug": "relatable_spiral",
-      "skipped": false,
-      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-02/meme_1.mp4",
-      "notion_page_id": "40cc2cdd-459d-8177-8657-f6833a207fb4",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/reel_1.mp4",
+      "notion_page_id": null,
       "approved": false,
-      "text_style": "highlight",
+      "hypothesis": "POV reel framing for the 'November math' feeling \u2014 the annual mid-month moment where you assess your whole year \u2014 because seasonal year-in-review content peaks in early November; this is the first run of the pov_reel format, so treating as a prior, but the specific framing should resonate with the QLC audience and earn Reels reach to non-followers.",
+      "broll": {
+        "id": 35099181,
+        "page": "https://www.pexels.com/video/nighttime-cityscape-with-rain-on-window-35099181/",
+        "query": "rain window night city lights"
+      },
+      "media_urls": [
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/reel_1.mp4"
+      ],
+      "skipped": false,
       "slack_posted": true
     },
     {
-      "label": "Quote 1",
-      "post_type": "Quote Image",
-      "quote": "In the depth of winter, I found there was, within me, an invincible summer.",
-      "attribution": "Albert Camus",
-      "ig_caption": "read this slowly. then read it again. \ud83c\udf42\n\nTonight's prompt: what inner quality has gotten you through the hardest stretch of this year?\n\nSave this for the next time winter feels like it's winning.\n\n#journalingprompts #selfreflection #zenieapp #selfgrowth #journaling",
-      "fb_caption": "Camus wrote this about surviving hardship, but I keep coming back to it as a reminder: your warmth doesn't disappear when things get cold \u2014 it just goes underground.\n\nTonight's prompt: what inner quality has gotten you through the hardest stretch of this year? Write it down and really let yourself own it.\n\nSave and share with someone who needs to hear this right now.\n\n#journalingprompts #selfreflection #zenieapp #selfgrowth #journaling",
-      "hashtags": "#journalingprompts #selfreflection #zenieapp #selfgrowth #journaling",
+      "label": "Carousel 1",
+      "post_type": "Carousel",
+      "series": "Things no one told you",
+      "format_slug": "things_no_one_told_you",
+      "slides": [
+        {
+          "title": "Things nobody told you about your twenties",
+          "body": "The stuff they left out of the guidebook."
+        },
+        {
+          "title": "It's okay to be in a chapter with no name",
+          "body": "Not every phase of life has a clear label. The in-between is a real place, not a failure."
+        },
+        {
+          "title": "You can just call HR",
+          "body": "If you don't know what your benefits cover, ask. That's literally their job."
+        },
+        {
+          "title": "Missing someone and knowing you made the right call can both be true",
+          "body": "You don't have to be over it to know the decision was right."
+        },
+        {
+          "title": "Silence in a friendship doesn't have to mean the end",
+          "body": "Sometimes people go quiet because they're in their own storm. Following up is never too late."
+        },
+        {
+          "title": "The 'five-year plan' is a direction, not a contract",
+          "body": "Your future self reserves the right to want entirely different things. That's not failure, it's information."
+        },
+        {
+          "title": "What's one thing you wish someone had told you at the start of this year?",
+          "body": "Save this for the next time you feel behind."
+        }
+      ],
+      "ig_caption": "Things nobody told you about your twenties \u2014 the chapter they left out. \ud83d\udcd3\n\nWhat's one thing you wish someone had told you at the start of this year?\n\nSave this if you've ever felt like you missed a memo.\n\n#quarterlifecrisis #zenieapp #journalingprompts #adultingishard #selfgrowth",
+      "fb_caption": "The twenties are the decade everyone talks about but somehow nobody prepares you for. Here are six things the guidebook forgot to mention.\n\nWhat's one thing you wish someone had told you at the start of this year? Drop it in the comments \u2014 we read every one.\n\n#quarterlifecrisis #zenieapp #journalingprompts #adultingishard #selfgrowth",
+      "hashtags": "#quarterlifecrisis #zenieapp #journalingprompts #adultingishard #selfgrowth",
       "best_time": "Tuesday 6\u20138 PM PST",
-      "scheduled_date": "2026-11-04T03:00:00.000+00:00",
-      "hypothesis": "Using the Camus winter/invincible-summer line because November triggers year-end resilience processing; testing whether a survival-and-inner-strength prompt earns more FB shares than our recent relationship-focused quotes, since community-sharing copy has outperformed inward prompts on FB.",
-      "format_slug": "aphorism_plate",
-      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-02/quote_1.jpg",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_01.jpg",
       "notion_page_id": null,
       "approved": false,
+      "hypothesis": "Using the things_no_one_told_you carousel format (new format, first run this week) because list carousels earn the most engagement per person reached and mixing practical life fixes (call HR) with emotional truths (missing someone and being right can coexist) creates both a save-worthy reference and a shareable relatable item \u2014 this is a prior, not a measurement.",
+      "media_urls": [
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_01.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_02.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_03.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_04.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_05.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_06.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/carousel_1_07.jpg"
+      ],
+      "skipped": false,
+      "slack_posted": true
+    },
+    {
+      "label": "Meme 1",
+      "post_type": "Meme",
+      "format_slug": "relatable_spiral",
+      "meme_slug": "sarcastic_slow_clap",
+      "overlay_text": "him texting back within 24 hours for once",
+      "ig_caption": "Truly floored. Genuinely applauding. \ud83d\udc4f\n\nWhat standards have you actually been holding yourself to vs. what you'd tell a friend to accept?\n\nWrite that one down tonight.\n\n#situationship #journalingprompts #zenieapp #selfawareness #dating",
+      "fb_caption": "The bar is underground and apparently we're celebrating when someone clears it by an inch.\n\nTonight's prompt: what standards have you actually been holding yourself to vs. what you'd tell a friend to accept? Write it out \u2014 the gap is usually where the most honest journal entry lives.\n\nTag the friend who'd also be doing the ironic applause.\n\n#situationship #journalingprompts #zenieapp #selfawareness #dating",
+      "hashtags": "#situationship #journalingprompts #zenieapp #selfawareness #dating",
+      "best_time": "Wednesday 7\u20139 PM PST",
+      "skipped": false,
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/meme_1.mp4",
+      "notion_page_id": "413c2cdd-459d-8170-b3bf-f12b18567bbd",
+      "approved": false,
+      "hypothesis": "Pairing the sarcastic slow clap clip with a bare-minimum standards joke because the 'are you dating someone who does the bare minimum?' discourse peaked on TikTok late Oct\u2013Nov 2026; the alignment is tight (sarcastic applause = exactly the right face for being 'impressed' by someone who did nothing), and the specific framing (texting back within 24 hours) names a real situation people recognize and send to friends.",
+      "text_style": "dark_bar",
+      "slack_posted": true
+    },
+    {
+      "label": "Text Card 1",
+      "post_type": "Text Card",
+      "format_slug": "send_this_text",
+      "card_style": "text_thread",
+      "thread_name": "bestie",
+      "messages": [
+        {
+          "from": "them",
+          "text": "so are you actually okay or are you 'I'm fine' okay"
+        },
+        {
+          "from": "me",
+          "text": "I'm 'I wrote four journal pages and went to bed at 9pm' okay"
+        },
+        {
+          "from": "them",
+          "text": "okay yeah we're talking tomorrow"
+        }
+      ],
+      "thread_status": "Delivered 11:47 PM",
+      "ig_caption": "There's fine and then there's this. \ud83d\udcf1\n\nWhat's something you've been meaning to actually say out loud instead of journaling around?\n\nSend this to the friend who'd ask the right question.\n\n#friendshipquotes #journaling #zenieapp #selfawareness #honesty",
+      "fb_caption": "There are several levels of 'I'm fine' and your bestie always knows which one it is.\n\nWhat's something you've been meaning to actually say out loud instead of journaling around? Drop it here or save it for your pages tonight. Send this to the friend who checks in like this.\n\n#friendshipquotes #journaling #zenieapp #selfawareness #honesty",
+      "hashtags": "#friendshipquotes #journaling #zenieapp #selfawareness #honesty",
+      "best_time": "Thursday 6\u20138 PM PST",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/text_card_1.jpg",
+      "notion_page_id": null,
+      "approved": false,
+      "hypothesis": "Text thread between besties using the 'are you fine or fine fine' dynamic because the two-tier 'I'm fine' joke names a specific, real dynamic that drives sends (friends forwarding to other friends who'd recognize themselves), which is Instagram's strongest growth signal; first run of the send_this_text format \u2014 treating as a prior.",
+      "media_urls": [
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/text_card_1.jpg"
+      ],
+      "skipped": false,
       "slack_posted": true
     },
     {
       "label": "Repost 1",
       "post_type": "Repost",
-      "url": "https://www.instagram.com/reel/De8EvPARLLg/",
-      "creator": "morganharpernichols",
-      "ig_caption": "things look so different when you give them time \ud83c\udf31\n\nTonight's prompt: pick one thing from the last six months that has slowly changed shape for you \u2014 what do you see in it now that you couldn't see then?\n\nSave this one and come back to it.\n\nCredit: @morganharpernichols\n\n#journaling #selfreflection #zenieapp #journalingprompts #growth",
-      "fb_caption": "There's something quietly powerful about going back to something you thought you understood and realizing it has more layers than you saw the first time. Morgan Harper Nichols does this beautifully.\n\nTonight's prompt: pick one thing from the last six months that has slowly changed shape for you \u2014 what do you see in it now that you couldn't see then? Give it a few paragraphs.\n\nCredit: @morganharpernichols\n\n#journaling #selfreflection #zenieapp #journalingprompts #growth",
-      "hashtags": "#journaling #selfreflection #zenieapp #journalingprompts #growth",
-      "best_time": "Wednesday 7\u20139 PM PST",
-      "scheduled_date": "2026-11-05T04:00:00.000+00:00",
-      "hypothesis": "Riding morganharpernichols's 'revisiting with more layers' theme because it mirrors the journaling habit of re-reading entries and finding new meaning; her 0.06 ER suggests strong resonance with this audience, testing whether a layered-growth prompt earns higher saves on IG than our usual single-moment prompts.",
       "format_slug": "confession_then_turn",
-      "media_url": "https://www.instagram.com/reel/De8EvPARLLg/",
-      "notion_page_id": null,
-      "approved": false,
-      "slack_posted": true
-    },
-    {
-      "label": "Meme 2",
-      "post_type": "Meme",
-      "meme_slug": "tissue_cry",
-      "overlay_text": "finally writing the thing you've been pretending didn't still hurt",
-      "ig_caption": "november does something to you \ud83c\udf42\n\nTonight's prompt: what's the one thing from this year that you still haven't let yourself fully feel?\n\nGive it a page. It's been waiting.\n\n#journaling #emotionalrelease #zenieapp #journalingprompts #selfreflection",
-      "fb_caption": "There's something about November that makes all the things you've been carrying suddenly feel heavier. That's not a bad thing \u2014 it might just mean you're finally ready to put them down.\n\nTonight's prompt: what's the one thing from this year that you still haven't let yourself fully feel? Open your journal and give it a full page. It doesn't have to be pretty.\n\nTag someone who needs permission to feel it right now.\n\n#journaling #emotionalrelease #zenieapp #journalingprompts #selfreflection",
-      "hashtags": "#journaling #emotionalrelease #zenieapp #journalingprompts #selfreflection",
-      "best_time": "Thursday 6\u20138 PM PST",
-      "scheduled_date": "2026-11-06T03:00:00.000+00:00",
-      "hypothesis": "Pairing the tissue-cry clip (a real, cathartic cry) with a November emotional-release prompt because the first full week of November triggers year-in-review processing; testing whether a 'permission to feel' framing earns more saves than our recent 'reflect on X' framing.",
-      "format_slug": "confession_then_turn",
-      "skipped": false,
-      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-02/meme_2.mp4",
-      "notion_page_id": "40cc2cdd-459d-8166-9a21-d90c83f5334a",
-      "approved": false,
-      "text_style": "dark_bar",
-      "slack_posted": true
-    },
-    {
-      "label": "Quote 2",
-      "post_type": "Quote Image",
-      "quote": "Almost everything will work again if you unplug it for a while, including you.",
-      "attribution": "Anne Lamott",
-      "ig_caption": "your brain is not broken. it's just full. \ud83c\udf3f\n\nTonight's prompt: what would you do differently this week if you actually believed you needed rest?\n\n(Then maybe do that thing.)\n\n#selfcare #journalingprompts #zenieapp #journaling #intentionalliving",
-      "fb_caption": "Sometimes the most radical act of self-reflection is admitting you're just tired, not broken. Anne Lamott has this way of saying the true thing like it's obvious.\n\nTonight's prompt: what would you do differently this week if you actually believed you needed rest? Write it out \u2014 you might surprise yourself with what comes up.\n\nTag a friend who needs to read this today. \ud83d\udc9c\n\n#selfcare #journalingprompts #zenieapp #journaling #intentionalliving",
-      "hashtags": "#selfcare #journalingprompts #zenieapp #journaling #intentionalliving",
+      "url": "https://www.instagram.com/reel/DfNKYxnsWES/",
+      "creator": "drjulie",
+      "ig_caption": "This one sat with me. \ud83c\udf3f\n\nWhen have you stayed longer, tried harder, or given more because you thought effort would eventually change how someone treated you?\n\nWrite about it tonight.\n\nCredit: @drjulie\n\n#relationships #selfworth #zenieapp #journalingprompts #selfreflection",
+      "fb_caption": "Dr. Julie names this pattern so precisely. We learn to give more when we're treated poorly \u2014 not because it works, but because that's what we've been taught.\n\nTonight's prompt: when have you stayed longer, tried harder, or given more because you thought effort would eventually change how someone treated you? Write it out. It's worth the full page.\n\nCredit: @drjulie\n\n#relationships #selfworth #zenieapp #journalingprompts #selfreflection",
+      "hashtags": "#relationships #selfworth #zenieapp #journalingprompts #selfreflection",
       "best_time": "Friday 12\u20132 PM PST",
-      "scheduled_date": "2026-11-07T21:00:00.000+00:00",
-      "hypothesis": "Pairing Anne Lamott's rest/reset line with a 'permission to rest' prompt because November prompts burnout conversation and we haven't tested rest-framing on this audience; expecting higher Facebook comments since the 'tag a friend' CTA matches how rest topics spread on FB.",
-      "format_slug": "prompt_card",
-      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-02/quote_2.jpg",
+      "media_url": null,
       "notion_page_id": null,
       "approved": false,
+      "hypothesis": "Reposting drjulie's clip on giving more when treated badly because this theme (self-worth in relationships) consistently drives shares and saves in the niche \u2014 people send it to themselves as a reminder or forward it to friends; this specific clip earned 14K likes and 192 comments on a 2.2M account.",
       "slack_posted": true
     },
     {
-      "label": "Repost 2",
-      "post_type": "Repost",
-      "url": "https://www.instagram.com/reel/DfI7IFYBftu/",
-      "creator": "wetheurban",
-      "ig_caption": "not just surviving November \ud83e\udef6\n\nTonight's prompt: what would 'actually good' look like for you this month \u2014 not what you have to get through, but what you genuinely want?\n\nWrite it down. That's the first step to it.\n\nCredit: @wetheurban\n\n#journaling #november #zenieapp #journalingprompts #intentions",
-      "fb_caption": "There's a big difference between 'less hard' and 'actually good' \u2014 and most of us spend so much time managing the first that we forget to ask for the second. This one from @wetheurban hit differently.\n\nTonight's prompt: what would 'actually good' look like for you this month \u2014 not what you need to survive, but what you genuinely want? Take five minutes with your journal and write it out.\n\nCredit: @wetheurban\n\n#journaling #november #zenieapp #journalingprompts #intentions",
-      "hashtags": "#journaling #november #zenieapp #journalingprompts #intentions",
-      "best_time": "Saturday 10 AM\u201312 PM PST",
-      "scheduled_date": "2026-11-08T19:00:00.000+00:00",
-      "hypothesis": "Pairing wetheurban's 'I hope your November is actually good' message with a November-intentions prompt because early-month intention-setting posts drive higher saves at the start of a new month; testing whether the 'permission to want good things' framing earns more comments than a retrospective prompt.",
-      "format_slug": "confession_then_turn",
-      "media_url": "https://www.instagram.com/reel/DfI7IFYBftu/",
+      "label": "Reel 2",
+      "post_type": "Reel",
+      "series": "Sunday Scaries",
+      "format_slug": "quote_reel",
+      "reel_style": "quote",
+      "quote": "The life you have led doesn't need to be the only life you have.",
+      "attribution": "Anna Quindlen",
+      "broll_query": "woman walking autumn leaves path",
+      "broll_alternates": [
+        "open journal notebook evening light",
+        "train window rain landscape"
+      ],
+      "audio_suggestion": "Atmospheric piano/strings, melancholy-hopeful tone \u2014 Isabel to select in app (something in the November-reflection register, e.g. 'Dracula JENNIE Remix' slower segment or similar Nov 2026 trending audio)",
+      "ig_caption": "This one for anyone redesigning the plan. \ud83c\udf42\n\nWhat part of your current life still feels like it was chosen by someone you used to be?\n\n#sundayscaries #zenieapp #journalingprompts #selfgrowth #quarterlifecrisis",
+      "fb_caption": "Anna Quindlen wrote this and I haven't stopped thinking about it. The life you've built is real \u2014 and it also doesn't have to be the whole story.\n\nWhat part of your current life still feels like it was chosen by someone you used to be? Give it a page tonight.\n\n#sundayscaries #zenieapp #journalingprompts #selfgrowth #quarterlifecrisis",
+      "hashtags": "#sundayscaries #zenieapp #journalingprompts #selfgrowth #quarterlifecrisis",
+      "best_time": "Sunday 6\u20138 PM PST",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/reel_2.mp4",
       "notion_page_id": null,
       "approved": false,
+      "hypothesis": "Quote Reel (new format, first run) with Anna Quindlen's line about not being locked into the life you've built \u2014 timed for mid-November's year-in-review emotional wave before Thanksgiving; IMAGE type is currently Zenie's best-performing media type (0.93% avg eng rate vs VIDEO 0.63%), and the quote_reel format tests whether moving footage boosts that further by qualifying for Reels distribution.",
+      "broll": {
+        "id": 35061135,
+        "page": "https://www.pexels.com/video/autumn-walk-in-forest-with-falling-leaves-35061135/",
+        "query": "woman walking autumn leaves path"
+      },
+      "media_urls": [
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/reel_2.mp4"
+      ],
+      "skipped": false,
+      "slack_posted": true
+    },
+    {
+      "label": "Story 1",
+      "post_type": "Story",
+      "series": "Quarter-Life Check-In",
+      "format_slug": "story_check_in",
+      "frames": [
+        {
+          "text": "Is your November life matching your January plans?",
+          "sticker": "poll",
+          "sticker_options": [
+            "Pretty much yes",
+            "Not even close"
+          ]
+        },
+        {
+          "text": "What's one thing you're carrying into the new year that you actually want to put down?",
+          "sticker": "question",
+          "kicker": "Anonymous, always"
+        }
+      ],
+      "best_time": "Wednesday 6\u20138 PM PST",
+      "media_url": "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/story_1_01.jpg",
+      "notion_page_id": null,
+      "approved": false,
+      "hypothesis": "Story check-in asking the gap-between-plans-and-reality question because it's mid-November (the ideal moment for year-end reflection), poll and question taps keep Zenie high in existing followers' feeds, and the question-box answers will feed a potential you_told_us carousel in coming weeks.",
+      "media_urls": [
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/story_1_01.jpg",
+        "https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/2026-11-09/story_1_02.jpg"
+      ],
+      "skipped": false,
       "slack_posted": true
     }
   ]
