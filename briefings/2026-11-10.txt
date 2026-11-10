@@ -1,0 +1,18 @@
+Morning Briefing November 10, 2026
+
+=== ROBOTICS & AI ===
+- Light Origins will make the first public showing of its bunny-shaped home robot at GITEX RobotiX in Dubai in December, with live household task demonstrations designed to show the robot is ready for consumer homes. https://einpresswire.com/article/955781654/gitex-world-robotix-2026-brings-humanoid-debuts-and-next-gen-embodied-ai-to-dubai
+
+=== RESEARCH ===
+- LiberAI's Liber-0 world action model, pretrained on 2.2 million hours of human experience, achieves 36% zero-shot success across 60 manipulation tasks without collecting task-specific robot demonstrations, published November 4. https://roboticsandautomationnews.com/2026/11/04/from-human-experience-to-robot-action-liberai-launches-liber-0-world-action-model/106378/
+
+=== FUNDING & INVESTMENT ===
+- Beijing's GenRobot AI closed a $100M Series A+ backed by SAIC Motor and Baidu on November 2, 2026 to expand its robot training data platform, which now holds over one million hours of human demonstration recordings. https://roboticsandautomationnews.com/2026/11/10/genrobot-ai-raises-100-million-to-expand-robot-training-data-infrastructure/106905
+
+=== COMPETITOR WATCH ===
+- NVIDIA unveiled GR00T 2 at CoRL in Austin on November 9, a 2B-parameter open world action model claiming 71% one-shot success across 50 tasks, paired with Isaac Lab 3.0, with Siemens and Bosch among early testers. https://runtimewire.com/article/nvidia-gr00t-2-open-world-action-model-corl-2026
+
+=== BAY AREA ===
+- No qualifying items in the last 48 hours
+
+#KEYS: light-origins-gitex-preview, liberai-liber-0, genrobot-series-a, nvidia-gr00t-2
