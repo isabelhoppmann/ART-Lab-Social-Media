@@ -1,0 +1,17 @@
+{
+ "series": "Field Notes",
+ "issue": "07",
+ "accent": "#3B5BA9",
+ "footer": "Thomas Wilfred · 1889–1968",
+ "slides": [
+  {"kind": "hook", "text": "In 1922, an audience in New York sat in a theater and watched a concert played on light.", "kicker": "The Clavilux · New York, 1922"},
+  {"kind": "body", "text": "The instrument was the Clavilux, built in 1919 by Thomas Wilfred, a Danish-born artist working in New York."},
+  {"kind": "body", "text": "The name means “light played by key.” Wilfred sat at a console and shaped moving color on a screen."},
+  {"kind": "body", "text": "He called the art lumia, and meant it as a new art of its own, with light as the only material."},
+  {"kind": "body", "text": "From the late 1920s he built smaller Clavilux models for the home. He hoped they would become as common as the radio."},
+  {"kind": "body", "text": "In 1963, the Museum of Modern Art commissioned one for its reopened galleries: Lumia Suite, Opus 158."},
+  {"kind": "body", "text": "It played in its own dark room at the museum from 1964 until 1980, long after Wilfred died in 1968."},
+  {"kind": "body", "text": "Then it was taken apart and packed into storage."},
+  {"kind": "body", "text": "In 2017, Yale restored it with hand-blown replacement bulbs and Wilfred's own technical manual, and it was shown again."}
+ ]
+}

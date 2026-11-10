@@ -1,0 +1,30 @@
+FIELD NOTES — Thomas Wilfred and lumia (carousel: 9 slides 1080x1350 + reel 1080x1920, 40.5s, silent)
+
+CAPTION
+In 1922, Thomas Wilfred played a concert of light in New York on the Clavilux, an instrument he built in 1919 to play moving color from a keyboard. He called the art lumia. The Museum of Modern Art commissioned his Lumia Suite, Opus 158 in 1963, and it played in its own dark room there until 1980, long after his death in 1968. Yale restored it in 2017.
+
+Lumia Suite, Opus 158 (1963–64), Thomas Wilfred. The Museum of Modern Art.
+
+#ARTLab #lightart #kineticart #thomaswilfred #mediaarthistory
+
+ALT TEXT (slide 1)
+Cream background with a single blue circle. Serif text reads: In 1922, an audience in New York sat in a theater and watched a concert played on light.
+
+HYPOTHESIS
+Prediction: the highest saves of the batch, because "a concert played on light" is the closest thing in art history to what ART Lab makes, and the 16-year run at MoMA is a detail people keep. If it trails the photo reels on saves, Field Notes need a photograph behind them. Share trigger: a story worth retelling + reference value.
+
+TAG IDEAS (⚠ VERIFY handles)
+MoMA @themuseumofmodernart ⚠ VERIFY, Yale University Art Gallery @yaleartgallery ⚠ VERIFY, Smithsonian American Art Museum @americanart ⚠ VERIFY
+
+SOURCES
+- Born 1889 in Denmark; Clavilux built 1919; first public performance 1922 in New York: Wikipedia, Thomas Wilfred — https://en.wikipedia.org/wiki/Thomas_Wilfred ; Hyperallergic (2018) — https://hyperallergic.com/419009/thomas-wilfred-lumia/ (1889, Denmark, Clavilux 1919)
+- "Light played by key"; played from a keyboard onto a screen: Hyperallergic; Wikipedia
+- Called the art lumia, a new art form: Wikipedia ("an eighth art"); Hyperallergic
+- Home models from the late 1920s, meant to be as common as the radio: Wikipedia (late 1920s home models); Hyperallergic (as common as the radio; 1930 Clavilux Junior)
+- MoMA commissioned Lumia Suite, Op. 158 in 1963 for its reopened galleries: Getty, "Keep It Moving?" case study — https://www.getty.edu/publications/keepitmoving/case-studies/4-snow/ ; Hyperallergic
+- On view from 1964 until 1980, then dismantled and stored: Wikipedia; The Art Newspaper (2017) — https://www.theartnewspaper.com/2017/06/01/yale-and-moma-team-up-to-resurrect-visionary-light-works (Getty gives 1981 for deinstallation; caption and slides say 1980)
+- Died 1968: Wikipedia; Hyperallergic
+- Restored at Yale, hand-blown replacement bulbs, Wilfred's technical manual; shown again 2017: Getty; The Art Newspaper; Wikipedia (Yale exhibition 2017)
+
+FLAGS
+- Kinetic light art is close to what ART Lab makes; nothing in the post names or hints at the product.
