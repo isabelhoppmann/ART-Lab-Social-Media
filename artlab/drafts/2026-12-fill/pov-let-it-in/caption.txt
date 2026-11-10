@@ -1,0 +1,22 @@
+POINT OF VIEW — LET IT IN (Thu Dec 10; carousel: cover + 3 AI images, 1080x1350)
+
+SLIDES: 1 cover (render_pov.py, no series label); 2 long modernist living room with low winter sun across the floor (Figma 35:2); 3 farmhouse kitchen table in low December sun, snow outside (35:3); 4 bedroom with a long slanted shaft of morning sun (35:4)
+
+CAPTION
+In December the sun crosses the sky so low that, through a clear south window, it reaches all the way to the back of a room. Passive solar houses are built around that: a roof overhang sized so the high summer sun stays off the glass and the low winter sun comes straight in. A south window with nothing in front of it does much of that work on its own.
+
+Images: ART Lab.
+
+#ARTLab #winterlight #passivesolar #interiordesign #architecture
+
+ALT TEXT
+1 Near-black background. Large cream serif capitals read LET IT IN, above a short line: In winter the sun sits low enough to reach the back of a room. Clear a path for it.
+2 A long modernist living room with a wall of glass, low winter sun laying long bright rectangles across a pale oak floor.
+3 A farmhouse kitchen with a scrubbed wooden table and a bowl of clementines in a band of low winter sun, snow outside the window.
+4 A calm bedroom with a low wooden bed and a long slanted shaft of morning sun across the wall.
+
+HYPOTHESIS
+Prediction: this earns more saves than LOOK UP, because it gives people something to do in their own rooms this month. If it doesn't, practical advice reads as less "ART Lab" than design history. Share trigger: practical + taste signal.
+
+SOURCES
+- Overhangs shade south glass from the high summer sun and admit the low winter sun: Penn State, EMSC 297, "Passive Solar Design: Overhangs and Shading" — https://www.e-education.psu.edu/emsc297/sites/www.e-education.psu.edu.emsc297/files/Passive%20Solar%20Design%20-%20Overhangs%20and%20Shading.pdf ; U.S. Department of Energy, Passive Solar Homes — https://www.energy.gov/node/1265816 (south windows unshaded in heating season; overhangs shade them in summer)

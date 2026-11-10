@@ -1,0 +1,29 @@
+CAROUSEL — the aluminum tree (Tue Dec 15; 4 AI images, 1080x1350)
+
+IMAGES (Figma YG3xn6OSYJHWHi9hD4zhuo, gemini-3.1-flash-image): 1 silver tree washed red in a walnut-paneled room (35:5); 2 silver tree in blue light by a glass wall (35:6); 3 close-up of green-lit branches with gold baubles (35:7, cropped to remove a background table lamp); 4 tree in amber light in a sunken living room (35:8, cropped to remove a floor lamp)
+
+CAPTION
+In 1959, the Aluminum Specialty Company of Manitowoc, Wisconsin, began selling the Evergleam, a holiday tree with shiny aluminum branches. String lights on metal branches risked a short circuit, so the trees were lit from the floor by a rotating color wheel that turned them red, blue, green and gold. The company made more than a million. Sales faded after A Charlie Brown Christmas (1965) cast them as gaudy and fake.
+
+Images: ART Lab.
+
+#ARTLab #aluminumtree #midcenturymodern #retrofuturism #holidaydecor
+
+ALT TEXT
+1 A silver aluminum tree glowing deep red in a dark 1960s room with walnut paneling and a boomerang table.
+2 A silver aluminum tree in cool blue light beside a wall of glass and a white sofa.
+3 Close-up of metallic tree branches lit green, with matte gold baubles.
+4 A silver aluminum tree glowing amber on a white pedestal in a sunken 1960s living room, reflected in a glass table.
+
+HYPOTHESIS
+Prediction: the most saves and sends of December, because it's a holiday object half the audience remembers from a grandparent's house, and the color wheel is a detail people didn't know the reason for. If it underperforms, holiday nostalgia reads as off-brand for ART Lab. Share trigger: nostalgia + a story worth retelling.
+
+SOURCES
+- 1959; Aluminum Specialty Company, Manitowoc, Wisconsin; Evergleam: The Henry Ford — https://www.thehenryford.org/collections/explore/articles/the-aluminum-christmas-tree-obsolete-or-timeless ; Mental Floss — https://www.mentalfloss.com/article/60849/short-life-and-awesome-resurgence-aluminum-christmas-tree ; Antique Trader — https://www.antiquetrader.com/articles/aluminum-christmas-trees-are-yuletide-cool
+- Lights on metal branches risked a short circuit / fire, so a floor color wheel was used: Antique Trader ("can cause a short circuit"); The Henry Ford ("fire hazard")
+- More than a million made: Antique Trader; The Henry Ford (more than one million, 1959–1969)
+- A Charlie Brown Christmas (1965) portrayed them as gaudy and fake and is blamed for the decline: The Henry Ford; Mental Floss
+
+FLAGS
+- Two frames were cropped to remove lamps the image model left in the background, despite the prompt.
+- The caption says "holiday tree"; the object's own name is "aluminum Christmas tree," used only in the TV title.
