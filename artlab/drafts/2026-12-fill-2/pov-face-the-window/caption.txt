@@ -3,7 +3,7 @@ POINT OF VIEW — FACE THE WINDOW (Sat Jan 16; carousel: cover + 3 AI images, 10
 SLIDES: 1 cover (render_pov.py); 2 linen reading chair and side table turned toward a snowy window (Figma 36:5); 3 farmhouse table pushed up to a wide window, snow outside (36:6); 4 walnut desk set in front of a tall window over winter rooftops (36:7)
 
 CAPTION
-In the Hall of Mirrors at Versailles, 17 tall windows look onto the gardens. On the wall facing them, 17 arches are filled with more than 350 mirrors, which throw the window light back across the 73-meter gallery. Jules Hardouin-Mansart built it between 1678 and 1684.
+In the 1660s, Venice held a monopoly on fine mirrors. Louis XIV's minister Colbert wanted France to make its own, so in 1665 he founded a royal mirror works and enticed Venetian glassworkers to Paris to staff it. Its first big order was the Hall of Mirrors at Versailles: 357 mirrors set in 17 arches, directly across from 17 windows onto the gardens.
 
 Images: ART Lab.
 
@@ -19,4 +19,6 @@ HYPOTHESIS
 Prediction: more sends than LET IT AGE, because it's a free change anyone can make this weekend and January light is on people's minds. If it trails, practical advice reads as less "ART Lab" than design history. Share trigger: practical + seasonal.
 
 SOURCES
-- 17 windows onto the gardens; mirrors in the 17 arches opposite (Versailles gives 357; Wikipedia "more than 350"); 73 m long; built 1678–1684 by Jules Hardouin-Mansart: Château de Versailles, The Hall of Mirrors — https://en.chateauversailles.fr/discover/estate/palace/hall-mirrors ; Wikipedia, Hall of Mirrors — https://en.wikipedia.org/wiki/Hall_of_Mirrors
+- Venice's monopoly on mirrors; Colbert founded the Manufacture royale de glaces de miroirs in October 1665 and enticed Venetian glassworkers to Paris: Wikipedia, Saint-Gobain — https://en.wikipedia.org/wiki/Saint-Gobain ; Bienenstock Furniture Library, "The History of Mirror: Through a Glass, Darkly" — https://www.furniturelibrary.com/mirror-glass-darkly/ (Colbert "managed to import 20 (living) Venetian glass workers")
+- The Hall of Mirrors was the factory's first major order, which broke the Venetian monopoly; it made the glass from 1678: Wikipedia, Hall of Mirrors — https://en.wikipedia.org/wiki/Hall_of_Mirrors ; Wikipedia, Saint-Gobain
+- 357 mirrors in 17 arches, opposite 17 windows onto the gardens: Château de Versailles, The Hall of Mirrors — https://en.chateauversailles.fr/discover/estate/palace/hall-mirrors ; Bienenstock Furniture Library ("17 mirror-clad arches, encompassing 357 mirrors")
