@@ -1,0 +1,28 @@
+POINT OF VIEW — LET IT AGE (Thu Jan 7; carousel: cover + 3 AI images, 1080x1350)
+
+SLIDES: 1 cover (render_pov.py, verdigris green ground); 2 old kitchen, darkened unlacquered brass faucet over worn marble, dented copper pan (Figma 36:2); 3 creased cognac leather armchair on worn oak boards in a book-lined study (36:3); 4 oak staircase with a hand-polished rail and brass stair rods (36:4)
+
+CAPTION
+When the Statue of Liberty was finished in 1886, its copper skin was brown, like a new penny. Salt air turned it green over the next 25 to 30 years. That green layer, the patina, protects the copper underneath, which is only about 3/32 of an inch thick, roughly two pennies stacked.
+
+Images: ART Lab.
+
+#ARTLab #patina #materials #interiordesign #designhistory
+
+ALT TEXT
+1 Cream serif capitals on a deep verdigris-green background read LET IT AGE, above a short line: Brass, oak, leather and marble darken and soften with use. Choose the things that will look better in ten years.
+2 An old kitchen sink of worn white marble under a darkened brass bridge faucet, a dented copper pan hanging on the tiles, morning light from a window.
+3 A creased, polished cognac leather armchair on wide, worn oak floorboards in a book-lined study beside a tall window.
+4 A narrow oak staircase with a dark, hand-polished rail and newel post and brass stair rods, daylight from a window above.
+
+HYPOTHESIS
+Prediction: more saves than FACE THE WINDOW, because "buy things that age well" is advice people keep and the Statue of Liberty fact is one they'll repeat. If it trails, the audience wants light more than materials. Share trigger: taste signal + a fact worth repeating.
+
+SOURCES
+- Completed 1886; originally brown, "like an American penny"; about thirty years to turn green; copper about 3/32 in. (2.5 mm), two pennies: National Park Service, Statue of Liberty FAQs — https://www.nps.gov/stli/faqs.htm
+- Originally brown; green from corrosion; patina forms a protective layer over the copper: OpenStax, Chemistry 2e, 17.6 Corrosion — https://openstax.org/books/chemistry-2e/pages/17-6-corrosion
+- Nearly 25 years before the patina was full: Copper Development Association, "Reclothing the First Lady of Metals" — https://archive.copper.org/education/liberty/liberty_reclothed1.php
+- Patina "protects Lady Liberty from wind and wear"; copper hammered to about 3/32 inch: Copper Development Association press release (2009) — https://archive.copper.org/about/pressreleases/2009/pr2009_July_1.php
+
+FLAGS
+- Slide 2: the soap bar has small AI lettering on it ("SAVON..."); legible at full size but may be garbled. Crop or swap if it bothers you.

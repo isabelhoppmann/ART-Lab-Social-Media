@@ -1,0 +1,26 @@
+REEL — fireworks (Fri Jan 1; 6 photos, 1080x1920, 18.0s, silent: add audio in Instagram)
+
+FRAMES (Carol M. Highsmith, Library of Congress, public domain), Winter Carnival fireworks over the mountain, Steamboat Springs, Colorado, in order: 1 gold chrysanthemum burst (highsm 37065); 2 rockets climbing through red smoke over pines (37063); 3 red and gold bursts over the ski hill (36384); 4 a fountain of red and pink sparks (37060); 5 white and pink burst through smoke (36403); 6 several bursts over the snowy valley (36391)
+
+CAPTION
+The colors in a firework come from metals. Strontium burns red, barium green, sodium yellow and copper blue. Blue is the hardest of the four to make.
+
+Happy New Year.
+
+Fireworks at the Winter Carnival in Steamboat Springs, Colorado. Photographs: Carol M. Highsmith, Library of Congress.
+
+#ARTLab #newyear #fireworks #chemistry #winter
+
+ALT TEXT (first frame)
+A huge gold firework burst, like a chrysanthemum, glowing over a dark line of pines against a red, smoky night sky.
+
+HYPOTHESIS
+Prediction: high reach on New Year's Day, when people are scrolling through other people's fireworks; the chemistry gives it a reason to save instead of scroll past. If it trails the New Year's Eve statement, the audience prefers our own voice to seasonal photography. Share trigger: timely + a fact worth repeating.
+
+SOURCES
+- Strontium red, barium green, sodium yellow, copper blue: USGS, "What minerals produce the colors in fireworks?" — https://www.usgs.gov/media/images/what-minerals-produce-colors-fireworks ; The World (PRI), "Red, white but rarely blue" (2019) — https://theworld.org/stories/2019/07/03/red-white-rarely-blue-science-fireworks-colors-explained ; Mental Floss — https://www.mentalfloss.com/science/chemistry/how-do-fireworks-get-their-colors
+- Blue is the hardest to produce: The World ("the most difficult color to produce"); Mental Floss ("red and green are the easiest colors to create, while blue is more difficult")
+- Photos: https://www.loc.gov/resource/highsm.37065/ , https://www.loc.gov/resource/highsm.37063/ , https://www.loc.gov/resource/highsm.36384/ , https://www.loc.gov/resource/highsm.37060/ , https://www.loc.gov/resource/highsm.36403/ , https://www.loc.gov/resource/highsm.36391/ ; Highsmith rights page (archived) — https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
+
+FLAGS
+- Photos, not AI rooms as first planned, so the Figma credits went to the two Points of View.

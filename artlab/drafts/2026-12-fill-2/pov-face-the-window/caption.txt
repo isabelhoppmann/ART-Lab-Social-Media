@@ -1,0 +1,22 @@
+POINT OF VIEW — FACE THE WINDOW (Sat Jan 16; carousel: cover + 3 AI images, 1080x1350)
+
+SLIDES: 1 cover (render_pov.py); 2 linen reading chair and side table turned toward a snowy window (Figma 36:5); 3 farmhouse table pushed up to a wide window, snow outside (36:6); 4 walnut desk set in front of a tall window over winter rooftops (36:7)
+
+CAPTION
+In the Hall of Mirrors at Versailles, 17 tall windows look onto the gardens. On the wall facing them, 17 arches are filled with more than 350 mirrors, which throw the window light back across the 73-meter gallery. Jules Hardouin-Mansart built it between 1678 and 1684.
+
+Images: ART Lab.
+
+#ARTLab #winterlight #versailles #interiordesign #designhistory
+
+ALT TEXT
+1 Cream serif capitals on a near-black background read FACE THE WINDOW, above a short line: In winter the best seat in the room is the one turned toward the light. Move the chair.
+2 A linen armchair with a folded wool throw and a small round table holding an open book, both turned to a deep-set window with snowy trees outside.
+3 A long scrubbed wooden table with two spindle chairs pushed up against a wide multi-pane window onto a snowy field, a jug of bare branches on the table.
+4 A walnut desk and woven chair set directly in front of a tall French window looking over snowy rooftops and a church spire.
+
+HYPOTHESIS
+Prediction: more sends than LET IT AGE, because it's a free change anyone can make this weekend and January light is on people's minds. If it trails, practical advice reads as less "ART Lab" than design history. Share trigger: practical + seasonal.
+
+SOURCES
+- 17 windows onto the gardens; mirrors in the 17 arches opposite (Versailles gives 357; Wikipedia "more than 350"); 73 m long; built 1678–1684 by Jules Hardouin-Mansart: Château de Versailles, The Hall of Mirrors — https://en.chateauversailles.fr/discover/estate/palace/hall-mirrors ; Wikipedia, Hall of Mirrors — https://en.wikipedia.org/wiki/Hall_of_Mirrors
