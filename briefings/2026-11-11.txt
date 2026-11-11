@@ -1,0 +1,19 @@
+Morning Briefing November 11, 2026
+
+=== ROBOTICS & AI ===
+- Amazon-owned Ring launched Ring Robotics on November 10, unveiling a home-patrolling security drone and a commercial security robot for enterprises. https://techcrunch.com/2026/11/10/ring-known-for-its-doorbell-cameras-launches-a-home-security-drone-and-an-enterprise-security-robot/
+
+=== RESEARCH ===
+- RoboScript (arXiv:2611.12885, submitted November 9, 2026) proposes World In-Context Learning for robot manipulation, letting a frozen model adapt to new tasks by storing simulation-rehearsed feedback in its context rather than updating weights. https://arxiv.org/abs/2611.12885
+- The CoRL 2026-accepted paper arXiv:2611.12804 (submitted November 9, 2026) proposes benchmarking real-world robot manipulation through stochastic challenges—interactive perturbations stress-tested across two labs and two robot platforms. https://arxiv.org/abs/2611.12804
+
+=== FUNDING & INVESTMENT ===
+- Path Robotics closed a $300 million Series E at a $2.45 billion valuation led by Georgian on November 10, 2026, to scale its physical-AI welding and manufacturing platform following a reported 17-fold revenue increase over 18 months. https://roboticsandautomationnews.com/2026/11/10/path-robotics-raises-stunning-300-million-at-2-45-billion-valuation-to-expand-physical-ai-in-manufacturing/106929/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- West Coast Craft, a recurring design-maker fair, returns to Fort Mason's Festival Pavilion in San Francisco on November 21-22 with 275+ independent artists and designers; free admission. https://westcoastcraft.com/
+
+#KEYS: ring-robotics-launch, roboscript-in-context-robot-policy, corl2026-stochastic-manip-bench, path-robotics-series-e, west-coast-craft-sf-nov2026
