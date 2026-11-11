@@ -1,19 +1,20 @@
-POINT OF VIEW — LET IT AGE (Thu Jan 7; carousel: cover + 3 AI images, 1080x1350)
+POINT OF VIEW — LET IT AGE (Thu Jan 7; carousel: cover + Statue of Liberty photo + 3 AI images, 1080x1350)
 
-SLIDES: 1 cover (render_pov.py, verdigris green ground); 2 old kitchen, darkened unlacquered brass faucet over worn marble, dented copper pan (Figma 36:2); 3 creased cognac leather armchair on worn oak boards in a book-lined study (36:3); 4 oak staircase with a hand-polished rail and brass stair rods (36:4)
+SLIDES: 1 cover (render_pov.py, verdigris green ground); 2 Statue of Liberty, green copper against blue sky (Carol M. Highsmith, Library of Congress, highsm 12467); 3 old kitchen, darkened unlacquered brass faucet over worn marble, dented copper pan (Figma 36:2); 4 creased cognac leather armchair on worn oak boards in a book-lined study (36:3); 5 oak staircase with a hand-polished rail and brass stair rods (36:4)
 
 CAPTION
 When the Statue of Liberty was finished in 1886, its copper skin was brown, like a new penny. Salt air turned it green over the next 25 to 30 years. That green layer, the patina, protects the copper underneath, which is only about 3/32 of an inch thick, roughly two pennies stacked.
 
-Images: ART Lab.
+Images: ART Lab. Statue of Liberty photograph: Carol M. Highsmith, Library of Congress.
 
 #ARTLab #patina #materials #interiordesign #designhistory
 
 ALT TEXT
 1 Cream serif capitals on a deep verdigris-green background read LET IT AGE, above a short line: Brass, oak, leather and marble darken and soften with use. Choose the things that will look better in ten years.
-2 An old kitchen sink of worn white marble under a darkened brass bridge faucet, a dented copper pan hanging on the tiles, morning light from a window.
-3 A creased, polished cognac leather armchair on wide, worn oak floorboards in a book-lined study beside a tall window.
-4 A narrow oak staircase with a dark, hand-polished rail and newel post and brass stair rods, daylight from a window above.
+2 The Statue of Liberty from below, her green copper face, crown and raised torch against a clear blue sky.
+3 An old kitchen sink of worn white marble under a darkened brass bridge faucet, a dented copper pan hanging on the tiles, morning light from a window.
+4 A creased, polished cognac leather armchair on wide, worn oak floorboards in a book-lined study beside a tall window.
+5 A narrow oak staircase with a dark, hand-polished rail and newel post and brass stair rods, daylight from a window above.
 
 HYPOTHESIS
 Prediction: more saves than FACE THE WINDOW, because "buy things that age well" is advice people keep and the Statue of Liberty fact is one they'll repeat. If it trails, the audience wants light more than materials. Share trigger: taste signal + a fact worth repeating.
@@ -24,5 +25,7 @@ SOURCES
 - Nearly 25 years before the patina was full: Copper Development Association, "Reclothing the First Lady of Metals" — https://archive.copper.org/education/liberty/liberty_reclothed1.php
 - Patina "protects Lady Liberty from wind and wear"; copper hammered to about 3/32 inch: Copper Development Association press release (2009) — https://archive.copper.org/about/pressreleases/2009/pr2009_July_1.php
 
+- Statue of Liberty photo: https://www.loc.gov/resource/highsm.12467/ ; Highsmith rights page (archived) — https://webarchive.library.unt.edu/web/20201218043747/https://www.loc.gov/rr/print/res/482_high.html
+
 FLAGS
-- Slide 2: the soap bar has small AI lettering on it ("SAVON..."); legible at full size but may be garbled. Crop or swap if it bothers you.
+- Slide 3: the soap bar has small AI lettering on it ("SAVON..."); legible at full size but may be garbled. Crop or swap if it bothers you.
