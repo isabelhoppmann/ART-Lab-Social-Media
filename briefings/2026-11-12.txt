@@ -1,0 +1,18 @@
+Morning Briefing November 12, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- OopsieRecover (arXiv 2611.08462, Nov 5) proposes learning transferable semantic corrections for VLA robot policies so deployed robots recover from task failures without additional retraining, validated on real-world manipulation benchmarks. https://arxiv.org/abs/2611.08462
+
+=== FUNDING & INVESTMENT ===
+- Agile Robots closed a $500M Series F led by SoftBank at an $8.5B valuation, announced November 12, 2026, with Nvidia, Hitachi, and T.Capital participating to fund expansion of its humanoid AI lineup. https://www.bloomberg.com/news/articles/2026-11-12/softbank-backs-agile-robots-in-500-million-humanoid-push
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- Renegade Craft SF Winter returns to Fort Mason Festival Pavilion November 14-15 (11am-5pm), featuring 250+ curated makers and artists; free entry with a $5 suggested donation. https://www.renegadecraft.com/event/san-francisco-winter/
+
+#KEYS: oopsie-recover-vla, agile-robots-series-f, renegade-craft-sf-nov2026
