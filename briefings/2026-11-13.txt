@@ -1,0 +1,15 @@
+Morning Briefing November 13, 2026
+
+=== ROBOTICS & AI ===
+- No qualifying items in the last 48 hours
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- Google DeepMind introduced Gemini Robotics 2.5, its most capable vision-language-action model, rolling out to partners including Apptronik, Boston Dynamics and Agile Robots, with a Mercedes-Benz parts-sorting pilot reporting 96% success (coverage dated November 11, 2026). https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model/
+
+#KEYS: gemini-robotics-2-5-launch
