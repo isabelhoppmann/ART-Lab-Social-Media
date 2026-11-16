@@ -419,9 +419,26 @@ def pexels_videos(query, used_ids):
     return out
 
 
+def pexels_video_by_id(vid):
+    """A specific Pexels clip someone picked by hand (post["broll_id"])."""
+    req = urllib.request.Request(f"https://api.pexels.com/videos/videos/{int(vid)}",
+                                 headers={"Authorization": PEXELS_KEY, **UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        v = json.load(r)
+    files = [f for f in v.get("video_files", []) if f.get("width") and f.get("height") and f["height"] > f["width"]]
+    good = [f for f in files if f["width"] >= 1080] or sorted(files, key=lambda f: -f["width"])
+    if not good:
+        raise RuntimeError(f"pexels video {vid} has no portrait file")
+    best = sorted(good, key=lambda f: f["width"])[0] if good[0]["width"] >= 1080 else good[0]
+    return {"id": v["id"], "url": best["link"], "page": v.get("url", ""), "duration": v.get("duration", 0),
+            "query": f"pinned id {vid}"}
+
+
 def pick_broll(post):
     if not PEXELS_KEY:
         raise RuntimeError("PEXELS_KEY not set")
+    if post.get("broll_id"):
+        return pexels_video_by_id(post["broll_id"])
     used_ids = {u.get("id") for u in load_used_broll().get("used", [])}
     queries = [q for q in [post.get("broll_query")] + post.get("broll_alternates", []) if q] + CALM_FALLBACKS
     for q in queries:
