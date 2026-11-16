@@ -214,7 +214,7 @@ def main():
             bg = get_curated_photo(PEXELS_KEY, page=random.randint(1, 8))
             make_quote_image(quote, attribution, out_path, bg)
             verify(out_path)
-            post["media_url"] = f"https://cdn.jsdelivr.net/gh/{REPO}@main/posts/{week}/quote_{n}.jpg"
+            post["media_url"] = f"https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/{week}/quote_{n}.jpg"
             post["slack_posted"] = False
             post["revised"] = True
             post.pop("needs_render", None)

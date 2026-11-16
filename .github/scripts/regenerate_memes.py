@@ -438,7 +438,7 @@ def main():
             post["skipped"] = False
             post["text_style"] = style       # pin it so a later re-render matches
             post.pop("skip_reason", None)
-            post["media_url"] = f"https://cdn.jsdelivr.net/gh/{REPO}@main/posts/{week}/meme_{n}.mp4"
+            post["media_url"] = f"https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/{week}/meme_{n}.mp4"
             post["slack_posted"] = False           # so it re-posts into the thread
             if needs_feedback_render:
                 post["revised"] = True             # so the Slack comment is marked "Updated"

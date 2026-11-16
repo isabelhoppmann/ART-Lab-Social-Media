@@ -516,7 +516,9 @@ RENDERERS = {"text card": render_text_card, "carousel": render_carousel,
 
 
 def cdn(rel):
-    return f"https://cdn.jsdelivr.net/gh/{REPO}@main/{rel}"
+    # GitHub Pages, not jsDelivr: jsDelivr stopped fetching this repo (2026-11-16,
+    # "Failed to fetch ... from GitHub" once the repo outgrew its size limit).
+    return f"https://isabelhoppmann.github.io/ART-Lab-Social-Media/{rel}"
 
 
 def main():

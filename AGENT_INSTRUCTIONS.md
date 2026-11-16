@@ -1204,7 +1204,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Caption: `ig_caption` (Instagram caption)
 - FB Caption: `fb_caption` (Facebook caption)
 - Hashtags: the meme hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_1.mp4`
+- Media URL: `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/meme_1.mp4`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
 - Format: the post's `format_slug` (CONTENT SCOPE §5)
@@ -1219,7 +1219,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Caption: `ig_caption`
 - FB Caption: `fb_caption`
 - Hashtags: the meme hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/meme_2.mp4`
+- Media URL: `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/meme_2.mp4`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
 - Format: the post's `format_slug` (CONTENT SCOPE §5)
@@ -1234,7 +1234,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Caption: `ig_caption` (Instagram caption)
 - FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_1.jpg`
+- Media URL: `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/quote_1.jpg`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
 - Format: the post's `format_slug` (CONTENT SCOPE §5)
@@ -1249,7 +1249,7 @@ For each post, call `notion-create-pages` with parent page ID `468afa8e-3a1a-49d
 - Caption: `ig_caption` (Instagram caption)
 - FB Caption: `fb_caption`
 - Hashtags: the quote hashtags
-- Media URL: `https://cdn.jsdelivr.net/gh/isabelhoppmann/ART-Lab-Social-Media@main/posts/[DATE]/quote_2.jpg`
+- Media URL: `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/quote_2.jpg`
 - Status: `Draft`
 - Hypothesis: the post's one-sentence `hypothesis`
 - Format: the post's `format_slug` (CONTENT SCOPE §5)
@@ -1317,7 +1317,7 @@ The `post-social-to-slack` Action will render `meme_library/clips/<meme_slug>.mp
 **`preview_url` MUST be the GitHub Pages URL, not jsDelivr.** Use exactly this format:
 `https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/`
 
-Reason: jsDelivr serves `.html` with `Content-Type: text/plain` (anti-abuse policy), so reviewers clicking a jsdelivr index.html link see raw HTML source instead of the rendered preview. GitHub Pages serves the same file with the correct `text/html` type. Keep `media_url` on jsDelivr — that policy only affects HTML, not `.mp4` or `.jpg`.
+Reason: jsDelivr serves `.html` with `Content-Type: text/plain` (anti-abuse policy), so reviewers clicking a jsdelivr index.html link see raw HTML source instead of the rendered preview. GitHub Pages serves the same file with the correct `text/html` type. `media_url` also uses GitHub Pages (`https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/[DATE]/<file>`): since 2026-11-16 jsDelivr can no longer fetch this repo, so jsDelivr media links 404. Never use a cdn.jsdelivr.net/gh link for anything.
 
 Add this file to the bundle instead of pushing it (leave `slack_thread_ts` = null —
 the Action sets it after it posts):
