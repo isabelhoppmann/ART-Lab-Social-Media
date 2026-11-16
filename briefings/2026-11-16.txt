@@ -1,0 +1,15 @@
+Morning Briefing November 16, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA, where ART Lab is an Inception member and builds on Jetson, is in leadership turmoil: Jensen Huang resigned as CEO and director on November 12 per an 8-K (CFO Colette Kress is interim CEO and the board has begun a permanent CEO search), and as of November 16 CNBC reports the board's investigation is continuing while calls for Huang to return are growing. https://www.cnbc.com/2026/11/16/nvidia-jensen-huang-return-tech.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: nvidia-huang-resignation
