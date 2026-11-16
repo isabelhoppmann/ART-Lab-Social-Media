@@ -208,7 +208,8 @@
         },
         {
           "text": "How much of your energy is going to things that actually matter to you this week?",
-          "sticker": "slider"
+          "sticker": "slider",
+          "sticker_emoji": "🔋"
         }
       ],
       "best_time": "Wednesday 2–4 PM PST",

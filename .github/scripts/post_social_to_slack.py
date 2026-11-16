@@ -304,6 +304,8 @@ for post in posts:
         elif post_type == "story":
             for i, fr in enumerate(post.get("frames") or [], 1):
                 st = f" → add *{fr.get('sticker')}* sticker" if fr.get("sticker") else ""
+                if fr.get("sticker_emoji"):
+                    st += f" (emoji: {fr['sticker_emoji']})"
                 head += f"{i}. {fr.get('text', '')}{st}\n"
         comment = (f"{head}\n*IG:* {post.get('ig_caption', '') or '_(Story: no caption)_'}"
                    f"\n`{post.get('hashtags', '')}`{hypothesis_line(post)}")

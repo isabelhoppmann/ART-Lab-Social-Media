@@ -54,6 +54,8 @@ def notes(post):
             if st:
                 opts = fr.get("sticker_options")
                 extra = f' — options: {esc(" / ".join(opts))}' if opts else ""
+                if fr.get("sticker_emoji"):
+                    extra += f" — use the {esc(fr['sticker_emoji'])} emoji"
                 out.append(f"Frame {i}: add a <b>{esc(st)}</b> sticker in the empty middle{extra}.")
     if t == "repost":
         if post.get("url"):

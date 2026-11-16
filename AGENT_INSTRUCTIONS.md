@@ -848,7 +848,7 @@ Fields:
 - `frames` — a list of 2–3 frames, each `{"text": "...", "sticker": "poll"|"question"|"slider", "sticker_options": [...]}`:
   - Frame 1: a poll. `text` is the question (under 16 words), `sticker: "poll"`, `sticker_options`: two short options (under 4 words each, e.g. ["Yes, mostly", "Not even close"]).
   - Frame 2: a question box. `text` invites an anonymous answer (e.g. "What's one thing about your future you're scared to say out loud?"), `sticker: "question"`, optional `kicker: "Anonymous, always"`.
-  - Optional frame 3: an emoji slider (`sticker: "slider"`) on how the week feels.
+  - Optional frame 3: an emoji slider (`sticker: "slider"`) on how the week feels. A slider frame MUST also set `sticker_emoji` to the one emoji Isabel should put on the slider, chosen to match the question (e.g. 🔋 for energy, 🔥 for motivation, 😮‍💨 for stress). Never leave it for her to pick.
 - `best_time`, `hypothesis`. No `ig_caption`, `fb_caption` or `hashtags` — Stories don't have them.
 - Never ask for anything identifying (names, workplaces, cities, photos).
 
