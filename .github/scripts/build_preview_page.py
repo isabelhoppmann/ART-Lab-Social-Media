@@ -64,7 +64,8 @@ def notes(post):
 def post_block(post):
     t = post.get("post_type") or ""
     series = f'<span class="series">{esc(post.get("series"))}</span>' if post.get("series") else ""
-    parts = [f'<div class="post"><h2>{esc(post.get("label"))} <span class="type">{esc(t)}</span>{series}</h2>',
+    anchor = re.sub(r"[^a-z0-9]+", "-", (post.get("label") or "").lower()).strip("-")
+    parts = [f'<div class="post" id="{anchor}"><h2>{esc(post.get("label"))} <span class="type">{esc(t)}</span>{series}</h2>',
              media_block(post), notes(post)]
     if post.get("ig_caption"):
         parts.append(f'<p class="caption"><b>IG:</b> {esc(post["ig_caption"])}</p>')

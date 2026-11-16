@@ -826,7 +826,9 @@ Rules:
 
 ## Step 2G: Reels (added 2026-11-05)
 
-`Reel 1`, **always Monday** (Isabel adds the audio while scheduling the week), **Quarter-Life Check-In** series. On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
+`Reel 1`, **always Monday** (Isabel adds the audio while scheduling the week), **Quarter-Life Check-In** series.
+
+**Pinned by Isabel for the week of 2026-11-23 only (Thanksgiving week):** Reel 1 must be this concept. `reel_style: "pov"`, `overlay_text`: "POV: your aunt asks what you actually do for work and you've been rehearsing since October", `broll_query`: "woman forced smile dinner table" (alternates: "woman awkward smile family dinner", "woman nervous smile holiday table"). Write the captions to match. After that week, ignore this note. Isabel's feedback on the 2026-11-16 Reel: she couldn't tell what "POV: you're doing the math on your whole year and it's still November" meant. A Reel overlay has to land for someone who has never heard of the trend it rides, so don't build one around niche trend jargon. On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
 
 Fields:
 - `reel_style` — `"pov"` or `"quote"`.

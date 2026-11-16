@@ -10,7 +10,7 @@ regenerate_memes.py.
 Upserts by Name ("Quote 1 — 2026-10-19"). Updates captions, hashtags, link,
 hypothesis, format and best time; never touches Status, Posted At, Permalink or
 Outcome. Posts nothing anywhere else. Env: NOTION_TOKEN."""
-import json, os, urllib.request
+import json, os, re, urllib.request
 
 TOKEN = os.environ.get("NOTION_TOKEN", "")
 DB = "24e014f9-d62c-43b2-b474-44072b7eff95"   # Zenie Posts
@@ -46,6 +46,11 @@ def main():
             continue
         name = f"{post.get('label', '')} — {week}"
         link = post.get("url") if ptype == "Repost" else post.get("media_url")
+        # Carousels and Story sets have several images; a link to the first file
+        # alone hides the rest, so point at this post's section of the preview page.
+        if ptype != "Repost" and len(post.get("media_urls") or []) > 1:
+            anchor = re.sub(r"[^a-z0-9]+", "-", (post.get("label") or "").lower()).strip("-")
+            link = f"https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/{week}/#{anchor}"
         props = {
             "IG Caption": text(post.get("ig_caption")),
             "FB Caption": text(post.get("fb_caption")),
