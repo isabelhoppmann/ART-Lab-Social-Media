@@ -1,0 +1,16 @@
+Morning Briefing November 18, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA, where ART Lab is an Inception member and builds on Jetson, reported fiscal Q3 2027 results on November 17, its first report since Jensen Huang's exit: revenue of $115.8 billion (up 103% year over year), data center revenue of $107.6 billion, guidance of about $130 billion for Q4, and word from the board chair that it will not reinstate Huang as CEO. https://thehill.com/business/6226457-nvidia-q3-earnings-strong/
+- Anthropic is set to price its record-scale IPO today, November 18 (825 million shares at $70 to $78, ticker ANT), with Nasdaq trading expected to begin November 19. https://finance.yahoo.com/technology/article/anthropic-ipo-stock-price-revealed-tomorrow-will-begin-trading-nov-19-195110850.html
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+#KEYS: nvidia-q3-fy27-earnings, anthropic-ipo
