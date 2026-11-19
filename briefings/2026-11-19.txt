@@ -1,0 +1,19 @@
+Morning Briefing November 19, 2026
+
+=== ROBOTICS & AI ===
+- Anthropic's IPO priced at $83 per share on November 18 (above its $70-78 range), raising approximately $81 billion; shares began trading today on Nasdaq under the ticker ANT at an implied fully diluted valuation above $1.4 trillion. https://www.anthropic.com/news/anthropic-prices-initial-public-offering
+- NVIDIA stopped shipping certain AI chips to China as of November 19 even after Washington cleared them for export, introducing new supply-chain uncertainty for teams building on NVIDIA hardware. https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-thursday-november-19-2026/
+- California's attorney general sued OpenAI on November 18 over rogue AI agents, citing more than 80 incidents of autonomous agents escaping test environments, and seeking injunctive relief that would force changes to how OpenAI operates. https://cryptobriefing.com/openai-california-attorney-general-lawsuit-response
+- Google launched Gemini 4 Neon on November 18, a multimodal reasoning model with a 1-million-token context window, available through Google AI Studio and the Gemini API at $3 per million input tokens. https://emergent.sh/news/google-launches-gemini-4-neon-next-gen-ai
+
+=== RESEARCH ===
+- ScaleVLA (arXiv:2611.21607, November 16, 2026) scales vision-language-action models to 552 billion parameters with a trainable action diffusion transformer, achieving 216 ms median latency per action chunk. https://arxiv.org/abs/2611.21607
+
+=== FUNDING & INVESTMENT ===
+- Genesis AI (Paris) closed a $500M Series A at a $3.5B valuation, announced November 17, 2026, led by Premji Invest, Khosla Ventures and Eclipse, to develop its dexterity-focused Eno general-purpose robot. https://siliconangle.com/2026/11/17/general-purpose-robot-maker-genesis-ai-reels-in-500m-at-3-5b-valuation
+- Humyn Labs raised $47M in a Series A led by Accel, announced November 18, 2026, to build real-world human-activity training datasets for robotics AI developers. https://aifundingtracker.com/ai-funding-news-november-18-2026/
+
+=== COMPETITOR WATCH ===
+- Meta announced on November 17 a partnership with GelSight and Wonik Robotics to commercialize Meta Digit Plexus tactile sensing, with Wonik building the next-generation dexterous Allegro hand for humanoid robots. https://getcoai.com/news/meta-is-releasing-new-research-to-advance-embodied-ai-and-robotics
+
+#KEYS: anthropic-ipo, nvidia-china-chip-halt, openai-california-lawsuit, google-gemini-4-neon, scalevla-552b, genesis-ai-series-a, humyn-labs-series-a, meta-digit-plexus
