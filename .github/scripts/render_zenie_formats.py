@@ -365,27 +365,146 @@ def render_carousel(post, week, n):
 
 
 # ── Story frames ──────────────────────────────────────────────────────────────
+CURRENT_STATE = {}   # set in main(); feature frames look up the week's other posts here
+
+
+def pexels_photo(query, used_ids):
+    """A portrait Pexels photo for a visual Story frame, cropped server-side to 1080x1920."""
+    url = "https://api.pexels.com/v1/search?" + urllib.parse.urlencode(
+        {"query": query, "orientation": "portrait", "per_page": 15})
+    req = urllib.request.Request(url, headers={"Authorization": PEXELS_KEY, **UA})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        data = json.load(r)
+    for p in data.get("photos", []):
+        if p["id"] in used_ids or p.get("width", 0) < 1080:
+            continue
+        src = p["src"]["original"] + "?auto=compress&cs=tinysrgb&fit=crop&w=1080&h=1920"
+        req = urllib.request.Request(src, headers=UA)
+        with urllib.request.urlopen(req, timeout=60) as r:
+            img = Image.open(io.BytesIO(r.read())).convert("RGB")
+        return img, {"id": p["id"], "page": p.get("url", ""), "query": query}
+    return None, None
+
+
+def story_photo_bg(fr, week, label, used_ids):
+    """Full-bleed photo, darkened so white text reads. Falls back to the gradient card."""
+    if not PEXELS_KEY:
+        return None, None
+    for q in [fr.get("photo_query")] + list(fr.get("photo_alternates") or []):
+        if not q:
+            continue
+        try:
+            img, meta = pexels_photo(q, used_ids)
+        except Exception as e:
+            print(f"  (pexels photo '{q}' failed: {e})")
+            continue
+        if img:
+            img = img.resize((W, H_TALL)) if img.size != (W, H_TALL) else img
+            shade = Image.new("RGB", (W, H_TALL), (30, 16, 52))
+            img = Image.blend(img, shade, 0.5)
+            used_ids.add(meta["id"])
+            return img, meta
+    return None, None
+
+
+def gradient_bg(seed, i):
+    img = Image.new("RGB", (W, H_TALL), LILAC_BG)
+    grad = Image.linear_gradient("L").resize((W, H_TALL))
+    img = Image.composite(Image.new("RGB", (W, H_TALL), BLUSH_BG), img, grad)
+    return watercolor(img, ("tl", "br"), 55, seed + i)
+
+
+def feature_frame(fr, week, seed, i):
+    """A passive frame that puts one of this week's feed posts in the Story ("New post")."""
+    target = (fr.get("feature_label") or "").strip().lower()
+    other = next((p for p in CURRENT_STATE.get("posts", []) if (p.get("label") or "").lower() == target), None)
+    rel = None
+    for u in (other or {}).get("media_urls") or ([other["media_url"]] if other and other.get("media_url") else []):
+        cand = "posts/" + u.split("/posts/", 1)[1] if "/posts/" in u else None
+        if cand and cand.lower().endswith((".jpg", ".png")) and os.path.exists(cand):
+            rel = cand
+            break
+    if not rel:
+        return None
+    img = gradient_bg(seed, i)
+    d = ImageDraw.Draw(img)
+    pad = 100
+    y = kicker(d, fr.get("kicker") or "New post", pad, 230, VIOLET, align="center", box_w=W - 2 * pad)
+    post_img = Image.open(rel).convert("RGB")
+    max_w, max_h = W - 2 * 110, 1180
+    scale = min(max_w / post_img.width, max_h / post_img.height)
+    post_img = post_img.resize((int(post_img.width * scale), int(post_img.height * scale)))
+    x = (W - post_img.width) // 2
+    top = y + 50
+    shadow = Image.new("RGB", (post_img.width + 24, post_img.height + 24), (200, 185, 225)).filter(ImageFilter.GaussianBlur(10))
+    img.paste(shadow, (x - 6, top + 6))
+    img.paste(post_img, (x, top))
+    if fr.get("text"):
+        f, lines, lh = fit(d, fr["text"], SERIF_BOLD, W - 2 * pad, 200, 56, 40, 1.2)
+        draw_lines(d, lines, f, pad, top + post_img.height + 50, lh, INK, "center", W - 2 * pad)
+    wordmark(d, pad, H_TALL - 200, INK, 40, "center", W - 2 * pad)
+    return img
+
+
 def render_story(post, week, n):
+    """Story frames. Each frame has a `kind`:
+       - "photo": full-bleed Pexels photo (photo_query) with short white text. Passive, or carries a sticker.
+       - "feature": shows one of this week's feed posts (feature_label) under a "New post" kicker. Passive.
+       - "card" (default, the old look): text on the lilac gradient. Used for a sticker frame without a photo.
+       Stickers (poll / slider / question) are added by hand in the app; frames that have one keep the
+       middle band empty for it."""
     frames = post.get("frames") or []
     if not frames:
         raise RuntimeError("story has no frames")
     out = []
     seed = seed_for(week, post.get("label", ""))
-    for i, fr in enumerate(frames[:5], 1):
-        img = Image.new("RGB", (W, H_TALL), LILAC_BG)
-        grad = Image.linear_gradient("L").resize((W, H_TALL))
-        img = Image.composite(Image.new("RGB", (W, H_TALL), BLUSH_BG), img, grad)
-        img = watercolor(img, ("tl", "br"), 55, seed + i)
-        d = ImageDraw.Draw(img)
+    used_ids = {u.get("id") for u in load_used_broll().get("used", [])}
+    photos = []
+    for i, fr in enumerate(frames[:6], 1):
+        kind = (fr.get("kind") or ("photo" if fr.get("photo_query") else "card")).lower()
+        has_sticker = bool(fr.get("sticker"))
+        img = None
         pad = 100
-        y = kicker(d, fr.get("kicker") or post.get("series"), pad, 300, VIOLET, align="center", box_w=W - 2 * pad)
-        f, lines, lh = fit(d, fr.get("text", ""), SERIF_BOLD, W - 2 * pad, 560, 84, 52, 1.2)
-        y = draw_lines(d, lines, f, pad, y + 30, lh, INK, "center", W - 2 * pad)
-        # the band from ~y+60 to ~y+560 is left empty for the poll / question sticker
-        wordmark(d, pad, H_TALL - 330, INK, 40, "center", W - 2 * pad)
+        if kind == "feature":
+            img = feature_frame(fr, week, seed, i)
+            if img is None:
+                print(f"  (feature frame {i}: no image for {fr.get('feature_label')!r}; using a text card)")
+                kind = "card"
+        if kind == "photo":
+            bg, meta = story_photo_bg(fr, week, post.get("label", ""), used_ids)
+            if bg is not None:
+                fr["photo"] = meta
+                photos.append(meta)
+                img = bg
+                d = ImageDraw.Draw(img)
+                top = 300 if has_sticker else 760
+                y = kicker(d, fr.get("kicker") or ("" if not has_sticker else post.get("series")), pad, top,
+                           CREAM, align="center", box_w=W - 2 * pad)
+                f, lines, lh = fit(d, fr.get("text", ""), SERIF_BOLD, W - 2 * pad, 480, 84, 52, 1.2)
+                draw_lines(d, lines, f, pad, y + 30, lh, (255, 255, 255), "center", W - 2 * pad)
+                wordmark(d, pad, H_TALL - 330, (255, 255, 255), 40, "center", W - 2 * pad)
+            else:
+                kind = "card"
+        if img is None:   # card
+            img = gradient_bg(seed, i)
+            d = ImageDraw.Draw(img)
+            top = 300 if has_sticker else 700
+            y = kicker(d, fr.get("kicker") or post.get("series"), pad, top, VIOLET, align="center", box_w=W - 2 * pad)
+            f, lines, lh = fit(d, fr.get("text", ""), SERIF_BOLD, W - 2 * pad, 560, 84, 52, 1.2)
+            draw_lines(d, lines, f, pad, y + 30, lh, INK, "center", W - 2 * pad)
+            # the band from ~y+60 to ~y+560 is left empty for the poll / question sticker
+            wordmark(d, pad, H_TALL - 330, INK, 40, "center", W - 2 * pad)
+        fr["kind"] = kind
         rel = f"posts/{week}/story_{n}_{i:02d}.jpg"
         save_jpg(img, rel)
         out.append(rel)
+    if photos:   # don't reuse Story photos in later weeks
+        data = load_used_broll()
+        for m in photos:
+            if not any(u.get("id") == m["id"] for u in data["used"]):
+                data["used"].append({"id": m["id"], "page": m["page"], "week": week,
+                                     "label": post.get("label", ""), "kind": "story_photo"})
+        json.dump(data, open(USED_BROLL_PATH, "w"), indent=2)
     return out
 
 
@@ -540,9 +659,11 @@ def cdn(rel):
 
 def main():
     state = json.load(open(STATE_PATH))
+    CURRENT_STATE.update(state)
     week = state.get("week_date", "")
     changed = False
-    for post in state.get("posts", []):
+    posts = sorted(state.get("posts", []), key=lambda p: (p.get("post_type") or "").lower() == "story")
+    for post in posts:
         ptype = (post.get("post_type") or "").strip().lower()
         if ptype not in HANDLED:
             continue

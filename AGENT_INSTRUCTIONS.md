@@ -74,7 +74,7 @@ Each week ships **six feed posts on six different days, plus one Story set**:
 | Thu | Text Card built to be sent | `Text Card 1` | Sends (shares to DMs), the strongest reach signal |
 | Fri | Repost | `Repost 1` | Community and credit to creators in the niche |
 | Sun | **Sunday Scaries** series: a finish-the-sentence Text Card, a quote Reel, or a Quote Image | `Text Card 2`, `Reel 2` or `Quote 1` | Comments from existing followers; a recognizable weekly ritual |
-| Wed or Thu | Story set (2–3 frames: poll + question box) | `Story 1` | Talking with current followers; answers feed next week's carousel |
+| Wed or Thu | Story set (4–5 frames: mostly visual and passive, one poll or slider, optional light question box) | `Story 1` | Staying in followers' Story tray, sending them to the week's feed posts; poll results feed next week's carousel |
 
 - **At least one Reel every week is scheduled on Monday** (Isabel's rule, 2026-11-05): she adds the trending audio by hand while scheduling the week on Monday, so `Reel 1` always gets a Monday `best_time` (e.g. "Monday 7–9 PM PST"). A second Reel (the Sunday Scaries quote Reel) is fine on its own day.
 - Rotate the Sunday Scaries slot: if last week's was a finish-the-sentence card, use a quote (as a Reel on moving footage, or a Quote Image) this week, and vice versa. Read last week's drafts (`posts/<last Monday's date>/zenie_drafts.md`, via the same raw.githubusercontent.com URL pattern as `_raw`) to see which it was, and which Reel style and Carousel format ran.
@@ -820,7 +820,7 @@ Fields:
 Rules:
 - `things_no_one_told_you`: mix practical twenties fixes with inner-life truths; at least half the middle slides are about work, love, friendship or the future (CONTENT SCOPE §1). Every practical tip must be true and safe — no medical, legal or money advice beyond common-sense basics.
 - `unsent_story`: one composite story told a beat per slide (an unsent text, a journal entry from the night she almost quit). Written in Zenie's voice, never presented as a real named person.
-- `you_told_us`: only when `social/story_answers.md` (fetch it with `_raw`-style raw URL) has a dated section whose answers have not been used in an earlier week's drafts. Cover = the question that was asked. One real answer per middle slide, trimmed but never reworded in meaning. Drop anything that names or could identify someone. Never invent an answer. If there are no unused answers, use another carousel format.
+- `you_told_us`: only when `social/story_answers.md` (fetch it with `_raw`-style raw URL) has a dated section that has not been used in an earlier week's drafts. With written answers: cover = the question that was asked, one real answer per middle slide, trimmed but never reworded in meaning. With only a poll result: cover = the poll question and the real split (e.g. "You voted: 64% said not really"), then middle slides that sit with that result in Zenie's voice (what that feels like, what might help), never claiming more than the numbers say. Drop anything that names or could identify someone. Never invent an answer or a number. If there is no unused section, use another carousel format.
 
 ---
 
@@ -840,19 +840,24 @@ Fields:
 
 ---
 
-## Step 2H: Story set (added 2026-11-05)
+## Step 2H: Story set (added 2026-11-05, rebuilt 2026-11-20)
 
-`Story 1`, posted Wednesday or Thursday. Two or three frames on the week's theme (`format_slug: "story_check_in"`, `series: "Quarter-Life Check-In"` unless the theme is clearly something else).
+`Story 1`, posted Wednesday or Thursday (`format_slug: "story_check_in"`, `series: "Quarter-Life Check-In"` unless the theme is clearly something else).
+
+**Why it changed (2026-11-20).** The first Story set (week of 2026-11-16) was three flat text frames that each asked for something (a poll, a question box, a slider). Only about 40 people viewed each frame and nobody answered anything, taps included. Isabel's read: the frames need to be more visual, and the asks need to sit between passive frames people simply enjoy. So a Story set is now mostly something to look at, with one easy ask in it.
 
 Fields:
-- `frames` — a list of 2–3 frames, each `{"text": "...", "sticker": "poll"|"question"|"slider", "sticker_options": [...]}`:
-  - Frame 1: a poll. `text` is the question (under 16 words), `sticker: "poll"`, `sticker_options`: two short options (under 4 words each, e.g. ["Yes, mostly", "Not even close"]).
-  - Frame 2: a question box. `text` invites an anonymous answer (e.g. "What's one thing about your future you're scared to say out loud?"), `sticker: "question"`, optional `kicker: "Anonymous, always"`.
-  - Optional frame 3: an emoji slider (`sticker: "slider"`) on how the week feels. A slider frame MUST also set `sticker_emoji` to the one emoji Isabel should put on the slider, chosen to match the question (e.g. 🔋 for energy, 🔥 for motivation, 😮‍💨 for stress). Never leave it for her to pick.
+- `frames` — a list of 4 or 5 frames. Each frame has a `kind`:
+  - `"photo"` — a full-bleed photo with short white text (under 12 words). Set `photo_query` (2–5 words, a real, moody, specific scene that matches Zenie's world: e.g. "rain on window night", "woman reading in bed lamp", "coffee cup morning light desk") and `photo_alternates` (two more queries). No people's faces as the subject of a sticker frame. The text on a passive photo frame is a feeling or an observation, not a question (e.g. "Sunday night, already thinking about Monday").
+  - `"feature"` — puts one of this week's feed posts into the Story under a "New post" kicker. Set `feature_label` to the post's label: only `Carousel 1`, `Text Card 1`, `Text Card 2` or `Quote 1` (image posts, not Reels or memes). Optional `text`: one short line under the post (under 10 words) that makes people want to go look at it. Pick a post that goes live on or before the Story's day.
+  - `"card"` — text on the lilac gradient. Only for the optional question box at the end.
+- Order: frame 1 is ALWAYS passive (a `photo` frame with no sticker). Then exactly ONE interactive frame: a `photo` frame that also carries `sticker: "poll"` (two options under 4 words each in `sticker_options`) or `sticker: "slider"` (set `sticker_emoji` to the one emoji Isabel should use, chosen to match the question, e.g. 🔋 energy, 🔥 motivation, 😮‍💨 stress — never leave it for her to pick). Then at least one more passive frame, usually the `feature` frame. Optionally, a last `card` frame with `sticker: "question"`: a one-tap-easy prompt with a one-word or one-line answer (e.g. "Your week in one word", "Finish this: this week I'm proud that I…"), and `kicker: "We never share names"`. Never write "Anonymous": Instagram shows us who answered, so that promise isn't true.
+- Example shape: photo (passive) → photo + poll → feature (Carousel 1) → photo (passive) → optional question card.
+- Poll and slider questions are answerable in under two seconds (yes/no, this/that, a feeling). No questions that need thinking before tapping.
 - `best_time`, `hypothesis`. No `ig_caption`, `fb_caption` or `hashtags` — Stories don't have them.
 - Never ask for anything identifying (names, workplaces, cities, photos).
 
-Isabel adds the stickers by hand in the Instagram app, so the frame leaves space for them. She pastes the question-box answers into the Notion page "Zenie Story Answers"; a Sunday Action copies them to `social/story_answers.md` for the `you_told_us` carousel.
+Isabel adds the stickers by hand in the Instagram app, so sticker frames leave the middle empty for them. She pastes poll results and any question-box answers into the Notion page "Zenie Story Answers"; a Sunday Action copies them to `social/story_answers.md` for the `you_told_us` carousel.
 
 ---
 

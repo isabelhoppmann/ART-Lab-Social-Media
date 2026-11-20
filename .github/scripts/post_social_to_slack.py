@@ -306,6 +306,8 @@ for post in posts:
                 st = f" → add *{fr.get('sticker')}* sticker" if fr.get("sticker") else ""
                 if fr.get("sticker_emoji"):
                     st += f" (emoji: {fr['sticker_emoji']})"
+                if (fr.get("kind") or "") == "feature":
+                    st += f" _(shows {fr.get('feature_label', '')})_"
                 head += f"{i}. {fr.get('text', '')}{st}\n"
         comment = (f"{head}\n*IG:* {post.get('ig_caption', '') or '_(Story: no caption)_'}"
                    f"\n`{post.get('hashtags', '')}`{hypothesis_line(post)}")
