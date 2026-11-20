@@ -1,0 +1,20 @@
+Morning Briefing November 20, 2026
+
+=== ROBOTICS & AI ===
+- Fifteen national security and AI experts sent a letter to the DOJ on November 18, 2026, urging an investigation into whether NVIDIA knowingly allowed AI chips to be diverted to China, and California AG Rob Bonta separately said his office is examining "red flags" in its inquiry into NVIDIA and Jensen Huang. https://cryptobriefing.com/us-officials-question-nvidia-chip-diversion-china/
+- Microsoft's Ignite 2026 conference (November 17-20) launched GPT-6.2 models to general availability in Microsoft Foundry, introduced Agent 365 for monitoring AI spending, and released MAI Code 2 and MAI Code 2 Flash coding models. https://news.microsoft.com/source/asia/features/microsoft-ignite-2026-empowering-human-ambition-intelligence-and-trust/
+- Serve Robotics opened its physical AI platform to third-party robot developers on November 19, 2026, allowing other companies to deploy its autonomy stack on their own hardware, with construction-equipment firm Bedrock Robotics as the launch customer. https://roboticsandautomationnews.com/2026/11/19/serve-robotics-opens-its-physical-ai-technology-to-other-robot-companies/107358/
+
+=== RESEARCH ===
+- A preprint posted November 13, 2026, presents a 27B open-weight robot policy trained entirely by reinforcement learning in simulation; on real dual-arm transfer trials the model reached 60% success while the base model scored zero. https://letsdatascience.com/news/researchers-train-27b-model-in-simulation-to-control-real-ro-3b3ec1f7
+
+=== FUNDING & INVESTMENT ===
+- Chinese AI robotics firm MegaRobo closed a $200M round on November 19, 2026, to scale automated life-sciences laboratory infrastructure, backed by Oman Investment Authority, Sinovation Ventures, Granite Asia, and CMB International. https://siliconangle.com/2026/11/19/china-based-ai-robotics-biotech-firm-megarobo-raises-200m-to-accelerate-scientific-discovery/
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours.
+
+=== BAY AREA ===
+- West Coast Craft brings 275 artist and designer craftspeople to Fort Mason's Festival Pavilion in San Francisco on November 21-22, 2026, free admission, 10 a.m. to 6 p.m. both days. https://fortmason.org/?p=10001217
+
+#KEYS: nvidia-doj-chip-investigation, microsoft-ignite-2026-ai, serve-robotics-physical-ai-open, sim-to-real-27b-robot-rl, megarobo-200m-series, west-coast-craft-sf-nov-2026
