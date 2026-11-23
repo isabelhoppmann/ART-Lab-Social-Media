@@ -354,6 +354,12 @@
       "attribution": "Anna Quindlen",
       "norm": "the life you have led doesnt need to be the only life you have",
       "first_week": "2026-11-09"
+    },
+    {
+      "quote": "Life can only be understood backwards; but it must be lived forwards.",
+      "attribution": "Søren Kierkegaard",
+      "norm": "life can only be understood backwards but it must be lived forwards",
+      "first_week": "2026-11-23"
     }
   ]
 }

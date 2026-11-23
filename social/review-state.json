@@ -1,7 +1,7 @@
 {
-  "week_date": "2026-11-16",
-  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/",
-  "slack_thread_ts": "1794830347.488449",
+  "week_date": "2026-11-23",
+  "preview_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/",
+  "slack_thread_ts": "1795441592.654649",
   "slack_error": null,
   "posts": [
     {
@@ -9,84 +9,84 @@
       "post_type": "Reel",
       "series": "Quarter-Life Check-In",
       "reel_style": "pov",
-      "overlay_text": "When someone asks about your five-year plan and you don't have a five-day plan",
-      "broll_query": "woman laughing nervously covering face",
+      "overlay_text": "POV: your aunt asks what you actually do for work and you've been rehearsing since October",
+      "broll_query": "woman forced smile dinner table",
       "broll_alternates": [
-        "woman awkward laugh shrug",
-        "woman hands over face laughing"
+        "woman awkward smile family dinner",
+        "woman nervous smile holiday table"
       ],
-      "audio_suggestion": "'Hello October' by Sugar Lime Blue — dreamy, introspective, rising on Reels Oct–Nov 2026 (SocialPilot trending list)",
-      "ig_caption": "For the record, the five-day plan is also pretty loose.\n\nWhat's the question you're dreading most at the holidays this year?\n\n#quarterlifecrisis #fiveyearplan #twenties #zenieapp #quarterlifecheck",
-      "fb_caption": "For the record, the five-day plan is also pretty loose. What's the question you're dreading most at the holidays this year?\n\n#quarterlifecrisis #fiveyearplan #twenties #zenieapp #quarterlifecheck",
-      "hashtags": "#quarterlifecrisis #fiveyearplan #twenties #zenieapp #quarterlifecheck",
-      "best_time": "Monday 7–9 PM PST",
-      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/reel_1.mp4",
+      "audio_suggestion": "'Vintage November' by Peaceful Reveries \u2014 quiet, introspective, rising on Reels Nov 2026; fits the pre-Thanksgiving undercurrent",
+      "ig_caption": "Still got three days to rehearse.\n\nWhat question are you most dreading this week \u2014 and what would you actually say if you told the truth?\n\nSave this for the drive home.\n\n#quarterlifecrisis #journalingprompts #selfreflection #zenieapp #quarterlifecheck",
+      "fb_caption": "If you\u2019ve been mentally rehearsing your \u2018so what are you doing with your life\u2019 answer since October, this one\u2019s for you. Here\u2019s the question worth writing down before Thursday: what would you actually say if you told the truth this week?\n\n#quarterlifecrisis #journalingprompts #selfreflection #zenieapp #quarterlifecheck",
+      "hashtags": "#quarterlifecrisis #journalingprompts #selfreflection #zenieapp #quarterlifecheck",
+      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/reel_1.mp4",
       "notion_page_id": null,
+      "best_time": "Monday 7\u20139 PM PST",
       "format_slug": "pov_reel",
-      "hypothesis": "Relatable joke on the 'five-year plan' question most people in their twenties can't answer, timed for pre-holiday family questions; expect sends to friends who feel the same.",
       "approved": false,
+      "hypothesis": "Pinned Thanksgiving-week POV using the universal \u2018family interrogation before the holiday\u2019 anxiety; landing on the gap between rehearsed answer and honest one expects strong shares among people who would immediately send it to a friend who gets it.",
       "broll": {
-        "id": 8627759,
-        "page": "https://www.pexels.com/video/a-woman-laughing-while-looking-at-the-camera-8627759/",
-        "query": "pinned id 8627759"
+        "id": 27874535,
+        "page": "https://www.pexels.com/video/a-woman-sitting-at-a-table-with-a-plate-of-food-27874535/",
+        "query": "woman forced smile dinner table"
       },
       "media_urls": [
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/reel_1.mp4"
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/reel_1.mp4"
       ],
       "skipped": false,
-      "slack_posted": true,
-      "broll_id": 8627759
+      "slack_posted": true
     },
     {
       "label": "Carousel 1",
       "post_type": "Carousel",
-      "format_slug": "unsent_story",
+      "series": "Things no one told you",
       "slides": [
         {
-          "title": "The night I almost sent the resignation email",
-          "body": "The story no one posts about."
+          "title": "Things no one told you about going home for the holidays",
+          "body": "The list they should have given us."
         },
         {
-          "title": "It was 11:47 PM on a Tuesday",
-          "body": "She had the email open. She'd written 'Dear [Name]' and then just left it there, blinking."
+          "title": "\u201cI\u2019m still figuring it out\u201d is a complete sentence",
+          "body": "Your aunt doesn\u2019t need a five-year plan from you. Neither do you, actually."
         },
         {
-          "title": "The cons column was two pages long",
-          "body": "The pros column said: 'good benefits.' That was it."
+          "title": "You will walk into your childhood bedroom and feel 16",
+          "body": "This doesn\u2019t mean you haven\u2019t grown. It means you have a past."
         },
         {
-          "title": "She didn't send it",
-          "body": "Not because she talked herself out of it. Because she opened her journal first."
+          "title": "Clear nail polish stops a run in your tights",
+          "body": "Dab it over the snag before it goes further. Works every time."
         },
         {
-          "title": "She wrote: 'I don't hate the job. I hate feeling invisible in it.'",
-          "body": "That was the sentence that changed everything."
+          "title": "The person asking about your love life is usually just nervous",
+          "body": "Awkward questions at the table are rarely about you. Usually they don\u2019t know what else to say."
         },
         {
-          "title": "Sometimes the thing you want to quit isn't the job",
-          "body": "It's the version of yourself you've been trying to maintain in a space that never fit."
+          "title": "\u201cGrateful\u201d and \u201cthis is hard\u201d can both be true at the same table",
+          "body": "You don\u2019t have to perform thankfulness to actually feel it."
         },
         {
-          "title": "What's something you've been wanting to quit — and what does staying look like if you're honest?",
-          "body": "Save this for tonight."
+          "title": "What\u2019s one thing you want to leave at the table this year \u2014 not bring back home with you?",
+          "body": "Write it down tonight."
         }
       ],
-      "ig_caption": "Career anxiety at 26 hits different at 11:47 PM with an unsent email.\n\nWhat's something you've been wanting to quit — and what does staying honestly look like?\n\nSave this for the friend who always has a tab open with her resignation typed.\n\n#careeranxiety #quarterlifecrisis #journalingprompts #zenieapp #journalwithme",
-      "fb_caption": "Late night, laptop open, the email half-written. Sometimes the most important thing you'll write isn't the resignation — it's the journal entry that comes before it. What's something you've been wanting to quit — and what does staying honestly look like? Save this and share it with anyone in that moment tonight.\n\n#careeranxiety #quarterlifecrisis #journalingprompts #zenieapp #journalwithme",
-      "hashtags": "#careeranxiety #quarterlifecrisis #journalingprompts #zenieapp #journalwithme",
-      "best_time": "Tuesday 6–8 PM PST",
-      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_01.jpg",
+      "ig_caption": "Things no one told you about going home for the holidays.\n\nWhat\u2019s one thing you want to leave at the table this year \u2014 not bring back home with you?\n\nSave this for the drive home.\n\n#quarterlifecrisis #thanksgiving #journalingprompts #selfreflection #zenieapp",
+      "fb_caption": "A few things about going home that someone really should have warned us about. The last one is tonight\u2019s prompt: what\u2019s one thing you want to leave at the table this year, not bring back home with you? Save this or send it to a friend who needs it.\n\n#quarterlifecrisis #thanksgiving #journalingprompts #selfreflection #zenieapp",
+      "hashtags": "#quarterlifecrisis #thanksgiving #journalingprompts #selfreflection #zenieapp",
+      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_01.jpg",
       "notion_page_id": null,
-      "hypothesis": "The unsent_story carousel tells a composite narrative that readers feel seen in but have never posted about; the 'resignation email almost sent' scenario is specific enough to be universal, and the arc from 'I hate the job' to 'I hate feeling invisible in it' is the kind of reframe people save and send — expect saves from people who've had this exact night.",
+      "best_time": "Tuesday 7\u20139 PM PST",
+      "format_slug": "things_no_one_told_you",
       "approved": false,
+      "hypothesis": "things_no_one_told_you carousel timed to Thanksgiving week, mixing one practical tip (nail polish) with emotional truths about family dynamics; the \u2018grateful and hard can both be true\u2019 slide and the prompt are designed to be saved and sent between siblings and friends going home.",
       "media_urls": [
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_01.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_02.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_03.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_04.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_05.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_06.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/carousel_1_07.jpg"
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_01.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_02.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_03.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_04.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_05.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_06.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/carousel_1_07.jpg"
       ],
       "skipped": false,
       "slack_posted": true
@@ -94,57 +94,39 @@
     {
       "label": "Meme 1",
       "post_type": "Meme",
-      "meme_slug": "dramatic_pout",
-      "overlay_text": "Me when someone asks 'so what’s the plan?' and it’s mid-November",
-      "ig_caption": "The pout is proportional to how many times I've been asked this in the last two weeks.\n\nWhat's one thing you haven't been able to plan your way out of this year?\n\n#quarterlifecrisis #careeranxiety #journalingprompts #zenieapp #adultingishard",
-      "fb_caption": "Mid-November and someone asks what my plan is. The pout says everything. Here's tonight's prompt: what's one thing you haven't been able to plan your way out of this year? Drop your answer below — this one is worth writing down.\n\n#quarterlifecrisis #careeranxiety #journalingprompts #zenieapp #adultingishard",
-      "hashtags": "#quarterlifecrisis #careeranxiety #journalingprompts #zenieapp #adultingishard",
-      "best_time": "Wednesday 6–8 PM PST",
+      "meme_slug": "happy_tears_clasp",
+      "overlay_text": "Me reading back the gratitude list I wrote at 11pm when no one was watching",
+      "ig_caption": "The real one hits different.\n\nWhat are you actually grateful for this year \u2014 the specific, slightly embarrassing, took-you-by-surprise things?\n\n#thanksgiving #journalingprompts #gratitude #zenieapp #selfawareness",
+      "fb_caption": "There\u2019s the gratitude list you\u2019d read aloud at the table, and then there\u2019s the real one. Tonight\u2019s prompt: what are you actually grateful for this year \u2014 the specific, slightly embarrassing, took-you-by-surprise things? Drop one below, or just write it for yourself.\n\n#thanksgiving #journalingprompts #gratitude #zenieapp #selfawareness",
+      "hashtags": "#thanksgiving #journalingprompts #gratitude #zenieapp #selfawareness",
       "skipped": false,
-      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/meme_1.mp4",
-      "notion_page_id": "41ac2cdd-459d-81be-91c2-e2b7c3ac51ce",
-      "format_slug": "relatable_spiral",
-      "hypothesis": "Pairing the dramatic_pout clip (literally depicts sulking at an unwanted question) with the 'so what's the plan?' November-math joke, because hyper-specific anti-planning humor earns sends from people tagging the friend who keeps asking them the same question; expect sends over saves.",
-      "trend_source": "'November math' — the mid-November annual life-audit moment (ongoing Nov 2026 quarter-life crisis discourse, peak timing mid-Nov)",
+      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/meme_1.mp4",
+      "notion_page_id": "421c2cdd-459d-8128-8bdf-d448303cb233",
+      "best_time": "Wednesday 7\u20139 PM PST",
+      "format_slug": "name_the_feeling",
       "approved": false,
-      "text_style": "outline",
+      "hypothesis": "happy_tears_clasp depicts the emotional response to genuine gratitude; overlay follows the \u2018rereading what you wrote in private\u2019 benchmark pattern; Thanksgiving timing and hyper-specific framing (\u201c11pm when no one was watching\u201d) expect comments and saves from people writing their real list.",
+      "text_style": "highlight",
       "slack_posted": true
     },
     {
       "label": "Text Card 1",
       "post_type": "Text Card",
-      "card_style": "text_thread",
-      "thread_name": "bestie",
-      "messages": [
-        {
-          "from": "them",
-          "text": "how are you doing tho, like actually"
-        },
-        {
-          "from": "me",
-          "text": "oh I'm fine!! just tired haha"
-        },
-        {
-          "from": "me",
-          "text": "wait I'm looking at that text and even I don't believe it"
-        },
-        {
-          "from": "them",
-          "text": "😭😭 okay so WHAT ARE YOU ACTUALLY FEELING"
-        }
-      ],
-      "thread_status": "Read 11:03 PM",
-      "ig_caption": "The gap between the first text and the second one is exactly where journaling lives.\n\nWhat would you say if someone asked how you were doing — and you let yourself answer honestly?\n\nSend this to the friend you owe a real answer to.\n\n#journalingprompts #selfreflection #emotionalhealth #zenieapp #sendthis",
-      "fb_caption": "There's a version of you that has been saying 'I'm fine, just tired' on autopilot for weeks. Here's what's worth writing down tonight: what would you say if someone asked how you were actually doing — and you let yourself answer honestly? Send this to the person who'd actually want to know.\n\n#journalingprompts #selfreflection #emotionalhealth #zenieapp #sendthis",
-      "hashtags": "#journalingprompts #selfreflection #emotionalhealth #zenieapp #sendthis",
-      "best_time": "Thursday 6–8 PM PST",
-      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/text_card_1.jpg",
+      "card_style": "notes_app",
+      "card_title": "gratitude list, 11:48 PM",
+      "card_text": "being here, mostly\nthe group chat that got the screenshot\nmy mom made the pie\nstill don\u2019t know what I\u2019m doing and somehow made it to 26\nthat\u2019s about it",
+      "card_date": "Thursday 11:48 PM",
+      "ig_caption": "The late-night version hits different.\n\nWhat would your actual gratitude list say tonight?\n\nSend this to whoever would write the same one.\n\n#thanksgiving #journalingprompts #gratitude #zenieapp #selfawareness",
+      "fb_caption": "The one you\u2019d type at midnight when no one\u2019s grading it. Tonight\u2019s prompt: what would your actual gratitude list say? Tag someone who\u2019d write the same one.\n\n#thanksgiving #journalingprompts #gratitude #zenieapp #selfawareness",
+      "hashtags": "#thanksgiving #journalingprompts #gratitude #zenieapp #selfawareness",
+      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/text_card_1.jpg",
       "notion_page_id": null,
+      "best_time": "Thursday 6\u20138 PM PST",
       "format_slug": "send_this_text",
-      "hypothesis": "The text_thread depicting the 'I'm fine → wait no I'm not' pivot names the exact gap between the performed and the real answer; built to be sent because the person reading it immediately thinks of one friend — expect sends as the primary metric.",
       "approved": false,
+      "hypothesis": "notes_app card styled as a midnight Thanksgiving gratitude list \u2014 the specificity (\u2018the group chat that got the screenshot\u2019, \u2018still don\u2019t know what I\u2019m doing and somehow made it to 26\u2019) makes it shareable to close friends on Thanksgiving night; expect sends over saves.",
       "media_urls": [
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/text_card_1.jpg"
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/text_card_1.jpg"
       ],
       "skipped": false,
       "slack_posted": true
@@ -152,37 +134,48 @@
     {
       "label": "Repost 1",
       "post_type": "Repost",
-      "url": "https://www.instagram.com/reel/Dfa9jtix7Ak/",
-      "creator": "morganharpernichols",
-      "ig_caption": "For anyone who keeps putting off processing the season they're actually in.\n\nWhat season in your life is asking for more of your attention than you've been giving it?\n\nCredit: @morganharpernichols\n\n#journalingprompts #selfreflection #poetrygram #zenieapp #seasonalreflection",
-      "fb_caption": "Morgan Harper Nichols captures something we don't always say out loud — that the seasons we move through emotionally don't always match the ones on the calendar. Here's tonight's prompt: what season in your life is asking for more of your attention than you've been giving it? Share this with someone who needs a moment to breathe today.\n\nCredit: @morganharpernichols\n\n#journalingprompts #selfreflection #poetrygram #zenieapp #seasonalreflection",
-      "hashtags": "#journalingprompts #selfreflection #poetrygram #zenieapp #seasonalreflection",
-      "best_time": "Friday 5–7 PM PST",
-      "media_url": "https://www.instagram.com/reel/Dfa9jtix7Ak/",
+      "url": "https://www.instagram.com/reel/Db-9Sc5skOB/",
+      "creator": "drjulie",
+      "ig_caption": "The question worth asking after a heavy week.\n\nWhich one is it right now \u2014 and what does it feel like to actually name it?\n\nCredit: @drjulie\n\n#mentalhealth #journalingprompts #selfreflection #zenieapp #emotionalintelligence",
+      "fb_caption": "Dr. Julie\u2019s question is worth sitting with. It\u2019s not always depression \u2014 sometimes it\u2019s just sadness, and knowing the difference changes what you do next. Write it down: which one is it right now for you, and what does it feel like to actually name it?\n\nCredit: @drjulie\n\n#mentalhealth #journalingprompts #selfreflection #zenieapp #emotionalintelligence",
+      "hashtags": "#mentalhealth #journalingprompts #selfreflection #zenieapp #emotionalintelligence",
+      "media_url": null,
       "notion_page_id": null,
+      "best_time": "Friday 7\u20139 PM PST",
       "format_slug": "confession_then_turn",
-      "hypothesis": "Repurposing Morgan Harper Nichols's seasonal/rain poetry content (highest eng in repost library at 2.7%) against a late-November reflection prompt; expect saves from people sitting with pre-holiday feelings and shares to friends who'd find it at the right moment.",
       "approved": false,
+      "hypothesis": "confession_then_turn format: dr. julie\u2019s depression-vs-sadness question posted post-Thanksgiving Friday, when the holiday-family-interaction hangover surfaces real feelings; the prompt asks to name the distinction and expect saves from people who needed to hear it.",
       "slack_posted": true
     },
     {
-      "label": "Text Card 2",
-      "post_type": "Text Card",
+      "label": "Reel 2",
+      "post_type": "Reel",
       "series": "Sunday Scaries",
-      "card_style": "fill_blank",
-      "card_text": "The part of Monday I'm already dreading is",
-      "card_hint": "(be honest, no one's grading this)",
-      "ig_caption": "Sunday 7 PM has entered the chat.\n\nWrite it down — not 'work stuff,' the actual specific thing.\n\n#SundayScaries #journalingprompts #sundaydread #zenieapp #weeklyreflection",
-      "fb_caption": "It's Sunday, and there's already something sitting in your chest about tomorrow. Naming the actual thing — not just 'work' but the specific meeting, the conversation, the inbox — usually makes it smaller. What's the part of Monday you're already dreading? Drop it below or write it down tonight.\n\n#SundayScaries #journalingprompts #sundaydread #zenieapp #weeklyreflection",
-      "hashtags": "#SundayScaries #journalingprompts #sundaydread #zenieapp #weeklyreflection",
-      "best_time": "Sunday 6–8 PM PST",
-      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/text_card_2.jpg",
+      "reel_style": "quote",
+      "quote": "Life can only be understood backwards; but it must be lived forwards.",
+      "attribution": "S\u00f8ren Kierkegaard",
+      "broll_query": "woman sitting window coffee evening light",
+      "broll_alternates": [
+        "woman looking out window autumn leaves",
+        "woman cozy reading chair evening"
+      ],
+      "audio_suggestion": "'Flower In A Hurricane' by Justice ft. Tame Impala, SZA \u2014 most-used Reels audio week of Nov 18 2026 (Virlo), emotional and cinematic; fits the year-in-review energy",
+      "ig_caption": "The year from the inside, looking out.\n\nWhat do you understand about your 2026 that you couldn\u2019t see while you were living it?\n\nSave this for tonight.\n\n#sundayscaries #selfreflection #journalingprompts #zenieapp #quarterlifecrisis",
+      "fb_caption": "Looking backwards at this year from the last weeks of November. Kierkegaard said it plainly: you can only understand it after. What do you understand about your 2026 that you couldn\u2019t see while you were living it? Write it down tonight.\n\n#sundayscaries #selfreflection #journalingprompts #zenieapp #quarterlifecrisis",
+      "hashtags": "#sundayscaries #selfreflection #journalingprompts #zenieapp #quarterlifecrisis",
+      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/reel_2.mp4",
       "notion_page_id": null,
-      "format_slug": "finish_the_sentence",
-      "hypothesis": "The fill-blank format for Sunday Scaries invites literal completion (readers want to fill it in), earning comments from followers naming the specific thing and sends to work friends who'd agree — testing whether named dread outperforms the vague 'Sunday Scaries' as a comment driver.",
+      "best_time": "Sunday 6\u20138 PM PST",
+      "format_slug": "quote_reel",
       "approved": false,
+      "hypothesis": "Quote Reel using Kierkegaard\u2019s \u2018backwards/forwards\u2019 line timed to Thanksgiving Sunday \u2014 the quote maps onto the year-end backwards look that the last weeks of November trigger; expect saves from people starting their year-in-review.",
+      "broll": {
+        "id": 5756136,
+        "page": "https://www.pexels.com/video/elderly-woman-sitting-at-windowsill-5756136/",
+        "query": "woman sitting window coffee evening light"
+      },
       "media_urls": [
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/text_card_2.jpg"
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/reel_2.mp4"
       ],
       "skipped": false,
       "slack_posted": true
@@ -191,36 +184,63 @@
       "label": "Story 1",
       "post_type": "Story",
       "series": "Quarter-Life Check-In",
-      "format_slug": "story_check_in",
       "frames": [
         {
-          "text": "Be honest: does your life feel like yours right now?",
+          "kind": "photo",
+          "photo_query": "woman looking out window autumn evening",
+          "photo_alternates": [
+            "woman sitting couch autumn light indoor",
+            "fall leaves window warm light"
+          ],
+          "text": "Three days until you\u2019re 16 again at the dinner table",
+          "photo": {
+            "id": 12638867,
+            "page": "https://www.pexels.com/photo/woman-looking-at-view-from-hotel-room-12638867/",
+            "query": "woman looking out window autumn evening"
+          }
+        },
+        {
+          "kind": "photo",
+          "photo_query": "thanksgiving table fall candles warm",
+          "photo_alternates": [
+            "autumn dinner table setting",
+            "holiday table preparation cozy"
+          ],
+          "text": "How ready are you for the holiday questions?",
           "sticker": "poll",
           "sticker_options": [
-            "Yes, mostly",
-            "Not really"
-          ]
+            "Bring it on",
+            "Send help"
+          ],
+          "photo": {
+            "id": 18602588,
+            "page": "https://www.pexels.com/photo/a-table-with-a-candle-a-candle-holder-and-a-plate-of-fall-decorations-18602588/",
+            "query": "thanksgiving table fall candles warm"
+          }
         },
         {
-          "text": "What's one thing you said yes to this year that you kind of wish you'd said no to?",
+          "kind": "feature",
+          "feature_label": "Carousel 1",
+          "text": "Save this for the drive home"
+        },
+        {
+          "kind": "card",
+          "text": "Your week in one word",
           "sticker": "question",
-          "kicker": "Anonymous, always"
-        },
-        {
-          "text": "How much of your energy is going to things that actually matter to you this week?",
-          "sticker": "slider",
-          "sticker_emoji": "🔋"
+          "kicker": "We never share names"
         }
       ],
-      "best_time": "Wednesday 2–4 PM PST",
-      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/story_1_01.jpg",
+      "media_url": "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/story_1_01.jpg",
       "notion_page_id": null,
-      "hypothesis": "The quarter-life check-in story set uses a poll, question box, and slider to get existing followers talking about agency and choices — story answers feed future you_told_us carousels, so each reply is both engagement and content pipeline material.",
+      "best_time": "Wednesday 2\u20134 PM PST",
+      "format_slug": "story_check_in",
       "approved": false,
+      "hypothesis": "story_check_in with mostly passive frames and exactly one poll \u2014 fixes last week\u2019s three-ask problem; the Thanksgiving angle and feature of Carousel 1 expect higher tap-through and poll engagement than the Nov 16 story.",
       "media_urls": [
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/story_1_01.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/story_1_02.jpg",
-        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-16/story_1_03.jpg"
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/story_1_01.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/story_1_02.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/story_1_03.jpg",
+        "https://isabelhoppmann.github.io/ART-Lab-Social-Media/posts/2026-11-23/story_1_04.jpg"
       ],
       "skipped": false,
       "slack_posted": true
