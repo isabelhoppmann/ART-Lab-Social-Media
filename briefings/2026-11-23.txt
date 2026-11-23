@@ -1,0 +1,21 @@
+Morning Briefing November 23, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA's board unanimously reinstated Jensen Huang as President, CEO, and board director effective immediately on November 23, eleven days after his resignation, with shares surging more than 26% on the news. https://www.cnbc.com/2026/11/23/nvidia-reinstates-jensen-huang-ceo.html
+- Amazon agreed on November 23 to acquire AI startup Decart for approximately $7.5 billion, gaining its model-efficiency technology and founding team to strengthen AWS infrastructure and position it to rival NVIDIA. https://www.bloomberg.com/news/articles/2026-11-23/amazon-is-said-to-pay-7-5-billion-for-ai-startup-decart-s-tech
+- Elon Musk confirmed on November 22 that Tesla's next-generation AI5 chip will go exclusively to Optimus robots while vehicles stay on AI4, with Optimus integration targeted around April 2027. https://teslanorth.com/2026/11/22/tesla-ai4-ai5-optimus/
+
+=== RESEARCH ===
+- No qualifying items in the last 48 hours
+
+=== FUNDING & INVESTMENT ===
+- No qualifying items in the last 48 hours
+
+=== COMPETITOR WATCH ===
+- No significant competitor activity in the last 48 hours
+
+=== BAY AREA ===
+- The IEEE-RAS 25th International Conference on Humanoid Robots (Humanoids 2026) runs December 6-9 at the Santa Clara Convention Center; it is the premier academic event for humanoid robotics and registration is open. https://2026.ieee-humanoids.org
+- Humanoids Summit Silicon Valley 2026, the third Bay Area edition of this industry conference, runs December 1-2 at the San Mateo County Event Center (1346 Saratoga Dr, San Mateo); registration details are on the official site. https://humanoidssummit.com/silicon-valley-2026
+
+#KEYS: nvidia-huang-reinstatement, amazon-decart-acquisition, tesla-ai5-optimus, ieee-humanoids-2026-sf, humanoids-summit-sv-2026
