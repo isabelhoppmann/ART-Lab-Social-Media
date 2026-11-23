@@ -35,7 +35,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      # Check out the LATEST main, not the commit that was current when this tick
+      # was queued. Ticks queue behind each other (concurrency group above), so a
+      # queued tick would otherwise start from a stale copy that doesn't have the
+      # earlier tick's review-state.json (with slack_thread_ts) -- it then re-posts
+      # the week to Slack as a duplicate thread and fails on push (2026-11-23).
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
