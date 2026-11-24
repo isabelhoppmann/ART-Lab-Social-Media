@@ -1,0 +1,21 @@
+Morning Briefing November 24, 2026
+
+=== ROBOTICS & AI ===
+- Anthropic launched Claude Ship on November 23, adding a generally available Code Review agent and two new betas — PR Steward, which fixes failing CI checks and merge conflicts, and Claude Approvals, which greenlights routine pull requests against a plain-language policy file — available for Team and Enterprise plans on GitHub. https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/
+- Tesla and SpaceX named five independent directors on November 24 to lead merger talks — three from Tesla and two from SpaceX — advancing a reported all-stock deal that at current valuations would be the largest corporate combination on record. https://teslanorth.com/2026/11/24/tesla-spacex-merger-talks-five-directors/
+- Uber, Nuro, and Lucid began fully driverless public-road robotaxi service in the San Francisco Bay Area on November 24, with an Uber app rollout and paid rides in the Bay Area targeted for Q1 2027. https://mezha.net/eng/news/mezha-e42c2a7642dac60fd09ed453_uber-_nuro_and
+
+=== RESEARCH ===
+- RMR-VLA (arXiv:2611.30145, November 23, 2026) adds recurrent memory reasoning to vision-language-action models so a robot can act on cues that have disappeared from view, reporting doubled success on the RoboMME benchmark over the same base model without recurrence. https://arxiv.org/abs/2611.30145
+
+=== FUNDING & INVESTMENT ===
+- Embo, an ex-Google DeepMind team building world-model AI brains for humanoid robots, closed a $110 million seed round led by Andreessen Horowitz with Khosla Ventures, DST Global, and NVIDIA's NVentures participating, announced November 23, 2026. https://www.unite.ai/robot-ai-startup-embo-secures-110m-seed-investment-led-by-a16z/
+- Swiss startup coprod closed a $6 million pre-seed on November 23, 2026, led by Founderful and PROTOTYPE with General Catalyst participating, to sell modular robot hardware that teams can combine to build custom robot bodies without starting from scratch. https://tech.eu/2026/11/23/swiss-startup-coprod-raises-6m-to-make-building-robot-hardware-as-simple-as-developing-software
+
+=== COMPETITOR WATCH ===
+- Figure AI deployed F.03 humanoid robots at the Las Vegas Grand Prix circuit this weekend in a 5G showcase with T-Mobile, with the robots wearing co-branded vests on the track and in the pit lane. https://www.humanoidsdaily.com/news/figure-t-mobile-f03-humanoids-las-vegas-grand-prix
+
+=== BAY AREA ===
+- The Alameda Point Antiques Faire, Northern California's largest monthly antique market running since the 1990s, holds its December edition on Sunday, December 6, from 6 a.m. to 3 p.m. at 3900 Main Street, Alameda; timed-entry tickets ($5–$20) are available at the box office. https://alamedapointantiquesfaire.com/
+
+#KEYS: anthropic-claude-ship, tesla-spacex-merger, uber-nuro-lucid-bay-area-av, rmr-vla-recurrent, embo-seed-round, coprod-pre-seed, figure-tmobile-lvgp, alameda-antiques-faire-dec-2026
