@@ -122,23 +122,23 @@ Send this to whoever would write the same one.
 
 ---
 
-## Repost 1 — Are you depressed or is it just sadness? (confession_then_turn)
+## Repost 1 — Ask for help over the holidays (swapped in 2026-11-24)
 
-**URL:** https://www.instagram.com/reel/Db-9Sc5skOB/
+**URL:** https://www.instagram.com/reel/Df-VzifPXuN/
 
-**Creator:** @drjulie
+**Creator:** @nedratawwab
 
-**Repost caption:** The question worth asking after a heavy week.
+**Repost caption:** Hosting, cooking, gifting, remembering everyone's thing. You don't have to carry all of it this year.
 
-Which one is it right now — and what does it feel like to actually name it?
+What's one thing you could hand off before December gets busy, and who would you ask?
 
-Credit: @drjulie
+Credit: @nedratawwab
 
-#mentalhealth #journalingprompts #selfreflection #zenieapp #emotionalintelligence
+#holidayseason #boundaries #journalingprompts #selfcare
 
 **Best time to post:** Friday 7–9 PM PST
 
-**Testing:** confession_then_turn format: dr. julie’s depression-vs-sadness question posted post-Thanksgiving Friday, when the holiday-family-interaction hangover surfaces real feelings; the prompt asks to name the distinction and expect saves from people who needed to hear it.
+**Testing:** Swapped in by Isabel on 2026-11-24 (the depression-vs-sadness reel was too heavy): a light, practical holiday reel the day after Thanksgiving, when December's to-do list starts to show; the hand-off prompt should earn saves and sends to the friend who always does everything.
 
 ---
 
