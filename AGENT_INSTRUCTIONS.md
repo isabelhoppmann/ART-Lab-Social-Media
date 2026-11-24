@@ -79,6 +79,7 @@ Each week ships **six feed posts on six different days, plus one Story set**:
 - **At least one Reel every week is scheduled on Monday** (Isabel's rule, 2026-11-05): she adds the trending audio by hand while scheduling the week on Monday, so `Reel 1` always gets a Monday `best_time` (e.g. "Monday 7–9 PM PST"). A second Reel (the Sunday Scaries quote Reel) is fine on its own day.
 - Rotate the Sunday Scaries slot: if last week's was a finish-the-sentence card, use a quote (as a Reel on moving footage, or a Quote Image) this week, and vice versa. Read last week's drafts (`posts/<last Monday's date>/zenie_drafts.md`, via the same raw.githubusercontent.com URL pattern as `_raw`) to see which it was, and which Reel style and Carousel format ran.
 - Rotate the Reel style: a POV Reel one week, a quote Reel the next (the Sunday quote Reel counts). Never two quote Reels in one week.
+- **Isabel's ratings, week of 2026-11-23:** Tue carousel ("Things no one told you about going home for the holidays"), Thu text card (notes_app "gratitude list, 11:48 PM", she loved the creative format), Fri repost and Sun quote Reel were great; Wed meme was fine but not amazing; Mon POV Reel missed (footage didn't match the text, text covered her face; see Step 2G). Keep doing what the great ones did.
 - Rotate the Carousel format across weeks: `things_no_one_told_you`, `unsent_story`, and `you_told_us` (only when there are unused Story answers — Step 2H).
 - Use the day plan above for `best_time` unless a seasonal moment (Step 0.5) is a reason to move a post. Before finalizing, sort the six feed posts by scheduled datetime and write the sequence out loud, e.g. "Mon Reel, Tue Carousel, Wed Meme, Thu Text Card, Fri Repost, Sun Text Card".
 
@@ -798,6 +799,8 @@ Fields (the renderer reads exactly these):
 
 What makes a send-this card work: it names a very specific moment the reader has lived (work, love, friends, the future), slightly unflattering, so that she sends it to the friend it's about or the friend who'd get it. The caption opens with a one-line reaction, then the journaling prompt, then (optionally) a send CTA: "Send this to the friend who…". Rotate `card_style` week to week.
 
+**What has worked (Isabel's feedback, week of 2026-11-23):** she loved the creative format of the `notes_app` card "gratitude list, 11:48 PM". It works because the format itself is part of the joke: a real-looking artifact (a note typed at midnight) whose honest, slightly messy lines turn a holiday cliché into something true. Keep that kind of invention in every send-this card: pick the card style whose look adds to the idea, not just the next one in the rotation.
+
 Example (`text_thread`, `thread_name: "bestie"`):
 - them: "so are you staying or leaving the job"
 - me: "I made a pros and cons list"
@@ -828,13 +831,18 @@ Rules:
 
 `Reel 1`, **always Monday** (Isabel adds the audio while scheduling the week), **Quarter-Life Check-In** series.
 
-**Pinned by Isabel for the week of 2026-11-23 only (Thanksgiving week):** Reel 1 must be this concept. `reel_style: "pov"`, `overlay_text`: "POV: your aunt asks what you actually do for work and you've been rehearsing since October", `broll_query`: "woman forced smile dinner table" (alternates: "woman awkward smile family dinner", "woman nervous smile holiday table"). Write the captions to match. After that week, ignore this note. Isabel's feedback on the 2026-11-16 Reel: she couldn't tell what "POV: you're doing the math on your whole year and it's still November" meant. A Reel overlay has to land for someone who has never heard of the trend it rides, so don't build one around niche trend jargon. On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
+**Isabel's feedback on past POV Reels — follow it every week:**
+- 2026-11-16: she couldn't tell what "POV: you're doing the math on your whole year and it's still November" meant. A Reel overlay has to land for someone who has never heard of the trend it rides, so don't build one around niche trend jargon.
+- 2026-11-23: the footage didn't relate to the text enough. The overlay was about an aunt questioning you at a family holiday dinner, but the clip was one woman smiling alone at a cafe table. **The footage has to show the moment the text describes.** Write `broll_query` and both `broll_alternates` as the literal visible scene from the overlay: who is in it, what they are doing, where (e.g. text about a family dinner → "family thanksgiving dinner table conversation", not "woman smile table"). Don't describe a mood or a facial expression on its own; stock search matches those to any person anywhere. If the moment can't be filmed literally (an inner thought, a time of night), pick footage of the place or object the text names ("laptop open bed night", "phone notifications dark room"). The renderer takes one of the top three stock results without checking it against the text, so the query is the only control over what shows up.
+- 2026-11-23: the text covered the woman's face. The renderer now detects faces and moves the text off them (the agent does nothing for this), but prefer queries for footage that leaves room for text: a person seen from further back, from behind or in profile, or hands/objects, over a tight face close-up.
+
+On weeks the Sunday Scaries slot is a quote, that quote is `Reel 2` (Sunday). Never two quote Reels in one week.
 
 Fields:
 - `reel_style` — `"pov"` or `"quote"`.
-- For `pov`: `overlay_text`, one line, 8–22 words, usually starting "POV:" or describing an exact moment ("me at 11pm rewriting my five-year plan for the third time this month"). It sits over calm footage, so the words carry the whole joke.
+- For `pov`: `overlay_text`, one line, 8–22 words, usually starting "POV:" or describing an exact moment ("me at 11pm rewriting my five-year plan for the third time this month"). It sits over footage of the moment it describes (see the feedback above), and the words still carry the joke.
 - For `quote`: `quote` (real, attributed, under 18 words, not in `social/used_quotes.json` — Step 2C rules) and `attribution`.
-- `broll_query` — 2–5 words describing calm, moving stock footage that suits the mood, e.g. "rain on window night", "woman walking city sunset", "coffee steam morning light", "notebook pen writing desk". Optional `broll_alternates`: a list of 1–2 backup queries. Footage comes from Pexels automatically; you don't pick a clip.
+- `broll_query` — for a **quote** Reel: 2–5 words describing calm, moving stock footage that suits the mood, e.g. "rain on window night", "woman walking city sunset", "coffee steam morning light", "notebook pen writing desk". Optional `broll_alternates`: a list of 1–2 backup queries. Footage comes from Pexels automatically; you don't pick a clip. For a **POV** Reel: 3–6 words naming the literal scene in the overlay text (see the 2026-11-23 feedback above), with two `broll_alternates` that are the same scene worded differently, never a generic calm fallback.
 - `audio_suggestion` — the name of one trending Reels sound from Step 1 that fits, and why in five words. Isabel adds the sound in the app.
 - `series`, `ig_caption`, `fb_caption`, `hashtags`, `best_time`, `hypothesis`, `format_slug` (`pov_reel` or `quote_reel`).
 

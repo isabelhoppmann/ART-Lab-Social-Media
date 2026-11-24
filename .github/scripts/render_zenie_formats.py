@@ -18,7 +18,9 @@ Post types handled here (everything else is left alone):
               Slide 1 is the cover, the last slide is the journaling prompt.
   Reel        1080x1920 MP4 on moving stock footage (Pexels portrait video),
               no audio (Isabel adds a trending sound in the Instagram app).
-                reel_style pov    `overlay_text` as native-looking caption text
+                reel_style pov    `overlay_text` as native-looking caption text,
+                                  placed in whichever band (upper or lower) stays
+                                  clear of faces in the clip (2026-11-24)
                 reel_style quote  `quote` + `attribution` centred on a soft scrim
   Story       1080x1920 JPG frames from `frames` ([{text, sticker}]). Stickers
               (poll, question box, slider) are added by hand in the app, so the
@@ -573,7 +575,78 @@ def pick_broll(post):
     raise RuntimeError("no usable portrait footage found on Pexels")
 
 
-def reel_overlay_png(post, path):
+# ── Keeping POV text off faces (Isabel's feedback, 2026-11-24) ────────────────
+# The 2026-11-23 Reel had its POV text sitting right across the woman's face,
+# because the text was always drawn at the same height in the upper third. Now
+# the renderer samples frames from the clip, finds faces with OpenCV, and puts
+# the text in the band that overlaps them least. Lower band first: in vertical
+# stock footage faces usually sit in the upper half. The lower band ends at
+# y=1300 so it stays clear of Instagram's caption and buttons at the bottom.
+POV_TOP_Y = 330          # where the text used to always go
+POV_LOW_BOTTOM = 1300    # bottom edge of the lower band
+POV_MAX_H = 560          # text block height cap, so it fits either band
+
+
+def face_boxes(src, dur):
+    """Face boxes (x0, y0, x1, y1) in 1080x1920 frame coordinates, from a few
+    frames across the clip. Returns [] if OpenCV isn't installed or nothing is
+    found, so a detection problem never stops a Reel from rendering."""
+    try:
+        import cv2
+    except Exception:
+        print("    (opencv not installed, POV text goes in the lower band)")
+        return []
+    boxes = []
+    try:
+        casc = [cv2.CascadeClassifier(cv2.data.haarcascades + n)
+                for n in ("haarcascade_frontalface_default.xml", "haarcascade_profileface.xml")]
+        try:  # sample inside the source clip itself (it is looped if shorter than the Reel)
+            clip = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                         "-of", "csv=p=0", src], capture_output=True, text=True).stdout.strip())
+        except Exception:
+            clip = dur
+        clip = max(1.0, min(clip, dur))
+        for i, t in enumerate((0.3, clip / 2, max(0.3, clip - 0.7))):
+            fr = f"/tmp/zenie_face_{i}.png"
+            if os.path.exists(fr):
+                os.remove(fr)
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{t:.2f}", "-i", src,
+                            "-frames:v", "1", "-vf",
+                            "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
+                            fr], check=True, capture_output=True)
+            img = cv2.imread(fr)
+            if img is None:
+                continue
+            gray = cv2.equalizeHist(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY))
+            for c in casc:
+                for (x, y, w, h) in c.detectMultiScale(gray, 1.1, 6, minSize=(90, 90)):
+                    # pad the box: hair above, chin and neck below
+                    boxes.append((x - w * 0.15, y - h * 0.35, x + w * 1.15, y + h * 1.45))
+    except Exception as e:
+        print(f"    face check failed ({e}), POV text goes in the lower band")
+        return []
+    return boxes
+
+
+def pov_text_y(block_h, faces):
+    """Top y for the POV text block: lower band unless faces sit there and the
+    upper band is clearer."""
+    low = POV_LOW_BOTTOM - block_h
+    top = POV_TOP_Y
+
+    def overlap(y0):
+        y1 = y0 + block_h
+        return sum(max(0, min(y1, fy1) - max(y0, fy0)) * max(0, min(W, fx1) - max(0, fx0))
+                   for fx0, fy0, fx1, fy1 in faces)
+
+    if not faces:
+        return low
+    lo, up = overlap(low), overlap(top)
+    print(f"    faces: {len(faces)} box(es); overlap lower={int(lo)} upper={int(up)}")
+    return low if lo <= up else top
+
+
+def reel_overlay_png(post, path, faces=None):
     img = Image.new("RGBA", (W, H_TALL), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     style = post.get("reel_style", "pov")
@@ -597,8 +670,8 @@ def reel_overlay_png(post, path):
         kicker(d, post.get("series"), pad, 360, (235, 225, 248), 30, "center", W - 2 * pad)
     else:
         text = clean(post.get("overlay_text", ""))
-        f, lines, lh = fit(d, text, SANS_SEMI, W - 2 * pad, 640, 68, 46, 1.24)
-        y = 330
+        f, lines, lh = fit(d, text, SANS_SEMI, W - 2 * pad, POV_MAX_H, 68, 46, 1.24)
+        y = pov_text_y(len(lines) * lh, faces or [])
         shadow = Image.new("RGBA", (W, H_TALL), (0, 0, 0, 0))
         sd = ImageDraw.Draw(shadow)
         draw_lines(sd, lines, f, pad, y, lh, (0, 0, 0, 200), "center", W - 2 * pad)
@@ -606,7 +679,7 @@ def reel_overlay_png(post, path):
         d = ImageDraw.Draw(img)
         draw_lines(d, lines, f, pad, y, lh, (255, 255, 255, 255), "center", W - 2 * pad)
         if post.get("series"):
-            kicker(d, post["series"], pad, 230, (255, 255, 255, 230), 28, "center", W - 2 * pad)
+            kicker(d, post["series"], pad, y - 100, (255, 255, 255, 230), 28, "center", W - 2 * pad)
     fw = font(SERIF, 44)
     d.text(((W - d.textlength("zenie", font=fw)) / 2, H_TALL - 470), "zenie", font=fw, fill=(255, 255, 255, 235))
     img.save(path, "PNG")
@@ -620,7 +693,8 @@ def render_reel(post, week, n):
     words = len(clean(post.get("quote") or post.get("overlay_text") or "").split())
     dur = max(7, min(12, round(3 + words * 0.35)))
     png = f"/tmp/zenie_reel_overlay_{n}.png"
-    reel_overlay_png(post, png)
+    faces = face_boxes(src, dur) if post.get("reel_style", "pov") != "quote" else []
+    reel_overlay_png(post, png, faces)
     rel = f"posts/{week}/reel_{n}.mp4"
     os.makedirs(os.path.dirname(rel), exist_ok=True)
     fc = ("[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,"

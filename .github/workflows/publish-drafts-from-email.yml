@@ -52,6 +52,9 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           python3 -m pip install --quiet Pillow
+          # face detection for Reel text placement (<5: OpenCV 5 dropped the bundled face models);
+          # optional, so a failed install never blocks a run
+          python3 -m pip install --quiet "opencv-python-headless<5" || true
 
       # Sets output `status`: materialized (fresh files written this run),
       # already_done (this week already published -> skip), or waiting (bundle
