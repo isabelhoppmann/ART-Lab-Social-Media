@@ -1,0 +1,22 @@
+Morning Briefing November 25, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA CEO Jensen Huang apologized to employees at an all-hands meeting on November 24, calling it "the hardest meeting" he has ever run and confirming he attends 90-minute daily therapy sessions; Congressional leaders from both parties demanded hearings and said his rapid reinstatement does not resolve national-security questions, as NVIDIA shares fell more than 7% on Tuesday after the prior session's 31% surge. https://www.cnn.com/2026/11/24/tech/jensen-huang-apologies-employees-therapy
+- Microsoft declared an internal Code Red on November 25 following a nearly 24-hour Microsoft 365 outage that knocked out Exchange Online, Outlook, Teams, and Copilot, setting a goal to resolve future worldwide incidents within one hour. https://9to5mac.com/2026/11/25/microsoft-declares-a-code-red-in-response-to-worst-ever-outage/
+- At XPeng's AI Day "Origin" on November 25 in Guangzhou, the IRON humanoid walked on stage, took a microphone, and answered live audience questions in both Chinese and English; XPeng announced hardware mass production begins January 2027 and commercial launch in February. https://cnevpost.com/2026/11/25/xpeng-ramps-up-physical-ai-push-2026-ai-day/
+- YYForce (NASDAQ: YFOR) announced on November 24 a humanoid concierge robot trained on NVIDIA Jetson and Isaac Sim, deployed at Novotel Singapore on Stevens to handle guest queries and local recommendations in the hotel lobby. https://www.globenewswire.com/news-release/2026/11/24/3409160/0/en/yyforce-nasdaq-yfor-launches-trained-humanoid-robot-for-hotel-concierge-service-using-nvidia-jetson-and-isaac-sim.html
+
+=== RESEARCH ===
+- A preprint posted November 24 (arXiv:2611.32238) targets the handoff failure between multimodal agents and visuomotor policies in robot manipulation, proposing boundary-aware policy training that expands the reliable operating region of the downstream action policy. https://arxiv.org/abs/2611.32238
+
+=== FUNDING & INVESTMENT ===
+- Simplexity Robotics (Hangzhou) closed a $100M pre-A round led by Ant Group at a $1.6B valuation, announced November 22, 2026, alongside an iX wheeled humanoid unveil, to scale its embodied-AI platform. https://www.dealstreetasia.com/stories/ant-group-simplexity-robotics-502130
+- Lupa Robotics (San Francisco) raised $1.67M in seed funding led by Long Journey Ventures, announced November 23, 2026, to build sensor-glove training datasets and AI models for robot hands targeting manufacturing and warehouse use cases. https://wesanfrancisco.com/news/2026/11/25/lupa-robotics-seed-funding-robot-hand-data
+
+=== COMPETITOR WATCH ===
+- On November 23, Figure AI CEO Brett Adcock posted a 41-second zero-shot clip of a Figure 03 on its Helix AI system picking up an apple after the table beneath it was moved, directly countering Elon Musk's public claim that humanoid robot demonstrations are pre-programmed and staged. https://interestingengineering.com/ai-robotics/figure-counters-musks-staged-robot-claim
+
+=== BAY AREA ===
+- IEEE-RAS Humanoids 2026 (25th annual international conference on humanoid robots) runs December 6-9 at the Santa Clara Convention Center with talks, demos, competitions, and workshops; standard registration closes December 4. https://2026.ieee-humanoids.org/registration/
+
+#KEYS: nvidia-huang-apology-congress, microsoft-m365-code-red, xpeng-iron-ai-day-2026, yyforce-jetson-hotel-robot, boundary-aware-policy-vla, simplexity-robotics-pre-a, lupa-robotics-seed, figure-helix-musk-demo, ieee-humanoids-2026-sf
