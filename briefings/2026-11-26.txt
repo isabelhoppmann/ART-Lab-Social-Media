@@ -1,0 +1,16 @@
+Morning Briefing November 26, 2026
+
+=== ROBOTICS & AI ===
+- NVIDIA told its server manufacturing partners on November 26 to halt AI server shipments to Malaysia, Singapore, Thailand, and Indonesia, responding to a US Commerce Department rule that took effect November 19 restricting overseas data centers from providing substantial AI computing to China-linked customers. https://www.benzinga.com/markets/tech/26/11/63661506/nvidia-pauses-server-shipments-to-4-southeast-asian-nations-as-us-tightens-china-ai-chip-controls-report
+- Google's autonomous Cogentic AI research system (built on Gemini 4) published six original mathematics papers on November 25, including the first unconditional subexponential integer factoring algorithm in roughly 30 years; cryptographer Scott Aaronson notes the result has no immediate RSA cryptographic risk. https://www.rdworldonline.com/google-cogentic-ai-integer-factoring-bounds-lean-proofs/
+
+=== RESEARCH ===
+- Embodied-Harness (arXiv:2611.27689, submitted November 20, revised November 23) proposes a dual-agent harness that improves robotic manipulation through recursive self-improvement of its execution framework — without updating model weights — reporting a 96.7% average success rate across three real-world tasks. https://arxiv.org/abs/2611.27689
+
+=== FUNDING & INVESTMENT ===
+- Japanese startup Black AI secured an undisclosed seed investment led by Incubate Fund, announced November 25, 2026, to develop full-stack humanoid robots and embodied AI for factory environments. https://theaiinsider.tech/2026/11/25/japans-black-ai-secures-seed-funding-to-develop-full-stack-humanoid-robots/
+
+=== COMPETITOR WATCH ===
+- Agility Robotics stock (AGLT) has fallen 52% since its November 5 Nasdaq listing amid investor skepticism about near-term humanoid adoption; Citi initiated coverage on November 25 with a buy rating and an $8 price target, arguing the stock is a public-market bet on humanoids. https://cnbc.com/2026/11/25/a-robotics-stock-lost-half-its-value-heres-why-citi-says-its-a-buy-.html
+
+#KEYS: nvidia-sea-server-halt, google-cogentic-factoring, embodied-harness-recursive-improvement, black-ai-seed, agility-robotics-ipo-stock
